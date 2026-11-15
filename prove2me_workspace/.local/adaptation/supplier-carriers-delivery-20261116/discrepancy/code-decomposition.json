@@ -1,0 +1,11 @@
+{
+  "preamble": "/- Adaptation draft: two complete original relation definitions and their two original notation commands. Mathematical bodies and context are unchanged. Original source notice retained. No source theorem or Open proof is imported. -/\n/-\nCopyright (c) 2026 Christian Merten. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Christian Merten\n-/\nimport Mathlib.Data.Real.Basic\nimport Mathlib.Data.Set.Defs\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n\nvariable {α β : Type*}\n\n",
+  "formal_definition": "/-- `DiscrepancyLE f g s`, denoted `f ≲[s] g`, means that `f` is bounded above by `g` up\nto a bounded discrepancy on `s`, i.e. there exists a constant `C` such that\n`f x ≤ g x + C` for all `x ∈ s`. -/\ndef DiscrepancyLE (f g : α → ℝ) (s : Set α) : Prop :=\n  ∃ C : ℝ, ∀ x ∈ s, f x ≤ g x + C\n\n/-- `DiscrepancyEquiv f g s`, denoted `f ≈[s] g`, means that `f` and `g` agree up to a\nbounded discrepancy on `s`, i.e. `|f x - g x|` is bounded on `s`. The equivalence classes\nof this relation are called *BD-classes*. -/\ndef DiscrepancyEquiv (f g : α → ℝ) (s : Set α) : Prop :=\n  DiscrepancyLE f g s ∧ DiscrepancyLE g f s\n\n@[inherit_doc]\nnotation:50 f:51 \" ≲[\" s \"] \" g:51 => DiscrepancyLE f g s\n\n@[inherit_doc]\nnotation:50 f:51 \" ≈[\" s \"] \" g:51 => DiscrepancyEquiv f g s\n\nend AbcAdaptation.Reference\n",
+  "first_definition_utf8_offset": 586,
+  "originalMetadata": {
+    "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/discrepancy-supplier-20261116/candidate-handoff/discrepancy-metadata.json",
+    "sha256": "1a9d403ac04be2004da94721a0463f8e28f916357d79af4e7c54cfffa6fdffe4"
+  },
+  "revision": null,
+  "notationCommandsRetained": 2
+}

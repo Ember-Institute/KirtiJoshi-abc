@@ -8,8 +8,6 @@
 - `refer/iut/Iut/Implication/Corollary22.lean:357`
 - `refer/iut/Iut/Implication/Corollary22.lean:386`
 - `refer/iut/Iut/Implication/Theorem110.lean:234`
-- `refer/iut/Iut/Implication/PrimeSelection.lean:171`
-- `refer/iut/Iut/Implication/PrimeSelection.lean:177`
 - `refer/iut/Iut/Implication/LogVolumeBound.lean:69`
 - `refer/iut/Iut/Implication/LogVolumeBound.lean:205`
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:52`
@@ -18,7 +16,6 @@
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:170`
 - `Genl@ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/BelyiDescent.lean:248`
 - `Genl@ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Curves/Covering.lean:243`
-- `Genl@ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/GeneralPosition/HeightTheory.lean:57`
 - `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/CondDivisor.lean:61`
 - `Heights@721496ca4c158e511d25d8ccf6bfe8503eda73c1/Heights/Curve/KummerPoint.lean:45`
 - `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/CurveField/NoncriticalBridge.lean:49`
@@ -64,7 +61,7 @@
 
 ### Joshi 的 3.12 与参考工程变体之间的适配
 
-仍需精确陈述从 Joshi III 第 3 篇的 Corollary 3.12 到参考工程 `Corollary312Variant` 的全称适配。参考定理量化于全部 `InitialThetaData`、局部理论、局部 theta 数据和 `QPilotInputs`；单个已选实例不能覆盖该族。Joshi 字面公式与体积推导的 q 项在绝对值、符号、半阶归一化和求和处集上的已知不一致必须逐项保留。现有 `CanonicalActualHull.corollary312` 使用 `CanonicalActualHull.raw_volume_bound`，可作为一个消费者入口；它仍没有证明论文 theta locus 身份，也没有消除符号及归一化差异。
+仍需精确陈述从 Joshi III 第 3 篇的 Corollary 3.12 到参考工程 `Corollary312Variant` 的全称适配。参考 `c2` 在固定的远 Abel 几何与缓和几何接口下要求 `∀ X, P X → Corollary312Variant X`；`ThetaDataExistence`（P7）须为全部适用点和素数供应满足同一 `P` 的数据，并同时供应证书、局部估计及各项身份。因此，所需范围是 P7 实际供应的完整数据族；单个已选实例不足，也不能把待证不等式藏进 `P`。Joshi 字面公式与体积推导的 q 项在绝对值、符号、半阶归一化和求和处集上的已知不一致必须逐项保留。现有 `CanonicalActualHull.corollary312` 使用 `CanonicalActualHull.raw_volume_bound`，可作为一个消费者入口；它仍没有证明论文 theta locus 身份，也没有消除符号及归一化差异。
 
 **现有 Joshi 节点证据及明确障碍**：机器可读的 96 节点类型／来源映射和 18 项阻塞审查保存在 `prove2me_workspace/.local/adaptation/source-audits/joshi_existing_map.json`；它是当前源码的静态审查，不含新编译或公理回执。第 3 篇定理 3.12 的上下文至少要求数域 `L` 无实嵌入、严格 Belyi 型椭圆曲线、初始 theta 数据、`L/L_mod` Galois、全部六阶扭点有理、`ell ≥ 5`、`ell` 不整除 `[L:L_mod]`、模 `ell` 表示像包含 `SL₂`、核域 `L′` 以及处集双射；作者明确说初始 theta 数据是全局存在断言，不能由局部构造代替。参考工程的 `A-raw`、`A-cor`、`A-fontaine`、`G-roots` 有源码 proof body 可供复用，但尚未在本迁移项目重编译；源码中 Form 2 与 Corollary 3.12 本身仍为未证目标。
 

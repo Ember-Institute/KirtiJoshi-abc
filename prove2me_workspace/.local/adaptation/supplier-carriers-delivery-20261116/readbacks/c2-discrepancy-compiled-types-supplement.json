@@ -1,0 +1,880 @@
+{
+  "artifact_kind": "English supplement comparing the frozen independent readback with actual compiled Lean declarations",
+  "supplement_id": "p2m-c2-discrepancy-blind-v1-20261116-compiled-types-supplement-v1",
+  "created_utc": "2026-11-15T18:30:01.297803+00:00",
+  "frozen_readback": {
+    "path": "/tmp/p2m-c2-discrepancy-blind-v1-20261116/readback.json",
+    "sha256": "ba1f2c57568615f98add5e73b0a6c0dcceef1e277d7a0ff9143d03bdc3c82c7b",
+    "bytes": 29086,
+    "preserved_byte_for_byte": true,
+    "historical_status": "The original source-only readback remains frozen. This supplement replaces only the two explicitly resolved verification limits in the active combined interpretation."
+  },
+  "method": "Read existing successful MCP-CI receipts and their byte-identical printed outputs. Read current native input files only to compare SHA-256 identities. No CI, compiler, API, Git, or main-workspace mutation was performed by this agent.",
+  "evidence": {
+    "actual_printouts": [
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+        "sha256": "cb4f87217ee336f12347f1adeda453f097809c9d09bb0eea62e8e8fc13066e5f",
+        "bytes": 51949
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/discrepancy-supplier-20261116/actual-types-and-fields.txt",
+        "sha256": "cd91df56207fdf2cd1344e42c36aa37961ec934233c67c1209660d9473030235",
+        "bytes": 1138
+      }
+    ],
+    "receipts": [
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/native-c2-inputs-types-axioms-v1-result.json",
+        "sha256": "0162fe0cfda08c8e0101b52c8cf84f692e8099dbd7dd246986c62a5e92df35e1",
+        "bytes": 95137,
+        "job_id": "ci-015885-c84bd442",
+        "status": "succeeded",
+        "exit_code": 0,
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "source": ".local/adaptation/c2-complete-inputs-20261116/QueryCorollary22InputsP7.lean",
+        "actual_arguments": [
+          "lean",
+          ".local/adaptation/c2-complete-inputs-20261116/QueryCorollary22InputsP7.lean"
+        ],
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "input_hashes": {
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/QueryCorollary22InputsP7.lean": "ce15e2c2d3ef16a55003dec7baaf56f7266821525c4a8e25df17de5a07fffd50"
+        },
+        "review_checks": {
+          "no_sorryAx": true,
+          "assumptions_reported": true
+        },
+        "diagnostics": [],
+        "printed_text_equals_receipt_stdout": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/discrepancy-supplier-20261116/native-discrepancy-types-axioms-v1-result.json",
+        "sha256": "b37ad69ac871bf1a79e16524e30613141420fe48f036cab4699b99ca925af390",
+        "bytes": 35986,
+        "job_id": "ci-015869-d871c167",
+        "status": "succeeded",
+        "exit_code": 0,
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "source": ".local/adaptation/discrepancy-supplier-20261116/QueryDiscrepancyDefinitions.lean",
+        "actual_arguments": [
+          "lean",
+          ".local/adaptation/discrepancy-supplier-20261116/QueryDiscrepancyDefinitions.lean"
+        ],
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "input_hashes": {
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/discrepancy-supplier-20261116/QueryDiscrepancyDefinitions.lean": "50acf2dc87f5b459eb0a94e34b3a365e1b68a5d8642a175e3bc240815e244098"
+        },
+        "review_checks": {
+          "no_sorryAx": true,
+          "assumptions_reported": true
+        },
+        "diagnostics": [],
+        "printed_text_equals_receipt_stdout": true
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/native-c2-inputs-leaf-v2-result.json",
+        "sha256": "b755014c96090fe84b6b44bba2ff7d56395c4237d56bf167bca945d4db203759",
+        "bytes": 33906,
+        "job_id": "ci-015880-f0ff0625",
+        "status": "succeeded",
+        "exit_code": 0,
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "source": "Definitions/Def_AbcAdaptation_Reference_Iut_Implication_Corollary22.lean",
+        "actual_arguments": [
+          "lean",
+          "Definitions/Def_AbcAdaptation_Reference_Iut_Implication_Corollary22.lean"
+        ],
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "input_hashes": {
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_Corollary22.lean": "14f7125eac5ed29745e509394f34bec7dc7d68886f51b2907388d5dbbb36a5db"
+        },
+        "review_checks": null,
+        "diagnostics": []
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/discrepancy-supplier-20261116/native-discrepancy-leaf-v1-result.json",
+        "sha256": "f565a9ce37aa18fb6ee3c942f219246a4a257ce43f773a819e39aac536744ad2",
+        "bytes": 33239,
+        "job_id": "ci-015864-e7f67c4a",
+        "status": "succeeded",
+        "exit_code": 0,
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "source": "Definitions/Def_AbcAdaptation_Reference_Genl_Mathlib_Order_BoundedDiscrepancy.lean",
+        "actual_arguments": [
+          "lean",
+          "Definitions/Def_AbcAdaptation_Reference_Genl_Mathlib_Order_BoundedDiscrepancy.lean"
+        ],
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "input_hashes": {
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Genl_Mathlib_Order_BoundedDiscrepancy.lean": "6c01fd7567e443bd33d85a0c0d41036519de37a57f2f5c9b14a9604171b6f18d"
+        },
+        "review_checks": null,
+        "diagnostics": []
+      }
+    ],
+    "query_sources": [
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/QueryCorollary22InputsP7.lean",
+        "sha256": "ce15e2c2d3ef16a55003dec7baaf56f7266821525c4a8e25df17de5a07fffd50",
+        "bytes": 826
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/discrepancy-supplier-20261116/QueryDiscrepancyDefinitions.lean",
+        "sha256": "50acf2dc87f5b459eb0a94e34b3a365e1b68a5d8642a175e3bc240815e244098",
+        "bytes": 466
+      }
+    ],
+    "native_input_identity": [
+      {
+        "frozen_input_path": "/tmp/p2m-main-bound-candidates-v8-20261115/discrepancy-supplier-20261116/generated/ready/Definitions/Def_AbcAdaptation_Reference_Genl_Mathlib_Order_BoundedDiscrepancy.lean",
+        "native_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Genl_Mathlib_Order_BoundedDiscrepancy.lean",
+        "sha256": "6c01fd7567e443bd33d85a0c0d41036519de37a57f2f5c9b14a9604171b6f18d",
+        "equals_frozen_input": true
+      },
+      {
+        "frozen_input_path": "/tmp/p2m-main-bound-candidates-v8-20261115/c2-complete-inputs-20261116/generated/draft/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_Corollary22.lean",
+        "native_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_Corollary22.lean",
+        "sha256": "14f7125eac5ed29745e509394f34bec7dc7d68886f51b2907388d5dbbb36a5db",
+        "equals_frozen_input": true
+      },
+      {
+        "frozen_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_Corollary22_NumericInputs.lean",
+        "native_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_Corollary22_NumericInputs.lean",
+        "sha256": "a9017b01cdb6531a284a2e81426f146fffb7196134e894ceb9769ca9cc1d8e36",
+        "equals_frozen_input": true
+      },
+      {
+        "frozen_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Genl_GeneralPosition_HeightTheory.lean",
+        "native_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Genl_GeneralPosition_HeightTheory.lean",
+        "sha256": "adb8a38d1782ed0321e1e36be1e6ba9fbbb30fde7b1bbbfcab0c68a64892de22",
+        "equals_frozen_input": true
+      },
+      {
+        "frozen_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection_HeightParts.lean",
+        "native_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection_HeightParts.lean",
+        "sha256": "47ba54f07d653ebd6053a0f06507e4ca569022184cbcde2c2c2ad7381491c611",
+        "equals_frozen_input": true
+      },
+      {
+        "frozen_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_Invariants.lean",
+        "native_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_Invariants.lean",
+        "sha256": "15eee5caef269c603f28c72440970f63cea4a513752353bd483684deed3b7ced",
+        "equals_frozen_input": true
+      },
+      {
+        "frozen_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_LogVolumeBound.lean",
+        "native_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_LogVolumeBound.lean",
+        "sha256": "56a5ef14ddd38021ee0db99f3c22cb00612f86deb921faf9f8566c28b23683ee",
+        "equals_frozen_input": true
+      },
+      {
+        "frozen_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection.lean",
+        "native_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection.lean",
+        "sha256": "1abaf603978b055799618026ec0394e48a6df241e44a4375f596d76ab3a528f6",
+        "equals_frozen_input": true
+      },
+      {
+        "frozen_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_Statement.lean",
+        "native_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_Statement.lean",
+        "sha256": "124b1cde92438a098ba1216f32e67e5911f2bdc992acae39fb4ae9434205cc81",
+        "equals_frozen_input": true
+      },
+      {
+        "frozen_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_Basic.lean",
+        "native_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_Basic.lean",
+        "sha256": "9e331bf500a6a60170e8425862e897a0a496112fcab0738a2b4e88261062a02b",
+        "equals_frozen_input": true
+      },
+      {
+        "frozen_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_LeftHandSide.lean",
+        "native_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_LeftHandSide.lean",
+        "sha256": "a0e53b47303140a6522725aab92acbd8f1c9679ac1da98e37b24ad31c24ae0ca",
+        "equals_frozen_input": true
+      },
+      {
+        "frozen_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_LocalConditions.lean",
+        "native_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_LocalConditions.lean",
+        "sha256": "b54a834f96ec1df6ad6a6c0c71d0edfcc05a974159fd513771c7f908ae22a265",
+        "equals_frozen_input": true
+      },
+      {
+        "frozen_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_Orbicurve.lean",
+        "native_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_Orbicurve.lean",
+        "sha256": "444de449e7732ec7fac98ad3bb69aa1d3af8d6e36b1a25325d2053416abb02e9",
+        "equals_frozen_input": true
+      },
+      {
+        "frozen_input_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_GlobalField.lean",
+        "native_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_GlobalField.lean",
+        "sha256": "0e857154bb1faa9f77ec512deb4cc18a7f90d6a6c3a213289b936e67569d48ac",
+        "equals_frozen_input": true
+      }
+    ]
+  },
+  "comparison_result": {
+    "declarations_checked": 5,
+    "actual_input_record_fields": 16,
+    "actual_existence_record_fields": 1,
+    "all_field_names_and_order_match": true,
+    "all_field_meanings_match": true,
+    "threshold_formula_matches": true,
+    "P_coverage_matches": true,
+    "mathematical_paragraphs_requiring_correction": [],
+    "changes": "Exact generated universe orders, the inferred input-record result universe, and generated constructor/projection binder visibility are now certified. The two initial verification limits are resolved. The mathematical readback is unchanged."
+  },
+  "exact_generated_signatures": [
+    {
+      "declaration": "AbcAdaptation.Reference.DiscrepancyLE",
+      "printed_universe_parameters": [
+        "u_1"
+      ],
+      "binder_order": [
+        {
+          "name": "α",
+          "visibility": "implicit",
+          "type": "Type u_1"
+        },
+        {
+          "name": "f",
+          "visibility": "explicit",
+          "type": "α → Real"
+        },
+        {
+          "name": "g",
+          "visibility": "explicit",
+          "type": "α → Real"
+        },
+        {
+          "name": "s",
+          "visibility": "explicit",
+          "type": "Set α"
+        }
+      ],
+      "result_sort": "Prop",
+      "confirmation": "The unused β is absent. The compiled body is exactly one existential real C followed by every x and its membership premise."
+    },
+    {
+      "declaration": "AbcAdaptation.Reference.DiscrepancyEquiv",
+      "printed_universe_parameters": [
+        "u_1"
+      ],
+      "binder_order": [
+        {
+          "name": "α",
+          "visibility": "implicit",
+          "type": "Type u_1"
+        },
+        {
+          "name": "f",
+          "visibility": "explicit",
+          "type": "α → Real"
+        },
+        {
+          "name": "g",
+          "visibility": "explicit",
+          "type": "α → Real"
+        },
+        {
+          "name": "s",
+          "visibility": "explicit",
+          "type": "Set α"
+        }
+      ],
+      "result_sort": "Prop",
+      "confirmation": "The unused β is absent. The compiled body is the conjunction of DiscrepancyLE f g s and DiscrepancyLE g f s."
+    },
+    {
+      "declaration": "AbcAdaptation.Reference.Iut.Corollary22Inputs",
+      "print_header_universe_parameters": [
+        "w",
+        "u_1"
+      ],
+      "check_header_universe_parameters": [
+        "u_1",
+        "u_2"
+      ],
+      "semantic_universe_order": [
+        "local-data index universe w",
+        "height-theory universe t"
+      ],
+      "universe_name_mapping": "In #print, w is the local-data index universe and u_1 is t. In #check, u_1 is the local-data index universe and u_2 is t. These are printer-renamed bound universes, not different signatures.",
+      "binder_order": [
+        {
+          "name": "T",
+          "visibility": "explicit",
+          "type": "Genl.HeightTheory.{t}"
+        },
+        {
+          "name": "K",
+          "visibility": "explicit",
+          "type": "T.CBS"
+        },
+        {
+          "name": "d",
+          "visibility": "explicit",
+          "type": "Nat"
+        }
+      ],
+      "number_of_parameters": 3,
+      "result_sort": "Type (max t (w+1))",
+      "generated_constructor": "Corollary22Inputs.mk has the same universe order (w,t); T, K, and d are implicit; the sixteen field arguments are explicit and occur in record-field order.",
+      "generated_projections": "Record projections use universe order (w,t), implicit T, K, d, then an explicit record argument self. Field-specific binders follow the field type. The separately printed htCan_equiv projection confirms this visibility."
+    },
+    {
+      "declaration": "AbcAdaptation.Reference.Iut.ThetaDataExistence",
+      "print_header_universe_parameters": [
+        "u",
+        "v",
+        "u_1",
+        "u_2"
+      ],
+      "check_header_universe_parameters": [
+        "u_1",
+        "u_2",
+        "u_3",
+        "u_4"
+      ],
+      "semantic_universe_order": [
+        "geometry universe u",
+        "RHS universe v",
+        "height-theory universe t",
+        "local-data index universe w"
+      ],
+      "universe_name_mapping": "In #print, u_1 is t and u_2 is w. In #check, u_1 is u, u_2 is v, u_3 is t, and u_4 is w. The levels remain independent.",
+      "binder_order": [
+        {
+          "name": "T",
+          "visibility": "implicit",
+          "type": "Genl.HeightTheory.{t}"
+        },
+        {
+          "name": "AG",
+          "visibility": "implicit",
+          "type": "AnabelianGeometry.{u}"
+        },
+        {
+          "name": "TG",
+          "visibility": "implicit",
+          "type": "TemperedGeometry.{u} AG"
+        },
+        {
+          "name": "P",
+          "visibility": "explicit",
+          "type": "Corollary312VariantData.{u,v} AG TG → Prop"
+        },
+        {
+          "name": "K",
+          "visibility": "implicit",
+          "type": "T.CBS"
+        },
+        {
+          "name": "d",
+          "visibility": "implicit",
+          "type": "Nat"
+        },
+        {
+          "name": "I",
+          "visibility": "explicit",
+          "type": "Corollary22Inputs.{w,t} T K d"
+        }
+      ],
+      "number_of_parameters": 7,
+      "result_sort": "Prop",
+      "generated_constructor": "ThetaDataExistence.mk has universe order (u,v,t,w); T, AG, TG, P, K, d, and I are all implicit; its thetaData field argument is explicit.",
+      "generated_projection": "ThetaDataExistence.thetaData has universe order (u,v,t,w); T, AG, TG, P, K, d, and I are all implicit; the proof of ThetaDataExistence P I is explicit; x and hx are explicit, followed by the premises and prime binders in the frozen readback.",
+      "P_confirmation": "The compiled field has one existential X followed by one existential inv, then a right-associated conjunction whose first component is P X and whose eight remaining components match the frozen ordered conclusions. P is an explicit parameter of the structure type but implicit in its constructor and projection."
+    },
+    {
+      "declaration": "AbcAdaptation.Reference.Iut.Corollary22Inputs.threshold",
+      "printed_universe_parameters": [
+        "u_1",
+        "u_2"
+      ],
+      "semantic_universe_order": [
+        "height-theory universe t",
+        "local-data index universe w"
+      ],
+      "universe_name_mapping": "u_1 is t and u_2 is w; this order is reversed relative to the Corollary22Inputs record universe order.",
+      "binder_order": [
+        {
+          "name": "T",
+          "visibility": "implicit",
+          "type": "Genl.HeightTheory.{t}"
+        },
+        {
+          "name": "K",
+          "visibility": "implicit",
+          "type": "T.CBS"
+        },
+        {
+          "name": "d",
+          "visibility": "implicit",
+          "type": "Nat"
+        },
+        {
+          "name": "I",
+          "visibility": "explicit",
+          "type": "Corollary22Inputs.{w,t} T K d"
+        },
+        {
+          "name": "cheb",
+          "visibility": "explicit",
+          "type": "ChebyshevBound"
+        }
+      ],
+      "result_sort": "Real",
+      "body_confirmation": "The compiled body begins with fun {T} {K} {d} I cheb and computes the same pairwise maxima and powers as the frozen formula."
+    }
+  ],
+  "full_field_comparison": {
+    "Corollary22Inputs": [
+      {
+        "name": "h",
+        "index": 1,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 1,
+          "name": "h",
+          "english": "A function from all points of T.tripod to the real numbers."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 147,
+          "last_line": 147,
+          "sha256_of_exact_line_block": "577bb80d09a167dbd78d791eaba3cf20eed29c575c51e0aba0f213e1f8862c1b"
+        }
+      },
+      {
+        "name": "localData",
+        "index": 2,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 2,
+          "name": "localData",
+          "english": "For every point x and every proof hx that x belongs to S, a LocalHeightData.{w} value L = localData(x,hx). This is a dependent function on the membership proof, not local data supplied for points outside S."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 148,
+          "last_line": 154,
+          "sha256_of_exact_line_block": "53c31839fc46f46710ab348f3fbcec4da971ba808af888808f3954fcc32cb7a9"
+        }
+      },
+      {
+        "name": "localData_height",
+        "index": 3,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 3,
+          "name": "localData_height",
+          "english": "For every x and hx with x in S, the total height of localData(x,hx) equals h(x)."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 155,
+          "last_line": 164,
+          "sha256_of_exact_line_block": "f55d5d6942c43bb3987d2cb1a5c23c3fd9e7880e1d525d1be6bb10e9bb9ee772"
+        }
+      },
+      {
+        "name": "localData_deg_le",
+        "index": 4,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 4,
+          "name": "localData_deg_le",
+          "english": "For every x and hx with x in S, the natural degree of localData(x,hx) is at most 552960*d. This degree bound is in the natural numbers."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 165,
+          "last_line": 175,
+          "sha256_of_exact_line_block": "377eb88e286c3ed863d426f344064bd5f661a785b26def388a370454b8e66315"
+        }
+      },
+      {
+        "name": "htCan_equiv",
+        "index": 5,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 5,
+          "name": "htCan_equiv",
+          "english": "The pointwise function x ↦ (1/6)*h(x) is discrepancy-equivalent to the function x ↦ T.htCan(T.tripod,x) on all of T.cbsSet K.",
+          "expanded": "There exist independent real constants C_forward and C_reverse such that, for every x in T.cbsSet K, (1/6)*h(x) ≤ T.htCan(T.tripod,x)+C_forward and T.htCan(T.tripod,x) ≤ (1/6)*h(x)+C_reverse.",
+          "scope_qualification": "This field is not restricted by the degree bound d or by membership in S."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 176,
+          "last_line": 185,
+          "sha256_of_exact_line_block": "b27fe9631f34611d41bff62cc302b9a30d8e99373a1bc3953f6b078888cbd2f5"
+        }
+      },
+      {
+        "name": "northcott",
+        "index": 6,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 6,
+          "name": "northcott",
+          "english": "For every real number H, the set of points x satisfying both x in S and h(x) ≤ H is finite.",
+          "scope_qualification": "This is finiteness of each height sublevel set within S, not a finiteness assertion for S itself or for all of T.cbsSet K."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 186,
+          "last_line": 196,
+          "sha256_of_exact_line_block": "8af5ef29fd59fadd4ad3c80829f2096973245cd6880a152a0ba060ce65ccb4fe"
+        }
+      },
+      {
+        "name": "B",
+        "index": 7,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 7,
+          "name": "B",
+          "english": "A real number B."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 197,
+          "last_line": 197,
+          "sha256_of_exact_line_block": "b7b8bc03c719e9b6a2469a5f39ca969be3db6bb39137448c4cdf37e038fb647c"
+        }
+      },
+      {
+        "name": "B_nonneg",
+        "index": 8,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 8,
+          "name": "B_nonneg",
+          "english": "The supplied B satisfies 0 ≤ B."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 198,
+          "last_line": 200,
+          "sha256_of_exact_line_block": "5577c5687e9c829f71b75739207aab46cc59f0a794718faf531461c8748d6408"
+        }
+      },
+      {
+        "name": "heightEq_two_le",
+        "index": 9,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 9,
+          "name": "heightEq_two_le",
+          "english": "For every x and hx with x in S, localData(x,hx).heightEq(2) ≤ B."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 201,
+          "last_line": 212,
+          "sha256_of_exact_line_block": "24d27a6b008691b25e5ba51a671375f9f6e95c2a38f3c42149f5a748c103b758"
+        }
+      },
+      {
+        "name": "HasCyclicSubgroup",
+        "index": 10,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 10,
+          "name": "HasCyclicSubgroup",
+          "english": "An arbitrary predicate on a point x of T.tripod and a natural number ℓ.",
+          "scope_qualification": "No group, representation, subgroup, or arithmetic meaning is defined for this predicate in the inspected structure."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 213,
+          "last_line": 213,
+          "sha256_of_exact_line_block": "e060868be812c038e865e33715447131a6582b7326dddffc0dd9e364c994bfea"
+        }
+      },
+      {
+        "name": "TK",
+        "index": 11,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 11,
+          "name": "TK",
+          "english": "A real number TK, with no sign condition."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 214,
+          "last_line": 214,
+          "sha256_of_exact_line_block": "ae64cbb4beac98e5844a9fcbcb9bf5b0672dd5ad676aceb0c25bfd492ae7e87c"
+        }
+      },
+      {
+        "name": "cyclic_bound",
+        "index": 12,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 12,
+          "name": "cyclic_bound",
+          "english": "For every x and hx with x in S, and every natural ℓ, if ℓ is prime, 7 ≤ ℓ, ℓ does not divide L.hv(v) for every v in L.bad, and HasCyclicSubgroup(x,ℓ) holds, then ((ℓ-2)/24)*(h(x)-L.heightEq(2)) ≤ 2*log(ℓ)+TK, where L=localData(x,hx).",
+          "arithmetic_qualification": "Here ℓ-2 means subtraction after coercion of ℓ to the real numbers, not natural subtraction.",
+          "premise_qualification": "There is no p(v) exclusion, sqrt bound, or outside-exceptional-core premise in this field."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 215,
+          "last_line": 258,
+          "sha256_of_exact_line_block": "40f7ee2718f3b21e001f2f813cc38347c1782312125b43e0a13a87139d1ba408"
+        }
+      },
+      {
+        "name": "SL2Image",
+        "index": 13,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 13,
+          "name": "SL2Image",
+          "english": "An arbitrary predicate on a point x of T.tripod and a natural number ℓ.",
+          "scope_qualification": "The structure does not define this predicate as equality or containment of an actual matrix-group image."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 259,
+          "last_line": 259,
+          "sha256_of_exact_line_block": "d82662067fe1f21ba305934ec47100923989d24ebf4e308143f51987bb103eb1"
+        }
+      },
+      {
+        "name": "sl2_of",
+        "index": 14,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 14,
+          "name": "sl2_of",
+          "english": "For every x and hx with x in S, and every natural ℓ, if ℓ is prime, 5 ≤ ℓ, ℓ does not divide L.hv(v) for every v in L.bad, HasCyclicSubgroup(x,ℓ) does not hold, and there exists v in L.bad with p(v) different from both 2 and ℓ, then SL2Image(x,ℓ) holds, where L=localData(x,hx).",
+          "premise_qualification": "The prime lower bound is 5, not 7. There is no sqrt bound or outside-exceptional-core premise."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 260,
+          "last_line": 303,
+          "sha256_of_exact_line_block": "8e3860345d23fdd64515451feee03f8b9290950ef294138db2db5bf19c75aaa7"
+        }
+      },
+      {
+        "name": "excCore",
+        "index": 15,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 15,
+          "name": "excCore",
+          "english": "A set of all points of T.tripod."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 304,
+          "last_line": 304,
+          "sha256_of_exact_line_block": "51ffdc2329c532345fc0008d672ec8c6201c004c12a7b42bcfcbd701b0d4b892"
+        }
+      },
+      {
+        "name": "excCore_finite",
+        "index": 16,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 16,
+          "name": "excCore_finite",
+          "english": "The intersection of excCore with S is finite.",
+          "scope_qualification": "No finiteness condition is imposed on excCore outside S, and no proper-subset or nonemptiness condition is imposed on its complement."
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 305,
+          "last_line": 310,
+          "sha256_of_exact_line_block": "cd69fea16feb19d981f6a58085fe5d7478ce2cbb391291c66446f898482cf0a3"
+        }
+      }
+    ],
+    "ThetaDataExistence": [
+      {
+        "name": "thetaData",
+        "index": 1,
+        "comparison": "Confirmed; no semantic correction.",
+        "english_readback": {
+          "index": 1,
+          "name": "thetaData",
+          "english": "For every point x and proof hx that x belongs to S, if x is not in I.excCore, then for every natural ℓ satisfying the listed premises, there exist X and inv satisfying all listed conclusions.",
+          "ordered_binders_and_premises": [
+            "For every x : T.Pt T.tripod.",
+            "For every hx proving x in S.",
+            "Assume x is not in I.excCore.",
+            "For every ℓ : natural numbers.",
+            "Assume ℓ is prime.",
+            "Assume 7 ≤ ℓ.",
+            "For every v in L.bad, assume ℓ does not divide L.hv(v), where L=I.localData(x,hx).",
+            "For every v in L.bad, assume that if L.p(v)=ℓ, then the real coercion of L.hv(v) is strictly less than sqrt(I.h(x)).",
+            "Assume there exists v in L.bad with L.p(v) different from both 2 and ℓ.",
+            "Assume I.SL2Image(x,ℓ)."
+          ],
+          "existential_binders": [
+            "There exists X : Corollary312VariantData.{u,v} AG TG.",
+            "There exists inv : Theorem110Invariants X."
+          ],
+          "ordered_conclusions": [
+            "P(X) holds.",
+            "Theorem110Certificate(inv) holds.",
+            "The type inv.LocalEstimate is nonempty.",
+            "X.ℓ = ℓ.",
+            "X.dmod ≤ d.",
+            "X.qPilot.logQ = L.heightOther(2,ℓ).",
+            "T.logDiff(T.tripod,x) = inv.logDtpd.",
+            "inv.logFtpd ≤ T.logCond(T.tripod,x).",
+            "T.logCond(T.tripod,x) ≤ inv.logFtpd + log(2*ℓ)."
+          ],
+          "quantifier_qualifications": [
+            "All conclusions hold for the same existential X and the same inv.",
+            "The witnesses may depend on x, hx, ℓ, and the supplied premise proofs. No single X or inv is required to work for all x or ℓ.",
+            "The sqrt premise concerns only bad indices whose p equals ℓ; the nondivisibility premise concerns every bad index.",
+            "The existence of an index with p different from 2 and ℓ is a separate premise.",
+            "HasCyclicSubgroup and its negation do not occur as premises of thetaData. SL2Image is required directly.",
+            "There is no premise that I.h(x) exceeds I.threshold or any other threshold."
+          ]
+        },
+        "compiled_field_evidence": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+          "first_line": 456,
+          "last_line": 556,
+          "sha256_of_exact_line_block": "e34fb38dbfbd3047e7e79d53630ace76b6bbb9a133b398f9c98cc04f6317e217"
+        }
+      }
+    ]
+  },
+  "threshold_comparison": {
+    "comparison": "Confirmed; no formula change.",
+    "frozen_formula": "max(max(ξ^2, 49 + 8*max(TK,0) + B), max((B + 11 + 2*δ)^4 + 1, ((60*δ)^2*(2*δ + 4))^4 + 1)), where ξ=cheb.ξ, TK=I.TK, B=I.B, and δ=552960*(d coerced to real numbers).",
+    "compiled_body_evidence": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/c2-complete-inputs-20261116/actual-types-and-fields.txt",
+      "first_line": 668,
+      "last_line": 731,
+      "sha256_of_exact_line_block": "d07fb1fa27523083cc77fca0fd3b47d52cf0d8e475b7af2bf937643d54ce5691"
+    },
+    "confirmation_details": [
+      "The first term is cheb.ξ squared.",
+      "The second term is 49 + 8*max(I.TK,0) + I.B.",
+      "The third term is (I.B+11+2*deltaBound(d)) to the fourth power, then plus 1.",
+      "The fourth term first forms (60*deltaBound(d)) squared times (2*deltaBound(d)+4), raises that full product to the fourth power, then adds 1.",
+      "The outer maximum groups the first two and the last two terms.",
+      "The deltaBound dependency is byte-identical to the one read originally, where deltaBound(d)=552960*(d coerced to real numbers)."
+    ]
+  },
+  "axiom_output_comparison": {
+    "printed_reports": [
+      {
+        "declaration": "AbcAdaptation.Reference.DiscrepancyLE",
+        "printed_axioms": [
+          "propext",
+          "Classical.choice.{u}",
+          "Quot.sound.{u}"
+        ],
+        "contains_sorryAx": false
+      },
+      {
+        "declaration": "AbcAdaptation.Reference.DiscrepancyEquiv",
+        "printed_axioms": [
+          "propext",
+          "Classical.choice.{u}",
+          "Quot.sound.{u}"
+        ],
+        "contains_sorryAx": false
+      },
+      {
+        "declaration": "AbcAdaptation.Reference.Iut.Corollary22Inputs",
+        "printed_axioms": [
+          "propext",
+          "Classical.choice.{u}",
+          "Quot.sound.{u}"
+        ],
+        "contains_sorryAx": false
+      },
+      {
+        "declaration": "AbcAdaptation.Reference.Iut.ThetaDataExistence",
+        "printed_axioms": [
+          "propext",
+          "Classical.choice.{u}",
+          "Quot.sound.{u}"
+        ],
+        "contains_sorryAx": false
+      },
+      {
+        "declaration": "AbcAdaptation.Reference.Iut.Corollary22Inputs.threshold",
+        "printed_axioms": [
+          "propext",
+          "Classical.choice.{u}",
+          "Quot.sound.{u}"
+        ],
+        "contains_sorryAx": false
+      }
+    ],
+    "summary": "All five printed axiom closures contain only propext, Classical.choice, and Quot.sound. No sorryAx appears. The c2 receipt review summary truncates the threshold assumptions entry at its first line; the full byte-identical stdout explicitly supplies all three names, so this comparison uses that full output."
+  },
+  "resolved_limits": [
+    {
+      "original_index": 0,
+      "original_text": "No elaborated declaration signatures were obtained. The exact generated name of the independent height-theory universe and the elaborator-inferred result universe of Corollary22Inputs are therefore not certified; the source-level parameter dependencies are reported explicitly.",
+      "resolution": "Actual #check and #print output now certifies exact generated universe orders, binder visibility, and the Corollary22Inputs result universe.",
+      "evidence_job_ids": [
+        "ci-015885-c84bd442",
+        "ci-015869-d871c167"
+      ]
+    },
+    {
+      "original_index": 1,
+      "original_text": "The candidate files were read at their supplied temporary paths. Their import resolution and compatibility with the listed main-workspace dependencies were not typechecked or checked by a compiler.",
+      "resolution": "Both native source leaves succeeded for source hashes identical to the frozen candidates. Successful native query jobs imported those modules and printed the actual signatures, fields, bodies, and axiom closures. All twelve previously read dependency files remain byte-identical.",
+      "evidence_job_ids": [
+        "ci-015880-f0ff0625",
+        "ci-015864-e7f67c4a",
+        "ci-015885-c84bd442",
+        "ci-015869-d871c167"
+      ]
+    }
+  ],
+  "active_semantic_and_context_limits": [
+    "The Mathlib definitions and implementations of real operations, Chebyshev.theta, finite-place operations, and other imported foundations were not opened. Standard operation meanings are used in the readback.",
+    "The full transitive definitions of AdmissiblePrimeData, TateFamily, RHSData, packet/procession/hull/volume types, qOrder, and residueChar were not read. The witness types retain those nested formal constraints, but this readback does not invent a complete concrete interpretation for them.",
+    "No connection between the arbitrary HeightTheory point x and a concrete elliptic curve underlying X is stated beyond the listed numerical equalities and inequalities. No semantic interpretation of HasCyclicSubgroup or SL2Image is supplied by Corollary22Inputs itself.",
+    "No assumption in the inspected candidate declarations identifies P with an intended mathematical obligation, or establishes that P is satisfiable. Such a connection would need additional formal context."
+  ],
+  "changed_paragraphs": [
+    {
+      "original_json_path": "shared_context.universe_convention",
+      "change_kind": "Precision added",
+      "replacement": "Use t for the height-theory universe and w for the local-data index universe. Actual #print uses (w,u_1) for Corollary22Inputs, where u_1=t, and (u,v,u_1,u_2) for ThetaDataExistence, where u_1=t and u_2=w. Actual threshold uses (u_1,u_2), where u_1=t and u_2=w. These levels remain independent."
+    },
+    {
+      "original_json_path": "declarations[2].binders",
+      "change_kind": "Generated universe/result information added",
+      "replacement": "Corollary22Inputs.{w,t} has explicit T, K, and d, exactly three parameters, and result Type(max t (w+1)). Its sixteen fields and their meanings are unchanged."
+    },
+    {
+      "original_json_path": "declarations[3].binders",
+      "change_kind": "Exact generated order and generated-interface detail added",
+      "replacement": "ThetaDataExistence.{u,v,t,w} has implicit T, AG, TG; explicit P; implicit K and d; explicit I; and result Prop. Its constructor and thetaData projection instead take P and I implicitly. The field meaning and P coverage are unchanged."
+    },
+    {
+      "original_json_path": "declarations[4].binders",
+      "change_kind": "Exact generated universe order added",
+      "replacement": "threshold.{t,w} has implicit T, K, d and explicit I, cheb, returning Real. The record argument has type Corollary22Inputs.{w,t} T K d. Its formula is unchanged."
+    },
+    {
+      "original_json_path": "missing_or_unverified_formal_context[0:2]",
+      "change_kind": "Resolved by compiled evidence",
+      "replacement": "These first two limits no longer apply to the combined readback-plus-supplement. The remaining four semantic/context limits are retained verbatim in active_semantic_and_context_limits."
+    }
+  ],
+  "scope_limit": "This supplement confirms the five queried declarations and the two source leaves. It does not establish any producer, inhabitance, semantic fidelity to an informal source, final theorem, or project-wide build result."
+}

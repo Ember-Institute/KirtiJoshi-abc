@@ -1,0 +1,1255 @@
+{
+  "schema": "prove2me-supplier-paper-context-v1",
+  "created_date": "2026-11-16",
+  "language": "en",
+  "purpose": "Original-paper context for definition suppliers. This is a source explanation, not a formal proof, a blind type readback, or a claim that the interfaces instantiate the geometry.",
+  "scope": [
+    "Genl.HeightTheory (15 fields)",
+    "Iut.LocalHeightData.heightEq and heightOther",
+    "Iut.epsilonE and deltaBound",
+    "DiscrepancyLE and DiscrepancyEquiv",
+    "Iut.Corollary22Inputs (16 fields)",
+    "Iut.ThetaDataExistence and Iut.Corollary22Inputs.threshold"
+  ],
+  "workspace_policy": {
+    "output_directory": "/tmp/p2m-supplier-paper-context-v1-20261116",
+    "compiler_run": false,
+    "ci_invoked": false,
+    "platform_api_invoked": false,
+    "git_invoked": false,
+    "main_workspace_written": false,
+    "source_pdf_downloaded": false,
+    "tooling_note": "PyMuPDF was installed only into this temporary output directory to extract and render the existing local original PDFs."
+  },
+  "paper_sources": {
+    "GenEll": {
+      "author": "Shinichi Mochizuki",
+      "title": "Arithmetic Elliptic Curves in General Position",
+      "local_pdf": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Arithmetic Elliptic Curves in General Position.pdf",
+      "sha256": "b9dc115af61dca7fe434332ebafddf6a376a9e2926dad4e1ea2dcc0d2441f768",
+      "displayed_version": "February 2009",
+      "bibliographic_note": "The Lean reference identifies the published paper as Math. J. Okayama Univ. 52 (2010), 1–28. This local original displays February 2009 and has 25 PDF pages; these citations use its printed pages, which match its PDF page indices.",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf"
+    },
+    "IV": {
+      "author": "Shinichi Mochizuki",
+      "title": "Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations",
+      "version": "April 2020",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20IV.pdf",
+      "local_pdf": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Inter-universal Teichmuller Theory IV.pdf",
+      "sha256": "5bf4b1e0a8c2686562a6859e5009d301335044cfb5efec5d3a9edf764e4af87f",
+      "retrieved_date": "Existing local original; this task made no download. Acquisition date not independently established here.",
+      "file_page_numbering": "All cited PDF file pages were rendered and display the same printed page number.",
+      "version_evidence": {
+        "page_image_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-001.png",
+        "page_image_sha256": "f826290e074d346841456e2b21762c7482fb6cd2e5559cfaf79967aaff973dac",
+        "raw_text_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-001.raw.txt",
+        "raw_text_sha256": "419edd82e3fc7b986773c22510b523146f5384c2d6d216d2a208a7405dc06adb"
+      }
+    }
+  },
+  "original_code_provenance": {
+    "Genl": {
+      "repository": "https://github.com/lana-agents/genl",
+      "revision": "ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf",
+      "files": [
+        "Genl/GeneralPosition/HeightTheory.lean",
+        "Genl/Mathlib/Order/BoundedDiscrepancy.lean"
+      ],
+      "source_header": "Copyright (c) 2026 Christian Merten. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Christian Merten",
+      "license_statement": "The exact source headers declare Apache 2.0. The locked Genl root tree has no LICENSE, LICENSE.md, or LICENSE.txt. Do not cite a Genl repository LICENSE as an existing file. The supplied standard Apache 2.0 text comes from refer/iut/LICENSE, with that external origin recorded.",
+      "evidence": [
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/genl-height-supplier-20261116/source-fetch.json",
+          "sha256": "cb912f33875220872e5baab8e87fdf3a3c3527fb2a13d5c2080dd5165db8fd8e"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/genl-height-supplier-20261116/locked-root-tree.txt",
+          "sha256": "f6f6145ea25a1d722698dc1360f12e034013148a1c7f2fb9aa18f4484aadba72"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/genl-height-supplier-20261116/NOTICE.Genl.txt",
+          "sha256": "1a8ea74b0b46d4949a77ff97a58ea5d238feb3cad284a1fc390892d13557c6c6"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/discrepancy-supplier-20261116/source-fetch.json",
+          "sha256": "6557db316c71c568243989bfe85aff4188d13240a43bb83e6e2ee461ddad8707"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/refer/iut/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ]
+    },
+    "Iut": {
+      "source_files": [
+        "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/Corollary22.lean",
+        "/home/admin-wsl/Coq/abc/refer/iut/Iut/Implication/PrimeSelection.lean"
+      ],
+      "source_header": "Copyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors",
+      "license_file": "/home/admin-wsl/Coq/abc/refer/iut/LICENSE",
+      "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    }
+  },
+  "quotations": [
+    {
+      "id": "GE-bd-class",
+      "paper": "GenEll",
+      "locator": "§1, Definition 1.2(ii), sentences after the defining inequality",
+      "printed_pages": [
+        5
+      ],
+      "pdf_file_pages": [
+        5
+      ],
+      "quote_markdown": "The relation “$\\approx$” clearly defines an equivalence relation on the set of functions $\\mathcal F\\to\\mathbb R$; we shall refer to an equivalence class relative to this equivalence relation as a(n) [$\\mathcal F$-]BD-class [i.e., “bounded discrepancy class”].",
+      "scope_note": "Complete sentence or display at the stated location; line breaks and line-end hyphenation are joined.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "GenEll",
+          "printed_page": 5,
+          "pdf_file_page": 5,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-005.png",
+            "sha256": "029a8e47d898595733dd62cde5e41b065a7e09d458fcc0db4df4bddcdc430f23"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-005.raw.txt",
+            "sha256": "2ea6e295b67a840ddf6719cec905a9bc382e68f644d0ec4a425861fe71ad5deb"
+          }
+        }
+      ]
+    },
+    {
+      "id": "IV-discrepancy-correction",
+      "paper": "IV",
+      "locator": "§2, Remark 2.3.1(ii), correction of [GenEll], Definition 1.2(ii)",
+      "printed_pages": [
+        55
+      ],
+      "pdf_file_pages": [
+        55
+      ],
+      "quote_markdown": "In [GenEll], Definition 1.2, (ii), the non-resp’d and first resp’d items in the display should be reversed! That is to say, the notation “$\\alpha\\lesssim_{\\mathcal F}\\beta$” corresponds to “$\\alpha(x)-\\beta(x)\\leq C$”; the notation “$\\alpha\\gtrsim_{\\mathcal F}\\beta$” corresponds to “$\\beta(x)-\\alpha(x)\\leq C$”.",
+      "scope_note": "Complete sentence or display at the stated location; line breaks and line-end hyphenation are joined.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "IV",
+          "printed_page": 55,
+          "pdf_file_page": 55,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-055.png",
+            "sha256": "dd4655b335d0fa63ce84871a3fb306b015e1881e1e91dbeed7a11744bd0ac581"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-055.raw.txt",
+            "sha256": "ae9357dce338892bc676c18bca0e6ffe712b11e8f1043c53f6741033088e239f"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GE-degree-filter",
+      "paper": "GenEll",
+      "locator": "§1, Example 1.3(i), degree-at-most and degree-exactly subsets",
+      "printed_pages": [
+        5
+      ],
+      "pdf_file_pages": [
+        5
+      ],
+      "quote_markdown": "$X(\\overline{\\mathbb Q})^{\\leq d}\\subseteq X(\\overline{\\mathbb Q})$\n\nthe union of the subsets $X(F)\\subseteq X(\\overline{\\mathbb Q})$ as $F$ ranges over the number fields such that $[F:\\mathbb Q]\\leq d$ [so $X(\\overline{\\mathbb Q})^{\\leq\\infty}=X(\\overline{\\mathbb Q})$];\n\n$X(\\overline{\\mathbb Q})^{=d}\\overset{\\mathrm{def}}{=}X(\\overline{\\mathbb Q})^{\\leq d}\\backslash X(\\overline{\\mathbb Q})^{\\leq d-1}\\subseteq X(\\overline{\\mathbb Q})$.",
+      "scope_note": "Display and its following explanatory clause; the preceding phrase “If d∈N∪{∞}, then we shall denote by” is omitted.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "GenEll",
+          "printed_page": 5,
+          "pdf_file_page": 5,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-005.png",
+            "sha256": "029a8e47d898595733dd62cde5e41b065a7e09d458fcc0db4df4bddcdc430f23"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-005.raw.txt",
+            "sha256": "2ea6e295b67a840ddf6719cec905a9bc382e68f644d0ec4a425861fe71ad5deb"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GE-cbs",
+      "paper": "GenEll",
+      "locator": "§1, Example 1.3(ii), first full paragraph on p. 6",
+      "printed_pages": [
+        6
+      ],
+      "pdf_file_pages": [
+        6
+      ],
+      "quote_markdown": "We shall refer to a subset $X(\\overline{\\mathbb Q})$ obtained [i.e., as a “$\\mathcal K_V$”] in this fashion as a compactly bounded subset, to $V$ as the support of the compactly bounded subset, and to the “$K_v$” as the bounding domains of the compactly bounded subset.",
+      "scope_note": "One sentence; its phrase “in this fashion” refers to the local domains on pp. 5–6. This is not a free-standing definition without those conditions.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "GenEll",
+          "printed_page": 6,
+          "pdf_file_page": 6,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-006.png",
+            "sha256": "036de8ee9dffd752750695552f18c5af71bb8d56fcd3294b9842a88c50236c8d"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-006.raw.txt",
+            "sha256": "8b82ed64e7e92ffc2df17810a10efff07a139128d1ec2398b84c36c4e820d4dd"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GE-height-class",
+      "paper": "GenEll",
+      "locator": "§1, Proposition 1.4(iii), first sentence",
+      "printed_pages": [
+        6
+      ],
+      "pdf_file_pages": [
+        6
+      ],
+      "quote_markdown": "The BD-class of $\\operatorname{ht}_{\\overline{\\mathcal L}}$ depends only on the isomorphism class of the line bundle $\\mathcal L_{\\mathbb Q}$ on $X_{\\mathbb Q}$.",
+      "scope_note": "Complete sentence or display at the stated location; line breaks and line-end hyphenation are joined.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "GenEll",
+          "printed_page": 6,
+          "pdf_file_page": 6,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-006.png",
+            "sha256": "036de8ee9dffd752750695552f18c5af71bb8d56fcd3294b9842a88c50236c8d"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-006.raw.txt",
+            "sha256": "8b82ed64e7e92ffc2df17810a10efff07a139128d1ec2398b84c36c4e820d4dd"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GE-northcott",
+      "paper": "GenEll",
+      "locator": "§1, Proposition 1.4(iv)",
+      "printed_pages": [
+        6
+      ],
+      "pdf_file_pages": [
+        6
+      ],
+      "quote_markdown": "Let $d$ be a positive integer, $C\\in\\mathbb R$. Suppose further that the line bundle $\\mathcal L_{\\mathbb Q}$ is ample on $X_{\\mathbb Q}$. Then the set of points $x\\in X(\\overline{\\mathbb Q})^{\\leq d}$ [cf. Example 1.3, (i)] such that $\\operatorname{ht}_{\\overline{\\mathcal L}}(x)\\leq C$ is finite.",
+      "scope_note": "Complete sentence or display at the stated location; line breaks and line-end hyphenation are joined.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "GenEll",
+          "printed_page": 6,
+          "pdf_file_page": 6,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-006.png",
+            "sha256": "036de8ee9dffd752750695552f18c5af71bb8d56fcd3294b9842a88c50236c8d"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-006.raw.txt",
+            "sha256": "8b82ed64e7e92ffc2df17810a10efff07a139128d1ec2398b84c36c4e820d4dd"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GE-log-diff",
+      "paper": "GenEll",
+      "locator": "§1, Definition 1.5(iii), assignment defining the log-different",
+      "printed_pages": [
+        8
+      ],
+      "pdf_file_pages": [
+        8
+      ],
+      "quote_markdown": "$X(\\overline{\\mathbb Q})\\ni x\\mapsto\\operatorname{log\\text{-}diff}_X(x)\\overset{\\mathrm{def}}{=}\\underline{\\deg}_F(\\delta_x)\\in\\mathbb R$\n\ndetermines a well-defined log-different function $\\operatorname{log\\text{-}diff}_X$ on $X(\\overline{\\mathbb Q})$.",
+      "scope_note": "Display and final clause. The preceding sentences require F to be the minimal field of definition of x and δ_x to be its different divisor.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "GenEll",
+          "printed_page": 8,
+          "pdf_file_page": 8,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-008.png",
+            "sha256": "e3f7c2ad31c774dd7aafe23243c6ee62a60ffe2efae5e45da72e68ca47bf6198"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-008.raw.txt",
+            "sha256": "e71683ec43c0ba4d780671fd7631aaa9438b44c486e11764fc9c1f002a9b9188"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GE-log-cond",
+      "paper": "GenEll",
+      "locator": "§1, Definition 1.5(iv), definition of the conductor divisor",
+      "printed_pages": [
+        8
+      ],
+      "pdf_file_pages": [
+        8
+      ],
+      "quote_markdown": "$\\mathfrak f_x^D\\overset{\\mathrm{def}}{=}(D_x)_{\\mathrm{red}}\\in\\operatorname{ADiv}(F)$\n\nas the conductor of $x$.",
+      "scope_note": "Display and its following clause. Here D_x is the pullback of D along Spec(O_F)→X, and F is minimal for x. The paragraph defines log-cond_D(x)=underlined deg_F(f_x^D).",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "GenEll",
+          "printed_page": 8,
+          "pdf_file_page": 8,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-008.png",
+            "sha256": "e3f7c2ad31c774dd7aafe23243c6ee62a60ffe2efae5e45da72e68ca47bf6198"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-008.raw.txt",
+            "sha256": "e71683ec43c0ba4d780671fd7631aaa9438b44c486e11764fc9c1f002a9b9188"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GE-geometry",
+      "paper": "GenEll",
+      "locator": "§2, Theorem 2.1(i), opening hypotheses",
+      "printed_pages": [
+        11
+      ],
+      "pdf_file_pages": [
+        11
+      ],
+      "quote_markdown": "Let $X$ be a smooth, proper, geometrically connected curve over a number field; $D\\subseteq X$ a reduced divisor; $U_X\\overset{\\mathrm{def}}{=}X\\backslash D$; $d$ a positive integer; $\\epsilon\\in\\mathbb R_{>0}$ a positive real number. Write $\\omega_X$ for the canonical sheaf on $X$. Suppose that $U_X$ is a hyperbolic curve — i.e., that the degree of the line bundle $\\omega_X(D)$ is positive.",
+      "scope_note": "Complete sentence or display at the stated location; line breaks and line-end hyphenation are joined.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "GenEll",
+          "printed_page": 11,
+          "pdf_file_page": 11,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-011.png",
+            "sha256": "08c20084fac9f1e856deea93123328bf0291566278827b0a6ba01b48f0d47164"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-011.raw.txt",
+            "sha256": "394c9201ba650b3355c2a1881ff09624177c0ff46179b2ff244d65614761ed18"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GE-local-height",
+      "paper": "GenEll",
+      "locator": "§3, Definition 3.3",
+      "printed_pages": [
+        15
+      ],
+      "pdf_file_pages": [
+        15
+      ],
+      "quote_markdown": "We shall refer to the positive integer $v_K(q_E)\\in\\mathbb Z_{>0}$ as the local height of $E$ [or $E_K$].",
+      "scope_note": "Complete sentence or display at the stated location; line breaks and line-end hyphenation are joined.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "GenEll",
+          "printed_page": 15,
+          "pdf_file_page": 15,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-015.png",
+            "sha256": "17663732155d425df9bc74160c2805370a6c97a48e1eab8407ee330382ac0f13"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-015.raw.txt",
+            "sha256": "97a470105385eae9f292eff328f5d7db8340b1adf63917ac78152bc9d62f9c77"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GE-cyclic",
+      "paper": "GenEll",
+      "locator": "§3, Lemma 3.5, hypothesis concerning local heights and conclusion",
+      "printed_pages": [
+        17
+      ],
+      "pdf_file_pages": [
+        17
+      ],
+      "quote_markdown": "Suppose further that $l$ is prime to the local heights of $E$ at all of its primes of [bad] multiplicative reduction [a condition that is satisfied, for instance, if $l$ is $>$ these local heights]. Then we have\n\n$\\frac{1}{12(1+\\epsilon)}l\\cdot\\underline{\\deg}_{\\infty}(E)\\leq\\operatorname{ht}^{\\mathrm{Falt}}(E)+2\\log(l)+C$\n\nfor some constant $C\\in\\mathbb R$ which [may depend on $\\epsilon$ but] is independent of $E$, $F$, $H_F$, and $l$.",
+      "scope_note": "Final part of the lemma. Its preceding hypotheses include ε>0 and an l-cyclic subgroup scheme H_F⊆E_F. This excerpt is not the separate cyclic_bound field verbatim.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "GenEll",
+          "printed_page": 17,
+          "pdf_file_page": 17,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-017.png",
+            "sha256": "58682fc91aa79081140531cd726b8e12fcd274463cd33319f22be31d7c7eb55a"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/GenEll-017.raw.txt",
+            "sha256": "7bb59b3086ecd85a17812d658e7a7d0030e45a58ffff899848566c1c7c79a695"
+          }
+        }
+      ]
+    },
+    {
+      "id": "IV-height-definition",
+      "paper": "IV",
+      "locator": "§2, proof of Corollary 2.2(ii), paragraph beginning “Next, let us write”",
+      "printed_pages": [
+        44
+      ],
+      "pdf_file_pages": [
+        44
+      ],
+      "quote_markdown": "$h\\overset{\\mathrm{def}}{=}\\log(\\mathfrak q^{\\forall})=\\frac{1}{[F:\\mathbb Q]}\\cdot\\sum_{v\\in\\mathbb V(F)^{\\mathrm{non}}}h_v\\cdot f_v\\cdot\\log(p_v)$\n\n— that is to say, $h_v=0$ for those $v$ at which $E_F$ has good reduction; $h_v\\in\\mathbb N_{\\geq1}$ is the local height of $E_F$ [cf. [GenEll], Definition 3.3] for those $v$ at which $E_F$ has bad multiplicative reduction.",
+      "scope_note": "Complete sentence or display at the stated location; line breaks and line-end hyphenation are joined.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "IV",
+          "printed_page": 44,
+          "pdf_file_page": 44,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-044.png",
+            "sha256": "c7df4e1a428f603ae5d2d0415816997bf8bc8fb63d64e1498e7aaa431a45541d"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-044.raw.txt",
+            "sha256": "6430ac29c2ae341da744ededc887733dcfa575258ae75e84b72cc81617ad9ccf"
+          }
+        }
+      ]
+    },
+    {
+      "id": "IV-degree-bound",
+      "paper": "IV",
+      "locator": "§2, Corollary 2.2(ii), opening on p. 42; and proof on p. 44",
+      "printed_pages": [
+        42,
+        44
+      ],
+      "pdf_file_pages": [
+        42,
+        44
+      ],
+      "quote_markdown": "Set $\\delta\\overset{\\mathrm{def}}{=}2^{12}\\cdot3^3\\cdot5\\cdot d$.\n\nThus, since $[F:\\mathbb Q]\\leq\\delta$ [cf. the properties (E3), (E4), (E5) in the proof of Theorem 1.10] […].",
+      "scope_note": "Two separate excerpts: first a complete sentence on p. 42, then a clause on p. 44 with its continuation omitted. The separate source passages are not one continuous paragraph.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "IV",
+          "printed_page": 42,
+          "pdf_file_page": 42,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-042.png",
+            "sha256": "fb0eb450fa6275836a59db34f0c5cb657a80eec072aaf24a6ab757cb08af1e3b"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-042.raw.txt",
+            "sha256": "af1a1198c01f158839f08dde2e1df0167152f4ed8ce5b7b73e38264561c48bab"
+          }
+        },
+        {
+          "paper": "IV",
+          "printed_page": 44,
+          "pdf_file_page": 44,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-044.png",
+            "sha256": "c7df4e1a428f603ae5d2d0415816997bf8bc8fb63d64e1498e7aaa431a45541d"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-044.raw.txt",
+            "sha256": "6430ac29c2ae341da744ededc887733dcfa575258ae75e84b72cc81617ad9ccf"
+          }
+        }
+      ]
+    },
+    {
+      "id": "IV-height-equivalence",
+      "paper": "IV",
+      "locator": "§2, Corollary 2.2(i), displayed equality of BD-classes",
+      "printed_pages": [
+        41
+      ],
+      "pdf_file_pages": [
+        41
+      ],
+      "quote_markdown": "$\\frac16\\cdot\\log(\\mathfrak q_{(-)}^{\\nmid2})\\approx\\frac16\\cdot\\log(\\mathfrak q_{(-)}^{\\forall})\\approx\\frac16\\cdot\\operatorname{ht}_{\\infty}\\approx\\operatorname{ht}_{\\omega_X(D)}$\n\nof functions on $\\mathcal K_V\\subseteq U_X(\\overline{\\mathbb Q})$.",
+      "scope_note": "Display and following clause. The corollary assumes the tripod, a compactly bounded K_V with 2 in its support, and condition (*j-inv).",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "IV",
+          "printed_page": 41,
+          "pdf_file_page": 41,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-041.png",
+            "sha256": "d248c638a29c692b0a13d93502de85c7ba1beb79f1fb2762d4c72aa12fc7eb7a"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-041.raw.txt",
+            "sha256": "6824e2a11d57245b9f457b150af10bc7dbc5c436bddd9efc31533e74c8047d5a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "IV-core-exception",
+      "paper": "IV",
+      "locator": "§2, proof of Corollary 2.2(ii), first paragraph on p. 43",
+      "printed_pages": [
+        43
+      ],
+      "pdf_file_pages": [
+        43
+      ],
+      "quote_markdown": "First, let us recall that if the once-punctured elliptic curve associated to $E_F$ fails to admit an $F$-core, then there are only four possibilities for the $j$-invariant of $E_F$ [cf. [CanLift], Proposition 2.7].",
+      "scope_note": "Complete sentence or display at the stated location; line breaks and line-end hyphenation are joined.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "IV",
+          "printed_page": 43,
+          "pdf_file_page": 43,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-043.png",
+            "sha256": "94ca636b19c1e65b100c3df15f3fa3264f97d11b25d48ca89dcf536bbbeb6a17"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-043.raw.txt",
+            "sha256": "2cb0fb0480e74e3b5080a9f5def3697cee47934942ebc0f264a99b3f61ef6708"
+          }
+        }
+      ]
+    },
+    {
+      "id": "IV-p4",
+      "paper": "IV",
+      "locator": "§2, proof of Corollary 2.2(ii), (P4) and next display",
+      "printed_pages": [
+        45
+      ],
+      "pdf_file_pages": [
+        45
+      ],
+      "quote_markdown": "(P4) $E_F$ does not admit an $l$-cyclic subgroup scheme.\n\nIndeed, the existence of an $l$-cyclic subgroup scheme of $E_F$ would imply that\n\n$\\frac{l-2}{24}\\cdot\\log(\\mathfrak q^{\\forall})\\leq2\\cdot\\log(l)+T_{\\mathcal K}$.",
+      "scope_note": "Condition and beginning of its justification. The following paragraph obtains T_K from bounded discrepancies. The Lean cyclic_bound instead subtracts the contribution over 2 explicitly.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "IV",
+          "printed_page": 45,
+          "pdf_file_page": 45,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-045.png",
+            "sha256": "2ba7b5f4529677848b15d078dcb6c8c865904393339d069094a8f10556b505ba"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-045.raw.txt",
+            "sha256": "62cadcf34eeb93be60f7e3f7215c07c1abb2dc09885f68cac2fee6e8f351b505"
+          }
+        }
+      ]
+    },
+    {
+      "id": "IV-p5-p6",
+      "paper": "IV",
+      "locator": "§2, proof of Corollary 2.2(ii), (P5), (P6) and sentence after (P6)",
+      "printed_pages": [
+        46
+      ],
+      "pdf_file_pages": [
+        46
+      ],
+      "quote_markdown": "(P5) if we write $\\mathbb V_{\\mathrm{mod}}^{\\mathrm{bad}}$ for the set of nonarchimedean valuations $\\in\\mathbb V_{\\mathrm{mod}}\\overset{\\mathrm{def}}{=}\\mathbb V(F_{\\mathrm{mod}})$ that do not divide $2l$ and at which $E_F$ has bad multiplicative reduction, then $\\mathbb V_{\\mathrm{mod}}^{\\mathrm{bad}}\\neq\\emptyset$.\n\n[…] (P6) the image of the outer homomorphism $\\operatorname{Gal}(\\overline{\\mathbb Q}/F)\\to GL_2(\\mathbb F_l)$ determined by the $l$-torsion points of $E_F$ contains the subgroup $SL_2(\\mathbb F_l)\\subseteq GL_2(\\mathbb F_l)$.\n\nIndeed, since, by (P5), $E_F$ has bad multiplicative reduction at some valuation $\\in\\mathbb V_{\\mathrm{mod}}^{\\mathrm{bad}}\\neq\\emptyset$, (P6) follows formally from (P2), (P4), and [GenEll], Lemma 3.1, (iii) [cf. the proof of the final portion of [GenEll], Theorem 3.8].",
+      "scope_note": "Separate labeled conditions and final justification. The paragraph proving (P5) between the conditions is explicitly omitted.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "IV",
+          "printed_page": 46,
+          "pdf_file_page": 46,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-046.png",
+            "sha256": "1c99d0668f39f860fac2fe517c35b1a526e2521d441ea666bd1cbbd66465d49c"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-046.raw.txt",
+            "sha256": "1814d48a5f411cef23d6869d4d66215d5e0f1d2e1a2ed66d33d7760c865e8c7d"
+          }
+        }
+      ]
+    },
+    {
+      "id": "IV-p7",
+      "paper": "IV",
+      "locator": "§2, proof of Corollary 2.2(ii), (P7) and following paragraph",
+      "printed_pages": [
+        46
+      ],
+      "pdf_file_pages": [
+        46
+      ],
+      "quote_markdown": "(P7) the resulting initial $\\Theta$-data\n\n$(\\overline F/F,X_F,l,\\underline C_K,\\underline{\\mathbb V},\\mathbb V_{\\mathrm{mod}}^{\\mathrm{bad}},\\underline\\epsilon)$\n\nsatisfies the various conditions in the statement of Theorem 1.10.\n\nHere, we note in passing that the crucial existence of data “$\\underline{\\mathbb V}$” and “$\\underline\\epsilon$” satisfying the requisite conditions follows, in essence, as a consequence of the fact [i.e., (P6)] that the Galois action on $l$-torsion points contains the full special linear group $SL_2(\\mathbb F_l)$.",
+      "scope_note": "Complete (P7) and next paragraph. The preceding paragraph invokes (P1), (P2), (P5), (P6) and [IUTchI], Definition 3.1(a)–(f). Underlines follow the PDF.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "IV",
+          "printed_page": 46,
+          "pdf_file_page": 46,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-046.png",
+            "sha256": "1c99d0668f39f860fac2fe517c35b1a526e2521d441ea666bd1cbbd66465d49c"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-046.raw.txt",
+            "sha256": "1814d48a5f411cef23d6869d4d66215d5e0f1d2e1a2ed66d33d7760c865e8c7d"
+          }
+        }
+      ]
+    },
+    {
+      "id": "IV-C2",
+      "paper": "IV",
+      "locator": "§2, Corollary 2.2(ii), condition (C2) and definition of ε_E",
+      "printed_pages": [
+        42
+      ],
+      "pdf_file_pages": [
+        42
+      ],
+      "quote_markdown": "$\\frac16\\cdot\\log(\\mathfrak q)\\leq\\frac16\\cdot\\log(\\mathfrak q^{\\nmid2})\\leq\\frac16\\cdot\\log(\\mathfrak q^{\\forall})\\leq(1+\\epsilon_E)\\cdot(\\operatorname{log\\text{-}diff}_X(x_E)+\\operatorname{log\\text{-}cond}_D(x_E))+C_{\\mathcal K}$\n\n— where we write\n\n$\\epsilon_E\\overset{\\mathrm{def}}{=}(60\\delta)^2\\cdot\\frac{\\log(2\\delta\\cdot(\\log(\\mathfrak q^{\\forall})))}{(\\log(\\mathfrak q^{\\forall}))^{1/2}}$.",
+      "scope_note": "Displayed inequality and definition. The hypotheses, exceptional set, field construction, and (C1) earlier on pp. 41–42 remain part of the paper statement.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "IV",
+          "printed_page": 42,
+          "pdf_file_page": 42,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-042.png",
+            "sha256": "fb0eb450fa6275836a59db34f0c5cb657a80eec072aaf24a6ab757cb08af1e3b"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-042.raw.txt",
+            "sha256": "af1a1198c01f158839f08dde2e1df0167152f4ed8ce5b7b73e38264561c48bab"
+          }
+        }
+      ]
+    },
+    {
+      "id": "IV-invariant-comparison",
+      "paper": "IV",
+      "locator": "§2, proof of Corollary 2.2(ii), final paragraph before Remark 2.2.1",
+      "printed_pages": [
+        48
+      ],
+      "pdf_file_pages": [
+        48
+      ],
+      "quote_markdown": "[…] we have an equality $\\operatorname{log\\text{-}diff}_X(x_E)=\\log(\\mathfrak d^{F_{\\mathrm{tpd}}})$, as well as inequalities $\\log(\\mathfrak f^{F_{\\mathrm{tpd}}})\\leq\\operatorname{log\\text{-}cond}_D(x_E)\\leq\\log(\\mathfrak f^{F_{\\mathrm{tpd}}})+\\log(2l)$ […].",
+      "scope_note": "Exact mathematical clause, with its beginning and continuation explicitly omitted. The paper also states the same comparison at the top of p. 43.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "IV",
+          "printed_page": 48,
+          "pdf_file_page": 48,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-048.png",
+            "sha256": "c6978720f524f1e85aaad768a641416150ad7181310792aa5f5db960539df89e"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-048.raw.txt",
+            "sha256": "9caa0dd8c61a8783585630ab9132311c1d69d7a9115ce6642df0008b21bb4aab"
+          }
+        }
+      ]
+    },
+    {
+      "id": "IV-epsilon-proof",
+      "paper": "IV",
+      "locator": "§2, proof of Corollary 2.2(ii), paragraph “Now let us set” and last clause on the page",
+      "printed_pages": [
+        47
+      ],
+      "pdf_file_pages": [
+        47
+      ],
+      "quote_markdown": "$\\epsilon_E\\overset{\\mathrm{def}}{=}(60\\delta)^2\\cdot h^{-1/2}\\cdot\\log(2\\delta\\cdot h)$\n\n[…] we may assume without loss of generality that $\\epsilon_E\\leq1$.",
+      "scope_note": "First definition display, excluding its following parenthetical lower bound; then the final clause on the page. The intervening estimates and exceptional-set enlargement are omitted.",
+      "transcription": "Manually transcribed from the original PDF and checked against the rendered pages in this task. Mathematical notation is transcribed as LaTeX.",
+      "evidence": [
+        {
+          "paper": "IV",
+          "printed_page": 47,
+          "pdf_file_page": 47,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-047.png",
+            "sha256": "68cd5e51c99a10494efb46f0cf56cf0bb454d2f96dce9b00ebcd452c3a19a481"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-047.raw.txt",
+            "sha256": "0f6a7d05ed49954483bdb44c4c63cb05da2900b6a6394972944cbecbe3828bf3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "IV-global-degree",
+      "paper": "IV",
+      "locator": "§1, Definition 1.9(i), sentence defining normalized degree and pullback equality",
+      "printed_pages": [
+        21,
+        22
+      ],
+      "pdf_file_pages": [
+        21,
+        22
+      ],
+      "quote_markdown": "If $\\mathfrak a\\in\\operatorname{ADiv}_{\\mathbb R}(F)$, then we shall refer to\n\n$$\\underline{\\deg}(\\mathfrak a)\\overset{\\mathrm{def}}{=}\\frac{1}{[F:\\mathbb Q]}\\cdot\\deg_F(\\mathfrak a)$$\n\nas the normalized degree of $\\mathfrak a$. Thus, for any finite extension $K$ of $F$, we have\n\n$$\\underline{\\deg}(\\mathfrak a|_K)=\\underline{\\deg}(\\mathfrak a)$$\n\n— where we write $\\underline{\\deg}(\\mathfrak a|_K)$ for the normalized degree of the pull-back $\\mathfrak a|_K\\in\\operatorname{ADiv}_{\\mathbb R}(K)$ [defined in the evident fashion] of $\\mathfrak a$ to $K$.",
+      "scope_note": "Complete sentence(s) at the cited location.",
+      "transcription": "Reused without changes from the previously verified paper-context.json. This task also checked rendered pp. 23–24; the original evidence remains the authority for pp. 21–22.",
+      "reused_from": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/paper-context.json",
+        "sha256": "824350ba13681d954f184d2504fe220503209d4df58cecd8a27a90c11a5e6f47",
+        "quotation_id": "IV-global-degree"
+      },
+      "evidence": [
+        {
+          "paper_id": "IV",
+          "printed_page": 21,
+          "file_page": 21,
+          "page_image_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-021.png",
+          "page_image_sha256": "6e86b049a5c98dc04c9e403adf43342e278307a568241c508df8b097dde1f08f",
+          "raw_text_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-021.raw.txt",
+          "raw_text_sha256": "9b85b326b9235ad35e95b3a674ff0e439251de8c171445d2f688a28205e4a072"
+        },
+        {
+          "paper_id": "IV",
+          "printed_page": 22,
+          "file_page": 22,
+          "page_image_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-022.png",
+          "page_image_sha256": "babd6c68e24c69aad5a4bbebaa1407abff8d0c7b78762834338def4943fd5fa6",
+          "raw_text_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-022.raw.txt",
+          "raw_text_sha256": "691a632ade66db0e2c0b9c4f349eef36aa189377ee2d28b038961d1714c8ac4c"
+        }
+      ]
+    },
+    {
+      "id": "IV-fiber-degree",
+      "paper": "IV",
+      "locator": "§1, Definition 1.9(ii), opening through the definition of normalized E-degree",
+      "printed_pages": [
+        22
+      ],
+      "pdf_file_pages": [
+        22
+      ],
+      "quote_markdown": "Let $v_{\\mathbb Q}\\in\\mathbb V_{\\mathbb Q}\\overset{\\mathrm{def}}{=}\\mathbb V(\\mathbb Q)$, $E\\subseteq\\mathbb V(F)$ a nonempty set of elements lying over $v_{\\mathbb Q}$. If $\\mathfrak a=\\sum_{v\\in\\mathbb V(F)}c_v\\cdot v\\in\\operatorname{ADiv}_{\\mathbb R}(F)$, then we shall write\n\n$$\\mathfrak a_E\\overset{\\mathrm{def}}{=}\\sum_{v\\in E}c_v\\cdot v\\in\\operatorname{ADiv}_{\\mathbb R}(F);\\qquad\\underline{\\deg}_E(\\mathfrak a)\\overset{\\mathrm{def}}{=}\\frac{\\deg(\\mathfrak a_E)}{\\sum_{v\\in E}[F_v:\\mathbb Q_{v_{\\mathbb Q}}]}$$\n\nfor the portion of $\\mathfrak a$ supported in $E$ and the “normalized $E$-degree” of $\\mathfrak a$, respectively.",
+      "scope_note": "Complete sentence(s) at the cited location.",
+      "transcription": "Reused without changes from the previously verified paper-context.json. This task also checked rendered pp. 23–24; the original evidence remains the authority for pp. 21–22.",
+      "reused_from": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/paper-context.json",
+        "sha256": "824350ba13681d954f184d2504fe220503209d4df58cecd8a27a90c11a5e6f47",
+        "quotation_id": "IV-fiber-degree"
+      },
+      "evidence": [
+        {
+          "paper_id": "IV",
+          "printed_page": 22,
+          "file_page": 22,
+          "page_image_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-022.png",
+          "page_image_sha256": "babd6c68e24c69aad5a4bbebaa1407abff8d0c7b78762834338def4943fd5fa6",
+          "raw_text_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-022.raw.txt",
+          "raw_text_sha256": "691a632ade66db0e2c0b9c4f349eef36aa189377ee2d28b038961d1714c8ac4c"
+        }
+      ]
+    },
+    {
+      "id": "IV-invariants",
+      "paper": "IV",
+      "locator": "§1, Theorem 1.10, opening through the definition of the tripodal field",
+      "printed_pages": [
+        22
+      ],
+      "pdf_file_pages": [
+        22
+      ],
+      "quote_markdown": "Fix a collection of initial $\\Theta$-data as in [IUTchI], Definition 3.1. Suppose that we are in the situation of [IUTchIII], Corollary 3.12, and that the elliptic curve $E_F$ has good reduction at every valuation $\\in\\mathbb V(F)^{\\mathrm{good}}\\cap\\mathbb V(F)^{\\mathrm{non}}$ that does not divide $2l$. In the notation of [IUTchI], Definition 3.1, let us write $d_{\\mathrm{mod}}\\overset{\\mathrm{def}}{=}[F_{\\mathrm{mod}}:\\mathbb Q]$, $(1\\leq)\\ e_{\\mathrm{mod}}\\ (\\leq d_{\\mathrm{mod}})$ for the maximal ramification index of $F_{\\mathrm{mod}}$ [i.e., of valuations $\\in\\mathbb V_{\\mathrm{mod}}^{\\mathrm{non}}$] over $\\mathbb Q$, $d_{\\mathrm{mod}}^*\\overset{\\mathrm{def}}{=}2^{12}\\cdot3^3\\cdot5\\cdot d_{\\mathrm{mod}}$, $e_{\\mathrm{mod}}^*\\overset{\\mathrm{def}}{=}2^{12}\\cdot3^3\\cdot5\\cdot e_{\\mathrm{mod}}\\ (\\leq d_{\\mathrm{mod}}^*)$, and\n\n$$F_{\\mathrm{mod}}\\subseteq F_{\\mathrm{tpd}}\\overset{\\mathrm{def}}{=}F_{\\mathrm{mod}}(E_{F_{\\mathrm{mod}}}[2])\\subseteq F$$\n\nfor the “tripodal” intermediate field obtained from $F_{\\mathrm{mod}}$ by adjoining the fields of definition of the $2$-torsion points of any model of $E_F\\times_F\\overline F$ over $F_{\\mathrm{mod}}$ [cf. Proposition 1.8, (ii), (iii)].",
+      "scope_note": "The opening of the theorem. The further (3·5)-torsion and field-generation hypotheses follow on the same page and are outside this excerpt. They remain part of the paper theorem.",
+      "transcription": "Reused without changes from the previously verified paper-context.json. This task also checked rendered pp. 23–24; the original evidence remains the authority for pp. 21–22.",
+      "reused_from": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/paper-context.json",
+        "sha256": "824350ba13681d954f184d2504fe220503209d4df58cecd8a27a90c11a5e6f47",
+        "quotation_id": "IV-invariants"
+      },
+      "evidence": [
+        {
+          "paper_id": "IV",
+          "printed_page": 22,
+          "file_page": 22,
+          "page_image_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-022.png",
+          "page_image_sha256": "babd6c68e24c69aad5a4bbebaa1407abff8d0c7b78762834338def4943fd5fa6",
+          "raw_text_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-022.raw.txt",
+          "raw_text_sha256": "691a632ade66db0e2c0b9c4f349eef36aa189377ee2d28b038961d1714c8ac4c"
+        }
+      ]
+    },
+    {
+      "id": "IV-q-normalization",
+      "paper": "IV",
+      "locator": "§1, Theorem 1.10 statement, sentence beginning “Here, we observe”",
+      "printed_pages": [
+        23
+      ],
+      "pdf_file_pages": [
+        23
+      ],
+      "quote_markdown": "Here, we observe that the various “$\\log(q_{(-)})$”’s are independent of the choice of $F_{\\square}$, and that the quantity “$\\lvert\\log(\\underline{\\underline q})\\rvert\\in\\mathbb R_{>0}$” defined in [IUTchIII], Corollary 3.12, is equal to $\\frac{1}{2l}\\cdot\\log(q)\\in\\mathbb R$ [cf. the definition of “$\\underline q_{\\underline v}$” in [IUTchI], Example 3.2, (iv)].",
+      "scope_note": "Complete sentence(s) at the cited location.",
+      "transcription": "Reused without changes from the previously verified paper-context.json. This task also checked rendered pp. 23–24; the original evidence remains the authority for pp. 21–22.",
+      "reused_from": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/paper-context.json",
+        "sha256": "824350ba13681d954f184d2504fe220503209d4df58cecd8a27a90c11a5e6f47",
+        "quotation_id": "IV-q-normalization"
+      },
+      "evidence": [
+        {
+          "paper_id": "IV",
+          "printed_page": 23,
+          "file_page": 23,
+          "page_image_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-023.png",
+          "page_image_sha256": "eff78e48ebc2668b998bbc690907a44ad8a88c8c82ac1d830c7f0c9f8c795012",
+          "raw_text_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-023.raw.txt",
+          "raw_text_sha256": "cd20556a1d2e7038d023e67cfbc99bd88202da21b39a58df769bde21f6f5faed"
+        }
+      ]
+    },
+    {
+      "id": "IV-theorem110-bound",
+      "paper": "IV",
+      "locator": "§1, Theorem 1.10, first final displayed inequality",
+      "printed_pages": [
+        23
+      ],
+      "pdf_file_pages": [
+        23
+      ],
+      "quote_markdown": "$\\frac16\\cdot\\log(\\mathfrak q)\\leq\\left(1+\\frac{20\\cdot d_{\\mathrm{mod}}}{l}\\right)\\cdot\\left(\\log(\\mathfrak d^{F_{\\mathrm{tpd}}})+\\log(\\mathfrak f^{F_{\\mathrm{tpd}}})\\right)+20\\cdot(e_{\\mathrm{mod}}^*\\cdot l+\\eta_{\\mathrm{prm}})$",
+      "scope_note": "First inequality in the theorem’s final displayed chain. Its next inequality replaces the tripodal-field invariants by the F-invariants. The theorem derives the chain under its full hypotheses on pp. 22–23.",
+      "transcription": "Manually transcribed from the original PDF and checked against its rendered p. 23 in this task.",
+      "evidence": [
+        {
+          "paper": "IV",
+          "printed_page": 23,
+          "pdf_file_page": 23,
+          "image": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-023.png",
+            "sha256": "435a6515f56889e4f55f8955d305b2149f1dfef3e51b0ad8ecc2ab9f7eadfbb9"
+          },
+          "raw_text": {
+            "path": "/tmp/p2m-supplier-paper-context-v1-20261116/evidence/IV-023.raw.txt",
+            "sha256": "8233c9dd1720a807d617c7e920a7af32ff30fc87d22e28c641a887b55e922e71"
+          }
+        }
+      ]
+    }
+  ],
+  "definition_contexts": [
+    {
+      "definition": "Genl.HeightTheory",
+      "classification": "Generic Lean interface motivated by the original paper; not a verbatim paper definition.",
+      "field_count": 15,
+      "fields": [
+        {
+          "name": "Curve",
+          "readback": "A type intended to represent curve–divisor pairs (X,D).",
+          "quotation_ids": [
+            "GE-geometry"
+          ]
+        },
+        {
+          "name": "Pt",
+          "readback": "An algebraic-point type for each curve.",
+          "quotation_ids": [
+            "GE-geometry"
+          ]
+        },
+        {
+          "name": "Hyperbolic",
+          "readback": "A predicate intended to express positive log-canonical degree.",
+          "quotation_ids": [
+            "GE-geometry"
+          ]
+        },
+        {
+          "name": "DivisorFree",
+          "readback": "A predicate intended to express D=∅.",
+          "quotation_ids": [
+            "GE-geometry"
+          ]
+        },
+        {
+          "name": "ptLE",
+          "readback": "The degree-at-most subsets.",
+          "quotation_ids": [
+            "GE-degree-filter"
+          ]
+        },
+        {
+          "name": "ptEQ",
+          "readback": "The degree-exactly subsets.",
+          "quotation_ids": [
+            "GE-degree-filter"
+          ]
+        },
+        {
+          "name": "ptLE_zero",
+          "readback": "An interface law: the degree-at-most-zero set is empty.",
+          "quotation_ids": [
+            "GE-degree-filter"
+          ]
+        },
+        {
+          "name": "ptLE_succ",
+          "readback": "An interface law decomposing degree-at-most-(d+1).",
+          "quotation_ids": [
+            "GE-degree-filter"
+          ]
+        },
+        {
+          "name": "htCan",
+          "readback": "A real function intended as a representative of the log-canonical height class.",
+          "quotation_ids": [
+            "GE-height-class",
+            "GE-geometry"
+          ]
+        },
+        {
+          "name": "logDiff",
+          "readback": "A real function intended as the normalized log-different.",
+          "quotation_ids": [
+            "GE-log-diff"
+          ]
+        },
+        {
+          "name": "logCond",
+          "readback": "A real function intended as the normalized log-conductor.",
+          "quotation_ids": [
+            "GE-log-cond"
+          ]
+        },
+        {
+          "name": "tripod",
+          "readback": "A distinguished curve intended as (P¹_Q,{0,1,∞}).",
+          "quotation_ids": [
+            "GE-geometry"
+          ]
+        },
+        {
+          "name": "hyperbolic_tripod",
+          "readback": "A witness that the distinguished curve satisfies Hyperbolic.",
+          "quotation_ids": [
+            "GE-geometry"
+          ]
+        },
+        {
+          "name": "CBS",
+          "readback": "A type intended to index the relevant compactly bounded subsets.",
+          "quotation_ids": [
+            "GE-cbs"
+          ]
+        },
+        {
+          "name": "cbsSet",
+          "readback": "The underlying point set for each CBS index.",
+          "quotation_ids": [
+            "GE-cbs"
+          ]
+        }
+      ],
+      "english_readback": "This structure supplies an abstract height formalism. Its 15 fields name curves, point types, degree subsets, three real functions, the tripod, and compactly bounded subsets. It also supplies two degree-filter laws and a proof that the tripod is hyperbolic. These fields describe the intended geometric interpretation. The structure itself does not construct number fields, curves, divisors, heights, or local bounding domains.",
+      "source_connection": "Mochizuki reviews these objects in §1 of [GenEll] and uses them in Theorem 2.1, p. 11. The source code selects an interface sufficient to state that theorem.",
+      "limits": [
+        "Curve and Pt are abstract types. Their geometric meanings come from the interpretation, not the bare types.",
+        "Hyperbolic and DivisorFree are predicates supplied by the interface.",
+        "The two degree-filter equations are explicit Lean interface laws. The paper defines degree subsets by fields and set difference.",
+        "CBS and cbsSet do not carry local domains or a named finite set Σ. The intended support condition is implicit in the choice of CBS.",
+        "No StatementI or StatementII theorem is part of the selected structure command."
+      ],
+      "source_citation": "Source context: [GenEll], Definition 1.2(i)–(ii), p. 5; Example 1.3(i)–(ii), pp. 5–6; Proposition 1.4(iii), p. 6; Definition 1.5(iii)–(iv), p. 8; Theorem 2.1(i)–(ii), p. 11.",
+      "english_readback_with_citations": "This structure supplies an abstract height formalism. Its 15 fields name curves, point types, degree subsets, three real functions, the tripod, and compactly bounded subsets. It also supplies two degree-filter laws and a proof that the tripod is hyperbolic. These fields describe the intended geometric interpretation. The structure itself does not construct number fields, curves, divisors, heights, or local bounding domains. Source context: [GenEll], Definition 1.2(i)–(ii), p. 5; Example 1.3(i)–(ii), pp. 5–6; Proposition 1.4(iii), p. 6; Definition 1.5(iii)–(iv), p. 8; Theorem 2.1(i)–(ii), p. 11."
+    },
+    {
+      "definition": "Iut.LocalHeightData.heightEq / heightOther",
+      "classification": "Local auxiliary definitions that partition the total normalized height; not named definitions from the paper.",
+      "quotation_ids": [
+        "IV-height-definition",
+        "GE-local-height",
+        "IV-p5-p6",
+        "IV-C2",
+        "IV-global-degree",
+        "IV-fiber-degree",
+        "IV-q-normalization"
+      ],
+      "english_readback": "For local height data L, heightEq(q) sums the terms at bad places with residue characteristic q, then divides by L.deg. The function heightOther(a,b) sums the terms whose residue characteristics differ from both a and b, with the same denominator. Each term is hv(v)·f(v)·log(p(v)). These formulas partition the globally normalized height from IUT IV, p. 44.",
+      "source_connection": "Corollary 2.2(i), p. 41 separates all nonarchimedean primes from those away from 2. Condition (P5), p. 46 selects bad places away from 2l. Theorem 1.10, p. 23 defines its q-divisor on those selected bad places.",
+      "limits": [
+        "heightOther(2,l) is identified with the theorem input log(q) only by the supplied thetaData equality. The generic sum definition alone proves no such geometric identification.",
+        "heightEq(q) keeps the global denominator deg. It is not Definition 1.9(ii)’s normalized E-degree, whose denominator sums local degrees over E.",
+        "The support sets can be empty. If a=b, the two exclusions coincide; a three-part decomposition requires a≠b.",
+        "The pilot quantity |log(q-underlined-underlined)| is log(q)/(2l), as stated in Theorem 1.10, p. 23. It must not be equated directly with heightOther(2,l)."
+      ],
+      "source_citation": "Source context: IUT IV, Corollary 2.2(i), p. 41; proof of Corollary 2.2(ii), total-height paragraph on p. 44, (P5) on p. 46, and the first comparison on p. 47; Theorem 1.10, p. 23.",
+      "english_readback_with_citations": "For local height data L, heightEq(q) sums the terms at bad places with residue characteristic q, then divides by L.deg. The function heightOther(a,b) sums the terms whose residue characteristics differ from both a and b, with the same denominator. Each term is hv(v)·f(v)·log(p(v)). These formulas partition the globally normalized height from IUT IV, p. 44. Source context: IUT IV, Corollary 2.2(i), p. 41; proof of Corollary 2.2(ii), total-height paragraph on p. 44, (P5) on p. 46, and the first comparison on p. 47; Theorem 1.10, p. 23."
+    },
+    {
+      "definition": "Iut.epsilonE / deltaBound",
+      "classification": "Lean numeric functions implementing formulas used in the paper.",
+      "quotation_ids": [
+        "IV-degree-bound",
+        "IV-C2",
+        "IV-epsilon-proof",
+        "IV-invariants"
+      ],
+      "english_readback": "The function epsilonE(δ,h) returns (60δ)²·log(2δh)/sqrt(h). For the positive height h=log(q^∀), this is the ε_E in Corollary 2.2(ii), p. 42. The function deltaBound(d) returns 552960d, which equals 2¹²·3³·5·d. Corollary 2.2(ii) uses this δ, and its proof bounds [F:Q] by δ on p. 44.",
+      "limits": [
+        "The Lean definitions are total on their formal domains. The paper uses positive d and positive height h under its geometric hypotheses.",
+        "The equality 2¹²·3³·5=552960 is arithmetic. It does not establish the geometric degree bound; localData_deg_le supplies that bound.",
+        "The numeric definitions alone establish neither ε_E≤1 nor the C2 inequality."
+      ],
+      "source_citation": "Source formulas: IUT IV, Corollary 2.2(ii), opening and (C2), p. 42. The field-degree bound occurs in its proof, p. 44. The ε_E argument occurs on p. 47.",
+      "english_readback_with_citations": "The function epsilonE(δ,h) returns (60δ)²·log(2δh)/sqrt(h). For the positive height h=log(q^∀), this is the ε_E in Corollary 2.2(ii), p. 42. The function deltaBound(d) returns 552960d, which equals 2¹²·3³·5·d. Corollary 2.2(ii) uses this δ, and its proof bounds [F:Q] by δ on p. 44. Source formulas: IUT IV, Corollary 2.2(ii), opening and (C2), p. 42. The field-degree bound occurs in its proof, p. 44. The ε_E argument occurs on p. 47."
+    },
+    {
+      "definition": "DiscrepancyLE / DiscrepancyEquiv",
+      "classification": "Generic Lean relations expressing the paper’s bounded-discrepancy notation.",
+      "quotation_ids": [
+        "GE-bd-class",
+        "IV-discrepancy-correction"
+      ],
+      "english_readback": "DiscrepancyLE(f,g,s) means that some real C satisfies f(x)≤g(x)+C for every x in s. DiscrepancyEquiv(f,g,s) requires this bound in both directions. Thus the two functions differ by a bounded amount on s. The notation follows Mochizuki’s correction in IUT IV, Remark 2.3.1(ii), p. 55.",
+      "limits": [
+        "The uncorrected direction printed in [GenEll], Definition 1.2(ii), p. 5 is reversed. Cite the correction when describing ≲.",
+        "The two directions may use different constants. A common absolute-value bound follows by taking their maximum.",
+        "These definitions introduce relations, not quotient types of BD-classes.",
+        "They apply to arbitrary real-valued functions on a type α. No geometric height theory is required to form the relations."
+      ],
+      "source_citation": "Source notation: [GenEll], Definition 1.2(ii), p. 5, with the correction in IUT IV, Remark 2.3.1(ii), p. 55.",
+      "english_readback_with_citations": "DiscrepancyLE(f,g,s) means that some real C satisfies f(x)≤g(x)+C for every x in s. DiscrepancyEquiv(f,g,s) requires this bound in both directions. Thus the two functions differ by a bounded amount on s. The notation follows Mochizuki’s correction in IUT IV, Remark 2.3.1(ii), p. 55. Source notation: [GenEll], Definition 1.2(ii), p. 5, with the correction in IUT IV, Remark 2.3.1(ii), p. 55."
+    },
+    {
+      "definition": "Iut.Corollary22Inputs",
+      "classification": "Local 16-field input bundle. Its fields are supplied data and assumptions, not 16 theorems proved by its declaration.",
+      "field_count": 16,
+      "fields": [
+        {
+          "name": "h",
+          "readback": "The total q-height function.",
+          "quotation_ids": [
+            "IV-height-definition"
+          ]
+        },
+        {
+          "name": "localData",
+          "readback": "Local height data for each point in K of degree at most d.",
+          "quotation_ids": [
+            "IV-height-definition",
+            "GE-local-height"
+          ]
+        },
+        {
+          "name": "localData_height",
+          "readback": "A supplied equality between localData.height and h.",
+          "quotation_ids": [
+            "IV-height-definition"
+          ]
+        },
+        {
+          "name": "localData_deg_le",
+          "readback": "A supplied bound deg≤552960*d.",
+          "quotation_ids": [
+            "IV-degree-bound",
+            "IV-invariants"
+          ]
+        },
+        {
+          "name": "htCan_equiv",
+          "readback": "A supplied bounded-discrepancy comparison of h/6 and the tripod height.",
+          "quotation_ids": [
+            "IV-height-equivalence"
+          ]
+        },
+        {
+          "name": "northcott",
+          "readback": "A supplied finiteness property for bounded height and degree.",
+          "quotation_ids": [
+            "GE-northcott"
+          ]
+        },
+        {
+          "name": "B",
+          "readback": "A real bound for the unscaled contribution over 2.",
+          "quotation_ids": [
+            "IV-height-equivalence"
+          ]
+        },
+        {
+          "name": "B_nonneg",
+          "readback": "A supplied nonnegativity proof for B.",
+          "quotation_ids": [
+            "IV-height-equivalence"
+          ]
+        },
+        {
+          "name": "heightEq_two_le",
+          "readback": "A supplied upper bound heightEq(2)≤B.",
+          "quotation_ids": [
+            "IV-height-equivalence"
+          ]
+        },
+        {
+          "name": "HasCyclicSubgroup",
+          "readback": "A predicate intended to express existence of an l-cyclic subgroup scheme.",
+          "quotation_ids": [
+            "GE-cyclic",
+            "IV-p4"
+          ]
+        },
+        {
+          "name": "TK",
+          "readback": "A real constant used by the cyclic-subgroup estimate.",
+          "quotation_ids": [
+            "IV-p4"
+          ]
+        },
+        {
+          "name": "cyclic_bound",
+          "readback": "A supplied estimate with h−heightEq(2), under primality and local divisibility hypotheses.",
+          "quotation_ids": [
+            "GE-cyclic",
+            "IV-p4"
+          ]
+        },
+        {
+          "name": "SL2Image",
+          "readback": "A predicate intended to express that the l-torsion Galois image contains SL₂.",
+          "quotation_ids": [
+            "IV-p5-p6"
+          ]
+        },
+        {
+          "name": "sl2_of",
+          "readback": "A supplied implication from (P2), absence of a cyclic subgroup, and a bad place away from 2l.",
+          "quotation_ids": [
+            "IV-p5-p6"
+          ]
+        },
+        {
+          "name": "excCore",
+          "readback": "A set intended to contain points whose elliptic curve lacks an F-core.",
+          "quotation_ids": [
+            "IV-core-exception"
+          ]
+        },
+        {
+          "name": "excCore_finite",
+          "readback": "A supplied finiteness proof for the exceptional set at bounded degree.",
+          "quotation_ids": [
+            "IV-core-exception"
+          ]
+        }
+      ],
+      "english_readback": "For an abstract height theory T, a compactly bounded index K, and a degree bound d, this structure supplies the height inputs for Corollary 2.2. Its 16 fields include local data, comparison bounds, finiteness properties, subgroup predicates, and an exceptional set. The conditions apply to points in T.cbsSet(K) of degree at most d, except htCan_equiv, which applies on all of T.cbsSet(K).",
+      "limits": [
+        "The declaration does not prove that the 16 fields hold for a concrete elliptic-curve construction.",
+        "The source field cyclic_bound subtracts heightEq(2); the paper’s p. 45 display writes total log(q^∀) after bounded discrepancies. This is a local formulation of the needed bound, not the same printed formula.",
+        "The Lean B bounds the full contribution heightEq(2). The paper’s B_K on p. 47 bounds one sixth of the difference of the two heights. These constants have different normalizations.",
+        "TK has type ℝ without a positivity field. The local threshold uses max TK 0. The paper calls T_K positive on p. 45.",
+        "HasCyclicSubgroup, SL2Image, and excCore are supplied symbols. Their intended geometric meanings are not definitions proved by this structure."
+      ],
+      "source_citation": "Source context: IUT IV, Corollary 2.2(i), p. 41; its proof, pp. 43–46. The cited background includes [GenEll], Proposition 1.4(iv), p. 6, Lemma 3.1(iii), p. 14, and Lemma 3.5, p. 17.",
+      "english_readback_with_citations": "For an abstract height theory T, a compactly bounded index K, and a degree bound d, this structure supplies the height inputs for Corollary 2.2. Its 16 fields include local data, comparison bounds, finiteness properties, subgroup predicates, and an exceptional set. The conditions apply to points in T.cbsSet(K) of degree at most d, except htCan_equiv, which applies on all of T.cbsSet(K). Source context: IUT IV, Corollary 2.2(i), p. 41; its proof, pp. 43–46. The cited background includes [GenEll], Proposition 1.4(iv), p. 6, Lemma 3.1(iii), p. 14, and Lemma 3.5, p. 17."
+    },
+    {
+      "definition": "Iut.ThetaDataExistence",
+      "classification": "Local proposition packaging the construction associated with (P7), plus formal interfaces and invariant comparisons. It is not a verbatim transcription of (P7).",
+      "quotation_ids": [
+        "IV-p7",
+        "IV-p5-p6",
+        "IV-invariants",
+        "IV-q-normalization",
+        "IV-invariant-comparison",
+        "IV-theorem110-bound"
+      ],
+      "english_readback": "Assume x lies in K, has degree at most d, and avoids the exceptional set. Let l be prime, with l≥7. Assume (P2), (P3), a bad place away from 2l, and the supplied SL2Image predicate. Then thetaData supplies a variant-data bundle X and its Theorem 1.10 invariants. The output satisfies P, its certificate, nonempty local estimates, X.l=l, and X.dmod≤d. It also identifies X.qPilot.logQ with heightOther(2,l) and gives the stated different and conductor comparisons.",
+      "limits": [
+        "P, Corollary312VariantData, Theorem110Certificate, and LocalEstimate are repository interfaces. The paper does not use these Lean names or this conjunction.",
+        "The paper’s (P7), p. 46 says the constructed initial Θ-data satisfies Theorem 1.10. The local proposition packages that construction as an assumption to consume later.",
+        "The paper invokes (P1), (P2), (P5), and (P6) before (P7). The local input uses l≥7, (P2), (P3), the bad-place witness, and SL2Image. Do not claim these formulations are definitionally identical.",
+        "The final equality and two conductor inequalities correspond to p. 48. They are output fields of this assumption, not new proofs in this definition.",
+        "X.qPilot.logQ is the repository’s Theorem 1.10 log(q) carrier. The separately normalized Corollary 3.12 pilot log-volume includes the factor 1/(2l)."
+      ],
+      "source_citation": "Source context: IUT IV, proof of Corollary 2.2(ii), (P7) and its adjacent paragraphs, p. 46; Theorem 1.10, pp. 22–23; final invariant comparisons, p. 48.",
+      "english_readback_with_citations": "Assume x lies in K, has degree at most d, and avoids the exceptional set. Let l be prime, with l≥7. Assume (P2), (P3), a bad place away from 2l, and the supplied SL2Image predicate. Then thetaData supplies a variant-data bundle X and its Theorem 1.10 invariants. The output satisfies P, its certificate, nonempty local estimates, X.l=l, and X.dmod≤d. It also identifies X.qPilot.logQ with heightOther(2,l) and gives the stated different and conductor comparisons. Source context: IUT IV, proof of Corollary 2.2(ii), (P7) and its adjacent paragraphs, p. 46; Theorem 1.10, pp. 22–23; final invariant comparisons, p. 48."
+    },
+    {
+      "definition": "Iut.Corollary22Inputs.threshold",
+      "classification": "Local explicit sufficient threshold. The formula is not printed in Mochizuki’s paper.",
+      "quotation_ids": [
+        "IV-height-definition",
+        "IV-p4",
+        "IV-p5-p6",
+        "IV-epsilon-proof"
+      ],
+      "formula": "max (max (ξ²) (49+8*max(TK,0)+B)) (max ((B+11+2δ)^4+1) (((60δ)^2*(2δ+4))^4+1)), with δ=deltaBound(d).",
+      "english_readback": "This local function takes the maximum of four bounds. They support the prime-selection threshold, the cyclic-subgroup exclusion, the bad-place existence argument, and ε_E≤1. The paper instead enlarges a finite exceptional set at these steps. The fourth powers and the displayed constants are choices in the Lean implementation.",
+      "limits": [
+        "This numeric definition alone proves none of the four consequences. Later arguments must use the input hypotheses.",
+        "This formula is not the paper’s full quantitative exceptional-set bound H_unif·ε_d^(-3)·d^(4+ε_d)+H_K. It must not be described as an equivalent statement of Corollary 2.2(ii) or (iii)."
+      ],
+      "source_citation": "Source motivation: IUT IV, proof of Corollary 2.2(ii), total-height and finite-exception paragraph, p. 44; (P4), p. 45; (P5), p. 46; ε_E≤1 argument, p. 47.",
+      "english_readback_with_citations": "This local function takes the maximum of four bounds. They support the prime-selection threshold, the cyclic-subgroup exclusion, the bad-place existence argument, and ε_E≤1. The paper instead enlarges a finite exceptional set at these steps. The fourth powers and the displayed constants are choices in the Lean implementation. Source motivation: IUT IV, proof of Corollary 2.2(ii), total-height and finite-exception paragraph, p. 44; (P4), p. 45; (P5), p. 46; ε_E≤1 argument, p. 47."
+    }
+  ],
+  "main_cross_checks": [
+    "C2 is quoted with its full chain log(q)/6≤log(q^notdiv2)/6≤log(q^all)/6. The auxiliary definitions alone do not prove this chain.",
+    "Theorem 1.10 uses initial Θ-data, the Corollary 3.12 situation, reduction hypotheses, and specified torsion/field hypotheses. Interface context does not remove these assumptions.",
+    "The height portions use the same global degree denominator. Fiber-normalized local log(q_v) quantities have a different definition.",
+    "The 16-field Corollary22Inputs and one-field ThetaDataExistence are assumption interfaces. No supplied definition is represented as a construction or proof of its fields.",
+    "The original-paper excerpts support the intended interpretation. No semantic equivalence between the complete Lean interfaces and the complete paper statements is asserted."
+  ],
+  "validation": {
+    "paper_sha256_checked": true,
+    "quotation_reference_ids_checked": true,
+    "field_counts": {
+      "Genl.HeightTheory": 15,
+      "Iut.Corollary22Inputs": 16
+    },
+    "all_new_quotations_visually_checked": true,
+    "reuse_note": "Four quotations retain their previously verified transcriptions and original evidence from the 2026-11-15 context file.",
+    "no_compilation_or_external_acceptance_claimed": true
+  }
+}

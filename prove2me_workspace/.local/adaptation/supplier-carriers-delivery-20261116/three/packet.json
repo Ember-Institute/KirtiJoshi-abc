@@ -1,0 +1,1752 @@
+{
+  "schema": "small-suppliers-private-definition-packet/v1",
+  "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+  "mission_id": "eeb5193f-68c0-41d0-9263-4a5ff7c801ee",
+  "root_id": "e33ff731-60a7-43ef-87ae-c12aeba23cb5",
+  "environment": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "visibility": "private",
+  "publication_ready": true,
+  "source_sha256": {
+    "Definitions/Def_AbcAdaptation_Reference_Genl_GeneralPosition_HeightTheory.lean": "adb8a38d1782ed0321e1e36be1e6ba9fbbb30fde7b1bbbfcab0c68a64892de22",
+    "Definitions/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection_HeightParts.lean": "47ba54f07d653ebd6053a0f06507e4ca569022184cbcde2c2c2ad7381491c611",
+    "Definitions/Def_AbcAdaptation_Reference_Iut_Implication_Corollary22_NumericInputs.lean": "501820ca21280cc84e22377eb146abde696b73811d41fcec01558fb26bff6113"
+  },
+  "metadata_sha256": {
+    "/tmp/p2m-iut-supplier-trilingual-20261116/trilingual.json": "fd6d308b5d6a5d9289104c42e2f03fb31cba726d693ab739e8d0c5313e3d2638",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/final-AbcAdaptation_Reference_Iut_Implication_PrimeSelection.json": "fe7813f11e778e6474d151be468252ff54c2326e0bff02392236ede6032de620",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/genl-height-supplier-20261116/generated/genl-height-theory-metadata.json": "9741100ef7f2c817532b65244604b82fbcf42a99696c4ea1e43c87bec6393310",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/genl-height-supplier-20261116/generated/height-parts-metadata.json": "6f52907e1aaa8cea8d787d92f87cfc4045baaa9d54da3500960313472cbe4845",
+    "/tmp/p2m-small-supplier-publisher-20261116/helper-readback-supplement.json": "f1cd775a0b3c44963de44c39a99809990fc1d07619b886c401bdc5df592091a2",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-native-minimal-20261116/source-draft/generated/numeric-metadata.json": "684323289abf624e4e4a1195ca704ee2b54f10648c2fc3b78c66edc7786da425",
+    "/tmp/p2m-small-supplier-publisher-20261116/paper-context.adapter-three.json": "d7f62a8a150648b1461144532c55f0be78a5292efdf449e4dc9a88b35dd68ad0",
+    "/tmp/p2m-supplier-paper-context-v1-20261116/paper-context.json": "f6fd946bafa1cb14a48107aa6d7dcaa1ad3ab1930124357a37188072bc5c1783",
+    "/tmp/p2m-small-supplier-publisher-20261116/final-revision-records.json": "9bbf31e2651b2d7999c2457e3c0814a729734888647f214221e6c519bd54f00d",
+    "/tmp/p2m-small-supplier-publisher-20261116/native-copies/Def_AbcAdaptation_Reference_Iut_Implication_Corollary22_NumericInputs.lean": "a9017b01cdb6531a284a2e81426f146fffb7196134e894ceb9769ca9cc1d8e36",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/small-supplier-identity-20261116/source-original-exprs.json": "680086aa890a2b25206cd75442c653d9537864c70d41f89359908a1172fd8648",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/small-supplier-identity-20261116/source-exprs-v2-result.json": "b3b71c8479f525787b92d308dc035f2adf5afb40e665e1a292f9e2dcffbc3d78"
+  },
+  "publications": [
+    {
+      "tag": "AbcAdaptation_Reference_Genl_GeneralPosition_HeightTheory",
+      "endpoint": "/submit-definition",
+      "payload": {
+        "definition_name": "AbcAdaptation_Reference_Genl_GeneralPosition_HeightTheory",
+        "definition_title": "Abstract height theory with fifteen fields — 十五字段抽象高度理论 — 十五フィールドの抽象高さ理論",
+        "definition": "/- Adaptation draft: complete original HeightTheory structure and required source context. Original source notice retained. StatementI/II are omitted as separate source declarations. No target acceptance or publication is claimed. -/\n/-\nCopyright (c) 2026 Christian Merten. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Christian Merten\n-/\nimport Mathlib.Data.Real.Basic\nimport Mathlib.Data.Set.Defs\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n\nuniverse u\n\nnamespace Genl\n\n/-- An abstract height formalism in the sense of §1 of [mochizuki2010], containing the\ndata needed to state Theorem 2.1 of loc. cit.\n\nA term `X : T.Curve` should be thought of as a pair `(X, D)` of a smooth, proper,\ngeometrically connected curve over a number field and a reduced effective divisor on it,\nand `T.Pt X` as the set of algebraic points of `U_X = X \\ D`. -/\nstructure HeightTheory where\n  /-- The \"curves\" of the theory: pairs `(X, D)` of a smooth, proper, geometrically\n  connected curve `X` over a number field and a reduced effective divisor `D ⊆ X`. -/\n  Curve : Type u\n  /-- The set of algebraic points `U_X(ℚ̄)` of `U_X = X \\ D`. -/\n  Pt : Curve → Type u\n  /-- `U_X` is a hyperbolic curve, i.e. `deg ω_X(D) > 0`. -/\n  Hyperbolic : Curve → Prop\n  /-- The divisor `D` of the pair `(X, D)` is empty. -/\n  DivisorFree : Curve → Prop\n  /-- `ptLE X d` is the set `U_X(ℚ̄)^{≤d}` of points whose minimal field of definition\n  has degree `≤ d` over `ℚ` (Example 1.3 (i) of [mochizuki2010]). -/\n  ptLE : (X : Curve) → ℕ → Set (Pt X)\n  /-- `ptEQ X d` is the set `U_X(ℚ̄)^{=d}` of points whose minimal field of definition\n  has degree exactly `d` over `ℚ` (Example 1.3 (i) of [mochizuki2010]). -/\n  ptEQ : (X : Curve) → ℕ → Set (Pt X)\n  /-- There are no points of degree `≤ 0`. -/\n  ptLE_zero : ∀ X, ptLE X 0 = ∅\n  /-- `U_X(ℚ̄)^{≤ d + 1} = U_X(ℚ̄)^{≤ d} ∪ U_X(ℚ̄)^{= d + 1}`. -/\n  ptLE_succ : ∀ X d, ptLE X (d + 1) = ptLE X d ∪ ptEQ X (d + 1)\n  /-- A representative of the BD-class of height functions `ht_{ω_X(D)}` associated to\n  the log canonical bundle `ω_X(D)` (Definition 1.2 (i), Proposition 1.4 (iii) of\n  [mochizuki2010]). -/\n  htCan : (X : Curve) → Pt X → ℝ\n  /-- The log-different function `log-diff_X` (Definition 1.5 (iii) of\n  [mochizuki2010]). -/\n  logDiff : (X : Curve) → Pt X → ℝ\n  /-- The log-conductor function `log-cond_D` (Definition 1.5 (iv) of\n  [mochizuki2010]). -/\n  logCond : (X : Curve) → Pt X → ℝ\n  /-- The tripod `(ℙ¹_ℚ, {0, 1, ∞})`. -/\n  tripod : Curve\n  /-- The tripod is a hyperbolic curve. -/\n  hyperbolic_tripod : Hyperbolic tripod\n  /-- The collection of compactly bounded subsets `K_V ⊆ U_ℙ(ℚ̄)` whose support `V`\n  contains the fixed finite set of primes `Σ` (Example 1.3 (ii) of [mochizuki2010]). -/\n  CBS : Type u\n  /-- The underlying set of algebraic points of a compactly bounded subset. -/\n  cbsSet : CBS → Set (Pt tripod)\n\nend Genl\n\nend AbcAdaptation.Reference\n",
+        "natural_language_statement": "**Formal-code readback**\n\n**English**\n\n`AbcAdaptation.Reference.Genl.HeightTheory`\n\nFor any universe level $u$, $\\mathrm{HeightTheory}$ is a structure with the following fifteen fields: (1) a supplied type $C$ of objects, called curves, in $\\mathrm{Type}_u$; (2) a supplied family $P:C\\to\\mathrm{Type}_u$ of point types; (3) a supplied predicate $H:C\\to\\mathrm{Prop}$, called hyperbolicity; (4) a supplied predicate $F:C\\to\\mathrm{Prop}$, called divisor-freeness; (5) supplied subsets $S_{X,d}\\subseteq P(X)$ for every $X\\in C$ and every natural number $d$; (6) supplied subsets $E_{X,d}\\subseteq P(X)$ for the same arguments; (7) a proof that $S_{X,0}=\\varnothing$ for every $X\\in C$; (8) a proof that $S_{X,d+1}=S_{X,d}\\cup E_{X,d+1}$ for every $X\\in C$ and every natural number $d$; (9), (10), and (11) three supplied functions $h_X,\\delta_X,\\kappa_X:P(X)\\to\\mathbb R$ for every $X\\in C$, named respectively htCan, logDiff, and logCond; (12) a distinguished object $T\\in C$, named tripod; (13) a proof of $H(T)$; (14) a supplied type $B\\in\\mathrm{Type}_u$, named CBS; and (15) a supplied function $A:B\\to\\mathcal P(P(T))$, named cbsSet. There are no typeclass hypotheses. The names do not impose geometric definitions on $C$, $P$, $H$, $F$, the sets, the three real functions, $T$, $B$, or $A$: the only required laws are the two set identities and $H(T)$. In particular, no degree function is supplied; the natural number $d$ merely indexes sets, $E_{X,0}$ is unrestricted, the positive-index sets $E_{X,d}$ may overlap, the subsets need not be finite, the real functions have no sign or compatibility requirements, $F$ has no required property or relation to $H$, and the function $A$ has no required property. The distinguished object makes $C$ inhabited within any such structure, while individual point types and $B$ may be empty. This describes the data and proof obligations of a structure, without asserting that any such structure exists.\n\n**简体中文**\n\n`AbcAdaptation.Reference.Genl.HeightTheory`\n\n对任意宇宙层级 $u$，$\\mathrm{HeightTheory}$ 是具有以下十五个字段的结构：\n(1) 宇宙 $\\mathrm{Type}_u$ 中一个给定的对象类型 $C$，其对象称为曲线；\n(2) 一个给定的点类型族 $P:C\\to\\mathrm{Type}_u$；\n(3) 一个给定谓词 $H:C\\to\\mathrm{Prop}$，称为双曲性；\n(4) 一个给定谓词 $F:C\\to\\mathrm{Prop}$，称为无除子性；\n(5) 对每个 $X\\in C$ 和每个自然数 $d$，给定子集 $S_{X,d}\\subseteq P(X)$；\n(6) 对相同参数给定子集 $E_{X,d}\\subseteq P(X)$；\n(7) 对每个 $X\\in C$ 的等式 $S_{X,0}=\\varnothing$ 的证明；\n(8) 对每个 $X\\in C$ 和每个自然数 $d$ 的等式 $S_{X,d+1}=S_{X,d}\\cup E_{X,d+1}$ 的证明；\n(9)、(10)、(11) 对每个 $X\\in C$，三个给定函数 $h_X,\\delta_X,\\kappa_X:P(X)\\to\\mathbb R$，代码名依次为 `htCan`、`logDiff`、`logCond`；\n(12) 一个指定对象 $T\\in C$，代码名为 `tripod`；\n(13) $H(T)$ 的证明；\n(14) 紧有界子集所用的一个给定类型 $B\\in\\mathrm{Type}_u$，代码名为 `CBS`；\n(15) 一个给定函数 $A:B\\to\\mathcal P(P(T))$，代码名为 `cbsSet`。\n没有类型类假设。这些名称不对 $C$、$P$、$H$、$F$、各集合、三个实值函数、$T$、$B$ 或 $A$ 施加几何定义；仅要求两个集合等式及 $H(T)$。尤其，结构不提供次数函数；自然数 $d$ 只给集合编号；$E_{X,0}$ 不受限制；正指标的各集合 $E_{X,d}$ 可以相交；各子集不必有限；实值函数没有符号或相容性要求；$F$ 不要求具有任何性质或与 $H$ 有任何关系；函数 $A$ 也没有所要求的性质。因此，“紧有界子集”的用语不为 $A$ 的像另加紧性或有界性条件。在任何这样的结构内部，指定对象使 $C$ 有元素，而个别点类型和 $B$ 可以为空。这里说明的是结构的数据和证明义务，不断言这样的结构存在。\n\n**日本語**\n\n`AbcAdaptation.Reference.Genl.HeightTheory`\n\n任意の宇宙レベル $u$ に対し、$\\mathrm{HeightTheory}$ は次の十五のフィールドを持つ構造である。\n(1) $\\mathrm{Type}_u$ に属する、曲線と呼ぶ対象の指定型 $C$。\n(2) 点の型の指定族 $P:C\\to\\mathrm{Type}_u$。\n(3) 双曲性と呼ぶ指定述語 $H:C\\to\\mathrm{Prop}$。\n(4) 除子を持たない性質と呼ぶ指定述語 $F:C\\to\\mathrm{Prop}$。\n(5) 各 $X\\in C$ と各自然数 $d$ に対する指定部分集合 $S_{X,d}\\subseteq P(X)$。\n(6) 同じ引数に対する指定部分集合 $E_{X,d}\\subseteq P(X)$。\n(7) 各 $X\\in C$ での $S_{X,0}=\\varnothing$ の証明。\n(8) 各 $X\\in C$ と各自然数 $d$ での $S_{X,d+1}=S_{X,d}\\cup E_{X,d+1}$ の証明。\n(9)、(10)、(11) 各 $X\\in C$ に対する三つの指定関数 $h_X,\\delta_X,\\kappa_X:P(X)\\to\\mathbb R$。コード名はそれぞれ `htCan`、`logDiff`、`logCond` である。\n(12) コード名が `tripod` である指定対象 $T\\in C$。\n(13) $H(T)$ の証明。\n(14) コンパクト有界部分集合のための指定型 $B\\in\\mathrm{Type}_u$。コード名は `CBS` である。\n(15) コード名が `cbsSet` である指定関数 $A:B\\to\\mathcal P(P(T))$。\n型クラスの仮定はない。これらの名称は $C$、$P$、$H$、$F$、各集合、三つの実数値関数、$T$、$B$、$A$ に幾何学的定義を課さない。必要な法則は二つの集合の等式と $H(T)$ だけである。特に次数関数は与えられず、自然数 $d$ は集合の添字にすぎない。$E_{X,0}$ は無制約であり、正の添字を持つ $E_{X,d}$ は重なってよい。部分集合は有限でなくてよい。実数値関数に符号や適合性の条件はなく、$F$ に要求される性質や $H$ との関係も、$A$ に要求される性質もない。したがってコンパクト有界部分集合という呼称から $A$ の像のコンパクト性や有界性を追加しない。各構造の内部では指定対象によって $C$ は要素を持つが、個々の点の型と $B$ は空でもよい。これは構造のデータと証明義務の記述であり、そのような構造の存在を主張しない。\n\n**Paper source context (English; separate from formal-code readback)**\n\nThis structure supplies an abstract height formalism. Its 15 fields name curves, point types, degree subsets, three real functions, the tripod, and compactly bounded subsets. It also supplies two degree-filter laws and a proof that the tripod is hyperbolic. These fields describe the intended geometric interpretation. The structure itself does not construct number fields, curves, divisors, heights, or local bounding domains. Source context: [GenEll], Definition 1.2(i)–(ii), p. 5; Example 1.3(i)–(ii), pp. 5–6; Proposition 1.4(iii), p. 6; Definition 1.5(iii)–(iv), p. 8; Theorem 2.1(i)–(ii), p. 11.\n\n**Source connection**\n\nMochizuki reviews these objects in §1 of [GenEll] and uses them in Theorem 2.1, p. 11. The source code selects an interface sufficient to state that theorem.\n\n**Limits of the definition supplier**\n\nCurve and Pt are abstract types. Their geometric meanings come from the interpretation, not the bare types.\n\nHyperbolic and DivisorFree are predicates supplied by the interface.\n\nThe two degree-filter equations are explicit Lean interface laws. The paper defines degree subsets by fields and set difference.\n\nCBS and cbsSet do not carry local domains or a named finite set Σ. The intended support condition is implicit in the choice of CBS.\n\nNo StatementI or StatementII theorem is part of the selected structure command.\n\n**Original papers**\n\n[Arithmetic Elliptic Curves in General Position](https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf)\n\n[Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations](https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20IV.pdf)",
+        "source": "https://github.com/lana-agents/genl/blob/ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/GeneralPosition/HeightTheory.lean#L51-L95",
+        "env": "0df444a360eaa60ab8c11dca51a86af692955474",
+        "private": true
+      }
+    },
+    {
+      "tag": "AbcAdaptation_Reference_Iut_Implication_PrimeSelection_HeightParts",
+      "endpoint": "/submit-definition",
+      "payload": {
+        "definition_name": "AbcAdaptation_Reference_Iut_Implication_PrimeSelection_HeightParts",
+        "definition_title": "Two parts of the local height sum — 局部高度和的两部分 — 局所高さの和の二つの部分",
+        "definition": "/- Adaptation draft: two complete original definition commands, unchanged bodies and source contexts. Original source notice retained. No acceptance or publication is claimed. -/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n\nuniverse w\n\nnamespace Iut\n\nopen Finset Real\n\nnamespace LocalHeightData\n\nvariable (L : LocalHeightData)\n\n/-- The part of `log(q_∀)` supported at the places of residue characteristic `q`. -/\nnoncomputable def heightEq (q : ℕ) : ℝ :=\n  (∑ v ∈ L.bad.filter (fun v => L.p v = q), (L.hv v : ℝ) * L.f v * Real.log (L.p v)) / L.deg\n\n/-- The part of `log(q_∀)` supported away from the residue characteristics `a` and `b`\n(for `a = 2`, `b = ℓ`: the `log(q)` of the initial Θ-data, whose bad places are those\nnot dividing `2ℓ`). -/\nnoncomputable def heightOther (a b : ℕ) : ℝ :=\n  (∑ v ∈ L.bad.filter (fun v => L.p v ≠ a ∧ L.p v ≠ b),\n    (L.hv v : ℝ) * L.f v * Real.log (L.p v)) / L.deg\n\nend LocalHeightData\n\nend Iut\n\nend AbcAdaptation.Reference\n",
+        "natural_language_statement": "**Formal-code readback**\n\n**English**\n\n`AbcAdaptation.Reference.Iut.LocalHeightData.heightEq`\n\nFor any universe level $w$, let $L$ be supplied local-height data, a structure in $\\mathrm{Type}_{w+1}$ consisting of a type $I\\in\\mathrm{Type}_w$, a finite set $B$ of elements of $I$, functions $p,h,f:I\\to\\mathbb N$, a natural number $D$, a proof of $1\\le D$, proofs that for every $v\\in B$ the number $p(v)$ is prime and $1\\le h(v)$ and $1\\le f(v)$, and a proof that for every natural number $r$, $\\sum_{v\\in B,\\ p(v)=r} f(v)\\le D$, where this last sum and inequality are in $\\mathbb N$. There are no additional typeclass hypotheses on $I$, and the functions on indices outside $B$ are constrained only to have natural-number values. For every natural number $q$, the noncomputable real-valued definition heightEq is $H_{=}(L,q)=\\bigl(\\sum_{v\\in B,\\ p(v)=q} \\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$, where a bar denotes the natural number viewed as a real number and $\\log$ is the real natural logarithm. Thus the filter tests exact equality of $p(v)$ with the supplied natural number $q$, each selected index contributes once with weight $h(v)f(v)$, and the entire sum is divided by the degree $D$; the definition does not divide by a fiber degree or replace this weight by $f(v)$ alone. Empty sums are zero, so $B=\\varnothing$ is allowed and gives zero, and any $q$ that is not prime, including $0$ and $1$, also gives zero because the filtered set is empty. The positive degree excludes division by zero. These are supplied finite arithmetic data and a defined weighted sum; no geometric realization or existence of data satisfying the hypotheses is asserted.\n\n`AbcAdaptation.Reference.Iut.LocalHeightData.heightOther`\n\nFor any universe level $w$, let $L$ be supplied local-height data, a structure in $\\mathrm{Type}_{w+1}$ consisting of a type $I\\in\\mathrm{Type}_w$, a finite set $B$ of elements of $I$, functions $p,h,f:I\\to\\mathbb N$, a natural number $D$, a proof of $1\\le D$, proofs that for every $v\\in B$ the number $p(v)$ is prime and $1\\le h(v)$ and $1\\le f(v)$, and a proof that for every natural number $r$, $\\sum_{v\\in B,\\ p(v)=r} f(v)\\le D$, with this last sum and inequality in $\\mathbb N$. There are no additional typeclass hypotheses on $I$, and the functions on indices outside $B$ are constrained only to have natural-number values. For every pair of natural numbers $a,b$, the noncomputable real-valued definition heightOther is $H_{\\mathrm{other}}(L,a,b)=\\bigl(\\sum_{v\\in B,\\ p(v)\\ne a\\ \\wedge\\ p(v)\\ne b}\\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$, where a bar denotes the natural number viewed as a real number and $\\log$ is the real natural logarithm. The filter retains precisely the indices whose supplied prime value differs from both $a$ and $b$, counts each retained index once, uses the complete weight $h(v)f(v)$, and divides the whole sum by the original degree $D$. There is no primality, positivity, or distinctness assumption on $a$ and $b$: when $a=b$ the filter excludes just that one value, and a nonprime excluded value, including $0$ or $1$, excludes no index; if both excluded values are nonprime, this is the full supplied height $H(L)=\\bigl(\\sum_{v\\in B}\\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$. Empty filtered sets, including when $B=\\varnothing$ or all indices have values among $a,b$, give zero. The positive degree excludes division by zero. These are supplied finite arithmetic data and a defined weighted sum; no geometric realization or existence of data satisfying the hypotheses is asserted.\n\n**简体中文**\n\n`AbcAdaptation.Reference.Iut.LocalHeightData.heightEq`\n\n对任意宇宙层级 $w$，设 $L$ 是给定的局部高度数据，即宇宙 $\\mathrm{Type}_{w+1}$ 中的结构，包括：类型 $I\\in\\mathrm{Type}_w$；$I$ 中元素的有限集 $B$；函数 $p,h,f:I\\to\\mathbb N$；自然数 $D$；证明 $1\\le D$；对每个 $v\\in B$，$p(v)$ 为素数且 $1\\le h(v)$、$1\\le f(v)$ 的证明；以及对每个自然数 $r$ 的证明 $\\sum_{v\\in B,\\ p(v)=r} f(v)\\le D$，其中最后这个和及不等式均在 $\\mathbb N$ 中。$I$ 上没有额外类型类假设；这些函数在 $B$ 外的指标处只要求取自然数值。\n对每个自然数 $q$，代码标为 `noncomputable` 的实值定义 `heightEq` 为 $H_{=}(L,q)=\\bigl(\\sum_{v\\in B,\\ p(v)=q} \\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$，其中上横线表示把自然数看作实数，$\\log$ 为实自然对数。因此，筛选条件检验 $p(v)$ 与给定自然数 $q$ 严格相等；每个被选指标以权重 $h(v)f(v)$ 贡献一次，整个和除以次数 $D$；定义不除以纤维次数，也不将权重改成单独的 $f(v)$。空和为零，所以允许 $B=\\varnothing$，此时值为零；任何非素数 $q$，包括 $0$ 和 $1$，也因筛选后的集合为空而给出零。次数为正，排除了除以零。这些是给定的有限算术数据及一个定义出的带权和；不宣称有几何实现，也不宣称满足前提的数据存在。\n\n`AbcAdaptation.Reference.Iut.LocalHeightData.heightOther`\n\n对任意宇宙层级 $w$，设 $L$ 是给定的局部高度数据，即宇宙 $\\mathrm{Type}_{w+1}$ 中的结构，包括：类型 $I\\in\\mathrm{Type}_w$；$I$ 中元素的有限集 $B$；函数 $p,h,f:I\\to\\mathbb N$；自然数 $D$；证明 $1\\le D$；对每个 $v\\in B$，$p(v)$ 为素数且 $1\\le h(v)$、$1\\le f(v)$ 的证明；以及对每个自然数 $r$ 的证明 $\\sum_{v\\in B,\\ p(v)=r} f(v)\\le D$，其中最后这个和及不等式均在 $\\mathbb N$ 中。$I$ 上没有额外类型类假设；这些函数在 $B$ 外的指标处只要求取自然数值。\n对每对自然数 $a,b$，代码标为 `noncomputable` 的实值定义 `heightOther` 为 $H_{\\mathrm{other}}(L,a,b)=\\bigl(\\sum_{v\\in B,\\ p(v)\\ne a\\ \\wedge\\ p(v)\\ne b}\\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$，其中上横线表示把自然数看作实数，$\\log$ 为实自然对数。筛选条件恰好保留所给素数值与 $a$、$b$ 都不同的指标；每个保留指标计数一次，使用完整权重 $h(v)f(v)$，并将整个和除以原次数 $D$。不假设 $a,b$ 为素数、为正或互不相同：若 $a=b$，筛选只排除这一个值；非素数的排除值，包括 $0$ 或 $1$，不排除任何指标；若两个排除值均非素数，结果就是全部给定高度 $H(L)=\\bigl(\\sum_{v\\in B}\\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$。筛选后的集合为空时给出零，包括 $B=\\varnothing$ 或所有指标的值均在 $a,b$ 之中的情形。次数为正，排除了除以零。这些是给定的有限算术数据及一个定义出的带权和；不宣称有几何实现，也不宣称满足前提的数据存在。\n\n**日本語**\n\n`AbcAdaptation.Reference.Iut.LocalHeightData.heightEq`\n\n任意の宇宙レベル $w$ に対し、$L$ を与えられた局所高さデータとする。これは $\\mathrm{Type}_{w+1}$ の構造で、型 $I\\in\\mathrm{Type}_w$、$I$ の要素の有限集合 $B$、関数 $p,h,f:I\\to\\mathbb N$、自然数 $D$、証明 $1\\le D$、各 $v\\in B$ について $p(v)$ が素数で $1\\le h(v)$、$1\\le f(v)$ である証明、および各自然数 $r$ について $\\sum_{v\\in B,\\ p(v)=r} f(v)\\le D$ である証明からなる。最後の和と不等式は $\\mathbb N$ におけるものである。$I$ に追加の型クラス仮定はなく、$B$ 外の添字での関数は自然数値であることだけが要求される。\n各自然数 $q$ に対し、コードで `noncomputable` とする実数値定義 `heightEq` は $H_{=}(L,q)=\\bigl(\\sum_{v\\in B,\\ p(v)=q} \\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$ である。上線は自然数を実数とみなすことを表し、$\\log$ は実数の自然対数である。フィルターは $p(v)$ と指定自然数 $q$ の正確な等号を検査し、選択した各添字は重み $h(v)f(v)$ で一度寄与し、和全体を次数 $D$ で割る。ファイバーの次数で割ったり、重みを $f(v)$ だけに置き換えたりしない。空和は零なので $B=\\varnothing$ が許され、その値は零である。$0$ と $1$ を含む素数でない $q$ でも、フィルター後の集合が空なので零となる。正の次数により零除算は除かれる。これは指定された有限算術データと定義された重み付き和であり、幾何学的実現や前提を満たすデータの存在は主張しない。\n\n`AbcAdaptation.Reference.Iut.LocalHeightData.heightOther`\n\n任意の宇宙レベル $w$ に対し、$L$ を与えられた局所高さデータとする。これは $\\mathrm{Type}_{w+1}$ の構造で、型 $I\\in\\mathrm{Type}_w$、$I$ の要素の有限集合 $B$、関数 $p,h,f:I\\to\\mathbb N$、自然数 $D$、証明 $1\\le D$、各 $v\\in B$ について $p(v)$ が素数で $1\\le h(v)$、$1\\le f(v)$ である証明、および各自然数 $r$ について $\\sum_{v\\in B,\\ p(v)=r} f(v)\\le D$ である証明からなる。最後の和と不等式は $\\mathbb N$ におけるものである。$I$ に追加の型クラス仮定はなく、$B$ 外の添字での関数は自然数値であることだけが要求される。\n各自然数の組 $a,b$ に対し、コードで `noncomputable` とする実数値定義 `heightOther` は $H_{\\mathrm{other}}(L,a,b)=\\bigl(\\sum_{v\\in B,\\ p(v)\\ne a\\ \\wedge\\ p(v)\\ne b}\\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$ である。上線は自然数を実数とみなすことを表し、$\\log$ は実数の自然対数である。フィルターは指定された素数値が $a,b$ の両方と異なる添字をちょうど残す。残した各添字を一度数え、完全な重み $h(v)f(v)$ を用い、和全体を元の次数 $D$ で割る。$a,b$ の素数性、正値性、相異性は仮定しない。$a=b$ なら一つの値だけを除き、$0$ や $1$ を含む素数でない除外値はどの添字も除かない。両除外値が素数でなければ、値は指定高さ全体 $H(L)=\\bigl(\\sum_{v\\in B}\\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$ である。$B=\\varnothing$ や全添字の値が $a,b$ に属する場合を含め、フィルター後の集合が空なら零となる。正の次数により零除算は除かれる。これは指定された有限算術データと定義された重み付き和であり、幾何学的実現や前提を満たすデータの存在は主張しない。\n\n**Paper source context (English; separate from formal-code readback)**\n\nFor local height data L, heightEq(q) sums the terms at bad places with residue characteristic q, then divides by L.deg. The function heightOther(a,b) sums the terms whose residue characteristics differ from both a and b, with the same denominator. Each term is hv(v)·f(v)·log(p(v)). These formulas partition the globally normalized height from IUT IV, p. 44. Source context: IUT IV, Corollary 2.2(i), p. 41; proof of Corollary 2.2(ii), total-height paragraph on p. 44, (P5) on p. 46, and the first comparison on p. 47; Theorem 1.10, p. 23.\n\n**Source connection**\n\nCorollary 2.2(i), p. 41 separates all nonarchimedean primes from those away from 2. Condition (P5), p. 46 selects bad places away from 2l. Theorem 1.10, p. 23 defines its q-divisor on those selected bad places.\n\n**Limits of the definition supplier**\n\nheightOther(2,l) is identified with the theorem input log(q) only by the supplied thetaData equality. The generic sum definition alone proves no such geometric identification.\n\nheightEq(q) keeps the global denominator deg. It is not Definition 1.9(ii)’s normalized E-degree, whose denominator sums local degrees over E.\n\nThe support sets can be empty. If a=b, the two exclusions coincide; a three-part decomposition requires a≠b.\n\nThe pilot quantity |log(q-underlined-underlined)| is log(q)/(2l), as stated in Theorem 1.10, p. 23. It must not be equated directly with heightOther(2,l).\n\n> $h\\overset{\\mathrm{def}}{=}\\log(\\mathfrak q^{\\forall})=\\frac{1}{[F:\\mathbb Q]}\\cdot\\sum_{v\\in\\mathbb V(F)^{\\mathrm{non}}}h_v\\cdot f_v\\cdot\\log(p_v)$\n\n— that is to say, $h_v=0$ for those $v$ at which $E_F$ has good reduction; $h_v\\in\\mathbb N_{\\geq1}$ is the local height of $E_F$ [cf. [GenEll], Definition 3.3] for those $v$ at which $E_F$ has bad multiplicative reduction.\n\n— Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations, §2, proof of Corollary 2.2(ii), paragraph beginning “Next, let us write”, printed pp. 44.\n\n> We shall refer to the positive integer $v_K(q_E)\\in\\mathbb Z_{>0}$ as the local height of $E$ [or $E_K$].\n\n— Arithmetic Elliptic Curves in General Position, §3, Definition 3.3, printed pp. 15.\n\n> (P5) if we write $\\mathbb V_{\\mathrm{mod}}^{\\mathrm{bad}}$ for the set of nonarchimedean valuations $\\in\\mathbb V_{\\mathrm{mod}}\\overset{\\mathrm{def}}{=}\\mathbb V(F_{\\mathrm{mod}})$ that do not divide $2l$ and at which $E_F$ has bad multiplicative reduction, then $\\mathbb V_{\\mathrm{mod}}^{\\mathrm{bad}}\\neq\\emptyset$.\n\n[…] (P6) the image of the outer homomorphism $\\operatorname{Gal}(\\overline{\\mathbb Q}/F)\\to GL_2(\\mathbb F_l)$ determined by the $l$-torsion points of $E_F$ contains the subgroup $SL_2(\\mathbb F_l)\\subseteq GL_2(\\mathbb F_l)$.\n\nIndeed, since, by (P5), $E_F$ has bad multiplicative reduction at some valuation $\\in\\mathbb V_{\\mathrm{mod}}^{\\mathrm{bad}}\\neq\\emptyset$, (P6) follows formally from (P2), (P4), and [GenEll], Lemma 3.1, (iii) [cf. the proof of the final portion of [GenEll], Theorem 3.8].\n\n— Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations, §2, proof of Corollary 2.2(ii), (P5), (P6) and sentence after (P6), printed pp. 46.\n\n> $\\frac16\\cdot\\log(\\mathfrak q)\\leq\\frac16\\cdot\\log(\\mathfrak q^{\\nmid2})\\leq\\frac16\\cdot\\log(\\mathfrak q^{\\forall})\\leq(1+\\epsilon_E)\\cdot(\\operatorname{log\\text{-}diff}_X(x_E)+\\operatorname{log\\text{-}cond}_D(x_E))+C_{\\mathcal K}$\n\n— where we write\n\n$\\epsilon_E\\overset{\\mathrm{def}}{=}(60\\delta)^2\\cdot\\frac{\\log(2\\delta\\cdot(\\log(\\mathfrak q^{\\forall})))}{(\\log(\\mathfrak q^{\\forall}))^{1/2}}$.\n\n— Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations, §2, Corollary 2.2(ii), condition (C2) and definition of ε_E, printed pp. 42.\n\n> If $\\mathfrak a\\in\\operatorname{ADiv}_{\\mathbb R}(F)$, then we shall refer to\n\n$$\\underline{\\deg}(\\mathfrak a)\\overset{\\mathrm{def}}{=}\\frac{1}{[F:\\mathbb Q]}\\cdot\\deg_F(\\mathfrak a)$$\n\nas the normalized degree of $\\mathfrak a$. Thus, for any finite extension $K$ of $F$, we have\n\n$$\\underline{\\deg}(\\mathfrak a|_K)=\\underline{\\deg}(\\mathfrak a)$$\n\n— where we write $\\underline{\\deg}(\\mathfrak a|_K)$ for the normalized degree of the pull-back $\\mathfrak a|_K\\in\\operatorname{ADiv}_{\\mathbb R}(K)$ [defined in the evident fashion] of $\\mathfrak a$ to $K$.\n\n— Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations, §1, Definition 1.9(i), sentence defining normalized degree and pullback equality, printed pp. 21, 22.\n\n> Let $v_{\\mathbb Q}\\in\\mathbb V_{\\mathbb Q}\\overset{\\mathrm{def}}{=}\\mathbb V(\\mathbb Q)$, $E\\subseteq\\mathbb V(F)$ a nonempty set of elements lying over $v_{\\mathbb Q}$. If $\\mathfrak a=\\sum_{v\\in\\mathbb V(F)}c_v\\cdot v\\in\\operatorname{ADiv}_{\\mathbb R}(F)$, then we shall write\n\n$$\\mathfrak a_E\\overset{\\mathrm{def}}{=}\\sum_{v\\in E}c_v\\cdot v\\in\\operatorname{ADiv}_{\\mathbb R}(F);\\qquad\\underline{\\deg}_E(\\mathfrak a)\\overset{\\mathrm{def}}{=}\\frac{\\deg(\\mathfrak a_E)}{\\sum_{v\\in E}[F_v:\\mathbb Q_{v_{\\mathbb Q}}]}$$\n\nfor the portion of $\\mathfrak a$ supported in $E$ and the “normalized $E$-degree” of $\\mathfrak a$, respectively.\n\n— Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations, §1, Definition 1.9(ii), opening through the definition of normalized E-degree, printed pp. 22.\n\n> Here, we observe that the various “$\\log(q_{(-)})$”’s are independent of the choice of $F_{\\square}$, and that the quantity “$\\lvert\\log(\\underline{\\underline q})\\rvert\\in\\mathbb R_{>0}$” defined in [IUTchIII], Corollary 3.12, is equal to $\\frac{1}{2l}\\cdot\\log(q)\\in\\mathbb R$ [cf. the definition of “$\\underline q_{\\underline v}$” in [IUTchI], Example 3.2, (iv)].\n\n— Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations, §1, Theorem 1.10 statement, sentence beginning “Here, we observe”, printed pp. 23.\n\n**Original papers**\n\n[Arithmetic Elliptic Curves in General Position](https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf)\n\n[Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations](https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20IV.pdf)",
+        "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/PrimeSelection.lean#L170-L179",
+        "env": "0df444a360eaa60ab8c11dca51a86af692955474",
+        "private": true
+      }
+    },
+    {
+      "tag": "AbcAdaptation_Reference_Iut_Implication_Corollary22_NumericInputs",
+      "endpoint": "/submit-definition",
+      "payload": {
+        "definition_name": "AbcAdaptation_Reference_Iut_Implication_Corollary22_NumericInputs",
+        "definition_title": "Tolerance and degree-bound functions — 容差与次数界函数 — 許容誤差と次数上限の関数",
+        "definition": "/- Adaptation from exact original source commands. The original epsilonE and deltaBound definition bodies are retained. The source-generated epsilonE.eq_1 equation is proved by reflexivity. Original notice retained below. -/\n/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\nimport Mathlib.Analysis.SpecialFunctions.Log.Basic\nimport Mathlib.Analysis.SpecialFunctions.Sqrt\nimport Mathlib.Data.Finset.Defs\n\nnamespace AbcAdaptation.Reference\n\n\nset_option relaxedAutoImplicit false\n\nset_option maxSynthPendingDepth 3\n\nnamespace Iut\n\nuniverse u v w\n\nopen Finset Real\n\n/-- The tolerance `ε_E = (60δ)²·log(2δh)/√h` of Corollary 2.2(ii). -/\nnoncomputable def epsilonE (δ h : ℝ) : ℝ :=\n  (60 * δ) ^ 2 * Real.log (2 * δ * h) / Real.sqrt h\n\n/-- `δ = 2¹²·3³·5·d = 552960·d`, the bound on `[F : ℚ]` for the Θ-data field of a point of degree\n`≤ d` ((E3)–(E5) in the proof of Theorem 1.10). -/\nnoncomputable def deltaBound (d : ℕ) : ℝ := 552960 * (d : ℝ)\n\n-- Preserve the source API by materializing the compiler's lazy equation.\nattribute [local simp] epsilonE.eq_1\n\nend Iut\n\nend AbcAdaptation.Reference\n",
+        "natural_language_statement": "**Formal-code readback**\n\n**English**\n\n`AbcAdaptation.Reference.Iut.epsilonE`\n\nFor every pair of real numbers $\\delta,h$, define the real number $\\epsilon_E(\\delta,h)=(60\\delta)^2L(2\\delta h)/S(h)$, where $L(0)=0$, $L(x)=\\ln|x|$ for $x\\ne0$, and $S(h)$ is the nonnegative square root of $h$ when $h\\ge0$ and is $0$ when $h<0$; real division uses the total convention $a/0=0$. Thus this definition is defined for all real inputs, with no sign, size, nonzero, or typeclass hypotheses on $\\delta$ or $h$. More explicitly, its value is $0$ whenever $h\\le0$ or $\\delta=0$, and, when $h>0$ and $\\delta\\ne0$, it is $(60\\delta)^2\\ln|2\\delta h|/\\sqrt h$. Negative logarithm arguments are included through their absolute values; the logarithm at zero is assigned the value zero. There are no other parameters or assumptions.\n\n`AbcAdaptation.Reference.Iut.deltaBound`\n\nFor every natural number $d$ (including $0$), define the real number $\\operatorname{deltaBound}(d)=552960\\,d$, where $d$ is embedded in the real numbers by the usual natural-number inclusion. In particular, $\\operatorname{deltaBound}(0)=0$. This is a function from all natural numbers to the real numbers, with no positivity or other hypotheses and no other parameters.\n\n**简体中文**\n\n`AbcAdaptation.Reference.Iut.epsilonE`\n\n对每对实数 $\\delta,h$，定义实数 $\\epsilon_E(\\delta,h)=(60\\delta)^2L(2\\delta h)/S(h)$，其中 $L(0)=0$，对 $x\\ne0$ 有 $L(x)=\\ln|x|$；$h\\ge0$ 时，$S(h)$ 是 $h$ 的非负平方根，$h<0$ 时为 $0$；实数除法采用处处有定义的约定 $a/0=0$。因此，该定义适用于所有实数输入，对 $\\delta,h$ 没有符号、大小、非零或类型类假设。更明确地说，当 $h\\le0$ 或 $\\delta=0$ 时，其值为 $0$；当 $h>0$ 且 $\\delta\\ne0$ 时，其值为 $(60\\delta)^2\\ln|2\\delta h|/\\sqrt h$。负的对数参数通过其绝对值纳入定义；零处的对数值指定为零。没有其他参数或假设。\n\n`AbcAdaptation.Reference.Iut.deltaBound`\n\n对每个自然数 $d$，包括 $0$，定义实数 $\\operatorname{deltaBound}(d)=552960\\,d$，其中 $d$ 通过通常的自然数嵌入看作实数。尤其，$\\operatorname{deltaBound}(0)=0$。这是定义在全部自然数上、取值于实数的函数，没有正性或其他假设，也没有其他参数。\n\n**日本語**\n\n`AbcAdaptation.Reference.Iut.epsilonE`\n\n全ての実数の組 $\\delta,h$ に対し、実数 $\\epsilon_E(\\delta,h)=(60\\delta)^2L(2\\delta h)/S(h)$ を定義する。ここで $L(0)=0$、$x\\ne0$ では $L(x)=\\ln|x|$ である。$S(h)$ は $h\\ge0$ なら $h$ の非負の平方根、$h<0$ なら $0$ である。実数の除算には全域的な規約 $a/0=0$ を用いる。したがって定義は全実数入力に対して与えられ、$\\delta,h$ の符号、大きさ、非零性、型クラスの仮定はない。具体的には $h\\le0$ または $\\delta=0$ のとき値は $0$ であり、$h>0$ かつ $\\delta\\ne0$ なら $(60\\delta)^2\\ln|2\\delta h|/\\sqrt h$ である。対数の負の引数は絶対値を通じて扱い、零での対数値は零に指定する。他のパラメータや仮定はない。\n\n`AbcAdaptation.Reference.Iut.deltaBound`\n\n$0$ を含む各自然数 $d$ に対し、実数 $\\operatorname{deltaBound}(d)=552960\\,d$ を定義する。$d$ は通常の自然数の埋め込みによって実数とみなす。特に $\\operatorname{deltaBound}(0)=0$ である。これは全自然数から実数への関数であり、正値性などの仮定も他のパラメータもない。\n\n**Defining-equation helper supplement (separate from frozen original readbacks)**\n\n**English**\n\nFor every pair of real numbers δ and h, epsilonE(δ,h) = (60·δ)²·Real.log(2·δ·h)/Real.sqrt(h). There are no sign or nonzero hypotheses. This is the defining equation of epsilonE.\n\n**简体中文**\n\n对任意实数 δ 和 h，epsilonE(δ,h) = (60·δ)²·Real.log(2·δ·h)/Real.sqrt(h)。不要求符号条件或非零条件。这是 epsilonE 的定义等式。\n\n**日本語**\n\n任意の実数 δ と h に対して、epsilonE(δ,h) = (60·δ)²·Real.log(2·δ·h)/Real.sqrt(h) が成り立つ。符号条件や非零条件はない。これは epsilonE の定義等式である。\n\n**Paper source context (English; separate from formal-code readback)**\n\nThe function epsilonE(δ,h) returns (60δ)²·log(2δh)/sqrt(h). For the positive height h=log(q^∀), this is the ε_E in Corollary 2.2(ii), p. 42. The function deltaBound(d) returns 552960d, which equals 2¹²·3³·5·d. Corollary 2.2(ii) uses this δ, and its proof bounds [F:Q] by δ on p. 44. Source formulas: IUT IV, Corollary 2.2(ii), opening and (C2), p. 42. The field-degree bound occurs in its proof, p. 44. The ε_E argument occurs on p. 47.\n\n**Limits of the definition supplier**\n\nThe Lean definitions are total on their formal domains. The paper uses positive d and positive height h under its geometric hypotheses.\n\nThe equality 2¹²·3³·5=552960 is arithmetic. It does not establish the geometric degree bound; localData_deg_le supplies that bound.\n\nThe numeric definitions alone establish neither ε_E≤1 nor the C2 inequality.\n\n> Set $\\delta\\overset{\\mathrm{def}}{=}2^{12}\\cdot3^3\\cdot5\\cdot d$.\n\nThus, since $[F:\\mathbb Q]\\leq\\delta$ [cf. the properties (E3), (E4), (E5) in the proof of Theorem 1.10] […].\n\n— Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations, §2, Corollary 2.2(ii), opening on p. 42; and proof on p. 44, printed pp. 42, 44.\n\n> $\\frac16\\cdot\\log(\\mathfrak q)\\leq\\frac16\\cdot\\log(\\mathfrak q^{\\nmid2})\\leq\\frac16\\cdot\\log(\\mathfrak q^{\\forall})\\leq(1+\\epsilon_E)\\cdot(\\operatorname{log\\text{-}diff}_X(x_E)+\\operatorname{log\\text{-}cond}_D(x_E))+C_{\\mathcal K}$\n\n— where we write\n\n$\\epsilon_E\\overset{\\mathrm{def}}{=}(60\\delta)^2\\cdot\\frac{\\log(2\\delta\\cdot(\\log(\\mathfrak q^{\\forall})))}{(\\log(\\mathfrak q^{\\forall}))^{1/2}}$.\n\n— Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations, §2, Corollary 2.2(ii), condition (C2) and definition of ε_E, printed pp. 42.\n\n> $\\epsilon_E\\overset{\\mathrm{def}}{=}(60\\delta)^2\\cdot h^{-1/2}\\cdot\\log(2\\delta\\cdot h)$\n\n[…] we may assume without loss of generality that $\\epsilon_E\\leq1$.\n\n— Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations, §2, proof of Corollary 2.2(ii), paragraph “Now let us set” and last clause on the page, printed pp. 47.\n\n> Fix a collection of initial $\\Theta$-data as in [IUTchI], Definition 3.1. Suppose that we are in the situation of [IUTchIII], Corollary 3.12, and that the elliptic curve $E_F$ has good reduction at every valuation $\\in\\mathbb V(F)^{\\mathrm{good}}\\cap\\mathbb V(F)^{\\mathrm{non}}$ that does not divide $2l$. In the notation of [IUTchI], Definition 3.1, let us write $d_{\\mathrm{mod}}\\overset{\\mathrm{def}}{=}[F_{\\mathrm{mod}}:\\mathbb Q]$, $(1\\leq)\\ e_{\\mathrm{mod}}\\ (\\leq d_{\\mathrm{mod}})$ for the maximal ramification index of $F_{\\mathrm{mod}}$ [i.e., of valuations $\\in\\mathbb V_{\\mathrm{mod}}^{\\mathrm{non}}$] over $\\mathbb Q$, $d_{\\mathrm{mod}}^*\\overset{\\mathrm{def}}{=}2^{12}\\cdot3^3\\cdot5\\cdot d_{\\mathrm{mod}}$, $e_{\\mathrm{mod}}^*\\overset{\\mathrm{def}}{=}2^{12}\\cdot3^3\\cdot5\\cdot e_{\\mathrm{mod}}\\ (\\leq d_{\\mathrm{mod}}^*)$, and\n\n$$F_{\\mathrm{mod}}\\subseteq F_{\\mathrm{tpd}}\\overset{\\mathrm{def}}{=}F_{\\mathrm{mod}}(E_{F_{\\mathrm{mod}}}[2])\\subseteq F$$\n\nfor the “tripodal” intermediate field obtained from $F_{\\mathrm{mod}}$ by adjoining the fields of definition of the $2$-torsion points of any model of $E_F\\times_F\\overline F$ over $F_{\\mathrm{mod}}$ [cf. Proposition 1.8, (ii), (iii)].\n\n— Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations, §1, Theorem 1.10, opening through the definition of the tripodal field, printed pp. 22.\n\n**Original papers**\n\n[Arithmetic Elliptic Curves in General Position](https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf)\n\n[Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations](https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20IV.pdf)",
+        "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Implication/Corollary22.lean#L109-L276",
+        "env": "0df444a360eaa60ab8c11dca51a86af692955474",
+        "private": true
+      }
+    }
+  ],
+  "verification": [],
+  "post_limit": 3,
+  "readbacks": {
+    "AbcAdaptation.Reference.Iut.LocalHeightData.heightOther": {
+      "name": "AbcAdaptation.Reference.Iut.LocalHeightData.heightOther",
+      "reader_id": "height_suppliers",
+      "frozen_english_file": "/tmp/p2m-height-suppliers-blind-v1-20261116/readback-en.json",
+      "frozen_english_file_sha256": "75349e19b6876b5181f3a1409cf1caf35bce6095e20c5ce103d9cce8200181df",
+      "english_text_sha256": "3afcf62148527d45b9a6e3489d1039c59975c6a95acc40633ecfa5c573e6bab3",
+      "readbacks": {
+        "en": "For any universe level $w$, let $L$ be supplied local-height data, a structure in $\\mathrm{Type}_{w+1}$ consisting of a type $I\\in\\mathrm{Type}_w$, a finite set $B$ of elements of $I$, functions $p,h,f:I\\to\\mathbb N$, a natural number $D$, a proof of $1\\le D$, proofs that for every $v\\in B$ the number $p(v)$ is prime and $1\\le h(v)$ and $1\\le f(v)$, and a proof that for every natural number $r$, $\\sum_{v\\in B,\\ p(v)=r} f(v)\\le D$, with this last sum and inequality in $\\mathbb N$. There are no additional typeclass hypotheses on $I$, and the functions on indices outside $B$ are constrained only to have natural-number values. For every pair of natural numbers $a,b$, the noncomputable real-valued definition heightOther is $H_{\\mathrm{other}}(L,a,b)=\\bigl(\\sum_{v\\in B,\\ p(v)\\ne a\\ \\wedge\\ p(v)\\ne b}\\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$, where a bar denotes the natural number viewed as a real number and $\\log$ is the real natural logarithm. The filter retains precisely the indices whose supplied prime value differs from both $a$ and $b$, counts each retained index once, uses the complete weight $h(v)f(v)$, and divides the whole sum by the original degree $D$. There is no primality, positivity, or distinctness assumption on $a$ and $b$: when $a=b$ the filter excludes just that one value, and a nonprime excluded value, including $0$ or $1$, excludes no index; if both excluded values are nonprime, this is the full supplied height $H(L)=\\bigl(\\sum_{v\\in B}\\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$. Empty filtered sets, including when $B=\\varnothing$ or all indices have values among $a,b$, give zero. The positive degree excludes division by zero. These are supplied finite arithmetic data and a defined weighted sum; no geometric realization or existence of data satisfying the hypotheses is asserted.",
+        "zh-Hans": "对任意宇宙层级 $w$，设 $L$ 是给定的局部高度数据，即宇宙 $\\mathrm{Type}_{w+1}$ 中的结构，包括：类型 $I\\in\\mathrm{Type}_w$；$I$ 中元素的有限集 $B$；函数 $p,h,f:I\\to\\mathbb N$；自然数 $D$；证明 $1\\le D$；对每个 $v\\in B$，$p(v)$ 为素数且 $1\\le h(v)$、$1\\le f(v)$ 的证明；以及对每个自然数 $r$ 的证明 $\\sum_{v\\in B,\\ p(v)=r} f(v)\\le D$，其中最后这个和及不等式均在 $\\mathbb N$ 中。$I$ 上没有额外类型类假设；这些函数在 $B$ 外的指标处只要求取自然数值。\n对每对自然数 $a,b$，代码标为 `noncomputable` 的实值定义 `heightOther` 为 $H_{\\mathrm{other}}(L,a,b)=\\bigl(\\sum_{v\\in B,\\ p(v)\\ne a\\ \\wedge\\ p(v)\\ne b}\\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$，其中上横线表示把自然数看作实数，$\\log$ 为实自然对数。筛选条件恰好保留所给素数值与 $a$、$b$ 都不同的指标；每个保留指标计数一次，使用完整权重 $h(v)f(v)$，并将整个和除以原次数 $D$。不假设 $a,b$ 为素数、为正或互不相同：若 $a=b$，筛选只排除这一个值；非素数的排除值，包括 $0$ 或 $1$，不排除任何指标；若两个排除值均非素数，结果就是全部给定高度 $H(L)=\\bigl(\\sum_{v\\in B}\\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$。筛选后的集合为空时给出零，包括 $B=\\varnothing$ 或所有指标的值均在 $a,b$ 之中的情形。次数为正，排除了除以零。这些是给定的有限算术数据及一个定义出的带权和；不宣称有几何实现，也不宣称满足前提的数据存在。",
+        "ja": "任意の宇宙レベル $w$ に対し、$L$ を与えられた局所高さデータとする。これは $\\mathrm{Type}_{w+1}$ の構造で、型 $I\\in\\mathrm{Type}_w$、$I$ の要素の有限集合 $B$、関数 $p,h,f:I\\to\\mathbb N$、自然数 $D$、証明 $1\\le D$、各 $v\\in B$ について $p(v)$ が素数で $1\\le h(v)$、$1\\le f(v)$ である証明、および各自然数 $r$ について $\\sum_{v\\in B,\\ p(v)=r} f(v)\\le D$ である証明からなる。最後の和と不等式は $\\mathbb N$ におけるものである。$I$ に追加の型クラス仮定はなく、$B$ 外の添字での関数は自然数値であることだけが要求される。\n各自然数の組 $a,b$ に対し、コードで `noncomputable` とする実数値定義 `heightOther` は $H_{\\mathrm{other}}(L,a,b)=\\bigl(\\sum_{v\\in B,\\ p(v)\\ne a\\ \\wedge\\ p(v)\\ne b}\\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$ である。上線は自然数を実数とみなすことを表し、$\\log$ は実数の自然対数である。フィルターは指定された素数値が $a,b$ の両方と異なる添字をちょうど残す。残した各添字を一度数え、完全な重み $h(v)f(v)$ を用い、和全体を元の次数 $D$ で割る。$a,b$ の素数性、正値性、相異性は仮定しない。$a=b$ なら一つの値だけを除き、$0$ や $1$ を含む素数でない除外値はどの添字も除かない。両除外値が素数でなければ、値は指定高さ全体 $H(L)=\\bigl(\\sum_{v\\in B}\\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$ である。$B=\\varnothing$ や全添字の値が $a,b$ に属する場合を含め、フィルター後の集合が空なら零となる。正の次数により零除算は除かれる。これは指定された有限算術データと定義された重み付き和であり、幾何学的実現や前提を満たすデータの存在は主張しない。"
+      },
+      "context_limits_refs": [],
+      "proof_status_ref": null
+    },
+    "AbcAdaptation.Reference.Iut.deltaBound": {
+      "name": "AbcAdaptation.Reference.Iut.deltaBound",
+      "reader_id": "native_minimal",
+      "frozen_english_file": "/tmp/p2m-native-minimal-iut-blind-20261116/readback-en.json",
+      "frozen_english_file_sha256": "11c8edbc14713f4df65db86d36ae6a523f86a32abad1ca0ce811caf4ae76e01b",
+      "english_text_sha256": "9dc29f287ac44c7daccf75a9595ec3c647a9bc31770e5fd21fef440d3d28b3dd",
+      "readbacks": {
+        "en": "For every natural number $d$ (including $0$), define the real number $\\operatorname{deltaBound}(d)=552960\\,d$, where $d$ is embedded in the real numbers by the usual natural-number inclusion. In particular, $\\operatorname{deltaBound}(0)=0$. This is a function from all natural numbers to the real numbers, with no positivity or other hypotheses and no other parameters.",
+        "zh-Hans": "对每个自然数 $d$，包括 $0$，定义实数 $\\operatorname{deltaBound}(d)=552960\\,d$，其中 $d$ 通过通常的自然数嵌入看作实数。尤其，$\\operatorname{deltaBound}(0)=0$。这是定义在全部自然数上、取值于实数的函数，没有正性或其他假设，也没有其他参数。",
+        "ja": "$0$ を含む各自然数 $d$ に対し、実数 $\\operatorname{deltaBound}(d)=552960\\,d$ を定義する。$d$ は通常の自然数の埋め込みによって実数とみなす。特に $\\operatorname{deltaBound}(0)=0$ である。これは全自然数から実数への関数であり、正値性などの仮定も他のパラメータもない。"
+      },
+      "context_limits_refs": [],
+      "proof_status_ref": null
+    },
+    "AbcAdaptation.Reference.Iut.LocalHeightData.heightEq": {
+      "name": "AbcAdaptation.Reference.Iut.LocalHeightData.heightEq",
+      "reader_id": "height_suppliers",
+      "frozen_english_file": "/tmp/p2m-height-suppliers-blind-v1-20261116/readback-en.json",
+      "frozen_english_file_sha256": "75349e19b6876b5181f3a1409cf1caf35bce6095e20c5ce103d9cce8200181df",
+      "english_text_sha256": "66b6ce0a3659e167c08d9c77fb7e7e463ecb9005f7a5bee46541ad0beb8e79eb",
+      "readbacks": {
+        "en": "For any universe level $w$, let $L$ be supplied local-height data, a structure in $\\mathrm{Type}_{w+1}$ consisting of a type $I\\in\\mathrm{Type}_w$, a finite set $B$ of elements of $I$, functions $p,h,f:I\\to\\mathbb N$, a natural number $D$, a proof of $1\\le D$, proofs that for every $v\\in B$ the number $p(v)$ is prime and $1\\le h(v)$ and $1\\le f(v)$, and a proof that for every natural number $r$, $\\sum_{v\\in B,\\ p(v)=r} f(v)\\le D$, where this last sum and inequality are in $\\mathbb N$. There are no additional typeclass hypotheses on $I$, and the functions on indices outside $B$ are constrained only to have natural-number values. For every natural number $q$, the noncomputable real-valued definition heightEq is $H_{=}(L,q)=\\bigl(\\sum_{v\\in B,\\ p(v)=q} \\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$, where a bar denotes the natural number viewed as a real number and $\\log$ is the real natural logarithm. Thus the filter tests exact equality of $p(v)$ with the supplied natural number $q$, each selected index contributes once with weight $h(v)f(v)$, and the entire sum is divided by the degree $D$; the definition does not divide by a fiber degree or replace this weight by $f(v)$ alone. Empty sums are zero, so $B=\\varnothing$ is allowed and gives zero, and any $q$ that is not prime, including $0$ and $1$, also gives zero because the filtered set is empty. The positive degree excludes division by zero. These are supplied finite arithmetic data and a defined weighted sum; no geometric realization or existence of data satisfying the hypotheses is asserted.",
+        "zh-Hans": "对任意宇宙层级 $w$，设 $L$ 是给定的局部高度数据，即宇宙 $\\mathrm{Type}_{w+1}$ 中的结构，包括：类型 $I\\in\\mathrm{Type}_w$；$I$ 中元素的有限集 $B$；函数 $p,h,f:I\\to\\mathbb N$；自然数 $D$；证明 $1\\le D$；对每个 $v\\in B$，$p(v)$ 为素数且 $1\\le h(v)$、$1\\le f(v)$ 的证明；以及对每个自然数 $r$ 的证明 $\\sum_{v\\in B,\\ p(v)=r} f(v)\\le D$，其中最后这个和及不等式均在 $\\mathbb N$ 中。$I$ 上没有额外类型类假设；这些函数在 $B$ 外的指标处只要求取自然数值。\n对每个自然数 $q$，代码标为 `noncomputable` 的实值定义 `heightEq` 为 $H_{=}(L,q)=\\bigl(\\sum_{v\\in B,\\ p(v)=q} \\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$，其中上横线表示把自然数看作实数，$\\log$ 为实自然对数。因此，筛选条件检验 $p(v)$ 与给定自然数 $q$ 严格相等；每个被选指标以权重 $h(v)f(v)$ 贡献一次，整个和除以次数 $D$；定义不除以纤维次数，也不将权重改成单独的 $f(v)$。空和为零，所以允许 $B=\\varnothing$，此时值为零；任何非素数 $q$，包括 $0$ 和 $1$，也因筛选后的集合为空而给出零。次数为正，排除了除以零。这些是给定的有限算术数据及一个定义出的带权和；不宣称有几何实现，也不宣称满足前提的数据存在。",
+        "ja": "任意の宇宙レベル $w$ に対し、$L$ を与えられた局所高さデータとする。これは $\\mathrm{Type}_{w+1}$ の構造で、型 $I\\in\\mathrm{Type}_w$、$I$ の要素の有限集合 $B$、関数 $p,h,f:I\\to\\mathbb N$、自然数 $D$、証明 $1\\le D$、各 $v\\in B$ について $p(v)$ が素数で $1\\le h(v)$、$1\\le f(v)$ である証明、および各自然数 $r$ について $\\sum_{v\\in B,\\ p(v)=r} f(v)\\le D$ である証明からなる。最後の和と不等式は $\\mathbb N$ におけるものである。$I$ に追加の型クラス仮定はなく、$B$ 外の添字での関数は自然数値であることだけが要求される。\n各自然数 $q$ に対し、コードで `noncomputable` とする実数値定義 `heightEq` は $H_{=}(L,q)=\\bigl(\\sum_{v\\in B,\\ p(v)=q} \\overline{h(v)}\\,\\overline{f(v)}\\,\\log(\\overline{p(v)})\\bigr)/\\overline D$ である。上線は自然数を実数とみなすことを表し、$\\log$ は実数の自然対数である。フィルターは $p(v)$ と指定自然数 $q$ の正確な等号を検査し、選択した各添字は重み $h(v)f(v)$ で一度寄与し、和全体を次数 $D$ で割る。ファイバーの次数で割ったり、重みを $f(v)$ だけに置き換えたりしない。空和は零なので $B=\\varnothing$ が許され、その値は零である。$0$ と $1$ を含む素数でない $q$ でも、フィルター後の集合が空なので零となる。正の次数により零除算は除かれる。これは指定された有限算術データと定義された重み付き和であり、幾何学的実現や前提を満たすデータの存在は主張しない。"
+      },
+      "context_limits_refs": [],
+      "proof_status_ref": null
+    },
+    "AbcAdaptation.Reference.Iut.epsilonE": {
+      "name": "AbcAdaptation.Reference.Iut.epsilonE",
+      "reader_id": "native_minimal",
+      "frozen_english_file": "/tmp/p2m-native-minimal-iut-blind-20261116/readback-en.json",
+      "frozen_english_file_sha256": "11c8edbc14713f4df65db86d36ae6a523f86a32abad1ca0ce811caf4ae76e01b",
+      "english_text_sha256": "e390d94b655463783c6201e36648804c6ab3c4f8f625b59ac38cf4f418bced19",
+      "readbacks": {
+        "en": "For every pair of real numbers $\\delta,h$, define the real number $\\epsilon_E(\\delta,h)=(60\\delta)^2L(2\\delta h)/S(h)$, where $L(0)=0$, $L(x)=\\ln|x|$ for $x\\ne0$, and $S(h)$ is the nonnegative square root of $h$ when $h\\ge0$ and is $0$ when $h<0$; real division uses the total convention $a/0=0$. Thus this definition is defined for all real inputs, with no sign, size, nonzero, or typeclass hypotheses on $\\delta$ or $h$. More explicitly, its value is $0$ whenever $h\\le0$ or $\\delta=0$, and, when $h>0$ and $\\delta\\ne0$, it is $(60\\delta)^2\\ln|2\\delta h|/\\sqrt h$. Negative logarithm arguments are included through their absolute values; the logarithm at zero is assigned the value zero. There are no other parameters or assumptions.",
+        "zh-Hans": "对每对实数 $\\delta,h$，定义实数 $\\epsilon_E(\\delta,h)=(60\\delta)^2L(2\\delta h)/S(h)$，其中 $L(0)=0$，对 $x\\ne0$ 有 $L(x)=\\ln|x|$；$h\\ge0$ 时，$S(h)$ 是 $h$ 的非负平方根，$h<0$ 时为 $0$；实数除法采用处处有定义的约定 $a/0=0$。因此，该定义适用于所有实数输入，对 $\\delta,h$ 没有符号、大小、非零或类型类假设。更明确地说，当 $h\\le0$ 或 $\\delta=0$ 时，其值为 $0$；当 $h>0$ 且 $\\delta\\ne0$ 时，其值为 $(60\\delta)^2\\ln|2\\delta h|/\\sqrt h$。负的对数参数通过其绝对值纳入定义；零处的对数值指定为零。没有其他参数或假设。",
+        "ja": "全ての実数の組 $\\delta,h$ に対し、実数 $\\epsilon_E(\\delta,h)=(60\\delta)^2L(2\\delta h)/S(h)$ を定義する。ここで $L(0)=0$、$x\\ne0$ では $L(x)=\\ln|x|$ である。$S(h)$ は $h\\ge0$ なら $h$ の非負の平方根、$h<0$ なら $0$ である。実数の除算には全域的な規約 $a/0=0$ を用いる。したがって定義は全実数入力に対して与えられ、$\\delta,h$ の符号、大きさ、非零性、型クラスの仮定はない。具体的には $h\\le0$ または $\\delta=0$ のとき値は $0$ であり、$h>0$ かつ $\\delta\\ne0$ なら $(60\\delta)^2\\ln|2\\delta h|/\\sqrt h$ である。対数の負の引数は絶対値を通じて扱い、零での対数値は零に指定する。他のパラメータや仮定はない。"
+      },
+      "context_limits_refs": [],
+      "proof_status_ref": null
+    },
+    "AbcAdaptation.Reference.Genl.HeightTheory": {
+      "name": "AbcAdaptation.Reference.Genl.HeightTheory",
+      "reader_id": "height_suppliers",
+      "frozen_english_file": "/tmp/p2m-height-suppliers-blind-v1-20261116/readback-en.json",
+      "frozen_english_file_sha256": "75349e19b6876b5181f3a1409cf1caf35bce6095e20c5ce103d9cce8200181df",
+      "english_text_sha256": "17f04e4a76fec32e65289f51826c2c3ec33f13969056f5f27f2ed5f5704bb5e9",
+      "readbacks": {
+        "en": "For any universe level $u$, $\\mathrm{HeightTheory}$ is a structure with the following fifteen fields: (1) a supplied type $C$ of objects, called curves, in $\\mathrm{Type}_u$; (2) a supplied family $P:C\\to\\mathrm{Type}_u$ of point types; (3) a supplied predicate $H:C\\to\\mathrm{Prop}$, called hyperbolicity; (4) a supplied predicate $F:C\\to\\mathrm{Prop}$, called divisor-freeness; (5) supplied subsets $S_{X,d}\\subseteq P(X)$ for every $X\\in C$ and every natural number $d$; (6) supplied subsets $E_{X,d}\\subseteq P(X)$ for the same arguments; (7) a proof that $S_{X,0}=\\varnothing$ for every $X\\in C$; (8) a proof that $S_{X,d+1}=S_{X,d}\\cup E_{X,d+1}$ for every $X\\in C$ and every natural number $d$; (9), (10), and (11) three supplied functions $h_X,\\delta_X,\\kappa_X:P(X)\\to\\mathbb R$ for every $X\\in C$, named respectively htCan, logDiff, and logCond; (12) a distinguished object $T\\in C$, named tripod; (13) a proof of $H(T)$; (14) a supplied type $B\\in\\mathrm{Type}_u$, named CBS; and (15) a supplied function $A:B\\to\\mathcal P(P(T))$, named cbsSet. There are no typeclass hypotheses. The names do not impose geometric definitions on $C$, $P$, $H$, $F$, the sets, the three real functions, $T$, $B$, or $A$: the only required laws are the two set identities and $H(T)$. In particular, no degree function is supplied; the natural number $d$ merely indexes sets, $E_{X,0}$ is unrestricted, the positive-index sets $E_{X,d}$ may overlap, the subsets need not be finite, the real functions have no sign or compatibility requirements, $F$ has no required property or relation to $H$, and the function $A$ has no required property. The distinguished object makes $C$ inhabited within any such structure, while individual point types and $B$ may be empty. This describes the data and proof obligations of a structure, without asserting that any such structure exists.",
+        "zh-Hans": "对任意宇宙层级 $u$，$\\mathrm{HeightTheory}$ 是具有以下十五个字段的结构：\n(1) 宇宙 $\\mathrm{Type}_u$ 中一个给定的对象类型 $C$，其对象称为曲线；\n(2) 一个给定的点类型族 $P:C\\to\\mathrm{Type}_u$；\n(3) 一个给定谓词 $H:C\\to\\mathrm{Prop}$，称为双曲性；\n(4) 一个给定谓词 $F:C\\to\\mathrm{Prop}$，称为无除子性；\n(5) 对每个 $X\\in C$ 和每个自然数 $d$，给定子集 $S_{X,d}\\subseteq P(X)$；\n(6) 对相同参数给定子集 $E_{X,d}\\subseteq P(X)$；\n(7) 对每个 $X\\in C$ 的等式 $S_{X,0}=\\varnothing$ 的证明；\n(8) 对每个 $X\\in C$ 和每个自然数 $d$ 的等式 $S_{X,d+1}=S_{X,d}\\cup E_{X,d+1}$ 的证明；\n(9)、(10)、(11) 对每个 $X\\in C$，三个给定函数 $h_X,\\delta_X,\\kappa_X:P(X)\\to\\mathbb R$，代码名依次为 `htCan`、`logDiff`、`logCond`；\n(12) 一个指定对象 $T\\in C$，代码名为 `tripod`；\n(13) $H(T)$ 的证明；\n(14) 紧有界子集所用的一个给定类型 $B\\in\\mathrm{Type}_u$，代码名为 `CBS`；\n(15) 一个给定函数 $A:B\\to\\mathcal P(P(T))$，代码名为 `cbsSet`。\n没有类型类假设。这些名称不对 $C$、$P$、$H$、$F$、各集合、三个实值函数、$T$、$B$ 或 $A$ 施加几何定义；仅要求两个集合等式及 $H(T)$。尤其，结构不提供次数函数；自然数 $d$ 只给集合编号；$E_{X,0}$ 不受限制；正指标的各集合 $E_{X,d}$ 可以相交；各子集不必有限；实值函数没有符号或相容性要求；$F$ 不要求具有任何性质或与 $H$ 有任何关系；函数 $A$ 也没有所要求的性质。因此，“紧有界子集”的用语不为 $A$ 的像另加紧性或有界性条件。在任何这样的结构内部，指定对象使 $C$ 有元素，而个别点类型和 $B$ 可以为空。这里说明的是结构的数据和证明义务，不断言这样的结构存在。",
+        "ja": "任意の宇宙レベル $u$ に対し、$\\mathrm{HeightTheory}$ は次の十五のフィールドを持つ構造である。\n(1) $\\mathrm{Type}_u$ に属する、曲線と呼ぶ対象の指定型 $C$。\n(2) 点の型の指定族 $P:C\\to\\mathrm{Type}_u$。\n(3) 双曲性と呼ぶ指定述語 $H:C\\to\\mathrm{Prop}$。\n(4) 除子を持たない性質と呼ぶ指定述語 $F:C\\to\\mathrm{Prop}$。\n(5) 各 $X\\in C$ と各自然数 $d$ に対する指定部分集合 $S_{X,d}\\subseteq P(X)$。\n(6) 同じ引数に対する指定部分集合 $E_{X,d}\\subseteq P(X)$。\n(7) 各 $X\\in C$ での $S_{X,0}=\\varnothing$ の証明。\n(8) 各 $X\\in C$ と各自然数 $d$ での $S_{X,d+1}=S_{X,d}\\cup E_{X,d+1}$ の証明。\n(9)、(10)、(11) 各 $X\\in C$ に対する三つの指定関数 $h_X,\\delta_X,\\kappa_X:P(X)\\to\\mathbb R$。コード名はそれぞれ `htCan`、`logDiff`、`logCond` である。\n(12) コード名が `tripod` である指定対象 $T\\in C$。\n(13) $H(T)$ の証明。\n(14) コンパクト有界部分集合のための指定型 $B\\in\\mathrm{Type}_u$。コード名は `CBS` である。\n(15) コード名が `cbsSet` である指定関数 $A:B\\to\\mathcal P(P(T))$。\n型クラスの仮定はない。これらの名称は $C$、$P$、$H$、$F$、各集合、三つの実数値関数、$T$、$B$、$A$ に幾何学的定義を課さない。必要な法則は二つの集合の等式と $H(T)$ だけである。特に次数関数は与えられず、自然数 $d$ は集合の添字にすぎない。$E_{X,0}$ は無制約であり、正の添字を持つ $E_{X,d}$ は重なってよい。部分集合は有限でなくてよい。実数値関数に符号や適合性の条件はなく、$F$ に要求される性質や $H$ との関係も、$A$ に要求される性質もない。したがってコンパクト有界部分集合という呼称から $A$ の像のコンパクト性や有界性を追加しない。各構造の内部では指定対象によって $C$ は要素を持つが、個々の点の型と $B$ は空でもよい。これは構造のデータと証明義務の記述であり、そのような構造の存在を主張しない。"
+      },
+      "context_limits_refs": [],
+      "proof_status_ref": null
+    }
+  },
+  "excluded_declarations": [
+    "AbcAdaptation.Reference.Iut.Corollary312VariantData.one_le_dmod"
+  ],
+  "explicit_revision_records": {
+    "AbcAdaptation_Reference_Iut_Implication_Corollary22_NumericInputs": {
+      "schema": "small-supplier-explicit-revision-provenance/v1",
+      "baseline": {
+        "path": "/tmp/p2m-small-supplier-publisher-20261116/native-copies/Def_AbcAdaptation_Reference_Iut_Implication_Corollary22_NumericInputs.lean",
+        "sha256": "a9017b01cdb6531a284a2e81426f146fffb7196134e894ceb9769ca9cc1d8e36"
+      },
+      "final": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_Corollary22_NumericInputs.lean",
+        "sha256": "501820ca21280cc84e22377eb146abde696b73811d41fcec01558fb26bff6113"
+      },
+      "originalSourceAstMetadata": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-native-minimal-20261116/source-draft/generated/numeric-metadata.json",
+        "sha256": "684323289abf624e4e4a1195ca704ee2b54f10648c2fc3b78c66edc7786da425"
+      },
+      "edits": [
+        {
+          "start": 0,
+          "end": 233,
+          "removed": "/- Adaptation draft from the exact accepted source AST. Original notice retained below. Mathematical types and definition bodies are unchanged; the selected Open proof is explicitly sorry. No acceptance or publication is claimed. -/\n",
+          "replacement": "/- Adaptation from exact original source commands. The original epsilonE and deltaBound definition bodies are retained. The source-generated epsilonE.eq_1 equation is proved by reflexivity. Original notice retained below. -/\n",
+          "kind": "adaptation_header_cleanup",
+          "removedSha256": "56be4fb3c180c2caace94cee143d647248cba2d5c87409f0a11654aec9bc0f2a",
+          "replacementSha256": "470be289105fe835aeca6e019260f86ba008e918fa376f735bca6ae49149e194"
+        },
+        {
+          "start": 1100,
+          "end": 1100,
+          "removed": "",
+          "replacement": "-- Preserve the source API by materializing the compiler's lazy equation.\nattribute [local simp] epsilonE.eq_1\n\n",
+          "kind": "source_equation_generation",
+          "removedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "replacementSha256": "224627ff7a89919a4c46f23618312cc7500055526c6517a96418fc976120d568"
+        }
+      ],
+      "preservedSourceCommands": [
+        {
+          "sourceOriginalRange": {
+            "end": {
+              "col": 36,
+              "line": 10,
+              "offset": 297
+            },
+            "start": {
+              "col": 0,
+              "line": 10,
+              "offset": 261
+            }
+          },
+          "baselineOutputRange": [
+            565,
+            601
+          ],
+          "finalOutputRange": [
+            557,
+            593
+          ],
+          "originalCommandSha256": "cfefd10d0aad29453cb135fcc7fee7d6113358e8a2986a496c7cc8387465c472",
+          "originalMetadataHashField": "originalSha256",
+          "preservedOutputCommandSha256": "cfefd10d0aad29453cb135fcc7fee7d6113358e8a2986a496c7cc8387465c472",
+          "bytesUnchanged": true
+        },
+        {
+          "sourceOriginalRange": {
+            "end": {
+              "col": 33,
+              "line": 11,
+              "offset": 331
+            },
+            "start": {
+              "col": 0,
+              "line": 11,
+              "offset": 298
+            }
+          },
+          "baselineOutputRange": [
+            603,
+            636
+          ],
+          "finalOutputRange": [
+            595,
+            628
+          ],
+          "originalCommandSha256": "fd67e2205106dee89a78df2321ecffc20a2c39d67f9aaa12b64a17e0af551746",
+          "originalMetadataHashField": "originalSha256",
+          "preservedOutputCommandSha256": "fd67e2205106dee89a78df2321ecffc20a2c39d67f9aaa12b64a17e0af551746",
+          "bytesUnchanged": true
+        },
+        {
+          "sourceOriginalRange": {
+            "end": {
+              "col": 13,
+              "line": 51,
+              "offset": 2580
+            },
+            "start": {
+              "col": 0,
+              "line": 51,
+              "offset": 2567
+            }
+          },
+          "baselineOutputRange": [
+            638,
+            651
+          ],
+          "finalOutputRange": [
+            630,
+            643
+          ],
+          "originalCommandSha256": "c2badb5ea47f18ef61eaf3dc176117f86f1b524b30c38db3bec9237992445012",
+          "originalMetadataHashField": "originalSha256",
+          "preservedOutputCommandSha256": "c2badb5ea47f18ef61eaf3dc176117f86f1b524b30c38db3bec9237992445012",
+          "bytesUnchanged": true
+        },
+        {
+          "sourceOriginalRange": {
+            "end": {
+              "col": 14,
+              "line": 53,
+              "offset": 2596
+            },
+            "start": {
+              "col": 0,
+              "line": 53,
+              "offset": 2582
+            }
+          },
+          "baselineOutputRange": [
+            653,
+            667
+          ],
+          "finalOutputRange": [
+            645,
+            659
+          ],
+          "originalCommandSha256": "8f0cf59d0eb6a4a6c82ab9a7900bb26b28749158bfada4af7b0702fab700668e",
+          "originalMetadataHashField": "originalSha256",
+          "preservedOutputCommandSha256": "8f0cf59d0eb6a4a6c82ab9a7900bb26b28749158bfada4af7b0702fab700668e",
+          "bytesUnchanged": true
+        },
+        {
+          "sourceOriginalRange": {
+            "end": {
+              "col": 16,
+              "line": 55,
+              "offset": 2614
+            },
+            "start": {
+              "col": 0,
+              "line": 55,
+              "offset": 2598
+            }
+          },
+          "baselineOutputRange": [
+            669,
+            685
+          ],
+          "finalOutputRange": [
+            661,
+            677
+          ],
+          "originalCommandSha256": "95965c61997d440b810ffb63858daafbf6bdc7f16e349adf24bbf3ddf1b1d074",
+          "originalMetadataHashField": "originalSha256",
+          "preservedOutputCommandSha256": "95965c61997d440b810ffb63858daafbf6bdc7f16e349adf24bbf3ddf1b1d074",
+          "bytesUnchanged": true
+        },
+        {
+          "sourceOriginalRange": {
+            "end": {
+              "col": 51,
+              "line": 111,
+              "offset": 5270
+            },
+            "start": {
+              "col": 0,
+              "line": 109,
+              "offset": 5091
+            }
+          },
+          "baselineOutputRange": [
+            687,
+            866
+          ],
+          "finalOutputRange": [
+            679,
+            858
+          ],
+          "originalCommandSha256": "1766d109d18288daee960fcf563f959bc2bce3e01a63ac5d8d58d9e074a03326",
+          "originalMetadataHashField": "originalSha256",
+          "preservedOutputCommandSha256": "1766d109d18288daee960fcf563f959bc2bce3e01a63ac5d8d58d9e074a03326",
+          "bytesUnchanged": true
+        },
+        {
+          "sourceOriginalRange": {
+            "end": {
+              "col": 60,
+              "line": 276,
+              "offset": 13908
+            },
+            "start": {
+              "col": 0,
+              "line": 274,
+              "offset": 13678
+            }
+          },
+          "baselineOutputRange": [
+            868,
+            1098
+          ],
+          "finalOutputRange": [
+            860,
+            1090
+          ],
+          "originalCommandSha256": "342358cec140f529e8c43cec8cbd126a1e836bfb185ec2eaa13b11de56fb7b16",
+          "originalMetadataHashField": "originalSha256",
+          "preservedOutputCommandSha256": "342358cec140f529e8c43cec8cbd126a1e836bfb185ec2eaa13b11de56fb7b16",
+          "bytesUnchanged": true
+        },
+        {
+          "sourceOriginalRange": {
+            "end": {
+              "col": 7,
+              "line": 561,
+              "offset": 30278
+            },
+            "start": {
+              "col": 0,
+              "line": 561,
+              "offset": 30271
+            }
+          },
+          "baselineOutputRange": [
+            1100,
+            1107
+          ],
+          "finalOutputRange": [
+            1204,
+            1211
+          ],
+          "originalCommandSha256": "57704d13aae96f9f9fc3a1058feb5180710f516bfbd30fd6052439980d72fb1e",
+          "originalMetadataHashField": "originalSha256",
+          "preservedOutputCommandSha256": "57704d13aae96f9f9fc3a1058feb5180710f516bfbd30fd6052439980d72fb1e",
+          "bytesUnchanged": true
+        }
+      ],
+      "equationSource": {
+        "originalName": "Iut.epsilonE.eq_1",
+        "targetName": "AbcAdaptation.Reference.Iut.epsilonE.eq_1",
+        "sourceExprFile": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/small-supplier-identity-20261116/source-original-exprs.json",
+        "sourceExprSha256": "680086aa890a2b25206cd75442c653d9537864c70d41f89359908a1172fd8648",
+        "sourceExportReceipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/small-supplier-identity-20261116/source-exprs-v2-result.json",
+        "sourceExportReceiptSha256": "b3b71c8479f525787b92d308dc035f2adf5afb40e665e1a292f9e2dcffbc3d78",
+        "sourceExportJob": "ci-015877-23714e2c",
+        "sourceRecord": {
+          "valueExpr": {
+            "type": {
+              "name": [
+                [],
+                "str",
+                "Real"
+              ],
+              "levels": [],
+              "kind": "const"
+            },
+            "name": [
+              [],
+              "str",
+              "δ"
+            ],
+            "kind": "lam",
+            "body": {
+              "type": {
+                "name": [
+                  [],
+                  "str",
+                  "Real"
+                ],
+                "levels": [],
+                "kind": "const"
+              },
+              "name": [
+                [],
+                "str",
+                "h"
+              ],
+              "kind": "lam",
+              "body": {
+                "kind": "app",
+                "fn": {
+                  "kind": "app",
+                  "fn": {
+                    "name": [
+                      [
+                        [],
+                        "str",
+                        "Eq"
+                      ],
+                      "str",
+                      "refl"
+                    ],
+                    "levels": [
+                      {
+                        "kind": "succ",
+                        "arg": {
+                          "kind": "zero"
+                        }
+                      }
+                    ],
+                    "kind": "const"
+                  },
+                  "arg": {
+                    "name": [
+                      [],
+                      "str",
+                      "Real"
+                    ],
+                    "levels": [],
+                    "kind": "const"
+                  }
+                },
+                "arg": {
+                  "kind": "app",
+                  "fn": {
+                    "kind": "app",
+                    "fn": {
+                      "name": [
+                        [
+                          [],
+                          "str",
+                          "Iut"
+                        ],
+                        "str",
+                        "epsilonE"
+                      ],
+                      "levels": [],
+                      "kind": "const"
+                    },
+                    "arg": {
+                      "kind": "bvar",
+                      "index": 1
+                    }
+                  },
+                  "arg": {
+                    "kind": "bvar",
+                    "index": 0
+                  }
+                }
+              },
+              "binder": "default"
+            },
+            "binder": "default"
+          },
+          "valueAxioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "typeAxioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "telescope": {
+            "resultDisplay": "Iut.epsilonE δ h = (60 * δ) ^ 2 * Real.log (2 * δ * h) / √h",
+            "binders": [
+              {
+                "typeDisplay": "ℝ",
+                "name": "δ",
+                "binderInfo": "default"
+              },
+              {
+                "typeDisplay": "ℝ",
+                "name": "h",
+                "binderInfo": "default"
+              }
+            ]
+          },
+          "structure": null,
+          "sourceSha256": "ffec17b8d1552155acca3886ee0b73ab9c410916e5128370186978b6d34d2d15",
+          "selected": true,
+          "recursorRuleRhs": [],
+          "normalizedSha256": "ffec17b8d1552155acca3886ee0b73ab9c410916e5128370186978b6d34d2d15",
+          "nameExpr": [
+            [
+              [
+                [],
+                "str",
+                "Iut"
+              ],
+              "str",
+              "epsilonE"
+            ],
+            "str",
+            "eq_1"
+          ],
+          "name": "Iut.epsilonE.eq_1",
+          "module": "Iut.Implication.Corollary22",
+          "levelParams": [],
+          "isProposition": true,
+          "isInstance": false,
+          "elaboratedExpr": {
+            "type": {
+              "name": [
+                [],
+                "str",
+                "Real"
+              ],
+              "levels": [],
+              "kind": "const"
+            },
+            "name": [
+              [],
+              "str",
+              "δ"
+            ],
+            "kind": "forall",
+            "body": {
+              "type": {
+                "name": [
+                  [],
+                  "str",
+                  "Real"
+                ],
+                "levels": [],
+                "kind": "const"
+              },
+              "name": [
+                [],
+                "str",
+                "h"
+              ],
+              "kind": "forall",
+              "body": {
+                "kind": "app",
+                "fn": {
+                  "kind": "app",
+                  "fn": {
+                    "kind": "app",
+                    "fn": {
+                      "name": [
+                        [],
+                        "str",
+                        "Eq"
+                      ],
+                      "levels": [
+                        {
+                          "kind": "succ",
+                          "arg": {
+                            "kind": "zero"
+                          }
+                        }
+                      ],
+                      "kind": "const"
+                    },
+                    "arg": {
+                      "name": [
+                        [],
+                        "str",
+                        "Real"
+                      ],
+                      "levels": [],
+                      "kind": "const"
+                    }
+                  },
+                  "arg": {
+                    "kind": "app",
+                    "fn": {
+                      "kind": "app",
+                      "fn": {
+                        "name": [
+                          [
+                            [],
+                            "str",
+                            "Iut"
+                          ],
+                          "str",
+                          "epsilonE"
+                        ],
+                        "levels": [],
+                        "kind": "const"
+                      },
+                      "arg": {
+                        "kind": "bvar",
+                        "index": 1
+                      }
+                    },
+                    "arg": {
+                      "kind": "bvar",
+                      "index": 0
+                    }
+                  }
+                },
+                "arg": {
+                  "kind": "app",
+                  "fn": {
+                    "kind": "app",
+                    "fn": {
+                      "kind": "app",
+                      "fn": {
+                        "kind": "app",
+                        "fn": {
+                          "kind": "app",
+                          "fn": {
+                            "kind": "app",
+                            "fn": {
+                              "name": [
+                                [
+                                  [],
+                                  "str",
+                                  "HDiv"
+                                ],
+                                "str",
+                                "hDiv"
+                              ],
+                              "levels": [
+                                {
+                                  "kind": "zero"
+                                },
+                                {
+                                  "kind": "zero"
+                                },
+                                {
+                                  "kind": "zero"
+                                }
+                              ],
+                              "kind": "const"
+                            },
+                            "arg": {
+                              "name": [
+                                [],
+                                "str",
+                                "Real"
+                              ],
+                              "levels": [],
+                              "kind": "const"
+                            }
+                          },
+                          "arg": {
+                            "name": [
+                              [],
+                              "str",
+                              "Real"
+                            ],
+                            "levels": [],
+                            "kind": "const"
+                          }
+                        },
+                        "arg": {
+                          "name": [
+                            [],
+                            "str",
+                            "Real"
+                          ],
+                          "levels": [],
+                          "kind": "const"
+                        }
+                      },
+                      "arg": {
+                        "kind": "app",
+                        "fn": {
+                          "kind": "app",
+                          "fn": {
+                            "name": [
+                              [],
+                              "str",
+                              "instHDiv"
+                            ],
+                            "levels": [
+                              {
+                                "kind": "zero"
+                              }
+                            ],
+                            "kind": "const"
+                          },
+                          "arg": {
+                            "name": [
+                              [],
+                              "str",
+                              "Real"
+                            ],
+                            "levels": [],
+                            "kind": "const"
+                          }
+                        },
+                        "arg": {
+                          "kind": "app",
+                          "fn": {
+                            "kind": "app",
+                            "fn": {
+                              "name": [
+                                [
+                                  [],
+                                  "str",
+                                  "DivInvMonoid"
+                                ],
+                                "str",
+                                "toDiv"
+                              ],
+                              "levels": [
+                                {
+                                  "kind": "zero"
+                                }
+                              ],
+                              "kind": "const"
+                            },
+                            "arg": {
+                              "name": [
+                                [],
+                                "str",
+                                "Real"
+                              ],
+                              "levels": [],
+                              "kind": "const"
+                            }
+                          },
+                          "arg": {
+                            "name": [
+                              [
+                                [],
+                                "str",
+                                "Real"
+                              ],
+                              "str",
+                              "instDivInvMonoid"
+                            ],
+                            "levels": [],
+                            "kind": "const"
+                          }
+                        }
+                      }
+                    },
+                    "arg": {
+                      "kind": "app",
+                      "fn": {
+                        "kind": "app",
+                        "fn": {
+                          "kind": "app",
+                          "fn": {
+                            "kind": "app",
+                            "fn": {
+                              "kind": "app",
+                              "fn": {
+                                "kind": "app",
+                                "fn": {
+                                  "name": [
+                                    [
+                                      [],
+                                      "str",
+                                      "HMul"
+                                    ],
+                                    "str",
+                                    "hMul"
+                                  ],
+                                  "levels": [
+                                    {
+                                      "kind": "zero"
+                                    },
+                                    {
+                                      "kind": "zero"
+                                    },
+                                    {
+                                      "kind": "zero"
+                                    }
+                                  ],
+                                  "kind": "const"
+                                },
+                                "arg": {
+                                  "name": [
+                                    [],
+                                    "str",
+                                    "Real"
+                                  ],
+                                  "levels": [],
+                                  "kind": "const"
+                                }
+                              },
+                              "arg": {
+                                "name": [
+                                  [],
+                                  "str",
+                                  "Real"
+                                ],
+                                "levels": [],
+                                "kind": "const"
+                              }
+                            },
+                            "arg": {
+                              "name": [
+                                [],
+                                "str",
+                                "Real"
+                              ],
+                              "levels": [],
+                              "kind": "const"
+                            }
+                          },
+                          "arg": {
+                            "kind": "app",
+                            "fn": {
+                              "kind": "app",
+                              "fn": {
+                                "name": [
+                                  [],
+                                  "str",
+                                  "instHMul"
+                                ],
+                                "levels": [
+                                  {
+                                    "kind": "zero"
+                                  }
+                                ],
+                                "kind": "const"
+                              },
+                              "arg": {
+                                "name": [
+                                  [],
+                                  "str",
+                                  "Real"
+                                ],
+                                "levels": [],
+                                "kind": "const"
+                              }
+                            },
+                            "arg": {
+                              "name": [
+                                [
+                                  [],
+                                  "str",
+                                  "Real"
+                                ],
+                                "str",
+                                "instMul"
+                              ],
+                              "levels": [],
+                              "kind": "const"
+                            }
+                          }
+                        },
+                        "arg": {
+                          "kind": "app",
+                          "fn": {
+                            "kind": "app",
+                            "fn": {
+                              "kind": "app",
+                              "fn": {
+                                "kind": "app",
+                                "fn": {
+                                  "kind": "app",
+                                  "fn": {
+                                    "kind": "app",
+                                    "fn": {
+                                      "name": [
+                                        [
+                                          [],
+                                          "str",
+                                          "HPow"
+                                        ],
+                                        "str",
+                                        "hPow"
+                                      ],
+                                      "levels": [
+                                        {
+                                          "kind": "zero"
+                                        },
+                                        {
+                                          "kind": "zero"
+                                        },
+                                        {
+                                          "kind": "zero"
+                                        }
+                                      ],
+                                      "kind": "const"
+                                    },
+                                    "arg": {
+                                      "name": [
+                                        [],
+                                        "str",
+                                        "Real"
+                                      ],
+                                      "levels": [],
+                                      "kind": "const"
+                                    }
+                                  },
+                                  "arg": {
+                                    "name": [
+                                      [],
+                                      "str",
+                                      "Nat"
+                                    ],
+                                    "levels": [],
+                                    "kind": "const"
+                                  }
+                                },
+                                "arg": {
+                                  "name": [
+                                    [],
+                                    "str",
+                                    "Real"
+                                  ],
+                                  "levels": [],
+                                  "kind": "const"
+                                }
+                              },
+                              "arg": {
+                                "kind": "app",
+                                "fn": {
+                                  "kind": "app",
+                                  "fn": {
+                                    "kind": "app",
+                                    "fn": {
+                                      "name": [
+                                        [],
+                                        "str",
+                                        "instHPow"
+                                      ],
+                                      "levels": [
+                                        {
+                                          "kind": "zero"
+                                        },
+                                        {
+                                          "kind": "zero"
+                                        }
+                                      ],
+                                      "kind": "const"
+                                    },
+                                    "arg": {
+                                      "name": [
+                                        [],
+                                        "str",
+                                        "Real"
+                                      ],
+                                      "levels": [],
+                                      "kind": "const"
+                                    }
+                                  },
+                                  "arg": {
+                                    "name": [
+                                      [],
+                                      "str",
+                                      "Nat"
+                                    ],
+                                    "levels": [],
+                                    "kind": "const"
+                                  }
+                                },
+                                "arg": {
+                                  "kind": "app",
+                                  "fn": {
+                                    "kind": "app",
+                                    "fn": {
+                                      "name": [
+                                        [
+                                          [],
+                                          "str",
+                                          "NPow"
+                                        ],
+                                        "str",
+                                        "toPow"
+                                      ],
+                                      "levels": [
+                                        {
+                                          "kind": "zero"
+                                        }
+                                      ],
+                                      "kind": "const"
+                                    },
+                                    "arg": {
+                                      "name": [
+                                        [],
+                                        "str",
+                                        "Real"
+                                      ],
+                                      "levels": [],
+                                      "kind": "const"
+                                    }
+                                  },
+                                  "arg": {
+                                    "kind": "app",
+                                    "fn": {
+                                      "kind": "app",
+                                      "fn": {
+                                        "name": [
+                                          [
+                                            [],
+                                            "str",
+                                            "Monoid"
+                                          ],
+                                          "str",
+                                          "toNPow"
+                                        ],
+                                        "levels": [
+                                          {
+                                            "kind": "zero"
+                                          }
+                                        ],
+                                        "kind": "const"
+                                      },
+                                      "arg": {
+                                        "name": [
+                                          [],
+                                          "str",
+                                          "Real"
+                                        ],
+                                        "levels": [],
+                                        "kind": "const"
+                                      }
+                                    },
+                                    "arg": {
+                                      "name": [
+                                        [
+                                          [],
+                                          "str",
+                                          "Real"
+                                        ],
+                                        "str",
+                                        "instMonoid"
+                                      ],
+                                      "levels": [],
+                                      "kind": "const"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "arg": {
+                              "kind": "app",
+                              "fn": {
+                                "kind": "app",
+                                "fn": {
+                                  "kind": "app",
+                                  "fn": {
+                                    "kind": "app",
+                                    "fn": {
+                                      "kind": "app",
+                                      "fn": {
+                                        "kind": "app",
+                                        "fn": {
+                                          "name": [
+                                            [
+                                              [],
+                                              "str",
+                                              "HMul"
+                                            ],
+                                            "str",
+                                            "hMul"
+                                          ],
+                                          "levels": [
+                                            {
+                                              "kind": "zero"
+                                            },
+                                            {
+                                              "kind": "zero"
+                                            },
+                                            {
+                                              "kind": "zero"
+                                            }
+                                          ],
+                                          "kind": "const"
+                                        },
+                                        "arg": {
+                                          "name": [
+                                            [],
+                                            "str",
+                                            "Real"
+                                          ],
+                                          "levels": [],
+                                          "kind": "const"
+                                        }
+                                      },
+                                      "arg": {
+                                        "name": [
+                                          [],
+                                          "str",
+                                          "Real"
+                                        ],
+                                        "levels": [],
+                                        "kind": "const"
+                                      }
+                                    },
+                                    "arg": {
+                                      "name": [
+                                        [],
+                                        "str",
+                                        "Real"
+                                      ],
+                                      "levels": [],
+                                      "kind": "const"
+                                    }
+                                  },
+                                  "arg": {
+                                    "kind": "app",
+                                    "fn": {
+                                      "kind": "app",
+                                      "fn": {
+                                        "name": [
+                                          [],
+                                          "str",
+                                          "instHMul"
+                                        ],
+                                        "levels": [
+                                          {
+                                            "kind": "zero"
+                                          }
+                                        ],
+                                        "kind": "const"
+                                      },
+                                      "arg": {
+                                        "name": [
+                                          [],
+                                          "str",
+                                          "Real"
+                                        ],
+                                        "levels": [],
+                                        "kind": "const"
+                                      }
+                                    },
+                                    "arg": {
+                                      "name": [
+                                        [
+                                          [],
+                                          "str",
+                                          "Real"
+                                        ],
+                                        "str",
+                                        "instMul"
+                                      ],
+                                      "levels": [],
+                                      "kind": "const"
+                                    }
+                                  }
+                                },
+                                "arg": {
+                                  "kind": "app",
+                                  "fn": {
+                                    "kind": "app",
+                                    "fn": {
+                                      "kind": "app",
+                                      "fn": {
+                                        "name": [
+                                          [
+                                            [],
+                                            "str",
+                                            "OfNat"
+                                          ],
+                                          "str",
+                                          "ofNat"
+                                        ],
+                                        "levels": [
+                                          {
+                                            "kind": "zero"
+                                          }
+                                        ],
+                                        "kind": "const"
+                                      },
+                                      "arg": {
+                                        "name": [
+                                          [],
+                                          "str",
+                                          "Real"
+                                        ],
+                                        "levels": [],
+                                        "kind": "const"
+                                      }
+                                    },
+                                    "arg": {
+                                      "value": 60,
+                                      "kind": "nat"
+                                    }
+                                  },
+                                  "arg": {
+                                    "kind": "app",
+                                    "fn": {
+                                      "kind": "app",
+                                      "fn": {
+                                        "kind": "app",
+                                        "fn": {
+                                          "kind": "app",
+                                          "fn": {
+                                            "name": [
+                                              [],
+                                              "str",
+                                              "instOfNatAtLeastTwo"
+                                            ],
+                                            "levels": [
+                                              {
+                                                "kind": "zero"
+                                              }
+                                            ],
+                                            "kind": "const"
+                                          },
+                                          "arg": {
+                                            "name": [
+                                              [],
+                                              "str",
+                                              "Real"
+                                            ],
+                                            "levels": [],
+                                            "kind": "const"
+                                          }
+                                        },
+                                        "arg": {
+                                          "value": 60,
+                                          "kind": "nat"
+                                        }
+                                      },
+                                      "arg": {
+                                        "name": [
+                                          [
+                                            [],
+                                            "str",
+                                            "Real"
+                                          ],
+                                          "str",
+                                          "instNatCast"
+                                        ],
+                                        "levels": [],
+                                        "kind": "const"
+                                      }
+                                    },
+                                    "arg": {
+                                      "name": [
+                                        [
+                                          [
+                                            [],
+                                            "str",
+                                            "Iut"
+                                          ],
+                                          "str",
+                                          "epsilonE"
+                                        ],
+                                        "str",
+                                        "_proof_1"
+                                      ],
+                                      "levels": [],
+                                      "kind": "const"
+                                    }
+                                  }
+                                }
+                              },
+                              "arg": {
+                                "kind": "bvar",
+                                "index": 1
+                              }
+                            }
+                          },
+                          "arg": {
+                            "kind": "app",
+                            "fn": {
+                              "kind": "app",
+                              "fn": {
+                                "kind": "app",
+                                "fn": {
+                                  "name": [
+                                    [
+                                      [],
+                                      "str",
+                                      "OfNat"
+                                    ],
+                                    "str",
+                                    "ofNat"
+                                  ],
+                                  "levels": [
+                                    {
+                                      "kind": "zero"
+                                    }
+                                  ],
+                                  "kind": "const"
+                                },
+                                "arg": {
+                                  "name": [
+                                    [],
+                                    "str",
+                                    "Nat"
+                                  ],
+                                  "levels": [],
+                                  "kind": "const"
+                                }
+                              },
+                              "arg": {
+                                "value": 2,
+                                "kind": "nat"
+                              }
+                            },
+                            "arg": {
+                              "kind": "app",
+                              "fn": {
+                                "name": [
+                                  [],
+                                  "str",
+                                  "instOfNatNat"
+                                ],
+                                "levels": [],
+                                "kind": "const"
+                              },
+                              "arg": {
+                                "value": 2,
+                                "kind": "nat"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "arg": {
+                        "kind": "app",
+                        "fn": {
+                          "name": [
+                            [
+                              [],
+                              "str",
+                              "Real"
+                            ],
+                            "str",
+                            "log"
+                          ],
+                          "levels": [],
+                          "kind": "const"
+                        },
+                        "arg": {
+                          "kind": "app",
+                          "fn": {
+                            "kind": "app",
+                            "fn": {
+                              "kind": "app",
+                              "fn": {
+                                "kind": "app",
+                                "fn": {
+                                  "kind": "app",
+                                  "fn": {
+                                    "kind": "app",
+                                    "fn": {
+                                      "name": [
+                                        [
+                                          [],
+                                          "str",
+                                          "HMul"
+                                        ],
+                                        "str",
+                                        "hMul"
+                                      ],
+                                      "levels": [
+                                        {
+                                          "kind": "zero"
+                                        },
+                                        {
+                                          "kind": "zero"
+                                        },
+                                        {
+                                          "kind": "zero"
+                                        }
+                                      ],
+                                      "kind": "const"
+                                    },
+                                    "arg": {
+                                      "name": [
+                                        [],
+                                        "str",
+                                        "Real"
+                                      ],
+                                      "levels": [],
+                                      "kind": "const"
+                                    }
+                                  },
+                                  "arg": {
+                                    "name": [
+                                      [],
+                                      "str",
+                                      "Real"
+                                    ],
+                                    "levels": [],
+                                    "kind": "const"
+                                  }
+                                },
+                                "arg": {
+                                  "name": [
+                                    [],
+                                    "str",
+                                    "Real"
+                                  ],
+                                  "levels": [],
+                                  "kind": "const"
+                                }
+                              },
+                              "arg": {
+                                "kind": "app",
+                                "fn": {
+                                  "kind": "app",
+                                  "fn": {
+                                    "name": [
+                                      [],
+                                      "str",
+                                      "instHMul"
+                                    ],
+                                    "levels": [
+                                      {
+                                        "kind": "zero"
+                                      }
+                                    ],
+                                    "kind": "const"
+                                  },
+                                  "arg": {
+                                    "name": [
+                                      [],
+                                      "str",
+                                      "Real"
+                                    ],
+                                    "levels": [],
+                                    "kind": "const"
+                                  }
+                                },
+                                "arg": {
+                                  "name": [
+                                    [
+                                      [],
+                                      "str",
+                                      "Real"
+                                    ],
+                                    "str",
+                                    "instMul"
+                                  ],
+                                  "levels": [],
+                                  "kind": "const"
+                                }
+                              }
+                            },
+                            "arg": {
+                              "kind": "app",
+                              "fn": {
+                                "kind": "app",
+                                "fn": {
+                                  "kind": "app",
+                                  "fn": {
+                                    "kind": "app",
+                                    "fn": {
+                                      "kind": "app",
+                                      "fn": {
+                                        "kind": "app",
+                                        "fn": {
+                                          "name": [
+                                            [
+                                              [],
+                                              "str",
+                                              "HMul"
+                                            ],
+                                            "str",
+                                            "hMul"
+                                          ],
+                                          "levels": [
+                                            {
+                                              "kind": "zero"
+                                            },
+                                            {
+                                              "kind": "zero"
+                                            },
+                                            {
+                                              "kind": "zero"
+                                            }
+                                          ],
+                                          "kind": "const"
+                                        },
+                                        "arg": {
+                                          "name": [
+                                            [],
+                                            "str",
+                                            "Real"
+                                          ],
+                                          "levels": [],
+                                          "kind": "const"
+                                        }
+                                      },
+                                      "arg": {
+                                        "name": [
+                                          [],
+                                          "str",
+                                          "Real"
+                                        ],
+                                        "levels": [],
+                                        "kind": "const"
+                                      }
+                                    },
+                                    "arg": {
+                                      "name": [
+                                        [],
+                                        "str",
+                                        "Real"
+                                      ],
+                                      "levels": [],
+                                      "kind": "const"
+                                    }
+                                  },
+                                  "arg": {
+                                    "kind": "app",
+                                    "fn": {
+                                      "kind": "app",
+                                      "fn": {
+                                        "name": [
+                                          [],
+                                          "str",
+                                          "instHMul"
+                                        ],
+                                        "levels": [
+                                          {
+                                            "kind": "zero"
+                                          }
+                                        ],
+                                        "kind": "const"
+                                      },
+                                      "arg": {
+                                        "name": [
+                                          [],
+                                          "str",
+                                          "Real"
+                                        ],
+                                        "levels": [],
+                                        "kind": "const"
+                                      }
+                                    },
+                                    "arg": {
+                                      "name": [
+                                        [
+                                          [],
+                                          "str",
+                                          "Real"
+                                        ],
+                                        "str",
+                                        "instMul"
+                                      ],
+                                      "levels": [],
+                                      "kind": "const"
+                                    }
+                                  }
+                                },
+                                "arg": {
+                                  "kind": "app",
+                                  "fn": {
+                                    "kind": "app",
+                                    "fn": {
+                                      "kind": "app",
+                                      "fn": {
+                                        "name": [
+                                          [
+                                            [],
+                                            "str",
+                                            "OfNat"
+                                          ],
+                                          "str",
+                                          "ofNat"
+                                        ],
+                                        "levels": [
+                                          {
+                                            "kind": "zero"
+                                          }
+                                        ],
+                                        "kind": "const"
+                                      },
+                                      "arg": {
+                                        "name": [
+                                          [],
+                                          "str",
+                                          "Real"
+                                        ],
+                                        "levels": [],
+                                        "kind": "const"
+                                      }
+                                    },
+                                    "arg": {
+                                      "value": 2,
+                                      "kind": "nat"
+                                    }
+                                  },
+                                  "arg": {
+                                    "kind": "app",
+                                    "fn": {
+                                      "kind": "app",
+                                      "fn": {
+                                        "kind": "app",
+                                        "fn": {
+                                          "kind": "app",
+                                          "fn": {
+                                            "name": [
+                                              [],
+                                              "str",
+                                              "instOfNatAtLeastTwo"
+                                            ],
+                                            "levels": [
+                                              {
+                                                "kind": "zero"
+                                              }
+                                            ],
+                                            "kind": "const"
+                                          },
+                                          "arg": {
+                                            "name": [
+                                              [],
+                                              "str",
+                                              "Real"
+                                            ],
+                                            "levels": [],
+                                            "kind": "const"
+                                          }
+                                        },
+                                        "arg": {
+                                          "value": 2,
+                                          "kind": "nat"
+                                        }
+                                      },
+                                      "arg": {
+                                        "name": [
+                                          [
+                                            [],
+                                            "str",
+                                            "Real"
+                                          ],
+                                          "str",
+                                          "instNatCast"
+                                        ],
+                                        "levels": [],
+                                        "kind": "const"
+                                      }
+                                    },
+                                    "arg": {
+                                      "name": [
+                                        [
+                                          [
+                                            [],
+                                            "str",
+                                            "Iut"
+                                          ],
+                                          "str",
+                                          "epsilonE"
+                                        ],
+                                        "str",
+                                        "_proof_2"
+                                      ],
+                                      "levels": [],
+                                      "kind": "const"
+                                    }
+                                  }
+                                }
+                              },
+                              "arg": {
+                                "kind": "bvar",
+                                "index": 1
+                              }
+                            }
+                          },
+                          "arg": {
+                            "kind": "bvar",
+                            "index": 0
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "arg": {
+                    "kind": "app",
+                    "fn": {
+                      "name": [
+                        [
+                          [],
+                          "str",
+                          "Real"
+                        ],
+                        "str",
+                        "sqrt"
+                      ],
+                      "levels": [],
+                      "kind": "const"
+                    },
+                    "arg": {
+                      "kind": "bvar",
+                      "index": 0
+                    }
+                  }
+                }
+              },
+              "binder": "default"
+            },
+            "binder": "default"
+          },
+          "constantKind": "theorem",
+          "computationShape": null,
+          "binderInventory": [
+            "forall:default",
+            "forall:default"
+          ],
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        "scope": "Actual 4.35 source equation record; no target helper or 38-record target acceptance is inferred."
+      },
+      "originalMetadataRewritten": false,
+      "allOriginalCommandBytesPreserved": true,
+      "rootKernelIdentityAcceptance": "Must separately bind final native bytes and the actual 38-record source identity result."
+    }
+  },
+  "prior_dependency": {
+    "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection",
+    "definition_id": "ca8c8d06-ce2b-4683-8de7-662afa4a0138",
+    "definition_name": "AbcAdaptation_Reference_Iut_Implication_PrimeSelection",
+    "source_sha256": "1abaf603978b055799618026ec0394e48a6df241e44a4375f596d76ab3a528f6",
+    "saved_item": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/prime-selection-reference-split-20261115/platform/final-AbcAdaptation_Reference_Iut_Implication_PrimeSelection.json"
+  },
+  "root_graph_membership": false
+}

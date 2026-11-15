@@ -1,0 +1,1348 @@
+{
+  "originalName": "Iut.epsilonE.eq_1",
+  "targetName": "AbcAdaptation.Reference.Iut.epsilonE.eq_1",
+  "sourceExprFile": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/small-supplier-identity-20261116/source-original-exprs.json",
+  "sourceExprSha256": "680086aa890a2b25206cd75442c653d9537864c70d41f89359908a1172fd8648",
+  "sourceExportReceipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/small-supplier-identity-20261116/source-exprs-v2-result.json",
+  "sourceExportReceiptSha256": "b3b71c8479f525787b92d308dc035f2adf5afb40e665e1a292f9e2dcffbc3d78",
+  "sourceExportJob": "ci-015877-23714e2c",
+  "sourceRecord": {
+    "valueExpr": {
+      "type": {
+        "name": [
+          [],
+          "str",
+          "Real"
+        ],
+        "levels": [],
+        "kind": "const"
+      },
+      "name": [
+        [],
+        "str",
+        "δ"
+      ],
+      "kind": "lam",
+      "body": {
+        "type": {
+          "name": [
+            [],
+            "str",
+            "Real"
+          ],
+          "levels": [],
+          "kind": "const"
+        },
+        "name": [
+          [],
+          "str",
+          "h"
+        ],
+        "kind": "lam",
+        "body": {
+          "kind": "app",
+          "fn": {
+            "kind": "app",
+            "fn": {
+              "name": [
+                [
+                  [],
+                  "str",
+                  "Eq"
+                ],
+                "str",
+                "refl"
+              ],
+              "levels": [
+                {
+                  "kind": "succ",
+                  "arg": {
+                    "kind": "zero"
+                  }
+                }
+              ],
+              "kind": "const"
+            },
+            "arg": {
+              "name": [
+                [],
+                "str",
+                "Real"
+              ],
+              "levels": [],
+              "kind": "const"
+            }
+          },
+          "arg": {
+            "kind": "app",
+            "fn": {
+              "kind": "app",
+              "fn": {
+                "name": [
+                  [
+                    [],
+                    "str",
+                    "Iut"
+                  ],
+                  "str",
+                  "epsilonE"
+                ],
+                "levels": [],
+                "kind": "const"
+              },
+              "arg": {
+                "kind": "bvar",
+                "index": 1
+              }
+            },
+            "arg": {
+              "kind": "bvar",
+              "index": 0
+            }
+          }
+        },
+        "binder": "default"
+      },
+      "binder": "default"
+    },
+    "valueAxioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "typeAxioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "telescope": {
+      "resultDisplay": "Iut.epsilonE δ h = (60 * δ) ^ 2 * Real.log (2 * δ * h) / √h",
+      "binders": [
+        {
+          "typeDisplay": "ℝ",
+          "name": "δ",
+          "binderInfo": "default"
+        },
+        {
+          "typeDisplay": "ℝ",
+          "name": "h",
+          "binderInfo": "default"
+        }
+      ]
+    },
+    "structure": null,
+    "sourceSha256": "ffec17b8d1552155acca3886ee0b73ab9c410916e5128370186978b6d34d2d15",
+    "selected": true,
+    "recursorRuleRhs": [],
+    "normalizedSha256": "ffec17b8d1552155acca3886ee0b73ab9c410916e5128370186978b6d34d2d15",
+    "nameExpr": [
+      [
+        [
+          [],
+          "str",
+          "Iut"
+        ],
+        "str",
+        "epsilonE"
+      ],
+      "str",
+      "eq_1"
+    ],
+    "name": "Iut.epsilonE.eq_1",
+    "module": "Iut.Implication.Corollary22",
+    "levelParams": [],
+    "isProposition": true,
+    "isInstance": false,
+    "elaboratedExpr": {
+      "type": {
+        "name": [
+          [],
+          "str",
+          "Real"
+        ],
+        "levels": [],
+        "kind": "const"
+      },
+      "name": [
+        [],
+        "str",
+        "δ"
+      ],
+      "kind": "forall",
+      "body": {
+        "type": {
+          "name": [
+            [],
+            "str",
+            "Real"
+          ],
+          "levels": [],
+          "kind": "const"
+        },
+        "name": [
+          [],
+          "str",
+          "h"
+        ],
+        "kind": "forall",
+        "body": {
+          "kind": "app",
+          "fn": {
+            "kind": "app",
+            "fn": {
+              "kind": "app",
+              "fn": {
+                "name": [
+                  [],
+                  "str",
+                  "Eq"
+                ],
+                "levels": [
+                  {
+                    "kind": "succ",
+                    "arg": {
+                      "kind": "zero"
+                    }
+                  }
+                ],
+                "kind": "const"
+              },
+              "arg": {
+                "name": [
+                  [],
+                  "str",
+                  "Real"
+                ],
+                "levels": [],
+                "kind": "const"
+              }
+            },
+            "arg": {
+              "kind": "app",
+              "fn": {
+                "kind": "app",
+                "fn": {
+                  "name": [
+                    [
+                      [],
+                      "str",
+                      "Iut"
+                    ],
+                    "str",
+                    "epsilonE"
+                  ],
+                  "levels": [],
+                  "kind": "const"
+                },
+                "arg": {
+                  "kind": "bvar",
+                  "index": 1
+                }
+              },
+              "arg": {
+                "kind": "bvar",
+                "index": 0
+              }
+            }
+          },
+          "arg": {
+            "kind": "app",
+            "fn": {
+              "kind": "app",
+              "fn": {
+                "kind": "app",
+                "fn": {
+                  "kind": "app",
+                  "fn": {
+                    "kind": "app",
+                    "fn": {
+                      "kind": "app",
+                      "fn": {
+                        "name": [
+                          [
+                            [],
+                            "str",
+                            "HDiv"
+                          ],
+                          "str",
+                          "hDiv"
+                        ],
+                        "levels": [
+                          {
+                            "kind": "zero"
+                          },
+                          {
+                            "kind": "zero"
+                          },
+                          {
+                            "kind": "zero"
+                          }
+                        ],
+                        "kind": "const"
+                      },
+                      "arg": {
+                        "name": [
+                          [],
+                          "str",
+                          "Real"
+                        ],
+                        "levels": [],
+                        "kind": "const"
+                      }
+                    },
+                    "arg": {
+                      "name": [
+                        [],
+                        "str",
+                        "Real"
+                      ],
+                      "levels": [],
+                      "kind": "const"
+                    }
+                  },
+                  "arg": {
+                    "name": [
+                      [],
+                      "str",
+                      "Real"
+                    ],
+                    "levels": [],
+                    "kind": "const"
+                  }
+                },
+                "arg": {
+                  "kind": "app",
+                  "fn": {
+                    "kind": "app",
+                    "fn": {
+                      "name": [
+                        [],
+                        "str",
+                        "instHDiv"
+                      ],
+                      "levels": [
+                        {
+                          "kind": "zero"
+                        }
+                      ],
+                      "kind": "const"
+                    },
+                    "arg": {
+                      "name": [
+                        [],
+                        "str",
+                        "Real"
+                      ],
+                      "levels": [],
+                      "kind": "const"
+                    }
+                  },
+                  "arg": {
+                    "kind": "app",
+                    "fn": {
+                      "kind": "app",
+                      "fn": {
+                        "name": [
+                          [
+                            [],
+                            "str",
+                            "DivInvMonoid"
+                          ],
+                          "str",
+                          "toDiv"
+                        ],
+                        "levels": [
+                          {
+                            "kind": "zero"
+                          }
+                        ],
+                        "kind": "const"
+                      },
+                      "arg": {
+                        "name": [
+                          [],
+                          "str",
+                          "Real"
+                        ],
+                        "levels": [],
+                        "kind": "const"
+                      }
+                    },
+                    "arg": {
+                      "name": [
+                        [
+                          [],
+                          "str",
+                          "Real"
+                        ],
+                        "str",
+                        "instDivInvMonoid"
+                      ],
+                      "levels": [],
+                      "kind": "const"
+                    }
+                  }
+                }
+              },
+              "arg": {
+                "kind": "app",
+                "fn": {
+                  "kind": "app",
+                  "fn": {
+                    "kind": "app",
+                    "fn": {
+                      "kind": "app",
+                      "fn": {
+                        "kind": "app",
+                        "fn": {
+                          "kind": "app",
+                          "fn": {
+                            "name": [
+                              [
+                                [],
+                                "str",
+                                "HMul"
+                              ],
+                              "str",
+                              "hMul"
+                            ],
+                            "levels": [
+                              {
+                                "kind": "zero"
+                              },
+                              {
+                                "kind": "zero"
+                              },
+                              {
+                                "kind": "zero"
+                              }
+                            ],
+                            "kind": "const"
+                          },
+                          "arg": {
+                            "name": [
+                              [],
+                              "str",
+                              "Real"
+                            ],
+                            "levels": [],
+                            "kind": "const"
+                          }
+                        },
+                        "arg": {
+                          "name": [
+                            [],
+                            "str",
+                            "Real"
+                          ],
+                          "levels": [],
+                          "kind": "const"
+                        }
+                      },
+                      "arg": {
+                        "name": [
+                          [],
+                          "str",
+                          "Real"
+                        ],
+                        "levels": [],
+                        "kind": "const"
+                      }
+                    },
+                    "arg": {
+                      "kind": "app",
+                      "fn": {
+                        "kind": "app",
+                        "fn": {
+                          "name": [
+                            [],
+                            "str",
+                            "instHMul"
+                          ],
+                          "levels": [
+                            {
+                              "kind": "zero"
+                            }
+                          ],
+                          "kind": "const"
+                        },
+                        "arg": {
+                          "name": [
+                            [],
+                            "str",
+                            "Real"
+                          ],
+                          "levels": [],
+                          "kind": "const"
+                        }
+                      },
+                      "arg": {
+                        "name": [
+                          [
+                            [],
+                            "str",
+                            "Real"
+                          ],
+                          "str",
+                          "instMul"
+                        ],
+                        "levels": [],
+                        "kind": "const"
+                      }
+                    }
+                  },
+                  "arg": {
+                    "kind": "app",
+                    "fn": {
+                      "kind": "app",
+                      "fn": {
+                        "kind": "app",
+                        "fn": {
+                          "kind": "app",
+                          "fn": {
+                            "kind": "app",
+                            "fn": {
+                              "kind": "app",
+                              "fn": {
+                                "name": [
+                                  [
+                                    [],
+                                    "str",
+                                    "HPow"
+                                  ],
+                                  "str",
+                                  "hPow"
+                                ],
+                                "levels": [
+                                  {
+                                    "kind": "zero"
+                                  },
+                                  {
+                                    "kind": "zero"
+                                  },
+                                  {
+                                    "kind": "zero"
+                                  }
+                                ],
+                                "kind": "const"
+                              },
+                              "arg": {
+                                "name": [
+                                  [],
+                                  "str",
+                                  "Real"
+                                ],
+                                "levels": [],
+                                "kind": "const"
+                              }
+                            },
+                            "arg": {
+                              "name": [
+                                [],
+                                "str",
+                                "Nat"
+                              ],
+                              "levels": [],
+                              "kind": "const"
+                            }
+                          },
+                          "arg": {
+                            "name": [
+                              [],
+                              "str",
+                              "Real"
+                            ],
+                            "levels": [],
+                            "kind": "const"
+                          }
+                        },
+                        "arg": {
+                          "kind": "app",
+                          "fn": {
+                            "kind": "app",
+                            "fn": {
+                              "kind": "app",
+                              "fn": {
+                                "name": [
+                                  [],
+                                  "str",
+                                  "instHPow"
+                                ],
+                                "levels": [
+                                  {
+                                    "kind": "zero"
+                                  },
+                                  {
+                                    "kind": "zero"
+                                  }
+                                ],
+                                "kind": "const"
+                              },
+                              "arg": {
+                                "name": [
+                                  [],
+                                  "str",
+                                  "Real"
+                                ],
+                                "levels": [],
+                                "kind": "const"
+                              }
+                            },
+                            "arg": {
+                              "name": [
+                                [],
+                                "str",
+                                "Nat"
+                              ],
+                              "levels": [],
+                              "kind": "const"
+                            }
+                          },
+                          "arg": {
+                            "kind": "app",
+                            "fn": {
+                              "kind": "app",
+                              "fn": {
+                                "name": [
+                                  [
+                                    [],
+                                    "str",
+                                    "NPow"
+                                  ],
+                                  "str",
+                                  "toPow"
+                                ],
+                                "levels": [
+                                  {
+                                    "kind": "zero"
+                                  }
+                                ],
+                                "kind": "const"
+                              },
+                              "arg": {
+                                "name": [
+                                  [],
+                                  "str",
+                                  "Real"
+                                ],
+                                "levels": [],
+                                "kind": "const"
+                              }
+                            },
+                            "arg": {
+                              "kind": "app",
+                              "fn": {
+                                "kind": "app",
+                                "fn": {
+                                  "name": [
+                                    [
+                                      [],
+                                      "str",
+                                      "Monoid"
+                                    ],
+                                    "str",
+                                    "toNPow"
+                                  ],
+                                  "levels": [
+                                    {
+                                      "kind": "zero"
+                                    }
+                                  ],
+                                  "kind": "const"
+                                },
+                                "arg": {
+                                  "name": [
+                                    [],
+                                    "str",
+                                    "Real"
+                                  ],
+                                  "levels": [],
+                                  "kind": "const"
+                                }
+                              },
+                              "arg": {
+                                "name": [
+                                  [
+                                    [],
+                                    "str",
+                                    "Real"
+                                  ],
+                                  "str",
+                                  "instMonoid"
+                                ],
+                                "levels": [],
+                                "kind": "const"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "arg": {
+                        "kind": "app",
+                        "fn": {
+                          "kind": "app",
+                          "fn": {
+                            "kind": "app",
+                            "fn": {
+                              "kind": "app",
+                              "fn": {
+                                "kind": "app",
+                                "fn": {
+                                  "kind": "app",
+                                  "fn": {
+                                    "name": [
+                                      [
+                                        [],
+                                        "str",
+                                        "HMul"
+                                      ],
+                                      "str",
+                                      "hMul"
+                                    ],
+                                    "levels": [
+                                      {
+                                        "kind": "zero"
+                                      },
+                                      {
+                                        "kind": "zero"
+                                      },
+                                      {
+                                        "kind": "zero"
+                                      }
+                                    ],
+                                    "kind": "const"
+                                  },
+                                  "arg": {
+                                    "name": [
+                                      [],
+                                      "str",
+                                      "Real"
+                                    ],
+                                    "levels": [],
+                                    "kind": "const"
+                                  }
+                                },
+                                "arg": {
+                                  "name": [
+                                    [],
+                                    "str",
+                                    "Real"
+                                  ],
+                                  "levels": [],
+                                  "kind": "const"
+                                }
+                              },
+                              "arg": {
+                                "name": [
+                                  [],
+                                  "str",
+                                  "Real"
+                                ],
+                                "levels": [],
+                                "kind": "const"
+                              }
+                            },
+                            "arg": {
+                              "kind": "app",
+                              "fn": {
+                                "kind": "app",
+                                "fn": {
+                                  "name": [
+                                    [],
+                                    "str",
+                                    "instHMul"
+                                  ],
+                                  "levels": [
+                                    {
+                                      "kind": "zero"
+                                    }
+                                  ],
+                                  "kind": "const"
+                                },
+                                "arg": {
+                                  "name": [
+                                    [],
+                                    "str",
+                                    "Real"
+                                  ],
+                                  "levels": [],
+                                  "kind": "const"
+                                }
+                              },
+                              "arg": {
+                                "name": [
+                                  [
+                                    [],
+                                    "str",
+                                    "Real"
+                                  ],
+                                  "str",
+                                  "instMul"
+                                ],
+                                "levels": [],
+                                "kind": "const"
+                              }
+                            }
+                          },
+                          "arg": {
+                            "kind": "app",
+                            "fn": {
+                              "kind": "app",
+                              "fn": {
+                                "kind": "app",
+                                "fn": {
+                                  "name": [
+                                    [
+                                      [],
+                                      "str",
+                                      "OfNat"
+                                    ],
+                                    "str",
+                                    "ofNat"
+                                  ],
+                                  "levels": [
+                                    {
+                                      "kind": "zero"
+                                    }
+                                  ],
+                                  "kind": "const"
+                                },
+                                "arg": {
+                                  "name": [
+                                    [],
+                                    "str",
+                                    "Real"
+                                  ],
+                                  "levels": [],
+                                  "kind": "const"
+                                }
+                              },
+                              "arg": {
+                                "value": 60,
+                                "kind": "nat"
+                              }
+                            },
+                            "arg": {
+                              "kind": "app",
+                              "fn": {
+                                "kind": "app",
+                                "fn": {
+                                  "kind": "app",
+                                  "fn": {
+                                    "kind": "app",
+                                    "fn": {
+                                      "name": [
+                                        [],
+                                        "str",
+                                        "instOfNatAtLeastTwo"
+                                      ],
+                                      "levels": [
+                                        {
+                                          "kind": "zero"
+                                        }
+                                      ],
+                                      "kind": "const"
+                                    },
+                                    "arg": {
+                                      "name": [
+                                        [],
+                                        "str",
+                                        "Real"
+                                      ],
+                                      "levels": [],
+                                      "kind": "const"
+                                    }
+                                  },
+                                  "arg": {
+                                    "value": 60,
+                                    "kind": "nat"
+                                  }
+                                },
+                                "arg": {
+                                  "name": [
+                                    [
+                                      [],
+                                      "str",
+                                      "Real"
+                                    ],
+                                    "str",
+                                    "instNatCast"
+                                  ],
+                                  "levels": [],
+                                  "kind": "const"
+                                }
+                              },
+                              "arg": {
+                                "name": [
+                                  [
+                                    [
+                                      [],
+                                      "str",
+                                      "Iut"
+                                    ],
+                                    "str",
+                                    "epsilonE"
+                                  ],
+                                  "str",
+                                  "_proof_1"
+                                ],
+                                "levels": [],
+                                "kind": "const"
+                              }
+                            }
+                          }
+                        },
+                        "arg": {
+                          "kind": "bvar",
+                          "index": 1
+                        }
+                      }
+                    },
+                    "arg": {
+                      "kind": "app",
+                      "fn": {
+                        "kind": "app",
+                        "fn": {
+                          "kind": "app",
+                          "fn": {
+                            "name": [
+                              [
+                                [],
+                                "str",
+                                "OfNat"
+                              ],
+                              "str",
+                              "ofNat"
+                            ],
+                            "levels": [
+                              {
+                                "kind": "zero"
+                              }
+                            ],
+                            "kind": "const"
+                          },
+                          "arg": {
+                            "name": [
+                              [],
+                              "str",
+                              "Nat"
+                            ],
+                            "levels": [],
+                            "kind": "const"
+                          }
+                        },
+                        "arg": {
+                          "value": 2,
+                          "kind": "nat"
+                        }
+                      },
+                      "arg": {
+                        "kind": "app",
+                        "fn": {
+                          "name": [
+                            [],
+                            "str",
+                            "instOfNatNat"
+                          ],
+                          "levels": [],
+                          "kind": "const"
+                        },
+                        "arg": {
+                          "value": 2,
+                          "kind": "nat"
+                        }
+                      }
+                    }
+                  }
+                },
+                "arg": {
+                  "kind": "app",
+                  "fn": {
+                    "name": [
+                      [
+                        [],
+                        "str",
+                        "Real"
+                      ],
+                      "str",
+                      "log"
+                    ],
+                    "levels": [],
+                    "kind": "const"
+                  },
+                  "arg": {
+                    "kind": "app",
+                    "fn": {
+                      "kind": "app",
+                      "fn": {
+                        "kind": "app",
+                        "fn": {
+                          "kind": "app",
+                          "fn": {
+                            "kind": "app",
+                            "fn": {
+                              "kind": "app",
+                              "fn": {
+                                "name": [
+                                  [
+                                    [],
+                                    "str",
+                                    "HMul"
+                                  ],
+                                  "str",
+                                  "hMul"
+                                ],
+                                "levels": [
+                                  {
+                                    "kind": "zero"
+                                  },
+                                  {
+                                    "kind": "zero"
+                                  },
+                                  {
+                                    "kind": "zero"
+                                  }
+                                ],
+                                "kind": "const"
+                              },
+                              "arg": {
+                                "name": [
+                                  [],
+                                  "str",
+                                  "Real"
+                                ],
+                                "levels": [],
+                                "kind": "const"
+                              }
+                            },
+                            "arg": {
+                              "name": [
+                                [],
+                                "str",
+                                "Real"
+                              ],
+                              "levels": [],
+                              "kind": "const"
+                            }
+                          },
+                          "arg": {
+                            "name": [
+                              [],
+                              "str",
+                              "Real"
+                            ],
+                            "levels": [],
+                            "kind": "const"
+                          }
+                        },
+                        "arg": {
+                          "kind": "app",
+                          "fn": {
+                            "kind": "app",
+                            "fn": {
+                              "name": [
+                                [],
+                                "str",
+                                "instHMul"
+                              ],
+                              "levels": [
+                                {
+                                  "kind": "zero"
+                                }
+                              ],
+                              "kind": "const"
+                            },
+                            "arg": {
+                              "name": [
+                                [],
+                                "str",
+                                "Real"
+                              ],
+                              "levels": [],
+                              "kind": "const"
+                            }
+                          },
+                          "arg": {
+                            "name": [
+                              [
+                                [],
+                                "str",
+                                "Real"
+                              ],
+                              "str",
+                              "instMul"
+                            ],
+                            "levels": [],
+                            "kind": "const"
+                          }
+                        }
+                      },
+                      "arg": {
+                        "kind": "app",
+                        "fn": {
+                          "kind": "app",
+                          "fn": {
+                            "kind": "app",
+                            "fn": {
+                              "kind": "app",
+                              "fn": {
+                                "kind": "app",
+                                "fn": {
+                                  "kind": "app",
+                                  "fn": {
+                                    "name": [
+                                      [
+                                        [],
+                                        "str",
+                                        "HMul"
+                                      ],
+                                      "str",
+                                      "hMul"
+                                    ],
+                                    "levels": [
+                                      {
+                                        "kind": "zero"
+                                      },
+                                      {
+                                        "kind": "zero"
+                                      },
+                                      {
+                                        "kind": "zero"
+                                      }
+                                    ],
+                                    "kind": "const"
+                                  },
+                                  "arg": {
+                                    "name": [
+                                      [],
+                                      "str",
+                                      "Real"
+                                    ],
+                                    "levels": [],
+                                    "kind": "const"
+                                  }
+                                },
+                                "arg": {
+                                  "name": [
+                                    [],
+                                    "str",
+                                    "Real"
+                                  ],
+                                  "levels": [],
+                                  "kind": "const"
+                                }
+                              },
+                              "arg": {
+                                "name": [
+                                  [],
+                                  "str",
+                                  "Real"
+                                ],
+                                "levels": [],
+                                "kind": "const"
+                              }
+                            },
+                            "arg": {
+                              "kind": "app",
+                              "fn": {
+                                "kind": "app",
+                                "fn": {
+                                  "name": [
+                                    [],
+                                    "str",
+                                    "instHMul"
+                                  ],
+                                  "levels": [
+                                    {
+                                      "kind": "zero"
+                                    }
+                                  ],
+                                  "kind": "const"
+                                },
+                                "arg": {
+                                  "name": [
+                                    [],
+                                    "str",
+                                    "Real"
+                                  ],
+                                  "levels": [],
+                                  "kind": "const"
+                                }
+                              },
+                              "arg": {
+                                "name": [
+                                  [
+                                    [],
+                                    "str",
+                                    "Real"
+                                  ],
+                                  "str",
+                                  "instMul"
+                                ],
+                                "levels": [],
+                                "kind": "const"
+                              }
+                            }
+                          },
+                          "arg": {
+                            "kind": "app",
+                            "fn": {
+                              "kind": "app",
+                              "fn": {
+                                "kind": "app",
+                                "fn": {
+                                  "name": [
+                                    [
+                                      [],
+                                      "str",
+                                      "OfNat"
+                                    ],
+                                    "str",
+                                    "ofNat"
+                                  ],
+                                  "levels": [
+                                    {
+                                      "kind": "zero"
+                                    }
+                                  ],
+                                  "kind": "const"
+                                },
+                                "arg": {
+                                  "name": [
+                                    [],
+                                    "str",
+                                    "Real"
+                                  ],
+                                  "levels": [],
+                                  "kind": "const"
+                                }
+                              },
+                              "arg": {
+                                "value": 2,
+                                "kind": "nat"
+                              }
+                            },
+                            "arg": {
+                              "kind": "app",
+                              "fn": {
+                                "kind": "app",
+                                "fn": {
+                                  "kind": "app",
+                                  "fn": {
+                                    "kind": "app",
+                                    "fn": {
+                                      "name": [
+                                        [],
+                                        "str",
+                                        "instOfNatAtLeastTwo"
+                                      ],
+                                      "levels": [
+                                        {
+                                          "kind": "zero"
+                                        }
+                                      ],
+                                      "kind": "const"
+                                    },
+                                    "arg": {
+                                      "name": [
+                                        [],
+                                        "str",
+                                        "Real"
+                                      ],
+                                      "levels": [],
+                                      "kind": "const"
+                                    }
+                                  },
+                                  "arg": {
+                                    "value": 2,
+                                    "kind": "nat"
+                                  }
+                                },
+                                "arg": {
+                                  "name": [
+                                    [
+                                      [],
+                                      "str",
+                                      "Real"
+                                    ],
+                                    "str",
+                                    "instNatCast"
+                                  ],
+                                  "levels": [],
+                                  "kind": "const"
+                                }
+                              },
+                              "arg": {
+                                "name": [
+                                  [
+                                    [
+                                      [],
+                                      "str",
+                                      "Iut"
+                                    ],
+                                    "str",
+                                    "epsilonE"
+                                  ],
+                                  "str",
+                                  "_proof_2"
+                                ],
+                                "levels": [],
+                                "kind": "const"
+                              }
+                            }
+                          }
+                        },
+                        "arg": {
+                          "kind": "bvar",
+                          "index": 1
+                        }
+                      }
+                    },
+                    "arg": {
+                      "kind": "bvar",
+                      "index": 0
+                    }
+                  }
+                }
+              }
+            },
+            "arg": {
+              "kind": "app",
+              "fn": {
+                "name": [
+                  [
+                    [],
+                    "str",
+                    "Real"
+                  ],
+                  "str",
+                  "sqrt"
+                ],
+                "levels": [],
+                "kind": "const"
+              },
+              "arg": {
+                "kind": "bvar",
+                "index": 0
+              }
+            }
+          }
+        },
+        "binder": "default"
+      },
+      "binder": "default"
+    },
+    "constantKind": "theorem",
+    "computationShape": null,
+    "binderInventory": [
+      "forall:default",
+      "forall:default"
+    ],
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "scope": "Actual 4.35 source equation record; no target helper or 38-record target acceptance is inferred."
+}

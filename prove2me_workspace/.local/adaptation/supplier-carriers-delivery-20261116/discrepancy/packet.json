@@ -1,0 +1,139 @@
+{
+  "schema": "discrepancy-private-definition-packet/v1",
+  "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+  "environment": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "visibility": "private",
+  "publication_ready": true,
+  "publications": [
+    {
+      "tag": "AbcAdaptation_Reference_Genl_Mathlib_Order_BoundedDiscrepancy",
+      "endpoint": "/submit-definition",
+      "payload": {
+        "definition_name": "AbcAdaptation_Reference_Genl_Mathlib_Order_BoundedDiscrepancy",
+        "definition_title": "Bounded discrepancy relations — 有界差异关系 — 有界差の関係",
+        "definition": "/- Adaptation draft: two complete original relation definitions and their two original notation commands. Mathematical bodies and context are unchanged. Original source notice retained. No source theorem or Open proof is imported. -/\n/-\nCopyright (c) 2026 Christian Merten. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Christian Merten\n-/\nimport Mathlib.Data.Real.Basic\nimport Mathlib.Data.Set.Defs\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n\nvariable {α β : Type*}\n\n/-- `DiscrepancyLE f g s`, denoted `f ≲[s] g`, means that `f` is bounded above by `g` up\nto a bounded discrepancy on `s`, i.e. there exists a constant `C` such that\n`f x ≤ g x + C` for all `x ∈ s`. -/\ndef DiscrepancyLE (f g : α → ℝ) (s : Set α) : Prop :=\n  ∃ C : ℝ, ∀ x ∈ s, f x ≤ g x + C\n\n/-- `DiscrepancyEquiv f g s`, denoted `f ≈[s] g`, means that `f` and `g` agree up to a\nbounded discrepancy on `s`, i.e. `|f x - g x|` is bounded on `s`. The equivalence classes\nof this relation are called *BD-classes*. -/\ndef DiscrepancyEquiv (f g : α → ℝ) (s : Set α) : Prop :=\n  DiscrepancyLE f g s ∧ DiscrepancyLE g f s\n\n@[inherit_doc]\nnotation:50 f:51 \" ≲[\" s \"] \" g:51 => DiscrepancyLE f g s\n\n@[inherit_doc]\nnotation:50 f:51 \" ≈[\" s \"] \" g:51 => DiscrepancyEquiv f g s\n\nend AbcAdaptation.Reference\n",
+        "natural_language_statement": "**Formal-code readback**\n\n**English**\n\n`AbcAdaptation.Reference.DiscrepancyLE`\n\n**kind**\n\nDefinition of a proposition\n\n**binders**\n\nImplicit α : Type at an arbitrary universe level; explicit f,g : α → real numbers and s : Set α. The source also declares an implicit β : Type*, but β is unused and does not enter this definition.\n\n**english**\n\nThere exists a real number C such that for every x of α, if x belongs to s, then f(x) ≤ g(x) + C.\n\n**quantifier order**\n\n[\n  \"Choose one C for the whole set s.\",\n  \"For every x, and every proof that x belongs to s, the displayed inequality holds.\"\n]\n\n**qualifications**\n\n[\n  \"C may depend on f, g, and s. It cannot depend on x.\",\n  \"No positivity, normalization, finiteness, or nonemptiness condition is imposed on C or s.\"\n]\n\n**notation**\n\nThe expression f ≲[s] g abbreviates this proposition.\n\n`AbcAdaptation.Reference.DiscrepancyEquiv`\n\n**kind**\n\nDefinition of a proposition\n\n**binders**\n\nImplicit α : Type at an arbitrary universe level; explicit f,g : α → real numbers and s : Set α. The unused source variable β is absent.\n\n**english**\n\nDiscrepancyLE(f,g,s) and DiscrepancyLE(g,f,s) both hold.\n\n**quantifier expansion**\n\nThere is a real C_forward such that every x in s satisfies f(x) ≤ g(x)+C_forward, and there is a real C_reverse such that every x in s satisfies g(x) ≤ f(x)+C_reverse.\n\n**qualifications**\n\n[\n  \"The two existential constants are independent.\",\n  \"The definition does not state exact equality of f and g.\"\n]\n\n**notation**\n\nThe expression f ≈[s] g abbreviates this proposition.\n\n**简体中文**\n\n`AbcAdaptation.Reference.DiscrepancyLE`\n\n隐式参数是任意宇宙层级中的类型 $\\alpha$；显式参数为函数 $f,g:\\alpha\\to\\mathbb R$ 和子集 $s\\subseteq\\alpha$。源码还声明了隐式类型变量 $\\beta$，但它没有被使用，也不进入本定义。\n本声明定义如下命题：存在实数 $C$，使得对每个 $x\\in\\alpha$，若 $x\\in s$，则 $f(x)\\le g(x)+C$。先为整个集合 $s$ 选择一个 $C$，再要求每个 $x$ 和其属于 $s$ 的每个证明均满足该不等式。$C$ 可以依赖 $f,g,s$，不能依赖 $x$。对 $C$ 或 $s$ 不施加正性、归一化、有限性或非空条件。记号 $f\\lesssim[s]g$（代码写作 `f ≲[s] g`）缩写此命题。\n\n`AbcAdaptation.Reference.DiscrepancyEquiv`\n\n隐式参数是任意宇宙层级中的类型 $\\alpha$；显式参数为函数 $f,g:\\alpha\\to\\mathbb R$ 和子集 $s\\subseteq\\alpha$。源码中未使用的变量 $\\beta$ 不属于本声明的参数。\n本声明定义命题：`DiscrepancyLE(f,g,s)` 与 `DiscrepancyLE(g,f,s)` 同时成立。完全展开即：存在实数 $C_{\\mathrm{forward}}$，使每个 $x\\in s$ 满足 $f(x)\\le g(x)+C_{\\mathrm{forward}}$；并且存在实数 $C_{\\mathrm{reverse}}$，使每个 $x\\in s$ 满足 $g(x)\\le f(x)+C_{\\mathrm{reverse}}$。两个存在常数互相独立。定义不声称 $f,g$ 严格相等。记号 $f\\approx[s]g$（代码写作 `f ≈[s] g`）缩写此命题。\n\n**日本語**\n\n`AbcAdaptation.Reference.DiscrepancyLE`\n\n暗黙のパラメータは任意の宇宙レベルの型 $\\alpha$、明示的パラメータは関数 $f,g:\\alpha\\to\\mathbb R$ と部分集合 $s\\subseteq\\alpha$ である。ソースは暗黙の型変数 $\\beta$ も宣言するが、これは未使用で本定義に含まれない。\n宣言は次の命題を定義する。ある実数 $C$ が存在し、全ての $x\\in\\alpha$ について $x\\in s$ ならば $f(x)\\le g(x)+C$ となる。まず集合 $s$ 全体に一つの $C$ を選び、次に各 $x$ とその所属証明について不等式を要求する。$C$ は $f,g,s$ に依存してよいが、$x$ には依存できない。$C,s$ に正値性、正規化、有限性、非空性の条件はない。記号 $f\\lesssim[s]g$（コードでは `f ≲[s] g`）はこの命題の略記である。\n\n`AbcAdaptation.Reference.DiscrepancyEquiv`\n\n暗黙のパラメータは任意の宇宙レベルの型 $\\alpha$、明示的パラメータは関数 $f,g:\\alpha\\to\\mathbb R$ と部分集合 $s\\subseteq\\alpha$ である。ソースの未使用変数 $\\beta$ は本宣言のパラメータに含まれない。\n宣言は `DiscrepancyLE(f,g,s)` と `DiscrepancyLE(g,f,s)` がともに成り立つという命題を定義する。展開すると、ある実数 $C_{\\mathrm{forward}}$ が存在して全ての $x\\in s$ で $f(x)\\le g(x)+C_{\\mathrm{forward}}$ となり、かつある実数 $C_{\\mathrm{reverse}}$ が存在して全ての $x\\in s$ で $g(x)\\le f(x)+C_{\\mathrm{reverse}}$ となる。二つの存在定数は独立である。$f,g$ の厳密な等号は主張しない。記号 $f\\approx[s]g$（コードでは `f ≈[s] g`）はこの命題の略記である。\n\n**Paper source context (English; separate from formal-code readback)**\n\nDiscrepancyLE(f,g,s) means that some real C satisfies f(x)≤g(x)+C for every x in s. DiscrepancyEquiv(f,g,s) requires this bound in both directions. Thus the two functions differ by a bounded amount on s. The notation follows Mochizuki’s correction in IUT IV, Remark 2.3.1(ii), p. 55. Source notation: [GenEll], Definition 1.2(ii), p. 5, with the correction in IUT IV, Remark 2.3.1(ii), p. 55.\n\n**Limits of the definition supplier**\n\nThe uncorrected direction printed in [GenEll], Definition 1.2(ii), p. 5 is reversed. Cite the correction when describing ≲.\n\nThe two directions may use different constants. A common absolute-value bound follows by taking their maximum.\n\nThese definitions introduce relations, not quotient types of BD-classes.\n\nThey apply to arbitrary real-valued functions on a type α. No geometric height theory is required to form the relations.\n\n> The relation “$\\approx$” clearly defines an equivalence relation on the set of functions $\\mathcal F\\to\\mathbb R$; we shall refer to an equivalence class relative to this equivalence relation as a(n) [$\\mathcal F$-]BD-class [i.e., “bounded discrepancy class”].\n\n— Arithmetic Elliptic Curves in General Position, §1, Definition 1.2(ii), sentences after the defining inequality, printed pp. 5.\n\n> In [GenEll], Definition 1.2, (ii), the non-resp’d and first resp’d items in the display should be reversed! That is to say, the notation “$\\alpha\\lesssim_{\\mathcal F}\\beta$” corresponds to “$\\alpha(x)-\\beta(x)\\leq C$”; the notation “$\\alpha\\gtrsim_{\\mathcal F}\\beta$” corresponds to “$\\beta(x)-\\alpha(x)\\leq C$”.\n\n— Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations, §2, Remark 2.3.1(ii), correction of [GenEll], Definition 1.2(ii), printed pp. 55.\n\n**Original papers**\n\n[Arithmetic Elliptic Curves in General Position](https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf)\n\n[Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations](https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20IV.pdf)",
+        "source": "https://github.com/lana-agents/genl/blob/ea2846c877d1e16d8f0b911a5fed07f5ee69eaaf/Genl/Mathlib/Order/BoundedDiscrepancy.lean#L42-L58",
+        "env": "0df444a360eaa60ab8c11dca51a86af692955474",
+        "private": true
+      }
+    }
+  ],
+  "source_sha256": {
+    "Definitions/Def_AbcAdaptation_Reference_Genl_Mathlib_Order_BoundedDiscrepancy.lean": "6c01fd7567e443bd33d85a0c0d41036519de37a57f2f5c9b14a9604171b6f18d"
+  },
+  "metadata_sha256": {
+    "/tmp/p2m-c2-discrepancy-trilingual-v1-20261116/trilingual.json": "e28985b6a1b01e971f4050269740e3b316ccb94931140f0a6958f158dfcadb9a",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/discrepancy-supplier-20261116/candidate-handoff/discrepancy-metadata.json": "1a9d403ac04be2004da94721a0463f8e28f916357d79af4e7c54cfffa6fdffe4",
+    "/tmp/p2m-small-supplier-publisher-20261116/paper-context.adapter-discrepancy.json": "93d9f04486206ee4927f22caf7c4ca889ec042d5dd9815c6da0ae1914c310175",
+    "/tmp/p2m-c2-discrepancy-blind-v1-20261116/readback.json": "ba1f2c57568615f98add5e73b0a6c0dcceef1e277d7a0ff9143d03bdc3c82c7b",
+    "/tmp/p2m-supplier-paper-context-v1-20261116/paper-context.json": "f6fd946bafa1cb14a48107aa6d7dcaa1ad3ab1930124357a37188072bc5c1783"
+  },
+  "readbacks": {
+    "AbcAdaptation.Reference.DiscrepancyLE": {
+      "name": "AbcAdaptation.Reference.DiscrepancyLE",
+      "original_en": {
+        "name": "AbcAdaptation.Reference.DiscrepancyLE",
+        "kind": "Definition of a proposition",
+        "binders": "Implicit α : Type at an arbitrary universe level; explicit f,g : α → real numbers and s : Set α. The source also declares an implicit β : Type*, but β is unused and does not enter this definition.",
+        "english": "There exists a real number C such that for every x of α, if x belongs to s, then f(x) ≤ g(x) + C.",
+        "quantifier_order": [
+          "Choose one C for the whole set s.",
+          "For every x, and every proof that x belongs to s, the displayed inequality holds."
+        ],
+        "qualifications": [
+          "C may depend on f, g, and s. It cannot depend on x.",
+          "No positivity, normalization, finiteness, or nonemptiness condition is imposed on C or s."
+        ],
+        "notation": "The expression f ≲[s] g abbreviates this proposition."
+      },
+      "readbacks": {
+        "zh-Hans": "隐式参数是任意宇宙层级中的类型 $\\alpha$；显式参数为函数 $f,g:\\alpha\\to\\mathbb R$ 和子集 $s\\subseteq\\alpha$。源码还声明了隐式类型变量 $\\beta$，但它没有被使用，也不进入本定义。\n本声明定义如下命题：存在实数 $C$，使得对每个 $x\\in\\alpha$，若 $x\\in s$，则 $f(x)\\le g(x)+C$。先为整个集合 $s$ 选择一个 $C$，再要求每个 $x$ 和其属于 $s$ 的每个证明均满足该不等式。$C$ 可以依赖 $f,g,s$，不能依赖 $x$。对 $C$ 或 $s$ 不施加正性、归一化、有限性或非空条件。记号 $f\\lesssim[s]g$（代码写作 `f ≲[s] g`）缩写此命题。",
+        "ja": "暗黙のパラメータは任意の宇宙レベルの型 $\\alpha$、明示的パラメータは関数 $f,g:\\alpha\\to\\mathbb R$ と部分集合 $s\\subseteq\\alpha$ である。ソースは暗黙の型変数 $\\beta$ も宣言するが、これは未使用で本定義に含まれない。\n宣言は次の命題を定義する。ある実数 $C$ が存在し、全ての $x\\in\\alpha$ について $x\\in s$ ならば $f(x)\\le g(x)+C$ となる。まず集合 $s$ 全体に一つの $C$ を選び、次に各 $x$ とその所属証明について不等式を要求する。$C$ は $f,g,s$ に依存してよいが、$x$ には依存できない。$C,s$ に正値性、正規化、有限性、非空性の条件はない。記号 $f\\lesssim[s]g$（コードでは `f ≲[s] g`）はこの命題の略記である。"
+      },
+      "frozen_english_file": "/tmp/p2m-c2-discrepancy-trilingual-v1-20261116/frozen-english-readback.json",
+      "frozen_english_file_sha256": "ba1f2c57568615f98add5e73b0a6c0dcceef1e277d7a0ff9143d03bdc3c82c7b",
+      "original_en_object_sha256_canonical_json": "69dd8a39f513a2bdc3ca2c1f69041f7176283b4bc4958817acb42e0d8723fa5d",
+      "shared_context_refs": [],
+      "witness_context_refs": [],
+      "edge_case_refs": [
+        "edge.0",
+        "edge.1",
+        "edge.2",
+        "edge.3",
+        "edge.4",
+        "edge.5",
+        "edge.6",
+        "edge.7",
+        "edge.8",
+        "edge.9",
+        "edge.10",
+        "edge.11"
+      ],
+      "context_limit_refs": [
+        "limit.0",
+        "limit.1",
+        "limit.2",
+        "limit.3",
+        "limit.4",
+        "limit.5"
+      ]
+    },
+    "AbcAdaptation.Reference.DiscrepancyEquiv": {
+      "name": "AbcAdaptation.Reference.DiscrepancyEquiv",
+      "original_en": {
+        "name": "AbcAdaptation.Reference.DiscrepancyEquiv",
+        "kind": "Definition of a proposition",
+        "binders": "Implicit α : Type at an arbitrary universe level; explicit f,g : α → real numbers and s : Set α. The unused source variable β is absent.",
+        "english": "DiscrepancyLE(f,g,s) and DiscrepancyLE(g,f,s) both hold.",
+        "quantifier_expansion": "There is a real C_forward such that every x in s satisfies f(x) ≤ g(x)+C_forward, and there is a real C_reverse such that every x in s satisfies g(x) ≤ f(x)+C_reverse.",
+        "qualifications": [
+          "The two existential constants are independent.",
+          "The definition does not state exact equality of f and g."
+        ],
+        "notation": "The expression f ≈[s] g abbreviates this proposition."
+      },
+      "readbacks": {
+        "zh-Hans": "隐式参数是任意宇宙层级中的类型 $\\alpha$；显式参数为函数 $f,g:\\alpha\\to\\mathbb R$ 和子集 $s\\subseteq\\alpha$。源码中未使用的变量 $\\beta$ 不属于本声明的参数。\n本声明定义命题：`DiscrepancyLE(f,g,s)` 与 `DiscrepancyLE(g,f,s)` 同时成立。完全展开即：存在实数 $C_{\\mathrm{forward}}$，使每个 $x\\in s$ 满足 $f(x)\\le g(x)+C_{\\mathrm{forward}}$；并且存在实数 $C_{\\mathrm{reverse}}$，使每个 $x\\in s$ 满足 $g(x)\\le f(x)+C_{\\mathrm{reverse}}$。两个存在常数互相独立。定义不声称 $f,g$ 严格相等。记号 $f\\approx[s]g$（代码写作 `f ≈[s] g`）缩写此命题。",
+        "ja": "暗黙のパラメータは任意の宇宙レベルの型 $\\alpha$、明示的パラメータは関数 $f,g:\\alpha\\to\\mathbb R$ と部分集合 $s\\subseteq\\alpha$ である。ソースの未使用変数 $\\beta$ は本宣言のパラメータに含まれない。\n宣言は `DiscrepancyLE(f,g,s)` と `DiscrepancyLE(g,f,s)` がともに成り立つという命題を定義する。展開すると、ある実数 $C_{\\mathrm{forward}}$ が存在して全ての $x\\in s$ で $f(x)\\le g(x)+C_{\\mathrm{forward}}$ となり、かつある実数 $C_{\\mathrm{reverse}}$ が存在して全ての $x\\in s$ で $g(x)\\le f(x)+C_{\\mathrm{reverse}}$ となる。二つの存在定数は独立である。$f,g$ の厳密な等号は主張しない。記号 $f\\approx[s]g$（コードでは `f ≈[s] g`）はこの命題の略記である。"
+      },
+      "frozen_english_file": "/tmp/p2m-c2-discrepancy-trilingual-v1-20261116/frozen-english-readback.json",
+      "frozen_english_file_sha256": "ba1f2c57568615f98add5e73b0a6c0dcceef1e277d7a0ff9143d03bdc3c82c7b",
+      "original_en_object_sha256_canonical_json": "63d0cd471e7bdebeb889f6793c697bce901458520d00600ff1cfc05869323d2a",
+      "shared_context_refs": [],
+      "witness_context_refs": [],
+      "edge_case_refs": [
+        "edge.0",
+        "edge.1",
+        "edge.2",
+        "edge.3",
+        "edge.4",
+        "edge.5",
+        "edge.6",
+        "edge.7",
+        "edge.8",
+        "edge.9",
+        "edge.10",
+        "edge.11"
+      ],
+      "context_limit_refs": [
+        "limit.0",
+        "limit.1",
+        "limit.2",
+        "limit.3",
+        "limit.4",
+        "limit.5"
+      ]
+    }
+  },
+  "explicit_revision": null,
+  "verification": [],
+  "post_limit": 1,
+  "root_graph_membership": false,
+  "excluded": [
+    "Iut.Corollary22Inputs",
+    "Iut.ThetaDataExistence",
+    "Iut.Corollary22Inputs.threshold",
+    "one_le_dmod"
+  ]
+}
