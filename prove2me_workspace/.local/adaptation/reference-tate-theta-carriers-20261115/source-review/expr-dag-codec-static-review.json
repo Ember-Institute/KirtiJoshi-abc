@@ -1,0 +1,84 @@
+{
+  "schema": "tate-theta-independent-expr-dag-codec-static-review-v1",
+  "status": "passed-static-exact-structure-codec-review-compilation-pending",
+  "checkCount": 38,
+  "checks": [
+    "Exact final author-frozen codec increment",
+    "Exact final author-frozen standalone",
+    "Exact final author-frozen check source",
+    "Same exact codec body occurs in standalone and check sources",
+    "Actual Lean4.33 Expr default BEq is alpha equivalence and ignores annotations",
+    "Actual ExprStructEq delegates to exact Expr.equal",
+    "Interning uses exact structural keys, not HashMap Expr alpha keys",
+    "Exact encoder and decoder cases for bvar",
+    "Exact encoder and decoder cases for sort",
+    "Exact encoder and decoder cases for const",
+    "Exact encoder and decoder cases for app",
+    "Exact encoder and decoder cases for lam",
+    "Exact encoder and decoder cases for forall",
+    "Exact encoder and decoder cases for let",
+    "Exact encoder and decoder cases for nat",
+    "Exact encoder and decoder cases for string",
+    "Exact encoder and decoder cases for proj",
+    "Original field retained: encodeName n",
+    "Original field retained: encodeLevel",
+    "Original field retained: encodeBinder bi",
+    "Original field retained: (\"nondependent\", toJson nd)",
+    "Original field retained: (\"index\", toJson i)",
+    "Original field retained: (\"value\", toJson s)",
+    "Explicit constructor fields/layout preserved: return .lam binderName ty body binder",
+    "Explicit constructor fields/layout preserved: return .forallE binderName ty body binder",
+    "Explicit constructor fields/layout preserved: return .letE binderName ty value body nondependent",
+    "Explicit constructor fields/layout preserved: return .proj projectionName index body",
+    "Unsupported open/metadata input rejected: .mdata _ _ => throwError",
+    "Unsupported open/metadata input rejected: .fvar _ => throwError",
+    "Unsupported open/metadata input rejected: .mvar _ => throwError",
+    "All recursive child encodings precede parent insertion",
+    "Decoder rejects self, forward and out-of-range child references",
+    "Declared root references are bounded",
+    "Every requested original root receives exact structural round-trip comparison",
+    "Meaningful check source covers Repeated exact root was not interned",
+    "Meaningful check source covers merged distinct BinderInfo or binder Names",
+    "Meaningful check source covers merged distinct let nondependent flags",
+    "Meaningful check source covers Numeric Name lambda did not survive"
+  ],
+  "evidence": [
+    {
+      "path": "/tmp/p2m-tate-theta-expr-dag-codec-20261115/ExprDagCodec.lean.inc",
+      "sha256": "d1f0198e26c63a070bb20b77f25fbd66325ca47b6ffa1f10fd497f6c5f76e65a"
+    },
+    {
+      "path": "/tmp/p2m-tate-theta-expr-dag-codec-20261115/ExprDagCodec.lean",
+      "sha256": "e34338d97a856a233c42e36c983b3cbe495b781e262d8d19c64ec7649ad8bca2"
+    },
+    {
+      "path": "/tmp/p2m-tate-theta-expr-dag-codec-20261115/ExprDagCodecCheck.lean",
+      "sha256": "5f34c739c626e463a89f1473acd373e2afa119070cbf6efd837667fec7b64e39"
+    },
+    {
+      "path": "/tmp/p2m-tate-theta-expr-dag-codec-20261115/USAGE.lean.inc",
+      "sha256": "88e36464a235c5ae582d6c319a1884ab57016dc9f8d35d4d1ce6ef0b90c8e9b5"
+    },
+    {
+      "path": "/tmp/p2m-tate-theta-expr-dag-codec-20261115/HANDOFF.md",
+      "sha256": "5b79606e5bc4c8163ba2182c4e93de0b3ed3f1a77f999232aa01b83d97e6b90f"
+    },
+    {
+      "path": "/root/.elan/toolchains/leanprover--lean4---v4.33.1/src/lean/Lean/Expr.lean",
+      "sha256": "b9a91d9d170201c2a3622b9c55d694466f54e0e1b8f6068a2d296ff98650169c"
+    }
+  ],
+  "semanticConclusion": "Structural interning and round-trip use ExprStructEq/Expr.equal, not alpha equivalence. The explicit Name, universe, binder, let-flag, projection and literal fields are transmitted; child references are topological.",
+  "callerRequirements": [
+    "Inputs must already be metadata-erased, as the source-export contract states; residual metadata is rejected rather than discarded.",
+    "Child nodes may naturally have loose de Bruijn variables; checked type/value roots must be closed and still receive all existing Kernel.check/exact-type checks in A/B.",
+    "A/B record-to-root mappings must retain each full original Name, source type/value provenance, universe parameters, native-proof method and exact dependencies.",
+    "B must bind a real accepted A receipt/artifact and decode its shared DAG once, not reconstruct or silently replace verified expressions.",
+    "Every actual compilation leaf must remain below16GiB, and final project whole-data comparisons remain mandatory."
+  ],
+  "codeCompiled": false,
+  "runtimeRoundTripAccepted": false,
+  "resourceAccepted": false,
+  "abIntegrationAccepted": false,
+  "acceptedMappingGenerated": false
+}

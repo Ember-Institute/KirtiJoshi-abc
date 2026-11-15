@@ -1,0 +1,64 @@
+{
+  "schema": "tate-theta-76plus2-generator-contract-review-v1",
+  "status": "actual-input-bindings-and-negative-contract-checks-passed-no-main-acceptance",
+  "checkCount": 9,
+  "checks": [
+    {
+      "check": "Actual original ci014644 hashes/3fact bindings/current helper facts/exact whole command mapping and76+2 report contract validate",
+      "passed": true,
+      "fixture": "Report flags and parent equality are in-memory fixtures only, not compiler evidence"
+    },
+    {
+      "check": "Source proof receives fake standalone identity",
+      "rejected": true,
+      "reason": "Infinite source proof must not acquire standalone target identity"
+    },
+    {
+      "check": "Source Infinite body replaced by native ModuleFinite body",
+      "rejected": true,
+      "reason": "Complete genuine Infinite proof must be retained exactly; no native proof/data substitution"
+    },
+    {
+      "check": "Present-type-incompatible misclassified absent",
+      "rejected": true,
+      "reason": "Infinite proof must be marked present with incompatible actual target type"
+    },
+    {
+      "check": "Missing actual kernel distinctness",
+      "rejected": true,
+      "reason": "Genuine Infinite source proof check failed: actualSourceAndTargetProofTypesKernelDistinct"
+    },
+    {
+      "check": "Nonstandard source axiom",
+      "rejected": true,
+      "reason": "Genuine Infinite source axiom closure differs"
+    },
+    {
+      "check": "Parent lacks whole qOrder kernel definitional equality",
+      "rejected": true,
+      "reason": "Infinite source proof requires exact complete qOrder data kernel definitional equality"
+    },
+    {
+      "check": "Current compiler-only helper falsely identified as source proof",
+      "rejected": true,
+      "reason": "Only exact actual qOrder compiler-only proof provenance is accepted"
+    },
+    {
+      "check": "Actual failed v7 receipt cannot produce accepted76+2 correspondence",
+      "rejected": true,
+      "reason": "Actual audit receipt did not succeed"
+    }
+  ],
+  "fixturePolicy": "All generated report fixtures exist only in memory and are not compiler evidence. Actual source facts, source diagnostic receipt/resources/hashes, current native facts and whole source-command binding come from disk.",
+  "sourceSelectedCount": 78,
+  "namedSelectedCount": 76,
+  "genuineSourceProofValueCount": 2,
+  "actualOwnedCount": 77,
+  "actualCompilerOnlyProofCount": 1,
+  "nativeStandardProofCount": 2,
+  "generatorHashes": {
+    "prepare_accepted_correspondence.py": "9d4e999aa3665f44d07b0df3cedb5ee72b303d0b781b13c4f87ffc3f955a3db4",
+    "prepare_source_ledger.py": "afab8bb26797d7dc1d9a7e91c159388a16ddd1bda0a6b1ca4b9bb541c750e81a"
+  },
+  "acceptedOutputGenerated": false
+}

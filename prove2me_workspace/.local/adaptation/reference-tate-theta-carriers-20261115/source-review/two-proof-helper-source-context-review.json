@@ -1,0 +1,161 @@
+{
+  "schema": "tate-theta-independent-two-proof-helper-source-context-review-v1",
+  "status": "actual-source-owner-and-minimal-proof-context-recommendation-only",
+  "actualOriginalMetadata": [
+    {
+      "constantKind": "theorem",
+      "module": "Mathlib.Basic.SetLike.Basic",
+      "name": "IsConcreteLE.exists_of_lt",
+      "nameExpr": [
+        [
+          [],
+          "str",
+          "IsConcreteLE"
+        ],
+        "str",
+        "exists_of_lt"
+      ]
+    },
+    {
+      "constantKind": "theorem",
+      "module": "Mathlib.RingTheory.Valuation.Basic",
+      "name": "_private.Mathlib.RingTheory.Valuation.Basic.0.Valuation.instNontrivialSubtypeUnitsMemSubmonoidValueMonoidOfIsNontrivial._simp_1",
+      "nameExpr": [
+        [
+          [
+            [
+              [
+                [
+                  [
+                    [
+                      [
+                        [],
+                        "str",
+                        "_private"
+                      ],
+                      "str",
+                      "Mathlib"
+                    ],
+                    "str",
+                    "RingTheory"
+                  ],
+                  "str",
+                  "Valuation"
+                ],
+                "str",
+                "Basic"
+              ],
+              "num",
+              0
+            ],
+            "str",
+            "Valuation"
+          ],
+          "str",
+          "instNontrivialSubtypeUnitsMemSubmonoidValueMonoidOfIsNontrivial"
+        ],
+        "str",
+        "_simp_1"
+      ]
+    }
+  ],
+  "metadataSource": {
+    "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/adic-completion-support-source-facts.json",
+    "sha256": "c87a71dcc4a080a5b9612857050d6ac2e0ff6b3c06858fcefed807a577e060b3",
+    "job_id": "ci-014311-a0bd6eed"
+  },
+  "sourceEvidence": [
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/Basic/SetLike/Basic.lean",
+      "sha256": "c56fba77d50ec4a7efb0ec89c4e6da2aee6058a8f7ff00332ca1d44b512ebda9"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Data/SetLike/Basic.lean",
+      "sha256": "8df869938b6b4a6c3801933218bf5ec4383e38d9f95f201d6635e9ef5b1107fa"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/RingTheory/Valuation/Basic.lean",
+      "sha256": "1359c5b0d968dd20e97f11121aab74a7446640b49482549ec0ef947540da8f2e"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/RingTheory/Valuation/Basic.lean",
+      "sha256": "86212a0d3c8061195b0b53f5461293e4a62e649c33b5c6294a2c52ecae314eac"
+    }
+  ],
+  "isConcreteLE": {
+    "originalOwner": "Mathlib.Basic.SetLike.Basic",
+    "originalClassLine": 221,
+    "originalClassContext": "[Membership B A] [LE A], field le_iff",
+    "originalTheoremLine": 284,
+    "originalTheoremContext": "[Membership B A] [Preorder A] [IsConcreteLE A B]",
+    "originalTheoremBody": "(lt_iff_le_and_exists.mp h).2",
+    "necessaryOriginalTextualProofReferences": [
+      "IsConcreteLE.lt_iff_le_and_exists",
+      "IsConcreteLE.not_le_iff_exists",
+      "IsConcreteLE.le_iff"
+    ],
+    "nativeOwner": "Mathlib.Data.SetLike.Basic",
+    "nativeClassLine": 219,
+    "nativeClassContext": "[SetLike A B] [LE A], protected field coe_subset_coe'",
+    "nativeAnalogousTheorem": "SetLike.exists_of_lt",
+    "nativeTheoremLine": 293,
+    "nativeTheoremContext": "[SetLike A B] [PartialOrder A] [IsConcreteLE A B]",
+    "minimalAdvice": "Keep current exact helper source query. Do not rename to the native SetLike theorem: both its class ABI and theorem hypotheses differ. Any additional helper/class boundary must come from actual exported direct dependencies and actual typed replay; no generic class replacement is authorized."
+  },
+  "valuationPrivateSimp": {
+    "originalOwner": "Mathlib.RingTheory.Valuation.Basic",
+    "actualPrivateName": [
+      [
+        [
+          [
+            [
+              [
+                [
+                  [
+                    [
+                      [],
+                      "str",
+                      "_private"
+                    ],
+                    "str",
+                    "Mathlib"
+                  ],
+                  "str",
+                  "RingTheory"
+                ],
+                "str",
+                "Valuation"
+              ],
+              "str",
+              "Basic"
+            ],
+            "num",
+            0
+          ],
+          "str",
+          "Valuation"
+        ],
+        "str",
+        "instNontrivialSubtypeUnitsMemSubmonoidValueMonoidOfIsNontrivial"
+      ],
+      "str",
+      "_simp_1"
+    ],
+    "originalParentName": "Valuation.instNontrivialSubtypeUnitsMemSubmonoidValueMonoidOfIsNontrivial",
+    "originalParentStartLine": 605,
+    "originalParentResult": "Nontrivial v.valueMonoid",
+    "originalParentProofSteps": [
+      "obtain x with v x nonzero and unequal to one",
+      "rw [Submonoid.nontrivial_iff_exists_ne_one]",
+      "use Units.mk0 (v x) h0 and v.mem_valueMonoid witness",
+      "simpa [Units.ext_iff]"
+    ],
+    "nativeCorrespondingParentStartLine": 613,
+    "nativeParentResult": "Nontrivial (MonoidWithZeroHom.valueMonoid (.ofClass v))",
+    "sourceChange": "The same four proof steps use (.ofClass v).mem_valueMonoid in the current source. Source text alone does not identify any current generated private theorem.",
+    "minimalAdvice": "Use only the exact original private _simp_1 Name/value/type from actual metadata, preserving numeric component0. It belongs to the Submonoid/valueMonoid parent, not the following Subgroup/valueGroup parent. Do not substitute the entire Nontrivial parent proof or invent a target private alias."
+  },
+  "scope": "Two actually missing original proof helpers only. No compilation, current helper identity, new data compatibility, Nat matcher pre-expansion or final kernel acceptance is asserted.",
+  "newCompatibilityAccepted": false,
+  "acceptedMappingGenerated": false
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "tate-theta-independent-main-local-heartbeat-review-v1",
+  "status": "accepted-static-single-audit-command-scope-no-check-removal-main-ci-pending",
+  "nextMainJob": "ci-014595-7186fb09",
+  "templateSha256": "fa6ae472b179541f97026ee7303f0b9c94cd46ddb6329c562257ff85072eac4f",
+  "auditorSha256": "efc01e05d0761c36303f974594172d6a568dc5064c021cb6fb87b77e4050eba6",
+  "exactDiff": [
+    {
+      "before": "  let platformFacts ← verifyPlatformHelperFacts config",
+      "after": "  logInfo \"Checking actual platform helper facts\"\n  let platformFacts ← verifyPlatformHelperFacts config"
+    },
+    {
+      "before": "  let (rs, proofResolutionReports) ← installExactTateJEquationProof rs allowedOwners source config platformFacts",
+      "after": "  logInfo \"Checking genuine original tateJ equation proof\"\n  let (rs, proofResolutionReports) ← installExactTateJEquationProof rs allowedOwners source config platformFacts"
+    },
+    {
+      "before": "    comparisons := comparisons.push (← compareRecord rs allowedOwners record (← getConstInfo targetName))",
+      "after": "    logInfo s!\"Checking complete public source declaration {original}\"\n    comparisons := comparisons.push (← compareRecord rs allowedOwners record (← getConstInfo targetName))"
+    },
+    {
+      "before": "  for name in declarations.qsort Name.lt do\n    ownedReports := ownedReports.push",
+      "after": "  logInfo \"Checking owned declaration axiom closures\"\n  for name in declarations.qsort Name.lt do\n    ownedReports := ownedReports.push"
+    },
+    {
+      "before": "\naudit_next_carriers\n",
+      "after": "\nset_option maxHeartbeats 1_000_000 in\naudit_next_carriers\n"
+    }
+  ],
+  "heartbeatScope": "Only final audit_next_carriers command is wrapped with set_option maxHeartbeats1_000_000 in. This follows the source35 Sort optimization and actual default200000 heartbeat failure. The option does not affect earlier declarations or any production Def module.",
+  "allOtherTemplateBytesUnchanged": true,
+  "productionDefs": [
+    {
+      "module": "TateCurvesTheta.TateCurve.JInvariant",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_JInvariant.lean",
+      "sha256": "1141161063777d616f41ebfe6b064258971c1471cc01eae12cff7228e12b9c90",
+      "maxHeartbeatsOccurrences": 0
+    },
+    {
+      "module": "TateCurvesTheta.TateCurve.Parametrization",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Parametrization.lean",
+      "sha256": "15742b636401863cad89522f216c8b9389130e8609db50837d37146b0a77190f",
+      "maxHeartbeatsOccurrences": 0
+    },
+    {
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime.lean",
+      "sha256": "b6cc1f4f434bf1fa52ad37b7ad9cf12f17dedbb95b82314bddda49cd6079424a",
+      "maxHeartbeatsOccurrences": 0
+    },
+    {
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateStructure.lean",
+      "sha256": "8a7ac02c6ec56e17ca79fcfd3cd14ab9c6a8a601de9e6dec6d4505bb916a81f3",
+      "maxHeartbeatsOccurrences": 0
+    }
+  ],
+  "allMathematicalChecksPreserved": true,
+  "mainAccepted": false,
+  "acceptedOutputGenerated": false
+}

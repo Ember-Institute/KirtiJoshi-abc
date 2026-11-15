@@ -1,0 +1,4 @@
+{
+  "definition_name": "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_JInvariant",
+  "code": "import Mathlib.Algebra.Field.Defs\nimport Mathlib.Algebra.Group.Defs\nimport Mathlib.Algebra.Ring.Defs\nimport Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass\nimport Mathlib.Analysis.Normed.Field.Basic\nimport Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_Basic\nimport Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Weierstrass\nimport Mathlib.Topology.MetricSpace.Ultra.Basic\n\nset_option relaxedAutoImplicit false\nset_option maxSynthPendingDepth 3\n\nnamespace AbcAdaptation.Reference\n\n\n\nnoncomputable section\n\nnamespace TateCurvesTheta\n\nnamespace TateParameter\n\nvariable {K : Type*} [NormedField K] [CompleteSpace K] [IsUltrametricDist K]\n\nvariable (t : TateParameter K)\n\n\ndef tateJ : K := t.tateCurve.c₄ ^ 3 / t.tateCurve.Δ\n\nend TateParameter\n\nend TateCurvesTheta\n\nend\n\nend AbcAdaptation.Reference\n"
+}

@@ -1,0 +1,1039 @@
+{
+  "schema": "tate-theta-independent-signature-binder-comparison-scope-review-v1",
+  "status": "minimal-guard-plan-and77-raw-signature-preconditions-reviewed-not-kernel-accepted",
+  "evidence": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/inventory.json",
+      "sha256": "ac55850e9d463aa997fe233774ad6108342a8f0e79c57508bd3f4a25cbca55e8"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/audit-config.json",
+      "sha256": "69de12c99efe5201dc69a6a5b3b61531eace63a43a6269a5cfbbc63f7cb69c00"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/dependency-closure.json",
+      "sha256": "70b8ad9028c3f08cd8e7c8b30c58314f8e0b820818b4f16cc105469b32852077"
+    }
+  ],
+  "currentComparisonObjects": {
+    "originalMetadata": "record.binderInventory exported from actual4.35 original ConstantInfo.type without body expansion",
+    "misnamedSourceTypeRaw": "decodeExpr rs(record.elaboratedExpr), which already expands any admitted source/standard proof/data bodies before canonical universe substitution",
+    "currentProblem": "A valid original constant application becomes a lambda-containing body expression after expansion. Literal tree inventory/placement against original exported signature is no longer a comparison of the same objects."
+  },
+  "minimalApprovedPlan": {
+    "rawRelocations": "Copy rs and empty every body-expansion table. Keep only the existing named relocation/universe permutation behavior. No new identity decoder is required for these actual77 signatures.",
+    "rawSignature": "Decode original exported elaboratedExpr with rawRs; canonicalize universe parameters. Names can be relocated, but no function/proof/data body is expanded.",
+    "strictSerializationCheck": "record.binderInventory must equal complete binderInventory(rawSignature).",
+    "strictTargetSignatureChecks": [
+      "Complete binderInventory(rawSignature) must equal complete binderInventory(actual target.type).",
+      "Complete binderPlacement(rawSignature) must equal complete binderPlacement(actual target.type)."
+    ],
+    "expandedKernelComparison": "Decode with full rs separately and retain existing kernelTypeEq(expanded sourceType,actual targetType), source and target value Kernel.check, complete kernelTermEq(data values), recursor rule comparisons, full structure/field/autoParam checks and all ownership/axiom audits.",
+    "rawTypeKernelCheck": "Not performed in the platform environment: raw original old standard signatures can differ or be absent. Raw type is used only for original signature structure; actual original compiler export is its provenance.",
+    "standardBodyProvenanceChecks": "Each admitted standard body must independently preserve its actual original source type JSON and BinderInfo source record; any native proof seed retains its explicit actual universe restoration and exact-source-type kernel checks. Genuine original data/proof bodies are decoded without dropping their binder metadata, and their expanded exact original types are kernel-checked. No data mismatch or extra source obligation is waived."
+  },
+  "recommendedFinalComparisonReportFields": {
+    "sourceSignatureBinderInfoSerializationValidated": true,
+    "sourceTargetSignatureBinderInfoInventoryEqual": true,
+    "sourceTargetSignatureBinderInfoPlacementEqual": true,
+    "binderInfoComparisonScope": "unexpanded-original-exported-signature-after-named-relocation-vs-actual-target-type",
+    "legacyBinderBooleanScope": "allExpressionBinderInfoEqual and binderInfoPlacementEqual refer to the complete unexpanded signature comparison, not equality of the expanded body tree with the raw source text.",
+    "expandedOriginalTypeKernelEqual": true,
+    "expandedSourceTreeClaim": "No literal raw-versus-expanded BinderInfo equality is asserted. Optional raw/expanded binder counts can be diagnostic only."
+  },
+  "actualRawSignaturePreconditions": [
+    {
+      "original": "TateCurvesTheta.TateParameter.tateJ",
+      "module": "TateCurvesTheta.TateCurve.JInvariant",
+      "projectNamesInRawOriginalType": [
+        "TateCurvesTheta.TateParameter"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "TateCurvesTheta.TateParameter.X",
+      "module": "TateCurvesTheta.TateCurve.Parametrization",
+      "projectNamesInRawOriginalType": [
+        "TateCurvesTheta.TateParameter"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "TateCurvesTheta.TateParameter.Xterm",
+      "module": "TateCurvesTheta.TateCurve.Parametrization",
+      "projectNamesInRawOriginalType": [
+        "TateCurvesTheta.TateParameter"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "TateCurvesTheta.TateParameter.Y",
+      "module": "TateCurvesTheta.TateCurve.Parametrization",
+      "projectNamesInRawOriginalType": [
+        "TateCurvesTheta.TateParameter"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "TateCurvesTheta.TateParameter.Yterm",
+      "module": "TateCurvesTheta.TateCurve.Parametrization",
+      "projectNamesInRawOriginalType": [
+        "TateCurvesTheta.TateParameter"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "TateCurvesTheta.TateParameter.X._proof_1",
+      "module": "TateCurvesTheta.TateCurve.Parametrization",
+      "projectNamesInRawOriginalType": [],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.galPointMap",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.galPointMap_torsionBy",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.galPointMap"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.localCompletion",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData._sizeOf_1",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData._sizeOf_inst",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.casesOn",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.mk",
+        "Iut.IsGaloisOfDegreePrimeTo",
+        "Iut.badPlacesOver",
+        "Iut.fieldOfModuli",
+        "Iut.galPointMap",
+        "Iut.galPointMap_torsionBy",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli",
+        "Iut.localCompletion",
+        "Iut.residueChar",
+        "TateCurvesTheta.IsUniformizer",
+        "TateCurvesTheta.OrderedTateParameter.PrimeToOrder",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.tateJ",
+        "TateCurvesTheta.TateParameter.toOrdered"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.ctorIdx",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.five_le",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.ℓ",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.galois_deg_prime",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.ℓ",
+        "Iut.IsGaloisOfDegreePrimeTo",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.ker_isOpen",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.rep",
+        "Iut.AdmissiblePrimeData.ℓ",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.mk",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.IsGaloisOfDegreePrimeTo",
+        "Iut.badPlacesOver",
+        "Iut.fieldOfModuli",
+        "Iut.galPointMap",
+        "Iut.galPointMap_torsionBy",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli",
+        "Iut.localCompletion",
+        "Iut.residueChar",
+        "TateCurvesTheta.IsUniformizer",
+        "TateCurvesTheta.OrderedTateParameter.PrimeToOrder",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.tateJ",
+        "TateCurvesTheta.TateParameter.toOrdered"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.noConfusion",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.noConfusionType",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.noConfusionType",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.qOrder",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.badPlacesOver",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.q_order_coprime",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.tate",
+        "Iut.AdmissiblePrimeData.unif",
+        "Iut.AdmissiblePrimeData.unif_isUniformizer",
+        "Iut.AdmissiblePrimeData.ℓ",
+        "Iut.badPlacesOver",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli",
+        "Iut.localCompletion",
+        "TateCurvesTheta.OrderedTateParameter.PrimeToOrder",
+        "TateCurvesTheta.TateParameter.toOrdered"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.rec",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.mk",
+        "Iut.IsGaloisOfDegreePrimeTo",
+        "Iut.badPlacesOver",
+        "Iut.fieldOfModuli",
+        "Iut.galPointMap",
+        "Iut.galPointMap_torsionBy",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli",
+        "Iut.localCompletion",
+        "Iut.residueChar",
+        "TateCurvesTheta.IsUniformizer",
+        "TateCurvesTheta.OrderedTateParameter.PrimeToOrder",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.tateJ",
+        "TateCurvesTheta.TateParameter.toOrdered"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.recOn",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.mk",
+        "Iut.IsGaloisOfDegreePrimeTo",
+        "Iut.badPlacesOver",
+        "Iut.fieldOfModuli",
+        "Iut.galPointMap",
+        "Iut.galPointMap_torsionBy",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli",
+        "Iut.localCompletion",
+        "Iut.residueChar",
+        "TateCurvesTheta.IsUniformizer",
+        "TateCurvesTheta.OrderedTateParameter.PrimeToOrder",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.tateJ",
+        "TateCurvesTheta.TateParameter.toOrdered"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.rep",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.ℓ",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.rep_spec",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.rep",
+        "Iut.AdmissiblePrimeData.torsionBasis",
+        "Iut.AdmissiblePrimeData.ℓ",
+        "Iut.fieldOfModuli",
+        "Iut.galPointMap",
+        "Iut.galPointMap_torsionBy",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.residueChar_coprime",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.ℓ",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli",
+        "Iut.residueChar"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.sl_le_range",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.rep",
+        "Iut.AdmissiblePrimeData.ℓ",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.tate",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.badPlacesOver",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli",
+        "Iut.localCompletion",
+        "TateCurvesTheta.TateParameter"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.tateJ_eq",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.tate",
+        "Iut.badPlacesOver",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli",
+        "Iut.localCompletion",
+        "TateCurvesTheta.TateParameter.tateJ"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.torsionBasis",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.ℓ",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.torsionField",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.unif",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.badPlacesOver",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli",
+        "Iut.localCompletion"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.unif_isUniformizer",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.unif",
+        "Iut.badPlacesOver",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli",
+        "Iut.localCompletion",
+        "TateCurvesTheta.IsUniformizer"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.ℓ",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.ℓ_prime",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.ℓ",
+        "Iut.fieldOfModuli",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.galPointMap._proof_1",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.mk._flat_ctor",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.IsGaloisOfDegreePrimeTo",
+        "Iut.badPlacesOver",
+        "Iut.fieldOfModuli",
+        "Iut.galPointMap",
+        "Iut.galPointMap_torsionBy",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli",
+        "Iut.localCompletion",
+        "Iut.residueChar",
+        "TateCurvesTheta.IsUniformizer",
+        "TateCurvesTheta.OrderedTateParameter.PrimeToOrder",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.tateJ",
+        "TateCurvesTheta.TateParameter.toOrdered"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.mk.inj",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.mk",
+        "Iut.IsGaloisOfDegreePrimeTo",
+        "Iut.badPlacesOver",
+        "Iut.fieldOfModuli",
+        "Iut.galPointMap",
+        "Iut.galPointMap_torsionBy",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli",
+        "Iut.localCompletion",
+        "Iut.residueChar",
+        "TateCurvesTheta.IsUniformizer",
+        "TateCurvesTheta.OrderedTateParameter.PrimeToOrder",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.tateJ",
+        "TateCurvesTheta.TateParameter.toOrdered"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.mk.injEq",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.mk",
+        "Iut.IsGaloisOfDegreePrimeTo",
+        "Iut.badPlacesOver",
+        "Iut.fieldOfModuli",
+        "Iut.galPointMap",
+        "Iut.galPointMap_torsionBy",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli",
+        "Iut.localCompletion",
+        "Iut.residueChar",
+        "TateCurvesTheta.IsUniformizer",
+        "TateCurvesTheta.OrderedTateParameter.PrimeToOrder",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.tateJ",
+        "TateCurvesTheta.TateParameter.toOrdered"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.mk.noConfusion",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData.mk",
+        "Iut.IsGaloisOfDegreePrimeTo",
+        "Iut.badPlacesOver",
+        "Iut.fieldOfModuli",
+        "Iut.galPointMap",
+        "Iut.galPointMap_torsionBy",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli",
+        "Iut.localCompletion",
+        "Iut.residueChar",
+        "TateCurvesTheta.IsUniformizer",
+        "TateCurvesTheta.OrderedTateParameter.PrimeToOrder",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.tateJ",
+        "TateCurvesTheta.TateParameter.toOrdered"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.mk.sizeOf_spec",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [
+        "Iut.AdmissiblePrimeData",
+        "Iut.AdmissiblePrimeData._sizeOf_inst",
+        "Iut.AdmissiblePrimeData.mk",
+        "Iut.IsGaloisOfDegreePrimeTo",
+        "Iut.badPlacesOver",
+        "Iut.fieldOfModuli",
+        "Iut.galPointMap",
+        "Iut.galPointMap_torsionBy",
+        "Iut.instNumberFieldSubtypeMemIntermediateFieldRatFieldOfModuli",
+        "Iut.localCompletion",
+        "Iut.residueChar",
+        "TateCurvesTheta.IsUniformizer",
+        "TateCurvesTheta.OrderedTateParameter.PrimeToOrder",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.tateJ",
+        "TateCurvesTheta.TateParameter.toOrdered"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.AdmissiblePrimeData.qOrder._proof_1",
+      "module": "Iut.Cor312.ThetaData.AdmissiblePrime",
+      "projectNamesInRawOriginalType": [],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.xCoord",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.yCoord",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.C",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.IsCanonical",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure._sizeOf_1",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure._sizeOf_inst",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.casesOn",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.mk",
+        "Iut.xCoord",
+        "Iut.yCoord",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.X",
+        "TateCurvesTheta.TateParameter.Y",
+        "TateCurvesTheta.TateParameter.q",
+        "TateCurvesTheta.TateParameter.tateCurve"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.ctorIdx",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.graphLine",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.hC",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.C",
+        "Iut.TateStructure.t",
+        "TateCurvesTheta.TateParameter.tateCurve"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.iso",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.t",
+        "TateCurvesTheta.TateParameter.q"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.iso_x",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.C",
+        "Iut.TateStructure.iso",
+        "Iut.TateStructure.t",
+        "Iut.xCoord",
+        "TateCurvesTheta.TateParameter.X",
+        "TateCurvesTheta.TateParameter.q"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.iso_y",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.C",
+        "Iut.TateStructure.iso",
+        "Iut.TateStructure.t",
+        "Iut.yCoord",
+        "TateCurvesTheta.TateParameter.Y",
+        "TateCurvesTheta.TateParameter.q"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.mk",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.xCoord",
+        "Iut.yCoord",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.X",
+        "TateCurvesTheta.TateParameter.Y",
+        "TateCurvesTheta.TateParameter.q",
+        "TateCurvesTheta.TateParameter.tateCurve"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.noConfusion",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.noConfusionType"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.noConfusionType",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.ofUnit",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.ofUnit_inv",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.ofUnit"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.ofUnit_mul",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.ofUnit"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.ofUnit_one",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.ofUnit"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.rec",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.mk",
+        "Iut.xCoord",
+        "Iut.yCoord",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.X",
+        "TateCurvesTheta.TateParameter.Y",
+        "TateCurvesTheta.TateParameter.q",
+        "TateCurvesTheta.TateParameter.tateCurve"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.recOn",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.mk",
+        "Iut.xCoord",
+        "Iut.yCoord",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.X",
+        "TateCurvesTheta.TateParameter.Y",
+        "TateCurvesTheta.TateParameter.q",
+        "TateCurvesTheta.TateParameter.tateCurve"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.t",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "TateCurvesTheta.TateParameter"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.xCoord.match_1",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.graphLine._proof_1",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.ofUnit"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.graphLine._proof_2",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.ofUnit"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.graphLine._proof_3",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.ofUnit"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.mk._flat_ctor",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.xCoord",
+        "Iut.yCoord",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.X",
+        "TateCurvesTheta.TateParameter.Y",
+        "TateCurvesTheta.TateParameter.q",
+        "TateCurvesTheta.TateParameter.tateCurve"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.mk.inj",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.mk",
+        "Iut.xCoord",
+        "Iut.yCoord",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.X",
+        "TateCurvesTheta.TateParameter.Y",
+        "TateCurvesTheta.TateParameter.q",
+        "TateCurvesTheta.TateParameter.tateCurve"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.mk.injEq",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.mk",
+        "Iut.xCoord",
+        "Iut.yCoord",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.X",
+        "TateCurvesTheta.TateParameter.Y",
+        "TateCurvesTheta.TateParameter.q",
+        "TateCurvesTheta.TateParameter.tateCurve"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.mk.noConfusion",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.mk",
+        "Iut.xCoord",
+        "Iut.yCoord",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.X",
+        "TateCurvesTheta.TateParameter.Y",
+        "TateCurvesTheta.TateParameter.q",
+        "TateCurvesTheta.TateParameter.tateCurve"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.mk.sizeOf_spec",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure._sizeOf_inst",
+        "Iut.TateStructure.mk",
+        "Iut.xCoord",
+        "Iut.yCoord",
+        "TateCurvesTheta.TateParameter",
+        "TateCurvesTheta.TateParameter.X",
+        "TateCurvesTheta.TateParameter.Y",
+        "TateCurvesTheta.TateParameter._sizeOf_inst",
+        "TateCurvesTheta.TateParameter.q",
+        "TateCurvesTheta.TateParameter.tateCurve"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    },
+    {
+      "original": "Iut.TateStructure.ofUnit._proof_1",
+      "module": "Iut.Cor312.ThetaData.TateStructure",
+      "projectNamesInRawOriginalType": [
+        "Iut.TateStructure",
+        "Iut.TateStructure.t",
+        "TateCurvesTheta.TateParameter.q"
+      ],
+      "allHaveNamedRelocations": true,
+      "containsAbsentTateJProofReference": false
+    }
+  ],
+  "comparedPublicSignatureCount": 77,
+  "missingNamedProjectReferences": [],
+  "referencesToAbsentTateJProof": [],
+  "separateGenuineProjectProofValueCount": 1,
+  "productionDefsChanged": false,
+  "dataEqualityChecksMayBeRemoved": false,
+  "newDataCompatibilityAccepted": false,
+  "finalSignatureChecksAccepted": false,
+  "mappingGenerated": false
+}

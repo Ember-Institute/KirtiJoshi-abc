@@ -1,0 +1,68 @@
+{
+  "schema": "tate-theta-final-generator-contract-review-v1",
+  "status": "verifier-contract-and-actual-input-paths-checked-not-main-audit-acceptance",
+  "checks": [
+    {
+      "check": "Actual failed final main receipt cannot generate accepted correspondence",
+      "rejected": true,
+      "reason": "Actual audit receipt did not succeed"
+    },
+    {
+      "check": "All actual accepted A/B hashes, complete field spans, historical inputs, main manifest paths and35 original report-row contracts independently validate",
+      "passed": true,
+      "reportFlags": "in-memory fixture only; not compiler evidence"
+    },
+    {
+      "check": "Missing source record",
+      "rejected": true,
+      "reason": "Final main omitted complete source DAG check: NumberField.FinitePlace.maximalIdeal"
+    },
+    {
+      "check": "Failed complete type/value check",
+      "rejected": true,
+      "reason": "Main complete DAG check failed completeValueKernelCheckedAtExactOriginalType: Int.instPartialOrder"
+    },
+    {
+      "check": "Invented target identity",
+      "rejected": true,
+      "reason": "DAG report must retain actual source Name/value provenance without target identity"
+    },
+    {
+      "check": "Wrong global standard count",
+      "rejected": true,
+      "reason": "Final complete DAG checks or standard proof accounting failed"
+    },
+    {
+      "check": "Nonstandard axiom",
+      "rejected": true,
+      "reason": "DAG type/value uses unexpected axioms: Int.instPartialOrder"
+    },
+    {
+      "check": "Changed accepted DAG view SHA",
+      "rejected": true,
+      "reason": "Accepted complete DAG view changed"
+    },
+    {
+      "check": "Final main missing accepted DAG view binding",
+      "rejected": true,
+      "reason": "Final main manifest does not bind exact accepted DAG evidence: /home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/adic-dag-a-view.j"
+    },
+    {
+      "check": "Exact raw original signature scope accepts all four explicit checks",
+      "passed": true
+    },
+    {
+      "check": "Wrong expanded BinderInfo scope",
+      "rejected": true,
+      "reason": "Unexpected original signature BinderInfo scope: test"
+    }
+  ],
+  "actualFailedMainJob": "ci-014549-4886fad9",
+  "actualFailedMainStatus": "failed",
+  "acceptedOutputGenerated": false,
+  "fixturePolicy": "Only in-memory generated report fixtures exercise verifier report contracts. They are not emitted or accepted as compiler evidence. Actual leaf files/receipts/source input hashes/spans are checked from disk.",
+  "generatorHashes": {
+    "prepare_accepted_correspondence.py": "e0cdc0b5c80558040de22cd91398610d12f3277cfec6d486aa68289614b36a5e",
+    "prepare_source_ledger.py": "98dc2839b96f4603180e9ae964bab142eda917f2839d98902846ca6df68f72f3"
+  }
+}

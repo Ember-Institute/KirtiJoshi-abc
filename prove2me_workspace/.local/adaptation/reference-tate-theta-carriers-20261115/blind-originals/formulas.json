@@ -1,0 +1,227 @@
+{
+  "author_model": "gpt-6.1-sol",
+  "actual_model": null,
+  "fresh_context": true,
+  "input_only_formal_code": true,
+  "inputs": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/generated-wrapped/blind/Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_JInvariant.lean",
+      "sha256": "c02bf10e68e9745a12fe7eae0f76383a23c512e7b6cd99a669ddef30f0c406f9",
+      "sha256_after": "c02bf10e68e9745a12fe7eae0f76383a23c512e7b6cd99a669ddef30f0c406f9",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/generated-wrapped/blind/Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Parametrization.lean",
+      "sha256": "20419f64105b81837df7a58c528dfc53d4aea44dad8acfe6e389386274ced297",
+      "sha256_after": "20419f64105b81837df7a58c528dfc53d4aea44dad8acfe6e389386274ced297",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-packet-field-carriers-20261115/generated-wrapped/blind/Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_Basic.lean",
+      "sha256": "8d58b4caeb1b22eec3c3c78de72ba994d1f0654ce1cc0ca95610409b117cc8b9",
+      "sha256_after": "8d58b4caeb1b22eec3c3c78de72ba994d1f0654ce1cc0ca95610409b117cc8b9",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/generated-wrapped/blind/Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Weierstrass.lean",
+      "sha256": "b0ab17d08c558ace36bfe40858498c9c8d7b8c19065a8f02886ceaaba4ec538e",
+      "sha256_after": "b0ab17d08c558ace36bfe40858498c9c8d7b8c19065a8f02886ceaaba4ec538e",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/mission_auditor.md",
+      "sha256": "7250f650867c2beff91e613e069eb25e469ff2114573131b591074f949ba0ea5",
+      "role": "auditor/style rules",
+      "sha256_after": "7250f650867c2beff91e613e069eb25e469ff2114573131b591074f949ba0ea5",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/blind-rules.md",
+      "sha256": "e2db03cb81a5cc8b13aedf56fdce092981d3081257ae3e5837c003924efbbc5e",
+      "role": "auditor/style rules",
+      "sha256_after": "e2db03cb81a5cc8b13aedf56fdce092981d3081257ae3e5837c003924efbbc5e",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/AlgebraicGeometry/EllipticCurve/Weierstrass.lean",
+      "sha256": "471c1e8ec85a9905a58f91e331567ddf14a0cdb6997da1b526861b0120c13b3e",
+      "role": "standard Mathlib formal semantics; comments stripped before viewing",
+      "sha256_after": "471c1e8ec85a9905a58f91e331567ddf14a0cdb6997da1b526861b0120c13b3e",
+      "unchanged": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Topology/Algebra/InfiniteSum/Defs.lean",
+      "sha256": "26530f0777b7679b28a386e3e866e4064b11b8284522ec6429cf78a8df833f6e",
+      "role": "standard Mathlib formal semantics; comments stripped before viewing",
+      "sha256_after": "26530f0777b7679b28a386e3e866e4064b11b8284522ec6429cf78a8df833f6e",
+      "unchanged": true
+    }
+  ],
+  "bundles": [
+    {
+      "definition_name": "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_JInvariant",
+      "en": "For every normed field $K$ of arbitrary characteristic and every datum $t$ consisting of a unit $q\\in K^\\times$ satisfying $\\lVert q\\rVert<1$ (so its underlying field element is nonzero and $0<\\lVert q\\rVert<1$), this declaration defines a value $j_t\\in K$. For $k=3,5$, put $S_k=\\sum'_{m\\in\\mathbb N}\\frac{(m+1)^kq^{m+1}}{1-q^{m+1}}$, where $m=0$ is included, $m+1$ is first formed in $\\mathbb N$ and then mapped to $K$, and the prime denotes the unconditional sum in $K$: the limit of finite subsums if it exists, and $0$ if there is no such limit in $K$. Put $A=-5S_3$ and $B=-(5S_3+7S_5)/12$. The associated Weierstrass coefficient tuple is $(a_1,a_2,a_3,a_4,a_6)=(1,0,0,A,B)$, whose usual invariants here are $c_4=1-48A$ and $\\Delta=-(B-A^2)-8(2A)^3-27(4B)^2+9(2A)(4B)$. The defined value is $j_t=c_4^3/\\Delta$. All integer constants in these expressions are interpreted in $K$. Division is the field's total division, so $B=0$ if $12=0$ in $K$, and $j_t=0$ if $\\Delta=0$; no nonvanishing condition on $12$ or $\\Delta$ restricts this definition. The sums and divisions thus define a value without a convergence or nonsingularity hypothesis. Completeness of $K$ and the ultrametric inequality for its distance are not parameters of this declaration: the corresponding section assumptions do not occur in its defining expression or its used local definitions.",
+      "zh-Hans": "对任意特征的任意赋范域 $K$，以及由满足 $\\lVert q\\rVert<1$ 的可逆元 $q\\in K^\\times$ 组成的任意数据 $t$（其对应的域元素因此非零，且 $0<\\lVert q\\rVert<1$），本声明定义一个值 $j_t\\in K$。对 $k=3,5$，令 $S_k=\\sum'_{m\\in\\mathbb N}\\frac{(m+1)^kq^{m+1}}{1-q^{m+1}}$，其中包括 $m=0$，$m+1$ 先在 $\\mathbb N$ 中计算再映入 $K$，撇号表示 $K$ 中的无条件和：若有限部分和存在极限，则取该极限；若在 $K$ 中不存在这样的极限，则取 $0$。令 $A=-5S_3$ 和 $B=-(5S_3+7S_5)/12$。相应的 Weierstrass 系数五元组为 $(a_1,a_2,a_3,a_4,a_6)=(1,0,0,A,B)$，其通常不变量在此为 $c_4=1-48A$ 和 $\\Delta=-(B-A^2)-8(2A)^3-27(4B)^2+9(2A)(4B)$。所定义的值为 $j_t=c_4^3/\\Delta$。这些表达式中的所有整数常数均解释为 $K$ 中的元素。除法采用域中处处有定义的除法，因此若 $K$ 中 $12=0$，则 $B=0$；若 $\\Delta=0$，则 $j_t=0$；本定义没有要求 $12$ 或 $\\Delta$ 非零的定义域限制。因此，这些求和与除法在没有收敛性或非奇异性假设的情况下仍定义一个值。$K$ 的完备性及其距离满足超度量不等式都不是本声明的参数：相应的节内假设没有出现在定义表达式或其中使用的局部定义中。",
+      "ja": "標数が任意の任意のノルム体 $K$ と、$\\lVert q\\rVert<1$ を満たす可逆元 $q\\in K^\\times$ からなる任意のデータ $t$ に対して、この宣言は値 $j_t\\in K$ を定義する。$q$ に対応する体の元は零でなく、$0<\\lVert q\\rVert<1$ である。$k=3,5$ に対して $S_k=\\sum'_{m\\in\\mathbb N}\\frac{(m+1)^kq^{m+1}}{1-q^{m+1}}$ と置く。ここでは $m=0$ も含み、$m+1$ はまず $\\mathbb N$ で計算してから $K$ に写す。プライムは $K$ における無条件和を表し、有限部分和の極限が存在すればその極限を、$K$ にそのような極限が存在しなければ $0$ を取る。$A=-5S_3$、$B=-(5S_3+7S_5)/12$ と置く。対応するワイエルシュトラス係数の組は $(a_1,a_2,a_3,a_4,a_6)=(1,0,0,A,B)$ であり、その通常の不変量はここでは $c_4=1-48A$ および $\\Delta=-(B-A^2)-8(2A)^3-27(4B)^2+9(2A)(4B)$ である。定義される値は $j_t=c_4^3/\\Delta$ である。これらの式における整数定数はすべて $K$ の元として解釈する。除法は体上の全域的な除法であるため、$K$ において $12=0$ ならば $B=0$、$\\Delta=0$ ならば $j_t=0$ である。$12$ または $\\Delta$ が零でないという定義域の制限はない。したがって、これらの和と除法は収束性や非特異性の仮定なしに値を定める。$K$ の完備性と、その距離が超距離不等式を満たすことは、この宣言のパラメータではない。対応する節内の仮定は、定義式にも、そこで使用する局所的な定義にも現れないためである。",
+      "declaration_coverage": [
+        {
+          "declaration": "AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tateJ",
+          "implicit_type": "K : Type u, arbitrary universe",
+          "typeclass": "NormedField K",
+          "explicit_data": "t : TateParameter K, a unit q with norm strictly below 1",
+          "unused_section_assumptions": "CompleteSpace K and IsUltrametricDist K are not used by these definitions; binder retention inferred from source, not checked by compiler display.",
+          "domain": "TateParameter K",
+          "codomain": "K",
+          "expanded_local_definitions": [
+            "TateParameter",
+            "eisenstein at 3 and 5",
+            "a₄",
+            "a₆",
+            "tateCurve"
+          ],
+          "expanded_standard_invariants": [
+            "c₄",
+            "Δ"
+          ],
+          "edge_cases": [
+            "Natural summation index starts at 0; q nonzero with norm strictly below 1",
+            "No characteristic restriction; all numeral casts occur in K",
+            "Every infinite sum equals 0 if not summable in K",
+            "12=0 gives a₆=0; Δ=0 gives tateJ=0"
+          ],
+          "logical_form": "Definition of a K-valued function; no theorem or existence/uniqueness assertion."
+        }
+      ],
+      "possible_ambiguities": [
+        "The omission of the unused completeness and ultrametric section assumptions is inferred from standard section-variable elaboration and the supplied dependency bodies; no elaborated compiler type display was inspected."
+      ],
+      "proof_notes": [
+        "This is a source-level definitional read-back only. No compilation, proof verification, or axiom audit was performed."
+      ]
+    },
+    {
+      "definition_name": "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Parametrization",
+      "en": "For every normed field $K$, every datum $t$ consisting of a unit $q\\in K^\\times$ with $\\lVert q\\rVert<1$, every unit $u\\in K^\\times$, and every integer $n\\in\\mathbb Z$, this declaration defines $X_{\\mathrm{term},t}(u,n)\\in K$ by $X_{\\mathrm{term},t}(u,n)=\\frac{q^n u}{(1-q^n u)^2}$, using the underlying elements of $K$ for $q$ and $u$. The exponent ranges over all integers, including zero and negative integers; $q^0=1$, and negative powers use the inverse of the nonzero element $q$. The domain includes $u=q^{-n}$, in particular $n=0,u=1$; at these arguments the denominator is zero and total field division gives $X_{\\mathrm{term},t}(u,n)=0$. No completeness or ultrametric assumption on $K$ is required.\n\nFor every normed field $K$, every datum $t$ consisting of a unit $q\\in K^\\times$ with $\\lVert q\\rVert<1$, every unit $u\\in K^\\times$, and every integer $n\\in\\mathbb Z$, this declaration defines $Y_{\\mathrm{term},t}(u,n)\\in K$ by $Y_{\\mathrm{term},t}(u,n)=\\frac{(q^n u)^2}{(1-q^n u)^3}$, using the underlying elements of $K$ for $q$ and $u$. The exponent ranges over all integers, including zero and negative integers; $q^0=1$, and negative powers use the inverse of the nonzero element $q$. The domain includes $u=q^{-n}$, in particular $n=0,u=1$; at these arguments the denominator is zero and total field division gives $Y_{\\mathrm{term},t}(u,n)=0$. No completeness or ultrametric assumption on $K$ is required.\n\nFor every normed field $K$, every datum $t$ consisting of a unit $q\\in K^\\times$ with $\\lVert q\\rVert<1$, and every unit $u\\in K^\\times$, this declaration defines $X_t(u)\\in K$ by $X_t(u)=\\sum'_{n\\in\\mathbb Z}\\frac{q^n u}{(1-q^n u)^2}-2\\sum'_{m\\in\\mathbb N}\\frac{(m+1)q^{m+1}}{1-q^{m+1}}$. Here $q,u$ in the formula mean their underlying field elements, the first sum runs over all integers including zero and negative integers, and the second runs over all natural numbers including $m=0$; $m+1$ is first formed in $\\mathbb N$ and then mapped to $K$. Each primed sum separately means the limit in $K$ of its finite subsums if that limit exists, and $0$ otherwise. Negative powers of $q$ use its inverse. Division is total field division, so every first-sum term with $u=q^{-n}$ is assigned the value $0$, and these units remain in the domain. The constant $2$ is interpreted in $K$. The definition requires neither completeness nor the ultrametric inequality, and has no summability hypothesis on either series.\n\nFor every normed field $K$, every datum $t$ consisting of a unit $q\\in K^\\times$ with $\\lVert q\\rVert<1$, and every unit $u\\in K^\\times$, this declaration defines $Y_t(u)\\in K$ by $Y_t(u)=\\sum'_{n\\in\\mathbb Z}\\frac{(q^n u)^2}{(1-q^n u)^3}+\\sum'_{m\\in\\mathbb N}\\frac{(m+1)q^{m+1}}{1-q^{m+1}}$. Here $q,u$ in the formula mean their underlying field elements, the first sum runs over all integers including zero and negative integers, and the second runs over all natural numbers including $m=0$; $m+1$ is first formed in $\\mathbb N$ and then mapped to $K$. Each primed sum separately means the limit in $K$ of its finite subsums if that limit exists, and $0$ otherwise. Negative powers of $q$ use its inverse. Division is total field division, so every first-sum term with $u=q^{-n}$ is assigned the value $0$, and these units remain in the domain. The definition requires neither completeness nor the ultrametric inequality, and has no summability hypothesis on either series.",
+      "zh-Hans": "对任意赋范域 $K$、由满足 $\\lVert q\\rVert<1$ 的可逆元 $q\\in K^\\times$ 组成的任意数据 $t$、任意可逆元 $u\\in K^\\times$ 以及任意整数 $n\\in\\mathbb Z$，本声明用 $X_{\\mathrm{term},t}(u,n)=\\frac{q^n u}{(1-q^n u)^2}$ 定义 $X_{\\mathrm{term},t}(u,n)\\in K$，其中 $q,u$ 使用各自对应的 $K$ 中元素。指数遍历所有整数，包括零和负整数；$q^0=1$，负整数幂使用非零元素 $q$ 的逆元。定义域包括 $u=q^{-n}$ 的情形，特别包括 $n=0,u=1$；在这些输入处，分母为零，而域中处处有定义的除法给出 $X_{\\mathrm{term},t}(u,n)=0$。不要求 $K$ 完备，也不要求其距离满足超度量不等式。\n\n对任意赋范域 $K$、由满足 $\\lVert q\\rVert<1$ 的可逆元 $q\\in K^\\times$ 组成的任意数据 $t$、任意可逆元 $u\\in K^\\times$ 以及任意整数 $n\\in\\mathbb Z$，本声明用 $Y_{\\mathrm{term},t}(u,n)=\\frac{(q^n u)^2}{(1-q^n u)^3}$ 定义 $Y_{\\mathrm{term},t}(u,n)\\in K$，其中 $q,u$ 使用各自对应的 $K$ 中元素。指数遍历所有整数，包括零和负整数；$q^0=1$，负整数幂使用非零元素 $q$ 的逆元。定义域包括 $u=q^{-n}$ 的情形，特别包括 $n=0,u=1$；在这些输入处，分母为零，而域中处处有定义的除法给出 $Y_{\\mathrm{term},t}(u,n)=0$。不要求 $K$ 完备，也不要求其距离满足超度量不等式。\n\n对任意赋范域 $K$、由满足 $\\lVert q\\rVert<1$ 的可逆元 $q\\in K^\\times$ 组成的任意数据 $t$ 以及任意可逆元 $u\\in K^\\times$，本声明用 $X_t(u)=\\sum'_{n\\in\\mathbb Z}\\frac{q^n u}{(1-q^n u)^2}-2\\sum'_{m\\in\\mathbb N}\\frac{(m+1)q^{m+1}}{1-q^{m+1}}$ 定义 $X_t(u)\\in K$。公式中的 $q,u$ 指各自对应的域元素，第一个和遍历包括零及负整数在内的所有整数，第二个和遍历包括 $m=0$ 在内的所有自然数；$m+1$ 先在 $\\mathbb N$ 中计算再映入 $K$。每个带撇号的和分别解释为其有限部分和在 $K$ 中的极限（若存在），否则解释为 $0$。$q$ 的负整数幂使用其逆元。除法采用域中处处有定义的除法，因此第一个和中满足 $u=q^{-n}$ 的每一项都赋值为 $0$，而这些可逆元仍属于定义域。常数 $2$ 解释为 $K$ 中的元素。本定义不要求完备性或超度量不等式，也不对任何一个级数作可和性假设。\n\n对任意赋范域 $K$、由满足 $\\lVert q\\rVert<1$ 的可逆元 $q\\in K^\\times$ 组成的任意数据 $t$ 以及任意可逆元 $u\\in K^\\times$，本声明用 $Y_t(u)=\\sum'_{n\\in\\mathbb Z}\\frac{(q^n u)^2}{(1-q^n u)^3}+\\sum'_{m\\in\\mathbb N}\\frac{(m+1)q^{m+1}}{1-q^{m+1}}$ 定义 $Y_t(u)\\in K$。公式中的 $q,u$ 指各自对应的域元素，第一个和遍历包括零及负整数在内的所有整数，第二个和遍历包括 $m=0$ 在内的所有自然数；$m+1$ 先在 $\\mathbb N$ 中计算再映入 $K$。每个带撇号的和分别解释为其有限部分和在 $K$ 中的极限（若存在），否则解释为 $0$。$q$ 的负整数幂使用其逆元。除法采用域中处处有定义的除法，因此第一个和中满足 $u=q^{-n}$ 的每一项都赋值为 $0$，而这些可逆元仍属于定义域。本定义不要求完备性或超度量不等式，也不对任何一个级数作可和性假设。",
+      "ja": "任意のノルム体 $K$、$\\lVert q\\rVert<1$ を満たす可逆元 $q\\in K^\\times$ からなる任意のデータ $t$、任意の可逆元 $u\\in K^\\times$、および任意の整数 $n\\in\\mathbb Z$ に対して、この宣言は $X_{\\mathrm{term},t}(u,n)=\\frac{q^n u}{(1-q^n u)^2}$ により $X_{\\mathrm{term},t}(u,n)\\in K$ を定義する。$q,u$ にはそれぞれ対応する $K$ の元を用いる。指数は零と負の整数を含むすべての整数を動き、$q^0=1$ であり、負の整数乗には零でない元 $q$ の逆元を用いる。定義域には $u=q^{-n}$、特に $n=0,u=1$ の場合も含まれる。これらの入力では分母が零であり、体上の全域的な除法により $X_{\\mathrm{term},t}(u,n)=0$ となる。$K$ の完備性も、その距離が超距離不等式を満たすことも仮定しない。\n\n任意のノルム体 $K$、$\\lVert q\\rVert<1$ を満たす可逆元 $q\\in K^\\times$ からなる任意のデータ $t$、任意の可逆元 $u\\in K^\\times$、および任意の整数 $n\\in\\mathbb Z$ に対して、この宣言は $Y_{\\mathrm{term},t}(u,n)=\\frac{(q^n u)^2}{(1-q^n u)^3}$ により $Y_{\\mathrm{term},t}(u,n)\\in K$ を定義する。$q,u$ にはそれぞれ対応する $K$ の元を用いる。指数は零と負の整数を含むすべての整数を動き、$q^0=1$ であり、負の整数乗には零でない元 $q$ の逆元を用いる。定義域には $u=q^{-n}$、特に $n=0,u=1$ の場合も含まれる。これらの入力では分母が零であり、体上の全域的な除法により $Y_{\\mathrm{term},t}(u,n)=0$ となる。$K$ の完備性も、その距離が超距離不等式を満たすことも仮定しない。\n\n任意のノルム体 $K$、$\\lVert q\\rVert<1$ を満たす可逆元 $q\\in K^\\times$ からなる任意のデータ $t$、および任意の可逆元 $u\\in K^\\times$ に対して、この宣言は $X_t(u)=\\sum'_{n\\in\\mathbb Z}\\frac{q^n u}{(1-q^n u)^2}-2\\sum'_{m\\in\\mathbb N}\\frac{(m+1)q^{m+1}}{1-q^{m+1}}$ により $X_t(u)\\in K$ を定義する。式の $q,u$ はそれぞれ対応する体の元を表す。最初の和は零と負の整数を含むすべての整数にわたり、二番目の和は $m=0$ を含むすべての自然数にわたる。$m+1$ はまず $\\mathbb N$ で計算してから $K$ に写す。各プライム付きの和は、それぞれの有限部分和の $K$ における極限が存在すればその極限を、存在しなければ $0$ を表す。$q$ の負の整数乗にはその逆元を用いる。除法は体上の全域的な除法であるため、最初の和のうち $u=q^{-n}$ を満たす各項には値 $0$ を与え、これらの可逆元も定義域に含める。定数 $2$ は $K$ の元として解釈する。この定義には完備性や超距離不等式は不要であり、いずれの級数についても総和可能性を仮定しない。\n\n任意のノルム体 $K$、$\\lVert q\\rVert<1$ を満たす可逆元 $q\\in K^\\times$ からなる任意のデータ $t$、および任意の可逆元 $u\\in K^\\times$ に対して、この宣言は $Y_t(u)=\\sum'_{n\\in\\mathbb Z}\\frac{(q^n u)^2}{(1-q^n u)^3}+\\sum'_{m\\in\\mathbb N}\\frac{(m+1)q^{m+1}}{1-q^{m+1}}$ により $Y_t(u)\\in K$ を定義する。式の $q,u$ はそれぞれ対応する体の元を表す。最初の和は零と負の整数を含むすべての整数にわたり、二番目の和は $m=0$ を含むすべての自然数にわたる。$m+1$ はまず $\\mathbb N$ で計算してから $K$ に写す。各プライム付きの和は、それぞれの有限部分和の $K$ における極限が存在すればその極限を、存在しなければ $0$ を表す。$q$ の負の整数乗にはその逆元を用いる。除法は体上の全域的な除法であるため、最初の和のうち $u=q^{-n}$ を満たす各項には値 $0$ を与え、これらの可逆元も定義域に含める。この定義には完備性や超距離不等式は不要であり、いずれの級数についても総和可能性を仮定しない。",
+      "declaration_coverage": [
+        {
+          "declaration": "AbcAdaptation.Reference.TateCurvesTheta.TateParameter.Xterm",
+          "implicit_type": "K : Type u, arbitrary universe",
+          "typeclass": "NormedField K",
+          "explicit_data": "t : TateParameter K, a unit q with norm strictly below 1",
+          "unused_section_assumptions": "CompleteSpace K and IsUltrametricDist K are not used by these definitions; binder retention inferred from source, not checked by compiler display.",
+          "explicit_arguments": [
+            "u : Kˣ",
+            "n : ℤ"
+          ],
+          "domain": "TateParameter K × Kˣ × ℤ",
+          "codomain": "K",
+          "expanded_local_definitions": [
+            "TateParameter"
+          ],
+          "edge_cases": [
+            "All units u, including u=q^(-n) in the corresponding term",
+            "All integer exponents, including 0 and negative integers",
+            "Zero denominator produces zero term"
+          ],
+          "logical_form": "Definition of a K-valued function; no equation of a curve or mapping property asserted."
+        },
+        {
+          "declaration": "AbcAdaptation.Reference.TateCurvesTheta.TateParameter.Yterm",
+          "implicit_type": "K : Type u, arbitrary universe",
+          "typeclass": "NormedField K",
+          "explicit_data": "t : TateParameter K, a unit q with norm strictly below 1",
+          "unused_section_assumptions": "CompleteSpace K and IsUltrametricDist K are not used by these definitions; binder retention inferred from source, not checked by compiler display.",
+          "explicit_arguments": [
+            "u : Kˣ",
+            "n : ℤ"
+          ],
+          "domain": "TateParameter K × Kˣ × ℤ",
+          "codomain": "K",
+          "expanded_local_definitions": [
+            "TateParameter"
+          ],
+          "edge_cases": [
+            "All units u, including u=q^(-n) in the corresponding term",
+            "All integer exponents, including 0 and negative integers",
+            "Zero denominator produces zero term"
+          ],
+          "logical_form": "Definition of a K-valued function; no equation of a curve or mapping property asserted."
+        },
+        {
+          "declaration": "AbcAdaptation.Reference.TateCurvesTheta.TateParameter.X",
+          "implicit_type": "K : Type u, arbitrary universe",
+          "typeclass": "NormedField K",
+          "explicit_data": "t : TateParameter K, a unit q with norm strictly below 1",
+          "unused_section_assumptions": "CompleteSpace K and IsUltrametricDist K are not used by these definitions; binder retention inferred from source, not checked by compiler display.",
+          "explicit_arguments": [
+            "u : Kˣ"
+          ],
+          "domain": "TateParameter K × Kˣ",
+          "codomain": "K",
+          "expanded_local_definitions": [
+            "TateParameter",
+            "Xterm",
+            "eisenstein at 1"
+          ],
+          "edge_cases": [
+            "All units u, including u=q^(-n) in the corresponding term",
+            "All integer exponents, including 0 and negative integers",
+            "Zero denominator produces zero term",
+            "Each infinite sum separately equals 0 if not summable in K; natural index includes 0"
+          ],
+          "logical_form": "Definition of a K-valued function; no equation of a curve or mapping property asserted."
+        },
+        {
+          "declaration": "AbcAdaptation.Reference.TateCurvesTheta.TateParameter.Y",
+          "implicit_type": "K : Type u, arbitrary universe",
+          "typeclass": "NormedField K",
+          "explicit_data": "t : TateParameter K, a unit q with norm strictly below 1",
+          "unused_section_assumptions": "CompleteSpace K and IsUltrametricDist K are not used by these definitions; binder retention inferred from source, not checked by compiler display.",
+          "explicit_arguments": [
+            "u : Kˣ"
+          ],
+          "domain": "TateParameter K × Kˣ",
+          "codomain": "K",
+          "expanded_local_definitions": [
+            "TateParameter",
+            "Yterm",
+            "eisenstein at 1"
+          ],
+          "edge_cases": [
+            "All units u, including u=q^(-n) in the corresponding term",
+            "All integer exponents, including 0 and negative integers",
+            "Zero denominator produces zero term",
+            "Each infinite sum separately equals 0 if not summable in K; natural index includes 0"
+          ],
+          "logical_form": "Definition of a K-valued function; no equation of a curve or mapping property asserted."
+        }
+      ],
+      "possible_ambiguities": [
+        "The omission of the unused completeness and ultrametric section assumptions is inferred from standard section-variable elaboration and the supplied dependency bodies; no elaborated compiler type display was inspected."
+      ],
+      "proof_notes": [
+        "The empty Nonarchimedean section contains no mathematical declaration. No compilation, proof verification, or axiom audit was performed."
+      ]
+    }
+  ],
+  "provenance": {
+    "scope": "Independent read-back of exactly the two supplied primary comment-free Lean bundles, with the two supplied comment-free local formal prerequisites and selected comment-stripped standard Mathlib formal definitions. Mathematical inputs were formal code only; the two supplied auditor/style rules were read only for procedure and language.",
+    "translations_from_own_English": true,
+    "frozen_English_artifact": "/tmp/p2m-tate-theta-blind-formulas-v5-20261115/frozen-English.json",
+    "frozen_English_sha256": "d7704a539b0f0a224a074a67910364b8bda95689b654cc434c97624155040b1c",
+    "disclosures": [
+      "Fresh child context contained the task instruction and workspace/agent rules, but no source paper, intended informal statement, provenance inventory, generated report, or other agent read-back.",
+      "No API, network, Git, compilation, CI, or proof verification was used.",
+      "The standard Mathlib files were read by a comment-stripping script; only resulting comment-free formal-definition excerpts were displayed. No incidental standard or project doclines were seen.",
+      "Directory names and symlink targets were listed solely to locate installed Mathlib. No project documentation or environment-manifest contents were read.",
+      "The four supplied comment-free formal input files are preserved byte-for-byte in this output directory. Standard Mathlib comment-stripped viewing copies are also retained.",
+      "All input hashes were checked again after read-back and translation; all were unchanged. The hashes of the two style-rule files were first captured after their initial read.",
+      "Model identity cannot be independently queried in this task; author_model records the requested model and actual_model remains null.",
+      "No terminology lookup was made because network access was excluded for this task; no unresolved Chinese mathematical term occurs in these read-backs."
+    ],
+    "requested_model": "gpt-6.1-sol"
+  },
+  "terminology_questions": []
+}

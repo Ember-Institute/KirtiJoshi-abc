@@ -1,0 +1,1736 @@
+{
+  "schema": "tate-theta-independent-qorder-generated-proof-type-collision-review-v1",
+  "status": "confirmed-real-generated-helper-type-collision-no-accepted-identity",
+  "failedMainJob": "ci-014595-7186fb09",
+  "sourceDeclaration": "Iut.AdmissiblePrimeData.qOrder",
+  "sourceRecord": {
+    "path": "/tmp/p2m-tate-theta-source-review-v5-20261115/qOrder-original-source-record.json",
+    "sha256": "13015df929c32b756db81e0638862ccb1d48b9cfbf3c5f3ba6e4b77dff94a414",
+    "compactByteRange": [
+      69105386,
+      69145511
+    ]
+  },
+  "sourceProofRecord": {
+    "path": "/tmp/p2m-tate-theta-source-review-v5-20261115/qOrder-proof1-original-source-record.json",
+    "sha256": "a013f603824454cdf6ad6693f5bd3c3e55d36120259b1f8e352636d10bcdc446",
+    "compactByteRange": [
+      96010503,
+      96016507
+    ]
+  },
+  "originalSource": {
+    "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/frozen-sources/Iut/Cor312/ThetaData/AdmissiblePrime.lean",
+    "sha256": "964a1edc1a7e46101e00b60d34920007542c76c6cdee52516e0ae26e0a6e5e59",
+    "firstLine": 174,
+    "lastLine": 177,
+    "contents": "/-- The normalized order of the Tate parameter at a bad place, as a positive integer\n(taxis #37: `OrderedTateParameter.orderNat`). -/\nnoncomputable def qOrder (w : FinitePlace F) (hw : w ∈ badPlacesOver F E VBad) : ℕ :=\n  ((D.tate w hw).toOrdered (D.unif_isUniformizer w hw)).orderNat"
+  },
+  "sourceRawContainsModuleFinite": false,
+  "sourceNormedFieldCalls": "Two complete old instNormedFieldValuedAdicCompletion10-argument calls in qOrder value. Final argument is original qOrder._proof_1 F Field NumberField, not a Module.Finite construction.",
+  "sourceLastArgumentType": "forall {F} [Field F] [NumberField F], Infinite (NumberField.RingOfIntegers F)",
+  "sourceProofBodyRoute": "CharZero.infinite applied to genuine RingOfIntegers.instCharZero_1 proof; full original exported body retained",
+  "actualPlatformQueryJob": "ci-014164-c01e488c",
+  "actualPlatformFacts": {
+    "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/platform-helper-facts.json",
+    "sha256": "67e864b3195cd62005a8c598435163105de1f8c9e01db07be116d19180684459"
+  },
+  "actualPlatformHelper": {
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "binderInventory": [
+      "forall:implicit",
+      "forall:instImplicit",
+      "forall:instImplicit"
+    ],
+    "constantKind": "theorem",
+    "elaboratedExpr": {
+      "binder": "implicit",
+      "body": {
+        "binder": "instImplicit",
+        "body": {
+          "binder": "instImplicit",
+          "body": {
+            "arg": {
+              "arg": {
+                "arg": {
+                  "arg": {
+                    "arg": {
+                      "index": 1,
+                      "kind": "bvar"
+                    },
+                    "fn": {
+                      "arg": {
+                        "index": 2,
+                        "kind": "bvar"
+                      },
+                      "fn": {
+                        "kind": "const",
+                        "levels": [
+                          {
+                            "kind": "param",
+                            "name": [
+                              [],
+                              "str",
+                              "u_1"
+                            ]
+                          }
+                        ],
+                        "name": [
+                          [
+                            [],
+                            "str",
+                            "NumberField"
+                          ],
+                          "str",
+                          "instCommRingRingOfIntegers"
+                        ]
+                      },
+                      "kind": "app"
+                    },
+                    "kind": "app"
+                  },
+                  "fn": {
+                    "arg": {
+                      "arg": {
+                        "index": 1,
+                        "kind": "bvar"
+                      },
+                      "fn": {
+                        "arg": {
+                          "index": 2,
+                          "kind": "bvar"
+                        },
+                        "fn": {
+                          "kind": "const",
+                          "levels": [
+                            {
+                              "kind": "param",
+                              "name": [
+                                [],
+                                "str",
+                                "u_1"
+                              ]
+                            }
+                          ],
+                          "name": [
+                            [
+                              [],
+                              "str",
+                              "NumberField"
+                            ],
+                            "str",
+                            "RingOfIntegers"
+                          ]
+                        },
+                        "kind": "app"
+                      },
+                      "kind": "app"
+                    },
+                    "fn": {
+                      "kind": "const",
+                      "levels": [
+                        {
+                          "kind": "param",
+                          "name": [
+                            [],
+                            "str",
+                            "u_1"
+                          ]
+                        }
+                      ],
+                      "name": [
+                        [
+                          [],
+                          "str",
+                          "CommRing"
+                        ],
+                        "str",
+                        "toRing"
+                      ]
+                    },
+                    "kind": "app"
+                  },
+                  "kind": "app"
+                },
+                "fn": {
+                  "arg": {
+                    "arg": {
+                      "index": 1,
+                      "kind": "bvar"
+                    },
+                    "fn": {
+                      "arg": {
+                        "index": 2,
+                        "kind": "bvar"
+                      },
+                      "fn": {
+                        "kind": "const",
+                        "levels": [
+                          {
+                            "kind": "param",
+                            "name": [
+                              [],
+                              "str",
+                              "u_1"
+                            ]
+                          }
+                        ],
+                        "name": [
+                          [
+                            [],
+                            "str",
+                            "NumberField"
+                          ],
+                          "str",
+                          "RingOfIntegers"
+                        ]
+                      },
+                      "kind": "app"
+                    },
+                    "kind": "app"
+                  },
+                  "fn": {
+                    "kind": "const",
+                    "levels": [
+                      {
+                        "kind": "param",
+                        "name": [
+                          [],
+                          "str",
+                          "u_1"
+                        ]
+                      }
+                    ],
+                    "name": [
+                      [
+                        [],
+                        "str",
+                        "Ring"
+                      ],
+                      "str",
+                      "toAddCommGroup"
+                    ]
+                  },
+                  "kind": "app"
+                },
+                "kind": "app"
+              },
+              "fn": {
+                "arg": {
+                  "arg": {
+                    "index": 1,
+                    "kind": "bvar"
+                  },
+                  "fn": {
+                    "arg": {
+                      "index": 2,
+                      "kind": "bvar"
+                    },
+                    "fn": {
+                      "kind": "const",
+                      "levels": [
+                        {
+                          "kind": "param",
+                          "name": [
+                            [],
+                            "str",
+                            "u_1"
+                          ]
+                        }
+                      ],
+                      "name": [
+                        [
+                          [],
+                          "str",
+                          "NumberField"
+                        ],
+                        "str",
+                        "RingOfIntegers"
+                      ]
+                    },
+                    "kind": "app"
+                  },
+                  "kind": "app"
+                },
+                "fn": {
+                  "kind": "const",
+                  "levels": [
+                    {
+                      "kind": "param",
+                      "name": [
+                        [],
+                        "str",
+                        "u_1"
+                      ]
+                    }
+                  ],
+                  "name": [
+                    [
+                      [],
+                      "str",
+                      "AddCommGroup"
+                    ],
+                    "str",
+                    "toIntModule"
+                  ]
+                },
+                "kind": "app"
+              },
+              "kind": "app"
+            },
+            "fn": {
+              "arg": {
+                "arg": {
+                  "arg": {
+                    "arg": {
+                      "arg": {
+                        "index": 1,
+                        "kind": "bvar"
+                      },
+                      "fn": {
+                        "arg": {
+                          "index": 2,
+                          "kind": "bvar"
+                        },
+                        "fn": {
+                          "kind": "const",
+                          "levels": [
+                            {
+                              "kind": "param",
+                              "name": [
+                                [],
+                                "str",
+                                "u_1"
+                              ]
+                            }
+                          ],
+                          "name": [
+                            [
+                              [],
+                              "str",
+                              "NumberField"
+                            ],
+                            "str",
+                            "instCommRingRingOfIntegers"
+                          ]
+                        },
+                        "kind": "app"
+                      },
+                      "kind": "app"
+                    },
+                    "fn": {
+                      "arg": {
+                        "arg": {
+                          "index": 1,
+                          "kind": "bvar"
+                        },
+                        "fn": {
+                          "arg": {
+                            "index": 2,
+                            "kind": "bvar"
+                          },
+                          "fn": {
+                            "kind": "const",
+                            "levels": [
+                              {
+                                "kind": "param",
+                                "name": [
+                                  [],
+                                  "str",
+                                  "u_1"
+                                ]
+                              }
+                            ],
+                            "name": [
+                              [
+                                [],
+                                "str",
+                                "NumberField"
+                              ],
+                              "str",
+                              "RingOfIntegers"
+                            ]
+                          },
+                          "kind": "app"
+                        },
+                        "kind": "app"
+                      },
+                      "fn": {
+                        "kind": "const",
+                        "levels": [
+                          {
+                            "kind": "param",
+                            "name": [
+                              [],
+                              "str",
+                              "u_1"
+                            ]
+                          }
+                        ],
+                        "name": [
+                          [
+                            [],
+                            "str",
+                            "CommRing"
+                          ],
+                          "str",
+                          "toRing"
+                        ]
+                      },
+                      "kind": "app"
+                    },
+                    "kind": "app"
+                  },
+                  "fn": {
+                    "arg": {
+                      "arg": {
+                        "index": 1,
+                        "kind": "bvar"
+                      },
+                      "fn": {
+                        "arg": {
+                          "index": 2,
+                          "kind": "bvar"
+                        },
+                        "fn": {
+                          "kind": "const",
+                          "levels": [
+                            {
+                              "kind": "param",
+                              "name": [
+                                [],
+                                "str",
+                                "u_1"
+                              ]
+                            }
+                          ],
+                          "name": [
+                            [
+                              [],
+                              "str",
+                              "NumberField"
+                            ],
+                            "str",
+                            "RingOfIntegers"
+                          ]
+                        },
+                        "kind": "app"
+                      },
+                      "kind": "app"
+                    },
+                    "fn": {
+                      "kind": "const",
+                      "levels": [
+                        {
+                          "kind": "param",
+                          "name": [
+                            [],
+                            "str",
+                            "u_1"
+                          ]
+                        }
+                      ],
+                      "name": [
+                        [
+                          [],
+                          "str",
+                          "Ring"
+                        ],
+                        "str",
+                        "toAddCommGroup"
+                      ]
+                    },
+                    "kind": "app"
+                  },
+                  "kind": "app"
+                },
+                "fn": {
+                  "arg": {
+                    "arg": {
+                      "index": 1,
+                      "kind": "bvar"
+                    },
+                    "fn": {
+                      "arg": {
+                        "index": 2,
+                        "kind": "bvar"
+                      },
+                      "fn": {
+                        "kind": "const",
+                        "levels": [
+                          {
+                            "kind": "param",
+                            "name": [
+                              [],
+                              "str",
+                              "u_1"
+                            ]
+                          }
+                        ],
+                        "name": [
+                          [
+                            [],
+                            "str",
+                            "NumberField"
+                          ],
+                          "str",
+                          "RingOfIntegers"
+                        ]
+                      },
+                      "kind": "app"
+                    },
+                    "kind": "app"
+                  },
+                  "fn": {
+                    "kind": "const",
+                    "levels": [
+                      {
+                        "kind": "param",
+                        "name": [
+                          [],
+                          "str",
+                          "u_1"
+                        ]
+                      }
+                    ],
+                    "name": [
+                      [
+                        [],
+                        "str",
+                        "AddCommGroup"
+                      ],
+                      "str",
+                      "toAddCommMonoid"
+                    ]
+                  },
+                  "kind": "app"
+                },
+                "kind": "app"
+              },
+              "fn": {
+                "arg": {
+                  "kind": "const",
+                  "levels": [],
+                  "name": [
+                    [
+                      [],
+                      "str",
+                      "Int"
+                    ],
+                    "str",
+                    "instSemiring"
+                  ]
+                },
+                "fn": {
+                  "arg": {
+                    "arg": {
+                      "index": 1,
+                      "kind": "bvar"
+                    },
+                    "fn": {
+                      "arg": {
+                        "index": 2,
+                        "kind": "bvar"
+                      },
+                      "fn": {
+                        "kind": "const",
+                        "levels": [
+                          {
+                            "kind": "param",
+                            "name": [
+                              [],
+                              "str",
+                              "u_1"
+                            ]
+                          }
+                        ],
+                        "name": [
+                          [
+                            [],
+                            "str",
+                            "NumberField"
+                          ],
+                          "str",
+                          "RingOfIntegers"
+                        ]
+                      },
+                      "kind": "app"
+                    },
+                    "kind": "app"
+                  },
+                  "fn": {
+                    "arg": {
+                      "kind": "const",
+                      "levels": [],
+                      "name": [
+                        [],
+                        "str",
+                        "Int"
+                      ]
+                    },
+                    "fn": {
+                      "kind": "const",
+                      "levels": [
+                        {
+                          "kind": "zero"
+                        },
+                        {
+                          "kind": "param",
+                          "name": [
+                            [],
+                            "str",
+                            "u_1"
+                          ]
+                        }
+                      ],
+                      "name": [
+                        [
+                          [],
+                          "str",
+                          "Module"
+                        ],
+                        "str",
+                        "Finite"
+                      ]
+                    },
+                    "kind": "app"
+                  },
+                  "kind": "app"
+                },
+                "kind": "app"
+              },
+              "kind": "app"
+            },
+            "kind": "app"
+          },
+          "kind": "forall",
+          "name": [
+            [
+              [
+                [
+                  [
+                    [
+                      [
+                        [
+                          [],
+                          "str",
+                          "inst"
+                        ],
+                        "str",
+                        "_@"
+                      ],
+                      "str",
+                      "Definitions"
+                    ],
+                    "str",
+                    "Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime"
+                  ],
+                  "num",
+                  2782144418
+                ],
+                "str",
+                "_hygCtx"
+              ],
+              "str",
+              "_hyg"
+            ],
+            "num",
+            6
+          ],
+          "type": {
+            "arg": {
+              "index": 0,
+              "kind": "bvar"
+            },
+            "fn": {
+              "arg": {
+                "index": 1,
+                "kind": "bvar"
+              },
+              "fn": {
+                "kind": "const",
+                "levels": [
+                  {
+                    "kind": "param",
+                    "name": [
+                      [],
+                      "str",
+                      "u_1"
+                    ]
+                  }
+                ],
+                "name": [
+                  [],
+                  "str",
+                  "NumberField"
+                ]
+              },
+              "kind": "app"
+            },
+            "kind": "app"
+          }
+        },
+        "kind": "forall",
+        "name": [
+          [
+            [
+              [
+                [
+                  [
+                    [
+                      [
+                        [],
+                        "str",
+                        "inst"
+                      ],
+                      "str",
+                      "_@"
+                    ],
+                    "str",
+                    "Definitions"
+                  ],
+                  "str",
+                  "Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime"
+                ],
+                "num",
+                2782144418
+              ],
+              "str",
+              "_hygCtx"
+            ],
+            "str",
+            "_hyg"
+          ],
+          "num",
+          3
+        ],
+        "type": {
+          "arg": {
+            "index": 0,
+            "kind": "bvar"
+          },
+          "fn": {
+            "kind": "const",
+            "levels": [
+              {
+                "kind": "param",
+                "name": [
+                  [],
+                  "str",
+                  "u_1"
+                ]
+              }
+            ],
+            "name": [
+              [],
+              "str",
+              "Field"
+            ]
+          },
+          "kind": "app"
+        }
+      },
+      "kind": "forall",
+      "name": [
+        [],
+        "str",
+        "F"
+      ],
+      "type": {
+        "kind": "sort",
+        "level": {
+          "arg": {
+            "kind": "param",
+            "name": [
+              [],
+              "str",
+              "u_1"
+            ]
+          },
+          "kind": "succ"
+        }
+      }
+    },
+    "hasSorryAx": false,
+    "isInstance": false,
+    "isProposition": true,
+    "levelParams": [
+      [
+        [],
+        "str",
+        "u_1"
+      ]
+    ],
+    "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime",
+    "name": "AbcAdaptation.Reference.Iut.AdmissiblePrimeData.qOrder._proof_1",
+    "nameExpr": [
+      [
+        [
+          [
+            [
+              [
+                [],
+                "str",
+                "AbcAdaptation"
+              ],
+              "str",
+              "Reference"
+            ],
+            "str",
+            "Iut"
+          ],
+          "str",
+          "AdmissiblePrimeData"
+        ],
+        "str",
+        "qOrder"
+      ],
+      "str",
+      "_proof_1"
+    ],
+    "selectionReason": "actual generated-helper family",
+    "typeAxioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "typeUsedConstants": [
+      [
+        [],
+        "str",
+        "Field"
+      ],
+      [
+        [],
+        "str",
+        "NumberField"
+      ],
+      [
+        [
+          [],
+          "str",
+          "Module"
+        ],
+        "str",
+        "Finite"
+      ],
+      [
+        [],
+        "str",
+        "Int"
+      ],
+      [
+        [
+          [],
+          "str",
+          "NumberField"
+        ],
+        "str",
+        "RingOfIntegers"
+      ],
+      [
+        [
+          [],
+          "str",
+          "Int"
+        ],
+        "str",
+        "instSemiring"
+      ],
+      [
+        [
+          [],
+          "str",
+          "AddCommGroup"
+        ],
+        "str",
+        "toAddCommMonoid"
+      ],
+      [
+        [
+          [],
+          "str",
+          "Ring"
+        ],
+        "str",
+        "toAddCommGroup"
+      ],
+      [
+        [
+          [],
+          "str",
+          "CommRing"
+        ],
+        "str",
+        "toRing"
+      ],
+      [
+        [
+          [],
+          "str",
+          "NumberField"
+        ],
+        "str",
+        "instCommRingRingOfIntegers"
+      ],
+      [
+        [
+          [],
+          "str",
+          "AddCommGroup"
+        ],
+        "str",
+        "toIntModule"
+      ]
+    ],
+    "valueAxioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "valueExpr": {
+      "binder": "implicit",
+      "body": {
+        "binder": "instImplicit",
+        "body": {
+          "binder": "instImplicit",
+          "body": {
+            "arg": {
+              "arg": {
+                "arg": {
+                  "index": 0,
+                  "kind": "bvar"
+                },
+                "fn": {
+                  "arg": {
+                    "index": 1,
+                    "kind": "bvar"
+                  },
+                  "fn": {
+                    "arg": {
+                      "index": 2,
+                      "kind": "bvar"
+                    },
+                    "fn": {
+                      "kind": "const",
+                      "levels": [
+                        {
+                          "kind": "param",
+                          "name": [
+                            [],
+                            "str",
+                            "u_1"
+                          ]
+                        }
+                      ],
+                      "name": [
+                        [
+                          [
+                            [],
+                            "str",
+                            "NumberField"
+                          ],
+                          "str",
+                          "RingOfIntegers"
+                        ],
+                        "str",
+                        "instFG"
+                      ]
+                    },
+                    "kind": "app"
+                  },
+                  "kind": "app"
+                },
+                "kind": "app"
+              },
+              "fn": {
+                "arg": {
+                  "arg": {
+                    "arg": {
+                      "arg": {
+                        "arg": {
+                          "index": 1,
+                          "kind": "bvar"
+                        },
+                        "fn": {
+                          "arg": {
+                            "index": 2,
+                            "kind": "bvar"
+                          },
+                          "fn": {
+                            "kind": "const",
+                            "levels": [
+                              {
+                                "kind": "param",
+                                "name": [
+                                  [],
+                                  "str",
+                                  "u_1"
+                                ]
+                              }
+                            ],
+                            "name": [
+                              [
+                                [],
+                                "str",
+                                "NumberField"
+                              ],
+                              "str",
+                              "instCommRingRingOfIntegers"
+                            ]
+                          },
+                          "kind": "app"
+                        },
+                        "kind": "app"
+                      },
+                      "fn": {
+                        "arg": {
+                          "arg": {
+                            "index": 1,
+                            "kind": "bvar"
+                          },
+                          "fn": {
+                            "arg": {
+                              "index": 2,
+                              "kind": "bvar"
+                            },
+                            "fn": {
+                              "kind": "const",
+                              "levels": [
+                                {
+                                  "kind": "param",
+                                  "name": [
+                                    [],
+                                    "str",
+                                    "u_1"
+                                  ]
+                                }
+                              ],
+                              "name": [
+                                [
+                                  [],
+                                  "str",
+                                  "NumberField"
+                                ],
+                                "str",
+                                "RingOfIntegers"
+                              ]
+                            },
+                            "kind": "app"
+                          },
+                          "kind": "app"
+                        },
+                        "fn": {
+                          "kind": "const",
+                          "levels": [
+                            {
+                              "kind": "param",
+                              "name": [
+                                [],
+                                "str",
+                                "u_1"
+                              ]
+                            }
+                          ],
+                          "name": [
+                            [
+                              [],
+                              "str",
+                              "CommRing"
+                            ],
+                            "str",
+                            "toRing"
+                          ]
+                        },
+                        "kind": "app"
+                      },
+                      "kind": "app"
+                    },
+                    "fn": {
+                      "arg": {
+                        "arg": {
+                          "index": 1,
+                          "kind": "bvar"
+                        },
+                        "fn": {
+                          "arg": {
+                            "index": 2,
+                            "kind": "bvar"
+                          },
+                          "fn": {
+                            "kind": "const",
+                            "levels": [
+                              {
+                                "kind": "param",
+                                "name": [
+                                  [],
+                                  "str",
+                                  "u_1"
+                                ]
+                              }
+                            ],
+                            "name": [
+                              [
+                                [],
+                                "str",
+                                "NumberField"
+                              ],
+                              "str",
+                              "RingOfIntegers"
+                            ]
+                          },
+                          "kind": "app"
+                        },
+                        "kind": "app"
+                      },
+                      "fn": {
+                        "kind": "const",
+                        "levels": [
+                          {
+                            "kind": "param",
+                            "name": [
+                              [],
+                              "str",
+                              "u_1"
+                            ]
+                          }
+                        ],
+                        "name": [
+                          [
+                            [],
+                            "str",
+                            "Ring"
+                          ],
+                          "str",
+                          "toAddGroupWithOne"
+                        ]
+                      },
+                      "kind": "app"
+                    },
+                    "kind": "app"
+                  },
+                  "fn": {
+                    "arg": {
+                      "arg": {
+                        "index": 1,
+                        "kind": "bvar"
+                      },
+                      "fn": {
+                        "arg": {
+                          "index": 2,
+                          "kind": "bvar"
+                        },
+                        "fn": {
+                          "kind": "const",
+                          "levels": [
+                            {
+                              "kind": "param",
+                              "name": [
+                                [],
+                                "str",
+                                "u_1"
+                              ]
+                            }
+                          ],
+                          "name": [
+                            [
+                              [],
+                              "str",
+                              "NumberField"
+                            ],
+                            "str",
+                            "RingOfIntegers"
+                          ]
+                        },
+                        "kind": "app"
+                      },
+                      "kind": "app"
+                    },
+                    "fn": {
+                      "kind": "const",
+                      "levels": [
+                        {
+                          "kind": "param",
+                          "name": [
+                            [],
+                            "str",
+                            "u_1"
+                          ]
+                        }
+                      ],
+                      "name": [
+                        [
+                          [],
+                          "str",
+                          "AddGroupWithOne"
+                        ],
+                        "str",
+                        "toAddGroup"
+                      ]
+                    },
+                    "kind": "app"
+                  },
+                  "kind": "app"
+                },
+                "fn": {
+                  "arg": {
+                    "arg": {
+                      "index": 1,
+                      "kind": "bvar"
+                    },
+                    "fn": {
+                      "arg": {
+                        "index": 2,
+                        "kind": "bvar"
+                      },
+                      "fn": {
+                        "kind": "const",
+                        "levels": [
+                          {
+                            "kind": "param",
+                            "name": [
+                              [],
+                              "str",
+                              "u_1"
+                            ]
+                          }
+                        ],
+                        "name": [
+                          [
+                            [],
+                            "str",
+                            "NumberField"
+                          ],
+                          "str",
+                          "RingOfIntegers"
+                        ]
+                      },
+                      "kind": "app"
+                    },
+                    "kind": "app"
+                  },
+                  "fn": {
+                    "kind": "const",
+                    "levels": [
+                      {
+                        "kind": "param",
+                        "name": [
+                          [],
+                          "str",
+                          "u_1"
+                        ]
+                      }
+                    ],
+                    "name": [
+                      [
+                        [],
+                        "str",
+                        "AddMonoid"
+                      ],
+                      "str",
+                      "fg_of_addGroup_fg"
+                    ]
+                  },
+                  "kind": "app"
+                },
+                "kind": "app"
+              },
+              "kind": "app"
+            },
+            "fn": {
+              "arg": {
+                "arg": {
+                  "arg": {
+                    "arg": {
+                      "index": 1,
+                      "kind": "bvar"
+                    },
+                    "fn": {
+                      "arg": {
+                        "index": 2,
+                        "kind": "bvar"
+                      },
+                      "fn": {
+                        "kind": "const",
+                        "levels": [
+                          {
+                            "kind": "param",
+                            "name": [
+                              [],
+                              "str",
+                              "u_1"
+                            ]
+                          }
+                        ],
+                        "name": [
+                          [
+                            [],
+                            "str",
+                            "NumberField"
+                          ],
+                          "str",
+                          "instCommRingRingOfIntegers"
+                        ]
+                      },
+                      "kind": "app"
+                    },
+                    "kind": "app"
+                  },
+                  "fn": {
+                    "arg": {
+                      "arg": {
+                        "index": 1,
+                        "kind": "bvar"
+                      },
+                      "fn": {
+                        "arg": {
+                          "index": 2,
+                          "kind": "bvar"
+                        },
+                        "fn": {
+                          "kind": "const",
+                          "levels": [
+                            {
+                              "kind": "param",
+                              "name": [
+                                [],
+                                "str",
+                                "u_1"
+                              ]
+                            }
+                          ],
+                          "name": [
+                            [
+                              [],
+                              "str",
+                              "NumberField"
+                            ],
+                            "str",
+                            "RingOfIntegers"
+                          ]
+                        },
+                        "kind": "app"
+                      },
+                      "kind": "app"
+                    },
+                    "fn": {
+                      "kind": "const",
+                      "levels": [
+                        {
+                          "kind": "param",
+                          "name": [
+                            [],
+                            "str",
+                            "u_1"
+                          ]
+                        }
+                      ],
+                      "name": [
+                        [
+                          [],
+                          "str",
+                          "CommRing"
+                        ],
+                        "str",
+                        "toRing"
+                      ]
+                    },
+                    "kind": "app"
+                  },
+                  "kind": "app"
+                },
+                "fn": {
+                  "arg": {
+                    "arg": {
+                      "index": 1,
+                      "kind": "bvar"
+                    },
+                    "fn": {
+                      "arg": {
+                        "index": 2,
+                        "kind": "bvar"
+                      },
+                      "fn": {
+                        "kind": "const",
+                        "levels": [
+                          {
+                            "kind": "param",
+                            "name": [
+                              [],
+                              "str",
+                              "u_1"
+                            ]
+                          }
+                        ],
+                        "name": [
+                          [
+                            [],
+                            "str",
+                            "NumberField"
+                          ],
+                          "str",
+                          "RingOfIntegers"
+                        ]
+                      },
+                      "kind": "app"
+                    },
+                    "kind": "app"
+                  },
+                  "fn": {
+                    "kind": "const",
+                    "levels": [
+                      {
+                        "kind": "param",
+                        "name": [
+                          [],
+                          "str",
+                          "u_1"
+                        ]
+                      }
+                    ],
+                    "name": [
+                      [
+                        [],
+                        "str",
+                        "Ring"
+                      ],
+                      "str",
+                      "toAddCommGroup"
+                    ]
+                  },
+                  "kind": "app"
+                },
+                "kind": "app"
+              },
+              "fn": {
+                "arg": {
+                  "arg": {
+                    "index": 1,
+                    "kind": "bvar"
+                  },
+                  "fn": {
+                    "arg": {
+                      "index": 2,
+                      "kind": "bvar"
+                    },
+                    "fn": {
+                      "kind": "const",
+                      "levels": [
+                        {
+                          "kind": "param",
+                          "name": [
+                            [],
+                            "str",
+                            "u_1"
+                          ]
+                        }
+                      ],
+                      "name": [
+                        [
+                          [],
+                          "str",
+                          "NumberField"
+                        ],
+                        "str",
+                        "RingOfIntegers"
+                      ]
+                    },
+                    "kind": "app"
+                  },
+                  "kind": "app"
+                },
+                "fn": {
+                  "kind": "const",
+                  "levels": [
+                    {
+                      "kind": "param",
+                      "name": [
+                        [],
+                        "str",
+                        "u_1"
+                      ]
+                    }
+                  ],
+                  "name": [
+                    [
+                      [
+                        [],
+                        "str",
+                        "AddMonoid"
+                      ],
+                      "str",
+                      "FG"
+                    ],
+                    "str",
+                    "to_moduleFinite_int"
+                  ]
+                },
+                "kind": "app"
+              },
+              "kind": "app"
+            },
+            "kind": "app"
+          },
+          "kind": "lam",
+          "name": [
+            [
+              [
+                [
+                  [
+                    [
+                      [
+                        [
+                          [],
+                          "str",
+                          "inst"
+                        ],
+                        "str",
+                        "_@"
+                      ],
+                      "str",
+                      "Definitions"
+                    ],
+                    "str",
+                    "Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime"
+                  ],
+                  "num",
+                  2782144418
+                ],
+                "str",
+                "_hygCtx"
+              ],
+              "str",
+              "_hyg"
+            ],
+            "num",
+            6
+          ],
+          "type": {
+            "arg": {
+              "index": 0,
+              "kind": "bvar"
+            },
+            "fn": {
+              "arg": {
+                "index": 1,
+                "kind": "bvar"
+              },
+              "fn": {
+                "kind": "const",
+                "levels": [
+                  {
+                    "kind": "param",
+                    "name": [
+                      [],
+                      "str",
+                      "u_1"
+                    ]
+                  }
+                ],
+                "name": [
+                  [],
+                  "str",
+                  "NumberField"
+                ]
+              },
+              "kind": "app"
+            },
+            "kind": "app"
+          }
+        },
+        "kind": "lam",
+        "name": [
+          [
+            [
+              [
+                [
+                  [
+                    [
+                      [
+                        [],
+                        "str",
+                        "inst"
+                      ],
+                      "str",
+                      "_@"
+                    ],
+                    "str",
+                    "Definitions"
+                  ],
+                  "str",
+                  "Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime"
+                ],
+                "num",
+                2782144418
+              ],
+              "str",
+              "_hygCtx"
+            ],
+            "str",
+            "_hyg"
+          ],
+          "num",
+          3
+        ],
+        "type": {
+          "arg": {
+            "index": 0,
+            "kind": "bvar"
+          },
+          "fn": {
+            "kind": "const",
+            "levels": [
+              {
+                "kind": "param",
+                "name": [
+                  [],
+                  "str",
+                  "u_1"
+                ]
+              }
+            ],
+            "name": [
+              [],
+              "str",
+              "Field"
+            ]
+          },
+          "kind": "app"
+        }
+      },
+      "kind": "lam",
+      "name": [
+        [],
+        "str",
+        "F"
+      ],
+      "type": {
+        "kind": "sort",
+        "level": {
+          "arg": {
+            "kind": "param",
+            "name": [
+              [],
+              "str",
+              "u_1"
+            ]
+          },
+          "kind": "succ"
+        }
+      }
+    },
+    "valueUsedConstants": [
+      [
+        [],
+        "str",
+        "Field"
+      ],
+      [
+        [],
+        "str",
+        "NumberField"
+      ],
+      [
+        [
+          [
+            [],
+            "str",
+            "AddMonoid"
+          ],
+          "str",
+          "FG"
+        ],
+        "str",
+        "to_moduleFinite_int"
+      ],
+      [
+        [
+          [],
+          "str",
+          "NumberField"
+        ],
+        "str",
+        "RingOfIntegers"
+      ],
+      [
+        [
+          [],
+          "str",
+          "Ring"
+        ],
+        "str",
+        "toAddCommGroup"
+      ],
+      [
+        [
+          [],
+          "str",
+          "CommRing"
+        ],
+        "str",
+        "toRing"
+      ],
+      [
+        [
+          [],
+          "str",
+          "NumberField"
+        ],
+        "str",
+        "instCommRingRingOfIntegers"
+      ],
+      [
+        [
+          [],
+          "str",
+          "AddMonoid"
+        ],
+        "str",
+        "fg_of_addGroup_fg"
+      ],
+      [
+        [
+          [],
+          "str",
+          "AddGroupWithOne"
+        ],
+        "str",
+        "toAddGroup"
+      ],
+      [
+        [
+          [],
+          "str",
+          "Ring"
+        ],
+        "str",
+        "toAddGroupWithOne"
+      ],
+      [
+        [
+          [
+            [],
+            "str",
+            "NumberField"
+          ],
+          "str",
+          "RingOfIntegers"
+        ],
+        "str",
+        "instFG"
+      ]
+    ]
+  },
+  "actualTargetType": "forall {F} [Field F] [NumberField F], Module.Finite Int (NumberField.RingOfIntegers F)",
+  "actualTargetBodyRoute": "AddMonoid.FG.to_moduleFinite_int applied to fg_of_addGroup_fg RingOfIntegers.instFG",
+  "collisionMechanism": "Current-unit ordinary named relocation replaces original qOrder._proof_1 Infinite proof by current generated same-suffix Module.Finite proof. Kernel correctly rejects that proof as the old source normed-field10th argument.",
+  "priorAcceptedProjectDependencyCausesCollision": false,
+  "currentRequiredNamedPairInvalid": true,
+  "possibleFaithfulResolution": "Retain complete selected original proof at exact original type with no standalone target identity. Audit current generated Module.Finite helper separately as an actual target-only compiler declaration with complete source-command provenance. Keep78 original selected obligations; update source named/proof-value partition honestly if this route is adopted. All parent qOrder full computational kernel equality remains required.",
+  "noOriginalKernelSuccessClaim": true,
+  "acceptedOutputGenerated": false
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "tate-theta-independent-main-kernel-sort-optimization-review-v1",
+  "status": "accepted-static-kernel-sort-classifier-equivalent-to-lean-main-ci-pending",
+  "failedMainJob": "ci-014549-4886fad9",
+  "oldTemplateSha256": "070710bf9519c65198d628b7968eb4019d355cbc2ec976605edea854434d51e8",
+  "reviewedTemplateSha256": "c4ed335bbf839f66ab18f1000d9121ff2ef31f7dcc25086171d9c778c8f994dd",
+  "exactDiffScope": "Only complete source DAG isProp classification replaced by Kernel.check type plus Sort classification; one completed35 phase log added. All other source bytes equal.",
+  "typeSafety": "kernelCheck first requires all type expressions closed and uses Kernel.check. A successful Sort level plus Level.isAlwaysZero means the complete source declaration type is Prop at every parameter instantiation. A non-Sort result is rejected. The source-exported proposition flag must match.",
+  "classifierEquivalence": "The public Level.isAlwaysZero and private Meta.InferType.isAlwaysZero have identical cases: zero true; param/mvar/succ false; max conjunction; imax second level. The source DAG types are closed and reject expression metavariables; no level instantiation or Meta weak-head normalization is needed for these kernel-returned Sort levels.",
+  "unchanged": [
+    "complete type/value Kernel.check and kernelTypeEq",
+    "standard type/value axioms",
+    "all dependency owners",
+    "CardPow exact theorem proof",
+    "genuine source data/proof bodies",
+    "public full source type/term kernel equality",
+    "raw original signature BinderInfo guards",
+    "structure/recursor metadata",
+    "default heartbeat200000"
+  ],
+  "upstreamEvidence": [
+    {
+      "path": "/root/.elan/toolchains/leanprover--lean4---v4.33.1/src/lean/Lean/Meta/InferType.lean",
+      "sha256": "ed92098c36a75443312d2d474b4ad7a5c12434cd78bf1a7453e91c876880859e",
+      "lines": "261-267,323-332"
+    },
+    {
+      "path": "/root/.elan/toolchains/leanprover--lean4---v4.33.1/src/lean/Lean/Level.lean",
+      "sha256": "560a7b5fde58937f69e9cf85b96d33f0aafcac2a9aec64776347de5e611d1303",
+      "lines": "208-218"
+    }
+  ],
+  "actualMainAccepted": false,
+  "acceptedOutputGenerated": false
+}

@@ -1,0 +1,8 @@
+{
+  "oldSha256": "b92ad87197671a0a11e5fc0ad77eb8eb517957b06213fdf9d199ff071ef1712a",
+  "newSha256": "334d449a9b639c04d4f28862b0c269377b0b9644c31c5910f23ac027abe15416",
+  "old": "  | \"const\" => return .const (← decodeName (← field j \"name\"))\n      ((← (← arrayField j \"levels\").mapM decodeLevel).toList)",
+  "new": "  | \"const\" =>\n    let name ← decodeName (← field j \"name\")\n    let levels ← (← arrayField j \"levels\").mapM decodeLevel\n    return .const name levels.toList",
+  "scope": "Lean layout only; same identity decoder semantics",
+  "failedJob": "ci-014220-93a283db"
+}

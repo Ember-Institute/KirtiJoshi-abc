@@ -1,0 +1,12 @@
+{
+  "failedJob": "ci-014549-4886fad9",
+  "reason": "Default200000 Meta heartbeat exhausted atwhnf; avoid Meta isProp inference over fully expanded closed types",
+  "oldTemplateSha256": "070710bf9519c65198d628b7968eb4019d355cbc2ec976605edea854434d51e8",
+  "newTemplateSha256": "c4ed335bbf839f66ab18f1000d9121ff2ef31f7dcc25086171d9c778c8f994dd",
+  "before": "      unless isProof == (\u2190 isProp type) do throwError \"Source DAG proof/data status changed: {name}\"",
+  "after": "      let typeSort \u2190 kernelCheck s!\"complete source DAG declared type sort {name}\" type\n      let kernelProofStatus \u2190 match typeSort with\n        | .sort level => pure level.isAlwaysZero\n        | _ => throwError \"Complete source DAG declaration type does not inhabit a sort: {name}\"\n      unless isProof == kernelProofStatus do throwError \"Source DAG proof/data status changed: {name}\"",
+  "kernelChecksPreserved": true,
+  "heartbeatLimitChanged": false,
+  "phaseLogAdded": "After all35 DAG entries validate",
+  "kernelLevelClassification": "Level.isAlwaysZero, identical pure Sort-level predicate used by Lean4.33 Meta.isProp"
+}

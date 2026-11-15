@@ -1,0 +1,53 @@
+{
+  "status": "frozen-parser-and-inventory-draft-no-CI",
+  "plannedMainDirectory": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115",
+  "draftDirectory": "/tmp/p2m-tate-theta-inventory-v5-20261115",
+  "moduleOrder": [
+    "TateCurvesTheta.TateCurve.JInvariant",
+    "TateCurvesTheta.TateCurve.Parametrization",
+    "Iut.Cor312.ThetaData.AdmissiblePrime",
+    "Iut.Cor312.ThetaData.TateStructure"
+  ],
+  "projectPrefixes": [
+    "Iut",
+    "TateCurvesTheta"
+  ],
+  "prefixMap": {
+    "Iut": "AbcAdaptation.Reference.Iut",
+    "TateCurvesTheta": "AbcAdaptation.Reference.TateCurvesTheta"
+  },
+  "parser": {
+    "query": "QueryNextCarrierParserRanges.lean",
+    "config": "parser-config.json",
+    "environmentVariable": "FOUNDATION_PARSER_CONFIG",
+    "firstLeafEstimate": {
+      "expected_duration": "60s",
+      "expected_memory": "16GiB"
+    },
+    "exclusive": true
+  },
+  "export": {
+    "config": "export-config.json",
+    "environmentVariable": "NEXT_CARRIER_EXPORT_CONFIG"
+  },
+  "sourceCommandCandidates": 20,
+  "selectedDeclarationCount": 78,
+  "originalDeclarationCount": 117,
+  "priorMissingConstants": [],
+  "parserRequiredBeforeSlicing": true,
+  "separateOrphanTheoremNodesAllowed": false,
+  "scope": "source carrier preparation; no mathematical field constructions or parent proof completion",
+  "availableAcceptedNamedCount": 339,
+  "requiredPriorActualNamedCount": 42,
+  "requiredPriorSupplierUnitCounts": {
+    "foundation": 2,
+    "packet-field": 14,
+    "volume-tate": 26
+  },
+  "requiredPriorProofValueResolutions": [],
+  "sourceOverrides": [],
+  "additionalPriorModulesNeeded": [],
+  "candidateImportStatus": "All translated target source paths exist; compiler compatibility and exact syntax imports await main CI",
+  "allOriginalNameResolutionRequired": true,
+  "sourceCandidateAcceptance": "none-current-unit"
+}

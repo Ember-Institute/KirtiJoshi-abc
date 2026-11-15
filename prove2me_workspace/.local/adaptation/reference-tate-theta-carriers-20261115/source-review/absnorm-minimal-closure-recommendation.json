@@ -1,0 +1,116 @@
+{
+  "schema": "tate-theta-independent-absnorm-minimal-source-closure-recommendation-v1",
+  "status": "source-text-and-actual-dependency-recommendation-only",
+  "platformQueryJob": "ci-014299-859ee711",
+  "evidence": [
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4/Mathlib/RingTheory/Ideal/Norm/AbsNorm.lean",
+      "sha256": "cd8d9f0b44a498b8b6ae64da4cdcaad3dc73be393a49fd18a396ea4f041f4a8d"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/RingTheory/Ideal/Norm/AbsNorm.lean",
+      "sha256": "6a096b5e1b5220b0248dd708c3d87c0904c85a7498f20fb38c15292618cee882"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/adic-completion-source-facts.json",
+      "sha256": "14e8f9c6a4bd93745995e4d9ce93f36b237761577fad24224027bbb0ddaf93d9"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/adic-completion-platform-facts.json",
+      "sha256": "19da10d50d61cf7b8f92926a400eec1dee0aeef8d6b3ab99f7070508b6fbd883"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/adic-completion-platform-facts-result.json",
+      "sha256": "ab11ac5cd1e346b4715d6b4dc7ab81f4ec049d7f9b792d2b3cf1850481b6d505"
+    }
+  ],
+  "exactRootsFromActualAdicUsedNames": [
+    "Ideal.absNorm",
+    "Ideal.absNorm_eq_one_iff",
+    "Ideal.absNorm_ne_zero_iff"
+  ],
+  "owner": "Mathlib.RingTheory.Ideal.Norm.AbsNorm",
+  "sourceSignature": {
+    "line": 258,
+    "genericRequirements": [
+      "CommRing S",
+      "IsDedekindDomain S",
+      "Infinite S"
+    ],
+    "result": "Ideal S →*₀ ℕ"
+  },
+  "nativeSignature": {
+    "line": 201,
+    "genericRequirements": [
+      "CommRing S",
+      "IsDedekindDomain S",
+      "Module.Free ℤ S"
+    ],
+    "result": "Ideal S →*₀ ℕ"
+  },
+  "dataPreservationRequirement": "Keep the complete original MonoidWithZeroHom value, including toFun and all proof fields, at its original generic type. Do not assume Module.Free from Infinite and do not identify the differently typed native constant by name.",
+  "textualComputationalFieldInBoth": "toFun := Submodule.cardQuot",
+  "necessaryReachedProofBoundary": {
+    "source_cardQuot_mul_line": 190,
+    "native_cardQuot_mul_line": 187,
+    "difference": "Original cardQuot_mul assumes Infinite S; native cardQuot_mul assumes Module.Free ℤ S. Original absNorm.map_mul uses that original theorem, so retaining the complete genuine original data body also requires its actual original proof dependency.",
+    "sourceReachableCandidates": [
+      "cardQuot_mul",
+      "cardQuot_pow_of_prime",
+      "cardQuot_mul_of_coprime",
+      "Submodule.cardQuot_bot",
+      "Submodule.cardQuot_top",
+      "Ideal.absNorm_apply",
+      "Submodule.cardQuot_eq_one_iff"
+    ],
+    "candidatePolicy": "Export exact actual same-file type/value/recursor closure from the three roots. Candidate helper names guide inspection only; actual ConstantInfo edges determine inclusion."
+  },
+  "unneededSourceTextSections": [
+    "Ring.HasFiniteQuotients.finite_setOfPred_mem",
+    "Ring.HasFiniteQuotients.finite_cardQuot_le",
+    "Ring.HasFiniteQuotients.finite_absNorm_le",
+    "principal ideal norm/determinant statements"
+  ],
+  "platformDiagnosticAccounting": {
+    "actualSameFileExpansionAttempts": 9,
+    "successfulAttempts": 7,
+    "failedAttempts": 2,
+    "blockedDependentOriginalNames": 7
+  },
+  "extraMissingBoundariesPreserved": [
+    [
+      [
+        [],
+        "str",
+        "Int"
+      ],
+      "str",
+      "instPartialOrder"
+    ],
+    [
+      [
+        [],
+        "str",
+        "Valuation"
+      ],
+      "str",
+      "instNontrivialSubtypeUnitsMemSubgroupValueGroupOfIsNontrivial"
+    ],
+    [
+      [
+        [
+          [],
+          "str",
+          "NumberField"
+        ],
+        "str",
+        "RingOfIntegers"
+      ],
+      "str",
+      "instHasFiniteQuotients"
+    ]
+  ],
+  "natMatcherExpansionProposed": false,
+  "newDataCompatibilityAccepted": false,
+  "acceptedMappingGenerated": false
+}

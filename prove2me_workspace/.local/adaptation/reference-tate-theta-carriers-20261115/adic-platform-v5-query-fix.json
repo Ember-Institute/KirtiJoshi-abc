@@ -1,0 +1,22 @@
+{
+  "failedJobs": [
+    "ci-014417-cbc75d68",
+    "ci-014421-7aba209c"
+  ],
+  "oldSha256": "dc194cd0b001e80e99a9fe484d062c190462ef58b66f59c202d47fc5b1085020",
+  "newSha256": "13d54ae44a59a0dde7d96639157b50bc4f252960afef33b67b47c847c6625ed9",
+  "fixes": [
+    {
+      "before": "((stringField row \"name\").toOption.getD \"\").endsWith \".cardQuot_pow_of_prime\"",
+      "after": "(stringField row \"name\").toOption == some \"cardQuot_pow_of_prime\"",
+      "reason": "Actual theorem has global structural Name"
+    },
+    {
+      "before": "pure (mkConst name (params.map Level.param))",
+      "after": "pure (Lean.mkConst name (params.map Level.param))",
+      "reason": "Disambiguate Lean expression constructor"
+    }
+  ],
+  "rootRepeatedOldInput": "v4 submission followed failed mutation assertion; actual source unchanged and failed receipt preserved",
+  "scope": "Two query defects; all exact type, BinderInfo, data and closure checks unchanged"
+}

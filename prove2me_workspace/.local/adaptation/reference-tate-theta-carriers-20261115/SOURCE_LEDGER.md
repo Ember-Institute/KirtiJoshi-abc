@@ -1,0 +1,7 @@
+# Tate and initial Θ-data carrier sources
+
+Four bundles retain 20 complete source commands and resolve 78 selected source obligations: 76 actual named comparisons and two genuine original proof-value resolutions: absent tateJ.eq_1 and present-but-type-incompatible qOrder._proof_1. Both source proofs have no standalone target identity; their wrapped and actualCompilerPair fields remain null. Both parent data definitions have full kernel definitional value equality. The actual current Module.Finite helper is separately recorded as a compiler-only proof, with exact whole-source-command provenance and standard axioms; actual owned declarations remain 77. The bundles use 42 actual named identities from prior accepted units. Original consumer edges and paths are preserved, including empty structural paths.
+
+The selected Tate formulas are totalized field expressions and total tsums. AdmissiblePrimeData retains all 15 fields; Fbar has Field and Algebra assumptions only. TateStructure retains all six fields, including the supplied quotient isomorphism and both coordinate pins. graphLine and IsCanonical accept arbitrary natural ℓ. Existence, convergence, graph-quotient identification and the mathematical parent obligation remain open for this unit.
+
+Exact source notices and Apache text are retained. The iut sources are pinned to 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8; Tate sources are pinned to ca6c2279d3cea0690cdb01328e727118d5485d68. The Tate tree has no standalone LICENSE/COPYING/NOTICE file; the distributed Apache text comes from pinned iut.

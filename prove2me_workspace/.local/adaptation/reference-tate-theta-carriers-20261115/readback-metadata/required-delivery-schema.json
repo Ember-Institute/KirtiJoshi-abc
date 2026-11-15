@@ -1,0 +1,82 @@
+{
+  "schema": "reference-tate-theta-readback-metadata-required-fields-v5",
+  "template": {
+    "path": "/tmp/p2m-tate-theta-delivery-v5-20261115/delivery-blind-readbacks.template.json",
+    "sha256": "f3cb9c78610ac039a0c370a6fac29657bf1517b9878d680f14959b04254eca55",
+    "role": "required_delivery_schema"
+  },
+  "required_top_level_fields": [
+    "passed",
+    "unconfirmed_chinese_terms_preserved",
+    "bundles",
+    "independent_reviews"
+  ],
+  "required_bundle_fields": [
+    "definition_name",
+    "source_sha256",
+    "definition_title",
+    "source",
+    "en",
+    "zh-Hans",
+    "ja",
+    "passed",
+    "provenance"
+  ],
+  "required_bundle_provenance_fields": [
+    "author_model",
+    "fresh_context",
+    "input_only_formal_code",
+    "input_sha256",
+    "original_artifact",
+    "original_artifact_sha256",
+    "reviewer_id"
+  ],
+  "required_independent_review_fields": [
+    "reviewer_id",
+    "author_model",
+    "fresh_context",
+    "input_only_formal_code",
+    "original_artifact",
+    "original_artifact_sha256",
+    "passed",
+    "input_sha256_by_definition"
+  ],
+  "bundle_order": [
+    "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_JInvariant",
+    "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Parametrization",
+    "AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime",
+    "AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateStructure"
+  ],
+  "independent_primary_subsets": [
+    [
+      "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_JInvariant",
+      "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Parametrization"
+    ],
+    [
+      "AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime",
+      "AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateStructure"
+    ]
+  ],
+  "primary_subset_policy": "Each map contains exactly its reviewer original primary subset, not prerequisite files or the other reviewer targets. The two maps are disjoint and their union is exactly four.",
+  "proof_identity_policy": {
+    "status": "coordinator_policy_for_preparation_not_independent_kernel_acceptance",
+    "source_count": 78,
+    "source_named_count": 76,
+    "source_genuine_proof_value_count": 2,
+    "current_owned_count": 77,
+    "current_named_count": 76,
+    "current_compiler_only_count": 1,
+    "source_proof_value_rows_may_have_null_wrapped_and_actualCompilerPair": true,
+    "same_name_is_not_identity_evidence": true,
+    "qOrder_helper_collision": {
+      "helper_basename": "qOrder._proof_1",
+      "source_type_as_reported": "Infinite (𝓞 F)",
+      "current_same_name_type_as_reported": "Module.Finite ℤ (𝓞 F)",
+      "policy": "Preserve final typed collision evidence. Do not identify these distinct typed helpers by their name."
+    },
+    "preservation": "Copy final accepted ledger verbatim, including typed collisions, compiler-only evidence, genuine proof values and null correspondence fields."
+  },
+  "preservation_policy": "Copy actual original EN/ZH/JA, declaration coverage, ambiguities, proof notes and complete disclosures verbatim. author_model is not inferred runtime identity; actual_model remains null when reported null.",
+  "archive_copy_policy": "Use relative paths for new within-packet copies. Preserve all originally disclosed paths verbatim. Migration uses a separate copy-map and does not rewrite generated validation hashes.",
+  "finalization_policy": "Do not create an accepted final packet until the coordinating agent confirms both final originals and the accepted final ledger."
+}

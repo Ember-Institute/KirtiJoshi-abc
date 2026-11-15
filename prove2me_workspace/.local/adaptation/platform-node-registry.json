@@ -8126,6 +8126,38 @@
         "visibility": "private",
         "source_unit": ".local/adaptation/reference-volume-tate-carriers-20261115",
         "root_graph_membership": false
+      },
+      {
+        "name": "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_JInvariant",
+        "id": "6bca55e3-3997-4de2-b72a-2524073cd488",
+        "status": "PUBLISHED",
+        "visibility": "private",
+        "source_unit": ".local/adaptation/reference-tate-theta-carriers-20261115",
+        "root_graph_membership": false
+      },
+      {
+        "name": "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Parametrization",
+        "id": "0c869cf8-b902-4c80-a191-6a45952c70ae",
+        "status": "PUBLISHED",
+        "visibility": "private",
+        "source_unit": ".local/adaptation/reference-tate-theta-carriers-20261115",
+        "root_graph_membership": false
+      },
+      {
+        "name": "AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime",
+        "id": "113722a1-52ab-4598-bf0b-742713551ce0",
+        "status": "PUBLISHED",
+        "visibility": "private",
+        "source_unit": ".local/adaptation/reference-tate-theta-carriers-20261115",
+        "root_graph_membership": false
+      },
+      {
+        "name": "AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateStructure",
+        "id": "6447e7bb-4f13-4110-9084-612dfd9eecb9",
+        "status": "PUBLISHED",
+        "visibility": "private",
+        "source_unit": ".local/adaptation/reference-tate-theta-carriers-20261115",
+        "root_graph_membership": false
       }
     ],
     "proved_nodes": [
@@ -8323,6 +8355,103 @@
           "receipt": "production-gates-result.json",
           "sha256": "ceae9c9c8d0991360f9ac2d0a6abf57c51352da6ab95f3ac1a1eac16e8ebb82f"
         }
+      },
+      "canonicalC22Connected": false,
+      "root_graph_unchanged": true,
+      "root_graph_membership": false,
+      "paper_identity_and_arithmetic_instantiation_completed": false,
+      "S2-04_completed": false
+    },
+    "tate_theta_unit": {
+      "source_unit": ".local/adaptation/reference-tate-theta-carriers-20261115",
+      "definitions": {
+        "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_JInvariant": "6bca55e3-3997-4de2-b72a-2524073cd488",
+        "AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Parametrization": "0c869cf8-b902-4c80-a191-6a45952c70ae",
+        "AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime": "113722a1-52ab-4598-bf0b-742713551ce0",
+        "AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateStructure": "6447e7bb-4f13-4110-9084-612dfd9eecb9"
+      },
+      "packet_sha256": "dbc124be8c9832e849665fb59946564bca4121e572fedacaf9efaa2aee71476b",
+      "ready_sha256": "ef088e20ebc7b4ac8075d283a62fb66fadbd2494bb543a814b617eeb213140b4",
+      "selected_final_ci": {
+        "kernel_audit": {
+          "job_id": "ci-014723-4ace0d05",
+          "receipt": "kernel-audit-v10-result.json",
+          "sha256": "7b5dcccaa4e83b4ad54bf27ec9efd3c7580abbd7a22b79d3e2fed9fefa558258"
+        },
+        "production_gates": {
+          "job_id": "ci-014132-9f1cc3fd",
+          "receipt": "production-gates-result.json",
+          "sha256": "edae5a9c709ec041f4ce2bd1fdbbafa849bbfba53420d76cc89601ef9c3924fb"
+        }
+      },
+      "project_kernel_coverage": {
+        "source": 78,
+        "resolved": 78,
+        "named": 76,
+        "proof": 2,
+        "historical_requiredComparedCount": 78
+      },
+      "standard_compatibility": {
+        "standard_proof_value_resolution_count": 2,
+        "ring_native_proof_resolution_count": 1,
+        "original": "NumberField.RingOfIntegers.instHasFiniteQuotients",
+        "resolution": "kernel-checked-native-proof-at-exact-original-type",
+        "standalone_target_identity": null,
+        "source_query_job": "ci-014215-2414b895",
+        "platform_query_job": "ci-014243-25ac457f",
+        "native_universes_restored_to_original": true,
+        "required_data_consumers": [
+          "Iut.AdmissiblePrimeData._sizeOf_1",
+          "Iut.AdmissiblePrimeData.casesOn",
+          "Iut.AdmissiblePrimeData.mk._flat_ctor",
+          "Iut.AdmissiblePrimeData.mk.noConfusion",
+          "Iut.AdmissiblePrimeData.noConfusion",
+          "Iut.AdmissiblePrimeData.noConfusionType",
+          "Iut.AdmissiblePrimeData.qOrder",
+          "Iut.AdmissiblePrimeData.recOn",
+          "Iut.AdmissiblePrimeData.tate"
+        ]
+      },
+      "adic_source_compatibility": {
+        "required_original_record_count": 35,
+        "genuine_original_data_count": 8,
+        "genuine_original_proof_body_count": 26,
+        "native_card_pow_proof_count": 1,
+        "standard_native_proof_count_including_ring": 2,
+        "unused_original_proof_archive_count": 15,
+        "historical_config": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/attempts/kernel-audit-v4/audit-config.json",
+        "leaves": [
+          {
+            "job_id": "ci-014497-4264b653",
+            "view": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/adic-dag-a-view.json",
+            "original_artifact": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/adic-source-dag-a.json",
+            "peak_rss_bytes": 6067023872
+          },
+          {
+            "job_id": "ci-014507-f12c827f",
+            "view": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/adic-dag-b-view.json",
+            "original_artifact": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-tate-theta-carriers-20261115/adic-source-dag-b.json",
+            "peak_rss_bytes": 6114971648
+          }
+        ],
+        "public_raw_signature_binder_guards_and_full_data_equality_required": true
+      },
+      "qorder_proof_identity_policy": {
+        "schema": "tate-theta-qorder-proof-identity-policy-v1",
+        "sourceProofOriginal": "Iut.AdmissiblePrimeData.qOrder._proof_1",
+        "sourceStandaloneTargetIdentity": null,
+        "sourceProofClassification": "present-type-incompatible-generated-proof",
+        "actualCurrentCompilerOnlyTarget": "AbcAdaptation.Reference.Iut.AdmissiblePrimeData.qOrder._proof_1",
+        "sourceOriginalKernelJob": "ci-014644-6cff0e0c",
+        "sourceSelectedCount": 78,
+        "namedSelectedCount": 76,
+        "genuineSourceProofValueCount": 2,
+        "actualOwnedCount": 77,
+        "actualCompilerOnlyProofCount": 1,
+        "nativeStandardProofCount": 2,
+        "historicalPresenceQueryUnchanged": true,
+        "requiredWholeDataParent": "Iut.AdmissiblePrimeData.qOrder",
+        "requiredWholeCommandSha256": "b00e2de211ff32ba04c0fbe9038d7804e7890f8767e96ffe8fd6de0dfe8b33df"
       },
       "canonicalC22Connected": false,
       "root_graph_unchanged": true,

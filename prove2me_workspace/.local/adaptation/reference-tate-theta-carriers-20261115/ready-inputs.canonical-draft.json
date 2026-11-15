@@ -1,0 +1,40 @@
+{
+  "reviewed": false,
+  "inventory": "inventory.json",
+  "wrapper_report": "generated-wrapped/foundation-wrapper-report.json",
+  "blind_readbacks": "blind-readbacks.json",
+  "paper_context": "paper-context.json",
+  "paper_validation": "paper-context-validation.json",
+  "source_ledger": "SOURCE_LEDGER.json",
+  "kernel_config": "audit-config.json",
+  "original_view_evidence": "original-exprs-compact-view.json",
+  "adic_historical_config": "attempts/kernel-audit-v4/audit-config.json",
+  "prepublication_review": "final-review/prepublication-review.json",
+  "production_receipt": "production-gates-result.json",
+  "leaf_receipts": [
+    "platform-JInvariant-leaf-result.json",
+    "platform-Parametrization-leaf-result.json",
+    "platform-AdmissiblePrime-leaf-result.json",
+    "platform-TateStructure-leaf-result.json"
+  ],
+  "artifact_receipts": [
+    "platform-JInvariant-artifact-result.json",
+    "platform-Parametrization-artifact-result.json",
+    "platform-AdmissiblePrime-artifact-result.json",
+    "platform-TateStructure-artifact-result.json"
+  ],
+  "gate_evidence": {
+    "independent_readbacks": [
+      "blind-readbacks.json",
+      "metadata-copy-map.json"
+    ],
+    "source_ledger_consumers": [
+      "SOURCE_LEDGER.json",
+      "accepted-compiler-correspondence.json"
+    ],
+    "existing_mission_scope": [
+      "SOURCE_LEDGER.json",
+      "paper-context-root-integration.json"
+    ]
+  }
+}

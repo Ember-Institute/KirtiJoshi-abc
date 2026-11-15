@@ -1,0 +1,32 @@
+{
+  "failedJob": "ci-014581-b7a39b26",
+  "failedDefaultHeartbeats": 200000,
+  "newHeartbeats": 1000000,
+  "scope": "Only final audit_next_carriers metaprogram command; all production definitions remain at default",
+  "priorOptimization": "Kernel Sort isAlwaysZero classification; source35 phase fully passed at default",
+  "oldTemplateSha256": "c4ed335bbf839f66ab18f1000d9121ff2ef31f7dcc25086171d9c778c8f994dd",
+  "newTemplateSha256": "fa6ae472b179541f97026ee7303f0b9c94cd46ddb6329c562257ff85072eac4f",
+  "changes": [
+    {
+      "before": "  let platformFacts \u2190 verifyPlatformHelperFacts config",
+      "after": "  logInfo \"Checking actual platform helper facts\"\n  let platformFacts \u2190 verifyPlatformHelperFacts config"
+    },
+    {
+      "before": "  let (rs, proofResolutionReports) \u2190 installExactTateJEquationProof rs allowedOwners source config platformFacts",
+      "after": "  logInfo \"Checking genuine original tateJ equation proof\"\n  let (rs, proofResolutionReports) \u2190 installExactTateJEquationProof rs allowedOwners source config platformFacts"
+    },
+    {
+      "before": "    comparisons := comparisons.push (\u2190 compareRecord rs allowedOwners record (\u2190 getConstInfo targetName))",
+      "after": "    logInfo s!\"Checking complete public source declaration {original}\"\n    comparisons := comparisons.push (\u2190 compareRecord rs allowedOwners record (\u2190 getConstInfo targetName))"
+    },
+    {
+      "before": "  for name in declarations.qsort Name.lt do\n    ownedReports := ownedReports.push",
+      "after": "  logInfo \"Checking owned declaration axiom closures\"\n  for name in declarations.qsort Name.lt do\n    ownedReports := ownedReports.push"
+    },
+    {
+      "before": "\naudit_next_carriers\n",
+      "after": "\nset_option maxHeartbeats 1_000_000 in\naudit_next_carriers\n"
+    }
+  ],
+  "allMathematicalChecksPreserved": true
+}
