@@ -1,0 +1,4077 @@
+{
+  "schema": "prove2me-reference-foundation-paper-context-v1",
+  "language": "en",
+  "purpose": "Original Mochizuki paper context for exactly four bundles and 19 parser-selected source commands. Author/source context only; this is not independent blind readback.",
+  "bundles": [
+    {
+      "module": "Iut.Cor312.ThetaData.Orbicurve",
+      "source_path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/Orbicurve.lean",
+      "source_sha256": "b21404347fe9ea6557bf72421328bfd9e522a66c912b8c97d94dbe09a1259b0b",
+      "source_provenance": {
+        "originalSourcePath": "Iut/Cor312/ThetaData/Orbicurve.lean",
+        "originalAuthors": "The iut contributors",
+        "originalRepository": "https://github.com/lana-agents/iut",
+        "originalCommit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "originalCommitEvidence": "existing accepted graph/source receipts; no Git command performed this task",
+        "originalLicense": "Apache-2.0",
+        "licenseFile": "/home/admin-wsl/Coq/abc/refer/iut/LICENSE",
+        "licenseSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "sourceHeaderSha256": "96ea7a84822ad2877b390f2a9bd1bec9606188bec41a212ced076975774558c9",
+        "sourceHeader": "/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n-/\n",
+        "sourceSha256": "b21404347fe9ea6557bf72421328bfd9e522a66c912b8c97d94dbe09a1259b0b",
+        "sourceOverridden": false,
+        "originalSource": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/Orbicurve.lean",
+        "effectiveSourceIsAcceptedGraphInput": true,
+        "acceptedGraphJobId": "ci-012771-ee109b3e",
+        "frozenEffectiveSource": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-initial-theta-carriers-20261115/frozen-sources/Iut/Cor312/ThetaData/Orbicurve.lean",
+          "sha256": "b21404347fe9ea6557bf72421328bfd9e522a66c912b8c97d94dbe09a1259b0b",
+          "byteLength": 12704
+        },
+        "acceptedGraphSourceReceipt": {
+          "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/c22-graph-source-receipt.json",
+          "sha256": "6677a0d0e2ad0903d6347bdea8af083bb07cd0f60d8c662836c7fce709dd02aa"
+        },
+        "current_verification": "All original, frozen, and selected source bytes rehashed in this paper-context task. No Git operation."
+      },
+      "selected_source_commands": [
+        "Iut.AnabelianGeometry",
+        "Iut.OrbicurveDataSection.CF",
+        "Iut.OrbicurveDataSection.XK",
+        "Iut.OrbicurveDataSection.CK",
+        "Iut.OrbicurveDataSection.OrbicurveData"
+      ],
+      "selection_status": "Exact parser-selected commands only. All structure fields remain included with their structure command.",
+      "structure_fields": {
+        "AnabelianGeometry": [
+          "Orbicurve",
+          "Cover",
+          "coverComp",
+          "baseChange",
+          "coverBaseChange",
+          "oncePunctured",
+          "pmQuotient",
+          "pi1",
+          "pi1Cover",
+          "pi1Cover_continuous",
+          "pi1Cover_isOpenEmbedding",
+          "IsCartesianSquare",
+          "Cusp",
+          "cuspBaseChange",
+          "HasCore",
+          "IsTypeOneEllTors",
+          "IsTypeOneEllTorsPM",
+          "TateStructure",
+          "IsTypeOneZModPM",
+          "RankOneQuotient",
+          "cuspOfQuotient"
+        ],
+        "OrbicurveData": [
+          "CKu",
+          "CKu_type",
+          "CKu_core",
+          "XKu",
+          "XKu_type",
+          "XKu_to_XK",
+          "XKu_to_CKu",
+          "XK_to_CK",
+          "CKu_to_CK",
+          "diagram_cartesian",
+          "QIso",
+          "q",
+          "q_ne_zero",
+          "epsilon",
+          "epsilon_spec"
+        ]
+      },
+      "source_context_en": "Mochizuki I, Definition 3.1(d), specifies the torsion orbicurve, its K-core, and cartesian covering diagrams. Definition 3.1(f) chooses a cusp from a nonzero element of Q. Étale Theta Definition 2.1 defines the relevant orbicurve types through its preceding covering construction. Those passages provide the intended arithmetic meaning of this module. They do not define the Lean interface or prove that an arbitrary instance realizes that meaning.",
+      "implementation_scope_en": "Defines the supplied AnabelianGeometry interface with all 21 fields. Orbicurve, Cover, Cusp, RankOneQuotient, and the local TateStructure are type-valued fields. HasCore, IsCartesianSquare, and the three type predicates are supplied predicates. pi1 returns a ProfiniteGrp object. pi1Cover has supplied continuity and open-embedding laws. The record gives no geometric realization or general functor laws for the named operations. HasCore has no terminal-object law. AG.TateStructure is distinct from the concrete Iut.TateStructure, with no bridge supplied here. The interface itself is not constructed by this command. Defines CF by applying AG.pmQuotient to AG.oncePunctured E. This applies supplied interface operations; it does not construct or verify a geometric quotient. Defines XK by applying AG.baseChange to AG.oncePunctured E along F → P.torsionField. The fixed-field extension is an input. This command proves no finite-field-extension or geometric base-change theorem. Defines CK by applying AG.baseChange to CF along F → P.torsionField. It proves no core property. Defines OrbicurveData with all 15 fields: CKu, CKu_type, CKu_core, XKu, XKu_type, XKu_to_XK, XKu_to_CKu, XK_to_CK, CKu_to_CK, diagram_cartesian, QIso, q, q_ne_zero, epsilon, and epsilon_spec. The objects, covers, predicates, and cusp are supplied data. QIso is an ordinary type equivalence with ZMod ℓ. RankOneQuotient has no required additive or module structure. q_ne_zero means QIso q ≠ 0; it does not prove intrinsic algebraic nonvanishing or invariance under arbitrary type equivalences. epsilon_spec pins the chosen cusp to the supplied cuspOfQuotient operation. The record does not construct the geometry, the cusp choice, or an inhabitant.",
+      "consumer_scope_en": "The selected CF, XK, and CK definitions serve OrbicurveData. The supplied geometry and OrbicurveData feed LocalThetaData and InitialThetaData. Consumer paths are from the accepted original graph; they do not certify adapted kernel acceptance.",
+      "quotation_ids": [
+        "I-orbicurve-core",
+        "I-orbicurve-diagrams",
+        "I-global-cusp",
+        "EtTh-type-one-tors"
+      ],
+      "attribution_status": "Original Mochizuki source context. Source-code descriptions remain outside quotations. Interfaces, choices, existence, and arithmetic identity remain separate.",
+      "blocks_definition_delivery": false,
+      "consumer_paths": {
+        "Iut.AnabelianGeometry": [
+          "Iut.AnabelianGeometry",
+          "Iut.Theorem110Invariants.theorem110"
+        ],
+        "Iut.OrbicurveDataSection.CF": [
+          "Iut.OrbicurveDataSection.CF",
+          "Iut.OrbicurveDataSection.CK",
+          "Iut.LocalThetaData.mk",
+          "Iut.LocalThetaData",
+          "Iut.InitialThetaData.mk",
+          "Iut.InitialThetaData",
+          "Iut.Corollary312VariantData.data",
+          "Iut.Theorem110Invariants.theorem110"
+        ],
+        "Iut.OrbicurveDataSection.XK": [
+          "Iut.OrbicurveDataSection.XK",
+          "Iut.LocalThetaData.mk",
+          "Iut.LocalThetaData",
+          "Iut.InitialThetaData.mk",
+          "Iut.InitialThetaData",
+          "Iut.Corollary312VariantData.data",
+          "Iut.Theorem110Invariants.theorem110"
+        ],
+        "Iut.OrbicurveDataSection.CK": [
+          "Iut.OrbicurveDataSection.CK",
+          "Iut.LocalThetaData.mk",
+          "Iut.LocalThetaData",
+          "Iut.InitialThetaData.mk",
+          "Iut.InitialThetaData",
+          "Iut.Corollary312VariantData.data",
+          "Iut.Theorem110Invariants.theorem110"
+        ],
+        "Iut.OrbicurveDataSection.OrbicurveData": [
+          "Iut.OrbicurveDataSection.OrbicurveData",
+          "Iut.InitialThetaData.mk",
+          "Iut.InitialThetaData",
+          "Iut.Corollary312VariantData.data",
+          "Iut.Theorem110Invariants.theorem110"
+        ]
+      },
+      "consumer_evidence_scope": "Per-command relationships copied from the accepted original graph inventory. Parser AST binding is separate from adapted elaboration and platform acceptance.",
+      "publication_markdown": "**Paper source context.** Mochizuki I, Definition 3.1(d), specifies the torsion orbicurve, its K-core, and cartesian covering diagrams. Definition 3.1(f) chooses a cusp from a nonzero element of Q. Étale Theta Definition 2.1 defines the relevant orbicurve types through its preceding covering construction. Those passages provide the intended arithmetic meaning of this module. They do not define the Lean interface or prove that an arbitrary instance realizes that meaning.\n\n**Selected implementation scope.**\n\n`Iut.AnabelianGeometry` — Defines the supplied AnabelianGeometry interface with all 21 fields. Orbicurve, Cover, Cusp, RankOneQuotient, and the local TateStructure are type-valued fields. HasCore, IsCartesianSquare, and the three type predicates are supplied predicates. pi1 returns a ProfiniteGrp object. pi1Cover has supplied continuity and open-embedding laws. The record gives no geometric realization or general functor laws for the named operations. HasCore has no terminal-object law. AG.TateStructure is distinct from the concrete Iut.TateStructure, with no bridge supplied here. The interface itself is not constructed by this command.\n\n`Iut.OrbicurveDataSection.CF` — Defines CF by applying AG.pmQuotient to AG.oncePunctured E. This applies supplied interface operations; it does not construct or verify a geometric quotient.\n\n`Iut.OrbicurveDataSection.XK` — Defines XK by applying AG.baseChange to AG.oncePunctured E along F → P.torsionField. The fixed-field extension is an input. This command proves no finite-field-extension or geometric base-change theorem.\n\n`Iut.OrbicurveDataSection.CK` — Defines CK by applying AG.baseChange to CF along F → P.torsionField. It proves no core property.\n\n`Iut.OrbicurveDataSection.OrbicurveData` — Defines OrbicurveData with all 15 fields: CKu, CKu_type, CKu_core, XKu, XKu_type, XKu_to_XK, XKu_to_CKu, XK_to_CK, CKu_to_CK, diagram_cartesian, QIso, q, q_ne_zero, epsilon, and epsilon_spec. The objects, covers, predicates, and cusp are supplied data. QIso is an ordinary type equivalence with ZMod ℓ. RankOneQuotient has no required additive or module structure. q_ne_zero means QIso q ≠ 0; it does not prove intrinsic algebraic nonvanishing or invariance under arbitrary type equivalences. epsilon_spec pins the chosen cusp to the supplied cuspOfQuotient operation. The record does not construct the geometry, the cusp choice, or an inhabitant.\n\n**Complete field inventory of selected structures.**\n\n- `AnabelianGeometry` (21 fields): `Orbicurve`, `Cover`, `coverComp`, `baseChange`, `coverBaseChange`, `oncePunctured`, `pmQuotient`, `pi1`, `pi1Cover`, `pi1Cover_continuous`, `pi1Cover_isOpenEmbedding`, `IsCartesianSquare`, `Cusp`, `cuspBaseChange`, `HasCore`, `IsTypeOneEllTors`, `IsTypeOneEllTorsPM`, `TateStructure`, `IsTypeOneZModPM`, `RankOneQuotient`, `cuspOfQuotient`.\n- `OrbicurveData` (15 fields): `CKu`, `CKu_type`, `CKu_core`, `XKu`, `XKu_type`, `XKu_to_XK`, `XKu_to_CKu`, `XK_to_CK`, `CKu_to_CK`, `diagram_cartesian`, `QIso`, `q`, `q_ne_zero`, `epsilon`, `epsilon_spec`.\n\nShinichi Mochizuki, *Inter-universal Teichmüller Theory I: Construction of Hodge Theaters* (May 2020), Definition 3.1(d), first sentence; printed/PDF page(s) 62. Official original: https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20I.pdf.\n\n> $\\underline C_K$ is a hyperbolic orbicurve of type $(1,l\\text{-tors})_\\pm$ [cf. [EtTh], Definition 2.1] over $K$, with $K$-core [cf. [CanLift], Remark 2.1.1; [EtTh], the discussion at the beginning of §2] given by $C_K\\overset{\\mathrm{def}}{=}C_F\\times_F K$.\n\nShinichi Mochizuki, *Inter-universal Teichmüller Theory I: Construction of Hodge Theaters* (May 2020), Definition 3.1(d), sentence beginning “In particular”, with the three diagrams omitted; printed/PDF page(s) 62. Official original: https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20I.pdf.\n\n> In particular, $\\underline C_K$ determines, up to $K$-isomorphism, a hyperbolic orbicurve $\\underline X_K$ of type $(1,l\\text{-tors})$ [cf. [EtTh], Definition 2.1] over $K$, together with natural cartesian diagrams […] of finite étale coverings of hyperbolic orbicurves and corresponding open immersions of profinite groups.\n\nShinichi Mochizuki, *Inter-universal Teichmüller Theory I: Construction of Hodge Theaters* (May 2020), Definition 3.1(f), first sentence; printed/PDF page(s) 63. Official original: https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20I.pdf.\n\n> $\\underline\\epsilon$ is a cusp of the hyperbolic orbicurve $\\underline C_K$ [cf. (d)] that arises from a nonzero element of the quotient “$Q$” that appears in the definition of a “hyperbolic orbicurve of type $(1,l\\text{-tors})_\\pm$” given in [EtTh], Definition 2.1.\n\nShinichi Mochizuki, *The Étale Theta Function and its Frobenioid-theoretic Manifestations* (December 2008), Definition 2.1, full definition; printed/PDF page(s) 33. Official original: https://www.kurims.kyoto-u.ac.jp/~motizuki/The%20Etale%20Theta%20Function%20and%20its%20Frobenioid-theoretic%20Manifestations.pdf.\n\n> We shall refer to a smooth log orbicurve over $K$ that arises, up to isomorphism, as the smooth log orbicurve $\\underline X^{\\log}$ (respectively, $\\underline C^{\\log}$) constructed above for some choice of $\\overline\\Pi_X^{\\mathrm{ell}}\\twoheadrightarrow Q$ as being of type $(1,l\\text{-tors})$ (respectively, $(1,l\\text{-tors})_\\pm$). We shall also apply this terminology to the associated hyperbolic orbicurves.\n\n**Actual consumer.** The selected CF, XK, and CK definitions serve OrbicurveData. The supplied geometry and OrbicurveData feed LocalThetaData and InitialThetaData. Consumer paths are from the accepted original graph; they do not certify adapted kernel acceptance.",
+      "selected_command_bindings": [
+        {
+          "name": "Iut.AnabelianGeometry",
+          "parser_command_index": 4,
+          "syntax_kind": "Lean.Parser.Command.declaration",
+          "actual_parser_range": {
+            "end": {
+              "col": 32,
+              "line": 135,
+              "offset": 8257
+            },
+            "start": {
+              "col": 0,
+              "line": 58,
+              "offset": 2719
+            }
+          },
+          "source_text": "/-- Interface for the anabelian geometry of hyperbolic orbicurves (seam for\ntaxis #7/#10 and successors): orbicurve types, finite étale covers, base change,\nonce-punctured elliptic curves, `±`-quotients, étale fundamental groups, cusps, cores,\nand the orbicurve-type predicates of *The Étale Theta Function*, Definition 2.1.\n\nBasepoints of fundamental groups are suppressed throughout: each `pi1` is the étale\nfundamental group up to conjugation, as is standard in IUT I, §3. -/\nstructure AnabelianGeometry : Type (u + 1) where\n  /-- Hyperbolic orbicurves over a field `k`. -/\n  Orbicurve : (k : Type u) → [Field k] → Type u\n  /-- Finite étale coverings of orbicurves over `k`. -/\n  Cover : {k : Type u} → [Field k] → Orbicurve k → Orbicurve k → Type u\n  /-- Composition of coverings. -/\n  coverComp : {k : Type u} → [Field k] → {X Y Z : Orbicurve k} →\n    Cover X Y → Cover Y Z → Cover X Z\n  /-- Base change of an orbicurve along a field embedding. -/\n  baseChange : {k K : Type u} → [Field k] → [Field K] → (k →+* K) →\n    Orbicurve k → Orbicurve K\n  /-- Base change of a finite étale cover along a field embedding. -/\n  coverBaseChange : {k K : Type u} → [Field k] → [Field K] → (f : k →+* K) →\n    {X Y : Orbicurve k} → Cover X Y → Cover (baseChange f X) (baseChange f Y)\n  /-- The once-punctured elliptic curve `X = E ∖ {0}` attached to an elliptic curve. -/\n  oncePunctured : {k : Type u} → [Field k] → (E : WeierstrassCurve k) →\n    [E.IsElliptic] → Orbicurve k\n  /-- The quotient of a hyperbolic orbicurve by its `±1`-action (where defined; for\n  the once-punctured elliptic curve this is the quotient `C = X/{±1}`). -/\n  pmQuotient : {k : Type u} → [Field k] → Orbicurve k → Orbicurve k\n  /-- The arithmetic étale fundamental group of an orbicurve, a profinite group\n  (basepoint suppressed; well-defined up to conjugation). -/\n  pi1 : {k : Type u} → [Field k] → Orbicurve k → ProfiniteGrp.{u}\n  /-- The homomorphism of fundamental groups induced by a finite étale cover. -/\n  pi1Cover : {k : Type u} → [Field k] → {X Y : Orbicurve k} → Cover X Y →\n    (pi1 X →* pi1 Y)\n  /-- The induced homomorphisms are continuous. -/\n  pi1Cover_continuous : ∀ {k : Type u} [Field k] {X Y : Orbicurve k} (f : Cover X Y),\n    Continuous (pi1Cover f)\n  /-- The induced homomorphisms are **open immersions** of profinite groups: open\n  topological group embeddings onto open subgroups (IUT I, Definition 3.1(d), the\n  displayed covering diagrams). -/\n  pi1Cover_isOpenEmbedding : ∀ {k : Type u} [Field k] {X Y : Orbicurve k}\n    (f : Cover X Y), Topology.IsOpenEmbedding (pi1Cover f)\n  /-- A square of coverings is **cartesian** (a fiber-product square). -/\n  IsCartesianSquare : {k : Type u} → [Field k] → {A B C D : Orbicurve k} →\n    Cover A B → Cover B D → Cover A C → Cover C D → Prop\n  /-- The cusps of an orbicurve. -/\n  Cusp : {k : Type u} → [Field k] → Orbicurve k → Type u\n  /-- Base change of cusps along a field embedding. -/\n  cuspBaseChange : {k K : Type u} → [Field k] → [Field K] → (f : k →+* K) →\n    {X : Orbicurve k} → Cusp X → Cusp (baseChange f X)\n  /-- `core` relation: `C` is the `k`-core of `X` (the terminal object among the\n  finite étale quotients of `X`; *Absolute Anabelian Geometry of Canonical Curves*,\n  and IUT I, Definition 3.1(d) \"with `K`-core `C_K`\"). -/\n  HasCore : {k : Type u} → [Field k] → (X C : Orbicurve k) → Prop\n  /-- An orbicurve is of type `(1, ℓ-tors)` (*Étale Theta*, Definition 2.1). -/\n  IsTypeOneEllTors : {k : Type u} → [Field k] → (ℓ : ℕ) → Orbicurve k → Prop\n  /-- An orbicurve is of type `(1, ℓ-tors)^±` (*Étale Theta*, Definition 2.1). -/\n  IsTypeOneEllTorsPM : {k : Type u} → [Field k] → (ℓ : ℕ) → Orbicurve k → Prop\n  /-- **Tate structures** on an orbicurve over a complete rank-one valued field (the local\n  fields of the Θ-data are adic completions): a Tate uniformization of the underlying\n  elliptic curve (*The Étale Theta Function*, §1; for the model, `Iut.TateStructure`). The\n  local conditions of the Θ-data at the bad places refer to it. -/\n  TateStructure : {k : Type u} → [Field k] → [Valued k (WithZero (Multiplicative ℤ))] →\n    [Valuation.RankOne (Valued.v : Valuation k (WithZero (Multiplicative ℤ)))] → [CompleteSpace k] →\n    Orbicurve k → Type u\n  /-- An orbicurve over a complete rank-one valued field, with a Tate structure, is of type\n  `(1, ℤ/ℓℤ)^±` (*Étale Theta*, Definition 2.5; used by the local conditions at bad places,\n  taxis #42): the cover attached to the graph quotient of the Tate uniformization. -/\n  IsTypeOneZModPM : {k : Type u} → [Field k] → [Valued k (WithZero (Multiplicative ℤ))] →\n    [Valuation.RankOne (Valued.v : Valuation k (WithZero (Multiplicative ℤ)))] → [CompleteSpace k] →\n    (ℓ : ℕ) → (X : Orbicurve k) → TateStructure X → Prop\n  /-- The rank-one quotient `Q` attached to an orbicurve of type `(1, ℓ-tors)^±`\n  (IUT I, Definition 3.1(f): the quotient of the module of cuspidal data that is free\n  of rank one over `ℤ/ℓℤ`). For orbicurves not of that type the value is junk. -/\n  RankOneQuotient : {k : Type u} → [Field k] → Orbicurve k → (ℓ : ℕ) → Type u\n  /-- The cusp associated to an element of the rank-one quotient (junk at `0`;\n  IUT I, Definition 3.1(f)). -/\n  cuspOfQuotient : {k : Type u} → [Field k] → (X : Orbicurve k) → (ℓ : ℕ) →\n    RankOneQuotient X ℓ → Cusp X",
+          "source_command_path": "/tmp/p2m-initial-theta-paper-v6-20261115/exact-selected-commands/Iut-Cor312-ThetaData-Orbicurve/004.lean.txt",
+          "source_command_sha256": "6cb34b9f2af3f8802c81f9502d6f4a9970aff06b28ec3193034d5ce66f5cc7ec",
+          "selected_compiler_declarations": [
+            "Iut.AnabelianGeometry",
+            "Iut.AnabelianGeometry.Cover",
+            "Iut.AnabelianGeometry.Cusp",
+            "Iut.AnabelianGeometry.HasCore",
+            "Iut.AnabelianGeometry.IsCartesianSquare",
+            "Iut.AnabelianGeometry.IsTypeOneEllTors",
+            "Iut.AnabelianGeometry.IsTypeOneEllTorsPM",
+            "Iut.AnabelianGeometry.IsTypeOneZModPM",
+            "Iut.AnabelianGeometry.Orbicurve",
+            "Iut.AnabelianGeometry.RankOneQuotient",
+            "Iut.AnabelianGeometry.TateStructure",
+            "Iut.AnabelianGeometry.baseChange",
+            "Iut.AnabelianGeometry.casesOn",
+            "Iut.AnabelianGeometry.coverBaseChange",
+            "Iut.AnabelianGeometry.coverComp",
+            "Iut.AnabelianGeometry.cuspBaseChange",
+            "Iut.AnabelianGeometry.cuspOfQuotient",
+            "Iut.AnabelianGeometry.mk",
+            "Iut.AnabelianGeometry.noConfusion",
+            "Iut.AnabelianGeometry.oncePunctured",
+            "Iut.AnabelianGeometry.pi1",
+            "Iut.AnabelianGeometry.pi1Cover",
+            "Iut.AnabelianGeometry.pi1Cover_continuous",
+            "Iut.AnabelianGeometry.pi1Cover_isOpenEmbedding",
+            "Iut.AnabelianGeometry.pmQuotient",
+            "Iut.AnabelianGeometry.rec",
+            "Iut.AnabelianGeometry.recOn",
+            "Iut.AnabelianGeometry.mk.noConfusion"
+          ],
+          "parser_fact_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-initial-theta-carriers-20261115/parser-output/Iut-Cor312-ThetaData-Orbicurve.jsonl",
+          "parser_fact_sha256": "ae1ba71a398c14d0aeca53e21ae41584361daca491e5b03bb2ca9c9333dcf84f",
+          "implementation_scope_en": "Defines the supplied AnabelianGeometry interface with all 21 fields. Orbicurve, Cover, Cusp, RankOneQuotient, and the local TateStructure are type-valued fields. HasCore, IsCartesianSquare, and the three type predicates are supplied predicates. pi1 returns a ProfiniteGrp object. pi1Cover has supplied continuity and open-embedding laws. The record gives no geometric realization or general functor laws for the named operations. HasCore has no terminal-object law. AG.TateStructure is distinct from the concrete Iut.TateStructure, with no bridge supplied here. The interface itself is not constructed by this command.",
+          "quotation_ids": [
+            "I-orbicurve-core",
+            "I-orbicurve-diagrams",
+            "I-global-cusp",
+            "EtTh-type-one-tors"
+          ],
+          "paper_relation": "Original-paper context for the selected interface or construction. No paper quotation is asserted as the literal definition of this Lean command.",
+          "inventory_owned_selected_declarations": [
+            "Iut.AnabelianGeometry",
+            "Iut.AnabelianGeometry.Cover",
+            "Iut.AnabelianGeometry.Cusp",
+            "Iut.AnabelianGeometry.HasCore",
+            "Iut.AnabelianGeometry.IsCartesianSquare",
+            "Iut.AnabelianGeometry.IsTypeOneEllTors",
+            "Iut.AnabelianGeometry.IsTypeOneEllTorsPM",
+            "Iut.AnabelianGeometry.IsTypeOneZModPM",
+            "Iut.AnabelianGeometry.Orbicurve",
+            "Iut.AnabelianGeometry.RankOneQuotient",
+            "Iut.AnabelianGeometry.TateStructure",
+            "Iut.AnabelianGeometry._sizeOf_1",
+            "Iut.AnabelianGeometry._sizeOf_inst",
+            "Iut.AnabelianGeometry.baseChange",
+            "Iut.AnabelianGeometry.casesOn",
+            "Iut.AnabelianGeometry.coverBaseChange",
+            "Iut.AnabelianGeometry.coverComp",
+            "Iut.AnabelianGeometry.ctorIdx",
+            "Iut.AnabelianGeometry.cuspBaseChange",
+            "Iut.AnabelianGeometry.cuspOfQuotient",
+            "Iut.AnabelianGeometry.mk",
+            "Iut.AnabelianGeometry.noConfusion",
+            "Iut.AnabelianGeometry.noConfusionType",
+            "Iut.AnabelianGeometry.oncePunctured",
+            "Iut.AnabelianGeometry.pi1",
+            "Iut.AnabelianGeometry.pi1Cover",
+            "Iut.AnabelianGeometry.pi1Cover_continuous",
+            "Iut.AnabelianGeometry.pi1Cover_isOpenEmbedding",
+            "Iut.AnabelianGeometry.pmQuotient",
+            "Iut.AnabelianGeometry.rec",
+            "Iut.AnabelianGeometry.recOn",
+            "Iut.AnabelianGeometry.mk._flat_ctor",
+            "Iut.AnabelianGeometry.mk.inj",
+            "Iut.AnabelianGeometry.mk.injEq",
+            "Iut.AnabelianGeometry.mk.noConfusion",
+            "Iut.AnabelianGeometry.mk.sizeOf_spec"
+          ],
+          "selected_declarations_without_parser_range": [
+            "Iut.AnabelianGeometry._sizeOf_1",
+            "Iut.AnabelianGeometry._sizeOf_inst",
+            "Iut.AnabelianGeometry.ctorIdx",
+            "Iut.AnabelianGeometry.noConfusionType",
+            "Iut.AnabelianGeometry.mk._flat_ctor",
+            "Iut.AnabelianGeometry.mk.inj",
+            "Iut.AnabelianGeometry.mk.injEq",
+            "Iut.AnabelianGeometry.mk.sizeOf_spec"
+          ],
+          "generated_declaration_binding_scope": "The parser command directly lists ranged emissions. Additional no-range generated declarations are attached by the inventory owner mapping; their identity still requires the parent kernel audit."
+        },
+        {
+          "name": "Iut.OrbicurveDataSection.CF",
+          "parser_command_index": 10,
+          "syntax_kind": "Lean.Parser.Command.declaration",
+          "actual_parser_range": {
+            "end": {
+              "col": 75,
+              "line": 146,
+              "offset": 8716
+            },
+            "start": {
+              "col": 0,
+              "line": 144,
+              "offset": 8544
+            }
+          },
+          "source_text": "/-- The quotient orbicurve `C_F = X_F/{±1}` (IUT I, Definition 3.1(a); derived, not\nchosen). -/\nnoncomputable def CF : AG.Orbicurve F := AG.pmQuotient (AG.oncePunctured E)",
+          "source_command_path": "/tmp/p2m-initial-theta-paper-v6-20261115/exact-selected-commands/Iut-Cor312-ThetaData-Orbicurve/010.lean.txt",
+          "source_command_sha256": "4b4942930bcf362724ad59d16261c6145e82b0b20a04d0d45046afc6a0ee960b",
+          "selected_compiler_declarations": [
+            "Iut.OrbicurveDataSection.CF"
+          ],
+          "parser_fact_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-initial-theta-carriers-20261115/parser-output/Iut-Cor312-ThetaData-Orbicurve.jsonl",
+          "parser_fact_sha256": "ae1ba71a398c14d0aeca53e21ae41584361daca491e5b03bb2ca9c9333dcf84f",
+          "implementation_scope_en": "Defines CF by applying AG.pmQuotient to AG.oncePunctured E. This applies supplied interface operations; it does not construct or verify a geometric quotient.",
+          "quotation_ids": [
+            "I-orbicurve-core",
+            "I-orbicurve-diagrams",
+            "I-global-cusp",
+            "EtTh-type-one-tors"
+          ],
+          "paper_relation": "Original-paper context for the selected interface or construction. No paper quotation is asserted as the literal definition of this Lean command.",
+          "inventory_owned_selected_declarations": [
+            "Iut.OrbicurveDataSection.CF"
+          ],
+          "selected_declarations_without_parser_range": [],
+          "generated_declaration_binding_scope": "The parser command directly lists ranged emissions. Additional no-range generated declarations are attached by the inventory owner mapping; their identity still requires the parent kernel audit."
+        },
+        {
+          "name": "Iut.OrbicurveDataSection.XK",
+          "parser_command_index": 13,
+          "syntax_kind": "Lean.Parser.Command.declaration",
+          "actual_parser_range": {
+            "end": {
+              "col": 67,
+              "line": 161,
+              "offset": 9609
+            },
+            "start": {
+              "col": 0,
+              "line": 159,
+              "offset": 9403
+            }
+          },
+          "source_text": "/-- The base change `X_K = X_F ×_F K` to the `ℓ`-torsion field (derived). -/\nnoncomputable def XK : AG.Orbicurve ↥P.torsionField :=\n  AG.baseChange (algebraMap F ↥P.torsionField) (AG.oncePunctured E)",
+          "source_command_path": "/tmp/p2m-initial-theta-paper-v6-20261115/exact-selected-commands/Iut-Cor312-ThetaData-Orbicurve/013.lean.txt",
+          "source_command_sha256": "9f6c3f3a35b40436937265f10259d7da57faba86f03a6c4a71c772853578e436",
+          "selected_compiler_declarations": [
+            "Iut.OrbicurveDataSection.XK"
+          ],
+          "parser_fact_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-initial-theta-carriers-20261115/parser-output/Iut-Cor312-ThetaData-Orbicurve.jsonl",
+          "parser_fact_sha256": "ae1ba71a398c14d0aeca53e21ae41584361daca491e5b03bb2ca9c9333dcf84f",
+          "implementation_scope_en": "Defines XK by applying AG.baseChange to AG.oncePunctured E along F → P.torsionField. The fixed-field extension is an input. This command proves no finite-field-extension or geometric base-change theorem.",
+          "quotation_ids": [
+            "I-orbicurve-core",
+            "I-orbicurve-diagrams",
+            "I-global-cusp",
+            "EtTh-type-one-tors"
+          ],
+          "paper_relation": "Original-paper context for the selected interface or construction. No paper quotation is asserted as the literal definition of this Lean command.",
+          "inventory_owned_selected_declarations": [
+            "Iut.OrbicurveDataSection.XK",
+            "Iut.OrbicurveDataSection.XK._proof_1",
+            "Iut.OrbicurveDataSection.XK._proof_2"
+          ],
+          "selected_declarations_without_parser_range": [
+            "Iut.OrbicurveDataSection.XK._proof_1",
+            "Iut.OrbicurveDataSection.XK._proof_2"
+          ],
+          "generated_declaration_binding_scope": "The parser command directly lists ranged emissions. Additional no-range generated declarations are attached by the inventory owner mapping; their identity still requires the parent kernel audit."
+        },
+        {
+          "name": "Iut.OrbicurveDataSection.CK",
+          "parser_command_index": 14,
+          "syntax_kind": "Lean.Parser.Command.declaration",
+          "actual_parser_range": {
+            "end": {
+              "col": 58,
+              "line": 166,
+              "offset": 9834
+            },
+            "start": {
+              "col": 0,
+              "line": 163,
+              "offset": 9611
+            }
+          },
+          "source_text": "/-- The base change `C_K = C_F ×_F K` to the `ℓ`-torsion field (IUT I,\nDefinition 3.1(d); derived). -/\nnoncomputable def CK : AG.Orbicurve ↥P.torsionField :=\n  AG.baseChange (algebraMap F ↥P.torsionField) (CF AG F E)",
+          "source_command_path": "/tmp/p2m-initial-theta-paper-v6-20261115/exact-selected-commands/Iut-Cor312-ThetaData-Orbicurve/014.lean.txt",
+          "source_command_sha256": "86ecb2a8968965e1d11cf90b9f7bf7c61680eb435589bd658242b62bdf3ae821",
+          "selected_compiler_declarations": [
+            "Iut.OrbicurveDataSection.CK"
+          ],
+          "parser_fact_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-initial-theta-carriers-20261115/parser-output/Iut-Cor312-ThetaData-Orbicurve.jsonl",
+          "parser_fact_sha256": "ae1ba71a398c14d0aeca53e21ae41584361daca491e5b03bb2ca9c9333dcf84f",
+          "implementation_scope_en": "Defines CK by applying AG.baseChange to CF along F → P.torsionField. It proves no core property.",
+          "quotation_ids": [
+            "I-orbicurve-core",
+            "I-orbicurve-diagrams",
+            "I-global-cusp",
+            "EtTh-type-one-tors"
+          ],
+          "paper_relation": "Original-paper context for the selected interface or construction. No paper quotation is asserted as the literal definition of this Lean command.",
+          "inventory_owned_selected_declarations": [
+            "Iut.OrbicurveDataSection.CK"
+          ],
+          "selected_declarations_without_parser_range": [],
+          "generated_declaration_binding_scope": "The parser command directly lists ranged emissions. Additional no-range generated declarations are attached by the inventory owner mapping; their identity still requires the parent kernel audit."
+        },
+        {
+          "name": "Iut.OrbicurveDataSection.OrbicurveData",
+          "parser_command_index": 15,
+          "syntax_kind": "Lean.Parser.Command.declaration",
+          "actual_parser_range": {
+            "end": {
+              "col": 54,
+              "line": 208,
+              "offset": 12178
+            },
+            "start": {
+              "col": 0,
+              "line": 168,
+              "offset": 9836
+            }
+          },
+          "source_text": "/-- **IUT I, Definition 3.1(d) and the global part of (f)**: the chosen orbicurve\n`C̲_K` of type `(1, ℓ-tors)^±` with `K`-core `C_K`, the associated `X̲_K` with its\ncartesian covering diagram, and the distinguished cusp `ε` arising from a nonzero\nelement of the rank-one quotient `Q`. -/\nstructure OrbicurveData : Type u where\n  /-- The chosen orbicurve `C̲_K` over `K` (IUT I, Definition 3.1(d)). -/\n  CKu : AG.Orbicurve ↥P.torsionField\n  /-- `C̲_K` is of type `(1, ℓ-tors)^±`. -/\n  CKu_type : AG.IsTypeOneEllTorsPM P.ℓ CKu\n  /-- `C̲_K` has `K`-core `C_K = C_F ×_F K`. -/\n  CKu_core : AG.HasCore CKu (CK AG F E Fbar VBad P)\n  /-- The associated orbicurve `X̲_K` (IUT I, Definition 3.1(d)). -/\n  XKu : AG.Orbicurve ↥P.torsionField\n  /-- `X̲_K` is of type `(1, ℓ-tors)`. -/\n  XKu_type : AG.IsTypeOneEllTors P.ℓ XKu\n  /-- The covering `X̲_K → X_K`. -/\n  XKu_to_XK : AG.Cover XKu (XK AG F E Fbar VBad P)\n  /-- The covering `X̲_K → C̲_K`. -/\n  XKu_to_CKu : AG.Cover XKu CKu\n  /-- The covering `X_K → C_K` (base change of `X_F → C_F`). -/\n  XK_to_CK : AG.Cover (XK AG F E Fbar VBad P) (CK AG F E Fbar VBad P)\n  /-- The covering `C̲_K → C_K`. -/\n  CKu_to_CK : AG.Cover CKu (CK AG F E Fbar VBad P)\n  /-- The covering diagram of IUT I, Definition 3.1(d) is **cartesian**: `X̲_K` is the\n  fiber product of `X_K` and `C̲_K` over `C_K`. The corresponding open immersions of\n  fundamental groups are `AnabelianGeometry.pi1Cover` with\n  `pi1Cover_isOpenEmbedding`. -/\n  diagram_cartesian : AG.IsCartesianSquare XKu_to_XK XK_to_CK XKu_to_CKu CKu_to_CK\n  /-- The identification of the rank-one quotient `Q` of `C̲_K` with `ℤ/ℓℤ` (chosen\n  identification; only the nonvanishing in `epsilon_spec` depends on it, and that\n  condition is invariant under the choice). -/\n  QIso : AG.RankOneQuotient CKu P.ℓ ≃ ZMod P.ℓ\n  /-- The element of `Q` giving rise to the distinguished cusp. -/\n  q : AG.RankOneQuotient CKu P.ℓ\n  /-- The chosen element of `Q` is nonzero (IUT I, Definition 3.1(f)). -/\n  q_ne_zero : QIso q ≠ 0\n  /-- The **distinguished cusp** `ε` of `C̲_K`: the cusp associated to the chosen\n  nonzero element of the rank-one quotient (IUT I, Definition 3.1(f)). -/\n  epsilon : AG.Cusp CKu\n  /-- `ε` is the cusp of the chosen element. -/\n  epsilon_spec : epsilon = AG.cuspOfQuotient CKu P.ℓ q",
+          "source_command_path": "/tmp/p2m-initial-theta-paper-v6-20261115/exact-selected-commands/Iut-Cor312-ThetaData-Orbicurve/015.lean.txt",
+          "source_command_sha256": "152337e4d1163b378793d4ad2044f9ef88d44006f53bbc6df3df154fd47dbca8",
+          "selected_compiler_declarations": [
+            "Iut.OrbicurveDataSection.OrbicurveData",
+            "Iut.OrbicurveDataSection.OrbicurveData.CKu",
+            "Iut.OrbicurveDataSection.OrbicurveData.CKu_core",
+            "Iut.OrbicurveDataSection.OrbicurveData.CKu_to_CK",
+            "Iut.OrbicurveDataSection.OrbicurveData.CKu_type",
+            "Iut.OrbicurveDataSection.OrbicurveData.QIso",
+            "Iut.OrbicurveDataSection.OrbicurveData.XK_to_CK",
+            "Iut.OrbicurveDataSection.OrbicurveData.XKu",
+            "Iut.OrbicurveDataSection.OrbicurveData.XKu_to_CKu",
+            "Iut.OrbicurveDataSection.OrbicurveData.XKu_to_XK",
+            "Iut.OrbicurveDataSection.OrbicurveData.XKu_type",
+            "Iut.OrbicurveDataSection.OrbicurveData.casesOn",
+            "Iut.OrbicurveDataSection.OrbicurveData.diagram_cartesian",
+            "Iut.OrbicurveDataSection.OrbicurveData.epsilon",
+            "Iut.OrbicurveDataSection.OrbicurveData.epsilon_spec",
+            "Iut.OrbicurveDataSection.OrbicurveData.mk",
+            "Iut.OrbicurveDataSection.OrbicurveData.noConfusion",
+            "Iut.OrbicurveDataSection.OrbicurveData.q",
+            "Iut.OrbicurveDataSection.OrbicurveData.q_ne_zero",
+            "Iut.OrbicurveDataSection.OrbicurveData.rec",
+            "Iut.OrbicurveDataSection.OrbicurveData.recOn",
+            "Iut.OrbicurveDataSection.OrbicurveData.mk.noConfusion"
+          ],
+          "parser_fact_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-initial-theta-carriers-20261115/parser-output/Iut-Cor312-ThetaData-Orbicurve.jsonl",
+          "parser_fact_sha256": "ae1ba71a398c14d0aeca53e21ae41584361daca491e5b03bb2ca9c9333dcf84f",
+          "implementation_scope_en": "Defines OrbicurveData with all 15 fields: CKu, CKu_type, CKu_core, XKu, XKu_type, XKu_to_XK, XKu_to_CKu, XK_to_CK, CKu_to_CK, diagram_cartesian, QIso, q, q_ne_zero, epsilon, and epsilon_spec. The objects, covers, predicates, and cusp are supplied data. QIso is an ordinary type equivalence with ZMod ℓ. RankOneQuotient has no required additive or module structure. q_ne_zero means QIso q ≠ 0; it does not prove intrinsic algebraic nonvanishing or invariance under arbitrary type equivalences. epsilon_spec pins the chosen cusp to the supplied cuspOfQuotient operation. The record does not construct the geometry, the cusp choice, or an inhabitant.",
+          "quotation_ids": [
+            "I-orbicurve-core",
+            "I-orbicurve-diagrams",
+            "I-global-cusp",
+            "EtTh-type-one-tors"
+          ],
+          "paper_relation": "Original-paper context for the selected interface or construction. No paper quotation is asserted as the literal definition of this Lean command.",
+          "inventory_owned_selected_declarations": [
+            "Iut.OrbicurveDataSection.OrbicurveData",
+            "Iut.OrbicurveDataSection.OrbicurveData.CKu",
+            "Iut.OrbicurveDataSection.OrbicurveData.CKu_core",
+            "Iut.OrbicurveDataSection.OrbicurveData.CKu_to_CK",
+            "Iut.OrbicurveDataSection.OrbicurveData.CKu_type",
+            "Iut.OrbicurveDataSection.OrbicurveData.QIso",
+            "Iut.OrbicurveDataSection.OrbicurveData.XK_to_CK",
+            "Iut.OrbicurveDataSection.OrbicurveData.XKu",
+            "Iut.OrbicurveDataSection.OrbicurveData.XKu_to_CKu",
+            "Iut.OrbicurveDataSection.OrbicurveData.XKu_to_XK",
+            "Iut.OrbicurveDataSection.OrbicurveData.XKu_type",
+            "Iut.OrbicurveDataSection.OrbicurveData._sizeOf_1",
+            "Iut.OrbicurveDataSection.OrbicurveData._sizeOf_inst",
+            "Iut.OrbicurveDataSection.OrbicurveData.casesOn",
+            "Iut.OrbicurveDataSection.OrbicurveData.ctorIdx",
+            "Iut.OrbicurveDataSection.OrbicurveData.diagram_cartesian",
+            "Iut.OrbicurveDataSection.OrbicurveData.epsilon",
+            "Iut.OrbicurveDataSection.OrbicurveData.epsilon_spec",
+            "Iut.OrbicurveDataSection.OrbicurveData.mk",
+            "Iut.OrbicurveDataSection.OrbicurveData.noConfusion",
+            "Iut.OrbicurveDataSection.OrbicurveData.noConfusionType",
+            "Iut.OrbicurveDataSection.OrbicurveData.q",
+            "Iut.OrbicurveDataSection.OrbicurveData.q_ne_zero",
+            "Iut.OrbicurveDataSection.OrbicurveData.rec",
+            "Iut.OrbicurveDataSection.OrbicurveData.recOn",
+            "Iut.OrbicurveDataSection.OrbicurveData.mk._flat_ctor",
+            "Iut.OrbicurveDataSection.OrbicurveData.mk.inj",
+            "Iut.OrbicurveDataSection.OrbicurveData.mk.injEq",
+            "Iut.OrbicurveDataSection.OrbicurveData.mk.noConfusion",
+            "Iut.OrbicurveDataSection.OrbicurveData.mk.sizeOf_spec"
+          ],
+          "selected_declarations_without_parser_range": [
+            "Iut.OrbicurveDataSection.OrbicurveData._sizeOf_1",
+            "Iut.OrbicurveDataSection.OrbicurveData._sizeOf_inst",
+            "Iut.OrbicurveDataSection.OrbicurveData.ctorIdx",
+            "Iut.OrbicurveDataSection.OrbicurveData.noConfusionType",
+            "Iut.OrbicurveDataSection.OrbicurveData.mk._flat_ctor",
+            "Iut.OrbicurveDataSection.OrbicurveData.mk.inj",
+            "Iut.OrbicurveDataSection.OrbicurveData.mk.injEq",
+            "Iut.OrbicurveDataSection.OrbicurveData.mk.sizeOf_spec"
+          ],
+          "generated_declaration_binding_scope": "The parser command directly lists ranged emissions. Additional no-range generated declarations are attached by the inventory owner mapping; their identity still requires the parent kernel audit."
+        }
+      ],
+      "actual_consumers": {
+        "Iut.AnabelianGeometry": [
+          {
+            "consumer": "Iut.Corollary312Variant",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312Variant",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.ThetaDataExistence",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.corollary312Variant_iff",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.corollary312Variant_iff",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.localize",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.localize",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.Cover",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.Cover",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.Cusp",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.Cusp",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.HasCore",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.HasCore",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.IsCartesianSquare",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.IsCartesianSquare",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.IsTypeOneEllTors",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.IsTypeOneEllTors",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.IsTypeOneEllTorsPM",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.IsTypeOneEllTorsPM",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.IsTypeOneZModPM",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.IsTypeOneZModPM",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.Orbicurve",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.Orbicurve",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.RankOneQuotient",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.RankOneQuotient",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.TateStructure",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.TateStructure",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry._sizeOf_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry._sizeOf_inst",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry._sizeOf_inst",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.baseChange",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.baseChange",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.coverBaseChange",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.coverBaseChange",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.coverComp",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.coverComp",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.ctorIdx",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.ctorIdx",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.cuspBaseChange",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.cuspBaseChange",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.cuspOfQuotient",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.cuspOfQuotient",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.noConfusionType",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.oncePunctured",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.oncePunctured",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.pi1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.pi1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.pi1Cover",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.pi1Cover",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.pi1Cover_continuous",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.pi1Cover_continuous",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.pi1Cover_isOpenEmbedding",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.pi1Cover_isOpenEmbedding",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.pmQuotient",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.pmQuotient",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary22Inputs.c2",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary22Inputs.c2",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData._sizeOf_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData._sizeOf_inst",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData._sizeOf_inst",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.ctorIdx",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.ctorIdx",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.data",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.data",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.dmod",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.dmod",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.logQAt",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.logQAt",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.logQAt_nonneg",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.logQAt_nonneg",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.lstar",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.lstar",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.noConfusionType",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.one_le_dmod",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.one_le_dmod",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.qPilot",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.qPilot",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.rhsData",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.rhsData",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.sum_logQAt",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.sum_logQAt",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.ℓ",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.ℓ",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.CKu",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.CKu",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.E",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.E",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.F",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.F",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.Fbar",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.Fbar",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.K",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.K",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.V",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.V",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.VBad",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.VBad",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.X",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.X",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData._sizeOf_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData._sizeOf_inst",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData._sizeOf_inst",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.algebraFbar",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.algebraFbar",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.algebraModK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.algebraModK",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.ctorIdx",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.ctorIdx",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.epsilon",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.epsilon",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.fieldF",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.fieldF",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.fieldFbar",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.fieldFbar",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.galoisGroup",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.galoisGroup",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.global",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.global",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.isAlgClosure",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.isAlgClosure",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.isElliptic",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.isElliptic",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.localData",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.localData",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.noConfusionType",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.numberFieldF",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.numberFieldF",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.numberFieldK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.numberFieldK",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.orb",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.orb",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.prime",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.prime",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.tate",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.tate",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.towerModK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.towerModK",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.ℓ",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.ℓ",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.PivBad",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.PivBad",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.PivGood",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.PivGood",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData._sizeOf_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData._sizeOf_inst",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData._sizeOf_inst",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.bad_theta_model",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.bad_theta_model",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.bad_type",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.bad_type",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.ctorIdx",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.ctorIdx",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.decomp",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.decomp",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.decomp_isClosed",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.decomp_isClosed",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.epsilon_graph",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.epsilon_graph",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.local_diagram_cartesian",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.local_diagram_cartesian",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.noConfusionType",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.sect",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.sect",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.tateC",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.tateC",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.tateX",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.tateX",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.CF",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.CF",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.CK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.CK",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.HasCoreUniversally",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.HasCoreUniversally",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.XK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.XK",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData._sizeOf_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData._sizeOf_inst",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData._sizeOf_inst",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.absLogQ",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.absLogQ",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.badFinset",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.badFinset",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.badFinset_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.badFinset_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.ctorIdx",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.ctorIdx",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.lhs",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.lhs",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.logQ",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.logQ",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.mem_bad",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.mem_bad",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.noConfusionType",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.weight",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.weight",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.weight_pos",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.weight_pos",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData._sizeOf_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData._sizeOf_inst",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData._sizeOf_inst",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.container",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.container",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.ctorIdx",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.ctorIdx",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.hull",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.hull",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.noConfusionType",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.proc_standard",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.proc_standard",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.rhs",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.rhs",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.thetaHull",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.thetaHull",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.thetaPilot",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.thetaPilot",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.thetaPilot_hullAdmissible",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.thetaPilot_hullAdmissible",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.thetaPilot_le_shell",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.thetaPilot_le_shell",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.toRational_finite",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.toRational_finite",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.toRational_infinite",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.toRational_infinite",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.vol",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.vol",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.IsThetaRootModel",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.IsThetaRootModel",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry._sizeOf_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry._sizeOf_inst",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry._sizeOf_inst",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.canonicalGraphCusp",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.canonicalGraphCusp",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.ctorIdx",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.ctorIdx",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.noConfusionType",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.tempPi1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.tempPi1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.tempPi1Group",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.tempPi1Group",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.tempPi1Topology",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.tempPi1Topology",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.tempToEtale",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.tempToEtale",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.tempToEtale_continuous",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.tempToEtale_continuous",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate.bad_mem_dst",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate.bad_mem_dst",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate.seven_le",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate.seven_le",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate.step_ii",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate.step_ii",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate.step_iii",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate.step_iii",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants._sizeOf_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants._sizeOf_inst",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants._sizeOf_inst",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.capsuleBound",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.capsuleBound",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.ctorIdx",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.ctorIdx",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.dst",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.dst",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.dst_prime",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.dst_prime",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.eStar",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.eStar",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.eStar_cast",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.eStar_cast",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.emod",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.emod",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.emod_le_dmod",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.emod_le_dmod",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.lmod",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.lmod",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.lmod_mul_logSle_le",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.lmod_mul_logSle_le",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logDK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logDK",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logDK_eq_zero",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logDK_eq_zero",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logDK_nonneg",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logDK_nonneg",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logDKtot",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logDKtot",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logDKtot_nonneg",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logDKtot_nonneg",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logDtpd",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logDtpd",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logDtpd_nonneg",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logDtpd_nonneg",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logFtpd",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logFtpd",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logFtpd_nonneg",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logFtpd_nonneg",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logSQ",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logSQ",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logSQ_nonneg",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logSQ_nonneg",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logSle",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logSle",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logSle_nonneg",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.logSle_nonneg",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.noConfusionType",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.one_le_emod",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.one_le_emod",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.sum_capsuleBound",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.sum_capsuleBound",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.theorem110",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.theorem110",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.two_mul_lstar_add_one",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.two_mul_lstar_add_one",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.ι",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.ι",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.ι_le_one",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.ι_le_one",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.ι_nonneg",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.ι_nonneg",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.ThetaDataExistence.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.ThetaDataExistence.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.ThetaDataExistence.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.ThetaDataExistence.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.ThetaDataExistence.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.ThetaDataExistence.thetaData",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.ThetaDataExistence.thetaData",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.AnabelianGeometry.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.dmod._proof_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.dmod._proof_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.dmod._proof_2",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.dmod._proof_2",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.dmod._proof_3",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.dmod._proof_3",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.dmod._proof_4",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.dmod._proof_4",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.dmod._proof_5",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.dmod._proof_5",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.logQAt._proof_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.logQAt._proof_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Corollary312VariantData.mk.sizeOf_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.sizeOf_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.sizeOf_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu_core",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu_core",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu_to_CK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu_to_CK",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu_type",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu_type",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.QIso",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.QIso",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XK_to_CK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XK_to_CK",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu_to_CKu",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu_to_CKu",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu_to_XK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu_to_XK",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu_type",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu_type",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData._sizeOf_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData._sizeOf_inst",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData._sizeOf_inst",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.ctorIdx",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.ctorIdx",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.diagram_cartesian",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.diagram_cartesian",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.epsilon",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.epsilon",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.epsilon_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.epsilon_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.noConfusionType",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.pi1XKu_to_CKu",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.pi1XKu_to_CKu",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.pi1XKu_to_CKu_isOpenEmbedding",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.pi1XKu_to_CKu_isOpenEmbedding",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.q",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.q",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.q_ne_zero",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.q_ne_zero",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.logQ._proof_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.logQ._proof_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.QPilotData.mk.sizeOf_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.RHSData.mk.sizeOf_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.TemperedGeometry.mk.sizeOf_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Certificate.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate._sizeOf_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate._sizeOf_inst",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate._sizeOf_inst",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.cont",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.cont",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.cont_eq_integral",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.cont_eq_integral",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.cont_mem_hullRegions",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.cont_mem_hullRegions",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.ctorIdx",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.ctorIdx",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.dstPlaces",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.dstPlaces",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.finsum_placeBound",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.finsum_placeBound",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.globalVol_thetaHull_le",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.globalVol_thetaHull_le",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.hull_subset_cont",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.hull_subset_cont",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.infinite_notMem_dstPlaces",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.infinite_notMem_dstPlaces",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.noConfusionType",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.packetVol_hull_le",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.packetVol_hull_le",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.packetVol_mono",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.packetVol_mono",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.placeBound",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.placeBound",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.rhs_le",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.rhs_le",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.support_placeBound_subset",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.support_placeBound_subset",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.thetaPilot_subset",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.thetaPilot_subset",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.vol_finite",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.vol_finite",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.vol_infinite",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.vol_infinite",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.lmod.eq_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.lmod.eq_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.lmod_mul_logSle_le._proof_1_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.lmod_mul_logSle_le._proof_1_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.mk.sizeOf_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.two_mul_lstar_add_one._proof_1_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.two_mul_lstar_add_one._proof_1_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.two_mul_lstar_add_one._proof_1_2",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.two_mul_lstar_add_one._proof_1_2",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.ThetaDataExistence.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.ThetaDataExistence.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.sizeOf_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.dstPlaces._proof_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.dstPlaces._proof_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.dstPlaces.eq_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.dstPlaces.eq_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.mk.sizeOf_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.placeBound.eq_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.placeBound.eq_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.placeBound.eq_2",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.Theorem110Invariants.LocalEstimate.placeBound.eq_2",
+            "edge": "valueDeps"
+          }
+        ],
+        "Iut.OrbicurveDataSection.CF": [
+          {
+            "consumer": "Iut.OrbicurveDataSection.CK",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.HasCoreUniversally",
+            "edge": "valueDeps"
+          }
+        ],
+        "Iut.OrbicurveDataSection.XK": [
+          {
+            "consumer": "Iut.LocalThetaData._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.local_diagram_cartesian",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.sizeOf_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XK_to_CK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu_to_XK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.diagram_cartesian",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.sizeOf_spec",
+            "edge": "valueDeps"
+          }
+        ],
+        "Iut.OrbicurveDataSection.CK": [
+          {
+            "consumer": "Iut.LocalThetaData._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.local_diagram_cartesian",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.sizeOf_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu_core",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu_to_CK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XK_to_CK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.diagram_cartesian",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.sizeOf_spec",
+            "edge": "valueDeps"
+          }
+        ],
+        "Iut.OrbicurveDataSection.OrbicurveData": [
+          {
+            "consumer": "Iut.LocalThetaData",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.orb",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.PivBad",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.PivBad",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.PivGood",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.PivGood",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData._sizeOf_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData._sizeOf_inst",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData._sizeOf_inst",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.bad_theta_model",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.bad_theta_model",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.bad_type",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.bad_type",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.ctorIdx",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.ctorIdx",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.decomp",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.decomp",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.decomp_isClosed",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.decomp_isClosed",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.epsilon_graph",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.epsilon_graph",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.local_diagram_cartesian",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.local_diagram_cartesian",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.noConfusionType",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.sect",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.sect",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.tateC",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.tateC",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.tateX",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.tateX",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.InitialThetaData.mk.sizeOf_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk._flat_ctor",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.LocalThetaData.mk.sizeOf_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu_core",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu_core",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu_to_CK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu_to_CK",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu_type",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.CKu_type",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.QIso",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.QIso",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XK_to_CK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XK_to_CK",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu_to_CKu",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu_to_CKu",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu_to_XK",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu_to_XK",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu_type",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.XKu_type",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData._sizeOf_1",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData._sizeOf_1",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData._sizeOf_inst",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData._sizeOf_inst",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.casesOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.casesOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.ctorIdx",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.ctorIdx",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.diagram_cartesian",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.diagram_cartesian",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.epsilon",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.epsilon",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.epsilon_spec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.epsilon_spec",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.noConfusionType",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.noConfusionType",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.pi1XKu_to_CKu",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.pi1XKu_to_CKu",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.pi1XKu_to_CKu_isOpenEmbedding",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.pi1XKu_to_CKu_isOpenEmbedding",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.q",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.q",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.q_ne_zero",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.q_ne_zero",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.rec",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.recOn",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.recOn",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk._flat_ctor",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.inj",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.inj",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.injEq",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.injEq",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.noConfusion",
+            "edge": "typeDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.noConfusion",
+            "edge": "valueDeps"
+          },
+          {
+            "consumer": "Iut.OrbicurveDataSection.OrbicurveData.mk.sizeOf_spec",
+            "edge": "typeDeps"
+          }
+        ]
+      }
+    }
+  ],
+  "quotations": [
+    {
+      "id": "I-orbicurve-core",
+      "paper_id": "I",
+      "locator": "Definition 3.1(d), first sentence",
+      "printed_pages": [
+        62
+      ],
+      "file_pages": [
+        62
+      ],
+      "quote_markdown": "$\\underline C_K$ is a hyperbolic orbicurve of type $(1,l\\text{-tors})_\\pm$ [cf. [EtTh], Definition 2.1] over $K$, with $K$-core [cf. [CanLift], Remark 2.1.1; [EtTh], the discussion at the beginning of §2] given by $C_K\\overset{\\mathrm{def}}{=}C_F\\times_F K$.",
+      "quote_scope": "Complete sentence(s) at the cited location.",
+      "transcription_status": "Manually transcribed and visually checked against the rendered original PDF page(s) in this v6 task.",
+      "typography_note": "Typeset line breaks and line-end hyphenation are joined. Mathematical symbols use KaTeX. Editorial omissions use […]. Underlines distinguish the paper objects.",
+      "symbol_transcription": [],
+      "evidence": [
+        {
+          "paper_id": "I",
+          "printed_page": 62,
+          "file_page": 62,
+          "page_image_path": "/tmp/p2m-initial-theta-paper-v6-20261115/paper-context-evidence/I-062.png",
+          "page_image_sha256": "c46734c5d96bb0ead4d376c99f4ccf423b070734d12abc8602fb1b5daf7b5ccc",
+          "raw_text_path": "/tmp/p2m-initial-theta-paper-v6-20261115/paper-context-evidence/I-062.raw.txt",
+          "raw_text_sha256": "77185e0736cf8bd5510b26423ddffc342d6fe4422e5338bde1a0f8a5d51f794a"
+        }
+      ]
+    },
+    {
+      "id": "I-orbicurve-diagrams",
+      "paper_id": "I",
+      "locator": "Definition 3.1(d), sentence beginning “In particular”, with the three diagrams omitted",
+      "printed_pages": [
+        62
+      ],
+      "file_pages": [
+        62
+      ],
+      "quote_markdown": "In particular, $\\underline C_K$ determines, up to $K$-isomorphism, a hyperbolic orbicurve $\\underline X_K$ of type $(1,l\\text{-tors})$ [cf. [EtTh], Definition 2.1] over $K$, together with natural cartesian diagrams […] of finite étale coverings of hyperbolic orbicurves and corresponding open immersions of profinite groups.",
+      "quote_scope": "One sentence. The three displayed diagrams are omitted explicitly; inspect the original page render for their objects and arrows.",
+      "transcription_status": "Manually transcribed and visually checked against the rendered original PDF page(s) in this v6 task.",
+      "typography_note": "Typeset line breaks and line-end hyphenation are joined. Mathematical symbols use KaTeX. Editorial omissions use […]. Underlines distinguish the paper objects.",
+      "symbol_transcription": [],
+      "evidence": [
+        {
+          "paper_id": "I",
+          "printed_page": 62,
+          "file_page": 62,
+          "page_image_path": "/tmp/p2m-initial-theta-paper-v6-20261115/paper-context-evidence/I-062.png",
+          "page_image_sha256": "c46734c5d96bb0ead4d376c99f4ccf423b070734d12abc8602fb1b5daf7b5ccc",
+          "raw_text_path": "/tmp/p2m-initial-theta-paper-v6-20261115/paper-context-evidence/I-062.raw.txt",
+          "raw_text_sha256": "77185e0736cf8bd5510b26423ddffc342d6fe4422e5338bde1a0f8a5d51f794a"
+        }
+      ]
+    },
+    {
+      "id": "I-global-cusp",
+      "paper_id": "I",
+      "locator": "Definition 3.1(f), first sentence",
+      "printed_pages": [
+        63
+      ],
+      "file_pages": [
+        63
+      ],
+      "quote_markdown": "$\\underline\\epsilon$ is a cusp of the hyperbolic orbicurve $\\underline C_K$ [cf. (d)] that arises from a nonzero element of the quotient “$Q$” that appears in the definition of a “hyperbolic orbicurve of type $(1,l\\text{-tors})_\\pm$” given in [EtTh], Definition 2.1.",
+      "quote_scope": "Complete sentence(s) at the cited location.",
+      "transcription_status": "Manually transcribed and visually checked against the rendered original PDF page(s) in this v6 task.",
+      "typography_note": "Typeset line breaks and line-end hyphenation are joined. Mathematical symbols use KaTeX. Editorial omissions use […]. Underlines distinguish the paper objects.",
+      "symbol_transcription": [],
+      "evidence": [
+        {
+          "paper_id": "I",
+          "printed_page": 63,
+          "file_page": 63,
+          "page_image_path": "/tmp/p2m-initial-theta-paper-v6-20261115/paper-context-evidence/I-063.png",
+          "page_image_sha256": "5d551a201567176ba56c8147b5aa1c8869b838946e8eb59f92b34d6516cfe654",
+          "raw_text_path": "/tmp/p2m-initial-theta-paper-v6-20261115/paper-context-evidence/I-063.raw.txt",
+          "raw_text_sha256": "552c66146e4aeef4aacddef235a82e2cff01a62794c97a81794d5dee7869d6d5"
+        }
+      ]
+    },
+    {
+      "id": "EtTh-type-one-tors",
+      "paper_id": "EtTh",
+      "locator": "Definition 2.1, full definition",
+      "printed_pages": [
+        33
+      ],
+      "file_pages": [
+        33
+      ],
+      "quote_markdown": "We shall refer to a smooth log orbicurve over $K$ that arises, up to isomorphism, as the smooth log orbicurve $\\underline X^{\\log}$ (respectively, $\\underline C^{\\log}$) constructed above for some choice of $\\overline\\Pi_X^{\\mathrm{ell}}\\twoheadrightarrow Q$ as being of type $(1,l\\text{-tors})$ (respectively, $(1,l\\text{-tors})_\\pm$). We shall also apply this terminology to the associated hyperbolic orbicurves.",
+      "quote_scope": "Complete sentence(s) at the cited location.",
+      "transcription_status": "Manually transcribed and visually checked against the rendered original PDF page(s) in this v6 task.",
+      "typography_note": "Typeset line breaks and line-end hyphenation are joined. Mathematical symbols use KaTeX. Editorial omissions use […]. Underlines distinguish the paper objects.",
+      "symbol_transcription": [],
+      "evidence": [
+        {
+          "paper_id": "EtTh",
+          "printed_page": 33,
+          "file_page": 33,
+          "page_image_path": "/tmp/p2m-initial-theta-paper-v6-20261115/paper-context-evidence/EtTh-033.png",
+          "page_image_sha256": "c13c93226ceb5156873ce7aac0ffefab9bcddfc5720132b2a7ada249659503e9",
+          "raw_text_path": "/tmp/p2m-initial-theta-paper-v6-20261115/paper-context-evidence/EtTh-033-035.raw.txt",
+          "raw_text_sha256": "5a80737f05edcdc3d76d47c816bc58f238836caf3040d6f57fc4fe23d68d0bb8"
+        }
+      ]
+    }
+  ],
+  "paper_sources": {
+    "I": {
+      "author": "Shinichi Mochizuki",
+      "title": "Inter-universal Teichmüller Theory I: Construction of Hodge Theaters",
+      "version": "May 2020",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20I.pdf",
+      "local_pdf": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Inter-universal Teichmuller Theory I.pdf",
+      "retrieved_date": "2026-11-12 (existing project provenance)",
+      "sha256": "7360e3ed27c235b5497a0743d3ed1646fbb97688547d16b7c784fc7f127f1f03",
+      "file_page_count": 186,
+      "page_number_convention": "One-based file pages equal printed page numbers at cited locations.",
+      "version_evidence": {
+        "page_image_path": "/tmp/p2m-initial-theta-paper-v6-20261115/paper-context-evidence/I-001.png",
+        "page_image_sha256": "8a3d110857b0ab5ef4b40fb071ab9f543fe247813dd9c2461a7675760765c35b",
+        "file_page": 1,
+        "visual_status": "Title and printed version checked in the prior v5 task; identical image bytes reused."
+      },
+      "reuse_status": "Existing fixed original PDF. No download or other network request in this task."
+    },
+    "EtTh": {
+      "author": "Shinichi Mochizuki",
+      "title": "The Étale Theta Function and its Frobenioid-theoretic Manifestations",
+      "version": "December 2008",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/The%20Etale%20Theta%20Function%20and%20its%20Frobenioid-theoretic%20Manifestations.pdf",
+      "local_pdf": "/tmp/p2m-tate-theta-paper-v5-20261115/EtTh.pdf",
+      "retrieved_date": "2026-11-15; direct HTTP 200; EtTh.download.json",
+      "sha256": "42c5d9180c69bc9fa6596ce1a11662494315954ed74301060bf1819f955a7406",
+      "file_page_count": 112,
+      "page_number_convention": "One-based file pages equal printed page numbers at cited locations.",
+      "version_evidence": "EtTh-001.png: title, author, and December 2008 visually checked. HTTP Last-Modified is 2011-11-07; that HTTP date is not the version printed on the paper.",
+      "reuse_status": "Existing fixed original PDF. No download or other network request in this task."
+    }
+  }
+}
