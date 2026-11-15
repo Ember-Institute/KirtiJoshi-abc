@@ -1,0 +1,86 @@
+def approvedExtensionalEliminators : Array Name :=
+  #[`Iut.IsInitialThetaGlobalData.casesOn, `Iut.IsInitialThetaGlobalData.recOn]
+
+-- The only fallback proves equality of the complete values. It does not change
+-- their types, erase computation checks, or assert definitional equality.
+def proveGeneratedEliminatorEquality (rs : Relocations) (allowedOwners : Array Name)
+    (original : Name) (sourceType sourceValue targetValue : Expr) : MetaM Json := do
+  unless approvedExtensionalEliminators.contains original do
+    throwError "Computational values are not definitionally equal: {original}"
+  let structureName := `AbcAdaptation.Reference.Iut.IsInitialThetaGlobalData
+  let constructorName := `AbcAdaptation.Reference.Iut.IsInitialThetaGlobalData.mk
+  let recursorName := `AbcAdaptation.Reference.Iut.IsInitialThetaGlobalData.rec
+  let .inductInfo inductiveInfo ← getConstInfo structureName |
+    throwError "Expected exact initial-theta global-data inductive"
+  unless inductiveInfo.numParams == 9 && inductiveInfo.numIndices == 0 &&
+      inductiveInfo.ctors == [constructorName] && inductiveInfo.numNested == 0 do
+    throwError "Unexpected initial-theta structure computation shape"
+  let .recInfo recursor ← getConstInfo recursorName |
+    throwError "Expected exact initial-theta primitive recursor"
+  unless recursor.numParams == 9 && recursor.numIndices == 0 &&
+      recursor.numMotives == 1 && recursor.numMinors == 1 &&
+      recursor.rules.length == 1 && recursor.rules[0]!.ctor == constructorName &&
+      recursor.rules[0]!.nfields == 6 && !recursor.k && !recursor.isUnsafe &&
+      recursor.levelParams.tail == inductiveInfo.levelParams do
+    throwError "Unexpected initial-theta primitive recursor metadata"
+  let proof ← forallTelescope sourceType fun args _ => do
+    unless args.size == 12 do throwError "Expected9 parameters, motive, major and minor"
+    let majorType ← inferType args[10]!
+    unless majorType.getAppFn.isConstOf structureName && majorType.getAppArgs.size == 9 &&
+        majorType.getAppArgs == args.extract 0 9 && (← isProp majorType) do
+      throwError "Unexpected generated eliminator major premise"
+    let levels := majorType.getAppFn.constLevels!
+    unless levels.length == inductiveInfo.levelParams.length do
+      throwError "Unexpected generated eliminator structure universes"
+    let left := mkAppN sourceValue args
+    let right := mkAppN targetValue args
+    let pointwiseGoal ← mkEq left right
+    -- Generalize the branch argument inside the recursor motive, so the motive
+    -- depends only on the major premise and the first ten function arguments.
+    let branchGoal ← mkForallFVars #[args[11]!] pointwiseGoal
+    let equalityMotive ← mkLambdaFVars #[args[10]!] branchGoal
+    let constructorPrefix := mkAppN (mkConst constructorName levels) (args.extract 0 9)
+    let constructorCase ← forallTelescope (← inferType constructorPrefix) fun fields _ => do
+      unless fields.size == 6 do throwError "Expected exactly six structure fields"
+      for component in fields do
+        unless (← isProp (← inferType component)) do
+          throwError "Generated eliminator fallback requires every field to be a proposition"
+      let constructed := mkAppN constructorPrefix fields
+      let caseGoal ← whnf (mkApp equalityMotive constructed)
+      let caseProof ← forallTelescope caseGoal fun branchArgs _ => do
+        unless branchArgs.size == 1 do throwError "Expected one generalized branch argument"
+        let caseArgs := (args.extract 0 10) ++ #[constructed, branchArgs[0]!]
+        -- The final kernel check verifies that this reflexivity term also has
+        -- the required right-hand side, using the primitive constructor rule.
+        mkLambdaFVars branchArgs (← mkEqRefl (mkAppN sourceValue caseArgs))
+      mkLambdaFVars fields caseProof
+    let recursion := mkAppN (mkConst recursorName (.zero :: levels))
+      ((args.extract 0 9) ++ #[equalityMotive, constructorCase, args[10]!])
+    let mut pointwiseProof := mkApp recursion args[11]!
+    -- Each step turns a proof for all values of one argument into equality of
+    -- the corresponding functions. All inferred metavariables must disappear.
+    for index in (List.range args.size).reverse do
+      pointwiseProof ← mkFunExt (← mkLambdaFVars #[args[index]!] pointwiseProof)
+    pure pointwiseProof
+  let proof ← instantiateMVars proof
+  requireClosed s!"generated eliminator equality proof {original}" proof
+  let expectedEquality ← mkEq sourceValue targetValue
+  let inferredEquality ← kernelCheck s!"generated eliminator equality proof {original}" proof
+  kernelTypeEq s!"generated eliminator equality proof has exact full-value equation {original}"
+    inferredEquality expectedEquality
+  let axs ← expressionAxioms proof
+  ensureStandard s!"generated eliminator equality proof {original}" axs
+  for dep in proof.getUsedConstants do allowedOwner rs allowedOwners dep
+  return Json.mkObj [
+    ("original", encodeName original),
+    ("method", toJson "primitive-recursion reflexivity on all six symbolic constructor fields, followed by function extensionality on all twelve arguments"),
+    ("definitionalValueEqual", toJson false),
+    ("kernelCheckedPropositionalValueEquality", toJson true),
+    ("exactFullValueEquality", ← checked (encodeExpr expectedEquality)),
+    ("kernelCheckedEqualityProof", ← checked (encodeExpr proof)),
+    ("primitiveRecursor", encodeName recursorName),
+    ("constructor", encodeName constructorName),
+    ("constructorFieldCount", toJson (6 : Nat)),
+    ("extensionalArgumentCount", toJson (12 : Nat)),
+    ("axioms", toJson (axs.map Name.toString)),
+    ("hasSorryAx", toJson false)]

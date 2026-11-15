@@ -1,0 +1,29 @@
+{
+  "schema": "next-carrier-exporter-cache-freeze-v2",
+  "status": "static-validated-not-compiled",
+  "baseSha256": "c86922b60e3284f5b7b84b958a71f3e0d7a6e32e1b56ce37b92b29ad8799ef99",
+  "timeoutReference": {
+    "job_id": "ci-013477-cc51a1ce",
+    "status": "timeout",
+    "wallTimeLowerBoundSeconds": 180,
+    "actualArguments": "unknown",
+    "resources": "unknown"
+  },
+  "source": "/tmp/p2m-next-carrier-kernel-v3-20261115/QueryNextCarrierOriginalExprsCached.lean",
+  "sha256": "02f48ad3296872c72aac267735f3bdb9c0dcc38179fcc98ecac23aebb7f0238b",
+  "environmentVariable": "NEXT_CARRIER_EXPORT_CONFIG",
+  "expectedRecordCount": 196,
+  "expectedSelectedCount": 133,
+  "recordAndOutputJsonConstructionUnchanged": true,
+  "performanceChanges": [
+    "One per-run IO.Ref Std.HashMap caches every successful collectAxioms query, shared across declarations/types/values",
+    "moduleOf indexes EnvironmentHeader.modules directly instead of rebuilding moduleNames for every imported constant"
+  ],
+  "nonChanges": [
+    "All raw/normalized source hashes and complete source-owned constant checks retained",
+    "Every Expr, value, recursor rule, structure and axiom check retained",
+    "No config/count/schema changes",
+    "No proof or heartbeat changes"
+  ],
+  "cacheStats": "Distinct cached query count logged after successful export"
+}

@@ -1,0 +1,39 @@
+{
+  "status": "frozen-parser-and-inventory-draft-no-CI",
+  "moduleOrder": [
+    "Iut.Cor312.Container",
+    "Iut.Cor312.HolomorphicHull",
+    "Iut.Cor312.ThetaData.GlobalField",
+    "Iut.Cor312.ThetaData.PlacesOver",
+    "TateCurvesTheta.QParameter.Basic"
+  ],
+  "projectPrefixes": [
+    "Iut",
+    "TateCurvesTheta"
+  ],
+  "prefixMap": {
+    "Iut": "AbcAdaptation.Reference.Iut",
+    "TateCurvesTheta": "AbcAdaptation.Reference.TateCurvesTheta"
+  },
+  "parser": {
+    "query": "QueryNextCarrierParserRanges.lean",
+    "config": "parser-config.json",
+    "environmentVariable": "FOUNDATION_PARSER_CONFIG",
+    "firstLeafEstimate": {
+      "expected_duration": "60s",
+      "expected_memory": "16GiB"
+    },
+    "exclusive": true
+  },
+  "export": {
+    "config": "export-config.json",
+    "environmentVariable": "NEXT_CARRIER_EXPORT_CONFIG"
+  },
+  "sourceCommandCandidates": 32,
+  "selectedDeclarationCount": 133,
+  "originalDeclarationCount": 196,
+  "priorMissingConstants": [],
+  "parserRequiredBeforeSlicing": true,
+  "separateOrphanTheoremNodesAllowed": false,
+  "scope": "source carrier preparation; no mathematical field constructions or parent proof completion"
+}

@@ -1,0 +1,211 @@
+{
+  "author_model": "gpt-6.1-sol",
+  "fresh_context": true,
+  "input_only_formal_code": true,
+  "readback_method": "Independent English readback from the three target Lean packets, the one permitted nonstandard imported Places packet, and relevant pinned Mathlib formal definitions. Chinese and Japanese are translations of this English readback, not separate independent audits. No source narrative or paper identity is used.",
+  "translation_provenance": {
+    "source": "en in this immutable original artifact",
+    "translator_model": "gpt-6.1-sol",
+    "languages": [
+      "zh-Hans",
+      "ja"
+    ],
+    "terminology": "Formula descriptions used where a name could suggest extra content; no external terminology lookup performed."
+  },
+  "inputs": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-packet-field-carriers-20261115/generated-wrapped/blind/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_GlobalField.lean",
+      "sha256": "de674fc178f4f17e5e4c152db065c832b02e1e8c6c653ea033f15fe51af4d385",
+      "role": "target_formal_packet"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-packet-field-carriers-20261115/generated-wrapped/blind/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_PlacesOver.lean",
+      "sha256": "1cff5b2bffe88fdd4fe0d64951c79ec065886649862f63fb557c1ad9a20fd20b",
+      "role": "target_formal_packet"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-packet-field-carriers-20261115/generated-wrapped/blind/Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_Basic.lean",
+      "sha256": "8d58b4caeb1b22eec3c3c78de72ba994d1f0654ce1cc0ca95610409b117cc8b9",
+      "role": "target_formal_packet"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/foundation-reference-carriers-20261115/wrapped/blind/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_Places.lean",
+      "sha256": "bcfec1a20410a377bf2f53541441ffd6869fd939da48ebcf5146c89f7307c7ce",
+      "role": "permitted_nonstandard_formal_prerequisite"
+    }
+  ],
+  "rule_inputs": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/docs/三语自然语言读回原则.md",
+      "sha256": "180c67d086707376e296b6e66a0abb54657454e67a700e2fa4444a6d8516c400",
+      "role": "readback_rules; applied sections 3,5,6,7"
+    }
+  ],
+  "formal_dependency_inputs": [
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/AlgebraicGeometry/EllipticCurve/Reduction.lean",
+      "sha256": "afd8b1ee05a84ea8ee898a5fbc13a1f7c507caccee42f940fecce6f29f52ce5d",
+      "role": "pinned_imported_mathlib_formal_semantics"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/AlgebraicGeometry/EllipticCurve/VariableChange.lean",
+      "sha256": "35f25b2dcb8c06a36eadb2d430a44cea282cf6d0fe142f37561be68fe4ea892d",
+      "role": "pinned_imported_mathlib_formal_semantics"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/AlgebraicGeometry/EllipticCurve/Weierstrass.lean",
+      "sha256": "471c1e8ec85a9905a58f91e331567ddf14a0cdb6997da1b526861b0120c13b3e",
+      "role": "pinned_imported_mathlib_formal_semantics"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/AlgebraicGeometry/EllipticCurve/Affine/Point.lean",
+      "sha256": "541c24503064ca053f3f747e2f8c725bea049a04ca561d6d5be17597fd368339",
+      "role": "pinned_imported_mathlib_formal_semantics"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Algebra/Module/Torsion/Basic.lean",
+      "sha256": "877ad0ddaab792662a83b938fc43c6877f576ddfc1958fad514c1ee3c15ad1d7",
+      "role": "pinned_imported_mathlib_formal_semantics"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Algebra/Group/Subgroup/Defs.lean",
+      "sha256": "5d78ca5863e94758a3b8faa0a1dc0d6575faf534a3bb4fe10185d9a162aae773",
+      "role": "pinned_imported_mathlib_formal_semantics"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Algebra/Group/Even.lean",
+      "sha256": "1180fa9ac282e55257e95c8402acd7314fcbd0a18bcfdede92a3cde16e1db630",
+      "role": "pinned_imported_mathlib_formal_semantics"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/NumberField/Basic.lean",
+      "sha256": "68833cc080857da33ed2661fac14c281651f140904af0fb587a447e23b81bac6",
+      "role": "pinned_imported_mathlib_formal_semantics"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/NumberTheory/NumberField/Completion/FinitePlace.lean",
+      "sha256": "fc06143789cdd174b4797b60e75f33e8812f673af551319d8e0d5487b8ec0e7a",
+      "role": "pinned_imported_mathlib_formal_semantics"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/RingTheory/DedekindDomain/AdicValuation.lean",
+      "sha256": "7c685ebf1b1aa76fad4d082f17e15fae4dcb52f29814e30daa4cb17d29bb8037",
+      "role": "pinned_imported_mathlib_formal_semantics"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/RingTheory/Ideal/Over.lean",
+      "sha256": "70f73918e4e8948b6226ed1c98d8d5891674449d785d1fad09c6534487aa77e5",
+      "role": "pinned_imported_mathlib_formal_semantics"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/RingTheory/IntegralClosure/IntegralRestrict.lean",
+      "sha256": "0fc965dfe7c123152ec38710ed8a22d43e63629d324b3d435a2fe69b82506c57",
+      "role": "pinned_imported_mathlib_formal_semantics"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/FieldTheory/Galois/Basic.lean",
+      "sha256": "3630f57c7b32d2d977655a302b7cb2dd901381dd32ca3aae6e752035f4d9065f",
+      "role": "pinned_imported_mathlib_formal_semantics"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/GroupTheory/Solvable.lean",
+      "sha256": "53b4f2b39b9b3ccc5277dd484e4ffd26c8ccb8fa2fd56bfa251ef6a686928343",
+      "role": "pinned_imported_mathlib_formal_semantics"
+    }
+  ],
+  "bundles": [
+    {
+      "definition_name": "Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_GlobalField",
+      "input": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-packet-field-carriers-20261115/generated-wrapped/blind/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_GlobalField.lean",
+        "sha256": "de674fc178f4f17e5e4c152db065c832b02e1e8c6c653ea033f15fe51af4d385",
+        "role": "target_formal_packet"
+      },
+      "en": "All types below may lie in arbitrary universes; the universe of an auxiliary field need not equal that of F. A number field means a characteristic-zero field finite-dimensional over the rational numbers. Write O(H) for the ring of integers of a number field H and p_w for the nonzero prime ideal associated with a finite place w of H. Such finite places are the real-valued absolute values obtained from completions at nonzero prime ideals, rather than arbitrary valuations. The imported predicate LiesOver(w,v), for an algebra H→J, means p_v = (O(H)→O(J))⁻¹(p_w). The imported residueChar(v) is the natural-number characteristic of O(H)/p_v.\n\nThe three reduction definitions have parameters F with Field F and NumberField F, a Weierstrass equation E over F, and a finite place w of F; no nonzero-discriminant hypothesis on E is imposed here. A Weierstrass equation has coefficients a₁,a₂,a₃,a₄,a₆ and equation Y²+a₁XY+a₃Y=X³+a₂X²+a₄X+a₆. Put F_w = p_w.adicCompletion F and R_w = p_w.adicCompletionIntegers F, the valuation subring of F_w. HasGoodReductionAt(E,w) means that there exists an admissible variable change C=(u,r,s,t), with u∈F× and r,s,t∈F, such that W=(C•E) extended coefficientwise to F_w is minimal integral over R_w and ν(Δ(W))=1. Here C corresponds to substituting (u²X+r,u³Y+u²sX+t); ν is the multiplicative discrete valuation associated with the maximal ideal of R_w. Minimal integral means that W has coefficients in R_w and that its discriminant valuation is maximal among the integral equations obtained from W by admissible variable changes over F_w. HasMultiplicativeReductionAt(E,w) has the same existential quantifier and minimal-integral requirement, with ν(Δ(W))<1 and ν(c₄(W))=1 instead. HasStableReductionAt(E,w) is precisely the disjunction of those two predicates. The witness C belongs to F, though the minimality comparison permits changes over F_w; witnesses may depend on w and need not be unique. In these definitions ν(0)=0. In particular the multiplicative predicate does not separately require Δ(E)≠0, whereas the good predicate's valuation equality excludes zero discriminant.\n\nFor the remaining field constructions, fix such F and E with E.IsElliptic, meaning that Δ(E) is a unit, equivalently Δ(E)≠0 over F. The noncomputable definition fieldOfModuli(F,E) is the intermediate field k=Q(j(E))⊆F, the smallest subfield containing the rational numbers and j(E)=c₄(E)³/Δ(E). The two instances equip this particular subfield with finite-dimensionality over Q and with the number-field property. They add no choice of an embedding beyond the given inclusion k⊆F. If j(E) is rational, this generated field is the rational subfield.\n\nFor any field B, of an arbitrary universe, equipped with a k-algebra structure, solvableClosure(F,E,B) is the supremum in the lattice of intermediate fields of B/k of all L with the following three properties: L is finite-dimensional over k; L/k is Galois, that is, separable and normal; and the group of k-algebra automorphisms L≃ₐ[k]L is solvable, meaning its derived series is trivial at some natural-number index. Thus this definition returns an intermediate field k⊆S⊆B, the smallest one containing all those L. It does not select an individual L or an embedding of a closure, and the supremum must not be read merely as a set-theoretic union without an additional argument. The only assumptions on B are Field B and Algebra k B; B is not required to be an algebraic closure, an algebraic extension, or an F-algebra.\n\nFor every natural number ℓ, IsGaloisOfDegreePrimeTo(F,E,ℓ) is the conjunction that F/k is Galois and that gcd([F:k],ℓ)=1, where [F:k] is Module.finrank k F. There is no primality or positivity assumption on ℓ. In particular ℓ=1 makes the coprimality condition automatic, and ℓ=0 makes it [F:k]=1.\n\nThe predicate SixTorsionRational(F,E,B) uses a field F, a Weierstrass equation E over F, a field B, and an F-algebra structure on B. Its formula itself needs neither NumberField F nor E.IsElliptic: it says that for every P in the group of nonsingular points of E after coefficientwise extension to B, if 6P=0 then P lies in the range of the additive group homomorphism from nonsingular F-points to nonsingular B-points induced by F→B. Equivalently, each such P is the image of some nonsingular F-point. The point group includes the point at infinity as its zero; thus points of order dividing 6, including zero, are covered, not just points of exact order 6. Only B-points are quantified, and B is not assumed algebraically closed. Classical reasoning is made available to this definition; it does not choose a preimage point.\n\nReturn to F,E with the number-field and ellipticity assumptions, set k=fieldOfModuli(F,E), and let VBad be any set of finite places of k. The set badPlacesOver(F,E,VBad) consists of finite places w of F such that there exists v∈VBad with p_v=(O(k)→O(F))⁻¹(p_w). This set construction does not use an auxiliary field. It permits VBad to be empty, in which case the resulting set is empty, and imposes no finiteness condition on VBad.\n\nFor these F,E,VBad and any field B with an F-algebra structure, IsInitialThetaGlobalData(F,E,B,VBad) is a proposition-valued structure whose constructor requires exactly these six fields: (1) sqrt_neg_one: there exists a∈F with a·a=−1; (2) stable_reduction: for every finite place w of F, HasStableReductionAt(E,w); (3) six_torsion_rational: SixTorsionRational(F,E,B), with its formula just given; (4) bad_nonempty: there exists v∈VBad; (5) bad_odd: for every v∈VBad, residueChar(v) is odd, that is, equals 2n+1 for some n∈N; (6) bad_multiplicative: for every v∈VBad and every finite place w of F, LiesOver(w,v) implies HasMultiplicativeReductionAt(E,w). These are properties of the supplied data, not fields that store a chosen square root, place, or local variable change. The nonempty requirement excludes VBad=∅ for this structure, although it was allowed in badPlacesOver. The universal implication in (6) is conditional on lying over v. The structure does not incorporate IsGaloisOfDegreePrimeTo or solvableClosure as additional fields.",
+      "zh-Hans": "以下类型可以属于任意宇宙；辅助域的宇宙不必与 F 相同。数域指特征为零、在有理数域上有限维的域。记 O(H) 为数域 H 的整数环，p_w 为 H 的有限处 w 所对应的非零素理想。这里的有限处是由非零素理想处的完备化得到的实值绝对值，而不是任意赋值。对一个代数结构 H→J，导入的谓词 LiesOver(w,v) 表示 p_v=(O(H)→O(J))⁻¹(p_w)。导入的 residueChar(v) 是商环 O(H)/p_v 的特征，取值为自然数。\n\n三个约化定义的参数为带有域结构及数域性质的 F、F 上的 Weierstrass 方程 E，以及 F 的有限处 w；此处不要求 E 的判别式非零。Weierstrass 方程由系数 a₁,a₂,a₃,a₄,a₆ 给出，方程为 Y²+a₁XY+a₃Y=X³+a₂X²+a₄X+a₆。令 F_w=p_w.adicCompletion F，R_w=p_w.adicCompletionIntegers F，后者是 F_w 的赋值子环。HasGoodReductionAt(E,w) 表示存在容许变量变换 C=(u,r,s,t)，其中 u∈F×、r,s,t∈F，使得把 C•E 的系数扩张到 F_w 所得的 W 是 R_w 上的极小整方程，且 ν(Δ(W))=1。C 对应代入 (u²X+r,u³Y+u²sX+t)，ν 是 R_w 的极大理想对应的乘法式离散赋值。极小整方程的含义是：W 的系数属于 R_w，并且在由 F_w 上的容许变量变换得到的所有整方程中，W 的判别式赋值最大。HasMultiplicativeReductionAt(E,w) 使用相同的存在量词与极小整方程要求，但赋值条件改为 ν(Δ(W))<1 且 ν(c₄(W))=1。HasStableReductionAt(E,w) 恰好是这两个谓词的析取。存在量词中的 C 定义在 F 上，而极小性的比较允许使用 F_w 上的变换；见证可以依赖 w，也不要求唯一。这些定义采用 ν(0)=0。特别地，乘法约化谓词没有另加 Δ(E)≠0 的要求，而良好约化谓词中的赋值等式排除了零判别式。\n\n其余域构造固定上述 F、E，并假设 E.IsElliptic，即 Δ(E) 是单位；在域 F 上，这等价于 Δ(E)≠0。非可计算定义 fieldOfModuli(F,E) 是中间域 k=Q(j(E))⊆F，即包含有理数和 j(E)=c₄(E)³/Δ(E) 的最小子域。两个实例分别给这个特定子域赋予在有理数域上有限维的性质和数域性质；除既定包含映射 k⊆F 外，不再选择嵌入。当 j(E) 属于有理数子域时，生成的域就是有理数子域。\n\n对于任意宇宙中的任意域 B，只要给定一个 k-代数结构，solvableClosure(F,E,B) 就定义为 B/k 的中间域格中所有满足以下三个条件的 L 的上确界：L 在 k 上有限维；L/k 是 Galois 扩张，即可分且正规；L 的 k-代数自同构群 L≃ₐ[k]L 是可解群，即其导出列在某个自然数指标处成为平凡群。因此，该定义返回中间域 k⊆S⊆B，S 是包含所有这些 L 的最小中间域。它不选择某一个 L，也不选择闭包的嵌入；没有额外论证时，不能把这个上确界直接解释为集合并。对 B 仅要求域结构与 k-代数结构；不要求 B 是代数闭包、代数扩张或 F-代数。\n\n对于每个自然数 ℓ，IsGaloisOfDegreePrimeTo(F,E,ℓ) 是以下两项的合取：F/k 是 Galois 扩张；gcd([F:k],ℓ)=1，其中 [F:k] 是 Module.finrank k F。不要求 ℓ 为素数或正数。特别地，ℓ=1 时互素条件自动满足，ℓ=0 时互素条件成为 [F:k]=1。\n\n谓词 SixTorsionRational(F,E,B) 使用域 F、F 上的 Weierstrass 方程 E、域 B 及一个 F-代数结构。其公式本身不需要 F 的数域性质，也不需要 E.IsElliptic。它表示：对 E 的系数扩张到 B 后所得曲线的非奇异点群中的每个点 P，若 6P=0，则 P 属于由 F→B 诱导的、从非奇异 F-点群到非奇异 B-点群的加法群同态的像。等价地，每个这样的 P 都是某个非奇异 F-点的像。该点群以无穷远点为零元；因此覆盖的是阶整除 6 的点，包括零元，而不只是阶恰为 6 的点。这里仅量化 B-点，不要求 B 代数闭。此定义允许使用经典推理，但不选择原像点。\n\n重新假设 F 为数域且 E 满足上述椭圆性条件，令 k=fieldOfModuli(F,E)，并令 VBad 是 k 的有限处的任意集合。badPlacesOver(F,E,VBad) 是 F 的有限处 w 的集合，其成员条件为：存在 v∈VBad，使 p_v=(O(k)→O(F))⁻¹(p_w)。该集合构造不使用辅助域。它允许 VBad 为空，此时所得集合为空；也不要求 VBad 有限。\n\n对于这些 F、E、VBad，以及带有 F-代数结构的任意域 B，IsInitialThetaGlobalData(F,E,B,VBad) 是取值为命题的结构，其构造子恰好要求以下六个字段：(1) sqrt_neg_one：存在 a∈F 使 a·a=−1；(2) stable_reduction：对 F 的每个有限处 w，HasStableReductionAt(E,w)；(3) six_torsion_rational：满足刚才展开的 SixTorsionRational(F,E,B)；(4) bad_nonempty：存在 v∈VBad；(5) bad_odd：对每个 v∈VBad，residueChar(v) 为奇数，即存在 n∈N 使其等于 2n+1；(6) bad_multiplicative：对每个 v∈VBad 和 F 的每个有限处 w，LiesOver(w,v) 蕴含 HasMultiplicativeReductionAt(E,w)。这些字段是所给数据的性质，不存储选定的平方根、处或局部变量变换。非空要求排除了 VBad=∅，虽然 badPlacesOver 允许这种情形。第 (6) 项的全称蕴含以 w 位于 v 之上为前提。该结构没有把 IsGaloisOfDegreePrimeTo 或 solvableClosure 纳入附加字段。",
+      "ja": "以下の型は任意の宇宙に属し、補助体と F の宇宙が同一である必要はない。数体とは標数零で有理数体上有限次元の体である。数体 H の整数環を O(H)、H の有限素点 w に対応する非零素イデアルを p_w と書く。ここで有限素点は、非零素イデアルに関する完備化から得られる実数値絶対値であり、任意の付値ではない。代数構造 H→J に対し、導入された述語 LiesOver(w,v) は p_v=(O(H)→O(J))⁻¹(p_w) を意味する。導入された residueChar(v) は商環 O(H)/p_v の標数を自然数として与える。\n\n三つの還元の定義は、体構造および数体という性質を持つ F、F 上の Weierstrass 方程式 E、F の有限素点 w を引数とする。この部分では E の判別式が非零であるとは仮定しない。Weierstrass 方程式は係数 a₁,a₂,a₃,a₄,a₆ による Y²+a₁XY+a₃Y=X³+a₂X²+a₄X+a₆ である。F_w=p_w.adicCompletion F、R_w=p_w.adicCompletionIntegers F とおく。後者は F_w の付値部分環である。HasGoodReductionAt(E,w) は、u∈F×、r,s,t∈F による許容変数変換 C=(u,r,s,t) が存在し、C•E の係数を F_w に拡大した方程式 W が R_w 上の極小整方程式となり、ν(Δ(W))=1 を満たすことをいう。C は (u²X+r,u³Y+u²sX+t) の代入に対応し、ν は R_w の極大イデアルに対応する乗法的離散付値である。極小整方程式とは、係数が R_w に属し、F_w 上の許容変数変換によって得られる整方程式全体の中で判別式の付値が最大となる方程式をいう。HasMultiplicativeReductionAt(E,w) も同じ存在量化と極小整条件を持つが、付値条件は ν(Δ(W))<1 かつ ν(c₄(W))=1 である。HasStableReductionAt(E,w) はこの二つの述語の選言そのものである。存在量化される C は F 上で定義される一方、極小性の比較では F_w 上の変換を許す。見つかる C は w に依存してよく、一意性は要求されない。これらの定義では ν(0)=0 である。したがって乗法的還元の述語は Δ(E)≠0 を別途要求しないが、良い還元の付値等式は判別式が零の場合を除外する。\n\n以後の体の構成では上記の F,E を固定し、E.IsElliptic、すなわち Δ(E) が単元であることを仮定する。体上ではこれは Δ(E)≠0 と同値である。非計算的定義 fieldOfModuli(F,E) は中間体 k=Q(j(E))⊆F であり、有理数と j(E)=c₄(E)³/Δ(E) を含む最小の部分体である。二つのインスタンスは、この特定の部分体が有理数体上有限次元であることと数体であることを与える。既定の包含 k⊆F 以外の埋め込みを選ぶものではない。j(E) が有理数部分体に属する場合、生成される体は有理数部分体である。\n\n任意の宇宙の任意の体 B に k-代数構造を与えたとき、solvableClosure(F,E,B) は B/k の中間体の束における、次の三条件を満たすすべての L の上限である。L は k 上有限次元であり、L/k は分離的かつ正規な Galois 拡大であり、k-代数自己同型群 L≃ₐ[k]L は可解群である。最後の条件は、その導来列がある自然数の段階で自明群になることを意味する。この定義の値は、それらの L をすべて含む最小の中間体 k⊆S⊆B である。個々の L や閉包の埋め込みを選ぶのではなく、追加の議論なしに上限を集合としての和集合と同一視することもできない。B に必要なのは体構造と k-代数構造だけであり、代数閉包、代数拡大、F-代数であるとは仮定しない。\n\n各自然数 ℓ に対し、IsGaloisOfDegreePrimeTo(F,E,ℓ) は、F/k が Galois 拡大であることと gcd([F:k],ℓ)=1 の連言である。ここで [F:k] は Module.finrank k F である。ℓ の素数性や正値性は仮定しない。特に ℓ=1 では互いに素という条件は自動的に満たされ、ℓ=0 では [F:k]=1 という条件になる。\n\n述語 SixTorsionRational(F,E,B) は、体 F、F 上の Weierstrass 方程式 E、体 B、および F-代数構造を用いる。その式自体は F の数体性も E.IsElliptic も必要としない。これは、E の係数を B に拡大した曲線の非特異点群の各点 P に対し、6P=0 ならば、F→B が誘導する非特異 F-点群から非特異 B-点群への加法群準同型の像に P が属する、という条件である。言い換えると、そのような P はすべて、ある非特異 F-点の像である。点群は無限遠点を零元として含むので、位数がちょうど 6 の点だけでなく、零元を含む位数が 6 の約数である点すべてを扱う。量化は B-点に限られ、B の代数閉性は要求されない。この定義は古典論理を利用可能とするが、逆像の点を選ばない。\n\n再び F を数体、E を上記の楕円性条件を満たす方程式とし、k=fieldOfModuli(F,E) とおく。VBad は k の有限素点の任意の集合である。badPlacesOver(F,E,VBad) は、ある v∈VBad に対して p_v=(O(k)→O(F))⁻¹(p_w) となる F の有限素点 w 全体の集合である。この集合の構成に補助体は使わない。VBad は空集合でもよく、そのとき結果も空集合となる。VBad の有限性も要求しない。\n\nこれらの F,E,VBad と、F-代数構造を持つ任意の体 B に対し、IsInitialThetaGlobalData(F,E,B,VBad) は命題値の構造であり、その構成子は次の六つのフィールドをちょうど要求する。(1) sqrt_neg_one：a·a=−1 となる a∈F が存在する。(2) stable_reduction：F のすべての有限素点 w で HasStableReductionAt(E,w) が成り立つ。(3) six_torsion_rational：上記の式で展開した SixTorsionRational(F,E,B) が成り立つ。(4) bad_nonempty：v∈VBad が存在する。(5) bad_odd：各 v∈VBad について residueChar(v) は奇数、すなわちある n∈N に対する 2n+1 である。(6) bad_multiplicative：各 v∈VBad および F の各有限素点 w に対し、LiesOver(w,v) ならば HasMultiplicativeReductionAt(E,w) が成り立つ。これらは与えられたデータの性質であり、選ばれた平方根、素点、局所的変数変換を保存するフィールドではない。非空条件により、この構造では VBad=∅ が除外されるが、badPlacesOver 自体では許される。(6) の全称的な含意は w が v の上にあることを前提とする。この構造には IsGaloisOfDegreePrimeTo や solvableClosure を追加条件として含めるフィールドはない。",
+      "declaration_coverage": [
+        "AbcAdaptation.Reference.Iut.HasGoodReductionAt",
+        "AbcAdaptation.Reference.Iut.HasMultiplicativeReductionAt",
+        "AbcAdaptation.Reference.Iut.HasStableReductionAt",
+        "AbcAdaptation.Reference.Iut.fieldOfModuli",
+        "anonymous instance : FiniteDimensional ℚ ↥(fieldOfModuli F E)",
+        "anonymous instance : NumberField ↥(fieldOfModuli F E)",
+        "AbcAdaptation.Reference.Iut.solvableClosure",
+        "AbcAdaptation.Reference.Iut.IsGaloisOfDegreePrimeTo",
+        "AbcAdaptation.Reference.Iut.SixTorsionRational",
+        "AbcAdaptation.Reference.Iut.badPlacesOver",
+        "AbcAdaptation.Reference.Iut.IsInitialThetaGlobalData",
+        "IsInitialThetaGlobalData.mk",
+        "IsInitialThetaGlobalData.sqrt_neg_one",
+        "IsInitialThetaGlobalData.stable_reduction",
+        "IsInitialThetaGlobalData.six_torsion_rational",
+        "IsInitialThetaGlobalData.bad_nonempty",
+        "IsInitialThetaGlobalData.bad_odd",
+        "IsInitialThetaGlobalData.bad_multiplicative"
+      ],
+      "possible_ambiguities": [
+        "Names do not add unstated properties: fieldOfModuli is precisely Q(j(E)); solvableClosure is a lattice supremum inside a supplied k-algebra field, without an algebraic-closure assumption.",
+        "HasGoodReductionAt and HasMultiplicativeReductionAt quantify variable changes over F, not over F_w; local minimality is then evaluated over F_w. Multiplicative reduction is expressed using c₄, not a₄.",
+        "The reduction predicates themselves do not assume E.IsElliptic; SixTorsionRational itself uses only the field and algebra structures required by its point-group formula. Unused section assumptions are not extra mathematical premises.",
+        "VBad is an arbitrary set, not automatically the exact set of all bad places, and no finiteness condition is imposed. Its nonemptiness is a field of the final proposition-valued structure.",
+        "Fbar/B has no algebraic-closure assumption. Six-torsion means annihilated by 6 among the specified B-points, including the identity, rather than exact order 6 or all points over an unspecified closure.",
+        "No specialized unsettled translation was needed: the readback states the actual constructions and formulas rather than translating the packet names into additional mathematical claims."
+      ]
+    },
+    {
+      "definition_name": "Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_PlacesOver",
+      "input": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-packet-field-carriers-20261115/generated-wrapped/blind/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_PlacesOver.lean",
+        "sha256": "1cff5b2bffe88fdd4fe0d64951c79ec065886649862f63fb557c1ad9a20fd20b",
+        "role": "target_formal_packet"
+      },
+      "en": "Let k and K be types in arbitrary, independently chosen universes, each with Field and NumberField instances, and equip K with a k-algebra structure. Thus both are characteristic-zero fields finite-dimensional over Q, and k→K is the given algebra map. Write O(k), O(K) for their rings of integers. The instance numberField_isAlgebraic supplies Algebra.IsAlgebraic k K: every x∈K is a root, under evaluation through k→K, of some nonzero polynomial in k[X]. Neither a Galois hypothesis nor a chosen basis is a parameter.\n\nFor each k-algebra automorphism σ:K≃ₐ[k]K, the noncomputable function galRestrictInt(σ) is an O(k)-algebra automorphism O(K)≃ₐ[O(k)]O(K). It is the restriction of σ to the ring of integers. The lemma coe_galRestrictInt states, for every such σ and every x∈O(K), that the image of galRestrictInt(σ)(x) in K equals σ applied to the image of x in K. The construction uses the integral-closure restriction operation; it does not choose a new field automorphism.\n\nFor every σ as above and every finite place w of K, galPlace(σ,w) is a finite place of K constructed from the height-one prime ideal obtained by pulling back the ideal for w along the ring automorphism galRestrictInt(σ⁻¹). A finite place here is a real-valued absolute value arising from completion at a nonzero prime ideal of O(K); its associated ideal is written p_w. The exact ideal formula, also the assertion of galPlace_maximalIdeal for all σ,w, is\np_galPlace(σ,w) = (galRestrictInt(σ⁻¹))⁻¹(p_w).\nThe inverse outside parentheses means inverse image of a set; the σ⁻¹ inside is the inverse automorphism. Equivalently, x∈O(K) belongs to the new ideal if and only if galRestrictInt(σ⁻¹)(x)∈p_w. The source and target of galPlace are (K≃ₐ[k]K)×FinitePlace(K) and FinitePlace(K), respectively, with curried arguments. The imported conversion from an ideal to a place uses its completion absolute value; the associated ideal of a supplied place is selected noncomputably from its defining existence condition. No additional choices of place or extension of σ are supplied as arguments.\n\nThe theorem galPlace_liesOver further quantifies a number field k₀ in an arbitrary universe, a k₀-algebra structure on k, and a k₀-algebra structure on K. It assumes the explicit compatibility condition\n∀x∈k₀, algebraMap(k₀,K)(x)=algebraMap(k,K)(algebraMap(k₀,k)(x)).\nFor every k-algebra automorphism σ of K, every finite place w of K, and every finite place v of k₀, if LiesOver(w,v), then LiesOver(galPlace(σ,w),v). Here the imported nonstandard predicate LiesOver(w,v) means\np_v=(O(k₀)→O(K))⁻¹(p_w),\nand the conclusion uses the same contraction equality with p_galPlace(σ,w). Thus the statement is preservation of contraction to the supplied lower field under this specific transformation of the upper place. The compatibility of the two maps k₀→K is an explicit premise, rather than an unmentioned tower assumption.\n\nAll assertions permit degree-one extensions and the identity automorphism. They require no normality, separability, nontrivial automorphism, or Galois-extension assumption beyond the stated number-field structures; σ itself is an actual automorphism. No assertion of transitivity on places, existence of a place above each v, or selection of such a place appears. The final section variables named K and Fbar introduce no further definition or theorem and hence add no Fbar parameter to these declarations.",
+      "zh-Hans": "令 k、K 为可以分别属于任意宇宙的类型，各自带有域结构和数域性质，并给 K 一个 k-代数结构。因此，两者都是特征为零、在有理数域上有限维的域，k→K 是给定的代数映射。记 O(k)、O(K) 为它们的整数环。实例 numberField_isAlgebraic 提供 Algebra.IsAlgebraic k K，即对每个 x∈K，存在 k[X] 中的非零多项式，使其经 k→K 求值后在 x 处为零。参数不包含 Galois 性质假设，也不包含选定的基。\n\n对于每个 k-代数自同构 σ:K≃ₐ[k]K，非可计算函数 galRestrictInt(σ) 给出 O(k)-代数自同构 O(K)≃ₐ[O(k)]O(K)，即 σ 在整数环上的限制。引理 coe_galRestrictInt 对每个这样的 σ 和每个 x∈O(K) 断言：galRestrictInt(σ)(x) 在 K 中的像，等于先把 x 映入 K 再施加 σ 的结果。该构造使用整闭包上的限制操作，不选择新的域自同构。\n\n对于上述每个 σ 及 K 的每个有限处 w，galPlace(σ,w) 是 K 的有限处：先沿环自同构 galRestrictInt(σ⁻¹) 对 w 对应的理想取原像，得到高度一素理想，再由该理想构造有限处。这里有限处是由 O(K) 的非零素理想处的完备化得到的实值绝对值，w 对应的理想记作 p_w。精确的理想公式为\np_galPlace(σ,w)=(galRestrictInt(σ⁻¹))⁻¹(p_w)，\n这也是 galPlace_maximalIdeal 对所有 σ、w 的断言。括号外的逆号表示集合原像，括号内的 σ⁻¹ 表示逆自同构。等价地，x∈O(K) 属于新理想，当且仅当 galRestrictInt(σ⁻¹)(x)∈p_w。galPlace 的定义域为 (K≃ₐ[k]K)×FinitePlace(K)，陪域为 FinitePlace(K)，代码采用逐个传入参数的形式。导入的从理想到处的转换使用相应完备化的绝对值；给定有限处的对应理想由其定义中的存在条件非可计算地选取。参数中不另行给出处的选择或 σ 的延拓。\n\n定理 galPlace_liesOver 进一步量化任意宇宙中的数域 k₀，以及 k 上和 K 上各自的 k₀-代数结构，并明确假设相容条件\n∀x∈k₀，algebraMap(k₀,K)(x)=algebraMap(k,K)(algebraMap(k₀,k)(x))。\n对于 K 的每个 k-代数自同构 σ、K 的每个有限处 w、k₀ 的每个有限处 v，若 LiesOver(w,v)，则 LiesOver(galPlace(σ,w),v)。其中导入的非标准谓词 LiesOver(w,v) 表示\np_v=(O(k₀)→O(K))⁻¹(p_w)，\n结论把右端的 p_w 换为 p_galPlace(σ,w)，使用同一收缩等式。因此，这一陈述表示：上层处经这个特定变换后，向所给下层域的收缩保持不变。两个 k₀→K 映射的相容性是明确前提，并非省略不写的标量塔假设。\n\n所有陈述都允许一次扩张和恒等自同构。除已述数域结构外，不要求正规性、可分性、非平凡自同构或 Galois 扩张假设；σ 本身确实是自同构。代码没有断言处上的传递性、每个 v 上方都有处，也没有选取这样的处。末尾名为 K、Fbar 的节变量没有引入后续定义或定理，因此不会给上述声明增加 Fbar 参数。",
+      "ja": "k,K を、それぞれ任意の宇宙に属しうる型とし、各々に体構造と数体という性質を与え、K に k-代数構造を与える。したがって両者は標数零で有理数体上有限次元の体であり、k→K は指定された代数写像である。それぞれの整数環を O(k),O(K) と書く。インスタンス numberField_isAlgebraic は Algebra.IsAlgebraic k K を与える。すなわち各 x∈K は、k[X] のある非零多項式を k→K を通じて評価したときの根である。Galois 性の仮定や選ばれた基は引数に含まれない。\n\n各 k-代数自己同型 σ:K≃ₐ[k]K に対し、非計算的関数 galRestrictInt(σ) は O(k)-代数自己同型 O(K)≃ₐ[O(k)]O(K) を与える。これは σ の整数環への制限である。補題 coe_galRestrictInt は、各 σ および各 x∈O(K) に対し、galRestrictInt(σ)(x) の K における像が、x の K における像に σ を適用したものに等しいことを述べる。この構成は整閉包への制限操作を用い、新たな体の自己同型を選ぶものではない。\n\n各 σ および K の各有限素点 w に対し、galPlace(σ,w) は、w のイデアルの環自己同型 galRestrictInt(σ⁻¹) による逆像として得られる高さ一の素イデアルから構成した K の有限素点である。ここで有限素点は O(K) の非零素イデアルに関する完備化から生じる実数値絶対値であり、対応するイデアルを p_w と書く。正確なイデアルの公式は\np_galPlace(σ,w)=(galRestrictInt(σ⁻¹))⁻¹(p_w)\nであり、これが galPlace_maximalIdeal がすべての σ,w に対して述べる等式でもある。括弧の外の逆記号は集合の逆像を表し、内側の σ⁻¹ は逆自己同型を表す。同値に、x∈O(K) が新しいイデアルに属するのは、galRestrictInt(σ⁻¹)(x)∈p_w のとき、かつそのときに限る。galPlace の定義域は (K≃ₐ[k]K)×FinitePlace(K)、終域は FinitePlace(K) であり、コードでは引数を順に渡す形式をとる。導入されたイデアルから素点への変換は完備化の絶対値を用い、与えられた素点の対応するイデアルはその定義の存在条件から非計算的に選ばれる。素点の追加の選択や σ の延長を引数として与える必要はない。\n\n定理 galPlace_liesOver はさらに、任意の宇宙の数体 k₀、k と K のそれぞれの k₀-代数構造を量化し、次の整合性を明示的に仮定する。\n∀x∈k₀, algebraMap(k₀,K)(x)=algebraMap(k,K)(algebraMap(k₀,k)(x)).\nK の各 k-代数自己同型 σ、K の各有限素点 w、k₀ の各有限素点 v に対して、LiesOver(w,v) ならば LiesOver(galPlace(σ,w),v) である。ここで導入された非標準の述語 LiesOver(w,v) は\np_v=(O(k₀)→O(K))⁻¹(p_w)\nを意味し、結論では同じ縮約等式の p_w を p_galPlace(σ,w) に置き換える。すなわち上の素点のこの特定の変換が、指定された下の体への縮約を保存するという主張である。二つの k₀→K 写像の整合性は明示的な前提であり、暗黙に省略されたスカラーの塔の仮定ではない。\n\nすべての主張は一次拡大と恒等自己同型を許す。記載した数体構造以外に、正規性、分離性、非自明な自己同型、Galois 拡大という仮定は必要なく、σ 自体が実際の自己同型である。素点上の推移性、各 v の上にある素点の存在、そのような素点の選択は主張されていない。末尾の K,Fbar という節変数の後には新しい定義や定理がないため、上記の宣言に Fbar という引数が加わることはない。",
+      "declaration_coverage": [
+        "AbcAdaptation.Reference.Iut.numberField_isAlgebraic",
+        "AbcAdaptation.Reference.Iut.galRestrictInt",
+        "AbcAdaptation.Reference.Iut.coe_galRestrictInt",
+        "AbcAdaptation.Reference.Iut.galPlace",
+        "AbcAdaptation.Reference.Iut.galPlace_maximalIdeal",
+        "AbcAdaptation.Reference.Iut.galPlace_liesOver"
+      ],
+      "possible_ambiguities": [
+        "The inverse automorphism in galPlace is essential: the definition uses the ideal preimage under restriction of σ⁻¹. It does not pull back under σ.",
+        "LiesOver is ideal contraction through the supplied algebra map; the theorem supplies an explicit pointwise compatibility condition for the two lower-field maps.",
+        "No Galois extension is assumed. The automorphism σ is given. The theorem does not assert existence or transitivity of places.",
+        "Trailing section variables K and Fbar have no declarations after them and do not change earlier declaration parameters."
+      ]
+    },
+    {
+      "definition_name": "Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_Basic",
+      "input": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-packet-field-carriers-20261115/generated-wrapped/blind/Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_Basic.lean",
+        "sha256": "8d58b4caeb1b22eec3c3c78de72ba994d1f0654ce1cc0ca95610409b117cc8b9",
+        "role": "target_formal_packet"
+      },
+      "en": "For a type K in an arbitrary universe with a NormedField instance, TateParameter(K) is the type of records with two fields: q is an element of the unit group K×, and norm_lt_one is a proof that the real number ‖(q:K)‖ is strictly less than 1. The constructor takes exactly such a unit and such an inequality proof; the projections return the unit and the inequality. A unit carries a multiplicative inverse, so its underlying field element is nonzero. Equivalently, the mathematical data are a nonzero element of K with norm less than 1; zero and elements of norm exactly 1 are excluded. No parameter is selected canonically and no existence or uniqueness of a record for a general K is asserted by this definition.\n\nFor every such K and every t:TateParameter(K), the lemma TateParameter.norm_q_pos asserts 0<‖(t.q:K)‖. Together with the record's inequality this places its norm strictly between 0 and 1. The assumptions consist only of the normed-field structure on K and the supplied record t; neither completeness, a non-Archimedean norm, discrete valuation, local compactness, nor a characteristic condition is required. In particular, if every nonzero element of K has norm at least 1, this record type has no elements; the lemma is still a universal conditional statement about any supplied t. No curve, period quotient, or further geometric object is part of the formal declarations in this packet.",
+      "zh-Hans": "设 K 是任意宇宙中的类型，并带有赋范域结构。TateParameter(K) 是具有两个字段的记录类型：q 是单位群 K× 的元素，norm_lt_one 是实数不等式 ‖(q:K)‖<1 的证明。构造子恰好接收这样一个单位及该不等式的证明；两个投影分别返回单位与不等式。单位带有乘法逆元，因此其对应的域元素非零。等价地，这里的数学数据是 K 中范数小于 1 的一个非零元素；零元和范数恰为 1 的元素都被排除。定义没有选定规范的参数，也没有断言一般的 K 中存在或唯一存在这样的记录。\n\n对于每个这样的 K 以及每个 t:TateParameter(K)，引理 TateParameter.norm_q_pos 断言 0<‖(t.q:K)‖。结合记录中的不等式，其范数严格位于 0 与 1 之间。假设只有 K 的赋范域结构和所给记录 t；不要求完备性、非 Archimedes 范数、离散赋值、局部紧致性或任何特征条件。特别地，若 K 的每个非零元素的范数都至少为 1，则该记录类型没有元素；引理仍然是关于任何给定 t 的全称条件陈述。此代码包的形式声明不包含曲线、周期商或其他几何对象。",
+      "ja": "任意の宇宙に属する型 K にノルム体の構造を与える。TateParameter(K) は二つのフィールドを持つレコードの型である。q は単数群 K× の元であり、norm_lt_one は実数の不等式 ‖(q:K)‖<1 の証明である。構成子はそのような単数と不等式の証明をちょうど受け取り、二つの射影は単数および不等式を返す。単数は乗法逆元を持つため、その基礎となる体の元は非零である。同値な数学的データは、ノルムが 1 未満である K の非零元である。零元およびノルムがちょうど 1 の元は除外される。この定義は標準的なパラメータを選ばず、一般の K におけるレコードの存在や一意存在も主張しない。\n\n各 K および各 t:TateParameter(K) に対し、補題 TateParameter.norm_q_pos は 0<‖(t.q:K)‖ を述べる。レコードの不等式と合わせると、そのノルムは 0 と 1 の間に厳密に入る。仮定は K のノルム体構造と与えられたレコード t だけであり、完備性、非アルキメデス的ノルム、離散付値、局所コンパクト性、標数に関する条件は要求されない。特に K の各非零元のノルムが 1 以上なら、このレコード型は空である。それでも補題は、与えられた任意の t に関する全称的な条件文である。このコード群の形式的宣言には、曲線、周期による商、その他の幾何学的対象は含まれない。",
+      "declaration_coverage": [
+        "AbcAdaptation.Reference.TateCurvesTheta.TateParameter",
+        "TateParameter.mk",
+        "TateParameter.q",
+        "TateParameter.norm_lt_one",
+        "AbcAdaptation.Reference.TateCurvesTheta.TateParameter.norm_q_pos"
+      ],
+      "possible_ambiguities": [
+        "q has type K×, not type K with an omitted nonzero premise; its norm is that of the underlying field element.",
+        "The strict bound excludes norm 1, and the positive-norm lemma excludes norm 0. Existence of a parameter for every normed field is not asserted.",
+        "A name containing Tate does not add a curve, a completeness assumption, or a non-Archimedean assumption."
+      ]
+    }
+  ],
+  "scope_notes": [
+    "No compilation, scheduler submission, external API/network access, Git operation, other-agent delegation, or repository source edits were performed.",
+    "Declaration coverage lists explicit definitions, explicit instances and lemmas, and the stated structure constructors/projections; autogenerated recursors and logical eliminators add no new mathematical data.",
+    "The permitted prior Places file is used solely to expand the imported predicates and notation, rather than adding an extra fourth target bundle.",
+    "No assertion about proof status, paper provenance, author intent, or the existence of data is inferred from declaration names."
+  ]
+}

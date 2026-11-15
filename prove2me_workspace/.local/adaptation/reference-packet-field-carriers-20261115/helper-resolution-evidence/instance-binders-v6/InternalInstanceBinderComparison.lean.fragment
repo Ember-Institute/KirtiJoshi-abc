@@ -1,0 +1,86 @@
+-- Exact internal helper only: these are data-instance implementation lambdas,
+-- not proof terms. The complete types must already be kernel-convertible.
+def compareInternalInstanceBinders (original targetName : Name)
+    (sourceType targetType : Expr) : MetaM Json := do
+  unless original == approvedRenamedOriginal && targetName == approvedRenamedTarget do
+    throwError "Full type BinderInfo inventory/placement differs for {original}"
+  unless (binderInventory sourceType).size == 29 && (binderInventory targetType).size == 61 do
+    throwError "Unexpected exact internal helper BinderInfo inventory sizes"
+  let expectedFlags : Array String := #["default", "instImplicit", "instImplicit", "default",
+    "instImplicit", "default", "instImplicit", "instImplicit"]
+  let instanceReports ← forallTelescope sourceType fun args sourceBody => do
+    unless args.size == 8 do throwError "Expected exactly eight internal helper parameters"
+    let mut targetBody := targetType
+    for index in [:args.size] do
+      let sourceDecl ← args[index]!.fvarId!.getDecl
+      let .forallE _ targetDomain targetRest targetBinder := targetBody |
+        throwError "Target internal helper lost an exposed Pi binder"
+      unless encodeBinder sourceDecl.binderInfo == expectedFlags[index]! &&
+          sourceDecl.binderInfo == targetBinder &&
+          binderInventory sourceDecl.type == binderInventory targetDomain &&
+          binderPlacement sourceDecl.type == binderPlacement targetDomain do
+        throwError "Internal helper exposed binder/domain BinderInfo differs at {index}"
+      let prefixArgs := args.extract 0 index
+      kernelTypeEq s!"internal helper parameter domain {index}"
+        (← mkForallFVars prefixArgs sourceDecl.type) (← mkForallFVars prefixArgs targetDomain)
+      targetBody := targetRest.instantiate1 args[index]!
+    unless sourceBody.getAppFn.isConstOf ``IsScalarTower &&
+        targetBody.getAppFn.isConstOf ``IsScalarTower &&
+        sourceBody.getAppArgs.size == 6 && targetBody.getAppArgs.size == 6 do
+      throwError "Expected exact IsScalarTower type with three types and three SMul instances"
+    let sourceArgs := sourceBody.getAppArgs
+    let targetArgs := targetBody.getAppArgs
+    -- Preserve full nested BinderInfo and placement in the mathematical type
+    -- arguments as well as in every exposed parameter domain above.
+    for index in [:3] do
+      unless binderInventory sourceArgs[index]! == binderInventory targetArgs[index]! &&
+          binderPlacement sourceArgs[index]! == binderPlacement targetArgs[index]! do
+        throwError "Internal helper mathematical type argument BinderInfo differs at {index}"
+      kernelTypeEq s!"internal helper mathematical type argument {index}"
+        (← mkForallFVars args sourceArgs[index]!) (← mkForallFVars args targetArgs[index]!)
+    let expectedSourceLambdaCounts : Array Nat := #[4, 7, 7]
+    let expectedTargetLambdaCounts : Array Nat := #[8, 21, 21]
+    let mut reports : Array Json := #[]
+    for instanceIndex in [:3] do
+      let argumentIndex := instanceIndex + 3
+      let sourceInstance := sourceArgs[argumentIndex]!
+      let targetInstance := targetArgs[argumentIndex]!
+      let sourceBinders := binderInventory sourceInstance
+      let targetBinders := binderInventory targetInstance
+      unless sourceBinders.size == expectedSourceLambdaCounts[instanceIndex]! &&
+          targetBinders.size == expectedTargetLambdaCounts[instanceIndex]! &&
+          sourceBinders.all (· == "lambda:default") && targetBinders.all (· == "lambda:default") do
+        throwError "Unexpected binder inside exact internal SMul implementation {argumentIndex}"
+      let sourceInstanceType ← whnf (← inferType sourceInstance)
+      let targetInstanceType ← whnf (← inferType targetInstance)
+      unless sourceInstanceType.getAppFn.isConstOf ``SMul &&
+          targetInstanceType.getAppFn.isConstOf ``SMul &&
+          !(← isProp sourceInstanceType) && !(← isProp targetInstanceType) do
+        throwError "Expected data-valued SMul instances, not proof subterms"
+      let closedSource ← mkLambdaFVars args sourceInstance
+      let closedTarget ← mkLambdaFVars args targetInstance
+      kernelTermEq s!"exact internal helper closed SMul data instance {argumentIndex}"
+        closedSource closedTarget
+      reports := reports.push (Json.mkObj [
+        ("IsScalarTowerArgumentIndex", toJson argumentIndex),
+        ("sourceImplementationBinderInfo", toJson sourceBinders),
+        ("targetImplementationBinderInfo", toJson targetBinders),
+        ("allImplementationBindersDefaultLambdas", toJson true),
+        ("dataInstanceType", toJson "SMul"), ("isProofSubterm", toJson false),
+        ("closedOverAllEightParameters", toJson true),
+        ("closedDataInstanceTypesAndValuesKernelEqual", toJson true)])
+    return reports
+  return Json.mkObj [
+    ("original", encodeName original), ("target", encodeName targetName),
+    ("scope", toJson "three data-valued SMul instance implementations in the exact renamed internal theorem"),
+    ("rawSourceBinderInventory", toJson (binderInventory sourceType)),
+    ("rawTargetBinderInventory", toJson (binderInventory targetType)),
+    ("rawSourceBinderPlacement", toJson (binderPlacement sourceType)),
+    ("rawTargetBinderPlacement", toJson (binderPlacement targetType)),
+    ("rawBinderInventoryEqual", toJson false), ("rawBinderPlacementEqual", toJson false),
+    ("allEightExposedPiBindersAndDomainsStrictlyEqual", toJson true),
+    ("allThreeMathematicalTypeArgumentBindersStrictlyEqual", toJson true),
+    ("implementationDataInstanceKernelEqual", toJson true),
+    ("instanceComparisons", Json.arr instanceReports),
+    ("proofIrrelevanceClassification", toJson "not used to classify implementation lambdas; these are data instances"),
+    ("binderImplementationDifferenceAccountedFor", toJson true)]

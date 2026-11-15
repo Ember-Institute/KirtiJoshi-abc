@@ -1,0 +1,67 @@
+{
+  "schema": "reference-packet-field-staging-review-v1",
+  "status": "passed",
+  "frozen": true,
+  "reviewer": "/root/packet_field_final_review_v3",
+  "blocking_findings": [],
+  "reviewed_input_count": 316,
+  "staging_allowlist_sha256": "bbd5c6fd8652fec0c76cd20e118bc6e15517dfc32bf3d004fa8c5879f58b1b65",
+  "archive_manifest_sha256": "253d82b4cfbb1d0430848989b6df3e1b9d57fe4f778b63e8f0b719c6eb00c42a",
+  "staged_path_to_sha256_map_fingerprint": "1e95b677575edee5830e53b47b3eb040d085c42579e792566d8f36aaf04c7105",
+  "checks": {
+    "exact_staged_paths_equal_allowlist": true,
+    "all_316_index_disk_final_package_file_bytes_equal": true,
+    "all_index_entries_regular_files_at_stage_zero": true,
+    "git_diff_cached_check_passed": true,
+    "archive_manifest_entries": 314,
+    "identity_entries": 193,
+    "gzip_entries": 121,
+    "all_packaged_and_restored_raw_hashes_and_lengths_match": true,
+    "manifest_covers_every_staged_path_except_manifest_and_allowlist_metadata": true,
+    "original_and_packaged_paths_unique_no_extension_filename_overwrite": true,
+    "diff_context_and_double_newline_evidence_gzip_preserves_raw_bytes": true,
+    "no_credentials_cache_compiler_artifacts_or_user_files_staged": true,
+    "structured_credential_key_findings": 0,
+    "all_ready_26_and_packet_21_raw_evidence_hashes_match_after_restoration": true,
+    "all_prepublication_15_and_postdelivery_31_frozen_evidence_hashes_match_after_restoration": true,
+    "all_four_frozen_review_json_markdown_hashes_unchanged": true,
+    "five_production_source_hashes_unchanged": true
+  },
+  "registry_review": {
+    "index_disk_package_candidate_bytes_equal": true,
+    "baseline_registry_hash_matches_recorded_baseline": true,
+    "changed_paths": [
+      "/reference_source_preparation/definitions",
+      "/reference_source_preparation/packet_field_unit"
+    ],
+    "prior_definition_records_unchanged": 6,
+    "appended_private_published_definition_records": 5,
+    "published_ids_match_frozen_postdelivery_review": true,
+    "all_other_registry_content_unchanged": true,
+    "root_graph_membership": false,
+    "canonicalC22Connected": false,
+    "paper_identity_and_arithmetic_instantiation_completed": false,
+    "S2-04_completed": false,
+    "obligations_closed": 0
+  },
+  "ci_history_review": {
+    "attempts": 26,
+    "succeeded": 21,
+    "failed": 4,
+    "timeout": 1,
+    "each_summary_job_status_and_receipt_hash_verified": true,
+    "timeout_job": "ci-013477-cc51a1ce",
+    "timeout_peak_rss_bytes": null,
+    "unknown_timeout_memory_not_reported_as_zero": true,
+    "final_accepted_kernel_job": "ci-013658-36534ff1",
+    "final_accepted_production_gate_job": "ci-013620-b1070538"
+  },
+  "scope": "This review certifies the exact 316-path input stage. Root may add this separate review as one metadata file and update manifest/allowlist, then verify that isolated increment locally. This report does not claim that a later 317-path stage or commit has already been checked.",
+  "frozen_prior_review_sha256": {
+    "prepublication-review.json": "c9f274fc6e440192f61659961872ec9c56c420271fba2758bd878eedefcdbaab",
+    "prepublication-review.md": "009d37dea1a35fbf4469b122fcd1aa2e93139e804c4d2d2cbb8662e69e463480",
+    "postdelivery-review.json": "0dca8a6f2cd7a1df5e12b4ca8f42e0e5a21e2363b7c6bf4783ed6dcfc56073b0",
+    "postdelivery-review.md": "573ff6d8cb940cc9a842ba57fe38ed71476dfe1d5c6b6dcb047c210b70a69b98"
+  },
+  "actions": "Read-only local/index/Git object inspection and separate /tmp report writes; no compilation, CI, API/network, Git mutation or main-workspace edit."
+}

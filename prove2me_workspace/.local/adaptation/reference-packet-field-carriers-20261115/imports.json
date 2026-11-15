@@ -1,0 +1,1436 @@
+[
+  {
+    "module": "Iut.Cor312.Container",
+    "source435Imports": [
+      "Init.Core",
+      "Init.Prelude",
+      "Init.SizeOf",
+      "Iut.Cor312.PacketPresentation",
+      "Iut.Cor312.Procession",
+      "Iut.Cor312.RationalPlace",
+      "Mathlib.Basic.Finite.Defs",
+      "Mathlib.Basic.Finite.Prod",
+      "Mathlib.Data.Fintype.Defs",
+      "Mathlib.Data.Fintype.EquivFin",
+      "Mathlib.Data.Nat.Prime.Defs",
+      "Mathlib.Data.Set.Defs",
+      "Mathlib.Topology.Defs.Basic",
+      "Mathlib.Topology.Defs.Filter",
+      "Mathlib.Topology.Algebra.RestrictedProduct.Basic"
+    ],
+    "platform433Candidates": [
+      "Mathlib.Data.Finite.Defs",
+      "Mathlib.Data.Finite.Prod",
+      "Mathlib.Data.Fintype.Defs",
+      "Mathlib.Data.Fintype.EquivFin",
+      "Mathlib.Data.Nat.Prime.Defs",
+      "Mathlib.Data.Set.Defs",
+      "Mathlib.Topology.Defs.Basic",
+      "Mathlib.Topology.Defs.Filter",
+      "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_PacketPresentation",
+      "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_Procession",
+      "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_RationalPlace",
+      "Mathlib.Topology.Algebra.RestrictedProduct.Basic"
+    ],
+    "participatingDependencies": [
+      "Iut.Cor312.PacketPresentation",
+      "Iut.Cor312.Procession",
+      "Iut.Cor312.RationalPlace"
+    ],
+    "candidates": [
+      {
+        "sourceCompilerTermModule": "Mathlib.Basic.Finite.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": false,
+        "platform433Candidate": "Mathlib.Data.Finite.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Basic.Finite.Prod",
+        "source435PathExists": true,
+        "platform433SamePathExists": false,
+        "platform433Candidate": "Mathlib.Data.Finite.Prod",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Data.Fintype.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Data.Fintype.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Data.Fintype.EquivFin",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Data.Fintype.EquivFin",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Data.Nat.Prime.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Data.Nat.Prime.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Data.Set.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Data.Set.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Topology.Defs.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Topology.Defs.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Topology.Defs.Filter",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Topology.Defs.Filter",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Topology.Algebra.RestrictedProduct.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Topology.Algebra.RestrictedProduct.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "Required by retained original open scoped RestrictedProduct context; notation provider verified in Basic lines84–91"
+      }
+    ],
+    "originalParsedImports": [
+      "Init",
+      "Iut.Cor312.Procession",
+      "Iut.Cor312.RationalPlace",
+      "Iut.Cor312.PacketPresentation"
+    ],
+    "monolithicMathlibImportAllowed": false,
+    "retainedContextDependencies": [
+      {
+        "module": "Mathlib.Topology.Algebra.RestrictedProduct.Basic",
+        "context": "open scoped RestrictedProduct",
+        "reason": "Parser extraction initially failed on excluded source notation; preserve scope context in isolated and wrapped source."
+      }
+    ]
+  },
+  {
+    "module": "Iut.Cor312.HolomorphicHull",
+    "source435Imports": [
+      "Init.Core",
+      "Init.Prelude",
+      "Init.SizeOf",
+      "Iut.Cor312.PacketPresentation",
+      "Mathlib.Data.Set.Basic",
+      "Mathlib.Data.Set.BooleanAlgebra",
+      "Mathlib.Data.Set.Defs",
+      "Mathlib.Order.CompleteBooleanAlgebra",
+      "Mathlib.Order.CompletePartialOrder",
+      "Mathlib.Order.Defs.PartialOrder",
+      "Mathlib.Order.RelClasses",
+      "Mathlib.Topology.Defs.Basic",
+      "Mathlib.Topology.Defs.Filter"
+    ],
+    "platform433Candidates": [
+      "Mathlib.Data.Set.Basic",
+      "Mathlib.Data.Set.BooleanAlgebra",
+      "Mathlib.Data.Set.Defs",
+      "Mathlib.Order.CompleteBooleanAlgebra",
+      "Mathlib.Order.CompletePartialOrder",
+      "Mathlib.Order.Defs.PartialOrder",
+      "Mathlib.Order.RelClasses",
+      "Mathlib.Topology.Defs.Basic",
+      "Mathlib.Topology.Defs.Filter",
+      "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_PacketPresentation"
+    ],
+    "participatingDependencies": [
+      "Iut.Cor312.PacketPresentation"
+    ],
+    "candidates": [
+      {
+        "sourceCompilerTermModule": "Mathlib.Data.Set.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Data.Set.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Data.Set.BooleanAlgebra",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Data.Set.BooleanAlgebra",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Data.Set.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Data.Set.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Order.CompleteBooleanAlgebra",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Order.CompleteBooleanAlgebra",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Order.CompletePartialOrder",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Order.CompletePartialOrder",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Order.Defs.PartialOrder",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Order.Defs.PartialOrder",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Order.RelClasses",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Order.RelClasses",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Topology.Defs.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Topology.Defs.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Topology.Defs.Filter",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Topology.Defs.Filter",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      }
+    ],
+    "originalParsedImports": [
+      "Init",
+      "Iut.Cor312.PacketPresentation"
+    ],
+    "monolithicMathlibImportAllowed": false
+  },
+  {
+    "module": "Iut.Cor312.ThetaData.GlobalField",
+    "source435Imports": [
+      "Init.Classical",
+      "Init.Core",
+      "Init.Data.Int.Basic",
+      "Init.Data.Nat.Coprime",
+      "Init.Data.Rat.Basic",
+      "Init.Data.Zero",
+      "Init.Prelude",
+      "Iut.Cor312.ThetaData.Places",
+      "Mathlib.Algebra.Algebra.Defs",
+      "Mathlib.Algebra.Algebra.Equiv",
+      "Mathlib.Algebra.Algebra.Rat",
+      "Mathlib.Algebra.CharP.IntermediateField",
+      "Mathlib.Algebra.Field.Defs",
+      "Mathlib.Algebra.Field.Rat",
+      "Mathlib.Algebra.Field.Subfield.Defs",
+      "Mathlib.Algebra.Group.Action.Defs",
+      "Mathlib.Algebra.Group.Basic",
+      "Mathlib.Algebra.Group.Defs",
+      "Mathlib.Algebra.Group.DivInvMonoid",
+      "Mathlib.Algebra.Group.Even",
+      "Mathlib.Algebra.Group.Monoid",
+      "Mathlib.Algebra.Group.Subgroup.Defs",
+      "Mathlib.Algebra.Group.Subgroup.Ker",
+      "Mathlib.Algebra.Group.Submonoid.Defs",
+      "Mathlib.Algebra.GroupWithZero.Action.Defs",
+      "Mathlib.Algebra.GroupWithZero.Defs",
+      "Mathlib.Algebra.Module.Defs",
+      "Mathlib.Algebra.Module.Rat",
+      "Mathlib.Algebra.Module.Torsion.Basic",
+      "Mathlib.Algebra.NoZeroSMulDivisors.Basic",
+      "Mathlib.Algebra.NoZeroSMulDivisors.Defs",
+      "Mathlib.Algebra.Ring.Defs",
+      "Mathlib.Algebra.Ring.Nat",
+      "Mathlib.Algebra.Ring.Parity",
+      "Mathlib.Algebra.Ring.Rat",
+      "Mathlib.Algebra.Ring.Subring.Defs",
+      "Mathlib.Algebra.Ring.Subsemiring.Defs",
+      "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Basic",
+      "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point",
+      "Mathlib.AlgebraicGeometry.EllipticCurve.Reduction",
+      "Mathlib.AlgebraicGeometry.EllipticCurve.VariableChange",
+      "Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass",
+      "Mathlib.Basic.SetLike.Basic",
+      "Mathlib.Data.Int.Cast.Defs",
+      "Mathlib.Data.Nat.Cast.Defs",
+      "Mathlib.Data.Set.Defs",
+      "Mathlib.FieldTheory.Galois.Basic",
+      "Mathlib.FieldTheory.IntermediateField.Adjoin.Defs",
+      "Mathlib.FieldTheory.IntermediateField.Basic",
+      "Mathlib.FieldTheory.Tower",
+      "Mathlib.GroupTheory.Solvable",
+      "Mathlib.LinearAlgebra.Dimension.Finrank",
+      "Mathlib.LinearAlgebra.FiniteDimensional.Defs",
+      "Mathlib.NumberTheory.NumberField.Basic",
+      "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+      "Mathlib.Order.CompletePartialOrder",
+      "Mathlib.Order.SetNotation",
+      "Mathlib.RingTheory.DedekindDomain.AdicValuation",
+      "Mathlib.RingTheory.DedekindDomain.Basic",
+      "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+      "Mathlib.RingTheory.Flat.TorsionFree",
+      "Mathlib.RingTheory.Henselian",
+      "Mathlib.RingTheory.LocalRing.Defs",
+      "Mathlib.RingTheory.Localization.FractionRing",
+      "Mathlib.RingTheory.Noetherian.Basic",
+      "Mathlib.RingTheory.RegularLocalRing.Defs",
+      "Mathlib.RingTheory.SimpleRing.Basic",
+      "Mathlib.RingTheory.SimpleRing.Principal",
+      "Mathlib.RingTheory.Valuation.ValuationSubring"
+    ],
+    "platform433Candidates": [
+      "Mathlib.Algebra.Algebra.Defs",
+      "Mathlib.Algebra.Algebra.Equiv",
+      "Mathlib.Algebra.Algebra.Rat",
+      "Mathlib.Algebra.CharP.IntermediateField",
+      "Mathlib.Algebra.Field.Defs",
+      "Mathlib.Algebra.Field.Rat",
+      "Mathlib.Algebra.Field.Subfield.Defs",
+      "Mathlib.Algebra.Group.Action.Defs",
+      "Mathlib.Algebra.Group.Basic",
+      "Mathlib.Algebra.Group.Defs",
+      "Mathlib.Algebra.Group.Defs",
+      "Mathlib.Algebra.Group.Even",
+      "Mathlib.Algebra.Group.Defs",
+      "Mathlib.Algebra.Group.Subgroup.Defs",
+      "Mathlib.Algebra.Group.Subgroup.Ker",
+      "Mathlib.Algebra.Group.Submonoid.Defs",
+      "Mathlib.Algebra.GroupWithZero.Action.Defs",
+      "Mathlib.Algebra.GroupWithZero.Defs",
+      "Mathlib.Algebra.Module.Defs",
+      "Mathlib.Algebra.Module.Rat",
+      "Mathlib.Algebra.Module.Torsion.Basic",
+      "Mathlib.Algebra.NoZeroSMulDivisors.Basic",
+      "Mathlib.Algebra.NoZeroSMulDivisors.Defs",
+      "Mathlib.Algebra.Ring.Defs",
+      "Mathlib.Algebra.Ring.Nat",
+      "Mathlib.Algebra.Ring.Parity",
+      "Mathlib.Algebra.Ring.Rat",
+      "Mathlib.Algebra.Ring.Subring.Defs",
+      "Mathlib.Algebra.Ring.Subsemiring.Defs",
+      "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Basic",
+      "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point",
+      "Mathlib.AlgebraicGeometry.EllipticCurve.Reduction",
+      "Mathlib.AlgebraicGeometry.EllipticCurve.VariableChange",
+      "Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass",
+      "Mathlib.Data.SetLike.Basic",
+      "Mathlib.Data.Int.Cast.Defs",
+      "Mathlib.Data.Nat.Cast.Defs",
+      "Mathlib.Data.Set.Defs",
+      "Mathlib.FieldTheory.Galois.Basic",
+      "Mathlib.FieldTheory.IntermediateField.Adjoin.Defs",
+      "Mathlib.FieldTheory.IntermediateField.Basic",
+      "Mathlib.FieldTheory.Tower",
+      "Mathlib.GroupTheory.Solvable",
+      "Mathlib.LinearAlgebra.Dimension.Finrank",
+      "Mathlib.LinearAlgebra.FiniteDimensional.Defs",
+      "Mathlib.NumberTheory.NumberField.Basic",
+      "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+      "Mathlib.Order.CompletePartialOrder",
+      "Mathlib.Order.SetNotation",
+      "Mathlib.RingTheory.DedekindDomain.AdicValuation",
+      "Mathlib.RingTheory.DedekindDomain.Basic",
+      "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+      "Mathlib.RingTheory.Flat.TorsionFree",
+      "Mathlib.RingTheory.Henselian",
+      "Mathlib.RingTheory.LocalRing.Defs",
+      "Mathlib.RingTheory.Localization.FractionRing",
+      "Mathlib.RingTheory.Noetherian.Basic",
+      "Mathlib.RingTheory.RegularLocalRing.Defs",
+      "Mathlib.RingTheory.SimpleRing.Basic",
+      "Mathlib.RingTheory.SimpleRing.Principal",
+      "Mathlib.RingTheory.Valuation.ValuationSubring",
+      "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_Places"
+    ],
+    "participatingDependencies": [
+      "Iut.Cor312.ThetaData.Places"
+    ],
+    "candidates": [
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Algebra.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Algebra.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Algebra.Equiv",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Algebra.Equiv",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Algebra.Rat",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Algebra.Rat",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.CharP.IntermediateField",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.CharP.IntermediateField",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Field.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Field.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Field.Rat",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Field.Rat",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Field.Subfield.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Field.Subfield.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Action.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Group.Action.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Group.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Group.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.DivInvMonoid",
+        "source435PathExists": true,
+        "platform433SamePathExists": false,
+        "platform433Candidate": "Mathlib.Algebra.Group.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Even",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Group.Even",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Monoid",
+        "source435PathExists": true,
+        "platform433SamePathExists": false,
+        "platform433Candidate": "Mathlib.Algebra.Group.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Subgroup.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Group.Subgroup.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Subgroup.Ker",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Group.Subgroup.Ker",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Submonoid.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Group.Submonoid.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.GroupWithZero.Action.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.GroupWithZero.Action.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.GroupWithZero.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.GroupWithZero.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Module.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Module.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Module.Rat",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Module.Rat",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Module.Torsion.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Module.Torsion.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.NoZeroSMulDivisors.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.NoZeroSMulDivisors.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.NoZeroSMulDivisors.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.NoZeroSMulDivisors.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Ring.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Ring.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Ring.Nat",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Ring.Nat",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Ring.Parity",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Ring.Parity",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Ring.Rat",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Ring.Rat",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Ring.Subring.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Ring.Subring.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Ring.Subsemiring.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Ring.Subsemiring.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.AlgebraicGeometry.EllipticCurve.Reduction",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.AlgebraicGeometry.EllipticCurve.Reduction",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.AlgebraicGeometry.EllipticCurve.VariableChange",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.AlgebraicGeometry.EllipticCurve.VariableChange",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Basic.SetLike.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": false,
+        "platform433Candidate": "Mathlib.Data.SetLike.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Data.Int.Cast.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Data.Int.Cast.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Data.Nat.Cast.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Data.Nat.Cast.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Data.Set.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Data.Set.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.FieldTheory.Galois.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.FieldTheory.Galois.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.FieldTheory.IntermediateField.Adjoin.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.FieldTheory.IntermediateField.Adjoin.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.FieldTheory.IntermediateField.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.FieldTheory.IntermediateField.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.FieldTheory.Tower",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.FieldTheory.Tower",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.GroupTheory.Solvable",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.GroupTheory.Solvable",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.LinearAlgebra.Dimension.Finrank",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.LinearAlgebra.Dimension.Finrank",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.LinearAlgebra.FiniteDimensional.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.LinearAlgebra.FiniteDimensional.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.NumberTheory.NumberField.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.NumberTheory.NumberField.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Order.CompletePartialOrder",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Order.CompletePartialOrder",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Order.SetNotation",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Order.SetNotation",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.DedekindDomain.AdicValuation",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.DedekindDomain.AdicValuation",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.DedekindDomain.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.DedekindDomain.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.DiscreteValuationRing.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.Flat.TorsionFree",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.Flat.TorsionFree",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.Henselian",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.Henselian",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.LocalRing.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.LocalRing.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.Localization.FractionRing",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.Localization.FractionRing",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.Noetherian.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.Noetherian.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.RegularLocalRing.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.RegularLocalRing.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.SimpleRing.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.SimpleRing.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.SimpleRing.Principal",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.SimpleRing.Principal",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.Valuation.ValuationSubring",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.Valuation.ValuationSubring",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      }
+    ],
+    "originalParsedImports": [
+      "Init",
+      "Iut.Cor312.ThetaData.Places"
+    ],
+    "monolithicMathlibImportAllowed": false
+  },
+  {
+    "module": "Iut.Cor312.ThetaData.PlacesOver",
+    "source435Imports": [
+      "Init.Core",
+      "Init.Data.Function",
+      "Init.Data.Rat.Basic",
+      "Init.Data.Zero",
+      "Init.Prelude",
+      "Iut.Cor312.ThetaData.Places",
+      "Mathlib.Algebra.Algebra.Defs",
+      "Mathlib.Algebra.Algebra.Equiv",
+      "Mathlib.Algebra.Algebra.Hom",
+      "Mathlib.Algebra.Algebra.Rat",
+      "Mathlib.Algebra.Algebra.Tower",
+      "Mathlib.Algebra.Field.Defs",
+      "Mathlib.Algebra.Field.Rat",
+      "Mathlib.Algebra.Group.Action.Defs",
+      "Mathlib.Algebra.Group.Basic",
+      "Mathlib.Algebra.Group.Defs",
+      "Mathlib.Algebra.Group.DivInvMonoid",
+      "Mathlib.Algebra.Group.Equiv.Defs",
+      "Mathlib.Algebra.Group.Monoid",
+      "Mathlib.Algebra.GroupWithZero.Defs",
+      "Mathlib.Algebra.Polynomial.AlgebraMap",
+      "Mathlib.Algebra.Polynomial.Basic",
+      "Mathlib.Algebra.Polynomial.Eval.Coeff",
+      "Mathlib.Algebra.Polynomial.Eval.Defs",
+      "Mathlib.Algebra.Ring.Defs",
+      "Mathlib.Algebra.Ring.Hom.Defs",
+      "Mathlib.Algebra.Ring.Rat",
+      "Mathlib.Basic.FunLike.Basic",
+      "Mathlib.Basic.FunLike.Equiv",
+      "Mathlib.Data.Rat.Cast.Defs",
+      "Mathlib.Data.Rat.Defs",
+      "Mathlib.NumberTheory.NumberField.Basic",
+      "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+      "Mathlib.RingTheory.Algebraic.Defs",
+      "Mathlib.RingTheory.Algebraic.Integral",
+      "Mathlib.RingTheory.DedekindDomain.Ideal.Lemmas",
+      "Mathlib.RingTheory.Henselian",
+      "Mathlib.RingTheory.Ideal.Defs",
+      "Mathlib.RingTheory.Ideal.Maps",
+      "Mathlib.RingTheory.Ideal.Over",
+      "Mathlib.RingTheory.IntegralClosure.IntegralRestrict",
+      "Mathlib.RingTheory.LocalRing.Defs",
+      "Mathlib.RingTheory.RegularLocalRing.Defs",
+      "Mathlib.RingTheory.SimpleRing.Basic",
+      "Mathlib.RingTheory.SimpleRing.Principal"
+    ],
+    "platform433Candidates": [
+      "Mathlib.Algebra.Algebra.Defs",
+      "Mathlib.Algebra.Algebra.Equiv",
+      "Mathlib.Algebra.Algebra.Hom",
+      "Mathlib.Algebra.Algebra.Rat",
+      "Mathlib.Algebra.Algebra.Tower",
+      "Mathlib.Algebra.Field.Defs",
+      "Mathlib.Algebra.Field.Rat",
+      "Mathlib.Algebra.Group.Action.Defs",
+      "Mathlib.Algebra.Group.Basic",
+      "Mathlib.Algebra.Group.Defs",
+      "Mathlib.Algebra.Group.Defs",
+      "Mathlib.Algebra.Group.Equiv.Defs",
+      "Mathlib.Algebra.Group.Defs",
+      "Mathlib.Algebra.GroupWithZero.Defs",
+      "Mathlib.Algebra.Polynomial.AlgebraMap",
+      "Mathlib.Algebra.Polynomial.Basic",
+      "Mathlib.Algebra.Polynomial.Eval.Coeff",
+      "Mathlib.Algebra.Polynomial.Eval.Defs",
+      "Mathlib.Algebra.Ring.Defs",
+      "Mathlib.Algebra.Ring.Hom.Defs",
+      "Mathlib.Algebra.Ring.Rat",
+      "Mathlib.Data.FunLike.Basic",
+      "Mathlib.Data.FunLike.Equiv",
+      "Mathlib.Data.Rat.Cast.Defs",
+      "Mathlib.Data.Rat.Defs",
+      "Mathlib.NumberTheory.NumberField.Basic",
+      "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+      "Mathlib.RingTheory.Algebraic.Defs",
+      "Mathlib.RingTheory.Algebraic.Integral",
+      "Mathlib.RingTheory.DedekindDomain.Ideal.Lemmas",
+      "Mathlib.RingTheory.Henselian",
+      "Mathlib.RingTheory.Ideal.Defs",
+      "Mathlib.RingTheory.Ideal.Maps",
+      "Mathlib.RingTheory.Ideal.Over",
+      "Mathlib.RingTheory.IntegralClosure.IntegralRestrict",
+      "Mathlib.RingTheory.LocalRing.Defs",
+      "Mathlib.RingTheory.RegularLocalRing.Defs",
+      "Mathlib.RingTheory.SimpleRing.Basic",
+      "Mathlib.RingTheory.SimpleRing.Principal",
+      "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_Places"
+    ],
+    "participatingDependencies": [
+      "Iut.Cor312.ThetaData.Places"
+    ],
+    "candidates": [
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Algebra.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Algebra.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Algebra.Equiv",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Algebra.Equiv",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Algebra.Hom",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Algebra.Hom",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Algebra.Rat",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Algebra.Rat",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Algebra.Tower",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Algebra.Tower",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Field.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Field.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Field.Rat",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Field.Rat",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Action.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Group.Action.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Group.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Group.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.DivInvMonoid",
+        "source435PathExists": true,
+        "platform433SamePathExists": false,
+        "platform433Candidate": "Mathlib.Algebra.Group.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Equiv.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Group.Equiv.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Monoid",
+        "source435PathExists": true,
+        "platform433SamePathExists": false,
+        "platform433Candidate": "Mathlib.Algebra.Group.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.GroupWithZero.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.GroupWithZero.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Polynomial.AlgebraMap",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Polynomial.AlgebraMap",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Polynomial.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Polynomial.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Polynomial.Eval.Coeff",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Polynomial.Eval.Coeff",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Polynomial.Eval.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Polynomial.Eval.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Ring.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Ring.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Ring.Hom.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Ring.Hom.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Ring.Rat",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Ring.Rat",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Basic.FunLike.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": false,
+        "platform433Candidate": "Mathlib.Data.FunLike.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Basic.FunLike.Equiv",
+        "source435PathExists": true,
+        "platform433SamePathExists": false,
+        "platform433Candidate": "Mathlib.Data.FunLike.Equiv",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Data.Rat.Cast.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Data.Rat.Cast.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Data.Rat.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Data.Rat.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.NumberTheory.NumberField.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.NumberTheory.NumberField.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.NumberTheory.NumberField.Completion.FinitePlace",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.Algebraic.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.Algebraic.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.Algebraic.Integral",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.Algebraic.Integral",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.DedekindDomain.Ideal.Lemmas",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.DedekindDomain.Ideal.Lemmas",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.Henselian",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.Henselian",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.Ideal.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.Ideal.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.Ideal.Maps",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.Ideal.Maps",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.Ideal.Over",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.Ideal.Over",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.IntegralClosure.IntegralRestrict",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.IntegralClosure.IntegralRestrict",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.LocalRing.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.LocalRing.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.RegularLocalRing.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.RegularLocalRing.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.SimpleRing.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.SimpleRing.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.RingTheory.SimpleRing.Principal",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.RingTheory.SimpleRing.Principal",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      }
+    ],
+    "originalParsedImports": [
+      "Init",
+      "Iut.Cor312.ThetaData.Places",
+      "Mathlib.RingTheory.Ideal.GoingUp",
+      "Mathlib.RingTheory.IntegralClosure.IntegralRestrict",
+      "Mathlib.NumberTheory.NumberField.InfinitePlace.Ramification",
+      "Mathlib.FieldTheory.KrullTopology"
+    ],
+    "monolithicMathlibImportAllowed": false
+  },
+  {
+    "module": "TateCurvesTheta.QParameter.Basic",
+    "source435Imports": [
+      "Init.Core",
+      "Init.Data.Zero",
+      "Init.Prelude",
+      "Init.SizeOf",
+      "Mathlib.Algebra.Field.Defs",
+      "Mathlib.Algebra.Group.Basic",
+      "Mathlib.Algebra.Group.Defs",
+      "Mathlib.Algebra.Group.DivInvMonoid",
+      "Mathlib.Algebra.Group.Units.Defs",
+      "Mathlib.Algebra.GroupWithZero.Units.Basic",
+      "Mathlib.Algebra.Ring.Defs",
+      "Mathlib.Analysis.Normed.Field.Basic",
+      "Mathlib.Analysis.Normed.Group.Basic",
+      "Mathlib.Analysis.Normed.Group.Defs",
+      "Mathlib.Analysis.Normed.Ring.Basic",
+      "Mathlib.Basic.Real.Basic"
+    ],
+    "platform433Candidates": [
+      "Mathlib.Algebra.Field.Defs",
+      "Mathlib.Algebra.Group.Basic",
+      "Mathlib.Algebra.Group.Defs",
+      "Mathlib.Algebra.Group.Defs",
+      "Mathlib.Algebra.Group.Units.Defs",
+      "Mathlib.Algebra.GroupWithZero.Units.Basic",
+      "Mathlib.Algebra.Ring.Defs",
+      "Mathlib.Analysis.Normed.Field.Basic",
+      "Mathlib.Analysis.Normed.Group.Basic",
+      "Mathlib.Analysis.Normed.Group.Defs",
+      "Mathlib.Analysis.Normed.Ring.Basic",
+      "Mathlib.Data.Real.Basic"
+    ],
+    "participatingDependencies": [],
+    "candidates": [
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Field.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Field.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Group.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Group.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.DivInvMonoid",
+        "source435PathExists": true,
+        "platform433SamePathExists": false,
+        "platform433Candidate": "Mathlib.Algebra.Group.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Group.Units.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Group.Units.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.GroupWithZero.Units.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.GroupWithZero.Units.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Algebra.Ring.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Algebra.Ring.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Analysis.Normed.Field.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Analysis.Normed.Field.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Analysis.Normed.Group.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Analysis.Normed.Group.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Analysis.Normed.Group.Defs",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Analysis.Normed.Group.Defs",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Analysis.Normed.Ring.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": true,
+        "platform433Candidate": "Mathlib.Analysis.Normed.Ring.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      },
+      {
+        "sourceCompilerTermModule": "Mathlib.Basic.Real.Basic",
+        "source435PathExists": true,
+        "platform433SamePathExists": false,
+        "platform433Candidate": "Mathlib.Data.Real.Basic",
+        "platform433CandidatePathExists": true,
+        "status": "source-existence candidate; compatibility/notation/tactic imports require main CI"
+      }
+    ],
+    "originalParsedImports": [
+      "Init",
+      "Mathlib.Analysis.Normed.Field.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecificLimits.Normed"
+    ],
+    "monolithicMathlibImportAllowed": false
+  }
+]
