@@ -2,10 +2,7 @@
 
 ## 1. 根据 refer/iut 指示尚未拆分的证明义务
 
-- `refer/iut/Iut/Tripod/ClassicalAbcOfVariant.lean:30`
-- `refer/iut/Iut/Tripod/ClassicalAbc.lean:307`
 - `refer/iut/Iut/Tripod/Main.lean:129`
-- `refer/iut/Iut/Implication/Corollary23.lean:56`
 - `refer/iut/Iut/Tripod/Height.lean:603`
 - `refer/iut/Iut/Implication/Corollary22.lean:284`
 - `refer/iut/Iut/Implication/Corollary22.lean:357`
@@ -42,11 +39,11 @@
 
 ### `eq:tensor1`／`eq:codmain1` 与 `th:thetam-construction` 的索引对应
 
-来源为 `refer/JoshiTeich/Arithmetic Teichmuller Spaces 3.tex:3030`、`:3054`、`:3068`、`:3312` 和 `:3315`，原文先以 `S_{j+1}={0,…,j}` 定义长度，后在类的乘积和显式序列中使用不同的下标范围。仍需写出这些处之间的索引对应，保留全部基准主单位分量，并明确任何勘误或重索引选择。该义务供应 M 侧张量接收空间和 theta 类的同类型性，由 Scene1 的包拼接与包壳构造负责，不能以静默选取某个有限指标类型关闭。
+来源为 `refer/JoshiTeich/Arithmetic Teichmuller Spaces 3.tex:3030`、`:3054`、`:3068`、`:3312` 和 `:3315`，原文先以 `S_{j+1}={0,…,j}` 定义长度，后在类的乘积和显式序列中使用不同的下标范围。仍需写出这些处之间的索引对应，保留全部基准主单位分量，并明确任何勘误或重索引选择。该义务供应 M 侧张量接收空间和 theta 类的同类型性，由 Scene1 的包拼接与包络构造负责，不能以静默选取某个有限指标类型关闭。
 
 ### `eq:prod-tensor2-mapping` 的映射类别与实际 theta 像
 
-来源为 `refer/JoshiTeich/Arithmetic Teichmuller Spaces 3.tex:3064` 和 `:3458`，它把有限直积到张量积的纯张量映射称为向量空间同态。仍需用正确的多重线性类型构造实际映射，并证明论文 theta 像使用的正是该映射，保留全部混合处张量项。该义务供应两类 theta 接收空间和张量范数体积比较，由 Scene1 的包拼接与包壳构造负责；不能给一般纯张量映射安装并不成立的可加同态结构。
+来源为 `refer/JoshiTeich/Arithmetic Teichmuller Spaces 3.tex:3064` 和 `:3458`，它把有限直积到张量积的纯张量映射称为向量空间同态。仍需用正确的多重线性类型构造实际映射，并证明论文 theta 像使用的正是该映射，保留全部混合处张量项。该义务供应两类 theta 接收空间和张量范数体积比较，由 Scene1 的包拼接与包络构造负责；不能给一般纯张量映射安装并不成立的可加同态结构。
 
 ## 3. 不属于以上两类来源的证明义务
 
@@ -76,6 +73,14 @@
 
 仍需在共同来源的处集上构造满足该接口全部字段的权重和局部体积，并证明标签集对应的数据包体积、标签集递增族上的平均体积及全局体积确实读回所选论文公式。若通过同时调整权重与局部体积建立对应，必须保留并证明素数倍乘的反像使对数体积增加该素数的对数等既有归一化法律，以及纤维重数和张量乘积的组合公式。这项来源身份属于既有体积传递与权重会计义务；参考定义模块的移植不完成它，也不证明两种规范化在所有可能实现中不相容。原文页图、公式及固定源码差异保存在 `prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/paper-context.json`。
 
+还须区分左侧输入的权重和上述体积接口的权重：`refer/iut/Iut/Cor312/LeftHandSide.lean:58` 的 `QPilotData` 只要求坏处权重严格为正，没有给出局部次数除以全局次数的等式，也没有纤维权重和为一的法律。`refer/iut/Iut/Implication/Invariants.lean:115` 的 `logQAt` 只按剩余特征分组；其求和等于 `QPilotData.logQ` 的恒等式不能识别论文的归一化纤维量。望月新一第四篇定义 1.9（二）（印刷及文件第 22 页）的分母是固定非空纤维内的局部次数之和，须另外证明它与所用全局次数、实际 q 参数及主界系数的换算；不能仅按源码说明中的名称认定身份。原始引文和完整来源命令见 `prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/paper-context.json`。
+
+### 初始 θ 数据中模域代数结构的一致性
+
+`refer/iut/Iut/Cor312/ThetaData/Basic.lean:96` 保存模域到扭点域的代数结构 `algebraModK`，随后保存 `towerModK` 标量塔字段。实际编译类型表明，后者使用从原数域到扭点域的规范标量作用限制到模域后得到的作用，其类型没有引用所保存的 `algebraModK`；因此不能据该字段宣称已证明所保存的代数结构与规范包含相容。Tate 族采用规范包含所诱导的模域代数结构，而局部数据和赋值截面接收所保存的结构，二者的身份必须另行核对。
+
+后续共同来源生产者须对同一初始数据给出明确的一致性义务：记模域、原数域、扭点域分别为 $M,F,K$，对每个 $m\in M$，所保存的映射 $M\to K$ 的值须等于规范包含 $M\to F\to K$ 的复合值，并据此核对两组处集限制及坏处条件。不得把这一要求当成任意初始数据自动满足的事实，也不得用标量塔字段的名称代替等式证明。实际类型和独立读回证据分别保存在 `prove2me_workspace/.local/adaptation/reference-initial-theta-carriers-20261115/readback-compiler-type-slices.json` 与该单元的原始读回材料中；原定义移植不完成这项来源一致性义务。
+
 ### Prologue 与 Scene1 必要依赖闭包的映射
 
 仍需把最终目标实际需要的基础定义、构造义务和局部结果转为平台节点，确认精确类型、共同来源、实际消费者和无环依赖。已有闭合声明可以逐项机械追溯到固定 Mathlib 版本；条件性局部定理必须保留输入法律，接口及结构字段也不等于真实对象的存在性证明。不能据现有 Prologue 清单断言最终 Joshi 路线的必要叶节点已经全部覆盖。
@@ -85,3 +90,4 @@
 ## 4. 未完成自然语言读回的证明义务
 
 - `AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder`：`uniformizer`（待定：素元／一致化元／均匀化元）。
+- `AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime`：`uniformizer`（待定：素元／一致化元／均匀化元）。
