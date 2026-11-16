@@ -10,6 +10,24 @@
 - `refer/iut/Iut/Implication/Theorem110.lean:234`
 - `refer/iut/Iut/Implication/LogVolumeBound.lean:69`
 - `refer/iut/Iut/Implication/LogVolumeBound.lean:205`
+- `refer/iut/Iut/Implication/Invariants.lean:120`
+- `refer/iut/Iut/Implication/Invariants.lean:123`
+- `refer/iut/Iut/Implication/Invariants.lean:132`
+- `refer/iut/Iut/Implication/Invariants.lean:146`
+- `refer/iut/Iut/Implication/Invariants.lean:166`
+- `refer/iut/Iut/Implication/Invariants.lean:172`
+- `refer/iut/Iut/Implication/Invariants.lean:175`
+- `refer/iut/Iut/Implication/Invariants.lean:178`
+- `refer/iut/Iut/Implication/LogVolumeBound.lean:118`
+- `refer/iut/Iut/Implication/LogVolumeBound.lean:130`
+- `refer/iut/Iut/Implication/LogVolumeBound.lean:134`
+- `refer/iut/Iut/Implication/LogVolumeBound.lean:165`
+- `refer/iut/Iut/Implication/LogVolumeBound.lean:173`
+- `refer/iut/Iut/Implication/LogVolumeBound.lean:194`
+- `refer/iut/Iut/Implication/Theorem110.lean:130`
+- `refer/iut/Iut/Implication/Theorem110.lean:139`
+- `refer/iut/Iut/Implication/Theorem110.lean:147`
+- `refer/iut/Iut/Implication/Theorem110.lean:172`
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:52`
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:72`
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:108`
@@ -63,7 +81,7 @@
 
 仍需精确陈述从 Joshi III 第 3 篇的 Corollary 3.12 到参考工程 `Corollary312Variant` 的全称适配。参考 `c2` 在固定的远 Abel 几何与缓和几何接口下要求 `∀ X, P X → Corollary312Variant X`；`ThetaDataExistence`（P7）须为全部适用点和素数供应满足同一 `P` 的数据，并同时供应证书、局部估计及各项身份。因此，所需范围是 P7 实际供应的完整数据族；单个已选实例不足，也不能把待证不等式藏进 `P`。Joshi 字面公式与体积推导的 q 项在绝对值、符号、半阶归一化和求和处集上的已知不一致必须逐项保留。现有 `CanonicalActualHull.corollary312` 使用 `CanonicalActualHull.raw_volume_bound`，可作为一个消费者入口；它仍没有证明论文 theta locus 身份，也没有消除符号及归一化差异。
 
-**现有 Joshi 节点证据及明确障碍**：机器可读的 96 节点类型／来源映射和 18 项阻塞审查保存在 `prove2me_workspace/.local/adaptation/source-audits/joshi_existing_map.json`；它是当前源码的静态审查，不含新编译或公理回执。第 3 篇定理 3.12 的上下文至少要求数域 `L` 无实嵌入、严格 Belyi 型椭圆曲线、初始 theta 数据、`L/L_mod` Galois、全部六阶扭点有理、`ell ≥ 5`、`ell` 不整除 `[L:L_mod]`、模 `ell` 表示像包含 `SL₂`、核域 `L′` 以及处集双射；作者明确说初始 theta 数据是全局存在断言，不能由局部构造代替。参考工程的 `A-raw`、`A-cor`、`A-fontaine`、`G-roots` 有源码 proof body 可供复用，但尚未在本迁移项目重编译；源码中 Form 2 与 Corollary 3.12 本身仍为未证目标。
+第 3 篇定理 3.12 的上下文至少要求数域 `L` 无实嵌入、严格 Belyi 型椭圆曲线、初始 theta 数据、`L/L_mod` Galois、全部六阶扭点有理、`ell ≥ 5`、`ell` 不整除 `[L:L_mod]`、模 `ell` 表示像包含 `SL₂`、核域 `L′` 以及处集双射；作者明确说初始 theta 数据是全局存在断言，不能由局部构造代替。Form 2 与 Corollary 3.12 的实际来源构造及全称适配仍待拆分。
 
 四个 Scene1 producer owner 仍分别是 `AdelicThetaLink`、`ThetaLiftLog`、`PacketCollationHull`、`VolumeTransfer`：现有跨处 Tate／q 来源和部分规范化、Fontaine 事实只能供应局部前提；纸面 theta locus、Bloch–Kato theta 类与 log-shell 身份、跨 holomorphoid 代表拼接、实际 volume-measure 同一性仍缺少来源构造。显式负面障碍包括：字面 Corollary 3.12 的符号与实际收缩根的负对数相反；raw、全局次数、剩余次数、`2ell`、纸面权重和 `p*` 归一化尚无同一 carrier 上的等式；一般 `L` 情形不能假定度为一；现有选取根集的 q-log 总和严格小于纸面选定处集的总和，且 omitted mass/degree defect 未闭合；实际扭点来源的分歧指数至少为 `ell`，故质数纤维不满足 mass-one；普通 `H¹`／Kummer 类尚非论文的 `H¹_e`／crystalline／Bloch–Kato 输入；固定局部完成域的单位拼接不是论文的跨来源代表拼接；现有实际 raw/Haar 体积界也未识别纸面 theta locus、测度和无穷处归一化。Form2、cor312、G1–G4 均仍开放；不得将既有算术 accounting 的局部通过扩大解释为任何全局 theta 结论。
 
