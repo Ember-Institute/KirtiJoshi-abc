@@ -6478,9 +6478,13 @@
     "prove2me_workspace/.local/adaptation/c2-open-v48-20261116/SOURCE_LEDGER.json": "f3eecb210727a2228cd571d2e8a51fb7068b46f3e543fab224a8f0b57e666c7b",
     "prove2me_workspace/.local/adaptation/c2-open-v48-20261116/archive/manifest.json": "f511fe4786a060e5031a8262527f7c1a90eb33eb089c1a35b8e364d8a61086d8",
     "prove2me_workspace/.local/adaptation/c2-open-v48-20261116/archive/evidence.tar.gz": "bfc047b5b3158be57b4b5749181e580822faad02ba12d66285484b0becc5390c",
-    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_Corollary22Inputs_c2.lean": "9575f4876594cccf50b2b9b85b6da05f4fa6c0c5cebefcf49d2627c950175683"
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_Corollary22Inputs_c2.lean": "9575f4876594cccf50b2b9b85b6da05f4fa6c0c5cebefcf49d2627c950175683",
+    "prove2me_workspace/.local/adaptation/theorem110-parent-reduction-v49-20261116/delivery-summary-v55.json": "58c8214e0c4049c97f44ad0e3581837977e92b95b900aeca722e63c00d49d6a1",
+    "prove2me_workspace/.local/adaptation/theorem110-parent-reduction-v49-20261116/archive-v55/manifest.json": "33eb4a2f5ea4ae8bb32e1b07ed2763a5944d36054f95fd10275ba0e10ecf4e1f",
+    "prove2me_workspace/.local/adaptation/theorem110-parent-reduction-v49-20261116/archive-v55/evidence.tar.gz": "b3bdbbe239a90bf085202bbbddeb3dc8ed0c1f90ab22bbefc3b747f21bea2cd7",
+    "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_Theorem110Invariants_theorem110.lean": "734a8cb51a04e44e509677043cb14bc3cbcebb29a94d71a472fc4f8e4aa107d3"
   },
-  "recorded_at": "2026-11-16T10:44:28.438276+00:00",
+  "recorded_at": "2026-11-16T10:57:56.015680+00:00",
   "local_open_children_below_root": 16,
   "published_open_children_below_root": 16,
   "local_rational_projection_edge_verified": true,
@@ -8649,7 +8653,8 @@
         "producer": "AbcAdaptation.Reference.Iut.Theorem110Invariants.LocalEstimate.rhs_le",
         "consumer": "AbcAdaptation.Reference.Iut.Theorem110Invariants.theorem110",
         "actualSourceValueEdge": true,
-        "targetParentReductionPending": true
+        "targetParentReductionPending": false,
+        "verifiedReductionSubmissionId": "edde8903-81e7-4db6-a6ea-672c09681024"
       },
       {
         "producer": "AbcAdaptation.Reference.Iut.Theorem110Invariants.theorem110",
@@ -9454,7 +9459,9 @@
         "statementTypeAccepted": true,
         "proofAccepted": false,
         "sourceName": "Iut.Theorem110Invariants.theorem110",
-        "root_graph_membership": false
+        "root_graph_membership": false,
+        "reduction_status": "SKETCH_ACCEPTED",
+        "reduction_submission_id": "edde8903-81e7-4db6-a6ea-672c09681024"
       },
       {
         "name": "AbcAdaptation.Reference.Iut.Corollary22Inputs.c2",
@@ -9657,6 +9664,144 @@
           "cpu_user_seconds": 4.0,
           "cpu_system_seconds": 46.68,
           "peak_rss_bytes": 4974010368,
+          "peak_pss_bytes": null
+        }
+      ],
+      "root_graph_membership": false,
+      "canonicalC22Connected": false,
+      "S2-04Completed": false
+    },
+    "accepted_parent_reductions": [
+      {
+        "schema": "accepted-source-parent-reduction/v55",
+        "parentName": "AbcAdaptation.Reference.Iut.Theorem110Invariants.theorem110",
+        "parentId": "93117622-a286-4b02-b27e-5b4c98818d07",
+        "childName": "AbcAdaptation.Reference.Iut.Theorem110Invariants.LocalEstimate.rhs_le",
+        "submissionId": "edde8903-81e7-4db6-a6ea-672c09681024",
+        "verificationStatus": "SKETCH_ACCEPTED",
+        "parentStatus": "Open",
+        "visibility": "private",
+        "completeTypeBinderAndDependencyAudit": true,
+        "localOwnProofBodiesSorryFree": true,
+        "localClosureMayContainSorryAxThroughTrackedImports": true,
+        "solution": "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_Theorem110Invariants_theorem110.lean",
+        "solutionSha256": "734a8cb51a04e44e509677043cb14bc3cbcebb29a94d71a472fc4f8e4aa107d3",
+        "jobs": [
+          "ci-017873-d8a9a89a",
+          "ci-017875-42622748",
+          "ci-017879-e6f74e77",
+          "ci-017883-61f6ecfc"
+        ],
+        "auditReport": "prove2me_workspace/.local/adaptation/theorem110-parent-reduction-v49-20261116/actual/dependency-audit.json",
+        "auditReportSha256": "a51db1db1557674af92bbf8e6f8d99956e8ba43a35c35f0eafd4ddde28dfe960",
+        "archive": "prove2me_workspace/.local/adaptation/theorem110-parent-reduction-v49-20261116/archive-v55/evidence.tar.gz",
+        "archiveSha256": "b3bdbbe239a90bf085202bbbddeb3dc8ed0c1f90ab22bbefc3b747f21bea2cd7",
+        "integratedDraftsRemoved": 4,
+        "productionGatesReused": "ci-014934-4e97486a",
+        "resources": [
+          {
+            "jobId": "ci-017873-d8a9a89a",
+            "wall_time_seconds": 45.439281500002835,
+            "cpu_time_seconds": 45.59,
+            "cpu_user_seconds": 8.34,
+            "cpu_system_seconds": 37.25,
+            "peak_rss_bytes": 4349030400,
+            "peak_pss_bytes": null
+          },
+          {
+            "jobId": "ci-017875-42622748",
+            "wall_time_seconds": 43.77800500000012,
+            "cpu_time_seconds": 44.42,
+            "cpu_user_seconds": 8.82,
+            "cpu_system_seconds": 35.6,
+            "peak_rss_bytes": 4354514944,
+            "peak_pss_bytes": null
+          },
+          {
+            "jobId": "ci-017879-e6f74e77",
+            "wall_time_seconds": 94.77910989999873,
+            "cpu_time_seconds": 88.73,
+            "cpu_user_seconds": 4.67,
+            "cpu_system_seconds": 84.06,
+            "peak_rss_bytes": 4939386880,
+            "peak_pss_bytes": null
+          },
+          {
+            "jobId": "ci-017883-61f6ecfc",
+            "wall_time_seconds": 47.28971349999847,
+            "cpu_time_seconds": 46.21,
+            "cpu_user_seconds": 3.2,
+            "cpu_system_seconds": 43.01,
+            "peak_rss_bytes": 4852142080,
+            "peak_pss_bytes": null
+          }
+        ],
+        "root_graph_membership": false,
+        "canonicalC22Connected": false,
+        "S2-04Completed": false
+      }
+    ],
+    "theorem110_parent_reduction_unit": {
+      "schema": "accepted-source-parent-reduction/v55",
+      "parentName": "AbcAdaptation.Reference.Iut.Theorem110Invariants.theorem110",
+      "parentId": "93117622-a286-4b02-b27e-5b4c98818d07",
+      "childName": "AbcAdaptation.Reference.Iut.Theorem110Invariants.LocalEstimate.rhs_le",
+      "submissionId": "edde8903-81e7-4db6-a6ea-672c09681024",
+      "verificationStatus": "SKETCH_ACCEPTED",
+      "parentStatus": "Open",
+      "visibility": "private",
+      "completeTypeBinderAndDependencyAudit": true,
+      "localOwnProofBodiesSorryFree": true,
+      "localClosureMayContainSorryAxThroughTrackedImports": true,
+      "solution": "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_Theorem110Invariants_theorem110.lean",
+      "solutionSha256": "734a8cb51a04e44e509677043cb14bc3cbcebb29a94d71a472fc4f8e4aa107d3",
+      "jobs": [
+        "ci-017873-d8a9a89a",
+        "ci-017875-42622748",
+        "ci-017879-e6f74e77",
+        "ci-017883-61f6ecfc"
+      ],
+      "auditReport": "prove2me_workspace/.local/adaptation/theorem110-parent-reduction-v49-20261116/actual/dependency-audit.json",
+      "auditReportSha256": "a51db1db1557674af92bbf8e6f8d99956e8ba43a35c35f0eafd4ddde28dfe960",
+      "archive": "prove2me_workspace/.local/adaptation/theorem110-parent-reduction-v49-20261116/archive-v55/evidence.tar.gz",
+      "archiveSha256": "b3bdbbe239a90bf085202bbbddeb3dc8ed0c1f90ab22bbefc3b747f21bea2cd7",
+      "integratedDraftsRemoved": 4,
+      "productionGatesReused": "ci-014934-4e97486a",
+      "resources": [
+        {
+          "jobId": "ci-017873-d8a9a89a",
+          "wall_time_seconds": 45.439281500002835,
+          "cpu_time_seconds": 45.59,
+          "cpu_user_seconds": 8.34,
+          "cpu_system_seconds": 37.25,
+          "peak_rss_bytes": 4349030400,
+          "peak_pss_bytes": null
+        },
+        {
+          "jobId": "ci-017875-42622748",
+          "wall_time_seconds": 43.77800500000012,
+          "cpu_time_seconds": 44.42,
+          "cpu_user_seconds": 8.82,
+          "cpu_system_seconds": 35.6,
+          "peak_rss_bytes": 4354514944,
+          "peak_pss_bytes": null
+        },
+        {
+          "jobId": "ci-017879-e6f74e77",
+          "wall_time_seconds": 94.77910989999873,
+          "cpu_time_seconds": 88.73,
+          "cpu_user_seconds": 4.67,
+          "cpu_system_seconds": 84.06,
+          "peak_rss_bytes": 4939386880,
+          "peak_pss_bytes": null
+        },
+        {
+          "jobId": "ci-017883-61f6ecfc",
+          "wall_time_seconds": 47.28971349999847,
+          "cpu_time_seconds": 46.21,
+          "cpu_user_seconds": 3.2,
+          "cpu_system_seconds": 43.01,
+          "peak_rss_bytes": 4852142080,
           "peak_pss_bytes": null
         }
       ],
