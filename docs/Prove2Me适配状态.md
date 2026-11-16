@@ -14,7 +14,6 @@
 - `refer/iut/Iut/Implication/Invariants.lean:123`
 - `refer/iut/Iut/Implication/Invariants.lean:132`
 - `refer/iut/Iut/Implication/Invariants.lean:146`
-- `refer/iut/Iut/Implication/Invariants.lean:166`
 - `refer/iut/Iut/Implication/Invariants.lean:172`
 - `refer/iut/Iut/Implication/Invariants.lean:175`
 - `refer/iut/Iut/Implication/Invariants.lean:178`

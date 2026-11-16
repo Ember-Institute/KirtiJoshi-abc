@@ -6458,9 +6458,14 @@
     "prove2me_workspace/.local/adaptation/lmod-prime-counting-v35-20261116/archive-final-v38/archive-manifest.json": "459fa83f25e4431783d91660bba07da6dc40c44046a4826fdfa1ae6e51d53031",
     "prove2me_workspace/.local/adaptation/lmod-prime-counting-v35-20261116/archive-final-v38/archive_cleanup.py": "06f0dbb573d7fd55e9d0af2d493a4e0885beb1dbaa1f322f0eb175ed7a6c7c64",
     "prove2me_workspace/.local/adaptation/lmod-prime-counting-v35-20261116/archive-final-v38/small-evidence.tar.gz": "69cb9382459efbd747f3e67d99c79dfd186e79db29326775d98150e3a30585dd",
-    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_Theorem110Invariants_lmod_mul_logSle_le.lean": "d3ae3ea9b523c60d430d3df798ead6edf1aaabca77913fd958801a2319e5ff3e"
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_Theorem110Invariants_lmod_mul_logSle_le.lean": "d3ae3ea9b523c60d430d3df798ead6edf1aaabca77913fd958801a2319e5ff3e",
+    "prove2me_workspace/.local/adaptation/iota-nonneg-v41-20261116/delivery-summary-v45.json": "33af9546e9209466ba76ec1cae83b388e3d5f16ddfd96c69587270eb7f3d1603",
+    "prove2me_workspace/.local/adaptation/iota-nonneg-v41-20261116/archive-v45/archive-manifest.json": "16a27e421b78b6fcaa2816912142792721289fff142ac1a54a176f581441394c",
+    "prove2me_workspace/.local/adaptation/iota-nonneg-v41-20261116/archive-v45/small-evidence.tar.gz": "4e9708e93caece66db9ce900f0f26458ccee6695af5c43fbd90595734a434a6c",
+    "prove2me_workspace/.local/adaptation/iota-nonneg-v41-20261116/integrated-v45/SOURCE_LEDGER.json": "6edf6b2560035d9ff9ddd6986771cde0e68c7e7ecf31f6f956bac70639a3c06e",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_Theorem110Invariants_iota_nonneg.lean": "1e0639574dd57fb2f643f062e77972ab462082c52d95a1cb99c49c766b7acd49"
   },
-  "recorded_at": "2026-11-15T16:34:14.258269+00:00",
+  "recorded_at": "2026-11-16T10:18:01.904687+00:00",
   "local_open_children_below_root": 16,
   "published_open_children_below_root": 16,
   "local_rational_projection_edge_verified": true,
@@ -6928,7 +6933,8 @@
     "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_succ_mul_derivAlong_not_mem": "Proved",
     "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_irreducible_valuation_lt_one": "Proved",
     "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_eq_div": "Proved",
-    "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_mul_derivAlong_mem_integralClosure": "Proved"
+    "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_mul_derivAlong_mem_integralClosure": "Proved",
+    "e52e6b9b-d831-4a07-8d12-5299c41e0c4f": "Proved"
   },
   "riemann_sourceproof_unit": {
     "closed_direct": [
@@ -8584,6 +8590,18 @@
         "sourceImplementationFactor": "3/2",
         "printedProposition16Factor": "4/3",
         "root_graph_membership": false
+      },
+      {
+        "name": "AbcAdaptation.Reference.Iut.Theorem110Invariants.iota_nonneg",
+        "theorem_id": "e52e6b9b-d831-4a07-8d12-5299c41e0c4f",
+        "status": "Proved",
+        "submission_id": "3135b82a-7362-4126-a29a-c6073905976c",
+        "verification_status": "ACCEPTED",
+        "source_commit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "sourceName": "Iut.Theorem110Invariants.ι_nonneg",
+        "sourceProofBodyTextByteIdentity": true,
+        "identifierRenamedForPlatform": true,
+        "root_graph_membership": false
       }
     ],
     "dependency_pairs": [
@@ -8602,6 +8620,12 @@
       {
         "producer": "AbcAdaptation.Reference.Iut.Theorem110Invariants.lmod_mul_logSle_le",
         "consumer": "AbcAdaptation.Reference.Iut.Theorem110Invariants.theorem110"
+      },
+      {
+        "producer": "AbcAdaptation.Reference.Iut.Theorem110Invariants.iota_nonneg",
+        "consumer": "AbcAdaptation.Reference.Iut.Theorem110Invariants.logSle_nonneg",
+        "actualSourceValueEdge": true,
+        "targetIntegrationPending": true
       }
     ],
     "actual_source_consumer": {
@@ -9307,6 +9331,72 @@
       "integratedDraftsRemoved": 22,
       "archiveDirectory": ".local/adaptation/lmod-prime-counting-v35-20261116/archive-final-v38",
       "archiveSha256": "69cb9382459efbd747f3e67d99c79dfd186e79db29326775d98150e3a30585dd",
+      "canonicalC22Connected": false,
+      "root_graph_membership": false,
+      "S2-04Completed": false
+    },
+    "iota_nonneg_unit": {
+      "schema": "iota-completed-unit/v45",
+      "sourceName": "Iut.Theorem110Invariants.ι_nonneg",
+      "targetName": "AbcAdaptation.Reference.Iut.Theorem110Invariants.iota_nonneg",
+      "theoremId": "e52e6b9b-d831-4a07-8d12-5299c41e0c4f",
+      "submissionId": "3135b82a-7362-4126-a29a-c6073905976c",
+      "verificationStatus": "ACCEPTED",
+      "visibility": "private",
+      "sourceProofOracle": "ci-017569-a276b44c",
+      "sourceTypeFacts": "ci-017568-e1627eb4",
+      "nativeFacts": "ci-017650-a35423da",
+      "fourRoleReview": "ci-017668-4c0cad3b",
+      "finalCanonicalJobs": [
+        "ci-017808-9a1bf0f8",
+        "ci-017811-99432857",
+        "ci-017812-c30dbdc7"
+      ],
+      "canonicalSource": "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_Theorem110Invariants_iota_nonneg.lean",
+      "canonicalSha256": "1e0639574dd57fb2f643f062e77972ab462082c52d95a1cb99c49c766b7acd49",
+      "archive": "prove2me_workspace/.local/adaptation/iota-nonneg-v41-20261116/archive-v45/small-evidence.tar.gz",
+      "archiveSha256": "4e9708e93caece66db9ce900f0f26458ccee6695af5c43fbd90595734a434a6c",
+      "integratedTopLevelDraftsRemoved": 4,
+      "actualConsumer": {
+        "name": "Iut.Theorem110Invariants.logSle_nonneg",
+        "edge": "value",
+        "sourceFile": "Iut/Implication/Invariants.lean",
+        "sourceLines": [
+          172,
+          173
+        ],
+        "targetIntegrationPending": true
+      },
+      "productionGatesReused": "ci-014934-4e97486a",
+      "resources": [
+        {
+          "jobId": "ci-017808-9a1bf0f8",
+          "wall_time_seconds": 40.375336099998094,
+          "cpu_time_seconds": 40.129999999999995,
+          "cpu_user_seconds": 2.62,
+          "cpu_system_seconds": 37.51,
+          "peak_rss_bytes": 4267003904,
+          "peak_pss_bytes": null
+        },
+        {
+          "jobId": "ci-017811-99432857",
+          "wall_time_seconds": 37.29358299999876,
+          "cpu_time_seconds": 37.16,
+          "cpu_user_seconds": 2.79,
+          "cpu_system_seconds": 34.37,
+          "peak_rss_bytes": 4275380224,
+          "peak_pss_bytes": null
+        },
+        {
+          "jobId": "ci-017812-c30dbdc7",
+          "wall_time_seconds": 36.09687069999927,
+          "cpu_time_seconds": 35.16,
+          "cpu_user_seconds": 1.9,
+          "cpu_system_seconds": 33.26,
+          "peak_rss_bytes": 4136951808,
+          "peak_pss_bytes": null
+        }
+      ],
       "canonicalC22Connected": false,
       "root_graph_membership": false,
       "S2-04Completed": false
