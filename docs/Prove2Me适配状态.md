@@ -26,7 +26,6 @@
 - `refer/iut/Iut/Implication/LogVolumeBound.lean:194`
 - `refer/iut/Iut/Implication/Theorem110.lean:130`
 - `refer/iut/Iut/Implication/Theorem110.lean:147`
-- `refer/iut/Iut/Implication/Theorem110.lean:172`
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:52`
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:72`
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:108`
