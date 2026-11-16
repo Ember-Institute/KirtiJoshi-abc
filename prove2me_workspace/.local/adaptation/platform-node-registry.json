@@ -6463,9 +6463,14 @@
     "prove2me_workspace/.local/adaptation/iota-nonneg-v41-20261116/archive-v45/archive-manifest.json": "16a27e421b78b6fcaa2816912142792721289fff142ac1a54a176f581441394c",
     "prove2me_workspace/.local/adaptation/iota-nonneg-v41-20261116/archive-v45/small-evidence.tar.gz": "4e9708e93caece66db9ce900f0f26458ccee6695af5c43fbd90595734a434a6c",
     "prove2me_workspace/.local/adaptation/iota-nonneg-v41-20261116/integrated-v45/SOURCE_LEDGER.json": "6edf6b2560035d9ff9ddd6986771cde0e68c7e7ecf31f6f956bac70639a3c06e",
-    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_Theorem110Invariants_iota_nonneg.lean": "1e0639574dd57fb2f643f062e77972ab462082c52d95a1cb99c49c766b7acd49"
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_Theorem110Invariants_iota_nonneg.lean": "1e0639574dd57fb2f643f062e77972ab462082c52d95a1cb99c49c766b7acd49",
+    "prove2me_workspace/.local/adaptation/rhs-le-open-v46-20261116/delivery-summary.json": "a68e800b02b836b3588e7f315eab5172a05951c148e35e799b22980a897d5b94",
+    "prove2me_workspace/.local/adaptation/rhs-le-open-v46-20261116/SOURCE_LEDGER.json": "091726563abca03864add245ec50695da3a1a985c881209a0c004ff4d4f6e8be",
+    "prove2me_workspace/.local/adaptation/rhs-le-open-v46-20261116/archive/manifest.json": "2a7ac85723ddae9df1be860c5d30937c78ea4227b1cabf9a9248a6871a45a00a",
+    "prove2me_workspace/.local/adaptation/rhs-le-open-v46-20261116/archive/evidence.tar.gz": "fa7c2d415b8f9423042b5618d16220fa3f0d55a60aa306028e6efc66bf2fe353",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_Theorem110Invariants_LocalEstimate_rhs_le.lean": "56dad03a09512083e8ae021f49db893829279992387e543564ddb9d080cc51cf"
   },
-  "recorded_at": "2026-11-16T10:18:01.904687+00:00",
+  "recorded_at": "2026-11-16T10:33:51.832842+00:00",
   "local_open_children_below_root": 16,
   "published_open_children_below_root": 16,
   "local_rational_projection_edge_verified": true,
@@ -6934,7 +6939,8 @@
     "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_irreducible_valuation_lt_one": "Proved",
     "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_eq_div": "Proved",
     "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_mul_derivAlong_mem_integralClosure": "Proved",
-    "e52e6b9b-d831-4a07-8d12-5299c41e0c4f": "Proved"
+    "e52e6b9b-d831-4a07-8d12-5299c41e0c4f": "Proved",
+    "28f1f951-5981-4d94-96ae-8fff2963a54f": "Open"
   },
   "riemann_sourceproof_unit": {
     "closed_direct": [
@@ -8626,6 +8632,12 @@
         "consumer": "AbcAdaptation.Reference.Iut.Theorem110Invariants.logSle_nonneg",
         "actualSourceValueEdge": true,
         "targetIntegrationPending": true
+      },
+      {
+        "producer": "AbcAdaptation.Reference.Iut.Theorem110Invariants.LocalEstimate.rhs_le",
+        "consumer": "AbcAdaptation.Reference.Iut.Theorem110Invariants.theorem110",
+        "actualSourceValueEdge": true,
+        "targetParentReductionPending": true
       }
     ],
     "actual_source_consumer": {
@@ -9399,6 +9411,83 @@
       ],
       "canonicalC22Connected": false,
       "root_graph_membership": false,
+      "S2-04Completed": false
+    },
+    "open_nodes": [
+      {
+        "name": "AbcAdaptation.Reference.Iut.Theorem110Invariants.LocalEstimate.rhs_le",
+        "theorem_id": "28f1f951-5981-4d94-96ae-8fff2963a54f",
+        "status": "Open",
+        "statementTypeAccepted": true,
+        "proofAccepted": false,
+        "sourceName": "Iut.Theorem110Invariants.LocalEstimate.rhs_le",
+        "root_graph_membership": false
+      }
+    ],
+    "rhs_le_open_statement_unit": {
+      "schema": "open-source-node-delivery/v46",
+      "sourceName": "Iut.Theorem110Invariants.LocalEstimate.rhs_le",
+      "targetName": "AbcAdaptation.Reference.Iut.Theorem110Invariants.LocalEstimate.rhs_le",
+      "theoremId": "28f1f951-5981-4d94-96ae-8fff2963a54f",
+      "status": "Open",
+      "visibility": "private",
+      "statementTypeAccepted": true,
+      "proofAccepted": false,
+      "jobs": [
+        "ci-017822-98512265",
+        "ci-017826-63bed3d5",
+        "ci-017827-75c49dbe",
+        "ci-017830-ad06d581"
+      ],
+      "typeAudit": "prove2me_workspace/.local/adaptation/rhs-le-open-v46-20261116/actual/target-type-audit.json",
+      "typeAuditSha256": "22391045f56bbe3640e974427bf9151d2171b119b0978453f9606db80e5af056",
+      "targetSource": "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_Theorem110Invariants_LocalEstimate_rhs_le.lean",
+      "targetSourceSha256": "56dad03a09512083e8ae021f49db893829279992387e543564ddb9d080cc51cf",
+      "actualSourceConsumer": "AbcAdaptation.Reference.Iut.Theorem110Invariants.theorem110",
+      "targetParentReductionPending": true,
+      "archive": "prove2me_workspace/.local/adaptation/rhs-le-open-v46-20261116/archive/evidence.tar.gz",
+      "archiveSha256": "fa7c2d415b8f9423042b5618d16220fa3f0d55a60aa306028e6efc66bf2fe353",
+      "productionGatesReused": "ci-014934-4e97486a",
+      "resources": [
+        {
+          "jobId": "ci-017822-98512265",
+          "wall_time_seconds": 133.5181945000004,
+          "cpu_time_seconds": 132.57,
+          "cpu_user_seconds": 6.64,
+          "cpu_system_seconds": 125.93,
+          "peak_rss_bytes": 8758165504,
+          "peak_pss_bytes": null
+        },
+        {
+          "jobId": "ci-017826-63bed3d5",
+          "wall_time_seconds": 37.87446199999977,
+          "cpu_time_seconds": 37.13,
+          "cpu_user_seconds": 2.35,
+          "cpu_system_seconds": 34.78,
+          "peak_rss_bytes": 4147548160,
+          "peak_pss_bytes": null
+        },
+        {
+          "jobId": "ci-017827-75c49dbe",
+          "wall_time_seconds": 37.50361890000204,
+          "cpu_time_seconds": 37.12,
+          "cpu_user_seconds": 2.87,
+          "cpu_system_seconds": 34.25,
+          "peak_rss_bytes": 4256632832,
+          "peak_pss_bytes": null
+        },
+        {
+          "jobId": "ci-017830-ad06d581",
+          "wall_time_seconds": 48.55929390000165,
+          "cpu_time_seconds": 48.84,
+          "cpu_user_seconds": 4.7,
+          "cpu_system_seconds": 44.14,
+          "peak_rss_bytes": 4953649152,
+          "peak_pss_bytes": null
+        }
+      ],
+      "root_graph_membership": false,
+      "canonicalC22Connected": false,
       "S2-04Completed": false
     }
   },
