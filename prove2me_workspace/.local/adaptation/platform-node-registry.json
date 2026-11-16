@@ -6434,7 +6434,14 @@
     "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1RationalBranchSet.lean": "534bad9ac63b338796b28da53cb827f9537e81d706a4f7946fdeb239275b3acc",
     "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_Fermat_Proper_noncriticalP1DegreeOneRational.lean": "e640bfb1277430869ad796ae3067389a3b84e60ebc890c3f28670fe3add73554",
     "prove2me_workspace/.local/adaptation/fermat-noncritical-rational-split-20261115/SOURCE_LEDGER.json": "116e66343199c88a13827b7d6bca1610ce27d159bc381105b4e8aac4c2d521e6",
-    "prove2me_workspace/.local/adaptation/fermat-noncritical-rational-split-20261115/delivery-validation.json": "a01666e79f11b5e2b71efca4580d4e001a68a24d75145d2bb687bcbfedf5353f"
+    "prove2me_workspace/.local/adaptation/fermat-noncritical-rational-split-20261115/delivery-validation.json": "a01666e79f11b5e2b71efca4580d4e001a68a24d75145d2bb687bcbfedf5353f",
+    "prove2me_workspace/.local/adaptation/local68-basic34-small-evidence-v33/archive-manifest.json": "0985293d3271f5b1eaf5ecdd8bad5f41e5882ba142b8b17a650eaa2479605ef5",
+    "prove2me_workspace/.local/adaptation/local68-basic34-small-evidence-v33/localconditions-basic-small-evidence.tar.gz": "669faf8479552275290be9c6e3e6ed8b67a42116e76c936ea40d73a6f0205b3a",
+    "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_LocalConditions.lean": "b54a834f96ec1df6ad6a6c0c71d0edfcc05a974159fd513771c7f908ae22a265",
+    "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_Basic.lean": "9e331bf500a6a60170e8425862e897a0a496112fcab0738a2b4e88261062a02b",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_Theorem110Invariants_sum_card_standard.lean": "8269eb5041d864f987167fa0471a6a55d303fe3d7cd61e31c3ee528f42af885a",
+    "prove2me_workspace/.local/adaptation/procession-four-role-audit-v32-20261116/archive-final-v34/archive-manifest.json": "ad3c1bb2308e3cfc46ee71070c2878cffad467a82d29da5d7398a7fbe60d1d87",
+    "prove2me_workspace/.local/adaptation/procession-four-role-audit-v32-20261116/archive-final-v34/small-evidence.tar.gz": "e89d29b3e60d16f3e2c8fb1ce172b70bf213d01f8042c952f6b73669ecb7a0a4"
   },
   "recorded_at": "2026-11-15T16:34:14.258269+00:00",
   "local_open_children_below_root": 16,
@@ -8355,6 +8362,14 @@
       {
         "name": "AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateFamily",
         "id": "9bce2e6e-05b1-4abb-a962-c842ac8d7040"
+      },
+      {
+        "name": "AbcAdaptation_Reference_Iut_Cor312_ThetaData_LocalConditions",
+        "id": "91d62428-423b-492d-82d4-c3b61e9bfe82"
+      },
+      {
+        "name": "AbcAdaptation_Reference_Iut_Cor312_ThetaData_Basic",
+        "id": "b13ccaf3-fd71-418f-be38-816bf7580e87"
       }
     ],
     "proved_nodes": [
@@ -8506,6 +8521,16 @@
         "verification_status": "ACCEPTED",
         "source_commit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
         "root_graph_membership": false
+      },
+      {
+        "name": "AbcAdaptation.Reference.Iut.Theorem110Invariants.sum_card_standard",
+        "theorem_id": "369057ed-1bc0-4750-b910-92b47d46338b",
+        "status": "Proved",
+        "submission_id": "4a1367cc-1502-4408-8a46-d7dc21909607",
+        "verification_status": "ACCEPTED",
+        "source_commit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+        "source_proof_scope": "Complete effective context-adapted proof; upstream raw proof bytes differ",
+        "root_graph_membership": false
       }
     ],
     "dependency_pairs": [
@@ -8516,6 +8541,10 @@
       {
         "producer": "AbcAdaptation.Reference.Iut.sum_log_primeFactors_le",
         "consumer": "AbcAdaptation.Reference.Iut.LocalHeightData.exists_prime_selection"
+      },
+      {
+        "producer": "AbcAdaptation.Reference.Iut.Theorem110Invariants.sum_card_standard",
+        "consumer": "AbcAdaptation.Reference.Iut.Theorem110Invariants.theorem110"
       }
     ],
     "actual_source_consumer": {
@@ -8986,7 +9015,90 @@
       "pendingParentPlatformDefinition": "LocalConditions",
       "dossierSha256": "0efd5de890fd1b5d3180da270635e4fed31dfc1549d7939698f63955773b2b99",
       "all200FormalAccepted": false,
-      "canonicalC22Connected": false
+      "canonicalC22Connected": false,
+      "platformPublished": true
+    },
+    "local68_unit": {
+      "module": "Iut.Cor312.ThetaData.LocalConditions",
+      "delivery": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/local68-delivery-v31",
+      "publishedDefinition": "91d62428-423b-492d-82d4-c3b61e9bfe82",
+      "publishJob": "7bfccca8-6066-4481-bea0-1f587a278763",
+      "source": 68,
+      "named": 68,
+      "owned": 68,
+      "genuineSourceProofValues": 0,
+      "aliasCount": 0,
+      "sourceSha256": "b54a834f96ec1df6ad6a6c0c71d0edfcc05a974159fd513771c7f908ae22a265",
+      "kernelDossier": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-initial-theta-carriers-20261115/local-remaining48-v25/final-local68-kernel-dossier.json",
+        "sha256": "ca342ddb4d1775d5ddbd1f60c0abd44686c96ff1ffc37dfbe84d51c019509050"
+      },
+      "actualMathReceipts": 117,
+      "kernelDossierSha256": "ca342ddb4d1775d5ddbd1f60c0abd44686c96ff1ffc37dfbe84d51c019509050",
+      "rawAnnotationEqualityClaimed": false,
+      "faithfulReplayAndFullComputationalValuesAccepted": true,
+      "canonicalC22Connected": false,
+      "root_graph_membership": false,
+      "directory": ".local/adaptation/local68-delivery-v31",
+      "all200FormalAccepted": false,
+      "fourModuleAcceptance": false
+    },
+    "basic34_unit": {
+      "module": "Iut.Cor312.ThetaData.Basic",
+      "delivery": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/basic34-delivery-v31",
+      "publishedDefinition": "b13ccaf3-fd71-418f-be38-816bf7580e87",
+      "publishJob": "06f5f1fb-0bfd-4a59-94ca-afd04e53af4c",
+      "source": 34,
+      "named": 34,
+      "owned": 34,
+      "genuineSourceProofValues": 0,
+      "aliasCount": 0,
+      "sourceSha256": "9e331bf500a6a60170e8425862e897a0a496112fcab0738a2b4e88261062a02b",
+      "kernelDossier": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-initial-theta-carriers-20261115/basic34-math-dossier-v27/final-kernel-dossier.json",
+        "sha256": "0efd5de890fd1b5d3180da270635e4fed31dfc1549d7939698f63955773b2b99"
+      },
+      "actualMathReceipts": 34,
+      "kernelDossierSha256": "0efd5de890fd1b5d3180da270635e4fed31dfc1549d7939698f63955773b2b99",
+      "rawAnnotationEqualityClaimed": false,
+      "faithfulReplayAndFullComputationalValuesAccepted": true,
+      "canonicalC22Connected": false,
+      "root_graph_membership": false,
+      "directory": ".local/adaptation/basic34-delivery-v31",
+      "all200FormalAccepted": false,
+      "fourModuleAcceptance": false
+    },
+    "initial_four_definition_publications": {
+      "allFourPrivatelyPublished": true,
+      "separatelyAcceptedNamedCounts": [
+        70,
+        28,
+        68,
+        34
+      ],
+      "namedTotal": 200,
+      "additionalGenuineSourceProofValues": 4,
+      "root_graph_membership": false,
+      "canonicalC22Connected": false,
+      "scope": "Four individually accepted Definition packages; source construction obligations and root connection remain open"
+    },
+    "procession_sum_card_unit": {
+      "directory": ".local/adaptation/procession-four-role-audit-v32-20261116",
+      "actualFourRoleAudit": "ci-017276-ab0b5907",
+      "actualSourceProofOracle": "ci-017230-2e01fd2b",
+      "inlinePrivateSupports": 2,
+      "platformProofAccepted": true,
+      "theoremId": "369057ed-1bc0-4750-b910-92b47d46338b",
+      "submissionId": "4a1367cc-1502-4408-8a46-d7dc21909607",
+      "canonicalIntegratedLeaf": "ci-017379-398f4abf",
+      "canonicalIntegratedArtifact": "ci-017381-a9907b9b",
+      "finalIntegratedAxiomReview": "ci-017384-b25f1022",
+      "sourceProofScope": "Effective source context proof; raw upstream proof not byte-identical",
+      "canonicalC22Connected": false,
+      "root_graph_membership": false,
+      "archiveDirectory": ".local/adaptation/procession-four-role-audit-v32-20261116/archive-final-v34",
+      "integratedDraftsRemoved": 16,
+      "archiveSha256": "e89d29b3e60d16f3e2c8fb1ce172b70bf213d01f8042c952f6b73669ecb7a0a4"
     }
   },
   "rational_case_source_split_unit": {
