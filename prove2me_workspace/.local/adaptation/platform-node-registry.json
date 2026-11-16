@@ -6473,9 +6473,14 @@
     "prove2me_workspace/.local/adaptation/theorem110-open-v47-20261116/SOURCE_LEDGER.json": "7ae1203c54a38d018ee2552281c3613b9d9f5f1e822b16657503ff65b67d4a7c",
     "prove2me_workspace/.local/adaptation/theorem110-open-v47-20261116/archive/manifest.json": "9a8a64ed468db9cd85d5fbc2c5226606ce5ce4871ba16c97808d9afbbdc20022",
     "prove2me_workspace/.local/adaptation/theorem110-open-v47-20261116/archive/evidence.tar.gz": "419b058582bca53e192a5123187c97dc16bdb5af815af6961fe0568da42f6c48",
-    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_Theorem110Invariants_theorem110.lean": "f66a9ded8d054df54c0061843259d86bbd6a652b9fb5e8ae4d4cf79bbcfa2663"
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_Theorem110Invariants_theorem110.lean": "f66a9ded8d054df54c0061843259d86bbd6a652b9fb5e8ae4d4cf79bbcfa2663",
+    "prove2me_workspace/.local/adaptation/c2-open-v48-20261116/delivery-summary.json": "7ea8dc07df7a79b0afe039f42d068dd8e2b43744a46dbb9ef768cc4605685d4e",
+    "prove2me_workspace/.local/adaptation/c2-open-v48-20261116/SOURCE_LEDGER.json": "f3eecb210727a2228cd571d2e8a51fb7068b46f3e543fab224a8f0b57e666c7b",
+    "prove2me_workspace/.local/adaptation/c2-open-v48-20261116/archive/manifest.json": "f511fe4786a060e5031a8262527f7c1a90eb33eb089c1a35b8e364d8a61086d8",
+    "prove2me_workspace/.local/adaptation/c2-open-v48-20261116/archive/evidence.tar.gz": "bfc047b5b3158be57b4b5749181e580822faad02ba12d66285484b0becc5390c",
+    "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_Corollary22Inputs_c2.lean": "9575f4876594cccf50b2b9b85b6da05f4fa6c0c5cebefcf49d2627c950175683"
   },
-  "recorded_at": "2026-11-16T10:38:34.067085+00:00",
+  "recorded_at": "2026-11-16T10:44:28.438276+00:00",
   "local_open_children_below_root": 16,
   "published_open_children_below_root": 16,
   "local_rational_projection_edge_verified": true,
@@ -6946,7 +6951,8 @@
     "AbcAdaptation.Tripod.Fermat.Proper.CurveDeriv.exists_pow_mul_derivAlong_mem_integralClosure": "Proved",
     "e52e6b9b-d831-4a07-8d12-5299c41e0c4f": "Proved",
     "28f1f951-5981-4d94-96ae-8fff2963a54f": "Open",
-    "93117622-a286-4b02-b27e-5b4c98818d07": "Open"
+    "93117622-a286-4b02-b27e-5b4c98818d07": "Open",
+    "8d766b69-9c89-44f7-9aaf-26f075f5bdf4": "Open"
   },
   "riemann_sourceproof_unit": {
     "closed_direct": [
@@ -8650,6 +8656,12 @@
         "consumer": "AbcAdaptation.Reference.Iut.Corollary22Inputs.c2",
         "actualSourceValueEdge": true,
         "targetParentReductionPending": true
+      },
+      {
+        "producer": "AbcAdaptation.Reference.Iut.Corollary22Inputs.c2",
+        "consumer": "AbcAdaptation.Reference.Iut.c2_final",
+        "actualSourceValueEdge": true,
+        "targetParentReductionPending": true
       }
     ],
     "actual_source_consumer": {
@@ -9443,6 +9455,15 @@
         "proofAccepted": false,
         "sourceName": "Iut.Theorem110Invariants.theorem110",
         "root_graph_membership": false
+      },
+      {
+        "name": "AbcAdaptation.Reference.Iut.Corollary22Inputs.c2",
+        "theorem_id": "8d766b69-9c89-44f7-9aaf-26f075f5bdf4",
+        "status": "Open",
+        "statementTypeAccepted": true,
+        "proofAccepted": false,
+        "sourceName": "Iut.Corollary22Inputs.c2",
+        "root_graph_membership": false
       }
     ],
     "rhs_le_open_statement_unit": {
@@ -9570,6 +9591,72 @@
           "cpu_user_seconds": 3.12,
           "cpu_system_seconds": 39.18,
           "peak_rss_bytes": 4923240448,
+          "peak_pss_bytes": null
+        }
+      ],
+      "root_graph_membership": false,
+      "canonicalC22Connected": false,
+      "S2-04Completed": false
+    },
+    "c2_open_statement_unit": {
+      "schema": "open-source-node-delivery/v46",
+      "sourceName": "Iut.Corollary22Inputs.c2",
+      "targetName": "AbcAdaptation.Reference.Iut.Corollary22Inputs.c2",
+      "theoremId": "8d766b69-9c89-44f7-9aaf-26f075f5bdf4",
+      "status": "Open",
+      "visibility": "private",
+      "statementTypeAccepted": true,
+      "proofAccepted": false,
+      "jobs": [
+        "ci-017846-2e60ab1b",
+        "ci-017850-8d7feabf",
+        "ci-017852-40cb1e7b",
+        "ci-017858-fe93c965"
+      ],
+      "typeAudit": "prove2me_workspace/.local/adaptation/c2-open-v48-20261116/actual/target-type-audit.json",
+      "typeAuditSha256": "4e95487cba19703d08f7b20fed355214cd61633da518ccadf980fa6c7ee27ef7",
+      "targetSource": "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_Corollary22Inputs_c2.lean",
+      "targetSourceSha256": "9575f4876594cccf50b2b9b85b6da05f4fa6c0c5cebefcf49d2627c950175683",
+      "actualSourceConsumer": "AbcAdaptation.Reference.Iut.c2_final",
+      "targetParentReductionPending": true,
+      "archive": "prove2me_workspace/.local/adaptation/c2-open-v48-20261116/archive/evidence.tar.gz",
+      "archiveSha256": "bfc047b5b3158be57b4b5749181e580822faad02ba12d66285484b0becc5390c",
+      "productionGatesReused": "ci-014934-4e97486a",
+      "resources": [
+        {
+          "jobId": "ci-017846-2e60ab1b",
+          "wall_time_seconds": 141.52273010000135,
+          "cpu_time_seconds": 141.28,
+          "cpu_user_seconds": 7.46,
+          "cpu_system_seconds": 133.82,
+          "peak_rss_bytes": 8785833984,
+          "peak_pss_bytes": null
+        },
+        {
+          "jobId": "ci-017850-8d7feabf",
+          "wall_time_seconds": 40.9892362999999,
+          "cpu_time_seconds": 40.04,
+          "cpu_user_seconds": 2.14,
+          "cpu_system_seconds": 37.9,
+          "peak_rss_bytes": 4181594112,
+          "peak_pss_bytes": null
+        },
+        {
+          "jobId": "ci-017852-40cb1e7b",
+          "wall_time_seconds": 38.79300909999802,
+          "cpu_time_seconds": 38.05,
+          "cpu_user_seconds": 2.65,
+          "cpu_system_seconds": 35.4,
+          "peak_rss_bytes": 4262952960,
+          "peak_pss_bytes": null
+        },
+        {
+          "jobId": "ci-017858-fe93c965",
+          "wall_time_seconds": 50.90699250000034,
+          "cpu_time_seconds": 50.68,
+          "cpu_user_seconds": 4.0,
+          "cpu_system_seconds": 46.68,
+          "peak_rss_bytes": 4974010368,
           "peak_pss_bytes": null
         }
       ],

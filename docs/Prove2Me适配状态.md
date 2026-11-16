@@ -6,7 +6,6 @@
 - `refer/iut/Iut/Tripod/Height.lean:603`
 - `refer/iut/Iut/Implication/Corollary22.lean:284`
 - `refer/iut/Iut/Implication/Corollary22.lean:357`
-- `refer/iut/Iut/Implication/Corollary22.lean:386`
 - `refer/iut/Iut/Implication/LogVolumeBound.lean:69`
 - `refer/iut/Iut/Implication/Invariants.lean:120`
 - `refer/iut/Iut/Implication/Invariants.lean:123`
