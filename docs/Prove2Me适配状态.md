@@ -89,3 +89,4 @@
 - `AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder`：`uniformizer`（待定：素元／一致化元／均匀化元）。
 - `AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime`：`uniformizer`（待定：素元／一致化元／均匀化元）。
 - `AbcAdaptation_JoshiTeich_Prologue_Arithmetic_Basic`：`uniformizer`（待定：素元／一致化元／均匀化元）。
+- `AbcAdaptation_Reference_Genl_GeneralPosition_StatementII`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。

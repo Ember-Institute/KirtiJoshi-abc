@@ -6489,9 +6489,14 @@
     "prove2me_workspace/Solutions/Sol_AbcAdaptation_Reference_Iut_Corollary22Inputs_c2.lean": "953b466e2bdd7b94b72a3dd74d4a27f2eed368e255c8b14e0860b57e1e88e572",
     "prove2me_workspace/.local/adaptation/rhs-le-full-proof-v59-20261116/delivery-summary-v63.json": "14f949012ef980757ce59f123d696dcac9f477d7467a62cc450816e28e8f0226",
     "prove2me_workspace/.local/adaptation/rhs-le-full-proof-v59-20261116/archive-v63/manifest.json": "579a1b733dbfe9d90833ac31354ea67ae2cb8bcd41da913a1ba0a9755488a948",
-    "prove2me_workspace/.local/adaptation/rhs-le-full-proof-v59-20261116/archive-v63/evidence.tar.gz": "ed9a97a02a9aa581bc26fbb57663a03af839292329fe961f182fff012087ac5b"
+    "prove2me_workspace/.local/adaptation/rhs-le-full-proof-v59-20261116/archive-v63/evidence.tar.gz": "ed9a97a02a9aa581bc26fbb57663a03af839292329fe961f182fff012087ac5b",
+    "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Genl_GeneralPosition_StatementII.lean": "ddadb2b3394ba031c22dc844dfc9a2afb7e32c0d92de7706658c39e2919028dd",
+    "prove2me_workspace/.local/adaptation/statementii-definition-v65-20261116/SOURCE_LEDGER.json": "cead40e4d018b265fd3e89d3d15aff33b9d80378b3b57cddf3beb3d13abbb6e0",
+    "prove2me_workspace/.local/adaptation/statementii-definition-v65-20261116/delivery-summary-v69.json": "b003001fdb2d22a59c08fa643d240ed353c6328f6d372aaec2aa42d0dec302d5",
+    "prove2me_workspace/.local/adaptation/statementii-definition-v65-20261116/archive-v69/manifest.json": "b372d6ccc80ef52c42e8b40a3da39df11a246495f0f550d3d8d0dfde31ad0c9a",
+    "prove2me_workspace/.local/adaptation/statementii-definition-v65-20261116/archive-v69/evidence.tar.gz": "918995b88553e3a14671b7aacdd68d8deb5ea8cae8d1fdef19794ab37fcbd819"
   },
-  "recorded_at": "2026-11-16T11:28:59.491776+00:00",
+  "recorded_at": "2026-11-16T11:43:59.845242+00:00",
   "local_open_children_below_root": 16,
   "published_open_children_below_root": 16,
   "local_rational_projection_edge_verified": true,
@@ -8446,6 +8451,10 @@
       {
         "name": "AbcAdaptation_Reference_Iut_Implication_Corollary22",
         "id": "85c64e48-39e3-4374-80f2-b872f96d4943"
+      },
+      {
+        "name": "AbcAdaptation_Reference_Genl_GeneralPosition_StatementII",
+        "id": "82663ced-ab9c-4ac3-aad5-9268d3e5ff64"
       }
     ],
     "proved_nodes": [
@@ -8687,6 +8696,13 @@
         "consumerIsOriginalSourceName": true,
         "consumerTargetNotYetPublished": true,
         "consumerEvidence": "refer/iut/Iut/Implication/Corollary23.lean:87"
+      },
+      {
+        "producer": "AbcAdaptation.Reference.Genl.HeightTheory.StatementII",
+        "consumer": "Iut.statementII_of_cor312",
+        "consumerIsOriginalSourceName": true,
+        "consumerTargetNotYetPublished": true,
+        "kind": "definition used in theorem TYPE"
       }
     ],
     "actual_source_consumer": {
@@ -10087,7 +10103,73 @@
         "originalInputsRemainExplicit": true,
         "root_graph_membership": false
       }
-    ]
+    ],
+    "statementii_definition_unit": {
+      "schema": "statementii-definition-delivery/v69",
+      "name": "AbcAdaptation_Reference_Genl_GeneralPosition_StatementII",
+      "definitionId": "82663ced-ab9c-4ac3-aad5-9268d3e5ff64",
+      "visibility": "private",
+      "sourceName": "Genl.HeightTheory.StatementII",
+      "targetName": "AbcAdaptation.Reference.Genl.HeightTheory.StatementII",
+      "sourceTypeValueAndBinderInfoAccepted": true,
+      "sourceActualNamedMapCount": 10,
+      "standardAxiomsOnly": true,
+      "proofOfStatementIIClaimed": false,
+      "jobs": [
+        "ci-017966-8632d819",
+        "ci-017967-3f455941",
+        "ci-017969-2c981cce",
+        "ci-017975-f91882f3"
+      ],
+      "readbackModel": "gpt-6.1-sol",
+      "chineseTermPending": "compactly bounded subset",
+      "definition": "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Genl_GeneralPosition_StatementII.lean",
+      "definitionSha256": "ddadb2b3394ba031c22dc844dfc9a2afb7e32c0d92de7706658c39e2919028dd",
+      "archive": "prove2me_workspace/.local/adaptation/statementii-definition-v65-20261116/archive-v69/evidence.tar.gz",
+      "archiveSha256": "918995b88553e3a14671b7aacdd68d8deb5ea8cae8d1fdef19794ab37fcbd819",
+      "actualSourceConsumer": "Iut.statementII_of_cor312",
+      "targetConsumerPending": true,
+      "resources": [
+        {
+          "jobId": "ci-017966-8632d819",
+          "wall_time_seconds": 39.32606499999747,
+          "cpu_time_seconds": 39.45,
+          "cpu_user_seconds": 3.7,
+          "cpu_system_seconds": 35.75,
+          "peak_rss_bytes": 2997223424,
+          "peak_pss_bytes": null
+        },
+        {
+          "jobId": "ci-017967-3f455941",
+          "wall_time_seconds": 18.566444000000047,
+          "cpu_time_seconds": 18.1,
+          "cpu_user_seconds": 1.0,
+          "cpu_system_seconds": 17.1,
+          "peak_rss_bytes": 1961140224,
+          "peak_pss_bytes": null
+        },
+        {
+          "jobId": "ci-017969-2c981cce",
+          "wall_time_seconds": 18.626391000001604,
+          "cpu_time_seconds": 18.02,
+          "cpu_user_seconds": 0.68,
+          "cpu_system_seconds": 17.34,
+          "peak_rss_bytes": 1946828800,
+          "peak_pss_bytes": null
+        },
+        {
+          "jobId": "ci-017975-f91882f3",
+          "wall_time_seconds": 31.91235819999929,
+          "cpu_time_seconds": 31.96,
+          "cpu_user_seconds": 3.42,
+          "cpu_system_seconds": 28.54,
+          "peak_rss_bytes": 2808631296,
+          "peak_pss_bytes": null
+        }
+      ],
+      "canonicalC22Connected": false,
+      "S2-04Completed": false
+    }
   },
   "rational_case_source_split_unit": {
     "source_unit": ".local/adaptation/fermat-noncritical-rational-split-20261115",
