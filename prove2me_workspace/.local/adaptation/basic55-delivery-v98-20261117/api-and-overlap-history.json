@@ -1,0 +1,44 @@
+{
+  "sourceAPIJob": "ci-018317-f80d293f",
+  "targetAPIJob": "ci-018332-f836835f",
+  "actualAPIIsEvidenceOnly": true,
+  "affineFGClassEquivalenceClaimed": false,
+  "oldNewIsAddTorsionFreeMapped": false,
+  "missingTargetNames": [
+    "HasUniqueDiv.of_isCancelMulZero_charZero",
+    "IsAffineAddMonoid.toHasUniqueDiv",
+    "instIsTorsionFreeIntOfHasUniqueDiv"
+  ],
+  "overlapSummary": {
+    "schema": "exclusive-task-overlap-audit/v96",
+    "observedJobs": [
+      {
+        "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-target-api-and-missing-inventory-v95-result.json",
+        "jobId": "ci-018332-f836835f",
+        "status": "succeeded",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "exclusiveRequested": true,
+        "startedAt": 1794889270.7807453,
+        "finishedAt": 1794889499.5419211,
+        "workspaceMode": "exclusive_worktree",
+        "cancelledLaterJob": false
+      },
+      {
+        "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-nine-source-owner-parser-v96-result.json",
+        "jobId": "ci-018336-3f4456fa",
+        "status": "cancelled",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "exclusiveRequested": true,
+        "startedAt": 1794889331.0600605,
+        "finishedAt": 1794889511.2013938,
+        "workspaceMode": "exclusive_worktree",
+        "cancelledLaterJob": true
+      }
+    ],
+    "sameWorkspace": true,
+    "evidence": "Both ci_status tool responses reported running; cancelled later parser through scheduler. Inputs and caches remained unedited. Later source retries are submitted only after preceding root task reaches terminal.",
+    "mathematicalFailureClaimed": false
+  },
+  "cancelledJob": "ci-018336-3f4456fa",
+  "cancelledJobMathematicalFailureClaimed": false
+}

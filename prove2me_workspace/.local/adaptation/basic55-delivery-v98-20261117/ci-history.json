@@ -1,0 +1,2247 @@
+{
+  "schema": "basic55-compact-ci-history/v98",
+  "records": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-nine-source-owner-parser-v96-result.json",
+      "job_id": "ci-018336-3f4456fa",
+      "attempt_id": "attempt-d0b0024c4437",
+      "status": "cancelled",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "",
+      "stderr": "",
+      "exit_code": -15,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/b123-source-extraction-v57-20261116/QueryB123Parser.lean"
+      ],
+      "diagnostics": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 10593652736
+        },
+        "cpu_time_seconds": 177.45,
+        "peak_rss_bytes": 6945013760,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 3.92,
+        "cpu_system_seconds": 173.53,
+        "wall_time_seconds": 179.90871180000067,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 6.468048095703125,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/b123-source-extraction-v57-20261116/QueryB123Parser.lean"
+        },
+        "expected_duration": 300.0,
+        "expected_memory": 12884901888,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-b1-nine-source-owner-parser-v96-3b05feb612d7-65ad0aa430e7"
+      },
+      "inputVersion": {
+        "head": "7ac49919f953cab635243732ddf7806eef42c9f8",
+        "source_sha256": "3b05feb612d719fa0ac8a161ee427d29c6911c5cca44e5865a464f7f16a3dcdc",
+        "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "resource_estimate_basis": "ci018276 initialtimeout180s onlylowerbound withpeakRSSunknown. Same source4.35importer previousAPIactual196.5s/8728522752bytesRSS; nine sourcefilescombined120KB. Expected300s/12GiB keep16GiB leafcap."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "bce4a80315b9a52de2c12707e6551eb2221a64f670d5b68e2a830b14b9ec2bf8",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-absnorm-source-export-v88-result.json",
+      "job_id": "ci-018230-bcfc608b",
+      "attempt_id": "attempt-75df326c2913",
+      "status": "failed",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": ".local/adaptation/basic-absnorm-normalization-v88-20261117/QuerySourceAbsNormNormalization.lean:274:0: error: Unexpected universe parameters Iut.Tripod.one_le_absNorm_real\n",
+      "stderr": "",
+      "exit_code": 1,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-absnorm-normalization-v88-20261117/QuerySourceAbsNormNormalization.lean"
+      ],
+      "diagnostics": [
+        {
+          "path": ".local/adaptation/basic-absnorm-normalization-v88-20261117/QuerySourceAbsNormNormalization.lean",
+          "line": 274,
+          "column": 0,
+          "severity": "error",
+          "message": "Unexpected universe parameters Iut.Tripod.one_le_absNorm_real"
+        }
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 8809119744
+        },
+        "cpu_time_seconds": 115.91,
+        "peak_rss_bytes": 8908767232,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 8.32,
+        "cpu_system_seconds": 107.59,
+        "wall_time_seconds": 115.81215470000006,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 8.29693603515625,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-absnorm-normalization-v88-20261117/QuerySourceAbsNormNormalization.lean"
+        },
+        "expected_duration": 60.0,
+        "expected_memory": 17179869184,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-absnorm-source-export-v88-b27fb44ee419-9b244c273a8b"
+      },
+      "inputVersion": {
+        "head": "d8d233314eec9e78114c7a7b1c902262b6c321e1",
+        "source_sha256": "b27fb44ee41923516cb5f437e4e319527e1f4e42b58d4adb2bfc0d9aef3ec844",
+        "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "resource_estimate_basis": "New leaf first fixed60s/16GiB; reuse previously successful4.35Basic importer and cache without rebuilding dependencies."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "494cd32df47137b0773a25c034bd778b1f4b7a4ddabe6d6af601aeaf67ec0511",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-absnorm-source-export-v89-result.json",
+      "job_id": "ci-018231-0fd9e82f",
+      "attempt_id": "attempt-7c60bed21763",
+      "status": "succeeded",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "Four actual complete Exprs normalized to cardQuot and certified in this environment\n",
+      "stderr": "",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-absnorm-normalization-v88-20261117/QuerySourceAbsNormNormalization.lean"
+      ],
+      "diagnostics": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 9139654656
+        },
+        "cpu_time_seconds": 114.79,
+        "peak_rss_bytes": 9139654656,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 10.25,
+        "cpu_system_seconds": 104.54,
+        "wall_time_seconds": 115.40157189999991,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 8.511966705322266,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-absnorm-normalization-v88-20261117/QuerySourceAbsNormNormalization.lean"
+        },
+        "expected_duration": 150.0,
+        "expected_memory": 10737418240,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-absnorm-source-export-v89-b98438e8606d-9b244c273a8b"
+      },
+      "inputVersion": {
+        "head": "d8d233314eec9e78114c7a7b1c902262b6c321e1",
+        "source_sha256": "b98438e8606da030f4e3be22a48454d41e0e1c1c6386b7defef7048f30588a70",
+        "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "resource_estimate_basis": "ci-018230 complete import and first3normalizations115.81s/RSS8908767232; failed only zero-universe guard on generic fourthroot. Remove guard retain actualps; expected150s/10GiB."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "60285c88e3d8fb3bf712b5cc690730b0eeade399b8563a700ab5390d2447d3bb",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-absnorm-source-with-free-proof-v97-result.json",
+      "job_id": "ci-018381-74bd67f3",
+      "attempt_id": "attempt-77d40cf7269e",
+      "status": "succeeded",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "Four complete Exprs certified; exactly one same-Prop torsion proof uses existing Free instance\n",
+      "stderr": "",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-absnorm-normalization-v88-20261117/QuerySourceAbsNormNormalization.lean"
+      ],
+      "diagnostics": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 13424574464
+        },
+        "cpu_time_seconds": 208.29999999999998,
+        "peak_rss_bytes": 9179463680,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 12.73,
+        "cpu_system_seconds": 195.57,
+        "wall_time_seconds": 209.20573150000018,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          20,
+          21,
+          22,
+          23
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 8.549041748046875,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-absnorm-normalization-v88-20261117/QuerySourceAbsNormNormalization.lean"
+        },
+        "expected_duration": 240.0,
+        "expected_memory": 12884901888,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-absnorm-source-with-free-proof-v97-d731573b2fb2-e598dfaeaaf2"
+      },
+      "inputVersion": {
+        "head": "7ac49919f953cab635243732ddf7806eef42c9f8",
+        "source_sha256": "d731573b2fb2f5e76d7c0bdabe7193a9634e43477148be9a90ed28bf5fd9d732",
+        "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "resource_estimate_basis": "This actualleaf already compiled ci018231 four-normalization115.4s/RSS9139654656; sourceAPI ci018317196.5s/RSS8728522752 under currentIO. Add one actual same-Prop Free proof normalization with complete kernel certificate; estimate240s/12GiB,16GiB physicalcap retained."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "f84b15be1e2186797c5b64fd067be23895813eccfc5013256cafb182281d5b13",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-enrichment-v75-result.json",
+      "job_id": "ci-018019-b0f6e643",
+      "attempt_id": "attempt-77f5c3c673b7",
+      "status": "cancelled",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "",
+      "stderr": "",
+      "exit_code": -15,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-native-identity-v75-20261116/queries/QuerySourceBasicEnrichment.lean"
+      ],
+      "diagnostics": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 5568151552
+        },
+        "cpu_time_seconds": 20.1,
+        "peak_rss_bytes": 1511055360,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 0.64,
+        "cpu_system_seconds": 19.46,
+        "wall_time_seconds": 20.234367799999745,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 1.4072799682617188,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-native-identity-v75-20261116/queries/QuerySourceBasicEnrichment.lean"
+        },
+        "expected_duration": 60.0,
+        "expected_memory": 17179869184,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-enrichment-v75-19fb36964a7ae53e"
+      },
+      "inputVersion": {
+        "head": "5af26c342544a52d659e6e02d32f64aa47e27b59",
+        "source_sha256": "52076b961ec243f621f17ce2ff510f9270736c34ff5fc10fda13ac03fc4ce575",
+        "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "resource_estimate_basis": "First source enrichment leaf fixed60s/16GiB"
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "1043e2dbe2da0d0be154fc1ac68a875f1788b29b0f695d0b0ebf5e3b6e8e2047",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-enrichment-v76-result.json",
+      "job_id": "ci-018023-dcfbbdd0",
+      "attempt_id": "attempt-6a055908d88a",
+      "status": "failed",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": ".local/adaptation/basic-native-identity-v75-20261116/queries/QuerySourceBasicEnrichment.lean:299:61: error: Cannot lift nested action `← checked (field r \"nameExpr\")` over a binder.\nThis error usually happens when you are trying to lift a method nested in a `fun`, `let`, or `match`-alternative, and it can often be fixed by adding a missing `do`.\n",
+      "stderr": "",
+      "exit_code": 1,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-native-identity-v75-20261116/queries/QuerySourceBasicEnrichment.lean"
+      ],
+      "diagnostics": [
+        {
+          "path": ".local/adaptation/basic-native-identity-v75-20261116/queries/QuerySourceBasicEnrichment.lean",
+          "line": 299,
+          "column": 61,
+          "severity": "error",
+          "message": "Cannot lift nested action `← checked (field r \"nameExpr\")` over a binder."
+        }
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 23677509632
+        },
+        "cpu_time_seconds": 126.62,
+        "peak_rss_bytes": 8688619520,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 6.09,
+        "cpu_system_seconds": 120.53,
+        "wall_time_seconds": 127.54200539999874,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 8.091907501220703,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-native-identity-v75-20261116/queries/QuerySourceBasicEnrichment.lean"
+        },
+        "expected_duration": 60.0,
+        "expected_memory": 17179869184,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-enrichment-v76-19fb36964a7ae53e"
+      },
+      "inputVersion": {
+        "head": "25af753e77604eafead40747f36ac970c836fb49",
+        "source_sha256": "52076b961ec243f621f17ce2ff510f9270736c34ff5fc10fda13ac03fc4ce575",
+        "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "resource_estimate_basis": "Prior requestci018019 explicitlycancelled beforequery for wrong structured environment key; no sourcecompilefailure. First actualquery60s/16GiB."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "f68a84ab263b54b8076c06e76cf62a474845f796481cce76b6808d142e6d92fc",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-enrichment-v77-result.json",
+      "job_id": "ci-018030-c6413334",
+      "attempt_id": "attempt-47cced4af9fe",
+      "status": "succeeded",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "Source Basic99 enriched and exact proof-support values exported; target identity remains pending\n",
+      "stderr": "",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-native-identity-v75-20261116/queries/QuerySourceBasicEnrichment.lean"
+      ],
+      "diagnostics": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 9351434240
+        },
+        "cpu_time_seconds": 130.07,
+        "peak_rss_bytes": 9013485568,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 10.01,
+        "cpu_system_seconds": 120.06,
+        "wall_time_seconds": 129.8906567999984,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 8.394462585449219,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-native-identity-v75-20261116/queries/QuerySourceBasicEnrichment.lean"
+        },
+        "expected_duration": 150.0,
+        "expected_memory": 10737418240,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-enrichment-v77-47ff10ee38e80463"
+      },
+      "inputVersion": {
+        "head": "25af753e77604eafead40747f36ac970c836fb49",
+        "source_sha256": "47ff10ee38e80463fe2e8d20aadaf39f877613509290e99020a55e8c680d1263",
+        "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "resource_estimate_basis": "ci-018023 actual syntax failure: wall127.542s CPU126.62s peak RSS8688619520bytes; allow150s and10GiB, same import closure."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "41fc655153ac96db6f3573009af1d2e0f54498f7af4c3b3380049a5d7b4b5eca",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-native-comparison-v83-result.json",
+      "job_id": "ci-018123-164e66a9",
+      "attempt_id": "attempt-b5f774b4e018",
+      "status": "failed",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": ".local/adaptation/basic-native-identity-v75-20261116/queries/AuditBasicNativeComparison.lean:264:0: error: Full signature BinderInfo differs Iut.Tripod.deg_eq_finrank\n'AbcAdaptation.Tripod.tripodTheory' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "exit_code": 1,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-native-identity-v75-20261116/queries/AuditBasicNativeComparison.lean"
+      ],
+      "diagnostics": [
+        {
+          "path": ".local/adaptation/basic-native-identity-v75-20261116/queries/AuditBasicNativeComparison.lean",
+          "line": 264,
+          "column": 0,
+          "severity": "error",
+          "message": "Full signature BinderInfo differs Iut.Tripod.deg_eq_finrank"
+        }
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 8915415040
+        },
+        "cpu_time_seconds": 84.15,
+        "peak_rss_bytes": 5994930176,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 11.75,
+        "cpu_system_seconds": 72.4,
+        "wall_time_seconds": 84.22156819999873,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 5.583213806152344,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "review",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-native-identity-v75-20261116/queries/AuditBasicNativeComparison.lean"
+        },
+        "expected_duration": 60.0,
+        "expected_memory": 17179869184,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-native-comparison-v83-9f574157bac8-c152b208d468"
+      },
+      "inputVersion": {
+        "head": "25af753e77604eafead40747f36ac970c836fb49",
+        "source_sha256": "9f574157bac848e7b28bb91b9af6997a02cd9a7bda0ddab21cf096d41f0cad07",
+        "effective_compiler": "leanprover/lean4:v4.33.1",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "resource_estimate_basis": "First new leaf/review fixed60s/16GiB."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "5ea4f29ad244745a3362c5c70c04035efc7bc563e846049997e62a036a206ed8",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-native-comparison-v85-result.json",
+      "job_id": "ci-018227-33e713bb",
+      "attempt_id": "attempt-45d6f0c33762",
+      "status": "failed",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": ".local/adaptation/basic-native-identity-v75-20261116/queries/AuditBasicNativeComparison.lean:269:0: error: (kernel) application type mismatch\n  Ideal.absNorm\nargument has type\n  Infinite (NumberField.RingOfIntegers ↥(AbcAdaptation.Tripod.fieldOf ↑x))\nbut function has type\n  [Module.Free ℤ (NumberField.RingOfIntegers ↥(AbcAdaptation.Tripod.fieldOf ↑x))] →\n    Ideal (NumberField.RingOfIntegers ↥(AbcAdaptation.Tripod.fieldOf ↑x)) →*₀ ℕ\n'AbcAdaptation.Tripod.tripodTheory' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "exit_code": 1,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-native-identity-v75-20261116/queries/AuditBasicNativeComparison.lean"
+      ],
+      "diagnostics": [
+        {
+          "path": ".local/adaptation/basic-native-identity-v75-20261116/queries/AuditBasicNativeComparison.lean",
+          "line": 269,
+          "column": 0,
+          "severity": "error",
+          "message": "(kernel) application type mismatch"
+        }
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 5616279552
+        },
+        "cpu_time_seconds": 55.07,
+        "peak_rss_bytes": 5625401344,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 13.18,
+        "cpu_system_seconds": 41.89,
+        "wall_time_seconds": 61.172939099999894,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 5.239063262939453,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "review",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-native-identity-v75-20261116/queries/AuditBasicNativeComparison.lean"
+        },
+        "expected_duration": 120.0,
+        "expected_memory": 8589934592,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-native-comparison-v85-2c5ee42decdf-3ee1d91f4cb9"
+      },
+      "inputVersion": {
+        "head": "d8d233314eec9e78114c7a7b1c902262b6c321e1",
+        "source_sha256": "2c5ee42decdf981c5c6823bca433f5662f0194c954411c688779a35dd59103b8",
+        "effective_compiler": "leanprover/lean4:v4.33.1",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "resource_estimate_basis": "Previous ci-018123 fullTYPE audit84.22s/5994930176bytesRSS; exact3support internal-instance TYPE representation contracts add kernel equality checks. Expected120s/8GiB based on actual import/JSON cost;16GiB cap unchanged."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "7925e448cf21af6754b9d5bf12354f785a6a5c57aa867e4c50c48b9e24e39bc4",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-native-comparison-with-absnorm-v90-result.json",
+      "job_id": "ci-018235-32a3caf2",
+      "attempt_id": "attempt-783c91223f01",
+      "status": "failed",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": ".local/adaptation/basic-absnorm-normalization-v88-20261117/target/AuditBasicNativeComparison.lean:345:0: error: (deterministic) timeout at `transform`, maximum number of heartbeats (200000) has been reached\n\nNote: Use `set_option maxHeartbeats <num>` to set the limit.\n\nHint: Additional diagnostic information may be available using the `set_option diagnostics true` command.\n'AbcAdaptation.Tripod.tripodTheory' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "exit_code": 1,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-absnorm-normalization-v88-20261117/target/AuditBasicNativeComparison.lean"
+      ],
+      "diagnostics": [
+        {
+          "path": ".local/adaptation/basic-absnorm-normalization-v88-20261117/target/AuditBasicNativeComparison.lean",
+          "line": 345,
+          "column": 0,
+          "severity": "error",
+          "message": "(deterministic) timeout at `transform`, maximum number of heartbeats (200000) has been reached"
+        }
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 10352730112
+        },
+        "cpu_time_seconds": 116.79,
+        "peak_rss_bytes": 10356400128,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 21.28,
+        "cpu_system_seconds": 95.51,
+        "wall_time_seconds": 122.29353029999947,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 9.645149230957031,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "review",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-absnorm-normalization-v88-20261117/target/AuditBasicNativeComparison.lean"
+        },
+        "expected_duration": 150.0,
+        "expected_memory": 12884901888,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-native-comparison-with-absnorm-v90-9c2fa4c41d13-96a20a8abbe2"
+      },
+      "inputVersion": {
+        "head": "d8d233314eec9e78114c7a7b1c902262b6c321e1",
+        "source_sha256": "9c2fa4c41d13a292c9a079b38271d5241e2bd708acdc65521c7961895c82e9b7",
+        "effective_compiler": "leanprover/lean4:v4.33.1",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "resource_estimate_basis": "Same55comparison histories61-84s peak5.6-6.0GBRSS; actual source4normalization115s/9.14GB. New63MB verifiedsource certificate plus aggregate cached imports: expected150s/12GiB,16GiB actual acceptance cap unchanged."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "e0a5785d20215d0e7bf2fc6fefc3e24815f8b6ecb7f2f16fa0b8108abd921bcc",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-native-comparison-with-absnorm-v91-result.json",
+      "job_id": "ci-018249-e155dbdd",
+      "attempt_id": "attempt-f1e7d94990ff",
+      "status": "failed",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "",
+      "stderr": "libc++abi: terminating due to uncaught exception of type lean::exception: cannot evaluate `[init]` declaration '_private..local.adaptation.basic-absnorm-normalization-v88-20261117.target.AuditBasicNativeComparison.0.BasicNativeCompare.targetNormalizationCache' in the same module\n",
+      "exit_code": -6,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-absnorm-normalization-v88-20261117/target/AuditBasicNativeComparison.lean"
+      ],
+      "diagnostics": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 8973922304
+        },
+        "cpu_time_seconds": 101.38000000000001,
+        "peak_rss_bytes": 9170935808,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 5.62,
+        "cpu_system_seconds": 95.76,
+        "wall_time_seconds": 102.15822029999981,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 8.541099548339844,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "review",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-absnorm-normalization-v88-20261117/target/AuditBasicNativeComparison.lean"
+        },
+        "expected_duration": 150.0,
+        "expected_memory": 12884901888,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-native-comparison-with-absnorm-v91-a34c341d5f4c-96a20a8abbe2"
+      },
+      "inputVersion": {
+        "head": "d8d233314eec9e78114c7a7b1c902262b6c321e1",
+        "source_sha256": "a34c341d5f4c8c483f7a3d654d0fb55315ef03cfd06dc85fbe4856ffc1d7fd8c",
+        "effective_compiler": "leanprover/lean4:v4.33.1",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "resource_estimate_basis": "ci018235 measured122.29s/10356400128RSS and stoppedat200kheartbeat in transform. Four exact live targetnormalizations movedtofour independent run_metacommands withcached actualExpr andkernelcertificates, main55gatesunchanged, defaultheartbeats. Expected150s/12GiB;16GiB actualleafcapunchanged."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "530830e8e8205d9763d295a4768158d31cabf2f762d1baf71e10d1b1195e3668",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-native-comparison-with-absnorm-v92-result.json",
+      "job_id": "ci-018255-6b09f950",
+      "attempt_id": "attempt-e176d3eeb840",
+      "status": "failed",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": ".local/adaptation/basic-absnorm-normalization-v88-20261117/target/AuditBasicNativeComparison.lean:346:0: error: (kernel) unknown constant 'instIsTorsionFreeIntOfHasUniqueDiv'\n'AbcAdaptation.Tripod.tripodTheory' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "exit_code": 1,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-absnorm-normalization-v88-20261117/target/AuditBasicNativeComparison.lean"
+      ],
+      "diagnostics": [
+        {
+          "path": ".local/adaptation/basic-absnorm-normalization-v88-20261117/target/AuditBasicNativeComparison.lean",
+          "line": 346,
+          "column": 0,
+          "severity": "error",
+          "message": "(kernel) unknown constant 'instIsTorsionFreeIntOfHasUniqueDiv'"
+        }
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 13702950912
+        },
+        "cpu_time_seconds": 131.29,
+        "peak_rss_bytes": 10495946752,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 26.95,
+        "cpu_system_seconds": 104.34,
+        "wall_time_seconds": 131.2085380999997,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 9.77511215209961,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "review",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-absnorm-normalization-v88-20261117/target/AuditBasicNativeComparison.lean"
+        },
+        "expected_duration": 150.0,
+        "expected_memory": 12884901888,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-native-comparison-with-absnorm-v92-65070259614e-96a20a8abbe2"
+      },
+      "inputVersion": {
+        "head": "d8d233314eec9e78114c7a7b1c902262b6c321e1",
+        "source_sha256": "65070259614e7be732fd16d5685ed02d0f0a2c8f09b3616ae2869d08b0f4e01f",
+        "effective_compiler": "leanprover/lean4:v4.33.1",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "resource_estimate_basis": "ci018235 measured122.29s/10356400128RSS and default200kheartbeat at transform; attempted v91 commandsplitcache failed compiler same-moduleinit rule(exit-6), preserved. PerAGENTS finite firststep local1M onlyonthis metadata run_meta, producerproofsdefaultunchanged; expected150s/12GiB,16GiB physicalcap."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "ce5d5e3ea10549e0533911aa49a61af6e5278ee0dcf881ab0ab77e9a28930861",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-native-comparison-with-free-proof-v98-result.json",
+      "job_id": "ci-018396-b29fa0e0",
+      "attempt_id": "attempt-064d2c7174e2",
+      "status": "succeeded",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "Selected actual source/native declarations compared; any raw computational BinderInfo differences retained explicitly\n'AbcAdaptation.Tripod.tripodTheory' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-absnorm-normalization-v88-20261117/target/AuditBasicNativeComparison.lean"
+      ],
+      "diagnostics": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 17734221824
+        },
+        "cpu_time_seconds": 192.62,
+        "peak_rss_bytes": 11625476096,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 48.34,
+        "cpu_system_seconds": 144.28,
+        "wall_time_seconds": 192.46151629999986,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 10.827068328857422,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "review",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-absnorm-normalization-v88-20261117/target/AuditBasicNativeComparison.lean"
+        },
+        "expected_duration": 240.0,
+        "expected_memory": 12884901888,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-native-comparison-with-free-proof-v98-8569f215dbb1-52fd0e7de743"
+      },
+      "inputVersion": {
+        "head": "7ac49919f953cab635243732ddf7806eef42c9f8",
+        "source_sha256": "8569f215dbb144908ed92fe653c95400814c45a1436a2855a6e7c2cbd62add31",
+        "effective_compiler": "leanprover/lean4:v4.33.1",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "resource_estimate_basis": "ci018255 complete audit132s/RSS10495946752 stoppedunknownsourceAPI. Sourceci018381 actualsame-Prop proof normalization209.21s/RSS9179463680 supplies newverifiedinput; same full55mathgates and local1M metadata budget. Expected240s/12GiB,16GiB physicalcap; producerproofsdefaultunchanged."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "9ffa22763e463c501e2810f79fc02cce524baf4a056001d67b345c4b1d72b2da",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-native-inventory-v79-result.json",
+      "job_id": "ci-018054-6edd2f5a",
+      "attempt_id": "attempt-f90fb4d8b2cc",
+      "status": "failed",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": ".local/adaptation/basic-native-identity-v75-20261116/queries/QueryNativeBasicInventory.lean:300:9: error: unexpected token 'matches'; expected '(', ':=', '|', identifier or term\n",
+      "stderr": "",
+      "exit_code": 1,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-native-identity-v75-20261116/queries/QueryNativeBasicInventory.lean"
+      ],
+      "diagnostics": [
+        {
+          "path": ".local/adaptation/basic-native-identity-v75-20261116/queries/QueryNativeBasicInventory.lean",
+          "line": 300,
+          "column": 9,
+          "severity": "error",
+          "message": "unexpected token 'matches'; expected '(', ':=', '|', identifier or term"
+        }
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 13005705216
+        },
+        "cpu_time_seconds": 52.53,
+        "peak_rss_bytes": 5005844480,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 4.18,
+        "cpu_system_seconds": 48.35,
+        "wall_time_seconds": 52.394271399996796,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 4.662055969238281,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-native-identity-v75-20261116/queries/QueryNativeBasicInventory.lean"
+        },
+        "expected_duration": 60.0,
+        "expected_memory": 17179869184,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-native-inventory-v79-cd70670bb983-9ae9f29442d2"
+      },
+      "inputVersion": {
+        "head": "25af753e77604eafead40747f36ac970c836fb49",
+        "source_sha256": "cd70670bb983e524bf67fa6c43cda5ca7ac9451657057184a2b0dc869f78ace7",
+        "effective_compiler": "leanprover/lean4:v4.33.1",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "resource_estimate_basis": "First new leaf/review fixed60s/16GiB."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "30c56a30ac3ede8beb97fc29487b2ab94aef54514ee89ff45db643150229a49d",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-native-inventory-v80-result.json",
+      "job_id": "ci-018064-9dc35ebb",
+      "attempt_id": "attempt-86fd3936221b",
+      "status": "failed",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": ".local/adaptation/basic-native-identity-v75-20261116/queries/QueryNativeBasicInventory.lean:289:0: error: Unmapped support is not closed zero-universe Prop; actual data mapping required: AbcAdaptation.Reference.DiscrepancyLE\n",
+      "stderr": "",
+      "exit_code": 1,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-native-identity-v75-20261116/queries/QueryNativeBasicInventory.lean"
+      ],
+      "diagnostics": [
+        {
+          "path": ".local/adaptation/basic-native-identity-v75-20261116/queries/QueryNativeBasicInventory.lean",
+          "line": 289,
+          "column": 0,
+          "severity": "error",
+          "message": "Unmapped support is not closed zero-universe Prop; actual data mapping required: AbcAdaptation.Reference.DiscrepancyLE"
+        }
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 7879249920
+        },
+        "cpu_time_seconds": 86.03,
+        "peak_rss_bytes": 5010841600,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 39.53,
+        "cpu_system_seconds": 46.5,
+        "wall_time_seconds": 86.02004329999909,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 4.666709899902344,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-native-identity-v75-20261116/queries/QueryNativeBasicInventory.lean"
+        },
+        "expected_duration": 60.0,
+        "expected_memory": 6442450944,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-native-inventory-v80-85b11e0c8b6d-9ae9f29442d2"
+      },
+      "inputVersion": {
+        "head": "25af753e77604eafead40747f36ac970c836fb49",
+        "source_sha256": "85b11e0c8b6d4470040bb7a7117fa4d00b8675564367259df138fbefff9fa545",
+        "effective_compiler": "leanprover/lean4:v4.33.1",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "resource_estimate_basis": "ci-018054 measured52.394s wall,52.53sCPU,5005844480bytesRSS syntax failure; same query after only reserved keyword alpha rename,60s/6GiB."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "25de616ab1e6c70abdd39b3d7762ba8a3c99a7958243eb3a48cff7746b5d9be1",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-native-inventory-v82-result.json",
+      "job_id": "ci-018113-b7e5b46b",
+      "attempt_id": "attempt-07b6222461ba",
+      "status": "succeeded",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "Actual native Name components/data/metadata/proof support collected; correspondence not yet accepted\n",
+      "stderr": "",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-native-identity-v75-20261116/queries/QueryNativeBasicInventory.lean"
+      ],
+      "diagnostics": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 12188934144
+        },
+        "cpu_time_seconds": 86.00999999999999,
+        "peak_rss_bytes": 5200932864,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 40.28,
+        "cpu_system_seconds": 45.73,
+        "wall_time_seconds": 86.10170289999951,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 4.843746185302734,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-native-identity-v75-20261116/queries/QueryNativeBasicInventory.lean"
+        },
+        "expected_duration": 100.0,
+        "expected_memory": 6442450944,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-native-inventory-v82-70f0c5de1f33-9ae9f29442d2"
+      },
+      "inputVersion": {
+        "head": "25af753e77604eafead40747f36ac970c836fb49",
+        "source_sha256": "70f0c5de1f331340782420675f2d089f62c9bc0596fecc0bc864dde1161f23c7",
+        "effective_compiler": "leanprover/lean4:v4.33.1",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "resource_estimate_basis": "Previous ci-018064 measured86.02s wall/86.03sCPU/RSS5010841600. Revised seed roots limited to55 selected declaration values, all69 names still mapped; expected100s/6GiB based on actual import and collection history."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "f1216b1e255aad52c660596772435a5ba20767f022f43e513ccfeee640804218",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-source-artifact-v66-result.json",
+      "job_id": "ci-017977-3d8bc984",
+      "attempt_id": "attempt-bc9ab9676799",
+      "status": "succeeded",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "Iut/Tripod/Basic.lean:402:4: warning: `NumberField.finite_setOf_logHeight₁_le` has been deprecated: Use `NumberField.finite_setOfPred_logHeight₁_le` instead\n\nHint: Replace the deprecated name:\n  finite_setOfP̲r̲e̲d̲_logHeight₁_le\nIut/Tripod/Basic.lean:443:31: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead\n\nHint: Replace the deprecated name:\n  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵S̲e̲t̲.̲m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲\n",
+      "stderr": "",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Iut/Tripod/Basic.lean",
+        "-o",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/.lake/build/lib/lean/Iut/Tripod/Basic.olean"
+      ],
+      "diagnostics": [
+        {
+          "path": "Iut/Tripod/Basic.lean",
+          "line": 402,
+          "column": 4,
+          "severity": "warning",
+          "message": "`NumberField.finite_setOf_logHeight₁_le` has been deprecated: Use `NumberField.finite_setOfPred_logHeight₁_le` instead"
+        },
+        {
+          "path": "Iut/Tripod/Basic.lean",
+          "line": 443,
+          "column": 31,
+          "severity": "warning",
+          "message": "`Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead"
+        }
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 23334166528
+        },
+        "cpu_time_seconds": 126.19,
+        "peak_rss_bytes": 8297533440,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 7.6,
+        "cpu_system_seconds": 118.59,
+        "wall_time_seconds": 126.56899260000137,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 7.727680206298828,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "full",
+        "target": "module",
+        "parameters": {
+          "args": [
+            "Iut/Tripod/Basic.lean",
+            "-o",
+            "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/.lake/build/lib/lean/Iut/Tripod/Basic.olean"
+          ]
+        },
+        "expected_duration": 150.0,
+        "expected_memory": 12884901888,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-source-artifact-v66-dda22a23715da4fd"
+      },
+      "inputVersion": {
+        "head": "5af26c342544a52d659e6e02d32f64aa47e27b59",
+        "source_sha256": "dda22a23715da4fd97654c626c56dfe5da2dcab59ce673c6eac0f0b3ffbec21a",
+        "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "resource_estimate_basis": "ci017964 wall125.76s RSS8282726400B, only simp implicit-transparency issue in fixed-field Northcott proof; explicit change to equivalent image membership, full theorem unchanged."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "25e80ef0797ba83cd95cc93732dbfa965135cd81494d585c73bd51b8930ffe60",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-source-facts-v67-result.json",
+      "job_id": "ci-017982-9ada6a8c",
+      "attempt_id": "attempt-1a87dfd31079",
+      "status": "succeeded",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "Actual source Basic names/types/definition values exported; no target equivalence acceptance claimed\n",
+      "stderr": "",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-source-replay-v62-20261116/queries/QueryBasicSourceFacts.lean"
+      ],
+      "diagnostics": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 22688358400
+        },
+        "cpu_time_seconds": 140.86999999999998,
+        "peak_rss_bytes": 8864235520,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 9.2,
+        "cpu_system_seconds": 131.67,
+        "wall_time_seconds": 142.00900739999997,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 8.255462646484375,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-source-replay-v62-20261116/queries/QueryBasicSourceFacts.lean"
+        },
+        "expected_duration": 60.0,
+        "expected_memory": 17179869184,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-source-facts-v67-5f83f3fb87245d90"
+      },
+      "inputVersion": {
+        "head": "5af26c342544a52d659e6e02d32f64aa47e27b59",
+        "source_sha256": "248014aa407ec243640fbb0c0dbff47980cc35d447716f5b8605cc33719a0ef3",
+        "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "resource_estimate_basis": "First QueryBasicSourceFacts leaf fixed60s/16GiB"
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "502306b35ec2dc91dcf58c365d0ada70fc5b2a599c901e443d66c7ab5d06238f",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-source-leaf-v62-result.json",
+      "job_id": "ci-017960-ee3b6bfc",
+      "attempt_id": "attempt-7eaf74ae5588",
+      "status": "failed",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "Iut/Tripod/Basic.lean:6:0: error: object file '/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/basic-source-replay-v62-20261116/source-project/.lake/build/lib/lean/Iut/Cor312/ThetaData/Places.olean' of module Iut.Cor312.ThetaData.Places does not exist\n",
+      "stderr": "",
+      "exit_code": 1,
+      "actual_arguments": [
+        "lean",
+        "Iut/Tripod/Basic.lean"
+      ],
+      "diagnostics": [
+        {
+          "path": "Iut/Tripod/Basic.lean",
+          "line": 6,
+          "column": 0,
+          "severity": "error",
+          "message": "object file '/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/basic-source-replay-v62-20261116/source-project/.lake/build/lib/lean/Iut/Cor312/ThetaData/Places.olean' of module Iut.Cor312.ThetaData.Places does not exist"
+        }
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 15292940288
+        },
+        "cpu_time_seconds": 8.05,
+        "peak_rss_bytes": 419745792,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 0.32,
+        "cpu_system_seconds": 7.73,
+        "wall_time_seconds": 8.284602400002768,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 0.3909187316894531,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": "Iut/Tripod/Basic.lean"
+        },
+        "expected_duration": 60.0,
+        "expected_memory": 17179869184,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-source-leaf-v62-ef9ae664dc1d7702"
+      },
+      "inputVersion": {
+        "head": "5af26c342544a52d659e6e02d32f64aa47e27b59",
+        "source_sha256": "ef9ae664dc1d770221b7153f3ea3c8ab703183233657931b3d26cbbfac9566e4",
+        "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "resource_estimate_basis": "First original Basic leaf60s/16GiB;4.35 cached direct imports, no dependency cold build"
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "445dee3e529b086990e970faf8a4ed04cd4d59832ba82eb85948c6fe47efbebb",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-source-leaf-v64-result.json",
+      "job_id": "ci-017964-b965ae01",
+      "attempt_id": "attempt-c922d9a145f2",
+      "status": "failed",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "Iut/Tripod/Basic.lean:402:4: warning: `NumberField.finite_setOf_logHeight₁_le` has been deprecated: Use `NumberField.finite_setOfPred_logHeight₁_le` instead\n\nHint: Replace the deprecated name:\n  finite_setOfP̲r̲e̲d̲_logHeight₁_le\nIut/Tripod/Basic.lean:407:48: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead\n\nHint: Replace the deprecated name:\n  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵S̲e̲t̲.̲m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲\nIut/Tripod/Basic.lean:407:4: error: `simp` made no progress\n\nNote: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.\nFull error:\n  Application type mismatch: The argument\n    x\n  has type\n    Pt\n  but is expected to have type\n    { l // l ≠ 0 ∧ l ≠ 1 }\n  in the application\n    ↑x\nIut/Tripod/Basic.lean:442:31: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead\n\nHint: Replace the deprecated name:\n  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵S̲e̲t̲.̲m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲\n",
+      "stderr": "",
+      "exit_code": 1,
+      "actual_arguments": [
+        "lean",
+        "Iut/Tripod/Basic.lean"
+      ],
+      "diagnostics": [
+        {
+          "path": "Iut/Tripod/Basic.lean",
+          "line": 402,
+          "column": 4,
+          "severity": "warning",
+          "message": "`NumberField.finite_setOf_logHeight₁_le` has been deprecated: Use `NumberField.finite_setOfPred_logHeight₁_le` instead"
+        },
+        {
+          "path": "Iut/Tripod/Basic.lean",
+          "line": 407,
+          "column": 48,
+          "severity": "warning",
+          "message": "`Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead"
+        },
+        {
+          "path": "Iut/Tripod/Basic.lean",
+          "line": 407,
+          "column": 4,
+          "severity": "error",
+          "message": "`simp` made no progress"
+        },
+        {
+          "path": "Iut/Tripod/Basic.lean",
+          "line": 442,
+          "column": 31,
+          "severity": "warning",
+          "message": "`Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead"
+        }
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 12436549632
+        },
+        "cpu_time_seconds": 124.55999999999999,
+        "peak_rss_bytes": 8282726400,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 6.6,
+        "cpu_system_seconds": 117.96,
+        "wall_time_seconds": 125.76095480000004,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 7.713890075683594,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": "Iut/Tripod/Basic.lean"
+        },
+        "expected_duration": 160.0,
+        "expected_memory": 12884901888,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-source-leaf-v64-ef9ae664dc1d7702"
+      },
+      "inputVersion": {
+        "head": "5af26c342544a52d659e6e02d32f64aa47e27b59",
+        "source_sha256": "ef9ae664dc1d770221b7153f3ea3c8ab703183233657931b3d26cbbfac9566e4",
+        "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "resource_estimate_basis": "ci017960 import lookup failed8.28s before full loading. Reuse existing Iut namespace cache prefix; original4.35 sourceTYPE queries128-166s RSS8.2GiB, fullBasic23619bytes estimate160s/12GiB."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "98e396fdaf7bfc2c4732a2cece98d21afb53050ce192cf8e4dd9f8f4b7aa4549",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-source-leaf-v66-result.json",
+      "job_id": "ci-017973-c34e6745",
+      "attempt_id": "attempt-405037052112",
+      "status": "succeeded",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "Iut/Tripod/Basic.lean:402:4: warning: `NumberField.finite_setOf_logHeight₁_le` has been deprecated: Use `NumberField.finite_setOfPred_logHeight₁_le` instead\n\nHint: Replace the deprecated name:\n  finite_setOfP̲r̲e̲d̲_logHeight₁_le\nIut/Tripod/Basic.lean:443:31: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead\n\nHint: Replace the deprecated name:\n  S̵e̵t̵.̵m̵e̵m̵_̵s̵e̵t̵O̵f̵_̵e̵q̵S̲e̲t̲.̲m̲e̲m̲_̲o̲f̲P̲r̲e̲d̲_̲e̲q̲\n",
+      "stderr": "",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Iut/Tripod/Basic.lean"
+      ],
+      "diagnostics": [
+        {
+          "path": "Iut/Tripod/Basic.lean",
+          "line": 402,
+          "column": 4,
+          "severity": "warning",
+          "message": "`NumberField.finite_setOf_logHeight₁_le` has been deprecated: Use `NumberField.finite_setOfPred_logHeight₁_le` instead"
+        },
+        {
+          "path": "Iut/Tripod/Basic.lean",
+          "line": 443,
+          "column": 31,
+          "severity": "warning",
+          "message": "`Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead"
+        }
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 12795944960
+        },
+        "cpu_time_seconds": 133.15,
+        "peak_rss_bytes": 8300879872,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 7.25,
+        "cpu_system_seconds": 125.9,
+        "wall_time_seconds": 133.14714620000086,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          16,
+          17,
+          18,
+          19
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 7.730796813964844,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": "Iut/Tripod/Basic.lean"
+        },
+        "expected_duration": 150.0,
+        "expected_memory": 12884901888,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-source-leaf-v66-dda22a23715da4fd"
+      },
+      "inputVersion": {
+        "head": "5af26c342544a52d659e6e02d32f64aa47e27b59",
+        "source_sha256": "dda22a23715da4fd97654c626c56dfe5da2dcab59ce673c6eac0f0b3ffbec21a",
+        "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "resource_estimate_basis": "ci017964 wall125.76s RSS8282726400B, only simp implicit-transparency issue in fixed-field Northcott proof; explicit change to equivalent image membership, full theorem unchanged."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "a3ae6d0049da3f83713d87ef5d4f22b568a197fcc1b5088c7960f56d48967fa7",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-target-api-and-missing-inventory-v94-result.json",
+      "job_id": "ci-018298-2dc9fd19",
+      "attempt_id": "attempt-de17a7b4d926",
+      "status": "failed",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": ".local/adaptation/basic-torsion-api-v94-20261117/QueryTargetAPIAndExistence.lean:260:14: error: unexpected token ':='; expected '(', '_' or identifier\n",
+      "stderr": "",
+      "exit_code": 1,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-torsion-api-v94-20261117/QueryTargetAPIAndExistence.lean"
+      ],
+      "diagnostics": [
+        {
+          "path": ".local/adaptation/basic-torsion-api-v94-20261117/QueryTargetAPIAndExistence.lean",
+          "line": 260,
+          "column": 14,
+          "severity": "error",
+          "message": "unexpected token ':='; expected '(', '_' or identifier"
+        }
+      ],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 21247492096
+        },
+        "cpu_time_seconds": 177.88,
+        "peak_rss_bytes": 9203597312,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 8.95,
+        "cpu_system_seconds": 168.93,
+        "wall_time_seconds": 179.64797370000088,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 8.571517944335938,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-torsion-api-v94-20261117/QueryTargetAPIAndExistence.lean"
+        },
+        "expected_duration": 60.0,
+        "expected_memory": 17179869184,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-target-api-and-missing-inventory-v94-c6f27cfd3a00-9a305aee96dd"
+      },
+      "inputVersion": {
+        "head": "7ac49919f953cab635243732ddf7806eef42c9f8",
+        "source_sha256": "c6f27cfd3a004ea86a6789f8620f7ef6f39da91f0529ffdbfb00d53382a68e3b",
+        "effective_compiler": "leanprover/lean4:v4.33.1",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "resource_estimate_basis": "First new leaf/review fixed60s/16GiB."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "2c059d0452399663d32232794b569e5ae102735c405b4aaceaaa485985d6467d",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-target-api-and-missing-inventory-v95-result.json",
+      "job_id": "ci-018332-f836835f",
+      "attempt_id": "attempt-9e251009dff4",
+      "status": "succeeded",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-torsion-api-v94-20261117/QueryTargetAPIAndExistence.lean"
+      ],
+      "diagnostics": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 18986840064
+        },
+        "cpu_time_seconds": 225.13,
+        "peak_rss_bytes": 9207230464,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 8.54,
+        "cpu_system_seconds": 216.59,
+        "wall_time_seconds": 228.7237967000001,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 8.574901580810547,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-torsion-api-v94-20261117/QueryTargetAPIAndExistence.lean"
+        },
+        "expected_duration": 210.0,
+        "expected_memory": 10737418240,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-target-api-and-missing-inventory-v95-d4a7abe5b74c-9a305aee96dd"
+      },
+      "inputVersion": {
+        "head": "7ac49919f953cab635243732ddf7806eef42c9f8",
+        "source_sha256": "d4a7abe5b74cdb2f558815a9a0fb76a5512f7ab403341f19871625fe9811d3df",
+        "effective_compiler": "leanprover/lean4:v4.33.1",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "resource_estimate_basis": "ci018298 reached secondcommand reserved exists localvariable syntax at179.65s/RSS9203597312; onlyalpha rename topresent. Expected210s/10GiB,16GiB capunchanged."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "333553474b49a83f549c989f8095c124d281a2a5ef30088b0d2299623b9367e0",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-torsion-source-api-v94-result.json",
+      "job_id": "ci-018287-2bb06fd8",
+      "attempt_id": "attempt-ffa32cd2e241",
+      "status": "timeout",
+      "compiler": null,
+      "stdout": null,
+      "stderr": null,
+      "exit_code": null,
+      "actual_arguments": null,
+      "diagnostics": null,
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 14673453056
+        },
+        "cpu_total_equals_user_plus_system": null,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": null,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-torsion-api-v94-20261117/QuerySourceTorsionAPI.lean"
+        },
+        "expected_duration": 60.0,
+        "expected_memory": 17179869184,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-torsion-source-api-v94-2d6f5a1adc1d-446810c489f4"
+      },
+      "inputVersion": {
+        "head": "7ac49919f953cab635243732ddf7806eef42c9f8",
+        "source_sha256": "2d6f5a1adc1dc678914cb70dc4436aca3c4041b69882add82aa9d8a360f6e1c5",
+        "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "resource_estimate_basis": "New leaf first fixed60s/16GiB; reuse previously successful4.35Basic importer and cache without rebuilding dependencies."
+      },
+      "snapshot": {
+        "workspace_mode": null,
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "e7d168395ebbb2339f313b0d5ce1d12321d2c1512a3f4bb9cd4a73c8589f6f20",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/basic-torsion-source-api-v95-result.json",
+      "job_id": "ci-018317-f80d293f",
+      "attempt_id": "attempt-4112b299efd3",
+      "status": "succeeded",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/basic-torsion-api-v94-20261117/QuerySourceTorsionAPI.lean"
+      ],
+      "diagnostics": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 11626430464
+        },
+        "cpu_time_seconds": 195.35,
+        "peak_rss_bytes": 8728522752,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 9.0,
+        "cpu_system_seconds": 186.35,
+        "wall_time_seconds": 196.49803359999896,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          20,
+          21,
+          22,
+          23
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 8.129070281982422,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": ".local/adaptation/basic-torsion-api-v94-20261117/QuerySourceTorsionAPI.lean"
+        },
+        "expected_duration": 240.0,
+        "expected_memory": 12884901888,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-basic-torsion-source-api-v95-2d6f5a1adc1d-446810c489f4"
+      },
+      "inputVersion": {
+        "head": "7ac49919f953cab635243732ddf7806eef42c9f8",
+        "source_sha256": "2d6f5a1adc1dc678914cb70dc4436aca3c4041b69882add82aa9d8a360f6e1c5",
+        "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+        "resource_estimate_basis": "ci018287 source firsttimeout180s lowerbound; same query/cache, later target samefamilyexport179.65s/RSS9203597312, expected240s/12GiB physicalestimate;16GiB cap unchanged."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "f9247b19de172f676e85f2b037a1a6b2e05aabd47819f6c5c6df0ae34231685a",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/tripod-theory-artifact-v79-result.json",
+      "job_id": "ci-018050-c51863f6",
+      "attempt_id": "attempt-0b9bd2aa4fb1",
+      "status": "succeeded",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_Theory.lean",
+        "-o",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_Theory.olean"
+      ],
+      "diagnostics": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 6379855872
+        },
+        "cpu_time_seconds": 47.230000000000004,
+        "peak_rss_bytes": 4332167168,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.84,
+        "cpu_system_seconds": 44.39,
+        "wall_time_seconds": 47.44470480000018,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 4.034645080566406,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "full",
+        "target": "module",
+        "parameters": {
+          "args": [
+            "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_Theory.lean",
+            "-o",
+            ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_Theory.olean"
+          ]
+        },
+        "expected_duration": 60.0,
+        "expected_memory": 17179869184,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-tripod-theory-artifact-v79-a9e22491aabe"
+      },
+      "inputVersion": {
+        "head": "25af753e77604eafead40747f36ac970c836fb49",
+        "source_sha256": "a9e22491aabe84d68e3ea4c01b813dc0a2de106c85bf78d484b52b8dc668c5e6",
+        "effective_compiler": "leanprover/lean4:v4.33.1",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "resource_estimate_basis": "First new leaf/review fixed60s/16GiB."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "3c5fdd29869a02263c821abe1573c7935302aa5304f206e5e317e0ef855bf1ae",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/tripod-theory-leaf-v79-result.json",
+      "job_id": "ci-018046-08138ad2",
+      "attempt_id": "attempt-e697c432d7f2",
+      "status": "succeeded",
+      "compiler": {
+        "name": "lean",
+        "version": null
+      },
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0,
+      "actual_arguments": [
+        "lean",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_Theory.lean"
+      ],
+      "diagnostics": [],
+      "resources": {
+        "memory_decision": {
+          "worker_pressure": "normal",
+          "host_pressure": "normal",
+          "total_worker_bytes": 4107694080
+        },
+        "cpu_time_seconds": 41.19,
+        "peak_rss_bytes": 4226072576,
+        "peak_pss_bytes": null,
+        "cpu_user_seconds": 2.21,
+        "cpu_system_seconds": 38.98,
+        "wall_time_seconds": 41.86243359999935,
+        "allocated_cpu_count": 4,
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "affinity_applied": true,
+        "affinity_error": null,
+        "cpu_total_equals_user_plus_system": true,
+        "memory_basis": "MCP-CI process-tree physical RSS/PSS; bytes; missing values remain null",
+        "peak_rss_GiB": 3.9358367919921875,
+        "peak_pss_GiB": null,
+        "resource_source": null,
+        "resource_degraded": null,
+        "resource_source_missing_means_unknown": true
+      },
+      "request": {
+        "language": "lean",
+        "project_id": "ArithmeticTeichmullerSpaces",
+        "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+        "task_type": "leaf",
+        "target": "file",
+        "parameters": {
+          "source": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_Theory.lean"
+        },
+        "expected_duration": 60.0,
+        "expected_memory": 17179869184,
+        "session_id": "p2m-main-chain-open-20261116",
+        "agent_id": "/root",
+        "exclusive": true,
+        "idempotency_key": "p2m-tripod-theory-leaf-v79-a9e22491aabe"
+      },
+      "inputVersion": {
+        "head": "25af753e77604eafead40747f36ac970c836fb49",
+        "source_sha256": "a9e22491aabe84d68e3ea4c01b813dc0a2de106c85bf78d484b52b8dc668c5e6",
+        "effective_compiler": "leanprover/lean4:v4.33.1",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "resource_estimate_basis": "First new leaf/review fixed60s/16GiB."
+      },
+      "snapshot": {
+        "workspace_mode": "exclusive_worktree",
+        "snapshot_id": null,
+        "fingerprint": null
+      },
+      "fullReceiptSHA256": "011224a646d416f06bf447dd45ac766a40c07039990c3384ea19e686e7ffbced",
+      "fullInputManifestPreservedInVerifiedArchive": true
+    }
+  ],
+  "fullGeneratedHistoryPreservedInArchive": {
+    "archive": "prove2me_workspace/.local/adaptation/basic55-delivery-v98-20261117/basic55-evidence-v98.tar.gz",
+    "archiveSHA256": "68aa187961ca06610ec8ad99a7755c3bd2e8775c98d454e0aa71b4aa83979490",
+    "member": "files/tmp/p2m-archive-finish-v97-20261117/final-v98/ci-history.json",
+    "sha256": "0b5425b5800c3b279b4687e3fe9a6d79fa412d1bf4df2ecbc409cf627170ffdc"
+  }
+}

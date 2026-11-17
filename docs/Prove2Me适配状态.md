@@ -91,3 +91,4 @@
 - `AbcAdaptation_JoshiTeich_Prologue_Arithmetic_Basic`：`uniformizer`（待定：素元／一致化元／均匀化元）。
 - `AbcAdaptation_Reference_Genl_GeneralPosition_StatementII`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
 - `AbcAdaptation.Reference.Iut.statementII_of_cor312`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
+- `AbcAdaptation_Reference_Iut_Tripod_Theory`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
