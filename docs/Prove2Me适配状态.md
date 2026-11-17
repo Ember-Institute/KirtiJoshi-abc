@@ -94,3 +94,4 @@
 - `AbcAdaptation_Reference_Iut_Tripod_Theory`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
 - `AbcAdaptation.Tripod.statementII_bridge`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
 - `AbcAdaptation_Reference_Iut_Concrete_CurveData`：`uniformizer`（待定：素元／一致化元／均匀化元）。
+- `AbcAdaptation_Reference_Iut_Concrete_UniformizerSupply`：`uniformizer`（待定：素元／一致化元／均匀化元）。
