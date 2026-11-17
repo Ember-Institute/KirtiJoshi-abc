@@ -1,0 +1,69 @@
+{
+  "parentFinalEvidenceReady": true,
+  "theoremPayload": "theorem/payload-final.json",
+  "theoremPublication": "theorem/publish-result.json",
+  "theoremVerify": "theorem/verify-result.json",
+  "theoremGET": "theorem/proved-readback.json",
+  "definitionPayload": "definition/payload-final.json",
+  "definitionPublication": "definition/publish-result.json",
+  "definitionGET": "definition/published-item.json",
+  "definitionPublicationStatusField": "status",
+  "definitionPublicationExpectedStatus": "PUBLISHED",
+  "auditReport": "actual/generator-fourrole-correspondence.json",
+  "requiredJobs": [
+    {
+      "category": "canonical-leaf",
+      "jobId": "ci-018735-02f9ebbe",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-mem-fieldofextended-self-canonical-leaf-v157-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_mem_fieldOfExtended_self.lean"
+    },
+    {
+      "category": "canonical-artifact",
+      "jobId": "ci-018747-45fa1301",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-mem-fieldofextended-self-canonical-artifact-v157-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_mem_fieldOfExtended_self.lean"
+    },
+    {
+      "category": "solution-leaf",
+      "jobId": "ci-018761-a3657ec5",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-curveof-generator-v157-20261117/mem-fieldofextended-self-solution-leaf-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Sol_AbcAdaptation_Tripod_mem_fieldOfExtended_self.lean"
+    },
+    {
+      "category": "solution-artifact",
+      "jobId": "ci-018789-6a86990c",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-mem-fieldofextended-self-solution-artifact-v160-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Sol_AbcAdaptation_Tripod_mem_fieldOfExtended_self.lean"
+    },
+    {
+      "category": "generator-leaf",
+      "jobId": "ci-018793-99eab32b",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-curveof-generator-definition-leaf-v161-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveOfGenerator.lean"
+    },
+    {
+      "category": "generator-artifact",
+      "jobId": "ci-018797-2ca95d6d",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-curveof-generator-definition-artifact-v161-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveOfGenerator.lean"
+    },
+    {
+      "category": "four-role-review",
+      "jobId": "ci-018802-15b04e72",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-curveof-generator-fourrole-review-v164-result.json"
+    }
+  ],
+  "mandatoryProjectGates": {
+    "jobId": "ci-018804-1111c066",
+    "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-generator-required-project-gates-review-v165-result.json",
+    "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-curveof-generator-review-v161-20261117/RequiredProjectGatesV165.lean",
+    "covers": [
+      "Checks",
+      "ImportAudit",
+      "Act1Scene1",
+      "AxiomAudit",
+      "new-membership-generator-standard-axioms"
+    ]
+  },
+  "parentFinalAcceptanceSignal": "root message: theorem final Proved; definition df14b784-2e17-4f80-a69b-47b96ebf62c9 private exact GET; finalize authorized"
+}
