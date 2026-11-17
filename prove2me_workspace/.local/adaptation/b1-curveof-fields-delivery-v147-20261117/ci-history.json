@@ -1,0 +1,144 @@
+{
+  "schema": "B1-CurveOfFieldsData-ci-history/v147",
+  "attempts": [
+    {
+      "label": "b1-curveof-fields-data-leaf-v143",
+      "jobId": "ci-018675-3257fd8e",
+      "status": "succeeded",
+      "exitCode": 0,
+      "inputSHA256": "1059298677f34f4adbaf7233a40e2363dcf9343945a8a139c7a0c5252bb1df4a",
+      "exclusive": true,
+      "workspaceMode": "exclusive_worktree",
+      "snapshotId": null,
+      "actualArguments": [
+        "lean",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveOfFieldsData.lean"
+      ],
+      "resources": {
+        "wall_time_seconds": 45.954346200000145,
+        "cpu_time_seconds": 45.24,
+        "cpu_user_seconds": 2.14,
+        "cpu_system_seconds": 43.1,
+        "peak_rss_bytes": 4231184384,
+        "peak_pss_bytes": null
+      },
+      "receiptMember": "ci/b1-curveof-fields-data-leaf-v143-result.json",
+      "receiptSHA256": "34fc833d9713092767b5081f1ffc44c480b4cf99b9ec82dbb9c0c252171c1a43",
+      "diagnostics": []
+    },
+    {
+      "label": "b1-curveof-fields-data-artifact-v143",
+      "jobId": "ci-018678-bbc468c8",
+      "status": "succeeded",
+      "exitCode": 0,
+      "inputSHA256": "1059298677f34f4adbaf7233a40e2363dcf9343945a8a139c7a0c5252bb1df4a",
+      "exclusive": true,
+      "workspaceMode": "exclusive_worktree",
+      "snapshotId": null,
+      "actualArguments": [
+        "lean",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveOfFieldsData.lean",
+        "-o",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveOfFieldsData.olean"
+      ],
+      "resources": {
+        "wall_time_seconds": 56.91535269999804,
+        "cpu_time_seconds": 56.56,
+        "cpu_user_seconds": 2.67,
+        "cpu_system_seconds": 53.89,
+        "peak_rss_bytes": 4354981888,
+        "peak_pss_bytes": null
+      },
+      "receiptMember": "ci/b1-curveof-fields-data-artifact-v143-result.json",
+      "receiptSHA256": "5a08d411e28aa343927b222e7c2083987a5b54706f4d4167cea958640178e6fc",
+      "diagnostics": []
+    },
+    {
+      "label": "b1-curveof-fields-native-facts-v144",
+      "jobId": "ci-018679-4f454000",
+      "status": "failed",
+      "exitCode": 1,
+      "inputSHA256": "4ddf5b3a5b0ab04b709aed2aa526639b69b10121052384ea938f061f37c4c54e",
+      "exclusive": true,
+      "workspaceMode": "exclusive_worktree",
+      "snapshotId": null,
+      "actualArguments": [
+        "lean",
+        ".local/adaptation/b1-curveof-fields-v144-20261117/QueryCurveOfFieldsNativeActualFactsV144.lean"
+      ],
+      "resources": {
+        "wall_time_seconds": 53.649539499998355,
+        "cpu_time_seconds": 53.510000000000005,
+        "cpu_user_seconds": 3.59,
+        "cpu_system_seconds": 49.92,
+        "peak_rss_bytes": 5022588928,
+        "peak_pss_bytes": null
+      },
+      "receiptMember": "ci/b1-curveof-fields-native-facts-v144-result.json",
+      "receiptSHA256": "f869953986187e140eb8b359fd5e205fc7b697e1b6670add65175bc5cf42d7fa",
+      "diagnostics": [
+        {
+          "path": ".local/adaptation/b1-curveof-fields-v144-20261117/QueryCurveOfFieldsNativeActualFactsV144.lean",
+          "line": 328,
+          "column": 0,
+          "severity": "error",
+          "message": "Missing environment variable B1_LEGENDRE_PLATFORM_NATIVE_FACTS_CONFIG"
+        }
+      ]
+    },
+    {
+      "label": "b1-curveof-fields-native-facts-v145",
+      "jobId": "ci-018681-f899caf7",
+      "status": "succeeded",
+      "exitCode": 0,
+      "inputSHA256": "d7a43cbcd82d483c6a81e5fddd911d9dd464a7310c5e5bc934de73f4cc29ba36",
+      "exclusive": true,
+      "workspaceMode": "exclusive_worktree",
+      "snapshotId": null,
+      "actualArguments": [
+        "lean",
+        ".local/adaptation/b1-curveof-fields-v144-20261117/QueryCurveOfFieldsNativeActualFactsV145.lean"
+      ],
+      "resources": {
+        "wall_time_seconds": 89.58811839999908,
+        "cpu_time_seconds": 90.1,
+        "cpu_user_seconds": 38.01,
+        "cpu_system_seconds": 52.09,
+        "peak_rss_bytes": 5039349760,
+        "peak_pss_bytes": null
+      },
+      "receiptMember": "ci/b1-curveof-fields-native-facts-v145-result.json",
+      "receiptSHA256": "237336f79ca192a3c728eec966dde6f09084291be2dd69b75b30ca7c85f38ce8",
+      "diagnostics": []
+    },
+    {
+      "label": "b1-curveof-fields-thirteen-review-v146",
+      "jobId": "ci-018685-9adc9889",
+      "status": "succeeded",
+      "exitCode": 0,
+      "inputSHA256": "d5c01992c7548226e342fb1ae1726732d34318633a39fe4489f017cd56a3cd00",
+      "exclusive": true,
+      "workspaceMode": "exclusive_worktree",
+      "snapshotId": null,
+      "actualArguments": [
+        "lean",
+        ".local/adaptation/b1-curveof-fields-review-v146-20261117/AuditCurveOfFieldsThirteenCorrespondenceV144.lean"
+      ],
+      "resources": {
+        "wall_time_seconds": 57.48348790000091,
+        "cpu_time_seconds": 57.91,
+        "cpu_user_seconds": 4.62,
+        "cpu_system_seconds": 53.29,
+        "peak_rss_bytes": 5043150848,
+        "peak_pss_bytes": null
+      },
+      "receiptMember": "ci/b1-curveof-fields-thirteen-review-v146-result.json",
+      "receiptSHA256": "7103bc204a9d1d7f1c7e42af6ce7d9694a5ea24cbe9711d358f38a73f4666420",
+      "diagnostics": []
+    }
+  ],
+  "failureCause": "First native query driver used wrong environment/label; corrected driver retry retained. Mathematical definition unchanged.",
+  "reviewAccepted": true,
+  "sourceTypeValueProofGatesWeakened": false,
+  "resourceSource": "MCP-CI process-tree physical RSS/PSS; null means unknown"
+}
