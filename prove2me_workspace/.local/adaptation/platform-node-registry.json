@@ -8510,6 +8510,14 @@
         "visibility": "private",
         "source_unit": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/basic55-delivery-v98-20261117",
         "root_graph_membership": false
+      },
+      {
+        "name": "AbcAdaptation_Reference_Iut_Concrete_EllipticCurveData",
+        "id": "128a161b-7867-4648-928c-b4869d8226f1",
+        "status": "PUBLISHED",
+        "visibility": "private",
+        "source_unit": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-existing-and-elliptic-delivery-v123-20261117",
+        "root_graph_membership": false
       }
     ],
     "proved_nodes": [
@@ -11606,6 +11614,95 @@
         "rootProofReexported": false,
         "rootProofKernelAuditReused": true
       }
+    },
+    "b1_existing_four_native_correspondence": {
+      "status": "ACCEPTED_COMPLETE_TYPE_AND_VALUE",
+      "selectedCount": 4,
+      "names": [
+        "Iut.finHeight",
+        "Iut.legendreJ",
+        "Iut.Tripod.instFiniteDimensionalRatSubtypeQbarMemIntermediateFieldFieldOf",
+        "Iut.Tripod.instNumberFieldSubtypeQbarMemIntermediateFieldRatOfFiniteDimensional"
+      ],
+      "actualReviewJob": "ci-018574-8f1900b3",
+      "actualReview": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-existing-four-v115-20261117/actual/existing-four-correspondence-audit.json",
+      "fullTYPEValueKernelChecked": true,
+      "allFourCompleteSignatureBinderInfoEqual": true,
+      "allFourRawValueBinderInfoEqual": true,
+      "standardAxiomsOnly": true,
+      "newAssumptionsIntroduced": false,
+      "completeB1RootAccepted": false,
+      "evidenceDirectory": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-existing-and-elliptic-delivery-v123-20261117",
+      "rootGraphMembership": false
+    },
+    "b1_auxiliary_height_actual_rhs_consumer": {
+      "status": "ACCEPTED_FORMULA_CONSUMER",
+      "sourceRoot": "Iut.Tripod.h_eq_finHeight_div",
+      "targetConsumer": "AbcAdaptation.Tripod.auxiliaryHeight",
+      "actualReviewJob": "ci-018585-68477f51",
+      "actualReview": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-auxiliary-height-v118-20261117/actual/auxiliary-height-actual-rhs-audit.json",
+      "actualSourceTYPEOuterExplicitBinders": [
+        "P",
+        "x"
+      ],
+      "sourceRHSLambdaIndependentOfP": true,
+      "completeValueKernelEqual": true,
+      "strictCompletePublicTYPEBinderInfoEqual": true,
+      "rawValueBinderInfoEqual": false,
+      "rawDifferenceRetained": true,
+      "wholeSourceAuxiliaryHeightConstantMappingClaimed": false,
+      "mathematicalParentClosed": false,
+      "evidenceDirectory": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-existing-and-elliptic-delivery-v123-20261117",
+      "rootGraphMembership": false
+    },
+    "b1_elliptic_curve_data_definition": {
+      "status": "ACCEPTED_DATA_DEFINITION",
+      "name": "AbcAdaptation_Reference_Iut_Concrete_EllipticCurveData",
+      "targetName": "AbcAdaptation.Reference.Iut.EllipticCurveData",
+      "canonical": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_EllipticCurveData.lean",
+      "canonicalSha256": "d7a508ee8ee7326729dc4f479ef861e9f4999ae9c6a130842092aeedf9558519",
+      "sourceSelectedActualDeclarations": 12,
+      "structureFields": 9,
+      "instanceProjections": 6,
+      "fullProjectionValuesCompared": 9,
+      "recursorRulesCompared": 1,
+      "sourceSamePropOccurrencesNormalized": 5,
+      "sourceFullNormalizationCertificates": 22,
+      "sourceNormalizationJob": "ci-018593-9e3321fb",
+      "nativeFactsJob": "ci-018587-63f4d1a8",
+      "actualReviewJob": "ci-018597-7df8415e",
+      "actualReview": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-bare-normalized-review-v121-20261117/actual/bare-normalized-correspondence-audit.json",
+      "leafJob": "ci-018579-d56d4dd3",
+      "artifactJob": "ci-018581-18c6446f",
+      "standardAxiomsOnly": true,
+      "newAssumptionsIntroduced": false,
+      "nonPropositionalDataReplacementUsed": false,
+      "publication": {
+        "id": "128a161b-7867-4648-928c-b4869d8226f1",
+        "name": "AbcAdaptation_Reference_Iut_Concrete_EllipticCurveData",
+        "status": "PUBLISHED",
+        "visibility": "private",
+        "readback": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-elliptic-publication-v121-20261117/published-item.json",
+        "receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-elliptic-publication-v121-20261117/publish-result.json",
+        "journal": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-elliptic-publication-v121-20261117/publish-journal.json",
+        "all_payload_fields_exact": true
+      },
+      "independentReadback": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-elliptic-publication-v121-20261117/independent-readback/metadata.json",
+      "paperContext": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-elliptic-publication-v121-20261117/paper-context.json",
+      "sourceConsumers": [
+        "Iut.Tripod.curveOf",
+        "Iut.Tripod.CurveProviders.curve",
+        "Iut.EllipticCurveData.localHeightData"
+      ],
+      "targetSourceConsumersPending": true,
+      "allGeneratedDeclarationsCompared": false,
+      "completeB1RootAccepted": false,
+      "Height603FirstClassOpen": true,
+      "mathematicalParentClosed": false,
+      "S2_04Completed": false,
+      "evidenceDirectory": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-existing-and-elliptic-delivery-v123-20261117",
+      "sourceLedger": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-existing-and-elliptic-delivery-v123-20261117/SOURCE_LEDGER.json",
+      "rootGraphMembership": false
     }
   },
   "rational_case_source_split_unit": {
