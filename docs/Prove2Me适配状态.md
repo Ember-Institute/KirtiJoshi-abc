@@ -92,3 +92,4 @@
 - `AbcAdaptation_Reference_Genl_GeneralPosition_StatementII`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
 - `AbcAdaptation.Reference.Iut.statementII_of_cor312`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
 - `AbcAdaptation_Reference_Iut_Tripod_Theory`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
+- `AbcAdaptation.Tripod.statementII_bridge`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。

@@ -1,0 +1,130 @@
+{
+  "schema": "StatementII-closed-native-ci-history/v105",
+  "attempts": [
+    {
+      "jobId": "ci-018491-d9ab417b",
+      "status": "failed",
+      "exitCode": 1,
+      "inputSHA256": "7fd78c695c46ba83ad1bf5174f32d42b732a7e90245b86ea8217f5ff763137d7",
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspaceMode": "exclusive_worktree",
+      "snapshotId": null,
+      "exclusive": true,
+      "actualArguments": [
+        "lean",
+        ".local/adaptation/statementii-native-audit-v101-20261117/queries/QueryNativeStatementIIAudit.lean"
+      ],
+      "resources": {
+        "wall_time_seconds": 62.42863790000047,
+        "cpu_time_seconds": 63.04,
+        "cpu_user_seconds": 5.03,
+        "cpu_system_seconds": 58.01,
+        "peak_rss_bytes": 5019676672,
+        "peak_pss_bytes": null
+      },
+      "resourceSource": "MCP-CI receipt process-tree physical RSS; PSS unknown (null), degraded flag absent/unknown",
+      "review": {
+        "passed": true,
+        "checks": {
+          "no_sorryAx": true,
+          "assumptions_reported": true
+        }
+      },
+      "receipt": {
+        "archive": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/statementii-native-delivery-v105-20261117/statementii-closed-native-evidence-v105.tar.gz",
+        "archiveSHA256": "0946bae79c53b2018bc704d578e10e36a623310c66915f4e96000e3257974e12",
+        "member": "ci/statementii-native-full-dynamic-audit-v101-result.json",
+        "memberSHA256": "bb246d4e1081d5dce287169cd7a05c7e31ea76cd8d78f3dc964335668d8663dd",
+        "jsonPointer": ""
+      }
+    },
+    {
+      "jobId": "ci-018506-8f6104c5",
+      "status": "succeeded",
+      "exitCode": 0,
+      "inputSHA256": "32e6165fc63243999f5f51a6a64f773329516670557fa0f996bdbde5e2fbdb6b",
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspaceMode": "exclusive_worktree",
+      "snapshotId": null,
+      "exclusive": true,
+      "actualArguments": [
+        "lean",
+        ".local/adaptation/statementii-native-audit-v101-20261117/queries/QueryNativeStatementIIAudit.lean"
+      ],
+      "resources": {
+        "wall_time_seconds": 78.99032349999834,
+        "cpu_time_seconds": 79.29,
+        "cpu_user_seconds": 10.4,
+        "cpu_system_seconds": 68.89,
+        "peak_rss_bytes": 5170802688,
+        "peak_pss_bytes": null
+      },
+      "resourceSource": "MCP-CI receipt process-tree physical RSS; PSS unknown (null), degraded flag absent/unknown",
+      "review": {
+        "passed": true,
+        "checks": {
+          "no_sorryAx": true,
+          "assumptions_reported": true
+        }
+      },
+      "receipt": {
+        "archive": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/statementii-native-delivery-v105-20261117/statementii-closed-native-evidence-v105.tar.gz",
+        "archiveSHA256": "0946bae79c53b2018bc704d578e10e36a623310c66915f4e96000e3257974e12",
+        "member": "ci/statementii-native-full-dynamic-audit-v103-result.json",
+        "memberSHA256": "cd4f84b0c3e0920e605d0a509c46d6f115d19ae069d153ed522b88498591231a",
+        "jsonPointer": ""
+      }
+    }
+  ],
+  "failedQueryDiagnostics": [
+    {
+      "path": ".local/adaptation/statementii-native-audit-v101-20261117/queries/QueryNativeStatementIIAudit.lean",
+      "line": 243,
+      "column": 17,
+      "severity": "error",
+      "message": "Type mismatch"
+    },
+    {
+      "path": ".local/adaptation/statementii-native-audit-v101-20261117/queries/QueryNativeStatementIIAudit.lean",
+      "line": 401,
+      "column": 71,
+      "severity": "error",
+      "message": "Nested action `← checked (field r \"nameExpr\")` must be nested inside a `do` expression."
+    },
+    {
+      "path": ".local/adaptation/statementii-native-audit-v101-20261117/queries/QueryNativeStatementIIAudit.lean",
+      "line": 480,
+      "column": 17,
+      "severity": "error",
+      "message": "Type mismatch"
+    }
+  ],
+  "correction": {
+    "scope": "same-file actual private Name lookup via double quotation and MetaM mkConstWithFreshMVarLevels; sourceName and actualTargetRows mapM do fixes; #print axioms output only",
+    "mathematicalReplayChanged": false,
+    "sourceFullTypeProofDataAuxiliaryGatesWeakened": false,
+    "legacyRelocationByteIdentical": true,
+    "patch": {
+      "archive": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/statementii-native-delivery-v105-20261117/statementii-closed-native-evidence-v105.tar.gz",
+      "archiveSHA256": "0946bae79c53b2018bc704d578e10e36a623310c66915f4e96000e3257974e12",
+      "member": "native-unit/query-api-fix-v102.patch",
+      "memberSHA256": "1688e60b2f92ae6ca6e1c1882c162b26f888f48bc7c6e8d25a15cc6fc1bfb923",
+      "jsonPointer": ""
+    },
+    "failedSource": {
+      "archive": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/statementii-native-delivery-v105-20261117/statementii-closed-native-evidence-v105.tar.gz",
+      "archiveSHA256": "0946bae79c53b2018bc704d578e10e36a623310c66915f4e96000e3257974e12",
+      "member": "native-unit/history-v101/QueryNativeStatementIIAudit.lean",
+      "memberSHA256": "7fd78c695c46ba83ad1bf5174f32d42b732a7e90245b86ea8217f5ff763137d7",
+      "jsonPointer": ""
+    },
+    "acceptedSource": {
+      "archive": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/statementii-native-delivery-v105-20261117/statementii-closed-native-evidence-v105.tar.gz",
+      "archiveSHA256": "0946bae79c53b2018bc704d578e10e36a623310c66915f4e96000e3257974e12",
+      "member": "native-unit/queries/QueryNativeStatementIIAudit.lean",
+      "memberSHA256": "32e6165fc63243999f5f51a6a64f773329516670557fa0f996bdbde5e2fbdb6b",
+      "jsonPointer": ""
+    }
+  },
+  "noNewCIOrAPICallsByArchiver": true
+}
