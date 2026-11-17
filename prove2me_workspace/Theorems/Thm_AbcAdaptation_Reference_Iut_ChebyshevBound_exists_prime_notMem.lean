@@ -43,9 +43,16 @@ open Finset Real
 
 
 
+lemma thetaSet_nonneg (A : Finset ℕ) : 0 ≤ thetaSet A :=
+  Finset.sum_nonneg fun p _ => by
+    rcases Nat.eq_zero_or_pos p with h | h
+    · simp [h]
+    · exact Real.log_nonneg (by exact_mod_cast h)
 
-
-
+lemma log_natCast_nonneg (p : ℕ) : 0 ≤ Real.log p := by
+  rcases Nat.eq_zero_or_pos p with h | h
+  · simp [h]
+  · exact Real.log_nonneg (by exact_mod_cast h)
 
 
 
@@ -96,4 +103,26 @@ variable (cheb : ChebyshevBound)
 
 theorem AbcAdaptation.Reference.Iut.ChebyshevBound.exists_prime_notMem (A : Finset ℕ) :
     ∃ p : ℕ, p.Prime ∧ p ∉ A ∧ (p : ℝ) ≤ 2 * (thetaSet A + cheb.ξ) := by
-  sorry
+  set x : ℝ := 2 * (thetaSet A + cheb.ξ) with hx
+  have hξ : 0 < cheb.ξ := by linarith [cheb.five_le]
+  have hxξ : cheb.ξ ≤ x := by rw [hx]; linarith [thetaSet_nonneg A]
+  have hlow := cheb.lower x hxξ
+  by_contra hcon
+  push Not at hcon
+  -- every prime `≤ x` lies in `A`, so `θ(x) ≤ θ_A`
+  have hsub : Nat.primesLE ⌊x⌋₊ ⊆ A := by
+    intro p hp
+    have hp' : p ∈ Nat.primesBelow (⌊x⌋₊ + 1) := hp
+    rw [Nat.mem_primesBelow] at hp'
+    have hple : (p : ℝ) ≤ x := by
+      have h1 : p ≤ ⌊x⌋₊ := by omega
+      calc (p : ℝ) ≤ ⌊x⌋₊ := by exact_mod_cast h1
+        _ ≤ x := Nat.floor_le (by linarith)
+    by_contra hpA
+    exact absurd hple (not_le.mpr (hcon p hp'.2 hpA))
+  have hθ : Chebyshev.theta x ≤ thetaSet A := by
+    rw [Chebyshev.theta_eq_sum_primesLE]
+    exact Finset.sum_le_sum_of_subset_of_nonneg hsub fun p _ _ => AbcAdaptation.Reference.Iut.log_natCast_nonneg p
+  -- but `θ(x) ≥ (2/3)x = (4/3)(θ_A + ξ) > θ_A`
+  have : 2 / 3 * x = 4 / 3 * (thetaSet A + cheb.ξ) := by rw [hx]; ring
+  linarith [thetaSet_nonneg A]

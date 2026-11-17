@@ -94,4 +94,12 @@ open Finset Real
 
 theorem AbcAdaptation.Reference.Iut.sum_log_primeFactors_le (n : ℕ) (hn : n ≠ 0) :
     ∑ p ∈ n.primeFactors, Real.log p ≤ Real.log n := by
-  sorry
+  have hne : ∀ p ∈ n.primeFactors, (p : ℝ) ≠ 0 := fun p hp => by
+    exact_mod_cast (Nat.prime_of_mem_primeFactors hp).ne_zero
+  rw [← Real.log_prod hne]
+  apply Real.log_le_log
+  · exact Finset.prod_pos fun p hp => by
+      exact_mod_cast (Nat.prime_of_mem_primeFactors hp).pos
+  · have := Nat.prod_primeFactors_dvd n
+    rw [← Nat.cast_prod]
+    exact_mod_cast Nat.le_of_dvd (Nat.pos_of_ne_zero hn) this
