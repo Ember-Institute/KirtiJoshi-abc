@@ -1,0 +1,71 @@
+{
+  "schema": "B1-source-only-compact-ledger/v110",
+  "status": "ACCEPTED_SOURCE_REPLAY_AND_ROOT_FACTS",
+  "sourceOnly": true,
+  "sourceSHA256": "b839c7b89a0d79908151a08dd020c8878f6db640393d5c67b44bb835a09ddb2c",
+  "sourceModule": "B1SourceReplay",
+  "sourceDeclarationCount": 132,
+  "sourceModuleCount": 14,
+  "originalCommandCount": 281,
+  "proofOnlyCompatibilityEdits": 5,
+  "changedProofCommandCount": 4,
+  "Height77ProofBytes": 1124,
+  "Height77ProofUnchanged": true,
+  "root": "Iut.Tripod.h_eq_finHeight_div",
+  "actualFacts": {
+    "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/actual/root-source-facts-v106.json",
+    "sha256": "c0007f077aa8b0541aff158c753a7b62d404184d3b344851379ccb63aa1478a9",
+    "bytes": 77707930,
+    "archiveMember": "files/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/actual/root-source-facts-v106.json",
+    "rawJSONCopiedOutsideArchive": false
+  },
+  "actualTYPE": {
+    "display": "∀ (P : Iut.Tripod.CurveProviders) (x : Iut.Tripod.Pt),\n  P.h x = Iut.finHeight (Iut.legendreJ (Iut.Tripod.gen ↑x)) / ↑(Iut.Tripod.deg ↑x)",
+    "levelParams": [],
+    "binders": [
+      {
+        "typeDisplay": "Iut.Tripod.CurveProviders",
+        "name": "P",
+        "binderInfo": "default"
+      },
+      {
+        "typeDisplay": "Iut.Tripod.Pt",
+        "name": "x",
+        "binderInfo": "default"
+      }
+    ],
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "hasSorryAx": false,
+    "kernelProofTypeMatchesActualTYPE": true,
+    "kernelInferredTypeStructurallyEqual": false
+  },
+  "producerConsumers": [
+    {
+      "producer": "original14module AST commands",
+      "consumer": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "fidelity": "132 source declarations replayed; five proof-only compatibility edits across four commands; original Height77 proof preserved"
+    },
+    {
+      "producer": "B1SourceReplay.Iut.Tripod.h_eq_finHeight_div",
+      "consumer": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/actual/root-source-facts-v106.json#/root",
+      "fidelity": "actual closed source TYPE/proof and direct dependency facts; kernel proof TYPE matches actual TYPE; raw inferred TYPE structural equality false retained",
+      "targetConsumer": null
+    }
+  ],
+  "leafJob": "ci-018534-6a278498",
+  "artifactJob": "ci-018538-2c5490b3",
+  "actualRootFactsJob": "ci-018542-4dae4da4",
+  "readback": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-delivery-v110-20261117/readback.tar.gz",
+  "originalEnglishReadbackPreserved": true,
+  "v109CompiledTYPEAddendumSeparate": true,
+  "fullCarrierClosureExported": false,
+  "nativeTargetComparisonAccepted": false,
+  "targetWrapperCreated": false,
+  "platformPublished": false,
+  "Height603FirstClassOpen": true,
+  "mathematicalParentClosed": false
+}
