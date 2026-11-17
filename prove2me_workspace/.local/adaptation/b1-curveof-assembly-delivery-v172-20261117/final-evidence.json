@@ -1,0 +1,110 @@
+{
+  "parentFinalEvidenceReady": true,
+  "baselineHEAD": "68f2b2be",
+  "publicationDirectory": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-curveof-assembly-publication-v180-20261117",
+  "nativeAuditDirectory": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-curveof-native-review-v175-20261117",
+  "freshBlindDirectory": "/tmp/p2m-b1-curveof-assembly-fresh-blind-v174-20261117",
+  "freshBlindAudit": "manifest.json",
+  "resolvedReference": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-curveof-assembly-v167-20261117/ref-probe/actual-resolved-ref.json",
+  "referenceRewrite": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-curveof-assembly-v167-20261117/verified-reference-rewrite.json",
+  "nativeInventory": "actual/native-inventory.json",
+  "nativeReview": "curveof-native-review.json",
+  "definitions": {
+    "carrier": {
+      "directory": "carrier",
+      "payload": "payload-final.json",
+      "publicationResult": "publish-result.json",
+      "finalGET": "published-item.json",
+      "validation": "publication-validation.json",
+      "definitionName": "AbcAdaptation_Reference_Iut_Tripod_CurveOfCarrier"
+    },
+    "assembly": {
+      "directory": "assembly",
+      "payload": "payload-final.json",
+      "publicationResult": "publish-result.json",
+      "finalGET": "published-item.json",
+      "validation": "publication-validation.json",
+      "definitionName": "AbcAdaptation_Reference_Iut_Tripod_CurveOf"
+    }
+  },
+  "requiredJobs": {
+    "carrier-leaf": {
+      "jobId": "ci-018832-e47beec8",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-curveof-carrier-definition-leaf-v167-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveOfCarrier.lean"
+    },
+    "carrier-artifact": {
+      "jobId": "ci-018836-37292768",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-curveof-carrier-definition-artifact-v167-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveOfCarrier.lean"
+    },
+    "source-resolved-reference": {
+      "jobId": "ci-018880-1e7ae357",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-curveof-resolved-ref-source-probe-v171-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-curveof-assembly-v167-20261117/ref-probe/QueryCurveOfResolvedReferenceV166.lean"
+    },
+    "assembly-leaf": {
+      "jobId": "ci-018899-c8f3b5d8",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-curveof-assembly-definition-leaf-v173-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveOf.lean"
+    },
+    "assembly-artifact": {
+      "jobId": "ci-018907-7f1847fa",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-curveof-assembly-definition-artifact-v173-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveOf.lean"
+    },
+    "native-inventory": {
+      "jobId": "ci-018928-d8b5a18f",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-curveof-native-inventory-v176-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-curveof-native-review-v175-20261117/QueryCurveOfNativeInventoryV168.lean"
+    },
+    "native-review": {
+      "jobId": "ci-018993-9b6adc45",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-curveof-native-normalized-correspondence-v183-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-curveof-native-review-v175-20261117/AuditCurveOfNativeCorrespondenceV182.lean"
+    },
+    "mandatory-project-gates": {
+      "jobId": "ci-018955-032b39a0",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-curveof-required-project-gates-v179-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-curveof-native-review-v175-20261117/RequiredCurveOfProjectGatesV179.lean"
+    },
+    "source-whole-prop-normalization": {
+      "jobId": "ci-018988-44cac626",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-curveof-source-torsionfree-normalization-v182-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-curveof-source-normalization-v182-20261117/QueryCurveOfTorsionFreeSourceNormalizationV182.lean"
+    }
+  },
+  "mandatoryStdoutRequired": [
+    "'AbcAdaptation.Tripod.gen'_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'AbcAdaptation.Tripod.gen'_ne_one' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'AbcAdaptation.Tripod.legendre_gen'_isElliptic' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'AbcAdaptation.Tripod.curveOf' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "Checks, ImportAudit, Act1Scene1 and AxiomAudit imported; all nine new declarations have standard axioms only"
+  ],
+  "priorArchives": [
+    {
+      "archive": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-existing-and-elliptic-delivery-v123-20261117/b1-existing-and-elliptic-evidence-v123.tar.gz",
+      "manifest": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-existing-and-elliptic-delivery-v123-20261117/archive-manifest.json",
+      "ledger": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-existing-and-elliptic-delivery-v123-20261117/SOURCE_LEDGER.json"
+    },
+    {
+      "archive": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-arithmetic-delivery-v129-20261117/b1-arithmetic-evidence-v129.tar.gz",
+      "manifest": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-arithmetic-delivery-v129-20261117/archive-manifest.json",
+      "ledger": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-arithmetic-delivery-v129-20261117/SOURCE_LEDGER.json"
+    },
+    {
+      "archive": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-field-finiteness-delivery-v154-20261117/b1-field-finiteness-evidence-v154.tar.gz",
+      "manifest": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-field-finiteness-delivery-v154-20261117/archive-manifest.json",
+      "ledger": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-field-finiteness-delivery-v154-20261117/SOURCE_LEDGER.json"
+    },
+    {
+      "archive": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-curveof-generator-delivery-v161-20261117/b1-curveof-generator-evidence-v161.tar.gz",
+      "manifest": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-curveof-generator-delivery-v161-20261117/archive-manifest.json",
+      "ledger": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-curveof-generator-delivery-v161-20261117/SOURCE_LEDGER.json"
+    }
+  ],
+  "sourceNormalizationDirectory": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-curveof-source-normalization-v182-20261117",
+  "sourceNormalizationCertificate": "actual/source-proof-normalization.json",
+  "finalEditorialDirectory": "/tmp/p2m-b1-curveof-assembly-publication-v177-20261117",
+  "parentFinalAcceptanceSignal": "root: both definitions PUBLISHED/private/env0df444a/exact five-field GET; single finalize authorized"
+}
