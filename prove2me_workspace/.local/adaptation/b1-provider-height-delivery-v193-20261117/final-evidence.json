@@ -1,0 +1,204 @@
+{
+  "schema": "B1-provider-height-parent-final-evidence/v193",
+  "parentFinalEvidenceReady": true,
+  "gitDiffCheckPassed": true,
+  "publicationDirectory": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-provider-height-publication-v194-20261117",
+  "definitions": {
+    "provider": {
+      "directory": "provider",
+      "definitionName": "AbcAdaptation_Reference_Iut_Tripod_CurveProviders",
+      "payload": "payload-final.json",
+      "publicationResult": "publish-result.json",
+      "finalGET": "published-item.json",
+      "validation": "publication-validation.json"
+    },
+    "assembly": {
+      "directory": "assembly",
+      "definitionName": "AbcAdaptation_Reference_Iut_Concrete_LocalHeightDataAssembly",
+      "payload": "payload-final.json",
+      "publicationResult": "publish-result.json",
+      "finalGET": "published-item.json",
+      "validation": "publication-validation.json"
+    }
+  },
+  "requiredJobs": {
+    "provider-leaf": {
+      "jobId": "ci-019279-b2f445b7",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-curveproviders-definition-leaf-v187-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviders.lean"
+    },
+    "provider-artifact": {
+      "jobId": "ci-019281-943bffa4",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-curveproviders-definition-artifact-v187-result.json"
+    },
+    "residueChar-source": {
+      "jobId": "ci-019283-b4f6ebda",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-provider-height-residuechar-source-review-v189-result.json"
+    },
+    "assembly-leaf": {
+      "jobId": "ci-019288-42e3509b",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-localheight-assembly-definition-leaf-v191-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_LocalHeightDataAssembly.lean"
+    },
+    "assembly-artifact": {
+      "jobId": "ci-019290-8a71f191",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-localheight-assembly-definition-artifact-v191-result.json"
+    },
+    "native-inventory": {
+      "jobId": "ci-019296-a4235e56",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-provider-height-native-facts-v192-result.json"
+    },
+    "source-whole-prop-compatibility": {
+      "jobId": "ci-019368-2bcf746f",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-provider-height-shared-projection-source-v205-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-provider-height-shared-source-certificate-v205-20261118/QueryResidueCharPrimeSharedProjectionSourceCertificateV204.lean",
+      "stdoutRequired": [
+        "Single residueChar_prime native-certified shared-projection whole proof certified in original source whole Prop"
+      ]
+    },
+    "native-correspondence": {
+      "jobId": "ci-019381-0a72a1e8",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-provider-height-shared-projection-native-review-v209-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-provider-height-native-review-v192-20261117/audit-shared-v206/AuditProviderHeightSharedProjectionNativeCorrespondenceV204.lean",
+      "stdoutRequired": [
+        "Complete Provider4/curve and selected actual local height assembly review accepted"
+      ]
+    },
+    "mandatory-project-gates": {
+      "jobId": "ci-019303-09a30ae2",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-provider-height-required-project-gates-v194-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-provider-height-native-review-v192-20261117/RequiredProviderHeightProjectGatesV194.lean",
+      "stdoutRequired": [
+        "'AbcAdaptation.Tripod.CurveProviders.curve' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'AbcAdaptation.Reference.Iut.residueChar_prime' depends on axioms: [propext, Classical.choice, Quot.sound]",
+        "'AbcAdaptation.Reference.Iut.EllipticCurveData.localHeightData' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+        "Checks, ImportAudit, Act1Scene1 and AxiomAudit imported; all twenty-eight new declarations have standard axioms only",
+        "AbcAdaptation.Tripod.CurveProviders: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.residueChar_prime: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders._sizeOf_1: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders._sizeOf_inst: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.arith: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.casesOn: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.ctorIdx: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.curve: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.mk: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.modRep: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.noConfusion: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.noConfusionType: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.rec: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.recOn: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.torsionFinite3: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.torsionFinite5: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.localHeightData: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.curve._proof_1: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.curve._proof_2: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.mk._flat_ctor: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.mk.inj: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.mk.injEq: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.mk.noConfusion: standard axioms [propext,",
+        "AbcAdaptation.Tripod.CurveProviders.mk.sizeOf_spec: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.localHeightData._proof_1: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.localHeightData._proof_2: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.localHeightData._proof_3: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.localHeightData._proof_4: standard axioms [propext,"
+      ]
+    },
+    "native-shared-projection-certificate": {
+      "jobId": "ci-019364-13c9c9f1",
+      "result": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-provider-height-native-prime-shared-projection-v204-result.json",
+      "source": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-provider-height-native-shared-projection-v203-20261118/QueryResidueCharPrimeNativeSharedProjectionV203.lean",
+      "stdoutRequired": [
+        "Native whole Prop certified with exact existing Dedekind-domain primitive projections and original FG proof delta"
+      ]
+    }
+  },
+  "JSONAssertions": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-provider-height-native-shared-projection-v203-20261118/actual/native-shared-projection.json",
+      "member": "certificate-history/b1-provider-height-native-shared-projection-v203-20261118/actual/native-shared-projection.json",
+      "equals": {
+        "/status": "accepted-native-shared-primitive-projection-wholeproof-certificate",
+        "/everyOccurrenceSamePropEqualityCertificateKernelChecked": true,
+        "/fallbackProofProduced": false,
+        "/newMathematicalParametersAdded": false,
+        "/nonPropositionalDataReplaced": false,
+        "/onlyFGOriginalPropValueDeltaExpanded": true,
+        "/originalAndReplacementCompletePropTypesKernelChecked": true,
+        "/sameExactExistingDedekindDomainArgumentsUsed": true,
+        "/sourceActualProjectionNamesAndAritiesBound": true,
+        "/sourceKernelPortabilityAccepted": false,
+        "/synthInstanceUsed": false,
+        "/wholeProofEqualityCertificateKernelChecked": true,
+        "/wholeTYPEChanged": false
+      },
+      "standardAxiomFields": [
+        "/axioms"
+      ]
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-provider-height-shared-source-certificate-v205-20261118/actual/residuechar-prime-shared-projection-source-certificate.json",
+      "member": "certificate-history/b1-provider-height-shared-source-certificate-v205-20261118/actual/residuechar-prime-shared-projection-source-certificate.json",
+      "equals": {
+        "/status": "accepted-source-portable-single-lemma-whole-Prop-proof-certificate",
+        "/schema": "B1-residueChar-prime-shared-projection-source-certificate/v204",
+        "/fallbackSynthesizedProofUsed": false,
+        "/nativeCorrespondenceAccepted": false,
+        "/newAxiomsIntroduced": false,
+        "/nonPropositionalDataReplacementUsed": false,
+        "/oldWholePropCertificateReused": false,
+        "/onlyActualNativeProofUsed": false,
+        "/onlyNativeCertifiedSharedProjectionPortableProofUsed": true,
+        "/originalWholeProofKernelChecked": true,
+        "/rawSourceProofByteIdentityClaimed": false,
+        "/sameWholePropTYPEKernelChecked": true,
+        "/sourceASTOrBodyEdited": false,
+        "/sourceKernelNormalizationChecked": true,
+        "/wholeProofEqualityCertificateKernelChecked": true,
+        "/wholeProofKernelDefEq": true,
+        "/actualNativeCandidateSourcePreflightMissingNames": [],
+        "/actualNativeCandidateSourcePreflightUniverseArityDifferences": []
+      },
+      "standardAxiomFields": [
+        "/certificateAxioms",
+        "/normalizedAxioms",
+        "/rawAxioms"
+      ]
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-provider-height-native-review-v192-20261117/audit-shared-v206/provider-height.correspondence-review.json",
+      "member": "native-review/audit-shared-v206/provider-height.correspondence-review.json",
+      "equals": {
+        "/status": "accepted",
+        "/schema": "B1-provider-height-native-correspondence-audit/v186",
+        "/correspondenceAccepted": true,
+        "/providerOnly": false,
+        "/actualHeightDefinitionChanged": false,
+        "/allCompleteProofValuesCheckedUnderOnlyIndependentSingleLemmaCertificate": true,
+        "/constructorCount": 1,
+        "/recursorCount": 1,
+        "/recursorRuleCount": 1,
+        "/structureCount": 1,
+        "/newAssumptionsIntroduced": false,
+        "/newProductionParametersAdded": false,
+        "/nonPropositionalDataReplaced": false,
+        "/oldTateTwentyToTwentyMathematicalBijectionClaimed": false,
+        "/oldTorsionFreeWholePropCertificateAppliedToNewLemma": false,
+        "/proofNumbersUsedAsCorrespondenceEvidence": false,
+        "/schedulerReceiptNumbersComparedByExactRationalValue": true,
+        "/failures": []
+      }
+    }
+  ],
+  "extraFiles": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-provider-height-v187-20261117/final-git-diff-check-v209.json",
+      "member": "delivery/final-git-diff-check-v209.json"
+    },
+    {
+      "path": "/tmp/p2m-provider-height-definition-platform-v208.py",
+      "member": "delivery/root-definition-platform-helper-v208.py"
+    }
+  ],
+  "gitDiffCheckRecord": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-provider-height-v187-20261117/final-git-diff-check-v209.json",
+  "finalizeAuthorization": "Parent /root explicitly authorized one compression and reopen SHA verification on 2026-11-18; no active CI reported."
+}
