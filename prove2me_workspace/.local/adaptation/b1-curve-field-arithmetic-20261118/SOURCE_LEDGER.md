@@ -132,3 +132,87 @@ The local Tate-structure construction at `Iut/Cor312/ThetaData/TateFamilyOfTorsi
 | `ci-020431-20b6622e` | tripod-torsion-degree-review | succeeded | 0 | 174.74 | 173.83 (108.65 + 65.18) | 4.67 |
 | `ci-020399-49b75768` | tripod-torsion-representation-1 | succeeded | 0 | 96.17 | 94.07 (3.59 + 90.48) | 4.07 |
 | `ci-020405-8162a0fb` | tripod-torsion-representation-artifact | succeeded | 0 | 103.86 | 103.31 (4.28 + 99.03) | 4.09 |
+
+## Local Tate model and ramification
+
+The local construction follows `Iut/Cor312/ThetaData/TateFamilyOfTorsion.lean:121` at iut revision `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`. It uses the same curve, completion and coordinate series. [Three-language source readback](readbacks/tate-local-ramification-trilingual.md) · [IUT license](../foundation-reference-carriers-20261115/LICENSE.iut.Apache-2.0) · [Tate source notices](../reference-tate-theta-carriers-20261115/LICENSE.Apache-2.0)
+
+| Target declaration | Source and direct consumer |
+| --- | --- |
+| `exists_sq_eq_of_norm_sq_sub_lt` | `UltrametricSqrt.lean:172`. Used by `exists_variableChange_tateCurve` for the scaling ratio. |
+| `vcEquiv`, `ptX`, `ptY`, `pointCongr` | `VariableChangePoint.lean`. Used by `TateStructure.ofVariableChangeWithUniformization` to transport the point group and its two coordinates. |
+| `norm_c₄_curveKw`, `norm_Δ_curveKw`, `norm_two_curveKw`, `exists_tangent_root_of_sq` | `BadPlaceNorm.lean`, `SqrtAtBadPlace.lean` and `TateFamilyOfTorsion.lean`. Supply the local model hypotheses at the selected place. |
+| `exists_variableChange_tateCurve` | `TateIsomorphism.lean:291`. Gives the Tate model `D • W = t.tateCurve` with the same `j`. Used by `tateStructureOfBadPlace` after choosing the multiplicative model. |
+| `TateParameterUniformization.ofTatePoint` | `PointMap.lean`, `GroupLaw.lean` and `TateUniformization.lean`. Constructs the equivalence from the point equation, additivity and surjectivity and proves the two coordinate laws. |
+| `tateStructureOfBadPlace` | `TateFamilyOfTorsion.lean:121` and `TateStructureOfIso.lean`. Takes the square-root identity and a uniformization function explicitly. It combines the two changes of variables and preserves the coordinates in the resulting model. |
+| `TateParameterUniformization.ofTateParameter` | Uses `tatePoint_mem'`, `tatePoint_mul` and `tatePoint_surjective` from the existing pinned Tate dependency at `ca6c2279d3cea0690cdb01328e727118d5485d68`. Proves equality of the point maps with the same parameter, guard and coordinate series. [Tate dependency closure](readbacks/tate-uniformization-sources.md) |
+
+The six model modules passed the owned-declaration review `ci-020616-336c870c`. Its 191 declarations use only `propext`, `Classical.choice` and `Quot.sound`. The Checks, ImportAudit, Act1Scene1 and AxiomAudit gate `ci-020590-4429ef69` passed. The point-law bridge passed leaf and artifact compilation in `ci-020624-9ee61ed1`. The project and pinned Tate artifacts are used for local verification. The standalone platform package still requires dependency migration and platform acceptance.
+
+MCP-CI originally dropped output flags when the named `parameters.source` was present. The three positional artifact jobs remedied the missing imports. The pinned Mathlib replaces the unavailable additive type-tag rewrite lemmas with definitional conversions. The structure proof was split into model existence and transport after the default heartbeat timeout. The successful split uses the default limit. The point-map additivity bridge shares one `DecidableEq` instance between both presentations. The two first-attempt wall timeouts lack final CPU and RSS data.
+
+| Job | Source | Status | Exit | Wall (s) | CPU total (user + system, s) | Peak RSS (GiB) |
+| --- | --- | --- | ---: | ---: | ---: | ---: |
+| [`ci-020500-f749b5c5`](receipts/local-tate-ci-020500-f749b5c5-result.json) | `Source_ReferenceIutUltrametricSqrt` | succeeded | 0 | 93.08 | 29.71 (0.73 + 28.98) | 1.61 |
+| [`ci-020502-8a3c7cf8`](receipts/local-tate-ci-020502-8a3c7cf8-result.json) | `Source_ReferenceIutVariableChangePoint` | succeeded | 0 | 91.57 | 29.32 (0.67 + 28.65) | 1.60 |
+| [`ci-020505-29c4eb8b`](receipts/local-tate-ci-020505-29c4eb8b-result.json) | `Source_ReferenceIutTateLocalModels` | succeeded | 0 | 91.31 | 28.81 (0.85 + 27.96) | 1.62 |
+| [`ci-020514-4f1dbd84`](receipts/local-tate-ci-020514-4f1dbd84-result.json) | `Source_ReferenceIutUltrametricSqrt` | succeeded | 0 | 54.65 | 52.26 (1.39 + 50.87) | 2.44 |
+| [`ci-020515-136835ff`](receipts/local-tate-ci-020515-136835ff-result.json) | `Source_ReferenceIutTateLocalModels` | succeeded | 0 | 83.92 | 83.97 (5.04 + 78.93) | 4.16 |
+| [`ci-020516-93db22ee`](receipts/local-tate-ci-020516-93db22ee-result.json) | `Source_ReferenceIutVariableChangePoint` | succeeded | 0 | 58.29 | 59.49 (6.21 + 53.28) | 2.91 |
+| [`ci-020524-c5f3337c`](receipts/local-tate-ci-020524-c5f3337c-result.json) | `Source_ReferenceIutTateIsomorphism` | failed | 1 | 38.79 | 37.49 (1.32 + 36.17) | 2.28 |
+| [`ci-020525-065fcaa8`](receipts/local-tate-ci-020525-065fcaa8-result.json) | `Source_ReferenceIutTateUniformization` | failed | 1 | 44.31 | 42.56 (1.35 + 41.21) | 2.48 |
+| [`ci-020529-63e5a619`](receipts/local-tate-ci-020529-63e5a619-result.json) | `Source_ReferenceIutUltrametricSqrt` | succeeded | 0 | 43.07 | 41.60 (1.73 + 39.87) | 2.52 |
+| [`ci-020530-fda82a58`](receipts/local-tate-ci-020530-fda82a58-result.json) | `Source_ReferenceIutVariableChangePoint` | succeeded | 0 | 45.81 | 46.90 (5.20 + 41.70) | 2.90 |
+| [`ci-020531-f7cc4ff1`](receipts/local-tate-ci-020531-f7cc4ff1-result.json) | `Source_ReferenceIutTateLocalModels` | succeeded | 0 | 84.56 | 84.90 (5.84 + 79.06) | 4.15 |
+| [`ci-020536-4a9b278c`](receipts/local-tate-ci-020536-4a9b278c-result.json) | `Source_ReferenceIutTateIsomorphism` | succeeded | 0 | 90.32 | 90.12 (4.78 + 85.34) | 4.13 |
+| [`ci-020537-daccc80d`](receipts/local-tate-ci-020537-daccc80d-result.json) | `Source_ReferenceIutTateUniformization` | failed | 1 | 59.35 | 57.24 (2.40 + 54.84) | 2.99 |
+| [`ci-020545-63c54b65`](receipts/local-tate-ci-020545-63c54b65-result.json) | `Source_ReferenceIutTateIsomorphism` | succeeded | 0 | 132.22 | 132.15 (5.53 + 126.62) | 4.15 |
+| [`ci-020546-399cdd86`](receipts/local-tate-ci-020546-399cdd86-result.json) | `Source_ReferenceIutTateUniformization` | succeeded | 0 | 90.77 | 88.38 (2.26 + 86.12) | 2.95 |
+| [`ci-020558-a857eaaa`](receipts/local-tate-ci-020558-a857eaaa-result.json) | `Source_ReferenceIutTateStructureOfTorsion` | failed | 1 | 159.50 | 157.29 (20.79 + 136.50) | 4.31 |
+| [`ci-020559-2b3e8730`](receipts/local-tate-ci-020559-2b3e8730-result.json) | `Source_ReferenceIutTateUniformizationLaws` | timeout | unknown | 180.09 | unknown | unknown |
+| [`ci-020560-8b916670`](receipts/local-tate-ci-020560-8b916670-result.json) | `Source_ReferenceIutSplitSquare` | timeout | unknown | 180.06 | unknown | unknown |
+| [`ci-020571-e5f51bd3`](receipts/local-tate-ci-020571-e5f51bd3-result.json) | `Source_ReferenceIutTateUniformizationLaws` | failed | 1 | 385.16 | 377.11 (5.29 + 371.82) | 7.38 |
+| [`ci-020576-4d1d273b`](receipts/local-tate-ci-020576-4d1d273b-result.json) | `Source_ReferenceIutTateStructureOfTorsion` | succeeded | 0 | 162.57 | 156.13 (3.32 + 152.81) | 4.10 |
+| [`ci-020585-5381da30`](receipts/local-tate-ci-020585-5381da30-result.json) | `Source_ReferenceIutSplitSquare` | failed | 1 | 394.00 | 379.57 (6.65 + 372.92) | 7.49 |
+| [`ci-020590-4429ef69`](receipts/local-tate-ci-020590-4429ef69-result.json) | `RequiredProjectGates` | succeeded | 0 | 412.62 | 396.32 (6.48 + 389.84) | 7.87 |
+| [`ci-020597-0e754543`](receipts/local-tate-ci-020597-0e754543-result.json) | `Source_ReferenceIutTateUniformizationLaws` | failed | 1 | 448.08 | 435.08 (6.57 + 428.51) | 7.46 |
+| [`ci-020599-7476c6c1`](receipts/local-tate-ci-020599-7476c6c1-result.json) | `Source_ReferenceIutTateStructureOfTorsion` | succeeded | 0 | 261.33 | 255.77 (4.98 + 250.79) | 4.12 |
+| [`ci-020615-00dfa7b0`](receipts/local-tate-ci-020615-00dfa7b0-result.json) | `Source_ReferenceIutSplitSquare` | failed | 1 | 443.72 | 432.11 (6.96 + 425.15) | 7.49 |
+| [`ci-020616-336c870c`](receipts/local-tate-ci-020616-336c870c-result.json) | `ReviewLocalTateModels` | succeeded | 0 | 527.60 | 520.52 (278.17 + 242.35) | 4.69 |
+| [`ci-020624-9ee61ed1`](receipts/local-tate-ci-020624-9ee61ed1-result.json) | `Source_ReferenceIutTateUniformizationLaws` | succeeded | 0 | 405.11 | 397.33 (6.51 + 390.82) | 7.46 |
+
+## Torsion-field ramification and tripod curve inputs
+
+| Target declaration | Source and direct consumer |
+| --- | --- |
+| `exists_sq_eq_neg_c₄_mul_c₆` | `Iut/Cor312/ThetaData/SplitSquare.lean`. The full torsion over the selected torsion field supplies the square root in its completion. The proof reuses the main project's pinned compatibility theorem. |
+| `EllipticCurveData.prime_dvd_ramificationIdx_from_source` | `Iut/Concrete/SL2Image.lean:162` and the local split Tate construction of `Iut/Cor312/ThetaData/TateFamilyOfTorsion.lean:121`. It constructs the Tate structure at the specified place of `R.torsionField`. The proof consumes the square root, the point-law bridge and the conditional ramification lemma. Construction of the global Tate family remains a separate obligation. |
+| `sl2Image_from_source` | `Iut/Tripod/CurveFacts.lean:442` and `Iut/Concrete/SL2Image.lean:217,229`. It uses the proved ramification divisibility to supply range-cardinality divisibility and the SL₂ inclusion for the original curve provider. |
+| `legendre_torsionBasis`, `torsionDegreeBound_three'`, `torsionDegreeBound_five'` | `Iut/Tripod/TorsionBasis.lean:31` and `Iut/Tripod/TorsionDegree.lean:237,243`. They supply the two pointwise degree fields using the main project's torsion-count and basis proofs. |
+| `logCondGe`, `logCondLe` | `Iut/Tripod/LogCond.lean:196,206`. Both inequalities use the same tripod field and the same degree normalization. The reverse bound uses the sum of residue degrees over characteristics 2 and ℓ to obtain the error `log (2 * ℓ)`. [Three-language readback](readbacks/tripod-log-cond.md) |
+| `curveInputs_from_source` | `Iut/Tripod/CurveFacts.lean:492`. The 21-field constructor consumes the new image proof and the four pointwise arithmetic fields. It retains the curve provider, curve facts including the cyclic estimate, core finiteness and the height-related inputs. `CurveInputs.toCorollary22Inputs` is the next consumer. |
+
+The source revision and licenses are the same as in the local Tate section. The proved ramification and arithmetic fields use the existing main-project and pinned Tate artifacts. Standalone dependency packaging, cross-version comparison and private platform acceptance remain open. The platform theorem mirrors preserve the open statements and their signatures.
+
+The LogCond recheck corrected the finite-set membership lemma invocation and the orientation of addition in the last inequality. The combined audit timed out. The two narrower reviews checked the constructor and image types and six public arithmetic declarations. The three successful reviews below reported no `sorryAx` and only `propext`, `Classical.choice` and `Quot.sound`.
+
+Successful jobs report compiler-process wall time and process-tree RSS from MCP-CI. Timeout rows use the scheduler's elapsed compile time, with unknown compiler exit, CPU time and peak RSS. Source fingerprints are prefixes of the SHA-256 values in the receipts. Each receipt records the exclusive worktree and the exact input hashes.
+
+| Job | Source | SHA-256 prefix | Status | Exit | Wall (s) | CPU total (user + system, s) | Peak RSS (GiB) |
+| --- | --- | --- | --- | ---: | ---: | ---: | ---: |
+| [`ci-020660-b7ab1074`](receipts/local-tate-ci-020660-b7ab1074-result.json) | `Source_ReferenceIutSplitSquare` | `403ee4bdd751` | succeeded | 0 | 272.12 | 265.38 (9.03 + 256.35) | 7.50 |
+| [`ci-020695-d1091a87`](receipts/local-tate-ci-020695-d1091a87-result.json) | `Source_TripodTorsionBasis` | `37a876d7f794` | timeout | unknown | 180.18 | unknown | unknown |
+| [`ci-020700-aef88e0e`](receipts/local-tate-ci-020700-aef88e0e-result.json) | `Source_TripodLogCond` | `a45fa3a3e3af` | timeout | unknown | 180.19 | unknown | unknown |
+| [`ci-020708-fcc842b3`](receipts/local-tate-ci-020708-fcc842b3-result.json) | `Source_SL2ImageLocalTate` | `8b4ea42b9c8a` | timeout | unknown | 180.14 | unknown | unknown |
+| [`ci-020725-a0617c37`](receipts/local-tate-ci-020725-a0617c37-result.json) | `Source_TripodTorsionBasis` | `37a876d7f794` | succeeded | 0 | 124.25 | 121.41 (3.18 + 118.23) | 4.01 |
+| [`ci-020733-2f166d61`](receipts/local-tate-ci-020733-2f166d61-result.json) | `Source_TripodLogCond` | `a45fa3a3e3af` | failed | 1 | 149.50 | 149.25 (5.57 + 143.68) | 4.16 |
+| [`ci-020747-ee9f7218`](receipts/local-tate-ci-020747-ee9f7218-result.json) | `Source_SL2ImageLocalTate` | `8b4ea42b9c8a` | succeeded | 0 | 305.93 | 303.58 (7.51 + 296.07) | 7.53 |
+| [`ci-020761-bad0d871`](receipts/local-tate-ci-020761-bad0d871-result.json) | `Source_TripodLogCond` | `1e068431baf7` | succeeded | 0 | 132.26 | 129.28 (6.35 + 122.93) | 4.17 |
+| [`ci-020770-6c86a66e`](receipts/local-tate-ci-020770-6c86a66e-result.json) | `ReviewLocalTateRamification` | `d1b51bbd6d24` | succeeded | 0 | 630.10 | 623.01 (385.56 + 237.45) | 7.97 |
+| [`ci-020792-4d2b1792`](receipts/local-tate-ci-020792-4d2b1792-result.json) | `Source_TripodCurveInputsFromSource` | `dc5461b7eaee` | timeout | unknown | 180.50 | unknown | unknown |
+| [`ci-020795-7aee1771`](receipts/local-tate-ci-020795-7aee1771-result.json) | `Source_TripodCurveInputsFromSource` | `dc5461b7eaee` | succeeded | 0 | 404.87 | 395.97 (6.10 + 389.87) | 7.55 |
+| [`ci-020812-b92bc617`](receipts/local-tate-ci-020812-b92bc617-result.json) | `ReviewTripodCurveInputsFromSource` | `9de2a27beba6` | timeout | unknown | 880.16 | unknown | unknown |
+| [`ci-020827-2725d6f7`](receipts/local-tate-ci-020827-2725d6f7-result.json) | `ReviewTripodCurveInputsRoots` | `bd91f9a9fc4a` | succeeded | 0 | 145.05 | 143.32 (5.20 + 138.12) | 7.49 |
+| [`ci-020829-26f0c710`](receipts/local-tate-ci-020829-26f0c710-result.json) | `ReviewTripodArithmeticFields` | `c37daf023621` | succeeded | 0 | 60.02 | 58.91 (2.54 + 56.37) | 4.16 |
+
+The current batch's Checks, ImportAudit, Act1Scene1 aggregate and AxiomAudit gate passed in [ci-020844-3d5ac401](receipts/local-tate-ci-020844-3d5ac401-result.json). The exclusive review ran `lean .local/adaptation/b1-curve-field-arithmetic-20261118/RequiredProjectGates.lean` with exit code 0. It used 119.41 seconds of process wall time, 118.29 seconds of CPU (5.12 user and 113.17 system), and 7.83 GiB of peak process-tree RSS.

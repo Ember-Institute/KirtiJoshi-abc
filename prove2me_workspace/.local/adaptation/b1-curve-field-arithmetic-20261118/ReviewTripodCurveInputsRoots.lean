@@ -1,0 +1,6 @@
+import Solutions.Source_TripodCurveInputsFromSource
+
+#check AbcAdaptation.Tripod.sl2Image_from_source
+#check AbcAdaptation.Tripod.curveInputs_from_source
+#print axioms AbcAdaptation.Tripod.sl2Image_from_source
+#print axioms AbcAdaptation.Tripod.curveInputs_from_source

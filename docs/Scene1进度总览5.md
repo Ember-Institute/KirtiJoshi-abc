@@ -1,6 +1,6 @@
 # Scene1 进度总览 5
 
-截至 **2026-11-18（Asia/Shanghai）**。Scene1 的数学基线从总览4的 **`a443952`** 推进到 **`0477a914`**。本期分支基线 **`96176c1b`** 另含工具链迁移和 Prove2Me 适配。 [总览4](Scene1进度总览4.md) · [Scene1 开发计划](开发计划.V1Act1Scene1.md) · [Prove2Me 适配计划](开发计划.Prove2Me适配.md)
+截至 **2026-11-18（Asia/Shanghai）**。Scene1 的几何交付从总览4的 **`a443952`** 推进到 **`0477a914`**。本期还完成了 Lean 工具链迁移，并推进了 Prove2Me 的参考算术链。 [总览4](Scene1进度总览4.md) · [Scene1 开发计划](开发计划.V1Act1Scene1.md) · [Prove2Me 适配计划](开发计划.Prove2Me适配.md)
 
 ### 状态判定
 
@@ -18,6 +18,7 @@
 | --- | --- |
 | Scene1 整体 | **未完成，G1–G4 关闭 0/4** |
 | 有明确来源指示的父义务 | **15 项均开放**。见[证明义务清单](具有明确参考来源指示的证明义务.md) |
+| iut 参考链适配 | **78/95（82.1%）**。已在目标环境证明扭点域分歧整除、三足曲线的 SL₂ 像、Legendre 挠点次数界和导子比较，并将这些证明装入曲线输入构造器。 [适配计划 §4.1](开发计划.Prove2Me适配.md#41-参考链审计) |
 | 最新 Scene1 数学单元 | 原二阶点平移仿射图的分式域沿原包含映射的像等于原无符号正规化域。 [分式域像等式](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/InitialThetaInfinityShiftedChartFractionField.lean#L156) |
 | 几何路线的下一处缺口 | 在平移仿射图的同一剩余中心证明逆坐标公式的分母可逆，再用局部整闭性识别原无符号正规化的上层剩余域 |
 | 本地构建环境 | Lean `v4.33.1`，Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`。见[环境锁](../ArithmeticTeichmullerSpaces/migration/environment.lock.json) |
@@ -184,6 +185,12 @@ Corollary 3.12 的字面左端为 $-\lvert\operatorname{logVol}(\Theta_M)\rvert/
 
 用第 1–14 项构造 q 项、`thetaVolume` 和四项来源法律，并从实际测度给出下界，再实例化现有条件消费者。Scene1 的最终验收覆盖完整类型、导入图、公理和来源追踪。接入参考 `c2` 还须证明 `∀ X, P X → Corollary312Variant X`，其中几何接口固定，`ThetaDataExistence`（P7）为全部适用点和素数提供满足同一 `P` 的数据，以及参考链所需的证书、局部估计和各项身份。已验收的参考链在 `c2` 保留了这个全称命题作为输入，规范高度及 P7 的接合仍开放。 [参考变体与 P7 的适配义务](Prove2Me适配状态.md#joshi-的-312-与参考工程变体之间的适配) · [Scene2 参考链](开发计划.Prove2Me适配.md#41-参考链审计)
 
+### 参考 `c2` 装配中仍开放的曲线输入
+
+- **循环子群估计。** 对紧有界集内的适用三足点、素数 $\ell\ge7$ 和 Galois 稳定的 $\ell$ 阶循环子群，须从 (P2) 的 q 阶数条件证明该子群在各奇乘法约化处满足图线条件。再在这些处上接合循环同源与高度上界，得到 $(\ell-2)(h-h_2)/24\le 2\log\ell+T_K$，其中 $T_K$ 只依赖给定的紧有界集。该估计供 `CurveFactsProp.cyclic` 和推论 2.2 消费。 [来源义务与适配状态](Prove2Me适配状态.md#1-根据-referiut-指示尚未拆分的证明义务)
+- **core 例外有限性。** 须把所选远 Abel 几何下的非 core 曲线归入有限的有理 $j$ 不变量例外集，再证明每个例外值对应的三足点有限。给定例外值 $c$ 时，可用非零多项式 $256(X^2-X+1)^3-cX^2(X-1)^2$ 的根集。几何部分要对同一 `AG` 证明非例外曲线具有 `HasCoreUniversally`，并将所得有限性作为 `CoreFinitenessHyp` 交给曲线输入构造器。 [参考链审计](开发计划.Prove2Me适配.md#41-参考链审计)
+- **P7 及高度身份。** 将实际曲线供应、循环子群界和 core 例外有限性装入 `CurveInputs`。对每个适用点和素数，构造同一 `AG/TG` 下的 `InitialThetaData`、局部理论、theta 局部数据及 q-pilot，并验证塔算术与模域次数、局部高度、不同理想和导子各项身份。第 15 项的全称适配还须覆盖这套构造供应的整个数据族。在 Prove2Me 上验收上述曲线字段还需要独立依赖打包与跨版本类型和公理核对。 [构造器实际输入](../prove2me_workspace/Solutions/Source_TripodCurveInputsFromSource.lean#L48) · [参考链审计](开发计划.Prove2Me适配.md#41-参考链审计)
+
 ## 已排除的具体路线
 
 | 状态 | 具体路线及排除范围 |
@@ -196,7 +203,7 @@ Corollary 3.12 的字面左端为 $-\lvert\operatorname{logVol}(\Theta_M)\rvert/
 
 ## 进度总览4到现在的新进展简报
 
-比较区间为 **`a443952..96176c1b`**。总览4所列未交付的有限闭包和有限素点惯性消费者已进入正式 Scene1 源码。
+几何交付的比较区间自 **`a443952`** 至 **`0477a914`**，适配增量见下文。总览4所列未交付的有限闭包和有限素点惯性消费者已进入正式 Scene1 源码。
 
 | 交付 | 总览4之后的精确增量 |
 | --- | --- |
@@ -212,8 +219,6 @@ Corollary 3.12 的字面左端为 $-\lvert\operatorname{logVol}(\Theta_M)\rvert/
 
 Prove2Me 私有平台已验收参考局部体积平均界、定理 1.10、推论 2.2 及 `statementII_of_cor312` 的条件性证明链。后续本地提交通过了实际 Tate 局部高度比较、Northcott 有限性、素数 2 处贡献和模域次数界的目标环境检查。 [平台适配计划与回执入口](开发计划.Prove2Me适配.md#41-参考链审计)
 
-当前工作区通过了完整的 21 字段 `CurveInputs` 条件构造和到推论 2.2 的转换检查。构造器接收显式的 `SL2ImageHyp`。给定 3、5 挠点的次数界，同一曲线的定义域次数至多为 `552960 * d`，点的 `logDiff` 等于同一曲线三足域的归一化不同理想次数。项目检查为 `ci-020087-c48ae3d1`，八个模块的公理审查为 `ci-020088-61d7ef79`。该构造及其字段证明的跨版本比较、私有平台验收和 P7 的实际供应仍开放。 [构造器](../prove2me_workspace/Solutions/Source_TripodCurveInputs.lean#L26)
+本地适配从指定扭点域的全体挠点构造判别式平方根，借助同坐标的 Tate 均匀化证明相对分歧整除，进而得到实际三足曲线的 SL₂ 像包含。Legendre 挠点基使 3、5 挠点坐标的次数倍数界 48、480 对每个三足点成立。两向导子比较也已证明，反向误差为 $\log(2\ell)$。 [局部 Tate 与分歧](../prove2me_workspace/Solutions/Source_SL2ImageLocalTate.lean#L81) · [挠点基与次数界](../prove2me_workspace/Solutions/Source_TripodTorsionBasis.lean) · [导子比较](../prove2me_workspace/Solutions/Source_TripodLogCond.lean#L188)
 
-三足曲线的像包含已归约到通用曲线的像包含，再经像阶整除归约到扭点域的相对分歧指数整除。矩阵生成、固定域及其伽罗瓦群基数、局部根类和给定 Tate 结构后的分歧整除均已通过本地公理审查。尚须由指定乘法约化处及该扭点域的全体挠点构造完备化上的 Tate 结构，包括分裂模型和固定坐标的均匀化。 [像阶归约](../prove2me_workspace/Solutions/Sketch_EllipticCurveData_prime_dvd_card_range.lean#L19) · [条件分歧证明](../prove2me_workspace/Solutions/Source_SL2ImageLocalTorsion.lean#L60) · [开放分歧义务](../prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_EllipticCurveData_prime_dvd_ramificationIdx.lean#L22)
-
-给定 Legendre 曲线相应扭点群的加法同构存在性，现已证明添入 3、5 扭点坐标后，绝对次数分别至多为原次数的 48、480 倍。两项条件估计已通过本地公理审查，仍须为所有适用的 Legendre 点构造相应的扭点基。 [次数界及逐点版本](../prove2me_workspace/Solutions/Source_TripodTorsionDegree.lean#L63) · [适配计划](开发计划.Prove2Me适配.md#41-参考链审计)
+21 字段构造器已消费上述证明。同一供应曲线的定义域次数至多为 `552960 * d`，点的 `logDiff` 等于同一曲线三足域的归一化不同理想次数。构造器和 SL₂ 像通过类型与公理审查 `ci-020827-2725d6f7`，挠点和导子的公开证明通过 `ci-020829-26f0c710`，项目聚合与审查通过 `ci-020844-3d5ac401`。本轮从原合并待办中登记了四项已验收的本地成果，适配计划 §4.1 从 **74/91（81.3%）** 更新为 **78/95（82.1%）**。 [构造器](../prove2me_workspace/Solutions/Source_TripodCurveInputsFromSource.lean#L48) · [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#torsion-field-ramification-and-tripod-curve-inputs)
