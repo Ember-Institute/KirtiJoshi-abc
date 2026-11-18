@@ -1,0 +1,9 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_EisensteinSummability
+
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.norm_one_sub_qpow
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.one_sub_qpow_ne_zero
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.eisenstein_summand_summable

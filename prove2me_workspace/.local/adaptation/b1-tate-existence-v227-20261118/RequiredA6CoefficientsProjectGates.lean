@@ -1,0 +1,13 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_A6Coefficients
+
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.a₆Coeff
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.twelve_dvd_five_mul_cube_add_seven_mul_pow
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.twelve_mul_a₆Coeff
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.a₆Coeff_zero
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.qFactor
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.eisenstein_eq_tsum_qFactor
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.term_combo

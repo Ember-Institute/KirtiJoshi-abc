@@ -3,7 +3,8 @@
 ## 1. 根据 refer/iut 指示尚未拆分的证明义务
 
 - `refer/iut/Iut/Tripod/Main.lean:129`
-- `refer/iut/Iut/Tripod/Height.lean:603`
+- `refer/iut/Iut/Tripod/CurveFacts.lean:495`
+- `refer/iut/Iut/Tripod/TwoAdic.lean:595`
 - `refer/iut/Iut/Implication/Corollary22.lean:284`
 - `refer/iut/Iut/Implication/Corollary22.lean:357`
 - `refer/iut/Iut/Implication/LogVolumeBound.lean:69`
@@ -86,6 +87,25 @@
 
 ## 4. 未完成自然语言读回的证明义务
 
+- `AbcAdaptation_Reference_TateCurvesTheta_TateCurve_EisensteinSummability`：无待决译名。
+- `AbcAdaptation_Reference_TateCurvesTheta_TateCurve_A6Coefficients`：无待决译名。
+- `AbcAdaptation_Reference_TateCurvesTheta_TateCurve_A6Series`：无待决译名。
+- `AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Discriminant`：无待决译名。
+- `AbcAdaptation_Reference_TateCurvesTheta_QParameter_JExistence`：无待决译名。
+- `AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply`：`uniformizer`（待定：素元／一致化元／均匀化元）。
+- `AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight`：无待决译名。
+- `AbcAdaptation_Reference_Iut_Tripod_TatePoleOrder`：`uniformizer`（待定：素元／一致化元／均匀化元）。
+- `AbcAdaptation_Reference_Iut_Tripod_GoodReductionHeight`：无待决译名。
+- `AbcAdaptation_Reference_Iut_Tripod_FiniteHeightSum`：无待决译名。
+- `AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv`：无待决译名。
+- `Source_TripodPlaceUnder`：无待决译名。
+- `Source_TripodRelativeValuation`：无待决译名。
+- `Source_TripodRelativeDegreeTower`：无待决译名。
+- `Source_TripodRelativeDegreeSum`：无待决译名。
+- `Source_TripodRelativeAbsoluteValue`：无待决译名。
+- `Source_TripodFiniteHeightExtension`：无待决译名。
+- `tripodalFieldOf_eq`、`tpdEquiv_jT`、`h_eq_finHeight_div`：无待决译名。
+- `LegendreHeightHyp`、`legendreHeight`、`canonicalLegendreHeightComparison_of_provider`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
 - `AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder`：`uniformizer`（待定：素元／一致化元／均匀化元）。
 - `AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime`：`uniformizer`（待定：素元／一致化元／均匀化元）。
 - `AbcAdaptation_JoshiTeich_Prologue_Arithmetic_Basic`：`uniformizer`（待定：素元／一致化元／均匀化元）。

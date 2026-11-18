@@ -1,0 +1,26 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_A6Series
+
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.a₆_def
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.norm_pow_sub_pow_le
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.norm_qFactor
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.qFactor_zero_sub_q
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.norm_coeff_mul_qFactor_le
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.norm_qFactor_sub_le
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.norm_q_sq_div_sub_le
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.norm_weighted_le
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.summable_qFactor_smul
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.summable_coeff_mul_qFactor
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.summable_a₆Coeff_qFactor
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.eisenstein_combo
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.a₆_eq_neg_tsum
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.norm_weighted_sub_q_le
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.norm_weighted_sub_le
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.norm_weighted_sub_q_sub_le
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.norm_a₆_add_q_le
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.norm_a₆_le
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.norm_a₆_sub_le
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.norm_a₆_add_q_sub_le
