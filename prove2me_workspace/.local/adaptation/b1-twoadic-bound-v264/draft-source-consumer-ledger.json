@@ -1,0 +1,405 @@
+{
+  "date": "2026-11-18",
+  "status": "uncompiled_tmp_source_decomposition_with_complete_proof_bodies",
+  "exact_root": "AbcAdaptation.Tripod.twoAdicBound",
+  "source_root": "refer/iut/Iut/Tripod/TwoAdic.lean:595",
+  "exact_target": "TwoAdicBoundHyp P K (max (4*K.c) 0)",
+  "CI_called": false,
+  "compiler_called": false,
+  "workspace_edited": false,
+  "reference_imports": false,
+  "new_mathematical_premises": false,
+  "genuine_missing_mathematical_subchain_identified": false,
+  "compiled": false,
+  "provider_existence_proved": false,
+  "declarations": [
+    {
+      "name": "natCast_mem_maximalIdeal_iff",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FinitePlaceResidueTransport.lean",
+      "line": 21,
+      "consumers": [
+        "FinitePlace.mapEquiv_residueChar"
+      ],
+      "source": "refer/iut/Iut/Concrete/CurveArithmeticProved.lean:48"
+    },
+    {
+      "name": "FinitePlace.mapEquiv_residueChar",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FinitePlaceResidueTransport.lean",
+      "line": 32,
+      "consumers": [
+        "residueChar_tpdPlace"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:95"
+    },
+    {
+      "name": "log_natCast_nonneg",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TripodalCompactValuation.lean",
+      "line": 21,
+      "consumers": [
+        "abs_log_valuation_mul_le",
+        "term_le"
+      ],
+      "source": "refer/iut/Iut/Implication/PrimeSelection.lean:61"
+    },
+    {
+      "name": "abs_log_valuation_mul_le",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TripodalCompactValuation.lean",
+      "line": 28,
+      "consumers": [
+        "term_le"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:476"
+    },
+    {
+      "name": "genT_ne_zero",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TripodalPlaceTransport.lean",
+      "line": 22,
+      "consumers": [
+        "abs_log_valuation_mul_le"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:410"
+    },
+    {
+      "name": "genT_sub_one_ne_zero",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TripodalPlaceTransport.lean",
+      "line": 24,
+      "consumers": [
+        "abs_log_valuation_mul_le"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:412"
+    },
+    {
+      "name": "tpdEquiv_symm_gen",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TripodalPlaceTransport.lean",
+      "line": 28,
+      "consumers": [
+        "tpdPlace_gen",
+        "tpdPlace_gen_sub_one"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:426"
+    },
+    {
+      "name": "tpdPlace",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TripodalPlaceTransport.lean",
+      "line": 31,
+      "consumers": [
+        "abs_log_valuation_mul_le",
+        "tpdPlace_gen",
+        "tpdPlace_gen_sub_one",
+        "residueChar_tpdPlace"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:434"
+    },
+    {
+      "name": "tpdPlace_gen",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TripodalPlaceTransport.lean",
+      "line": 34,
+      "consumers": [
+        "abs_log_valuation_mul_le"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:437"
+    },
+    {
+      "name": "tpdPlace_gen_sub_one",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TripodalPlaceTransport.lean",
+      "line": 39,
+      "consumers": [
+        "abs_log_valuation_mul_le"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:442"
+    },
+    {
+      "name": "residueChar_tpdPlace",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TripodalPlaceTransport.lean",
+      "line": 45,
+      "consumers": [
+        "abs_log_valuation_mul_le"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:448"
+    },
+    {
+      "name": "twoAdicBound'",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicBound.lean",
+      "line": 24,
+      "consumers": [
+        "twoAdicBound"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:568"
+    },
+    {
+      "name": "twoAdicBound",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicBound.lean",
+      "line": 51,
+      "consumers": [
+        "curveInputs_heightEq_two_le"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:595"
+    },
+    {
+      "name": "TwoAdicBoundHyp",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicBoundHyp.lean",
+      "line": 22,
+      "consumers": [
+        "twoAdicBound'",
+        "twoAdicBound"
+      ],
+      "source": "refer/iut/Iut/Tripod/CurveFacts.lean:409"
+    },
+    {
+      "name": "valuation_legendre_ne_zero",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicLegendreValuation.lean",
+      "line": 24,
+      "consumers": [
+        "log_valuation_legendre_j",
+        "log_valuation_legendre_j_le"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:195"
+    },
+    {
+      "name": "log_valuation_legendre_j",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicLegendreValuation.lean",
+      "line": 35,
+      "consumers": [
+        "log_valuation_legendre_j_le",
+        "term_le"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:206"
+    },
+    {
+      "name": "log_valuation_sq_sub_add_one_le",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicLegendreValuation.lean",
+      "line": 51,
+      "consumers": [
+        "log_valuation_legendre_j_le"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:222"
+    },
+    {
+      "name": "log_valuation_legendre_j_le",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicLegendreValuation.lean",
+      "line": 68,
+      "consumers": [
+        "term_le"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:239"
+    },
+    {
+      "name": "term_le_aux",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicLocalTerm.lean",
+      "line": 27,
+      "consumers": [
+        "term_le"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:501"
+    },
+    {
+      "name": "term_le",
+      "file": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicLocalTerm.lean",
+      "line": 42,
+      "consumers": [
+        "twoAdicBound'"
+      ],
+      "source": "refer/iut/Iut/Tripod/TwoAdic.lean:516"
+    },
+    {
+      "name": "curveInputs_B_nonneg",
+      "file": "Solutions/Source_TripodCurveInputsTwoAdicField.lean",
+      "line": 21,
+      "consumers": [
+        "future exact curveInputs.B_nonneg from CurveFacts.lean:511"
+      ],
+      "source": "exact field value corresponding to refer/iut/Iut/Tripod/CurveFacts.lean:510-512"
+    },
+    {
+      "name": "curveInputs_heightEq_two_le",
+      "file": "Solutions/Source_TripodCurveInputsTwoAdicField.lean",
+      "line": 25,
+      "consumers": [
+        "future exact curveInputs.heightEq_two_le from CurveFacts.lean:512 -> Corollary22Inputs.heightEq_two_le -> C22.c2 P4/P5"
+      ],
+      "source": "exact field value corresponding to refer/iut/Iut/Tripod/CurveFacts.lean:510-512"
+    }
+  ],
+  "imports": [
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.lean",
+      "sha256": "99e53fef33fd12fe770aacf414be2990bbe896ce8f7858d8da2e41c437263d66"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_LocalHeightDataAssembly",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_LocalHeightDataAssembly.lean",
+      "sha256": "2f2a6faf01653793354e105019904699cd5fb5472b97806b264834a3efa93770"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_TripodalPlaceTransport",
+      "path": "/tmp/p2m-tripod-twoadic-bound-next-20261118/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TripodalPlaceTransport.lean",
+      "sha256": "38a5dc76bca161bb6c161cf3065b062ef646e54007831967bcb33eea6fa3ae37"
+    },
+    {
+      "module": "Solutions.Source_TripodFinitePlaceArithmetic",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodFinitePlaceArithmetic.lean",
+      "sha256": "2965af078fe0ef12748671a8bb60ca97ff6a1ca1250a43aeed53a49304a2809e"
+    },
+    {
+      "module": "Definitions.Def_TripodLegendreHeightBasics",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodLegendreHeightBasics.lean",
+      "sha256": "e5310355215b1e468bec258b6eb906f916b95885403dc6f9ca167f796b84becf"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_FieldTransport",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FieldTransport.lean",
+      "sha256": "d9d9d16100dc61108548a3be51846208ae096d048e8b72ce548d7010462e878a"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_FinitePlaceResidueTransport",
+      "path": "/tmp/p2m-tripod-twoadic-bound-next-20261118/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FinitePlaceResidueTransport.lean",
+      "sha256": "e87f0a574f339ef36dc091e2e123f344870c7351e303e7afe0afaaeac0194e0a"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicBoundHyp",
+      "path": "/tmp/p2m-tripod-twoadic-bound-next-20261118/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicBoundHyp.lean",
+      "sha256": "cebff2e8bffa79433edc3e74da705c8ef2714c44dc5c243ecaa4fd655b12a236"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicLocalTerm",
+      "path": "/tmp/p2m-tripod-twoadic-bound-next-20261118/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicLocalTerm.lean",
+      "sha256": "af025862cab436cc16b4c9303e1d640e5942b8ee7229b49e02a78c9d1e7acca1"
+    },
+    {
+      "module": "Solutions.Source_TripodFinitePrimeCounting",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodFinitePrimeCounting.lean",
+      "sha256": "789070a857f73d81dd75c92ac4eef73c37960d7f130387c9b52eee7cba4c60ef"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection_HeightParts",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection_HeightParts.lean",
+      "sha256": "47ba54f07d653ebd6053a0f06507e4ca569022184cbcde2c2c2ad7381491c611"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight.lean",
+      "sha256": "d24632c93518695858d8a9a4d6956674343836fd3440ce704c048ba3eddacee3"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_FieldLegendreFacts",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FieldLegendreFacts.lean",
+      "sha256": "478a6aa70dfcec45be828b69b2a96c1f28a8cfe0d1cb193c6f530b408f378859"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith",
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Tactic/Linarith.lean",
+      "sha256": "0581fd9f80f34d728ad628e7c1fb5a93d36cb9cb48d469fbc797869e83ebe0a6"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicLegendreValuation",
+      "path": "/tmp/p2m-tripod-twoadic-bound-next-20261118/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicLegendreValuation.lean",
+      "sha256": "5a855484a309d494beac6bdc5d611af8a60e15b4ed261c48c42872b142de94ab"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_TripodalCompactValuation",
+      "path": "/tmp/p2m-tripod-twoadic-bound-next-20261118/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TripodalCompactValuation.lean",
+      "sha256": "9007449b964c33e54cc84d160824859a072399084bf75d485ef392ee1770de8e"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_TatePoleOrder",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TatePoleOrder.lean",
+      "sha256": "2663c32b502b8434944907c9662aa94e9121ff29530613a3978b6d01c813c8da"
+    },
+    {
+      "module": "Solutions.Source_TripodPlaceUnder",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodPlaceUnder.lean",
+      "sha256": "91d5bae8c8b9432d556bc75937883f8928ef4098484bf26c7a716411cc213bed"
+    },
+    {
+      "module": "Solutions.Source_TripodRelativeDegreeTower",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeDegreeTower.lean",
+      "sha256": "348dcecf2c530ad9128ad5ec1cba5c320cc5e3d662e1c8095e2120a44b18bf92"
+    },
+    {
+      "module": "Mathlib.Tactic.GCongr",
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Tactic/GCongr.lean",
+      "sha256": "2bf8a1f3821398421422698977bb0bf22ace83a3e2b572adcb80d02fedd280a5"
+    },
+    {
+      "module": "Mathlib.Tactic.Positivity",
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Tactic/Positivity.lean",
+      "sha256": "74549078792cb4bef7b904577b94f0e206912935507b6f2f39eb73b7a15927d6"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicBound",
+      "path": "/tmp/p2m-tripod-twoadic-bound-next-20261118/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicBound.lean",
+      "sha256": "a396ca53b34f6627cbf807140029c3d923ec1a475a4e0d496aad3d07fe30480c"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_Theory",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_Theory.lean",
+      "sha256": "a9e22491aabe84d68e3ea4c01b813dc0a2de106c85bf78d484b52b8dc668c5e6"
+    }
+  ],
+  "files": [
+    {
+      "path": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FinitePlaceResidueTransport.lean",
+      "sha256": "e87f0a574f339ef36dc091e2e123f344870c7351e303e7afe0afaaeac0194e0a"
+    },
+    {
+      "path": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TripodalCompactValuation.lean",
+      "sha256": "9007449b964c33e54cc84d160824859a072399084bf75d485ef392ee1770de8e"
+    },
+    {
+      "path": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TripodalPlaceTransport.lean",
+      "sha256": "38a5dc76bca161bb6c161cf3065b062ef646e54007831967bcb33eea6fa3ae37"
+    },
+    {
+      "path": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicBound.lean",
+      "sha256": "a396ca53b34f6627cbf807140029c3d923ec1a475a4e0d496aad3d07fe30480c"
+    },
+    {
+      "path": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicBoundHyp.lean",
+      "sha256": "cebff2e8bffa79433edc3e74da705c8ef2714c44dc5c243ecaa4fd655b12a236"
+    },
+    {
+      "path": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicLegendreValuation.lean",
+      "sha256": "5a855484a309d494beac6bdc5d611af8a60e15b4ed261c48c42872b142de94ab"
+    },
+    {
+      "path": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicLocalTerm.lean",
+      "sha256": "af025862cab436cc16b4c9303e1d640e5942b8ee7229b49e02a78c9d1e7acca1"
+    },
+    {
+      "path": "Solutions/Source_TripodCurveInputsTwoAdicField.lean",
+      "sha256": "9c40601e13d41460ede059838f72de050fc069046a32a52ec3c2e30608a093b7"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "refer/iut/Iut/Tripod/TwoAdic.lean",
+      "sha256": "213d57f352bbd1e00efc7b3f570849f6eed0f467c7bfc3b75631286a7bd8f719"
+    },
+    {
+      "path": "refer/iut/Iut/Tripod/CurveFacts.lean",
+      "sha256": "99c2785fdfdfb7a7e9d5f584a6d19ad15ee8a21d25e45e6ca26e125b946857fb"
+    },
+    {
+      "path": "refer/iut/Iut/Concrete/CurveArithmeticProved.lean",
+      "sha256": "fde1a1685c056661466dd5497def021efabafc42cbf8eda49300ae9f99316225"
+    },
+    {
+      "path": "refer/iut/Iut/Implication/PrimeSelection.lean",
+      "sha256": "c9d997817cd3e8d75405195ebec76c77692b4473036615c5a9f0d40f40171580"
+    }
+  ],
+  "static_checks": {
+    "all_new_declarations_have_actual_consumers": true,
+    "all_source_locations_identified": true,
+    "all_import_files_resolve": true,
+    "no_proof_holes": true,
+    "no_trailing_whitespace": true,
+    "source_twoAdicBound_and_twoAdicBound_prime_bodies_text_equal": true,
+    "native_correspondence_checked": false
+  },
+  "readme": {
+    "path": "README.md",
+    "sha256": "04f0878991e6526765e49e4f3cfbd7822152d37b786371f4ae0f17b6939efc74"
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "date": "2026-11-18",
+  "scope": "static current-tree Main129-to-C2 producer/consumer trace; minimal height-field integration draft",
+  "compiled": false,
+  "ci_called": false,
+  "workspace_edited": false,
+  "new_full_CurveInputs_record_claimed": false,
+  "rows": [
+    {
+      "declaration": "tripodTheory",
+      "current_state": "current exact data constructor present",
+      "current_location": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_Theory.lean",
+      "source": "Tripod/Basic.lean:333",
+      "consumer": "curveInputs result type, C22 T"
+    },
+    {
+      "declaration": "CurveProviders and P.curve/P.tate/P.localData/P.h",
+      "current_state": "current declarations present; actual P still a parameter",
+      "current_location": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviders.lean; Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight.lean",
+      "source": "Tripod/CurveFacts.lean:361-395",
+      "consumer": "all curveInputs data and local-height fields"
+    },
+    {
+      "declaration": "h_eq_finHeight_div",
+      "current_state": "current declaration present; aggregate receipt belongs to main agent",
+      "current_location": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_HeightNormalization.lean",
+      "source": "Tripod/Height.lean:603",
+      "consumer": "P.h=canonical auxiliaryHeight"
+    },
+    {
+      "declaration": "LegendreHeightHyp + legendreHeight",
+      "current_state": "current declarations present; comparison gate active in parent session",
+      "current_location": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_LegendreHeightHyp.lean; Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_LegendreHeight.lean",
+      "source": "Tripod/CurveFacts.lean:402; Tripod/Height.lean:791",
+      "consumer": "CurveInputs.htCan_equiv; CurveInputs.northcott"
+    },
+    {
+      "declaration": "NorthcottHyp/northcott/northcott_of_equiv",
+      "current_state": "exact source-shaped wrappers missing; ready as minimal draft",
+      "current_location": "Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean supplies full concrete theorem",
+      "source": "Tripod/Basic.lean:425,451,457; Tripod/Northcott.lean:183",
+      "consumer": "curveInputs northcott := northcott_of_equiv hN K d hh"
+    },
+    {
+      "declaration": "CurveInputs/excCore/toCorollary22Inputs",
+      "current_state": "whole source type and converter absent in Definitions/Solutions",
+      "current_location": "design/FullCurveInputs-and-toC22.source.lean.txt is complete source selection only",
+      "source": "Concrete/Existence.lean:390,469,474",
+      "consumer": "Main.lean:137 I family, C22.c2 and statementII_of_cor312"
+    },
+    {
+      "declaration": "tripodProviders",
+      "current_state": "closed producer absent; CurveProviders type does not instantiate it",
+      "current_location": "no exact named current definition found",
+      "source": "Tripod/Providers.lean:33",
+      "consumer": "Main.lean:135 CF and all actual curveInputs calls"
+    },
+    {
+      "declaration": "dmod_le, degree bounds and torsionDegreeBound_three/five",
+      "current_state": "source-specific named proofs absent; field j membership and identification already present",
+      "current_location": "FieldIdentification/FieldTransport give prerequisites only",
+      "source": "Tripod/CurveFacts.lean:177,191,273,339; Tripod/TorsionDegree.lean:237 and final theorems",
+      "consumer": "CurveInputs.deg_le,dmod_le; actual InitialThetaData degree bound"
+    },
+    {
+      "declaration": "TwoAdicBoundHyp and twoAdicBound",
+      "current_state": "actual source-shaped condition/theorem absent",
+      "current_location": "existing finite prime counting and relative degree/valuation files supply part of closure",
+      "source": "Tripod/CurveFacts.lean:409; Tripod/TwoAdic.lean:517,568,595",
+      "consumer": "CurveInputs.B=max(4*K.c,0), B_nonneg, heightEq_two_le"
+    },
+    {
+      "declaration": "HasCyclicSubgroup/CyclicBoundOddHyp/CurveFactsProp/cyclicBoundOdd",
+      "current_state": "real group condition and its bound absent; C22 record has generic predicate field only",
+      "current_location": "no real curve-level HasCyclicSubgroup declaration found",
+      "source": "Concrete/CyclicSubgroup.lean; Tripod/CurveFacts.lean:425,484; Tripod/CyclicIsogeny.lean:1064",
+      "consumer": "CurveInputs.HasCyclicSubgroup,TK,cyclic_bound; C22.c2 P4"
+    },
+    {
+      "declaration": "SL2ImageHyp/sl2Image",
+      "current_state": "source theorem absent; actual ModEllRepData carrier present",
+      "current_location": "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_CurveData.lean provides rep data only",
+      "source": "Tripod/CurveFacts.lean:431,442; Concrete/SL2Image.lean",
+      "consumer": "CurveInputs.sl2_of; C22.c2 P6"
+    },
+    {
+      "declaration": "logDifferentDeg/logDiff_eq and logConductorDegOf/VBadOf/logCondGe/logCondLe",
+      "current_state": "actual source invariants and source-shaped comparison names absent",
+      "current_location": "local canonical logDiff/logCond definitions exist; no equivalence with absent source invariant is inferred",
+      "source": "Tripod/CurveFacts.lean:65,72,255,459,468; Concrete/Existence.lean:96; Tripod/LogCond.lean:196,206",
+      "consumer": "CurveInputs.logDiff_eq/logCond_ge/logCond_le; thetaData matching to C22"
+    },
+    {
+      "declaration": "CoreFinitenessHyp/HasCoreUniversally/coreFiniteness",
+      "current_state": "real source model/core relation and finite exceptional producer absent",
+      "current_location": "generic AnabelianGeometry interface is not the real core existence producer",
+      "source": "Tripod/CurveFacts.lean:475; Tripod/Core.lean:112; Anabelian/GenuineEtale.lean:100,111",
+      "consumer": "CurveInputs.excCore_finite; same-x thetaData hcore"
+    },
+    {
+      "declaration": "ConcreteThetaDataExistence and toThetaDataExistence",
+      "current_state": "actual concrete family producer/converter absent; generic ThetaDataExistence carrier is present",
+      "current_location": "Definitions/Def_AbcAdaptation_Reference_Iut_Implication_Corollary22.lean",
+      "source": "Concrete/Main.lean:49,68; Tripod/Main.lean:86",
+      "consumer": "statementII_of_cor312 ex family; C22.c2 ex.thetaData"
+    },
+    {
+      "declaration": "thetaData/qPilotInputs/concreteLocalTheory/thetaLocalData/towerArithmetic_of_towerLocalHyp",
+      "current_state": "actual selected-curve producer chain absent under these source names",
+      "current_location": "existing abstract InitialThetaData/LocalTheory/TL/QPilot carriers do not supply selected actual data",
+      "source": "Concrete/Existence.lean:325; Concrete/LocalConstruct/Theory.lean; Tripod/Tower.lean:87; Tripod/TameTwo.lean:241",
+      "consumer": "Main.lean:109-124 D,LT,TL,QI,TA from same x and ell"
+    },
+    {
+      "declaration": "Corollary22Inputs and ThetaDataExistence",
+      "current_state": "current exact source interfaces present",
+      "current_location": "Definitions/Def_AbcAdaptation_Reference_Iut_Implication_Corollary22.lean",
+      "source": "Implication/Corollary22.lean:284,357",
+      "consumer": "actual I/ex must inhabit these interfaces; interfaces are not producers"
+    },
+    {
+      "declaration": "Corollary22Inputs.c2 and statementII_of_cor312",
+      "current_state": "current theorem declarations/proof commands present; no new acceptance claim",
+      "current_location": "Theorems/Thm_AbcAdaptation_Reference_Iut_Corollary22Inputs_c2.lean; Theorems/Thm_AbcAdaptation_Reference_Iut_statementII_of_cor312.lean",
+      "source": "Implication/Corollary22.lean:386; Implication/Corollary23.lean:56",
+      "consumer": "final same-input estimate and bounded-compact ABC consumer"
+    },
+    {
+      "declaration": "chebyshevBoundExplicit/primeCountingBoundExplicit",
+      "current_state": "source closed witnesses absent by these names; generic certificates present",
+      "current_location": "numeric certificate types in current tree do not select source witnesses",
+      "source": "Implication/ChebyshevExplicit.lean:207,262",
+      "consumer": "Main.lean:143 and exact C2 threshold/additive constant"
+    },
+    {
+      "declaration": "universal h312",
+      "current_state": "explicit mathematical boundary; not proved by this draft",
+      "current_location": "original exact family retained in next-source design",
+      "source": "Tripod/Main.lean:130-132; ClassicalAbcGenuineCanLift.lean:40",
+      "consumer": "c2/Theorem110 on same D,LT,TL,QI; cannot replace with single instance"
+    }
+  ],
+  "files": [
+    {
+      "path": "Definitions/Def_AbcAdaptation_Reference_Genl_DiscrepancyEquivGe.lean",
+      "sha256": "e587fa7eae043bfc01e12bb733ed475ebae3a2bb15baf5a56ad6733cab33906f"
+    },
+    {
+      "path": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_NorthcottComparison.lean",
+      "sha256": "606e45560922e700520623ec470e76a0e81ee0811252af1a9a8f0414a4742f2b"
+    },
+    {
+      "path": "Solutions/Source_TripodCurveInputsHeightFields.lean",
+      "sha256": "821d97d3403610af10e7eb8031dc666e9add4acce5081f0d3b9b5936741e5123"
+    }
+  ],
+  "imports": [
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Genl_Mathlib_Order_BoundedDiscrepancy",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Genl_Mathlib_Order_BoundedDiscrepancy.lean",
+      "sha256": "6c01fd7567e443bd33d85a0c0d41036519de37a57f2f5c9b14a9604171b6f18d"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Genl_DiscrepancyEquivGe",
+      "path": "/tmp/p2m-curve-inputs-height-fields-next-20261118/Definitions/Def_AbcAdaptation_Reference_Genl_DiscrepancyEquivGe.lean",
+      "sha256": "e587fa7eae043bfc01e12bb733ed475ebae3a2bb15baf5a56ad6733cab33906f"
+    },
+    {
+      "module": "Theorems.Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness.lean",
+      "sha256": "b9022271b98e372f645a7942054ec998c100fc2555c4f13eaca2da4dd5f4d7d2"
+    },
+    {
+      "module": "Mathlib.Tactic.Linarith",
+      "path": "/home/admin-wsl/Coq/mathlib4-0df444a/Mathlib/Tactic/Linarith.lean",
+      "sha256": "0581fd9f80f34d728ad628e7c1fb5a93d36cb9cb48d469fbc797869e83ebe0a6"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_Theory",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_Theory.lean",
+      "sha256": "a9e22491aabe84d68e3ea4c01b813dc0a2de106c85bf78d484b52b8dc668c5e6"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_LegendreHeight",
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_LegendreHeight.lean",
+      "sha256": "e8255536d6239dc443a5ec3db08bb2b973df2e7c229191d8661b2f5d2b192ff8"
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_NorthcottComparison",
+      "path": "/tmp/p2m-curve-inputs-height-fields-next-20261118/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_NorthcottComparison.lean",
+      "sha256": "606e45560922e700520623ec470e76a0e81ee0811252af1a9a8f0414a4742f2b"
+    }
+  ],
+  "source_selection_hashes": [
+    {
+      "path": "refer/iut/Iut/Tripod/Main.lean",
+      "sha256": "3d920399b8cbda2e31fe4935281c0451680a4a2c06286b2093089a4743acaede"
+    },
+    {
+      "path": "refer/iut/Iut/Tripod/CurveFacts.lean",
+      "sha256": "99c2785fdfdfb7a7e9d5f584a6d19ad15ee8a21d25e45e6ca26e125b946857fb"
+    },
+    {
+      "path": "refer/iut/Iut/Tripod/Basic.lean",
+      "sha256": "ef9ae664dc1d770221b7153f3ea3c8ab703183233657931b3d26cbbfac9566e4"
+    },
+    {
+      "path": "refer/iut/Iut/Concrete/Existence.lean",
+      "sha256": "7f13d5adf2ed0b72f2b0f78059fd7f1731422ce24c7a66deb3b2902a3ba3b314"
+    }
+  ],
+  "static_checks": {
+    "all_proposed_imports_resolve": true,
+    "no_proof_hole_commands": true,
+    "no_trailing_whitespace": true,
+    "native_correspondence_checked": false,
+    "original_NorthcottHyp_and_two_proof_bodies_exact": true
+  },
+  "artifacts": [
+    {
+      "path": "Definitions/Def_AbcAdaptation_Reference_Genl_DiscrepancyEquivGe.lean",
+      "sha256": "e587fa7eae043bfc01e12bb733ed475ebae3a2bb15baf5a56ad6733cab33906f"
+    },
+    {
+      "path": "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_NorthcottComparison.lean",
+      "sha256": "606e45560922e700520623ec470e76a0e81ee0811252af1a9a8f0414a4742f2b"
+    },
+    {
+      "path": "README.md",
+      "sha256": "7a99857522aaf3d380cd52a669fe24fcf6665e7c33a0e2ea6043e6ce75c31ef2"
+    },
+    {
+      "path": "Solutions/Source_TripodCurveInputsHeightFields.lean",
+      "sha256": "821d97d3403610af10e7eb8031dc666e9add4acce5081f0d3b9b5936741e5123"
+    },
+    {
+      "path": "design/FullCurveInputs-and-toC22.source.lean.txt",
+      "sha256": "6c53cf6a9edb4981cc65932d9fe35f5b3b212723ff99498f80da76d2e8a31060"
+    }
+  ]
+}

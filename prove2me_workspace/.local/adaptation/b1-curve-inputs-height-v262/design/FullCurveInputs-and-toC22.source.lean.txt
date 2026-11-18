@@ -1,0 +1,112 @@
+/-
+Copyright (c) 2026 The iut contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: The iut contributors
+
+Exact complete source structure/consumer selection. Context: namespace Iut,
+T : Genl.HeightTheory, AG : AnabelianGeometry; open OrbicurveDataSection,
+NumberField. This is a design reference, not an importable module. Full record
+is deliberately preserved; unavailable fields are not erased or replaced.
+-/
+structure CurveInputs (K : T.CBS) (d : ℕ) where
+  /-- The height `h = log(q_∀(−))`. -/
+  h : T.Pt T.tripod → ℝ
+  /-- The curve `E_x/F_x` of a point. -/
+  curve : ∀ x : T.Pt T.tripod, x ∈ T.cbsSet K ∩ T.ptLE T.tripod d → EllipticCurveData.{u}
+  /-- The arithmetic of `E_x/F_x` (IUT IV, Proposition 1.8). -/
+  arith : ∀ x hx, (curve x hx).CurveArithmetic
+  /-- The Tate parameters of `E_x`. -/
+  tate : ∀ x hx, (curve x hx).TateInputs
+  /-- The mod-`ℓ` representations of `E_x`. -/
+  modRep : ∀ x hx (ℓ : ℕ), ℓ.Prime → (curve x hx).ModEllRepData ℓ
+  /-- The local height data of `E_x` computes `h`. -/
+  height_eq : ∀ x hx, ((curve x hx).localHeightData (arith x hx) (tate x hx)).height = h x
+  /-- `[F_x : ℚ] ≤ 2¹²·3³·5·d` ((E3)–(E5) in the proof of Theorem 1.10). -/
+  deg_le : ∀ x hx, Module.finrank ℚ (curve x hx).F ≤ 552960 * d
+  /-- `d_mod = [F_mod : ℚ] ≤ d`. -/
+  dmod_le : ∀ x hx, Module.finrank ℚ ↥(fieldOfModuli (curve x hx).F (curve x hx).E) ≤ d
+  /-- **Corollary 2.2(i)**: `(1/6)·log(q_∀) ≈ ht_{ω_X(D)}` on `K_V`. -/
+  htCan_equiv : ((1 / 6 : ℝ) • h) ≈[T.cbsSet K] T.htCan T.tripod
+  /-- **Northcott finiteness**. -/
+  northcott : ∀ H : ℝ, {x | x ∈ T.cbsSet K ∩ T.ptLE T.tripod d ∧ h x ≤ H}.Finite
+  /-- The bound `B_K` on the contribution of the prime `2` to `log(q_∀)`. -/
+  B : ℝ
+  /-- `B_K ≥ 0`. -/
+  B_nonneg : 0 ≤ B
+  /-- The contribution of the places over `2` is bounded on `K_V`. -/
+  heightEq_two_le : ∀ x hx,
+    ((curve x hx).localHeightData (arith x hx) (tate x hx)).heightEq 2 ≤ B
+  /-- `E_x` has an `ℓ`-cyclic subgroup scheme. -/
+  HasCyclicSubgroup : T.Pt T.tripod → ℕ → Prop
+  /-- The number `T_K` of [GenEll], Lemma 3.5. -/
+  TK : ℝ
+  /-- **[GenEll], Lemma 3.5 with Proposition 3.4, away from `2`**: an `ℓ`-cyclic subgroup
+  scheme forces `((ℓ−2)/24)·(log(q_∀) − log(q₂)) ≤ 2·log ℓ + T_K`, where `log(q₂)` is the part of
+  `log(q_∀)` supported over `2`. -/
+  cyclic_bound : ∀ (x : T.Pt T.tripod) (hx : x ∈ T.cbsSet K ∩ T.ptLE T.tripod d),
+    ∀ ℓ : ℕ, ℓ.Prime → 7 ≤ ℓ →
+    (∀ w ∈ ((curve x hx).localHeightData (arith x hx) (tate x hx)).bad,
+      ¬ ℓ ∣ ((curve x hx).localHeightData (arith x hx) (tate x hx)).hv w) →
+    HasCyclicSubgroup x ℓ →
+    ((ℓ : ℝ) - 2) / 24 *
+        (h x - ((curve x hx).localHeightData (arith x hx) (tate x hx)).heightEq 2) ≤
+      2 * Real.log ℓ + TK
+  /-- **[GenEll], Lemma 3.1(iii)**: (P2), (P4), (P5) imply that the image of the mod-`ℓ`
+  representation contains `SL₂(𝔽_ℓ)`. -/
+  sl2_of : ∀ x hx (ℓ : ℕ) (hℓ : ℓ.Prime), 5 ≤ ℓ →
+    (∀ w ∈ ((curve x hx).localHeightData (arith x hx) (tate x hx)).bad,
+      ¬ ℓ ∣ ((curve x hx).localHeightData (arith x hx) (tate x hx)).hv w) →
+    ¬ HasCyclicSubgroup x ℓ →
+    (∃ w ∈ ((curve x hx).localHeightData (arith x hx) (tate x hx)).bad,
+      ((curve x hx).localHeightData (arith x hx) (tate x hx)).p w ≠ 2 ∧
+      ((curve x hx).localHeightData (arith x hx) (tate x hx)).p w ≠ ℓ) →
+    ∀ A : Matrix.SpecialLinearGroup (Fin 2) (ZMod ℓ), A.toGL ∈ (modRep x hx ℓ hℓ).rep.range
+  /-- **[CanLift], Proposition 2.7** (taxis #10): only finitely many points of bounded
+  degree have a once-punctured elliptic curve `X_x` that fails to have the `F_x`-core
+  `C_x = X_x/{±1}`. -/
+  excCore_finite : {x | ∃ hx : x ∈ T.cbsSet K ∩ T.ptLE T.tripod d,
+    ¬ OrbicurveDataSection.HasCoreUniversally AG (curve x hx).F (curve x hx).E}.Finite
+  /-- `log-diff_X(x)` is the normalized degree of the different of `F_tpd`. -/
+  logDiff_eq : ∀ x hx,
+    T.logDiff T.tripod x = logDifferentDeg ↥(tripodalFieldOf (curve x hx).F (curve x hx).E)
+  /-- The conductor invariant of `F_tpd` (away from `2ℓ`) is at most `log-cond_D(x)`. -/
+  logCond_ge : ∀ x hx (ℓ : ℕ), ℓ.Prime → 7 ≤ ℓ →
+    logConductorDegOf (curve x hx).F (curve x hx).E ((curve x hx).VBadOf ℓ) ≤
+      T.logCond T.tripod x
+  /-- `log-cond_D(x)` exceeds the conductor invariant of `F_tpd` away from `2ℓ` by at most
+  `log(2ℓ)`. -/
+  logCond_le : ∀ x hx (ℓ : ℕ), ℓ.Prime → 7 ≤ ℓ →
+    T.logCond T.tripod x ≤
+      logConductorDegOf (curve x hx).F (curve x hx).E ((curve x hx).VBadOf ℓ) +
+        Real.log (2 * ℓ)
+
+variable {T AG}
+
+namespace CurveInputs
+
+variable {K : T.CBS} {d : ℕ} (CI : CurveInputs.{u} T AG K d)
+
+/-- The points whose once-punctured elliptic curve fails to have an `F`-core. -/
+def excCore : Set (T.Pt T.tripod) :=
+  {x | ∃ hx : x ∈ T.cbsSet K ∩ T.ptLE T.tripod d,
+    ¬ OrbicurveDataSection.HasCoreUniversally AG (CI.curve x hx).F (CI.curve x hx).E}
+
+/-- The inputs of Corollary 2.2 derived from the curves. -/
+noncomputable def toCorollary22Inputs : Corollary22Inputs T K d where
+  h := CI.h
+  localData x hx := (CI.curve x hx).localHeightData (CI.arith x hx) (CI.tate x hx)
+  localData_height := CI.height_eq
+  localData_deg_le := CI.deg_le
+  htCan_equiv := CI.htCan_equiv
+  northcott := CI.northcott
+  B := CI.B
+  B_nonneg := CI.B_nonneg
+  heightEq_two_le := CI.heightEq_two_le
+  HasCyclicSubgroup := CI.HasCyclicSubgroup
+  TK := CI.TK
+  cyclic_bound := CI.cyclic_bound
+  SL2Image x ℓ := ∀ hx (hℓ : ℓ.Prime), ∀ A : Matrix.SpecialLinearGroup (Fin 2) (ZMod ℓ),
+    A.toGL ∈ (CI.modRep x hx ℓ hℓ).rep.range
+  sl2_of x hx ℓ hp h5 hP2 hcyc hP5 _ hp' := CI.sl2_of x hx ℓ hp' h5 hP2 hcyc hP5
+  excCore := CI.excCore
+  excCore_finite := CI.excCore_finite.subset Set.inter_subset_left
