@@ -1,0 +1,4 @@
+import Solutions.Source_SL2ImageLocalTorsion
+
+#print axioms AbcAdaptation.Reference.Iut.EllipticCurveData.card_torsion_curveKw_ge
+#print axioms AbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_ramificationIdx_of_tateStructure

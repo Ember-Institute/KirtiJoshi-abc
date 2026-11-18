@@ -86,9 +86,12 @@ MCP-CI、worktree-isolation、subagent-workspace 技能。本文件统一后续�
 - 每次失败、优化、重试与最终验收记录对应 job ID、输入版本、退出原因、墙钟/CPU 时间、
   峰值物理内存及诊断。窄目标通过只覆盖这些目标，不能宣称整个项目或数学父义务已完成。
 
-## 证明性能与导入纪律
+## `rg` 双核启动
 
-- 所有 `rg` 搜索一律限制在两个可用核心，并使用至多两个搜索线程；不得让全文搜索争抢全部核心。本会话使用 `prove2me_workspace/.local/bin/rg-two-cores` 执行搜索。
+- 所有会话和子智能体的每次 `rg` 调用均须在启动前将 CPU 亲和性限制为两个可用核心，并设置 `--threads 2`。这也适用于 `rg --files`、单文件搜索和脚本内的调用。
+- 使用 `prove2me_workspace/.local/bin/rg-two-cores` 启动。启动脚本不可用时，先从当前进程允许使用的 CPU 中选取两个核心，用 `taskset` 设置亲和性，再启动 `rg --threads 2`。调用时不得覆盖线程数。
+
+## 证明性能与导入纪律
 
 - Mathlib 只精确导入实际需要的模块。Scene1 禁止导入 `Prologue/Obligations`、
   Scene2、Act2 或隐藏全局输入以补齐未完成证明。

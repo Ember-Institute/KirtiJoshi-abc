@@ -1,0 +1,493 @@
+{
+  "job_id": "ci-020326-01a0860a",
+  "attempt_id": "attempt-9942e015d47f",
+  "status": "succeeded",
+  "submitted_at": 1794995281.4200542,
+  "started_at": 1794995351.833347,
+  "finished_at": 1794995674.4570978,
+  "queue_time_seconds": 70.41329288482666,
+  "compile_time_seconds": 322.6237506866455,
+  "progress": {},
+  "resources": {
+    "memory_decision": {
+      "worker_pressure": "normal",
+      "host_pressure": "normal",
+      "total_worker_bytes": 28099432448
+    },
+    "cpu_time_seconds": 318.36,
+    "peak_rss_bytes": 5039898624,
+    "peak_pss_bytes": null,
+    "cpu_user_seconds": 208.01,
+    "cpu_system_seconds": 110.35,
+    "wall_time_seconds": 322.51031449998845,
+    "allocated_cpu_count": 4,
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "affinity_applied": true,
+    "affinity_error": null
+  },
+  "deduplicated": false,
+  "request": {
+    "language": "lean",
+    "task_type": "review",
+    "project_id": "ArithmeticTeichmullerSpaces",
+    "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "exclusive": true,
+    "target": "file",
+    "parameters": {
+      "source": ".local/adaptation/b1-curve-field-arithmetic-20261118/ReviewSL2ArithmeticAxioms.lean"
+    },
+    "environment": {
+      "LEAN_PATH": "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean:/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+      "PATH": "/root/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/root/.nvm/versions/node/v22.23.2/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/root/.codex-key3/tmp/arg0-linux/codex-arg09EKFI6:/root/.cabal/bin:/root/.ghcup/bin:/root/.nvm/versions/node/v22.23.2/bin:/root/.opam/Coq900/bin:/root/.elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+    },
+    "expected_duration": 170,
+    "expected_memory": 8589934592,
+    "session_id": "p2m-curve-field-01a1ecf6",
+    "agent_id": "/root",
+    "worktree_manifest": {
+      "worktree_id": "/home/admin-wsl/Coq/abc",
+      "head": "96176c1b836a43ad9957afab8b4872eabee59174",
+      "modified_files": [
+        "AGENTS.md",
+        "docs/Prove2Me适配状态.md",
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.Prove2Me适配.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md"
+      ],
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/Scene1进度总览5.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_CurveInputs.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TripodalInvariants.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveDegreeBound.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveFacts.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_DifferentDegree.lean",
+        "prove2me_workspace/Solutions/Sketch_EllipticCurveData_prime_dvd_card_range.lean",
+        "prove2me_workspace/Solutions/Sketch_EllipticCurveData_sl_le_range_of.lean",
+        "prove2me_workspace/Solutions/Sketch_Tripod_sl2Image.lean",
+        "prove2me_workspace/Solutions/Source_ModEllRepGalois.lean",
+        "prove2me_workspace/Solutions/Source_ModEllRepStableLine.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutSL2Generation.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutTateTorsion.lean",
+        "prove2me_workspace/Solutions/Source_SL2ImageLocalTorsion.lean",
+        "prove2me_workspace/Solutions/Source_SL2ImageLocalValuation.lean",
+        "prove2me_workspace/Solutions/Source_SL2ImageOfCardinality.lean",
+        "prove2me_workspace/Solutions/Source_SL2ImageRangeCardinality.lean",
+        "prove2me_workspace/Solutions/Source_TripodCurveInputs.lean",
+        "prove2me_workspace/Solutions/Source_TripodCurveInputsFieldArithmetic.lean",
+        "prove2me_workspace/Solutions/Source_TripodTorsionAction.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_EllipticCurveData_prime_dvd_card_range.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_EllipticCurveData_prime_dvd_ramificationIdx.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_EllipticCurveData_sl_le_range_of.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_sl2Image.lean"
+      ],
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+      },
+      "external_dependencies": [
+        {
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+        }
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+      ],
+      "input_hashes": {
+        ".local/adaptation/b1-curve-field-arithmetic-20261118/ReviewSL2ArithmeticAxioms.lean": "6e374b3546df034aca44fb00b1e7b9363d7bd9febc0a180028c80eb4f843703e",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField.lean": "c7dc2c8bbaf5092604bbdf0284af992762a3cfb7eb803d360152254e109ca254",
+        "Solutions/Source_ModEllRepGalois.lean": "e3e26ac1f1ebaacdec75603b7c986550df06dd5c4d2b7f45932633153a775e3a",
+        "Solutions/Source_ReferenceIutTateTorsion.lean": "653074621f5a8715560057b8dd22102a753fa4872cab168c4c0093f34352e357",
+        "Solutions/Source_SL2ImageLocalValuation.lean": "6839ed40126c8f8db55293239400ba178110011bbb225bbccf5bf2b8d2eeb430",
+        "Solutions/Source_SL2ImageRangeCardinality.lean": "9587a76a9f9533770969e2a4043b0e638351eece7463977e40efa555b418934f"
+      },
+      "source_sha256": "6e374b3546df034aca44fb00b1e7b9363d7bd9febc0a180028c80eb4f843703e",
+      "resource_estimate_basis": "Similar multi-module reviews use around 5GiB RSS and 330–370s wall time."
+    },
+    "idempotency_key": "p2m-curve-field-sl2-arithmetic-axioms-1-6e374b3546df034a",
+    "scheduler_timeout_seconds": 770,
+    "priority": 0,
+    "profile": "default",
+    "workspace_source": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "workspace_mode": "exclusive_worktree",
+    "snapshot_manifest": {
+      "worktree_id": "/home/admin-wsl/Coq/abc",
+      "head": "96176c1b836a43ad9957afab8b4872eabee59174",
+      "modified_files": [
+        "AGENTS.md",
+        "docs/Prove2Me适配状态.md",
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.Prove2Me适配.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md"
+      ],
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/Scene1进度总览5.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_CurveInputs.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TripodalInvariants.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveDegreeBound.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveFacts.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_DifferentDegree.lean",
+        "prove2me_workspace/Solutions/Sketch_EllipticCurveData_prime_dvd_card_range.lean",
+        "prove2me_workspace/Solutions/Sketch_EllipticCurveData_sl_le_range_of.lean",
+        "prove2me_workspace/Solutions/Sketch_Tripod_sl2Image.lean",
+        "prove2me_workspace/Solutions/Source_ModEllRepGalois.lean",
+        "prove2me_workspace/Solutions/Source_ModEllRepStableLine.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutSL2Generation.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutTateTorsion.lean",
+        "prove2me_workspace/Solutions/Source_SL2ImageLocalTorsion.lean",
+        "prove2me_workspace/Solutions/Source_SL2ImageLocalValuation.lean",
+        "prove2me_workspace/Solutions/Source_SL2ImageOfCardinality.lean",
+        "prove2me_workspace/Solutions/Source_SL2ImageRangeCardinality.lean",
+        "prove2me_workspace/Solutions/Source_TripodCurveInputs.lean",
+        "prove2me_workspace/Solutions/Source_TripodCurveInputsFieldArithmetic.lean",
+        "prove2me_workspace/Solutions/Source_TripodTorsionAction.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_EllipticCurveData_prime_dvd_card_range.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_EllipticCurveData_prime_dvd_ramificationIdx.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_EllipticCurveData_sl_le_range_of.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_sl2Image.lean"
+      ],
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+      },
+      "external_dependencies": [
+        {
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+        }
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+      ],
+      "input_hashes": {
+        ".local/adaptation/b1-curve-field-arithmetic-20261118/ReviewSL2ArithmeticAxioms.lean": "6e374b3546df034aca44fb00b1e7b9363d7bd9febc0a180028c80eb4f843703e",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField.lean": "c7dc2c8bbaf5092604bbdf0284af992762a3cfb7eb803d360152254e109ca254",
+        "Solutions/Source_ModEllRepGalois.lean": "e3e26ac1f1ebaacdec75603b7c986550df06dd5c4d2b7f45932633153a775e3a",
+        "Solutions/Source_ReferenceIutTateTorsion.lean": "653074621f5a8715560057b8dd22102a753fa4872cab168c4c0093f34352e357",
+        "Solutions/Source_SL2ImageLocalValuation.lean": "6839ed40126c8f8db55293239400ba178110011bbb225bbccf5bf2b8d2eeb430",
+        "Solutions/Source_SL2ImageRangeCardinality.lean": "9587a76a9f9533770969e2a4043b0e638351eece7463977e40efa555b418934f"
+      },
+      "source_sha256": "6e374b3546df034aca44fb00b1e7b9363d7bd9febc0a180028c80eb4f843703e",
+      "resource_estimate_basis": "Similar multi-module reviews use around 5GiB RSS and 330–370s wall time."
+    }
+  },
+  "result": {
+    "exit_code": 0,
+    "stdout": "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.numberField_torsionField: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionField: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAudited 2 owned declarations in Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField\nAbcAdaptation.Reference.Iut.galPointMap.eq_1: standard axioms [propext, Classical.choice, Quot.sound]\nWeierstrassCurve.Affine.Point.map.congr_simp: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.EK: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.TFbar: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.TK: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.bcK: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.bcK_injective: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.bcK_mem_TFbar: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.card_range: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.card_torsionBy_EK: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.exists_bcK_eq: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.fixingSubgroup_torsionField: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.galPointMap_eq_of_mem_ker: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.instDecidableEqTorsionField: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.isGalois_torsionField: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.mem_TK_of_bcK: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.restrictNormalHom_ker_eq: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.EK._proof_1: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.bcK._proof_1: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.bcK._proof_2: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.bcK._proof_3: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_1: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_2: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_3: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_4: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_5: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_6: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv._proof_1: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv._proof_2: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv._proof_3: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv._proof_4: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv._proof_5: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionField.eq_1: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAudited 35 owned declarations in Solutions.Source_ModEllRepGalois\nAbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_card_range_of_ramification: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ramificationIdx'_dvd_card_gal: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.FinitePlace.exists_liesOver: standard axioms [propext, Classical.choice, Quot.sound]\nAudited 3 owned declarations in Solutions.Source_SL2ImageRangeCardinality\nAbcAdaptation.Reference.Iut.TateStructure.card_graphLine_le: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.card_range_le: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.card_torsion_eq: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.card_torsion_le: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.exists_rep: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.exists_root_class: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.expo: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.expo_congr: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.finite_graphLine: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.finite_torsion: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.graphLine_le_torsion: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.nsmul_ofUnit: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.ofUnit_eq_iff: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.ofUnit_eq_zero_iff: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.ofUnit_mem_torsionBy_iff: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.ofUnit_rep: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.ofUnit_rootsOfUnity_surjective: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.ofUnit_surjective: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.q_zpow_injective: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.rep: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.rep_pow: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.resid: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.resid_apply: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.resid_eq_zero_iff: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.resid_ker: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.resid_range_eq_top: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.torsion: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.expo._proof_1: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.expo.congr_simp: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.ofUnit_eq_iff._simp_1_1: standard axioms [propext]\nAbcAdaptation.Reference.Iut.TateStructure.resid._proof_1: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.resid._proof_2: standard axioms [propext, Classical.choice, Quot.sound]\nAudited 32 owned declarations in Solutions.Source_ReferenceIutTateTorsion\n_private.Solutions.Source_SL2ImageLocalValuation.0.AbcAdaptation.Reference.Iut.valued_finitePlaceEmbedding: standard axioms [propext,\n Classical.choice,\n Quot.sound]\n_private.Solutions.Source_SL2ImageLocalValuation.0.AbcAdaptation.Reference.Iut.valued_q_eq_inv_tateJ: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_ramificationIdx_of_root_class: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAudited 3 owned declarations in Solutions.Source_SL2ImageLocalValuation\n",
+    "stderr": "",
+    "diagnostics": [],
+    "actual_arguments": [
+      "lean",
+      ".local/adaptation/b1-curve-field-arithmetic-20261118/ReviewSL2ArithmeticAxioms.lean"
+    ],
+    "snapshot": {
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "fingerprint": null,
+      "manifest": {
+        "worktree_id": "/home/admin-wsl/Coq/abc",
+        "head": "96176c1b836a43ad9957afab8b4872eabee59174",
+        "modified_files": [
+          "AGENTS.md",
+          "docs/Prove2Me适配状态.md",
+          "docs/对Joshi'sFAQ的独立形式化审查.md",
+          "docs/开发计划.Prove2Me适配.md",
+          "docs/开发计划.V1Act1log1.md",
+          "docs/开发计划.V1Act1log2.md",
+          "docs/开发计划.V1Act1log3.md",
+          "docs/开发计划.V1Act1log4.md",
+          "docs/开发计划.V1Act1log5.md"
+        ],
+        "untracked_files": [
+          "docs/Email.txt",
+          "docs/Mochizuki审计.md",
+          "docs/Scene1进度总览3.md",
+          "docs/Scene1进度总览5.md",
+          "docs/olds/Scene1进度总览1.md",
+          "docs/olds/具有明确参考来源指示的证明义务.old.md",
+          "docs/olds/开发计划.V1Act1log1.md",
+          "docs/olds/开发计划.V1Act1log2.md",
+          "docs/olds/开发计划.V1Act1log3.md",
+          "docs/olds/开发计划.V1Act1log4.md",
+          "docs/olds/开发计划.V1Act1log5.md",
+          "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_CurveInputs.lean",
+          "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField.lean",
+          "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TripodalInvariants.lean",
+          "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveDegreeBound.lean",
+          "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveFacts.lean",
+          "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_DifferentDegree.lean",
+          "prove2me_workspace/Solutions/Sketch_EllipticCurveData_prime_dvd_card_range.lean",
+          "prove2me_workspace/Solutions/Sketch_EllipticCurveData_sl_le_range_of.lean",
+          "prove2me_workspace/Solutions/Sketch_Tripod_sl2Image.lean",
+          "prove2me_workspace/Solutions/Source_ModEllRepGalois.lean",
+          "prove2me_workspace/Solutions/Source_ModEllRepStableLine.lean",
+          "prove2me_workspace/Solutions/Source_ReferenceIutSL2Generation.lean",
+          "prove2me_workspace/Solutions/Source_ReferenceIutTateTorsion.lean",
+          "prove2me_workspace/Solutions/Source_SL2ImageLocalTorsion.lean",
+          "prove2me_workspace/Solutions/Source_SL2ImageLocalValuation.lean",
+          "prove2me_workspace/Solutions/Source_SL2ImageOfCardinality.lean",
+          "prove2me_workspace/Solutions/Source_SL2ImageRangeCardinality.lean",
+          "prove2me_workspace/Solutions/Source_TripodCurveInputs.lean",
+          "prove2me_workspace/Solutions/Source_TripodCurveInputsFieldArithmetic.lean",
+          "prove2me_workspace/Solutions/Source_TripodTorsionAction.lean",
+          "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_EllipticCurveData_prime_dvd_card_range.lean",
+          "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_EllipticCurveData_prime_dvd_ramificationIdx.lean",
+          "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_EllipticCurveData_sl_le_range_of.lean",
+          "prove2me_workspace/Theorems/Thm_AbcAdaptation_Tripod_sl2Image.lean"
+        ],
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock": "lake-manifest.json",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "local_configuration": [
+          "lean-toolchain",
+          "lakefile.lean",
+          "lake-manifest.json"
+        ],
+        "configuration_hashes": {
+          "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+          "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+          "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+        },
+        "external_dependencies": [
+          {
+            "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+            "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+            "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+            "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+          }
+        ],
+        "required_artifacts": [
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+          "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+        ],
+        "input_hashes": {
+          ".local/adaptation/b1-curve-field-arithmetic-20261118/ReviewSL2ArithmeticAxioms.lean": "6e374b3546df034aca44fb00b1e7b9363d7bd9febc0a180028c80eb4f843703e",
+          "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField.lean": "c7dc2c8bbaf5092604bbdf0284af992762a3cfb7eb803d360152254e109ca254",
+          "Solutions/Source_ModEllRepGalois.lean": "e3e26ac1f1ebaacdec75603b7c986550df06dd5c4d2b7f45932633153a775e3a",
+          "Solutions/Source_ReferenceIutTateTorsion.lean": "653074621f5a8715560057b8dd22102a753fa4872cab168c4c0093f34352e357",
+          "Solutions/Source_SL2ImageLocalValuation.lean": "6839ed40126c8f8db55293239400ba178110011bbb225bbccf5bf2b8d2eeb430",
+          "Solutions/Source_SL2ImageRangeCardinality.lean": "9587a76a9f9533770969e2a4043b0e638351eece7463977e40efa555b418934f"
+        },
+        "source_sha256": "6e374b3546df034aca44fb00b1e7b9363d7bd9febc0a180028c80eb4f843703e",
+        "resource_estimate_basis": "Similar multi-module reviews use around 5GiB RSS and 330–370s wall time."
+      }
+    },
+    "compiler": {
+      "name": "lean",
+      "version": null
+    },
+    "resources": {
+      "memory_decision": {
+        "worker_pressure": "normal",
+        "host_pressure": "normal",
+        "total_worker_bytes": 28099432448
+      },
+      "cpu_time_seconds": 318.36,
+      "peak_rss_bytes": 5039898624,
+      "peak_pss_bytes": null,
+      "cpu_user_seconds": 208.01,
+      "cpu_system_seconds": 110.35,
+      "wall_time_seconds": 322.51031449998845,
+      "allocated_cpu_count": 4,
+      "cpu_affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "affinity_applied": true,
+      "affinity_error": null
+    },
+    "artifacts": [
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-020326-01a0860a/stdout.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-020326-01a0860a/stderr.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-020326-01a0860a/result.json"
+    ],
+    "review": {
+      "language": "lean",
+      "passed": true,
+      "checks": {
+        "no_sorryAx": true,
+        "assumptions_reported": true
+      },
+      "violations": [],
+      "assumptions": [
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.numberField_torsionField: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionField: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.galPointMap.eq_1: standard axioms [propext, Classical.choice, Quot.sound]",
+        "WeierstrassCurve.Affine.Point.map.congr_simp: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.EK: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.TFbar: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.TK: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.bcK: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.bcK_injective: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.bcK_mem_TFbar: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.card_range: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.card_torsionBy_EK: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.exists_bcK_eq: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.fixingSubgroup_torsionField: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.galPointMap_eq_of_mem_ker: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.instDecidableEqTorsionField: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.isGalois_torsionField: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.mem_TK_of_bcK: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.restrictNormalHom_ker_eq: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.EK._proof_1: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.bcK._proof_1: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.bcK._proof_2: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.bcK._proof_3: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_1: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_2: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_3: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_4: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_5: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_6: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv._proof_1: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv._proof_2: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv._proof_3: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv._proof_4: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv._proof_5: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionField.eq_1: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_card_range_of_ramification: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.ramificationIdx'_dvd_card_gal: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.FinitePlace.exists_liesOver: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.card_graphLine_le: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.card_range_le: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.card_torsion_eq: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.card_torsion_le: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.exists_rep: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.exists_root_class: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.expo: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.expo_congr: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.finite_graphLine: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.finite_torsion: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.graphLine_le_torsion: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.nsmul_ofUnit: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.ofUnit_eq_iff: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.ofUnit_eq_zero_iff: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.ofUnit_mem_torsionBy_iff: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.TateStructure.ofUnit_rep: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.ofUnit_rootsOfUnity_surjective: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.TateStructure.ofUnit_surjective: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.q_zpow_injective: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.rep: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.rep_pow: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.resid: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.resid_apply: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.resid_eq_zero_iff: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.resid_ker: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.resid_range_eq_top: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.torsion: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.expo._proof_1: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.expo.congr_simp: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.ofUnit_eq_iff._simp_1_1: standard axioms [propext]",
+        "AbcAdaptation.Reference.Iut.TateStructure.resid._proof_1: standard axioms [propext, Classical.choice, Quot.sound]",
+        "AbcAdaptation.Reference.Iut.TateStructure.resid._proof_2: standard axioms [propext, Classical.choice, Quot.sound]",
+        "_private.Solutions.Source_SL2ImageLocalValuation.0.AbcAdaptation.Reference.Iut.valued_finitePlaceEmbedding: standard axioms [propext,",
+        "_private.Solutions.Source_SL2ImageLocalValuation.0.AbcAdaptation.Reference.Iut.valued_q_eq_inv_tateJ: standard axioms [propext,",
+        "AbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_ramificationIdx_of_root_class: standard axioms [propext,"
+      ],
+      "diagnostics": [],
+      "output_excerpt": "RepData.exists_bcK_eq: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.fixingSubgroup_torsionField: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.galPointMap_eq_of_mem_ker: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.instDecidableEqTorsionField: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.isGalois_torsionField: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.mem_TK_of_bcK: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.restrictNormalHom_ker_eq: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.EK._proof_1: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.bcK._proof_1: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.bcK._proof_2: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.bcK._proof_3: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_1: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_2: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_3: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_4: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_5: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.rangeEquivGal._proof_6: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv._proof_1: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv._proof_2: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv._proof_3: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv._proof_4: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionEquiv._proof_5: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.torsionField.eq_1: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAudited 35 owned declarations in Solutions.Source_ModEllRepGalois\nAbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_card_range_of_ramification: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.ramificationIdx'_dvd_card_gal: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.FinitePlace.exists_liesOver: standard axioms [propext, Classical.choice, Quot.sound]\nAudited 3 owned declarations in Solutions.Source_SL2ImageRangeCardinality\nAbcAdaptation.Reference.Iut.TateStructure.card_graphLine_le: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.card_range_le: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.card_torsion_eq: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.card_torsion_le: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.exists_rep: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.exists_root_class: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.expo: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.expo_congr: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.finite_graphLine: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.finite_torsion: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.graphLine_le_torsion: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.nsmul_ofUnit: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.ofUnit_eq_iff: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.ofUnit_eq_zero_iff: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.ofUnit_mem_torsionBy_iff: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.ofUnit_rep: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.ofUnit_rootsOfUnity_surjective: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.ofUnit_surjective: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.q_zpow_injective: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.rep: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.rep_pow: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.resid: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.resid_apply: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.resid_eq_zero_iff: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.resid_ker: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.resid_range_eq_top: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.torsion: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.expo._proof_1: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.expo.congr_simp: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.ofUnit_eq_iff._simp_1_1: standard axioms [propext]\nAbcAdaptation.Reference.Iut.TateStructure.resid._proof_1: standard axioms [propext, Classical.choice, Quot.sound]\nAbcAdaptation.Reference.Iut.TateStructure.resid._proof_2: standard axioms [propext, Classical.choice, Quot.sound]\nAudited 32 owned declarations in Solutions.Source_ReferenceIutTateTorsion\n_private.Solutions.Source_SL2ImageLocalValuation.0.AbcAdaptation.Reference.Iut.valued_finitePlaceEmbedding: standard axioms [propext,\n Classical.choice,\n Quot.sound]\n_private.Solutions.Source_SL2ImageLocalValuation.0.AbcAdaptation.Reference.Iut.valued_q_eq_inv_tateJ: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_ramificationIdx_of_root_class: standard axioms [propext,\n Classical.choice,\n Quot.sound]\nAudited 3 owned declarations in Solutions.Source_SL2ImageLocalValuation\n"
+    }
+  }
+}
