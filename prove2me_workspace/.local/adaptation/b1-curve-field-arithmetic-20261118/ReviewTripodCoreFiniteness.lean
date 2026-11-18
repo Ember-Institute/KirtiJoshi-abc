@@ -1,0 +1,10 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodCoreFiniteness
+
+#check AbcAdaptation.Tripod.coreFiniteness_of_exceptionalJ
+#print axioms AbcAdaptation.Tripod.finite_legendreJ_preimage
+#print axioms AbcAdaptation.Tripod.finite_curve_j_preimage
+#print axioms AbcAdaptation.Tripod.coreFiniteness_of_exceptionalJ

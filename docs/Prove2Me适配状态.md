@@ -5,7 +5,7 @@
 - `refer/iut/Iut/Tripod/Main.lean:129`
 - `refer/iut/Iut/Tripod/Main.lean:86`。须为适用点与素数装配 P7，给出同一曲线及素数上的初始数据、局部估计和身份，供规范 `c2` 消费。
 - `refer/iut/Iut/Tripod/CyclicIsogeny.lean:1064`。须由真实坏处和其 Tate 参数证明局部图线判据，并在同一循环子群上接入奇坏处的全局高度界。
-- `refer/iut/Iut/Tripod/Core.lean:112`。须证明实际曲线的非 core 例外在给定次数和紧有界条件下有限，并把所得有限性接入既有曲线构造器。
+- `refer/iut/Iut/Tripod/Core.lean:112`。有限有理 $j$ 值对应有限三足点的算术证明已通过，并已接到 `CoreFinitenessHyp` 的归约。仍须在目标 `AG` 上证明非 core 曲线确实落在该例外集中，包括一次穿孔曲线及其符号商与基变换相容。 [归约](../prove2me_workspace/Solutions/Source_TripodCoreFiniteness.lean#L62) · [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#finite-exceptional-legendre-parameters-for-the-core-condition)
 - `refer/iut/Iut/Implication/Corollary22.lean:284`
 - `refer/iut/Iut/Implication/Corollary22.lean:357`
 - `refer/iut/Iut/Implication/LogVolumeBound.lean:69`

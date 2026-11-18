@@ -216,3 +216,17 @@ Successful jobs report compiler-process wall time and process-tree RSS from MCP-
 | [`ci-020829-26f0c710`](receipts/local-tate-ci-020829-26f0c710-result.json) | `ReviewTripodArithmeticFields` | `c37daf023621` | succeeded | 0 | 60.02 | 58.91 (2.54 + 56.37) | 4.16 |
 
 The current batch's Checks, ImportAudit, Act1Scene1 aggregate and AxiomAudit gate passed in [ci-020844-3d5ac401](receipts/local-tate-ci-020844-3d5ac401-result.json). The exclusive review ran `lean .local/adaptation/b1-curve-field-arithmetic-20261118/RequiredProjectGates.lean` with exit code 0. It used 119.41 seconds of process wall time, 118.29 seconds of CPU (5.12 user and 113.17 system), and 7.83 GiB of peak process-tree RSS.
+
+## Finite exceptional Legendre parameters for the core condition
+
+`Source_TripodCoreFiniteness.lean` adapts the polynomial argument in `Iut/Tripod/Core.lean:31–64,112` at the pinned iut revision. The public lemma `finite_curve_j_preimage` sends the actual provider curve's (j)-invariant to the Legendre value in `Qbar` through the existing field embedding. `coreFiniteness_of_exceptionalJ` consumes that finiteness result and returns the `CoreFinitenessHyp` expected by `curveInputs_from_source` from a finite rational exceptional set and the geometric inclusion for the same `AG` and curves.
+
+The geometric inclusion in `Core.lean:72` still needs the `CanLift` result and compatibility of base change with the once-punctured curve and its sign quotient in the chosen model. The pin uses Pi1 `ca7def953193f861a462aa0831eec8f0a31ff69f` and OrbicurveCores `61616dcd77fbe45c083a8ebfa7cc80728f86e841`. Their source proofs are available in the legacy source checkout. The two direct imports `Pi1.Orbicurve.LefschetzMain` and `OrbicurveCores.U2.Assembly` lack compatible artifacts in the target environment.
+
+The three jobs used the actual exclusive worktree and exited with code 0. The project gate and the three public axiom checks passed. The axiom output lists only `propext`, `Classical.choice` and `Quot.sound`.
+
+| Job | Check | SHA-256 prefix | Wall (s) | CPU total (user + system, s) | Peak RSS (GiB) |
+| --- | --- | --- | ---: | ---: | ---: |
+| [`ci-020853-fe047d77`](receipts/tripod-core-ci-020853-fe047d77-result.json) | Leaf | `812ca4070774` | 51.84 | 51.37 (2.64 + 48.73) | 4.11 |
+| [`ci-020855-99ce0a2e`](receipts/tripod-core-ci-020855-99ce0a2e-result.json) | Import artifact | `812ca4070774` | 58.23 | 57.15 (3.48 + 53.67) | 4.12 |
+| [`ci-020859-ae4a0f86`](receipts/tripod-core-ci-020859-ae4a0f86-result.json) | Project gates and axiom review | `[WARNING]` | 145.06 | 141.48 (6.06 + 135.42) | 8.07 |

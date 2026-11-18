@@ -188,7 +188,7 @@ Corollary 3.12 的字面左端为 $-\lvert\operatorname{logVol}(\Theta_M)\rvert/
 ### 参考 `c2` 装配中仍开放的曲线输入
 
 - **循环子群估计。** 对紧有界集内的适用三足点、素数 $\ell\ge7$ 和 Galois 稳定的 $\ell$ 阶循环子群，须从 (P2) 的 q 阶数条件证明该子群在各奇乘法约化处满足图线条件。再在这些处上接合循环同源与高度上界，得到 $(\ell-2)(h-h_2)/24\le 2\log\ell+T_K$，其中 $T_K$ 只依赖给定的紧有界集。该估计供 `CurveFactsProp.cyclic` 和推论 2.2 消费。 [来源义务与适配状态](Prove2Me适配状态.md#1-根据-referiut-指示尚未拆分的证明义务)
-- **core 例外有限性。** 须把所选远 Abel 几何下的非 core 曲线归入有限的有理 $j$ 不变量例外集，再证明每个例外值对应的三足点有限。给定例外值 $c$ 时，可用非零多项式 $256(X^2-X+1)^3-cX^2(X-1)^2$ 的根集。几何部分要对同一 `AG` 证明非例外曲线具有 `HasCoreUniversally`，并将所得有限性作为 `CoreFinitenessHyp` 交给曲线输入构造器。 [参考链审计](开发计划.Prove2Me适配.md#41-参考链审计)
+- **core 例外有限性。** 已用非零多项式 $256(X^2-X+1)^3-cX^2(X-1)^2$ 证明有限多个有理 $j$ 值只对应有限多个三足点。仍须在所选远 Abel 几何 `AG` 上接入 CanLift 命题 2.7，并证明一次穿孔曲线与其符号商的基变换相容，由此把同一供应曲线的所有非 core 情形归入该有限例外集。得到这条几何包含后，`coreFiniteness_of_exceptionalJ` 供应曲线输入构造器的 `CoreFinitenessHyp`。 [有限性归约](../prove2me_workspace/Solutions/Source_TripodCoreFiniteness.lean#L62) · [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#finite-exceptional-legendre-parameters-for-the-core-condition)
 - **P7 及高度身份。** 将实际曲线供应、循环子群界和 core 例外有限性装入 `CurveInputs`。对每个适用点和素数，构造同一 `AG/TG` 下的 `InitialThetaData`、局部理论、theta 局部数据及 q-pilot，并验证塔算术与模域次数、局部高度、不同理想和导子各项身份。第 15 项的全称适配还须覆盖这套构造供应的整个数据族。在 Prove2Me 上验收上述曲线字段还需要独立依赖打包与跨版本类型和公理核对。 [构造器实际输入](../prove2me_workspace/Solutions/Source_TripodCurveInputsFromSource.lean#L48) · [参考链审计](开发计划.Prove2Me适配.md#41-参考链审计)
 
 ## 已排除的具体路线
@@ -222,3 +222,5 @@ Prove2Me 私有平台已验收参考局部体积平均界、定理 1.10、推论
 本地适配从指定扭点域的全体挠点构造判别式平方根，借助同坐标的 Tate 均匀化证明相对分歧整除，进而得到实际三足曲线的 SL₂ 像包含。Legendre 挠点基使 3、5 挠点坐标的次数倍数界 48、480 对每个三足点成立。两向导子比较也已证明，反向误差为 $\log(2\ell)$。 [局部 Tate 与分歧](../prove2me_workspace/Solutions/Source_SL2ImageLocalTate.lean#L81) · [挠点基与次数界](../prove2me_workspace/Solutions/Source_TripodTorsionBasis.lean) · [导子比较](../prove2me_workspace/Solutions/Source_TripodLogCond.lean#L188)
 
 21 字段构造器已消费上述证明。同一供应曲线的定义域次数至多为 `552960 * d`，点的 `logDiff` 等于同一曲线三足域的归一化不同理想次数。构造器和 SL₂ 像通过类型与公理审查 `ci-020827-2725d6f7`，挠点和导子的公开证明通过 `ci-020829-26f0c710`，项目聚合与审查通过 `ci-020844-3d5ac401`。本轮从原合并待办中登记了四项已验收的本地成果，适配计划 §4.1 从 **74/91（81.3%）** 更新为 **78/95（82.1%）**。 [构造器](../prove2me_workspace/Solutions/Source_TripodCurveInputsFromSource.lean#L48) · [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#torsion-field-ramification-and-tripod-curve-inputs)
+
+core 例外有限性的算术归约已通过叶检查、项目聚合及公理审查 `ci-020859-ae4a0f86`。该归约保留所选几何下的例外集包含作为输入。 [有限性归约](../prove2me_workspace/Solutions/Source_TripodCoreFiniteness.lean#L62)
