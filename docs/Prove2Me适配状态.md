@@ -107,6 +107,7 @@
 - `LegendreHeightHyp`、`legendreHeight`、`canonicalLegendreHeightComparison_of_provider`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
 - `northcott_of_equiv`、`curveInputs_height_eq`、`curveInputs_htCan_equiv`、`curveInputs_northcott`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
 - `TwoAdicBoundHyp`、`twoAdicBound'`、`twoAdicBound`、`curveInputs_B_nonneg`、`curveInputs_heightEq_two_le`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
+- `curveInputs_dmod_le`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
 - `AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder`：`uniformizer`（待定：素元／一致化元／均匀化元）。
 - `AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime`：`uniformizer`（待定：素元／一致化元／均匀化元）。
 - `AbcAdaptation_JoshiTeich_Prologue_Arithmetic_Basic`：`uniformizer`（待定：素元／一致化元／均匀化元）。
