@@ -1,0 +1,762 @@
+{
+  "reference": {
+    "repository": "https://github.com/lana-agents/iut",
+    "commit": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8",
+    "committed_toolchain": "leanprover/lean4:v4.32.0",
+    "committed_dependency_lock_sha256": "954e4219bbe2602c5743438bb6fe0bacb517e298e893ae21b1194d8ed5027caf",
+    "files": [
+      {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/GalCompletion.lean",
+        "byte_count": 19548,
+        "sha256": "7346dbc613e67dfed0382721636ca4b8782dc65115843af187893f2517f9ac7e"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/TwoAdic.lean",
+        "byte_count": 29338,
+        "sha256": "213d57f352bbd1e00efc7b3f570849f6eed0f467c7bfc3b75631286a7bd8f719"
+      },
+      {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Height.lean",
+        "byte_count": 39665,
+        "sha256": "1de154fbca7da4ac9510537384ae9f8756e998c4de26e01162b4957c807c7df1"
+      }
+    ]
+  },
+  "source_replay": {
+    "compiler": "leanprover/lean4:v4.35.0-rc3",
+    "mathlib": {
+      "path": "/home/admin-wsl/Coq/mathlib4",
+      "head": "389347a7c1cfa76f6bd5be2ca35d4cb621610ad3",
+      "toolchain": "leanprover/lean4:v4.35.0-rc3",
+      "dependency_lock_sha256": "0a784666ccd0313cc0cc1bf3532e35c1a8c0447bf07212c0a1a1e5e978ddfb21"
+    },
+    "reference_working_dependency_lock": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/lake-manifest.json",
+      "byte_count": 6505,
+      "sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c"
+    },
+    "file": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "byte_count": 78024,
+      "sha256": "b839c7b89a0d79908151a08dd020c8878f6db640393d5c67b44bb835a09ddb2c"
+    },
+    "full_facts": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/actual/closure-v111/actual-facts.jsonl",
+      "byte_count": 136602459,
+      "sha256": "48d52060b9a08874f4bed7e9f16b0b52a9b132c8fb8335c04c03894cadc53203"
+    },
+    "selected_facts": {
+      "path": "/tmp/abc-b1-finite-height-map-equiv.D28AjJqE/source-facts.jsonl",
+      "byte_count": 18036541,
+      "sha256": "38d0e978a3aa11d9ada4c70ea5faf2aa6c850bbd565f4effbfde928a8e59ac6f"
+    },
+    "selected_fact_axioms": [
+      {
+        "name": "Iut.mem_comap_pow_iff",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "typeAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "valueAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "Iut.intValuation_of_comap._simp_1_1",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "typeAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "valueAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "Iut.intValuation_of_comap._simp_1_2",
+        "kind": "theorem",
+        "axioms": [
+          "propext"
+        ],
+        "typeAxioms": [
+          "propext"
+        ],
+        "valueAxioms": [
+          "propext"
+        ]
+      },
+      {
+        "name": "Iut.intValuation_of_comap._simp_1_3",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "typeAxioms": [],
+        "valueAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "Iut.intValuation_of_comap",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "typeAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "valueAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "Iut.valuation_of_comap",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "typeAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "valueAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "Iut.toNNReal_congr",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "typeAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "valueAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "Iut.FinitePlace.mapEquiv",
+        "kind": "definition",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "typeAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "valueAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "Iut.FinitePlace.mapEquiv_maximalIdeal",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "typeAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "valueAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "Iut.FinitePlace.mapEquiv_valuation",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "typeAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "valueAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "Iut.FinitePlace.mapEquiv_absNorm",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "typeAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "valueAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "Iut.FinitePlace.mapEquiv_apply",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "typeAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "valueAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      {
+        "name": "Iut.finHeight_mapEquiv",
+        "kind": "theorem",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "typeAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "valueAxioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    ],
+    "generated_equation_without_exported_fact": "Iut.FinitePlace.mapEquiv.eq_1"
+  },
+  "target": {
+    "compiler": "leanprover/lean4:v4.33.1",
+    "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "dependency_lock": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/lake-manifest.json",
+      "byte_count": 2679,
+      "sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+    },
+    "file": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.lean",
+      "byte_count": 6876,
+      "sha256": "99e53fef33fd12fe770aacf414be2990bbe896ce8f7858d8da2e41c437263d66"
+    },
+    "previous_review_input_pins": {
+      "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-tate-existence-v227-20261118/RequiredFiniteHeightMapEquivGates.lean": "5ad337a916db1922b49ae50a14510d7b37d8ce7cfc023d9cc52cf25ade6e1882",
+      "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.olean": "83194a8113976b7f461a0381df9f41ffe0054c9d93ca66fc7ef771df29f770e4",
+      "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.lean": "99e53fef33fd12fe770aacf414be2990bbe896ce8f7858d8da2e41c437263d66",
+      "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Definitions/Def_TripodCanonicalHighHeightInputs.olean": "d1011bb113fe4f1fd6c5c9282be6c6ed6e387d7d27f1602c53c8dc48e974e71d",
+      "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodCanonicalHighHeightInputs.lean": "c3439a404800a6edd860719ac10cb4bc9d5912f7ccdac7d81e71b7082cb773cd",
+      "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Definitions/Def_TripodStatementIIInputs.olean": "ffb342378a5129061a8bea95bfdc2c0a6b29de8080a57678175a5b674c4058a7",
+      "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_TripodStatementIIInputs.lean": "5ce42a6371d13c7a4fc22dbfcfe7c5d059feb7e7877e9787d53b0eaeb2dee5be",
+      "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Definitions/Def_AbcTripod.olean": "74ac3066219c7ed16211a60b2e2ad4b3a68b9e5bb2fe49f45f48ccd09feac684",
+      "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcTripod.lean": "31d8be5cf1b192311e13007f0ccd0386398b3ba15cd23d91124630de7fc11230",
+      "/home/admin-wsl/Coq/abc/prove2me_workspace/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "/home/admin-wsl/Coq/abc/prove2me_workspace/lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+      "/home/admin-wsl/Coq/abc/prove2me_workspace/lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+    },
+    "owned_declaration_axioms": [
+      "AbcAdaptation.Tripod.finHeight_mapEquiv: standard axioms [propext, Classical.choice, Quot.sound]",
+      "AbcAdaptation.Reference.Iut.intValuation_of_comap: standard axioms [propext, Classical.choice, Quot.sound]",
+      "AbcAdaptation.Reference.Iut.mem_comap_pow_iff: standard axioms [propext, Classical.choice, Quot.sound]",
+      "AbcAdaptation.Reference.Iut.toNNReal_congr: standard axioms [propext, Classical.choice, Quot.sound]",
+      "AbcAdaptation.Reference.Iut.valuation_of_comap: standard axioms [propext, Classical.choice, Quot.sound]",
+      "AbcAdaptation.Reference.Iut.FinitePlace.mapEquiv: standard axioms [propext, Classical.choice, Quot.sound]",
+      "AbcAdaptation.Reference.Iut.FinitePlace.mapEquiv_absNorm: standard axioms [propext, Classical.choice, Quot.sound]",
+      "AbcAdaptation.Reference.Iut.FinitePlace.mapEquiv_apply: standard axioms [propext, Classical.choice, Quot.sound]",
+      "AbcAdaptation.Reference.Iut.FinitePlace.mapEquiv_maximalIdeal: standard axioms [propext, Classical.choice, Quot.sound]",
+      "AbcAdaptation.Reference.Iut.FinitePlace.mapEquiv_valuation: standard axioms [propext, Classical.choice, Quot.sound]",
+      "AbcAdaptation.Reference.Iut.intValuation_of_comap._simp_1_1: standard axioms [propext, Quot.sound]",
+      "AbcAdaptation.Reference.Iut.intValuation_of_comap._simp_1_2: standard axioms [propext]",
+      "AbcAdaptation.Reference.Iut.intValuation_of_comap._simp_1_3: standard axioms [propext, Classical.choice, Quot.sound]",
+      "AbcAdaptation.Reference.Iut.FinitePlace.mapEquiv.eq_1: standard axioms [propext, Classical.choice, Quot.sound]"
+    ]
+  },
+  "matching_declaration_spans": [
+    {
+      "sourceName": "Iut.mem_comap_pow_iff",
+      "targetName": "AbcAdaptation.Reference.Iut.mem_comap_pow_iff",
+      "command_sha256": "d7fa7ff72b7c5f310a81d15ef9e6c4217f1930ad040fcc9e9456fb6126495463",
+      "reference": {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/GalCompletion.lean",
+        "lines": [
+          179,
+          186
+        ]
+      },
+      "sourceReplay": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+        "lines": [
+          391,
+          398
+        ]
+      },
+      "target": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.lean",
+        "lines": [
+          19,
+          26
+        ]
+      }
+    },
+    {
+      "sourceName": "Iut.intValuation_of_comap",
+      "targetName": "AbcAdaptation.Reference.Iut.intValuation_of_comap",
+      "command_sha256": "d615d67ed03bf759c44d8fc23f37273dbaaba2482717a51c4892e49af0c0f54b",
+      "reference": {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/GalCompletion.lean",
+        "lines": [
+          189,
+          207
+        ]
+      },
+      "sourceReplay": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+        "lines": [
+          401,
+          419
+        ]
+      },
+      "target": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.lean",
+        "lines": [
+          29,
+          47
+        ]
+      }
+    },
+    {
+      "sourceName": "Iut.valuation_of_comap",
+      "targetName": "AbcAdaptation.Reference.Iut.valuation_of_comap",
+      "command_sha256": "0c83c31cce6fe5656374aac23a83317460ff20c3a0dfe95b05a03cab30bc66d6",
+      "reference": {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/GalCompletion.lean",
+        "lines": [
+          211,
+          223
+        ]
+      },
+      "sourceReplay": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+        "lines": [
+          423,
+          435
+        ]
+      },
+      "target": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.lean",
+        "lines": [
+          51,
+          63
+        ]
+      }
+    },
+    {
+      "sourceName": "Iut.toNNReal_congr",
+      "targetName": "AbcAdaptation.Reference.Iut.toNNReal_congr",
+      "command_sha256": "781fef1daadabbd30f9d6d2cec10ea1efa4752a4571a8612123034829d0e1b4f",
+      "reference": {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/GalCompletion.lean",
+        "lines": [
+          331,
+          333
+        ]
+      },
+      "sourceReplay": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+        "lines": [
+          445,
+          447
+        ]
+      },
+      "target": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.lean",
+        "lines": [
+          67,
+          69
+        ]
+      }
+    },
+    {
+      "sourceName": "Iut.FinitePlace.mapEquiv",
+      "targetName": "AbcAdaptation.Reference.Iut.FinitePlace.mapEquiv",
+      "command_sha256": "1e96d5e55239ab7160b7e4321f8ccfd7cb43f8f7d1a161545c3b4b63f7281bf2",
+      "reference": {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/TwoAdic.lean",
+        "lines": [
+          50,
+          53
+        ]
+      },
+      "sourceReplay": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+        "lines": [
+          1287,
+          1290
+        ]
+      },
+      "target": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.lean",
+        "lines": [
+          76,
+          79
+        ]
+      }
+    },
+    {
+      "sourceName": "Iut.FinitePlace.mapEquiv_maximalIdeal",
+      "targetName": "AbcAdaptation.Reference.Iut.FinitePlace.mapEquiv_maximalIdeal",
+      "command_sha256": "3a62e151820f9aabfc6b767003ff4cf3c5cc088d17137b7f496b03c3894c8014",
+      "reference": {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/TwoAdic.lean",
+        "lines": [
+          57,
+          62
+        ]
+      },
+      "sourceReplay": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+        "lines": [
+          1294,
+          1299
+        ]
+      },
+      "target": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.lean",
+        "lines": [
+          83,
+          88
+        ]
+      }
+    },
+    {
+      "sourceName": "Iut.FinitePlace.mapEquiv_valuation",
+      "targetName": "AbcAdaptation.Reference.Iut.FinitePlace.mapEquiv_valuation",
+      "command_sha256": "e5ea5e6a3397957fe6389b3c9adbbe8c1b7fb051f7d5dfe3d44a3f26e7d73c85",
+      "reference": {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/TwoAdic.lean",
+        "lines": [
+          65,
+          70
+        ]
+      },
+      "sourceReplay": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+        "lines": [
+          1302,
+          1307
+        ]
+      },
+      "target": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.lean",
+        "lines": [
+          91,
+          96
+        ]
+      }
+    },
+    {
+      "sourceName": "Iut.FinitePlace.mapEquiv_absNorm",
+      "targetName": "AbcAdaptation.Reference.Iut.FinitePlace.mapEquiv_absNorm",
+      "command_sha256": "c9fc67b102db1b97fd93b4c7dec8664f7d44ad635994d5ca110e1d05fcc9fa50",
+      "reference": {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/TwoAdic.lean",
+        "lines": [
+          73,
+          83
+        ]
+      },
+      "sourceReplay": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+        "lines": [
+          1310,
+          1320
+        ]
+      },
+      "target": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.lean",
+        "lines": [
+          99,
+          109
+        ]
+      }
+    },
+    {
+      "sourceName": "Iut.FinitePlace.mapEquiv_apply",
+      "targetName": "AbcAdaptation.Reference.Iut.FinitePlace.mapEquiv_apply",
+      "command_sha256": "45f9f65812b4f649adf6848bf7285267d73b8e283d287c04107dd38e53e37da6",
+      "reference": {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/TwoAdic.lean",
+        "lines": [
+          86,
+          92
+        ]
+      },
+      "sourceReplay": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+        "lines": [
+          1323,
+          1329
+        ]
+      },
+      "target": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.lean",
+        "lines": [
+          112,
+          118
+        ]
+      }
+    },
+    {
+      "sourceName": "Iut.finHeight_mapEquiv",
+      "targetName": "AbcAdaptation.Tripod.finHeight_mapEquiv",
+      "command_sha256": "f581b5b5d567e31eab50b096967580f115502e73f2dc54c3144eb95430f56a14",
+      "reference": {
+        "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Height.lean",
+        "lines": [
+          110,
+          115
+        ]
+      },
+      "sourceReplay": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+        "lines": [
+          1471,
+          1476
+        ]
+      },
+      "target": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.lean",
+        "lines": [
+          131,
+          136
+        ]
+      }
+    }
+  ],
+  "audit_draft": {
+    "path": "/tmp/abc-b1-finite-height-map-equiv.D28AjJqE/AuditFiniteHeightMapEquivCorrespondence.lean",
+    "byte_count": 23396,
+    "sha256": "57cb571e226efd2e641edebf579d59eb3386a545597cab6ec970024d667640d6"
+  },
+  "review_config": {
+    "path": "/tmp/abc-b1-finite-height-map-equiv.D28AjJqE/review-config.json",
+    "byte_count": 18504,
+    "sha256": "805dfb3cacd148b5c9e1f7ec75e2f00bae55b37bf2cce1674ceb113ba2fa8dc3"
+  },
+  "frozen_blind_inputs": {
+    "path": "/tmp/abc-b1-finite-height-map-equiv.D28AjJqE/frozen-materials.json",
+    "byte_count": 5455,
+    "sha256": "802d1089492d64b4faddeb93ff48ef5e246ecdccdb24f92952630beb43cd8077"
+  },
+  "prior_receipts": [
+    {
+      "label": "b1-source-actual-closure-v112",
+      "receipt": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-source-actual-closure-v112-result.json",
+        "byte_count": 687873,
+        "sha256": "f7498a2bb1ddb9be7c63589988b79112b00f4b9009c4963c1db296c31865c19b"
+      },
+      "job_id": "ci-018560-1db29f6e",
+      "status": "succeeded",
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "head": "3c5097e89d6a5e1c6ddcc6306f3334870db32882",
+      "source_sha256": "ba53090af2e6ff29a201af0f8e1ae2cc7a7427787c6e850dc15559bf2822897b",
+      "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+      "dependency_lock": "original refer/iut/lake-manifest.json",
+      "dependency_lock_sha256": "e88161e90d65f487ac978df0609f0ba98b9fb97716a60e96a3272f51bfbdf47c",
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/b1-source-replay-v104-20261117/queries/QueryB1SourceActualClosure.lean"
+      ],
+      "exit_code": 0,
+      "diagnostics": [],
+      "review_checks": null,
+      "resource_data_source": "result.resources",
+      "degraded": null,
+      "resources": {
+        "wall_time_seconds": 162.139862,
+        "cpu_time_seconds": 161.92999999999998,
+        "cpu_user_seconds": 15.17,
+        "cpu_system_seconds": 146.76,
+        "peak_rss_bytes": 8907423744,
+        "peak_pss_bytes": null
+      }
+    },
+    {
+      "label": "b1-finite-height-map-equiv-leaf-v253",
+      "receipt": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-finite-height-map-equiv-leaf-v253-result.json",
+        "byte_count": 36961,
+        "sha256": "7a778aeac58988c51dfd26964f4da8ac4ccc8d193ad86606d8ee0e736e8b17fa"
+      },
+      "job_id": "ci-019580-7e1afb67",
+      "status": "succeeded",
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "head": "8a0a41dab6632820862a8e41990389e89ddac631",
+      "source_sha256": "99e53fef33fd12fe770aacf414be2990bbe896ce8f7858d8da2e41c437263d66",
+      "effective_compiler": "leanprover/lean4:v4.33.1",
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "actual_arguments": [
+        "lean",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.lean"
+      ],
+      "exit_code": 0,
+      "diagnostics": [],
+      "review_checks": null,
+      "resource_data_source": "result.resources",
+      "degraded": null,
+      "resources": {
+        "wall_time_seconds": 38.52139370000805,
+        "cpu_time_seconds": 38.1,
+        "cpu_user_seconds": 2.7,
+        "cpu_system_seconds": 35.4,
+        "peak_rss_bytes": 4332404736,
+        "peak_pss_bytes": null
+      }
+    },
+    {
+      "label": "b1-finite-height-map-equiv-artifact-v253",
+      "receipt": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-finite-height-map-equiv-artifact-v253-result.json",
+        "byte_count": 37244,
+        "sha256": "c572bbc422706994fb6152c8d0c98d4a6502a3649b4e6c89a31e111396e8e304"
+      },
+      "job_id": "ci-019581-466eeaf8",
+      "status": "succeeded",
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "head": "8a0a41dab6632820862a8e41990389e89ddac631",
+      "source_sha256": "99e53fef33fd12fe770aacf414be2990bbe896ce8f7858d8da2e41c437263d66",
+      "effective_compiler": "leanprover/lean4:v4.33.1",
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "actual_arguments": [
+        "lean",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.lean",
+        "-o",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv.olean"
+      ],
+      "exit_code": 0,
+      "diagnostics": [],
+      "review_checks": null,
+      "resource_data_source": "result.resources",
+      "degraded": null,
+      "resources": {
+        "wall_time_seconds": 38.06975749999401,
+        "cpu_time_seconds": 37.14,
+        "cpu_user_seconds": 2.39,
+        "cpu_system_seconds": 34.75,
+        "peak_rss_bytes": 4221837312,
+        "peak_pss_bytes": null
+      }
+    },
+    {
+      "label": "b1-finite-height-map-equiv-review-v253",
+      "receipt": {
+        "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-finite-height-map-equiv-review-v253-result.json",
+        "byte_count": 43759,
+        "sha256": "f19dcb8664366a196e101b4fe12d89a94da20097a766d4d2aaca88141ef8f8e6"
+      },
+      "job_id": "ci-019582-8d08ff0e",
+      "status": "succeeded",
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "head": "8a0a41dab6632820862a8e41990389e89ddac631",
+      "source_sha256": "5ad337a916db1922b49ae50a14510d7b37d8ce7cfc023d9cc52cf25ade6e1882",
+      "effective_compiler": "leanprover/lean4:v4.33.1",
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "actual_arguments": [
+        "lean",
+        ".local/adaptation/b1-tate-existence-v227-20261118/RequiredFiniteHeightMapEquivGates.lean"
+      ],
+      "exit_code": 0,
+      "diagnostics": [],
+      "review_checks": {
+        "no_sorryAx": true,
+        "assumptions_reported": true
+      },
+      "resource_data_source": "result.resources",
+      "degraded": null,
+      "resources": {
+        "wall_time_seconds": 209.93856719999167,
+        "cpu_time_seconds": 209.09,
+        "cpu_user_seconds": 118.0,
+        "cpu_system_seconds": 91.09,
+        "peak_rss_bytes": 9164840960,
+        "peak_pss_bytes": null
+      }
+    }
+  ]
+}

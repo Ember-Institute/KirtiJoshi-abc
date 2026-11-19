@@ -323,3 +323,5 @@ CanLift 已把 Weierstrass 方程给出的横坐标消失阶用于解析刚性�
 有限高度求和的主定理已在目标 Lean 中核对完整来源类型、两份证明项和公理依赖，独立英、中、日读回已归档。对应的适配项仍待私有平台验收。 [有限高度求和来源与审查](../prove2me_workspace/.local/adaptation/b1-finite-height-sum-20261119/SOURCE_LEDGER.md)
 
 规范 P7 的有限处张量分量只在一个因子上缩放时，各因子自同构保持该主区域。该区域的归一化对数体积等于缩放因子的对数范数除以该完备化的局部次数。两条等式通过项目与公理审查，三语读回已归档。适配计划 §4.1 达到 **147/162（90.7%）**。 [有限处主区域与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#finite-principal-regions-in-the-concrete-local-theory)
+
+数域同构保持有限高度的主定理和有限处搬运已通过跨版本审查。审查覆盖十条手写声明和三条生成引理，主定理的独立三语读回已归档。对应的适配项仍待私有平台验收。 [有限高度不变性来源与审查](../prove2me_workspace/.local/adaptation/b1-finite-height-map-equiv-20261119/SOURCE_LEDGER.md)

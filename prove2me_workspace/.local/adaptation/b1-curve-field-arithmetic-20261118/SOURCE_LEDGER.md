@@ -1175,3 +1175,9 @@ Each job uses an exclusive worktree. Successful and failed receipt rows use comp
 | [`ci-023516-4883e8e3`](receipts/round-ci-023516-4883e8e3-result.json) | `Source_ReferenceIutConcreteLocalFinitePrincipalVolume` | `89d8cdf5e4c7` | succeeded | 0 | 147.10 | 141.44 (5.07 + 136.37) | 4.14 |
 | [`ci-023522-f4c700f6`](receipts/round-ci-023522-f4c700f6-result.json) | `ReviewCor312FinitePrincipalVolume` | `90d1b7ce63c7` | succeeded | 0 | 336.62 | 333.76 (7.84 + 325.92) | 8.07 |
 | [`ci-023538-c82484a1`](receipts/round-ci-023538-c82484a1-result.json) | `Source_ReferenceIutCor312FiniteThetaHullVolume` | `0792cdf64bc5` | timeout | unknown | 180.13 | unknown | unknown |
+| [`ci-023551-1183f9ed`](receipts/round-ci-023551-1183f9ed-result.json) | `Source_ReferenceIutCor312FiniteThetaHullVolume` | `0792cdf64bc5` | failed | 1 | 371.89 | 364.15 (9.03 + 355.12) | 7.60 |
+| [`ci-023568-c50a3a83`](receipts/round-ci-023568-c50a3a83-result.json) | `Source_ReferenceIutCanLiftRatFuncPoly` | `8ee461131b7c` | succeeded | 0 | 146.38 | 142.91 (6.76 + 136.15) | 3.32 |
+| [`ci-023569-29659184`](receipts/round-ci-023569-29659184-result.json) | `Source_ReferenceIutCanLiftOrbitDepth` | `202e6d10c287` | failed | 1 | 152.01 | 146.13 (20.26 + 125.87) | 3.28 |
+| [`ci-023570-dc2f38bf`](receipts/round-ci-023570-dc2f38bf-result.json) | `Source_ReferenceIutCanLiftCosetPolynomial` | `505a98c5939e` | timeout | unknown | 180.18 | unknown | unknown |
+| [`ci-023571-b621618f`](receipts/round-ci-023571-b621618f-result.json) | `Source_TripodRationalLegendreFive` | `48250b28a21f` | timeout | unknown | 180.15 | unknown | unknown |
+| [`ci-023572-e9797eea`](receipts/round-ci-023572-e9797eea-result.json) | `Source_ReferenceIutCor312PrincipalVolumeBound` | `763b79327c03` | succeeded | 0 | 143.67 | 139.90 (3.31 + 136.59) | 3.02 |

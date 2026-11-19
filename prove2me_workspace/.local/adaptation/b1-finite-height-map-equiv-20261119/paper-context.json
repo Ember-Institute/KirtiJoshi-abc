@@ -1,0 +1,42 @@
+{
+  "papers": {
+    "IV": {
+      "author": "Shinichi Mochizuki",
+      "title": "Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations",
+      "version": "April 2020",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20IV.pdf",
+      "local_pdf": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Inter-universal Teichmuller Theory IV.pdf",
+      "sha256": "5bf4b1e0a8c2686562a6859e5009d301335044cfb5efec5d3a9edf764e4af87f",
+      "retrieved_date": "Existing local original; this task made no download. Acquisition date not independently established here.",
+      "file_page_numbering": "All cited PDF file pages were rendered and display the same printed page number.",
+      "version_evidence": {
+        "page_image_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-001.png",
+        "page_image_sha256": "f826290e074d346841456e2b21762c7482fb6cd2e5559cfaf79967aaff973dac",
+        "raw_text_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-001.raw.txt",
+        "raw_text_sha256": "419edd82e3fc7b986773c22510b523146f5384c2d6d216d2a208a7405dc06adb"
+      }
+    }
+  },
+  "quotations": [
+    {
+      "id": "IV-local-global-height",
+      "paper": "IV",
+      "locator": "§2, proof of Corollary 2.2(ii), complete paragraph from Next, let us write through holds.",
+      "printed_pages": [
+        44
+      ],
+      "file_pages": [
+        44
+      ],
+      "quote_markdown": "Next, let us write\n\n$$h\\overset{\\mathrm{def}}{=}\\log(q^{\\forall})=\\frac{1}{[F:\\mathbb Q]}\\cdot\\sum_{v\\in\\mathbb V(F)^{\\mathrm{non}}}h_v\\cdot f_v\\cdot\\log(p_v)$$\n\n— that is to say, $h_v=0$ for those $v$ at which $E_F$ has good reduction; $h_v\\in\\mathbb N_{\\geq1}$ is the local height of $E_F$ [cf. [GenEll], Definition 3.3] for those $v$ at which $E_F$ has bad multiplicative reduction. Now it follows [by assertion (i); [GenEll], Proposition 1.4, (iv)] that the inequality $h^{1/2}<\\xi_{\\mathrm{prm}}$ [cf. the notation of Proposition 2.1, (ii)] implies that there is only a finite number of possibilities for the $j$-invariant of $E_F$. Thus, by possibly enlarging the finite set $\\mathfrak{Exc}_d$ [in a fashion that depends only on $K_V$, $d$, and $\\epsilon_d$ and in such a way that $h\\leq H_{\\mathrm{unif}}$ on $\\mathfrak{Exc}_d$ for some positive real number $H_{\\mathrm{unif}}$ that is independent of $K_V$], we may assume without loss of generality that the inequality\n\n$$h^{1/2}\\geq\\xi_{\\mathrm{prm}}\\geq5$$\n\nholds.",
+      "typography": "Original PDF visually checked in v188. Line breaks, line-end hyphenation, and ligatures normalized; mathematical typography transcribed to renderable LaTeX. No prose splicing."
+    }
+  ],
+  "quotationSource": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-finite-height-sum-20261119/paper-context.json",
+  "quotationSourceSHA256": "2690c9d15e5ae1b4023abc3eef50007d8d155ab02bcec2bafa6366df79cf0003",
+  "scope": {
+    "en": "The displayed formula identifies h by summing local heights over the finite places of the curve field F. The reference Lean theorem Iut.finHeight_mapEquiv in Height.lean proves invariance of the finite part of the height of a field element under a number-field isomorphism. The later theorem Iut.Tripod.h_eq_finHeight_div uses this invariance to express the height in the field of the tripod point.",
+    "zh-Hans": "原文通过曲线域 $F$ 的各有限处的局部高度之和定义 $h$。数域同构下元素的有限高度不变性直接来自参考 Lean 工程 Height.lean 的 Iut.finHeight_mapEquiv。随后 Iut.Tripod.h_eq_finHeight_div 使用这个等式，把高度写在三足点域上。",
+    "ja": "引用した式では、曲線の定義体 $F$ の有限素点における局所高さの和を用いて $h$ を定めている。数体の同型による元の高さの有限部分の不変性は、参照 Lean 実装の Height.lean にある Iut.finHeight_mapEquiv による。後続の Iut.Tripod.h_eq_finHeight_div では、この等式を用いて三脚点の体で高さを表す。"
+  }
+}
