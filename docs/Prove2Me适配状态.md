@@ -3,7 +3,6 @@
 ## 1. 根据 refer/iut 指示尚未拆分的证明义务
 
 - `refer/iut/Iut/Tripod/Main.lean:129`
-- `refer/iut/Iut/Tripod/CyclicIsogeny.lean:831`
 - `refer/iut/Iut/Tripod/ClassicalAbcGenuineCanLift.lean:28`
 - `refer/iut/Iut/Implication/Corollary22.lean:284`
 - `refer/iut/Iut/Implication/Corollary22.lean:357`

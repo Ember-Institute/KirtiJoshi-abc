@@ -486,6 +486,58 @@ For a transcendental parameter $t$, the polynomial ring over $K$ intersects $k(t
 
 Every countable field of characteristic zero embeds in the complex numbers. The four exclusions on the j-invariant are preserved and reflected along embeddings. The assembly takes the complex result, descent along a field embedding and determination by countable algebraically closed subfields as explicit inputs to derive `CanLift27.{0}`. [Pi1 assembly](https://github.com/lana-agents/pi1/blob/ca7def953193f861a462aa0831eec8f0a31ff69f/Pi1/Orbicurve/LefschetzMain.lean#L280) · [Project and axiom review](receipts/round-ci-022670-0b60f6c5-result.json) · [Trilingual readback](readbacks/canlift-lefschetz-assembly-trilingual.md)
 
+## Placewise logarithmic Vélu estimates
+
+The finite-place estimate separates odd multiplicative places, places of residue characteristic two, and the remaining finite places. At odd multiplicative places the Tate inequality supplies the negative multiple of the logarithm of the local absolute value of the j-invariant. The infinite-place estimate retains the same complex torsion bound and its constant $C_0$. These estimates supply the terms for the global sum. [Reference](../../../../refer/iut/Iut/Tripod/CyclicIsogeny.lean#L662) · [Project and axiom review](receipts/round-ci-022720-25476fb9-result.json) · [Trilingual readback](readbacks/cyclic-velu-log-trilingual.md)
+
+## Galois closure under extension of constants for CanLift
+
+A Galois closure of the lower finite cover extends to a Galois closure containing the compositum over the larger constant field. Restriction gives an injective map on Galois groups and respects the fixed subgroups and inertia under contraction. For algebraically closed lower constants and a transcendental parameter, restriction is also surjective under the compositum hypothesis. Equality of ramification indices requires the subsequent ramification comparison. [Pi1 source](https://github.com/lana-agents/pi1/blob/ca7def953193f861a462aa0831eec8f0a31ff69f/Pi1/Orbicurve/BaseChange.lean) · [Project and axiom review](receipts/round-ci-022720-25476fb9-result.json) · [Trilingual readback](readbacks/canlift-constant-extension-galois-trilingual.md)
+
+## Mod-ell representation of the Legendre curve provider
+
+The Legendre curve over the selected field has the original Legendre equation after base change to the algebraic closure. Its torsion basis transports along this equality. The mod-$ℓ$ representation has the required action on geometric torsion and an open kernel. The provider constructor takes the arithmetic of each selected curve as an explicit input. [Reference provider](../../../../refer/iut/Iut/Tripod/Providers.lean) · [Project and axiom review](receipts/round-ci-022720-25476fb9-result.json) · [Trilingual readback](readbacks/tripod-provider-representation-trilingual.md)
+
+## Ramification indices under extension of constants for CanLift
+
+For a finite tower of normalized function fields, choose a maximal ideal of the upper normalization after extending constants. If its contraction to the original upper normalization is nonzero, the relative ramification indices agree at the two ideals. The proof compares inertia in Galois closures and cancels the common positive factor in the tower. [Project and axiom review](receipts/round-ci-022759-424cfbc4-result.json) · [Trilingual readback](readbacks/canlift-constant-extension-ramification-trilingual.md)
+
+## Six-torsion rationality of the selected Legendre curve
+
+The selected field contains the chosen square root of minus one. The coordinates of all geometric two-torsion and three-torsion points descend to that field. For a point killed by six, the difference of its triple and its double equals the original point, so it descends to the same field. [Reference](../../../../refer/iut/Iut/Tripod/CurveFacts.lean#L151) · [Project and axiom review](receipts/round-ci-022759-424cfbc4-result.json) · [Trilingual readback](readbacks/tripod-provider-rationality-trilingual.md)
+
+## Descent of étale maps under extension of constants for CanLift
+
+When the lower constant field is algebraically closed, each closed point of the lower normalization has a closed point above it after extension of constants. By comparing ramification indices and the two prescribed multiplicities at nonzero contractions, the proof descends the étale condition on the map of affine orbicurve presentations. [Project and axiom review](receipts/round-ci-022789-a679c21f-result.json) · [Trilingual readback](readbacks/canlift-constant-extension-etale-trilingual.md)
+
+## The global Vélu bound
+
+For a point in the compactly bounded subset, the placewise estimates on the descended ratio combine by the product formula. The local degrees and the compact bounds control the finite and infinite contributions. The odd bad-place sum identifies the height difference. The final bound retains the chosen $C_0$, the Galois-stable subgroup and the Tate graph-line hypothesis. [Reference](../../../../refer/iut/Iut/Tripod/CyclicIsogeny.lean#L831) · [Project and axiom review](receipts/round-ci-022808-047a35ae-result.json) · [Trilingual readback](readbacks/cyclic-velu-main-bound-trilingual.md)
+
+## The fixed-constant cyclic subgroup bound
+
+The public complex torsion bound supplies the constant for the Legendre family. The odd multiplicative place theorem supplies the graph-line condition. The global Vélu bound then proves the public cyclic subgroup estimate at the constant specified in its statement. [Reference](../../../../refer/iut/Iut/Tripod/CyclicIsogeny.lean#L1064) · [Project and axiom review](receipts/round-ci-022825-5942080c-result.json) · [Trilingual readback](readbacks/tripod-cyclic-bound-odd-trilingual.md)
+
+## Forward étale transport under extension of constants for CanLift
+
+At a closed point whose contraction is zero, restriction to the original Galois closure identifies the inertia group as trivial. The ramification index is therefore one. At a point with nonzero contraction, the ramification index and the two prescribed multiplicities agree with their values before extension of constants. These identities transport the étale condition to the larger constant field. [Pi1 source](https://github.com/lana-agents/pi1/blob/ca7def953193f861a462aa0831eec8f0a31ff69f/Pi1/Orbicurve/Lefschetz.lean#L148) · [Project and axiom review](receipts/round-ci-022835-61a98993-result.json) · [Trilingual readback](readbacks/canlift-constant-extension-forward-trilingual.md)
+
+## Ramification under a change of parameter for CanLift
+
+Mutual integrality of the two parameters identifies the normalization rings inside the same ambient field. The new parameter field still has finite extension degree. The polynomial parameter map preserves the prescribed ramification condition via the isomorphisms of the base and normalization rings. [Pi1 source](https://github.com/lana-agents/pi1/blob/ca7def953193f861a462aa0831eec8f0a31ff69f/Pi1/Orbicurve/Lefschetz.lean#L296) · [Project and axiom review](receipts/round-ci-022835-61a98993-result.json) · [Trilingual readback](readbacks/canlift-change-parameter-trilingual.md)
+
+## Multiplicities of the sign quotient under extension of constants
+
+The sign-quotient multiplicity equals the ramification index of the quadratic coordinate field. The quadratic coordinate equation supplies the finite Galois extension over both constant fields. The ramification comparison then gives equality of multiplicities at closed points with nonzero contraction. [Pi1 source](https://github.com/lana-agents/pi1/blob/ca7def953193f861a462aa0831eec8f0a31ff69f/Pi1/Orbicurve/HemiTY.lean) · [Project and axiom review](receipts/round-ci-022835-61a98993-result.json) · [Trilingual readback](readbacks/canlift-sign-multiplicity-trilingual.md)
+
+## Canonical Corollary 2.2 with the proved cyclic bound
+
+`canonicalCorollary22HighHeightEstimate_of_cyclicBound` supplies the `CurveFactsProp` premise of the source assembly with `cyclicBoundOdd` at the fixed constant. It still takes the curve provider, core finiteness, anabelian existence, both prime estimates and the universally quantified `h312` for the concrete theta data. [Project and axiom review](receipts/round-ci-022840-3258b7f9-result.json) · [Trilingual readback](readbacks/tripod-canonical-corollary22-cyclic-trilingual.md)
+
+## Descent of a quadratic cover map for CanLift
+
+The change of parameter and extension of constants give compatible contractions on the polynomial lines. The sign-quotient multiplicities agree under that compatibility at nonzero contractions. The étale identity consequently descends to the smaller constant field and the given quadratic-cover rigidity condition identifies the value of the descended map. [Pi1 source](https://github.com/lana-agents/pi1/blob/ca7def953193f861a462aa0831eec8f0a31ff69f/Pi1/Orbicurve/Lefschetz.lean) · [Project and axiom review](receipts/round-ci-022857-2bd71c3a-result.json) · [Trilingual readback](readbacks/canlift-descended-cover-trilingual.md)
+
 ## MCP-CI receipts for this batch
 
 Each job uses an exclusive worktree. Successful and failed receipt rows use compiler wall time and peak process-tree RSS when available. Timeout rows use the elapsed compile time as a lower bound. The receipt stores the exact source hash, input paths and diagnostics.
@@ -918,3 +970,56 @@ Each job uses an exclusive worktree. Successful and failed receipt rows use comp
 | [`ci-022669-4d6cbff6`](receipts/round-ci-022669-4d6cbff6-result.json) | `Source_TripodProviderRepresentation` | `cb017806bb8d` | failed | 1 | 184.45 | 177.30 (6.15 + 171.15) | 7.58 |
 | [`ci-022670-0b60f6c5`](receipts/round-ci-022670-0b60f6c5-result.json) | `ReviewVeluTateAndCanLift` | `f6a3705d9af5` | succeeded | 0 | 192.40 | 184.66 (5.71 + 178.95) | 8.08 |
 | [`ci-022671-ef6c0fda`](receipts/round-ci-022671-ef6c0fda-result.json) | `Source_TripodCyclicVeluLog` | `068295f74087` | succeeded | 0 | 177.29 | 170.96 (7.51 + 163.45) | 7.61 |
+| [`ci-022685-a054b4f8`](receipts/round-ci-022685-a054b4f8-result.json) | `Source_TripodProviderRepresentation` | `38f5dd704e61` | succeeded | 0 | 222.41 | 214.96 (5.71 + 209.25) | 7.50 |
+| [`ci-022695-812b673a`](receipts/round-ci-022695-812b673a-result.json) | `Source_TripodCyclicVeluLog` | `068295f74087` | succeeded | 0 | 232.45 | 231.42 (7.71 + 223.71) | 7.63 |
+| [`ci-022696-82652122`](receipts/round-ci-022696-82652122-result.json) | `Source_ReferenceIutCanLiftConstantExtensionGalois` | `6187b5d8af79` | succeeded | 0 | 98.43 | 105.52 (20.12 + 85.40) | 3.50 |
+| [`ci-022705-197c11df`](receipts/round-ci-022705-197c11df-result.json) | `Source_ReferenceIutCanLiftConstantExtensionGalois` | `6187b5d8af79` | succeeded | 0 | 86.96 | 99.24 (29.42 + 69.82) | 3.52 |
+| [`ci-022706-7463dee8`](receipts/round-ci-022706-7463dee8-result.json) | `Source_TripodProviderRepresentation` | `38f5dd704e61` | succeeded | 0 | 194.87 | 190.62 (5.53 + 185.09) | 7.56 |
+| [`ci-022707-a1e34206`](receipts/round-ci-022707-a1e34206-result.json) | `Thm_AbcAdaptation_Tripod_Cyclic_main_bound` | `310867d6061c` | timeout | unknown | 180.06 | unknown | unknown |
+| [`ci-022718-824d934a`](receipts/round-ci-022718-824d934a-result.json) | `Thm_AbcAdaptation_Tripod_Cyclic_main_bound` | `310867d6061c` | failed | 1 | 261.40 | 261.07 (58.93 + 202.14) | 9.93 |
+| [`ci-022719-08c2f20e`](receipts/round-ci-022719-08c2f20e-result.json) | `Source_ReferenceIutCanLiftConstantExtensionRamification` | `1a991524bac1` | failed | 1 | 107.79 | 132.34 (66.39 + 65.95) | 4.62 |
+| [`ci-022720-25476fb9`](receipts/round-ci-022720-25476fb9-result.json) | `ReviewVeluLogCanLiftGaloisAndModRep` | `c3db9fc84213` | succeeded | 0 | 235.15 | 232.67 (5.21 + 227.46) | 7.89 |
+| [`ci-022737-030eb4a9`](receipts/round-ci-022737-030eb4a9-result.json) | `Source_ReferenceIutCanLiftConstantExtensionRamification` | `61aedcbc150f` | succeeded | 0 | 106.90 | 120.50 (69.71 + 50.79) | 4.56 |
+| [`ci-022738-eb000b49`](receipts/round-ci-022738-eb000b49-result.json) | `Source_TripodProviderRationality` | `a4aa77b6f0b6` | failed | 1 | 66.99 | 66.16 (3.60 + 62.56) | 4.18 |
+| [`ci-022743-869a7b58`](receipts/round-ci-022743-869a7b58-result.json) | `Source_TripodProviderRationality` | `da615a51b2c6` | failed | 1 | 47.75 | 46.76 (3.17 + 43.59) | 4.18 |
+| [`ci-022744-965f1203`](receipts/round-ci-022744-965f1203-result.json) | `Source_ReferenceIutCanLiftConstantExtensionRamification` | `61aedcbc150f` | succeeded | 0 | 90.09 | 102.65 (65.56 + 37.09) | 4.56 |
+| [`ci-022749-b4f34e16`](receipts/round-ci-022749-b4f34e16-result.json) | `Source_TripodProviderRationality` | `93e7831eeba3` | succeeded | 0 | 67.47 | 64.30 (2.57 + 61.73) | 4.08 |
+| [`ci-022750-59d570d8`](receipts/round-ci-022750-59d570d8-result.json) | `Source_ReferenceIutCanLiftConstantExtensionEtale` | `aec6451ef64d` | failed | 1 | 66.58 | 67.06 (15.17 + 51.89) | 3.45 |
+| [`ci-022755-81767315`](receipts/round-ci-022755-81767315-result.json) | `Source_TripodProviderRationality` | `93e7831eeba3` | succeeded | 0 | 50.20 | 49.52 (2.62 + 46.90) | 4.16 |
+| [`ci-022759-424cfbc4`](receipts/round-ci-022759-424cfbc4-result.json) | `ReviewCanLiftRamificationAndRationality` | `20f0bc58b701` | succeeded | 0 | 112.33 | 110.49 (4.92 + 105.57) | 7.85 |
+| [`ci-022764-9bca17be`](receipts/round-ci-022764-9bca17be-result.json) | `Source_ReferenceIutCanLiftConstantExtensionEtale` | `1ac324dc3f03` | failed | 1 | 46.35 | 53.41 (14.59 + 38.82) | 3.53 |
+| [`ci-022776-9b67f9ef`](receipts/round-ci-022776-9b67f9ef-result.json) | `Source_ReferenceIutCanLiftConstantExtensionEtale` | `5008e9f17794` | succeeded | 0 | 45.80 | 55.33 (18.21 + 37.12) | 3.58 |
+| [`ci-022779-358d4cf9`](receipts/round-ci-022779-358d4cf9-result.json) | `Thm_AbcAdaptation_Tripod_Cyclic_main_bound` | `142d951004ca` | failed | 1 | 145.68 | 145.72 (7.60 + 138.12) | 7.62 |
+| [`ci-022780-3d276d3f`](receipts/round-ci-022780-3d276d3f-result.json) | `Source_ReferenceIutCanLiftConstantExtensionEtale` | `5008e9f17794` | succeeded | 0 | 56.79 | 65.59 (19.06 + 46.53) | 3.57 |
+| [`ci-022788-2d0c5545`](receipts/round-ci-022788-2d0c5545-result.json) | `Thm_AbcAdaptation_Tripod_Cyclic_main_bound` | `49d7e8620b26` | failed | 1 | 108.47 | 106.19 (7.23 + 98.96) | 7.62 |
+| [`ci-022789-a679c21f`](receipts/round-ci-022789-a679c21f-result.json) | `ReviewCanLiftEtale` | `01baa8e75638` | succeeded | 0 | 119.62 | 114.60 (4.87 + 109.73) | 7.84 |
+| [`ci-022799-28b9cc35`](receipts/round-ci-022799-28b9cc35-result.json) | `Thm_AbcAdaptation_Tripod_Cyclic_main_bound` | `f31a6c599d17` | succeeded | 0 | 98.41 | 98.71 (7.04 + 91.67) | 7.61 |
+| [`ci-022801-6529fa30`](receipts/round-ci-022801-6529fa30-result.json) | `Thm_AbcAdaptation_Tripod_Cyclic_main_bound` | `f31a6c599d17` | succeeded | 0 | 95.91 | 93.90 (6.40 + 87.50) | 7.61 |
+| [`ci-022802-e3b86255`](receipts/round-ci-022802-e3b86255-result.json) | `Source_ReferenceIutCanLiftConstantExtensionForward` | `1e9c4a4e82d4` | succeeded | 0 | 45.04 | 45.79 (11.03 + 34.76) | 3.43 |
+| [`ci-022803-b8f97e7c`](receipts/round-ci-022803-b8f97e7c-result.json) | `Source_ReferenceIutCanLiftChangeParameter` | `ed0a5cd23216` | failed | 1 | 101.05 | 108.31 (73.42 + 34.89) | 3.58 |
+| [`ci-022804-e216e65d`](receipts/round-ci-022804-e216e65d-result.json) | `Source_ReferenceIutCanLiftSignMultiplicity` | `df869118cc74` | failed | 1 | 90.15 | 98.73 (62.78 + 35.95) | 5.55 |
+| [`ci-022808-047a35ae`](receipts/round-ci-022808-047a35ae-result.json) | `ReviewTripodVeluMain` | `03134f3eaffe` | succeeded | 0 | 123.22 | 122.55 (6.26 + 116.29) | 8.09 |
+| [`ci-022813-a4544eaf`](receipts/round-ci-022813-a4544eaf-result.json) | `Thm_AbcAdaptation_Reference_Heights_exists_torsion_x_bound` | `28366becdd16` | succeeded | 0 | 44.02 | 40.74 (2.29 + 38.45) | 3.89 |
+| [`ci-022814-c44ab3d7`](receipts/round-ci-022814-c44ab3d7-result.json) | `Thm_AbcAdaptation_Tripod_cyclicLocalGraphLine` | `6a7a330463eb` | succeeded | 0 | 86.61 | 83.93 (4.29 + 79.64) | 7.36 |
+| [`ci-022815-02f661c5`](receipts/round-ci-022815-02f661c5-result.json) | `Source_ReferenceIutCanLiftChangeParameter` | `73032651ab5c` | failed | 1 | 188.56 | 205.17 (170.28 + 34.89) | 5.68 |
+| [`ci-022819-34f5afb5`](receipts/round-ci-022819-34f5afb5-result.json) | `Thm_AbcAdaptation_Tripod_legendre_torsion_x_le` | `c4a74e4173f3` | succeeded | 0 | 43.05 | 40.03 (2.43 + 37.60) | 3.90 |
+| [`ci-022820-4b309914`](receipts/round-ci-022820-4b309914-result.json) | `Source_ReferenceIutCanLiftSignMultiplicity` | `d43f05510e59` | succeeded | 0 | 48.59 | 53.16 (21.37 + 31.79) | 3.65 |
+| [`ci-022821-252c5286`](receipts/round-ci-022821-252c5286-result.json) | `Source_ReferenceIutCanLiftConstantExtensionForward` | `1e9c4a4e82d4` | succeeded | 0 | 41.30 | 41.23 (10.70 + 30.53) | 3.43 |
+| [`ci-022822-9f139553`](receipts/round-ci-022822-9f139553-result.json) | `Thm_AbcAdaptation_Tripod_cyclicBoundOdd` | `a7a45d3da3c5` | succeeded | 0 | 81.92 | 81.36 (4.76 + 76.60) | 7.59 |
+| [`ci-022825-5942080c`](receipts/round-ci-022825-5942080c-result.json) | `ReviewTripodCyclicBound` | `47c81a679df6` | succeeded | 0 | 99.26 | 96.20 (5.53 + 90.67) | 8.10 |
+| [`ci-022826-4ed1bcf3`](receipts/round-ci-022826-4ed1bcf3-result.json) | `Source_ReferenceIutCanLiftChangeParameter` | `297027c9b25b` | succeeded | 0 | 48.86 | 62.08 (30.73 + 31.35) | 3.55 |
+| [`ci-022827-32a80b79`](receipts/round-ci-022827-32a80b79-result.json) | `Source_ReferenceIutCanLiftSignMultiplicity` | `d43f05510e59` | succeeded | 0 | 48.58 | 51.91 (20.31 + 31.60) | 3.61 |
+| [`ci-022830-96a40723`](receipts/round-ci-022830-96a40723-result.json) | `Source_TripodCanonicalCorollary22` | `003af37bf85f` | succeeded | 0 | 83.96 | 82.27 (4.79 + 77.48) | 7.66 |
+| [`ci-022831-fd4b0e80`](receipts/round-ci-022831-fd4b0e80-result.json) | `Source_ReferenceIutCanLiftChangeParameter` | `297027c9b25b` | succeeded | 0 | 47.16 | 63.59 (33.42 + 30.17) | 3.56 |
+| [`ci-022835-61a98993`](receipts/round-ci-022835-61a98993-result.json) | `ReviewCanLiftCoverTransport` | `eafb87b978ba` | succeeded | 0 | 99.40 | 94.30 (4.43 + 89.87) | 7.85 |
+| [`ci-022836-114956ad`](receipts/round-ci-022836-114956ad-result.json) | `Source_ReferenceIutCanLiftDescendedCover` | `9c54e9e7fa04` | failed | 1 | 68.07 | 83.11 (50.76 + 32.35) | 4.58 |
+| [`ci-022837-af11d9dc`](receipts/round-ci-022837-af11d9dc-result.json) | `Source_TripodCanonicalCorollary22` | `003af37bf85f` | succeeded | 0 | 87.34 | 83.13 (4.67 + 78.46) | 7.57 |
+| [`ci-022840-3258b7f9`](receipts/round-ci-022840-3258b7f9-result.json) | `ReviewCanonicalCorollary22Cyclic` | `7a926338aece` | succeeded | 0 | 99.80 | 98.32 (5.04 + 93.28) | 7.87 |
+| [`ci-022841-4405a2a2`](receipts/round-ci-022841-4405a2a2-result.json) | `Source_ReferenceIutCanLiftDescendedCover` | `44b55e9dccf6` | succeeded | 0 | 72.87 | 88.79 (50.67 + 38.12) | 4.58 |
+| [`ci-022847-23c017b4`](receipts/round-ci-022847-23c017b4-result.json) | `Source_ReferenceIutCanLiftDescendedCover` | `44b55e9dccf6` | succeeded | 0 | 71.49 | 86.49 (54.78 + 31.71) | 4.57 |
+| [`ci-022848-fb8a5fe3`](receipts/round-ci-022848-fb8a5fe3-result.json) | `Source_ReferenceIutCanLiftQuadraticModel` | `92ffd2587e48` | failed | 1 | 89.19 | 89.56 (12.56 + 77.00) | 7.65 |
+| [`ci-022849-42223f75`](receipts/round-ci-022849-42223f75-result.json) | `Source_ReferenceIutCanLiftRealization` | `0363f47d47a2` | failed | 1 | 76.93 | 77.45 (46.25 + 31.20) | 3.61 |
+| [`ci-022857-2bd71c3a`](receipts/round-ci-022857-2bd71c3a-result.json) | `ReviewCanLiftDescendedCover` | `b5f513d90391` | succeeded | 0 | 101.37 | 99.80 (5.20 + 94.60) | 7.89 |
+| [`ci-022858-2a5be950`](receipts/round-ci-022858-2a5be950-result.json) | `Source_ReferenceIutCanLiftQuadraticModel` | `2c6d31268e84` | failed | 1 | 96.98 | 100.11 (14.51 + 85.60) | 7.69 |
+| [`ci-022863-2dc015f6`](receipts/round-ci-022863-2dc015f6-result.json) | `Source_ReferenceIutCanLiftQuadraticModel` | `d03df1a5ae85` | failed | 1 | 93.35 | 95.63 (13.95 + 81.68) | 7.70 |
+| [`ci-022864-8e45067c`](receipts/round-ci-022864-8e45067c-result.json) | `Source_ReferenceIutCanLiftRealization` | `25d67a5d826d` | failed | 1 | 51.09 | 54.16 (19.98 + 34.18) | 3.63 |

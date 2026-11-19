@@ -11,6 +11,7 @@ and Iut/Tripod/Main.lean
 import Solutions.Source_TripodP7
 import Solutions.Source_TripodProviderAuxiliaryHeight
 import Theorems.Thm_AbcAdaptation_Reference_Iut_Corollary22Inputs_c2
+import Theorems.Thm_AbcAdaptation_Tripod_cyclicBoundOdd
 
 set_option autoImplicit false
 
@@ -51,5 +52,19 @@ theorem canonicalCorollary22HighHeightEstimate_of_source
     (fun _ ⟨D, LT, TL, QI, hX⟩ => hX ▸ h312 D LT TL QI) x hx hxe hH
   rw [hheight] at hEstimate
   exact hEstimate
+
+/-- The canonical Corollary 2.2 estimate with the cyclic bound supplied by the
+Vélu estimates and the complex torsion bound. -/
+theorem canonicalCorollary22HighHeightEstimate_of_cyclicBound
+    (P : CurveProviders)
+    (hcore : ∀ K d, CoreFinitenessHyp P K d AG)
+    (anab : AnabelianExistence AG TG) (cheb : ChebyshevBound) (pnt : PrimeCountingBound)
+    (h312 : ∀ (D : InitialThetaData AG TG) (LT : LocalTheory.{0, 0} D.Kt)
+      (TL : ThetaLocalData D LT) (QI : QPilotInputs D),
+      Corollary312Variant (concreteVariantData D LT TL QI)) :
+    CanonicalCorollary22HighHeightEstimate :=
+  canonicalCorollary22HighHeightEstimate_of_source P
+    (TK := fun K => cyclicConst K (torsionConst K.c (legendre_torsion_x_le K.c)))
+    (fun K d => ⟨cyclicBoundOdd P K d⟩) hcore anab cheb pnt h312
 
 end AbcAdaptation.Tripod

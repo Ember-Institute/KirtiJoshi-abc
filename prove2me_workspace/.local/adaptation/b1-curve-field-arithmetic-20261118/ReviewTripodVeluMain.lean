@@ -1,0 +1,7 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Theorems.Thm_AbcAdaptation_Tripod_Cyclic_main_bound
+
+#print axioms AbcAdaptation.Tripod.Cyclic.main_bound

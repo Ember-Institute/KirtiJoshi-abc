@@ -1,0 +1,24 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftConstantExtensionGalois
+import Solutions.Source_TripodCyclicVeluLog
+import Solutions.Source_TripodProviderRepresentation
+
+open JoshiTeich.Act1Scene1.FunctionFieldNormalization
+
+#print axioms rootSet_map_rationalBaseMap
+#print axioms exists_galois_constantExtension
+#print axioms constantExtensionRes
+#print axioms bot_mem_constantExtension
+#print axioms constantExtensionRes_injective
+#print axioms constantExtensionRes_mem_fixSub
+#print axioms constantExtensionMap_smul
+#print axioms constantExtensionRes_mem_inertia
+#print axioms constantExtensionRes_surjective
+#print axioms AbcAdaptation.Tripod.Cyclic.apply_natCast_le_one
+#print axioms AbcAdaptation.Tripod.Cyclic.log_apply_le
+#print axioms AbcAdaptation.Tripod.Cyclic.log_infinite_bound
+#print axioms AbcAdaptation.Tripod.modRep_curveOf
+#print axioms AbcAdaptation.Tripod.CurveProviders.ofArithmetic

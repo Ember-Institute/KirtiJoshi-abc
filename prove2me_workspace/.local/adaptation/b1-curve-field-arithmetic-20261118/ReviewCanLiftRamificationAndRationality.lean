@@ -1,0 +1,16 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftConstantExtensionRamification
+import Solutions.Source_TripodProviderRationality
+
+open JoshiTeich.Act1Scene1.FunctionFieldNormalization
+
+#print axioms polynomialBaseToBottom
+#print axioms constantExtensionLineEquiv
+#print axioms coe_constantExtensionLineEquiv
+#print axioms constantExtensionMap_constantExtensionLineEquiv
+#print axioms ramificationIdx_constantExtension_eq
+#print axioms AbcAdaptation.Tripod.sqrt_neg_one_curveOf
+#print axioms AbcAdaptation.Tripod.six_torsion_rational_curveOf

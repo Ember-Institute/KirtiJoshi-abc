@@ -7,13 +7,13 @@ Original repository https://github.com/lana-agents/iut
 Original revision 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8
 Original path Iut/Tripod/CyclicArch.lean (legendre_torsion_x_le)
 -/
-import Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CyclicTorsionBound
+import Theorems.Thm_AbcAdaptation_Reference_Heights_exists_torsion_x_bound
 
 set_option autoImplicit false
 
 namespace AbcAdaptation.Tripod
 
-theorem legendre_torsion_x_le (c : ℝ) : ∃ C₀ : ℝ, 0 ≤ C₀ ∧ LegendreTorsionXBound c C₀ := by
-  sorry
+theorem legendre_torsion_x_le (c : ℝ) : ∃ C₀ : ℝ, 0 ≤ C₀ ∧ LegendreTorsionXBound c C₀ :=
+  legendre_torsion_x_le_of_complex Reference.Heights.exists_torsion_x_bound c
 
 end AbcAdaptation.Tripod

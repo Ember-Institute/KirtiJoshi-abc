@@ -1,0 +1,17 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftConstantExtensionForward
+import Solutions.Source_ReferenceIutCanLiftChangeParameter
+import Solutions.Source_ReferenceIutCanLiftSignMultiplicity
+
+open JoshiTeich.Act1Scene1.FunctionFieldNormalization
+
+#print axioms ramificationIdx_constantExtension_of_comap_bot
+#print axioms etale_constantExtension
+#print axioms changeParameterCoordEquiv
+#print axioms finiteDimensional_changeParameter
+#print axioms parameterMap_ramification_iff
+#print axioms signQuotientMultiplicity_eq_index
+#print axioms signQuotientMultiplicity_constantExtension
