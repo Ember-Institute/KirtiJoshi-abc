@@ -1,0 +1,13 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodTpdGalois
+
+set_option autoImplicit false
+
+open AbcAdaptation.Tripod
+
+#print axioms isGalois_tpd
+#print axioms finrank_tpd_le_six
+#print axioms isGalois_tpd_of_curve

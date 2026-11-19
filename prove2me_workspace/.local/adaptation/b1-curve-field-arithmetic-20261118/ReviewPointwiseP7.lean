@@ -1,0 +1,11 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCurveConcreteExistence
+
+open AbcAdaptation.Reference.Iut.CurveInputs
+
+#print axioms pointThetaData
+#print axioms exists_initialThetaData
+#print axioms concreteThetaDataExistence_of_pointwise

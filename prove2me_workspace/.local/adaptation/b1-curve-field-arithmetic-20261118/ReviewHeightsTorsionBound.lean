@@ -1,0 +1,13 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodCyclicBoundFromSource
+
+open AbcAdaptation.Reference.Heights AbcAdaptation.Tripod
+
+#print axioms latticePointMap_add
+#print axioms latticePointUniformization
+#print axioms exists_torsion_x_bound_from_source
+#print axioms legendre_torsion_x_le_from_source
+#print axioms cyclicBoundOdd_of_mainBound

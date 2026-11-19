@@ -1,0 +1,15 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutConcreteLocalArchimedean
+
+open AbcAdaptation.Reference.Iut.LocalConstruct
+
+#print axioms archComponentVol_scale
+#print axioms exists_leastHull_infinite
+#print axioms archComponentVol_archLogShell
+#print axioms archIndAut_logShell
+#print axioms prop15
+#print axioms theta_admissible_infinite
+#print axioms thetaShell_admissible_infinite

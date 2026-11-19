@@ -1,0 +1,13 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftPolynomialDescent
+import Solutions.Source_ReferenceIutCanLiftUniformizationCover
+import Solutions.Source_ReferenceIutCanLiftAnalyticLiftFacts
+
+open AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic
+
+#print axioms IsUniformization.exists_polynomial_of_fst_fibres
+#print axioms IsLift.smul
+#print axioms IsLift.eq_zero

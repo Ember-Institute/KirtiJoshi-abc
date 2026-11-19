@@ -1,0 +1,15 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutTowerDifferentBound
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Iut
+
+#print axioms Serre.free_and_exists_trace_ne_zero
+#print axioms Serre.exists_mem_pow_intTrace_notMem
+#print axioms Serre.not_pow_dvd_differentIdeal
+#print axioms ordAt_differentIdeal_add_one_le
+#print axioms TowerLocalFacts.ordAt_different_le

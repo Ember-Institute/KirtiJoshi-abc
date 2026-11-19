@@ -1,0 +1,12 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftFixX
+
+open AbcAdaptation.Reference.Iut.Anabelian
+
+#check CanLiftAnalytic.IsUniformization.fixes_normalization_x
+#check canLift27ComplexAutomorphismsFixX_of_uniformization
+#print axioms CanLiftAnalytic.IsUniformization.fixes_normalization_x
+#print axioms canLift27ComplexAutomorphismsFixX_of_uniformization

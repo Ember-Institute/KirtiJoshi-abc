@@ -1,6 +1,6 @@
 # Scene1 进度总览 5
 
-截至 **2026-11-18（Asia/Shanghai）**。Scene1 的几何交付从总览4的 **`a443952`** 推进到 **`0477a914`**。本期还完成了 Lean 工具链迁移，并推进了 Prove2Me 的参考算术链。 [总览4](Scene1进度总览4.md) · [Scene1 开发计划](开发计划.V1Act1Scene1.md) · [Prove2Me 适配计划](开发计划.Prove2Me适配.md)
+截至 **2026-11-19（Asia/Shanghai）**。Scene1 的几何交付从总览4的 **`a443952`** 推进到 **`0477a914`**。本期还完成了 Lean 工具链迁移，并推进了 Prove2Me 的参考算术链。 [总览4](Scene1进度总览4.md) · [Scene1 开发计划](开发计划.V1Act1Scene1.md) · [Prove2Me 适配计划](开发计划.Prove2Me适配.md)
 
 ### 状态判定
 
@@ -18,7 +18,7 @@
 | --- | --- |
 | Scene1 整体 | **未完成，G1–G4 关闭 0/4** |
 | 有明确来源指示的父义务 | **15 项均开放**。见[证明义务清单](具有明确参考来源指示的证明义务.md) |
-| iut 参考链适配 | **78/95（82.1%）**。已在目标环境证明扭点域分歧整除、三足曲线的 SL₂ 像、Legendre 挠点次数界和导子比较，并将这些证明装入曲线输入构造器。 [适配计划 §4.1](开发计划.Prove2Me适配.md#41-参考链审计) |
+| iut 参考链适配 | **118/135（87.4%）**。本期补齐实际局部理论，并通过复挠点界和复数 CanLift 的条件组合审查。 [适配计划 §4.1](开发计划.Prove2Me适配.md#41-参考链审计) |
 | 最新 Scene1 数学单元 | 原二阶点平移仿射图的分式域沿原包含映射的像等于原无符号正规化域。 [分式域像等式](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/InitialThetaInfinityShiftedChartFractionField.lean#L156) |
 | 几何路线的下一处缺口 | 在平移仿射图的同一剩余中心证明逆坐标公式的分母可逆，再用局部整闭性识别原无符号正规化的上层剩余域 |
 | 本地构建环境 | Lean `v4.33.1`，Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`。见[环境锁](../ArithmeticTeichmullerSpaces/migration/environment.lock.json) |
@@ -187,9 +187,9 @@ Corollary 3.12 的字面左端为 $-\lvert\operatorname{logVol}(\Theta_M)\rvert/
 
 ### 参考 `c2` 装配中仍开放的曲线输入
 
-- **循环子群估计。** 对紧有界集内的适用三足点、素数 $\ell\ge7$ 和 Galois 稳定的 $\ell$ 阶循环子群，须从 (P2) 的 q 阶数条件证明该子群在各奇乘法约化处满足图线条件。再在这些处上接合循环同源与高度上界，得到 $(\ell-2)(h-h_2)/24\le 2\log\ell+T_K$，其中 $T_K$ 只依赖给定的紧有界集。该估计供 `CurveFactsProp.cyclic` 和推论 2.2 消费。 [来源义务与适配状态](Prove2Me适配状态.md#1-根据-referiut-指示尚未拆分的证明义务)
-- **core 例外有限性。** 已用非零多项式 $256(X^2-X+1)^3-cX^2(X-1)^2$ 证明有限多个有理 $j$ 值只对应有限多个三足点。仍须在所选远 Abel 几何 `AG` 上接入 CanLift 命题 2.7，并证明一次穿孔曲线与其符号商的基变换相容，由此把同一供应曲线的所有非 core 情形归入该有限例外集。得到这条几何包含后，`coreFiniteness_of_exceptionalJ` 供应曲线输入构造器的 `CoreFinitenessHyp`。 [有限性归约](../prove2me_workspace/Solutions/Source_TripodCoreFiniteness.lean#L62) · [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#finite-exceptional-legendre-parameters-for-the-core-condition)
-- **P7 及高度身份。** 将实际曲线供应、循环子群界和 core 例外有限性装入 `CurveInputs`。对每个适用点和素数，构造同一 `AG/TG` 下的 `InitialThetaData`、局部理论、theta 局部数据及 q-pilot，并验证塔算术与模域次数、局部高度、不同理想和导子各项身份。第 15 项的全称适配还须覆盖这套构造供应的整个数据族。在 Prove2Me 上验收上述曲线字段还需要独立依赖打包与跨版本类型和公理核对。 [构造器实际输入](../prove2me_workspace/Solutions/Source_TripodCurveInputsFromSource.lean#L48) · [参考链审计](开发计划.Prove2Me适配.md#41-参考链审计)
+- **循环子群估计。** (P2) 下的图线判据已在全部奇乘法约化处证明，覆盖剩余特征等于 $\ell$ 的处。固定 Heights 的复格曲线已具备判别式、模 $j$ 恒等式和尖点极限。模 $j$ 满射和复格商映射的单射性已验收。基本域上判别式与虚部的两项对数比较已验收。复格商映射的满射已通过叶检查。复格点映射的加法律已与模 $j$ 满射及基本域比较装配，得到一般复挠点六次幂界及 Legendre 特化。剩余的 Vélu 主界须使用该特化所选的同一个 $C_0$。Vélu 主界需要在同一循环子群上比较商曲线与原曲线的高度，再由奇坏处高度分解得到 $(\ell-2)(h-h_2)/24\le 2\log\ell+T_K$。这里 $T_K$ 只依赖给定的紧有界集，所得估计供 `CurveFactsProp.cyclic` 和推论 2.2 消费。 [图线证明及回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#the-cyclic-subgroup-at-odd-bad-places) · [条件归约](../prove2me_workspace/Solutions/Source_TripodCyclicBoundOdd.lean#L188)
+- **core 例外有限性。** 对给定的 `EtalePi1Theory`，一次穿孔曲线及其符号商的基变换等式把同一供应曲线的非 core 情形归入 `Pi1.excJ`。有限多个有理 $j$ 值各对应非零多项式 $256(X^2-X+1)^3-cX^2(X-1)^2$ 的根，因而只产生有限多个三足点。`coreFiniteness_of_modelAG` 由此提供曲线输入构造器所需的 `CoreFinitenessHyp`。规范装配还需用真实 étale 基本群及其 CanLift 命题 2.7 实例化 `Pi1`。参考 `genuinePi1Theory` 所需的 CanLift 命题涉及原一次穿孔轨形曲线和其符号商，例外值为 $0$、$1728$、$488095744/125$、$1556068/81$。 实际归一化环上的覆盖、沿整闭载体的覆盖下降和多项式次数一判据已验收。已在非分歧 Galois 闭包上证明横坐标下降的归约和覆盖唯一性。第一坐标纤维上的多项式下降与解析提升刚性已用于复数情形的组合证明。须对每条非例外椭圆曲线构造满足commensurator 固定横坐标条件的均匀化，以供应该组合的假设。随后需沿 Lefschetz 下降接到任意特征零基域，再核对规范 `genuinePi1Theory` 接口。 [模型组合](../prove2me_workspace/Solutions/Source_TripodCoreModel.lean) · [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#core-finiteness-in-the-étale-model)
+- **P7 及高度身份。** 对每个适用点和素数，逐点装配已经在同一核固定域上取得 Tate 族和初始数据的算术关系，含 q-pilot 与去掉 2 和 ℓ 处贡献后的高度等式。同一挠点域上的 `concreteLocalTheory` 已装配有限处和无穷处的 41 个字段。有限处的 Haar 体积、最小包络、因子自同构、log-shell 和 Proposition 1.4 均已通过审查。逐点局部 θ 数据已接入实际完备化比较映射和 Tate 参数的 $2\ell$ 次根，保留二挠点有理性为显式输入。还须实现所选曲线的远 Abel 存在性接口，并将 Legendre 二挠点有理性接入同一逐点构造。容器所需的加权体积和最小包络已由 `LocalTheory` 的字段给出。给定同一数域塔的局部事实、次数界及坏处条件，(R4)、(ii) 和 (iii) 已装入同一个 `TowerArithmetic`。逐点条件构造以同一 q-pilot 选定坏特征，并将塔算术限制到对应的局部数据。步骤 (iii) 的对数和上界已接入同一局部数据的 `TL.dst`。实际三足域的 Galois 性和相对次数至多 6 已验收。同一 q-pilot 已给出 `TL.badChars` 的实际坏处见证。实际三足域的 Galois 实例、坏处从模域到三足域的分歧指数至多二，以及良约化处从三足域到挠点域的分歧指数为一，已接入同一 Legendre 曲线的步骤 (iii)。完整 `TowerLocalFacts` 还需在同一挠点域上证明野分歧界，以及剩余特征在 $\{2,3,5,\ell\}$ 之外时相对分歧指数至多 $30\ell$，再把完整塔算术供给逐点 P7。已验收的七字段 `localEstimate` 读取其 (R4)，同一数据上的证书读取 (ii)、(iii)。逐点的条件组合已能把同一数据上的证书和估计交给参考 `c2`。第 15 项必须覆盖这些构造供应的整个数据族。上述曲线字段还需独立依赖打包、跨版本类型及公理对应和私有平台验收。 [条件装配](../prove2me_workspace/Solutions/Source_ReferenceIutInitialThetaData.lean) · [参考链审计](开发计划.Prove2Me适配.md#41-参考链审计)
 
 ## 已排除的具体路线
 
@@ -224,3 +224,45 @@ Prove2Me 私有平台已验收参考局部体积平均界、定理 1.10、推论
 21 字段构造器已消费上述证明。同一供应曲线的定义域次数至多为 `552960 * d`，点的 `logDiff` 等于同一曲线三足域的归一化不同理想次数。构造器和 SL₂ 像通过类型与公理审查 `ci-020827-2725d6f7`，挠点和导子的公开证明通过 `ci-020829-26f0c710`，项目聚合与审查通过 `ci-020844-3d5ac401`。本轮从原合并待办中登记了四项已验收的本地成果，适配计划 §4.1 从 **74/91（81.3%）** 更新为 **78/95（82.1%）**。 [构造器](../prove2me_workspace/Solutions/Source_TripodCurveInputsFromSource.lean#L48) · [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#torsion-field-ramification-and-tripod-curve-inputs)
 
 core 例外有限性的算术归约已通过叶检查、项目聚合及公理审查 `ci-020859-ae4a0f86`。该归约保留所选几何下的例外集包含作为输入。 [有限性归约](../prove2me_workspace/Solutions/Source_TripodCoreFiniteness.lean#L62)
+
+P7 在原表示的核固定域上构造 Tate 族，逐点装配以同一几何的存在性接口为输入，得到初始 θ 数据及 q-pilot，并核对模域次数、去掉 2 和 ℓ 的局部高度、不同理想及导子关系。局部理论接口中的处纤维与权重和也已通过审查。 [P7 来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#pointwise-initial-theta-data-and-local-place-fibers)
+
+循环子群父归约保持参考选定的 $C_0$。其中奇坏处图线判据已获本地公理审查，复 Legendre 挠点横坐标界已归约到固定 Heights 的一般复挠点六次幂界。后续复格均匀化、模 $j$ 满射和基本域比较的验收见本节末。Vélu 主界仍开放。 [循环子群归约及回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#cyclic-subgroup-bound-at-the-chosen-torsion-constant)
+
+Core 例外有限性已接到给定 `EtalePi1Theory` 的模型，八项声明通过公理审查 `ci-021147-606ee1da`。 [Core 来源及回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#core-finiteness-in-the-étale-model)
+
+P7 的局部体积容器和最小包络通过 `ci-021200-5a4e6c8b`。塔的 (R4) 界已由同一挠点域的局部事实与两个次数界推出，审查 `ci-021215-021e43b6` 通过。 [P7 来源及回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#the-container-and-tower-local-facts)
+
+实际数域完备化的赋值、局部次数和不同理想支撑已通过审查。同一初始数据上的 theta 区域、不变量和条件证书通过 `ci-021270-ac3cb671`。适配计划 §4.1 达到 **92/109（84.4%）**。 [来源及回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#theta-regions-invariants-and-local-arithmetic)
+
+CanLift 的实际归一化载体、覆盖下降和多项式次数一判据通过 `ci-021380-91c6737e`。审查的十四项声明仅使用 Lean 标准公理。适配计划 §4.1 更新为 **93/110（84.5%）**。 [来源及回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#canlift-normalization-and-covering-lemmas)
+
+P7 的七字段局部估计通过 `ci-021405-7008ce12`。在给定同一塔的算术前提时，特出素数处的上界由局部体积律、q 次数在基变换下不变及加权平均推出。十六项公理检查均通过，§4.1 达到 **94/111（84.7%）**。 [来源及回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#local-estimates-for-the-concrete-theta-region)
+
+逐点 P7 的条件组合接入参考 `c2`，并经 `ci-021440-f6c510e9` 核对类型与五项公理闭包。适配计划 §4.1 达到 **95/112（84.8%）**。实际的局部理论、局部 theta 数据、塔算术与远 Abel 几何仍需从同一来源供应。 [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#concrete-p7-and-its-consumer-in-corollary-22)
+
+复 Legendre 挠点横坐标界已归约到固定 Heights 的一般复挠点界，保持循环子群主界所用的 $C_0$。条件证明与开放归约分别通过 `ci-021483-ab25526b`、`ci-021506-2cdf81e9`，§4.1 达到 **96/113（85.0%）**。 [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#cyclic-subgroup-archimedean-drafts)
+
+P7 的真实数域局部张量及其与 Scene1 真有限处张量的代数、拓扑对应通过 `ci-021534-9f07f95d` 的十七项公理检查。§4.1 达到 **97/114（85.1%）**。 [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#tensor-packet-for-the-concrete-local-theory)
+
+数域塔的条件性步骤 (iii) 和不同理想的局部到全局求和通过 `ci-021569-f47bd4e2` 的五项公理检查。§4.1 达到 **98/115（85.2%）**。 [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#tower-step-iii-and-normalized-different-accounting)
+
+同一 P7 局部数据的 `TL.dst` 已接入步骤 (iii)。审查 `ci-021616-6e2ea5a0` 核对了原坏处见证条件和上界常数。 [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#tower-step-iii-and-normalized-different-accounting)
+
+复格曲线的模 $j$ 恒等式、模群不变性及尖点极限通过九项公理审查 `ci-021617-fb4d9a8a`。§4.1 达到 **100/117（85.5%）**。 [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#modular-j-for-the-complex-torsion-bound)
+
+CanLift 的非分歧 Galois 闭包和基于解析自同构保持 $x$ 的下降通过四项公理审查 `ci-021631-5a00aac0`。§4.1 达到 **101/118（85.6%）**。 [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#canlift-unramified-galois-closure)
+
+实际三足域的 Galois 性与次数界通过 `ci-021651-5fdc99f2`。复格点映射的单射性与模 $j$ 满射通过 `ci-021652-c41c2a60`。§4.1 达到 **103/120（85.8%）**。 [三足域来源](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#galois-structure-of-the-tripodal-field) · [复格点来源](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#the-lattice-point-map-and-modular-j-surjectivity)
+
+同一 q-pilot 的坏处支撑与基本域的两项对数比较分别通过 `ci-021667-f7dd1302`、`ci-021668-80e34e19`。§4.1 达到 **105/122（86.1%）**。 [P7 来源](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#tower-step-iii-and-normalized-different-accounting) · [对数比较来源](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#the-lattice-point-map-and-modular-j-surjectivity)
+
+Serre 迹计算推出的不同理想局部指数界通过五项公理审查 `ci-021693-678cb693`。§4.1 达到 **106/123（86.2%）**。 [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#serres-local-different-bound)
+
+P7 步骤 (ii) 在同一挠点域的不同理想求和后保留误差 $2\log\ell+21$，全局总界通过 `ci-021730-14751bfe`。§4.1 达到 **107/124（86.3%）**。 [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#global-different-bound-in-tower-step-ii)
+
+同一份初始数据上的三项塔算术与逐点 P7 条件装配分别通过 `ci-021742-eb56803e`、`ci-021743-f33906a6`。无穷处局部理论通过 `ci-021744-b251f5a2` 的七项公理审查。§4.1 达到 **110/127（86.6%）**。 [塔算术](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#tower-arithmetic-on-the-selected-theta-data) · [逐点 P7](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#pointwise-p7-with-the-selected-q-pilot) · [无穷处](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#infinite-place-local-theory)
+
+有限处 Haar 体积、最小包络、因子自同构、log-shell 及 Proposition 1.4 已验收。实际 `concreteLocalTheory` 装配两处分支共 41 个字段，逐点 P7 使用同一挠点域的局部理论、Tate 根和 q-pilot。Legendre 曲线的步骤 (iii) 已接入实际良约化与坏处分歧事实。CanLift 的第一坐标多项式下降和解析提升刚性已通过公理审查。§4.1 达到 **116/133（87.2%）**。 [局部理论](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#finite-place-local-theory) · [逐点 θ 数据](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#actual-local-theta-data-on-the-selected-point) · [步骤 (iii)](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#step-iii-for-the-chosen-legendre-curve) · [CanLift](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#canlift-analytic-reduction)
+
+复格加法、一般复挠点六次幂界及 Legendre 特化通过 `ci-021929-7709d914`。复数 CanLift 的条件组合通过 `ci-021953-47fff188`。§4.1 达到 **118/135（87.4%）**。 [复挠点界](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#the-complex-six-power-torsion-bound) · [CanLift 组合](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#complex-canlift-with-the-commensurator-condition)

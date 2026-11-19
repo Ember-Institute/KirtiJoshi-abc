@@ -1,0 +1,16 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodCyclicLocal
+
+#print axioms AbcAdaptation.Reference.Iut.galPlace_eq_of_mem_stabilizer
+#print axioms AbcAdaptation.Reference.Iut.ramificationIdx'_dvd_card_stabilizer
+#print axioms AbcAdaptation.Reference.Iut.exists_orderOf_eq_of_dvd_ramificationIdx
+#print axioms AbcAdaptation.Reference.Iut.addSubgroup_inf_eq_bot_of_card_prime
+#print axioms AbcAdaptation.Reference.Iut.addSubgroup_sup_eq_of_inf_eq_bot
+#print axioms AbcAdaptation.Reference.Iut.addOrderOf_eq_of_mem_of_card_prime
+#print axioms AbcAdaptation.Reference.Iut.zmultiples_eq_of_mem_of_card_prime
+#print axioms AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.comap_bcK_eq_graphLineAt
+#print axioms AbcAdaptation.Tripod.cyclicLocalGraphLine_from_source
+#print axioms AbcAdaptation.Tripod.curveFacts_of_cyclicMainBound

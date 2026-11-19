@@ -1,0 +1,16 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftUnramifiedClosure
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Iut.Anabelian
+open JoshiTeich.Act1Scene1.FunctionFieldNormalization
+
+#check canLift27UnramifiedGaloisClosure
+#print axioms galoisClosure_isGaloisGroup
+#print axioms galoisClosure_ramificationIdx_eq_one
+#print axioms canLift27UnramifiedGaloisClosure
+#print axioms canLift27ComplexXDescends_of_analytic

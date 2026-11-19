@@ -1,0 +1,8 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutPointThetaData
+
+#check AbcAdaptation.Reference.Iut.CurveInputs.exists_initialThetaData
+#print axioms AbcAdaptation.Reference.Iut.CurveInputs.exists_initialThetaData

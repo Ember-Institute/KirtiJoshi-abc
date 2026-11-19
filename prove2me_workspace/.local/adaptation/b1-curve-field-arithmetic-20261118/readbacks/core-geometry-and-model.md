@@ -1,0 +1,26 @@
+# `Source_TripodCoreGeometry` and `Source_TripodCoreModel`
+
+For a field embedding `f : F →+* L`, the two base-change identities are
+
+```lean
+AG.baseChange f (AG.oncePunctured E) = AG.oncePunctured (E.map f)
+AG.baseChange f (AG.pmQuotient X) = AG.pmQuotient (AG.baseChange f X)
+```
+
+## English
+
+- `hasCoreUniversally_of_nonexceptionalJ` starts with an elliptic curve `E/F` over a number field. It assumes `E.j ≠ (c : F)` for every `c ∈ excJ`, where `excJ : Finset ℚ` is the finite set of exceptional rational values. For every characteristic-zero field `L` and every embedding `f : F →+* L`, the proof uses `(E.map f).j = f E.j`, preservation of rational casts, and injectivity of `f`. Thus the transported curve satisfies the same exclusion. The two identities above identify the base changes of `X = E ∖ {0}` and `X/{±1}` with the punctured curve and its sign quotient over `L`. The proof then applies `HasCoreOncePunctured excJ` over `L`. [Geometry theorem](/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodCoreGeometry.lean:38)
+- `exists_excJ_of_not_hasCore` sends any failure of the universal core condition to an equality `(P.curve x).E.j = (c : (P.curve x).F)` for some `c ∈ excJ`. The provider transfers this equality to the Legendre `j`-invariant of the point. Each rational value has a finite preimage, by the nonzero polynomial obtained by clearing the Legendre denominator. This proves finiteness of the core failures on the compactly bounded degree locus. [Exceptional value implication](/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodCoreGeometry.lean:61) · [Finiteness proof](/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodCoreFiniteness.lean:39)
+- `modelAG Pi1` uses `Pi1.HasCore` and the concrete model orbicurves. The two base-change equalities come from `Orbicurve.baseChange_oncePunctured` and `Orbicurve.baseChange_pmQuotient`. The CanLift implication comes from the selected `EtalePi1Theory` field `Pi1.hasCore_oncePunctured`, with its own `Pi1.excJ`. The result `coreFiniteness_of_modelAG` is `CoreFinitenessHyp P K d (modelAG Pi1)` for that same geometry and provider. [Model theorems](/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodCoreModel.lean:48) · [CanLift interface](/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Anabelian/Model.lean:313)
+
+## 中文
+
+- `hasCoreUniversally_of_nonexceptionalJ` 从数域 `F` 上的椭圆曲线 `E` 出发。设 `excJ : Finset ℚ` 为有限有理例外值集合，假设每个 `c ∈ excJ` 都满足 `E.j ≠ (c : F)`。对任意特征零域 `L` 和嵌入 `f : F →+* L`，证明用 `(E.map f).j = f E.j`、有理数嵌入的相容性以及 `f` 的单射性，得到基变换后的曲线仍避开这些例外值。上面两条等式把 `X = E ∖ {0}` 与 `X/{±1}` 的基变换分别识别为 `L` 上去掉原点的曲线及其符号商。随后在 `L` 上应用 `HasCoreOncePunctured excJ`。 [几何定理](/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodCoreGeometry.lean:38)
+- `exists_excJ_of_not_hasCore` 表明，若点 `x` 的曲线不满足普遍核心条件，则存在 `c ∈ excJ` 使 `(P.curve x).E.j = (c : (P.curve x).F)`。曲线提供者的数据把此等式传到点的 Legendre `j` 不变量。对每个有理值，清除 Legendre 分母所得的非零多项式只有有限个根，所以其原像有限。由此得到紧有界且满足次数限制的点中，核心条件失败的点只有有限个。 [例外值推论](/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodCoreGeometry.lean:61) · [有限性证明](/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodCoreFiniteness.lean:39)
+- `modelAG Pi1` 使用 `Pi1.HasCore` 和具体的轨形曲线模型。两条基变换等式分别来自 `Orbicurve.baseChange_oncePunctured` 和 `Orbicurve.baseChange_pmQuotient`。CanLift 蕴涵来自所选 `EtalePi1Theory` 的字段 `Pi1.hasCore_oncePunctured`，使用该理论的 `Pi1.excJ`。`coreFiniteness_of_modelAG` 为同一个几何模型和曲线提供者给出 `CoreFinitenessHyp P K d (modelAG Pi1)`。 [模型定理](/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodCoreModel.lean:48) · [CanLift 接口](/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Anabelian/Model.lean:313)
+
+## 日本語
+
+- `hasCoreUniversally_of_nonexceptionalJ` は数体 `F` 上の楕円曲線 `E` を扱う。`excJ : Finset ℚ` を有限な有理例外値集合とし、すべての `c ∈ excJ` に対して `E.j ≠ (c : F)` を仮定する。任意の標数零の体 `L` と埋め込み `f : F →+* L` に対して、`(E.map f).j = f E.j`、有理数の埋め込みとの両立性、`f` の単射性から、基底変換後も同じ例外値を避ける。上の二つの等式により、`X = E ∖ {0}` と `X/{±1}` の基底変換は、`L` 上で原点を除いた曲線とその符号商にそれぞれ一致する。その上で `L` において `HasCoreOncePunctured excJ` を適用する。 [幾何の定理](/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodCoreGeometry.lean:38)
+- `exists_excJ_of_not_hasCore` によれば、点 `x` の曲線が普遍的なコア条件を満たさないとき、ある `c ∈ excJ` に対して `(P.curve x).E.j = (c : (P.curve x).F)` が成り立つ。曲線データを使って、この等式を点の Legendre `j` 不変量の等式へ移す。Legendre 式の分母を払った非零多項式の根は有限個なので、各有理値の逆像は有限である。したがって、コンパクト有界集合内で次数制限を満たす点のうち、コア条件を満たさないものは有限個である。 [例外値への帰着](/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodCoreGeometry.lean:61) · [有限性の証明](/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodCoreFiniteness.lean:39)
+- `modelAG Pi1` は `Pi1.HasCore` と具体的なオービ曲線のモデルを用いる。二つの基底変換の等式には `Orbicurve.baseChange_oncePunctured` と `Orbicurve.baseChange_pmQuotient` を用いる。CanLift の含意は、選んだ `EtalePi1Theory` のフィールド `Pi1.hasCore_oncePunctured` から、その理論の `Pi1.excJ` に対して得られる。`coreFiniteness_of_modelAG` は同じ幾何モデルと曲線データについて `CoreFinitenessHyp P K d (modelAG Pi1)` を与える。 [モデルの定理](/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodCoreModel.lean:48) · [CanLift のフィールド](/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/ReferenceIut/Iut/Anabelian/Model.lean:313)

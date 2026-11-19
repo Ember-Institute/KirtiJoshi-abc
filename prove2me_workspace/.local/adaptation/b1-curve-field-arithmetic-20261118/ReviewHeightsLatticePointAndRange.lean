@@ -1,0 +1,18 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceHeightsLatticePointMapInjectivity
+import Solutions.Source_ReferenceHeightsModularRange
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Heights
+
+#print axioms latticePointMap_of_mem
+#print axioms latticePointMap_of_notMem
+#print axioms latticePointUniformization_of_map
+#print axioms latticePointMap_eq_iff_sub_mem
+#print axioms latticeQuotientPointMap_injective
+#print axioms latticePointUniformization_of_add_surjective
+#print axioms modularJ_surjective

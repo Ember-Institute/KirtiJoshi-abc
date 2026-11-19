@@ -1,0 +1,32 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutConcreteLocalOrder
+import Solutions.Source_ReferenceIutConcreteLocalPacketEquiv
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Iut.LocalConstruct
+
+#check concreteLocalTensor
+#check genuineTensorEquiv
+#check genuineTensorContinuousLinearEquiv
+
+#print axioms norm_le_one_of_ordp_nonneg
+#print axioms ordp_div_residueChar_pow
+#print axioms junkIdeal_eq_bot
+#print axioms junkIdeal_eq_top
+#print axioms isUnit_factorMk
+#print axioms algebraMap_factor_apply_of_isOver
+#print axioms packetBasis
+#print axioms incl_apply
+#print axioms isUnit_incl
+#print axioms concreteLocalTensor
+#print axioms genuineFactorEquiv
+#print axioms genuineTensorEquiv
+#print axioms genuineTensorEquiv_pure
+#print axioms genuineTensorEquiv_symm_tprod
+#print axioms genuineTensorContinuousLinearEquiv
+#print axioms norm_genuineTensorEquiv_le
+#print axioms norm_genuineTensorEquiv_symm_le

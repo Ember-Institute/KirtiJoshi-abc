@@ -3,9 +3,12 @@
 ## 1. 根据 refer/iut 指示尚未拆分的证明义务
 
 - `refer/iut/Iut/Tripod/Main.lean:129`
-- `refer/iut/Iut/Tripod/Main.lean:86`。须为适用点与素数装配 P7，给出同一曲线及素数上的初始数据、局部估计和身份，供规范 `c2` 消费。
-- `refer/iut/Iut/Tripod/CyclicIsogeny.lean:1064`。须由真实坏处和其 Tate 参数证明局部图线判据，并在同一循环子群上接入奇坏处的全局高度界。
-- `refer/iut/Iut/Tripod/Core.lean:112`。有限有理 $j$ 值对应有限三足点的算术证明已通过，并已接到 `CoreFinitenessHyp` 的归约。仍须在目标 `AG` 上证明非 core 曲线确实落在该例外集中，包括一次穿孔曲线及其符号商与基变换相容。 [归约](../prove2me_workspace/Solutions/Source_TripodCoreFiniteness.lean#L62) · [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#finite-exceptional-legendre-parameters-for-the-core-condition)
+- `refer/iut/Iut/Tripod/Main.lean:119`
+- `refer/iut/Iut/Tripod/TowerFacts.lean:46`
+- `refer/iut/Iut/Tripod/WildRamIdx.lean:185`
+- `refer/iut/Iut/Tripod/TameTwo.lean:231`
+- `refer/iut/Iut/Tripod/CyclicIsogeny.lean:831`
+- `refer/iut/Iut/Tripod/ClassicalAbcGenuineCanLift.lean:28`
 - `refer/iut/Iut/Implication/Corollary22.lean:284`
 - `refer/iut/Iut/Implication/Corollary22.lean:357`
 - `refer/iut/Iut/Implication/LogVolumeBound.lean:69`
@@ -21,11 +24,6 @@
 - `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/NoncriticalP1/Reduction.lean:155`
 - `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/NoncriticalP1/Rational.lean:130`
 - `Belyi@9ce4d3f793d3bc831f2fc7214b7dbad90ea012d8/Belyi/NoncriticalP1/Reduction.lean:219`
-
-### 已拆分并通过本地验收的曲线算术
-
-- `TateFamilyOfTorsion.lean:121` 的局部构造已用于 `SL2Image.lean:162`，由指定扭点域的全体挠点供应判别式平方根，复用固定版本 Tate 库的点方程、加法和满射，证明相对分歧指数整除。现有 `sl2Image_from_source` 消费该整除并证明实际三足曲线的像包含。该验收覆盖所选坏处上的结构及像包含，完整 Tate 族和 P7 装配仍开放。 [分歧证明](../prove2me_workspace/Solutions/Source_SL2ImageLocalTate.lean#L81) · [来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#torsion-field-ramification-and-tripod-curve-inputs)
-- `TorsionBasis.lean:31` 的 Legendre 挠点基与 `LogCond.lean:196,206` 的两向导子比较已在目标环境通过。逐点 3、5 挠点次数界及导子比较已接入 `curveInputs_from_source`。这些本地证明的独立依赖打包、跨版本对应、私有平台节点及证明验收仍开放。 [挠点基](../prove2me_workspace/Solutions/Source_TripodTorsionBasis.lean) · [导子比较](../prove2me_workspace/Solutions/Source_TripodLogCond.lean) · [构造器](../prove2me_workspace/Solutions/Source_TripodCurveInputsFromSource.lean#L48)
 
 ## 2. Joshi 论文直接列出而尚未拆分的证明义务
 
@@ -126,3 +124,8 @@
 - `AbcAdaptation.Tripod.statementII_bridge`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
 - `AbcAdaptation_Reference_Iut_Concrete_CurveData`：`uniformizer`（待定：素元／一致化元／均匀化元）。
 - `AbcAdaptation_Reference_Iut_Concrete_UniformizerSupply`：`uniformizer`（待定：素元／一致化元／均匀化元）。
+- `TowerArithmetic.localEstimate`：`capsule`（待定：胶囊／囊），`uniformizer`（待定：素元／一致化元／均匀化元）。
+- `ConcreteThetaDataExistence.toThetaDataExistence`、`CurveInputs.concreteThetaDataExistence`：无待决译名。
+- `ThetaLocalData.withBadChars`、`ThetaLocalData.step_iii_of_qPilotInputs`：`distinguished primes`（待定：特出素数／指定素数）。
+- `pointThetaData`、`concreteThetaDataExistence_of_pointwise`。
+- `archComponentVol_archLogShell`、`exists_leastHull_infinite`、`prop15`。

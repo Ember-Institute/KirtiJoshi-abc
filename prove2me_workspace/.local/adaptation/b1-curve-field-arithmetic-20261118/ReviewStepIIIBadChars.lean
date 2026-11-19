@@ -1,0 +1,12 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutThetaLocalBadChars
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Iut
+
+#print axioms ThetaLocalData.withBadChars
+#print axioms ThetaLocalData.step_iii_of_qPilotInputs

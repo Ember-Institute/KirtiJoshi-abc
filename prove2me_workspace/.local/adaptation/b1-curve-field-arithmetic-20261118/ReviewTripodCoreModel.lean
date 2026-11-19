@@ -1,0 +1,15 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodCoreModel
+
+#check AbcAdaptation.Tripod.coreFiniteness_of_modelAG
+#print axioms AbcAdaptation.Reference.Iut.OrbicurveDataSection.hasCoreUniversally_of_nonexceptionalJ
+#print axioms AbcAdaptation.Tripod.exists_excJ_of_not_hasCore
+#print axioms AbcAdaptation.Tripod.coreFiniteness_of_geometry
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.modelAG
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.modelAG_baseChangeOncePunctured
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.modelAG_baseChangePmQuotient
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.modelAG_hasCoreOncePunctured
+#print axioms AbcAdaptation.Tripod.coreFiniteness_of_modelAG

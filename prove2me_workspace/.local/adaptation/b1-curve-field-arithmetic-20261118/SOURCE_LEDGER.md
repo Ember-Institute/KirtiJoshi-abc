@@ -230,3 +230,522 @@ The three jobs used the actual exclusive worktree and exited with code 0. The pr
 | [`ci-020853-fe047d77`](receipts/tripod-core-ci-020853-fe047d77-result.json) | Leaf | `812ca4070774` | 51.84 | 51.37 (2.64 + 48.73) | 4.11 |
 | [`ci-020855-99ce0a2e`](receipts/tripod-core-ci-020855-99ce0a2e-result.json) | Import artifact | `812ca4070774` | 58.23 | 57.15 (3.48 + 53.67) | 4.12 |
 | [`ci-020859-ae4a0f86`](receipts/tripod-core-ci-020859-ae4a0f86-result.json) | Project gates and axiom review | `[WARNING]` | 145.06 | 141.48 (6.06 + 135.42) | 8.07 |
+
+## Continued P7 fields and conditional cyclic-bound assembly
+
+The P7 field source `Source_ReferenceIutCurveThetaInputs.lean` supplies `mem_badAll_of_mem_badPlacesOver`, `globalData`, and `primeData`. The latter preserves `R.rep`, so the fixed-field torsion carrier remains the same representation carrier. Review `ci-020948-af1d9945` checked both declarations and the equality test after importing the torsion-field carrier. Only `propext`, `Classical.choice`, and `Quot.sound` were reported.
+
+`Source_TripodCyclicBoundOdd.lean` supplies local-height splitting, the odd Tate-family graph-line target, and `cyclicBoundOdd_of_isogeny`. The theorem is conditional on the local graph-line producer and the Vélu main-bound producer. It keeps the archimedean torsion estimate and the local decomposition-group argument as explicit upstream obligations. Its artifact compilation is `ci-020947-cd31bcd2`. The project and axiom review `ci-020957-a44be081` passed and checked five declarations. The first three attempts were `ci-020875-0c641759`, `ci-020880-80942371`, and `ci-020885-6d8cfa49`. Their failures are preserved with diagnostics. The successful artifact uses the same exclusive worktree and exact source hash.
+
+[Initial Θ-data field readback](readbacks/curve-theta-inputs.md) · [Cyclic estimate readback](readbacks/cyclic-bound-odd.md)
+
+| Job | Target | Status | Exit | Wall (s) | CPU total (user + system, s) | Peak RSS (GiB) |
+| --- | --- | --- | ---: | ---: | ---: | ---: |
+| [`ci-020875-0c641759`](receipts/tripod-cyclic-ci-020875-0c641759-result.json) | `Source_TripodCyclicBoundOdd` | failed | 1 | 99.79 | 97.96 (6.20 + 91.76) | 7.52 |
+| [`ci-020880-80942371`](receipts/tripod-cyclic-ci-020880-80942371-result.json) | `Source_TripodCyclicBoundOdd` | failed | 1 | 143.28 | 142.73 (6.78 + 135.95) | 7.52 |
+| [`ci-020885-6d8cfa49`](receipts/tripod-cyclic-ci-020885-6d8cfa49-result.json) | `Source_TripodCyclicBoundOdd` | failed | 1 | 167.85 | 168.03 (11.60 + 156.43) | 7.54 |
+| [`ci-020939-c4c6d4d1`](receipts/continued-ci-020939-c4c6d4d1-result.json) | `Source_ReferenceIutCurveThetaInputs` | succeeded | 0 | 54.37 | 48.75 (3.21 + 45.54) | 4.08 |
+| [`ci-020943-ab68463c`](receipts/continued-ci-020943-ab68463c-result.json) | `Source_ReferenceIutCurveThetaInputs` | succeeded | 0 | 49.21 | 48.10 (2.00 + 46.10) | 3.94 |
+| [`ci-020944-96787473`](receipts/continued-ci-020944-96787473-result.json) | `Source_TripodCyclicBoundOdd` | succeeded | 0 | 80.28 | 74.56 (4.60 + 69.96) | 7.50 |
+| [`ci-020945-887617e6`](receipts/continued-ci-020945-887617e6-result.json) | `ReviewCurveThetaInputs` | failed | 1 | 95.97 | 94.65 (5.34 + 89.31) | 8.06 |
+| [`ci-020947-cd31bcd2`](receipts/continued-ci-020947-cd31bcd2-result.json) | `Source_TripodCyclicBoundOdd` | succeeded | 0 | 129.46 | 128.10 (5.92 + 122.18) | 7.52 |
+| [`ci-020948-af1d9945`](receipts/continued-ci-020948-af1d9945-result.json) | `ReviewCurveThetaInputs` | succeeded | 0 | 123.17 | 121.69 (5.21 + 116.48) | 7.96 |
+| [`ci-020957-a44be081`](receipts/continued-ci-020957-a44be081-result.json) | `ReviewCyclicBoundOdd` | succeeded | 0 | 85.63 | 85.35 (4.85 + 80.50) | 8.07 |
+
+The cyclic retries addressed the duplicate instance name, field coercions, declaration modifiers and use of the canonical decidable equality in the Tate graph-line carrier. The first P7 audit added the missing direct import in its retry to check the fixed-field equality. The diagnostics and exact input hashes are in the receipts.
+
+## Conditional assembly of initial theta data
+
+`EllipticCurveData.thetaData` adapts `Iut/Concrete/Existence.lean:289,325` at the pinned iut revision. It takes the native Tate family over the fixed field of `R.rep`, the core condition, and the geometry existence interface. It selects `orb` and the local data for that same orbicurve, and passes the same Tate family to the geometry interface. The project review checks the fixed field, the representation, the Tate family and the algebra map from the moduli field. The two public declarations use `propext`, `Classical.choice` and `Quot.sound`. [Independent readback](readbacks/initial-theta-data.md)
+
+The q-pilot uses the residue degree divided by the absolute field degree. Its support consists of exactly the multiplicative places away from 2 and ℓ. The proof of `logQ_eq` uses the same Tate parameter orders as the curve's local height. The three public declarations use only the standard axioms. [Independent q-pilot readback](readbacks/q-pilot.md)
+
+`ModEllRepData.tateFamily` constructs a Tate structure at each place over `VBadOf ℓ` in the fixed field of the original representation. The family keeps the original local structures. `TateFamily.ofStructures` supplies Galois equivariance for the graph line and canonical generators. Review `ci-021096-88b726c0` passed the project gates and standard-axiom checks and verified the family at `primeData.torsionField` and `primeData.ℓ`. The initial review needed the explicit number-field instance for this projection. [Independent readback](readbacks/curve-tate-family.md)
+
+## Cyclic subgroup bound at the chosen torsion constant
+
+The parameterized proof uses `max 1 (Classical.choose harch)`, as in `Iut/Tripod/CyclicIsogeny.lean:1003`. It passes both the lower bound of 1 and the uniform complex Legendre torsion-coordinate bound at `K.c` to the Vélu estimate. The other input is the graph-line property for each odd bad place, including places of residue characteristic ℓ. The conditional proof and its constant have only the three project standard axioms. [Independent readback](readbacks/cyclic-split.md)
+
+The initial graph-line check reached its scheduler timeout without compiler diagnostics. The two extracted leaves were corrected to use the maximal-ideal lies-over relation and the direct Mathlib import for `Nat.card_zmultiples`. This validates the decomposition-group and prime-order subgroup ingredients.
+
+The three open mirrors correspond to `CyclicLocal.lean:515` with its provider wrapper, `CyclicArch.lean:27`, and `CyclicIsogeny.lean:831`. The parent reduction matches the parent signature and its proof term directly references the three child declarations. The review command in `ci-021095-a05fa104` exited with code 0 and found the expected inherited `sorryAx`. The scheduler marks a review with that output as failed. Leaf `ci-021105-c95ca126` passed the same type, direct dependency and axiom assertions for the open reduction. The separate closed conditional proof passed the standard-axiom audit in `ci-021019-7fdc70e3`.
+
+## Pointwise initial theta data and local place fibers
+
+`CurveInputs.exists_initialThetaData` applies the existing point hypotheses to the input curve, then assembles the Tate family, initial data, and q-pilot. It recovers the prime, moduli-degree bound, q-pilot height, different, and both conductor inequalities from the same curve. Review `ci-021114-34799f4b` reports only the three standard axioms. The anabelian existence interface remains an input.
+
+The local-theory port preserves the tensor, integral structure, hull, and volume fields of `Iut/Concrete/LocalTheory.lean`. The place-fiber module proves the finite and infinite fiber identifications, positivity of the normalized weights, and their sum from the corresponding local-degree and infinite multiplicity sums. Review `ci-021113-826459f1` passed the project gates and standard-axiom checks. These statements consume a `LocalTheory` on the specified field.
+
+## Core finiteness in the étale model
+
+`Source_TripodCoreGeometry.lean` ports the geometric inclusion in `Iut/Tripod/Core.lean:73` in the same provider curve. If `E.j` avoids the rational exceptional values, the map on each characteristic-zero extension preserves that avoidance by injectivity and compatibility with rational casts. The base-change identities for the once-punctured curve and sign quotient transfer the core relation to those same base-changed objects. The inclusion supplies `coreFiniteness_of_exceptionalJ`.
+
+`Source_TripodCoreModel.lean` uses `EtalePi1Theory` to construct `modelAG` and supplies the two model base-change identities and the existing `Pi1.hasCore_oncePunctured` field to `coreFiniteness_of_geometry`. The result is the `CoreFinitenessHyp` required by the curve-input constructor for that provider and model. The genuine reference theory in `Iut/Anabelian/GenuineEtale.lean` consumes `AffOrbicurve.CanLift27`. The reference proof in `Iut/Tripod/ClassicalAbcGenuineCanLift.lean:28` applies `AffOrbicurve.canLift27_of_complex` from `pi1` at `ca7def953193f861a462aa0831eec8f0a31ff69f` to `OrbicurveCores.U2.canLift27C` from `orbicurve-cores` at `61616dcd77fbe45c083a8ebfa7cc80728f86e841`. That supply is pending in the target. [Trilingual readback](readbacks/core-geometry-and-model.md)
+
+The independent leaves and their artifacts passed. Review [`ci-021147-606ee1da`](receipts/round-ci-021147-606ee1da-result.json) checked the public result type and eight explicit axiom closures, all limited to `propext`, `Classical.choice`, and `Quot.sound`. Its imports include the project checks, import audit, Scene1 aggregate, and axiom audit.
+
+## The cyclic subgroup at odd bad places
+
+`Source_TripodCyclicLocal.lean` adapts `Iut/Tripod/CyclicLocal.lean:515` and supplies `cyclicLocalGraphLine_from_source`. With the Tate family on the same torsion field, (P2) implies divisibility of the ramification index by ℓ. Cauchy's theorem gives a decomposition-group element of order ℓ. If the two lines differ, they span the ℓ-torsion. Both are stable, so the element acts on each through a group of order ℓ − 1 and fixes all torsion, contradicting faithfulness. This proof applies at odd bad places of residue characteristic ℓ. `curveFacts_of_cyclicMainBound` consumes the resulting graph-line proof and the remaining global isogeny estimate. Leaf [`ci-021188-a24859aa`](receipts/round-ci-021188-a24859aa-result.json), artifact [`ci-021201-c749f731`](receipts/round-ci-021201-c749f731-result.json), and project review [`ci-021208-4b457ebf`](receipts/round-ci-021208-4b457ebf-result.json) passed. All ten axiom closures in the review use standard Lean axioms only.
+
+## The container and tower local facts
+
+`Source_ReferenceIutConcreteContainer.lean` adapts `Iut/Concrete/Container.lean`. It constructs the indexed tensor product regions, proves the finite support of the log-shell away from the infinite place, 2 and the ramified primes, and defines the packet volume by its weighted projections. It proves the product formula when all components are nonempty. Given `LocalTheory K`, the finite and infinite componentwise least-hull laws give the least admissible hull of each admissible product region. [`ci-021174-f7028043`](receipts/round-ci-021174-f7028043-result.json) and [`ci-021187-e20c5b25`](receipts/round-ci-021187-e20c5b25-result.json) passed.
+
+`Source_ReferenceIutTowerLocalFacts.lean` adapts `Iut/Tower/Residual.lean`. It supplies the inclusion of the moduli field into the tripodal field, the degree identity, and the ramification and residue-degree product identities for a place of the same torsion field above the tripodal field. The interface retains the wild bound, the unramified condition away from the bad and exceptional primes, and the bound `e(v/u) ≤ 30ℓ` away from the exceptional primes. [Trilingual readback](readbacks/tower-local-facts-trilingual.md)
+
+Project review [`ci-021200-5a4e6c8b`](receipts/round-ci-021200-5a4e6c8b-result.json) checked both modules and their nineteen axiom closures, which use only `propext`, `Classical.choice` and `Quot.sound`.
+
+## Theta regions, invariants and local arithmetic
+
+`Source_ReferenceIutConcreteThetaRegion.lean` constructs the finite and infinite theta regions of the same `D` and `LT` from `TL`. It proves admissibility and finite support, then combines the resulting right-hand side with `QI.qPilot`. `Source_ReferenceIutConcreteInvariants.lean` constructs the distinguished-prime set and its local different contributions for the same torsion field. Outside that set, the different contribution vanishes. `TowerArithmetic.certificate` uses the prime bound, the support of the same q-pilot, and Steps (ii) and (iii) of that tower. The (R4) field is for the local volume estimate.
+
+`Source_ReferenceIutConcreteLocalArithmetic.lean` supplies the actual local degree and infinite multiplicity sums and the arithmetic of the normalized valuation on the number field's completions. It also proves finite ramification support and vanishing of the different exponent at unramified places. The concrete tensor and measure fields still require their own source constructions.
+
+Project review [`ci-021270-ac3cb671`](receipts/round-ci-021270-ac3cb671-result.json) checked the project and twenty axiom closures, all limited to the three standard Lean axioms.
+
+## CanLift normalization and covering lemmas
+
+`Source_ReferenceIutCanLiftPresentation.lean` uses the existing signed and unsigned normalization rings. The unsigned multiplicity is one, and the signed multiplicity is the ramification multiplicity of the inclusion. It constructs the quotient cover and states Proposition 2.7 for this pair with the four exceptional rational j-values. `normalizationHasCore_oncePunctured` consumes Proposition 2.7 in that form. Sources are Pi1 revision `ca7def953193f861a462aa0831eec8f0a31ff69f` and iut revision `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`, as identified in the module header.
+
+`Source_ReferenceIutCanLiftCoverDescent.lean` descends a cover along a common cover from a supplied factorization through the intermediate Dedekind coordinate ring. Injectivity and integrality descend along the intermediate map. A maximal ideal above each intermediate maximal ideal gives the ramification tower identity. It verifies the covering law by comparing the multiplicities and ramification indices. `Source_ReferenceIutCanLiftPolynomialDegree.lean` uses the sum of polynomial fiber multiplicities and the derivative multiplicity in characteristic zero to prove degree one for the étale polynomial self-cover with multiplicity two at three marked points. The complex coordinate descent, covering uniqueness and Lefschetz argument remain open.
+
+[Project and axiom review](receipts/round-ci-021380-91c6737e-result.json) checks fourteen public declarations. Their axiom closures use only `propext`, `Classical.choice` and `Quot.sound`. It imports the project checks, Scene1 aggregate, import audit and axiom audit. [Independent trilingual readback](readbacks/canlift-foundations-trilingual.md)
+
+## Local estimates for the concrete theta region
+
+`Source_ReferenceIutConcreteLocalEstimate.lean` adapts `Iut/Concrete/LocalEstimate.lean` at revision `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`. It constructs the seven fields of `TowerArithmetic.localEstimate` for `TL.invariants QI` on the same `D` and `LT`. At a distinguished prime, it uses Proposition 1.4(iii) from `LT`, q-degree base change from `TL`, averaging over the same place fibers, and the (R4) field of `TA`. Outside the distinguished primes the container is the integral region. At infinity the bound uses Proposition 1.5 from `LT`. Component monotonicity gives packet monotonicity. The nonempty scaled region for the weighted product formula is proved from the explicit image of the unit.
+
+[Leaf](receipts/round-ci-021338-71910910-result.json) and [artifact](receipts/round-ci-021368-04a24c77-result.json) use the same source hash. [Project review](receipts/round-ci-021405-7008ce12-result.json) checks the type and sixteen axiom closures. The closures use only `propext`, `Classical.choice` and `Quot.sound`. The review also imports the project checks, import audit, Scene1 aggregate and axiom audit.
+
+## Concrete P7 and its consumer in Corollary 2.2
+
+`Source_ReferenceIutConcreteExistence.lean` adapts `Iut/Concrete/Main.lean`. `ConcreteThetaDataExistence` quantifies over every applicable point and prime and preserves (P2), (P3), (P5), (P6) and the six arithmetic identities or bounds. Its conversion uses the same `D`, `LT`, `TL`, `QI` and `TA` to build `IsConcrete`, the Theorem 1.10 certificate and all seven fields of the local estimate.
+
+`Source_ReferenceIutCurveConcreteExistence.lean` matches the provider-based composition in `Iut/Concrete/Existence.lean:499`. It consumes the existing pointwise construction on the same torsion field and the supplied `AnabelianExistence`, `LTp`, `TLp` and `TAp`. The audit applies `Corollary22Inputs.c2` with `P := IsConcrete` and proves the full pointwise conclusion using the universal Corollary 3.12 variant on all concrete data. Actual providers for the local tensor and measure theory, theta data, tower arithmetic and anabelian existence remain open.
+
+[Concrete existence artifact](receipts/round-ci-021390-964c6d68-result.json) · [Curve composition artifact](receipts/round-ci-021418-6ae2447f-result.json) · [Project and axiom review](receipts/round-ci-021440-f6c510e9-result.json). The review checks five declarations, including the application of `c2`. The axiom closures use `propext`, `Classical.choice` and `Quot.sound`.
+
+## Cyclic subgroup archimedean drafts
+
+A subagent wrote thirteen draft files into the shared workspace and submitted seventeen MCP-CI jobs using the main agent identity before integration. The subagent returned to its task directory. The main agent confirmed the terminal status of all seventeen jobs and checked the source hashes against the copies delivered by the subagent. The main agent checked the recorded inputs of the accepted CanLift and P7 reviews against the current files and against the list of paths touched by the subagent. The affected cyclic drafts enter acceptance through a fresh review by the main agent. The inventory links each job ID to its source revision, and the corresponding `preintegration-<job-id>-result.json` files preserve the structured results. [Inventory](cyclic-preintegration-inventory.json)
+
+`Source_TripodCyclicArch.lean` adapts `Iut/Tripod/CyclicArch.lean:27` using the six-power bound of `Heights/TorsionArchimedean.lean:392` at revision `721496ca4c158e511d25d8ccf6bfe8503eda73c1`. The proof specializes the complex bound with its original constant construction. The cyclic subgroup combination continues to use the constant chosen from that same existence statement. The conditional specialization and its premise were checked in [the main-agent project review](receipts/round-ci-021483-ab25526b-result.json). Their axiom closures use only the three standard Lean axioms.
+
+[The open reduction audit](receipts/round-ci-021506-2cdf81e9-result.json) verifies that the sketch has the full parent type and directly uses the Heights node and the conditional specialization. It confirms the transitive `sorryAx` from the open Heights node. [Trilingual readback](readbacks/legendre-torsion-bound-trilingual.md)
+
+## Tensor packet for the concrete local theory
+
+`Source_ReferenceIutConcreteLocalPacket.lean` adapts `Iut/Concrete/LocalConstruct/Packet.lean` at revision `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`. It constructs `LocalTensor.{u,u} K` over all rational places. Each factor over a finite prime is the completion modulo the zero ideal when the place is over the prime, and modulo the unit ideal otherwise. The infinite factors and their real bases reuse the Scene1 archimedean tensors. The finite and infinite coordinate bases give the corresponding topology, including the tensor on the empty index type. `Source_ReferenceIutConcreteLocalPacketEquiv.lean` identifies the finite all-genuine factors with the existing completion tensor and gives both pure-tensor formulas and continuous norm bounds. `Source_ReferenceIutConcreteLocalOrder.lean` supplies the unit-ball criterion and the effect of division by a power of the rational prime on normalized order.
+
+[Project and axiom review](receipts/round-ci-021534-9f07f95d-result.json) checked seventeen declarations. Their axiom closures use the three standard Lean axioms. Integral structures, measures, log-shells and Proposition 1.4 remain in the [producer dependency map](concrete-local-theory-dependencies.md). [Independent trilingual readback](readbacks/p7-local-packets-trilingual.md)
+
+## Tower Step III and normalized different accounting
+
+`Source_ReferenceIutTowerStepIII.lean` adapts `Iut/Tower/StepIII.lean:353`. It treats the four small primes, the residue characteristics of the bad places, and the remaining ramified primes by separate estimates. The last group uses the unramified condition of the torsion tower to descend ramification to the tripodal field. The bounds retain `TowerLocalFacts`, the relative ramification bound at bad places, the Galois instance for the tripodal extension, and the support hypothesis on the distinguished set.
+
+`Source_ReferenceIutConcreteDifferentDegree.lean` adapts `Iut/Tower/LogDK.lean`. The local degree weights cancel the absolute ramification index in each normalized different exponent. The residue degree then identifies each contribution with the logarithm of its ideal norm. Regrouping the same terms by residue characteristic gives `ThetaLocalData.sum_dst_logDK_eq`. [Tower leaf](receipts/round-ci-021535-d9ca78fc-result.json) · [Different accounting leaf](receipts/round-ci-021505-6d16e48c-result.json) · [Project and axiom review](receipts/round-ci-021569-f47bd4e2-result.json)
+
+`Source_ReferenceIutTowerStepIIIForTheta.lean` instantiates the Step (iii) proof on `TL.dst` as in `Iut/Tower/Main.lean`. The witness for a prime of `TL.badChars` lies in the actual `badPlacesOver F E VBad`. The ramified-prime witness lies in the same torsion field as the input to `LocalTheory`. [Leaf](receipts/round-ci-021602-3e104202-result.json) · [Project and axiom review](receipts/round-ci-021616-6e2ea5a0-result.json) · [Independent trilingual readback](readbacks/tower-step-iii-trilingual.md)
+
+`Source_ReferenceIutThetaLocalBadChars.lean` takes the image of the same q-pilot bad places under `residueChar`. It uses the input root on this image and the base point 1 off it, and proves the Step (iii) support condition on the resulting `dst`. The actual curve specialization still requires the bad-place ramification bound and local tower facts. [Leaf](receipts/round-ci-021649-3ffa7c78-result.json) · [Project and axiom review](receipts/round-ci-021667-f7dd1302-result.json)
+
+## Modular j for the complex torsion bound
+
+`Source_ReferenceHeightsLatticeModular.lean` and `Source_ReferenceHeightsModularCusp.lean` adapt `Heights/ModularJ.lean` at revision `721496ca4c158e511d25d8ccf6bfe8503eda73c1`. They identify the discriminant and $j$ invariant of the short lattice curve, prove invariance under the modular group and establish cusp growth. Taking representatives in the fundamental domain still uses the explicit `hsurj` input. The range proof and the two logarithmic comparisons consume the cusp estimates. [Modular leaf](receipts/round-ci-021603-c34a5f2a-result.json) · [Cusp leaf](receipts/round-ci-021604-03622920-result.json) · [Project and axiom review](receipts/round-ci-021617-fb4d9a8a-result.json) · [Independent trilingual readback](readbacks/heights-modular-cusp-trilingual.md)
+
+## CanLift unramified Galois closure
+
+`Source_ReferenceIutCanLiftGaloisAction.lean`, `Source_ReferenceIutCanLiftGaloisRamification.lean` and `Source_ReferenceIutCanLiftUnramifiedClosure.lean` use the normal closure inside the same algebraic closure, its Galois action on the normalized coordinate ring, and multiplicativity of ramification indices. The complex descent theorem consumes `CanLift27ComplexAutomorphismsFixX`. It uses the algebraic closure result to transfer the fixed-element property to the original finite cover. [Leaf](receipts/round-ci-021620-8c518d6c-result.json) · [Project and axiom review](receipts/round-ci-021631-5a00aac0-result.json) · [Independent trilingual readback](readbacks/canlift-closure-trilingual.md)
+
+## Galois structure of the tripodal field
+
+`Source_TripodTpdGalois.lean` adapts `Iut/Tripod/TpdGalois.lean`. The six Legendre parameters above the same $j$ value are rational expressions in the selected parameter. Their splitting field over the field of moduli is the actual tripodal field of `curveOf x h3 h5`. This gives the Galois property and the relative degree bound used in (R4). [Leaf](receipts/round-ci-021635-02f7a659-result.json) · [Project and axiom review](receipts/round-ci-021651-5fdc99f2-result.json) · [Independent trilingual readback](readbacks/relative-galois-serre-trilingual.md)
+
+## The lattice point map and modular j surjectivity
+
+`Source_ReferenceHeightsLatticePointMap.lean` and `Source_ReferenceHeightsLatticePointMapInjectivity.lean` send a lattice point to the point at infinity and use the Weierstrass function and its derivative elsewhere. The fiber criterion uses equality of both coordinates. `Source_ReferenceHeightsModularRange.lean` adapts `Heights/ModularJ.lean:355` by proving the image is nonempty, open and closed, using the cusp bound to control sequences in the fundamental domain. [Point map](receipts/round-ci-021618-bdf4e6c7-result.json) · [Injectivity](receipts/round-ci-021637-da4eea75-result.json) · [Modular range](receipts/round-ci-021638-e2d71441-result.json) · [Project and axiom review](receipts/round-ci-021652-c41c2a60-result.json) · [Independent trilingual readback](readbacks/heights-lattice-point-and-range-trilingual.md)
+
+`Source_ReferenceHeightsModularComparisons.lean` proves the two bounded differences on the fundamental domain. The differences compare the logarithms of the discriminant and $j$ and compare the logarithm of the imaginary part with the double logarithm of $j$, with the original truncations. [Leaf](receipts/round-ci-021655-fb4d46d2-result.json) · [Project and axiom review](receipts/round-ci-021668-80e34e19-result.json) · [Independent trilingual readback](readbacks/heights-modular-comparisons-trilingual.md)
+
+## Serre's local different bound
+
+`Source_ReferenceIutTowerSerreCore.lean` constructs the residue extension generator and proves that the trace in the chosen quotient is nonzero. `Source_ReferenceIutTowerSerreBound.lean` localizes at the prime below and uses the induced trace on the Chinese remainder factors to prove the ideal nondivisibility in `Iut/Tower/SerreBound.lean`. `Source_ReferenceIutTowerDifferentBound.lean` turns it into the placewise exponent bound and applies it to the same tower as `TowerLocalFacts`. [MCP-CI review of five statements](receipts/round-ci-021693-678cb693-result.json) · [Independent trilingual readback](readbacks/relative-galois-serre-trilingual.md)
+
+## Global different bound in Tower Step II
+
+`Source_ReferenceIutTowerDifferent.lean` applies the local different exponent bound, separates the tame and wild contributions and sums over the finite places of the same torsion field. The logarithmic discriminant is normalized by that field's degree over ℚ. The upper bound uses the normalized different and conductor of the tripodal field, with error $2\log\ell+21$. [Leaf](receipts/round-ci-021692-f4cf2515-result.json) · [Project and axiom review](receipts/round-ci-021730-14751bfe-result.json) · [Trilingual readback](readbacks/tower-arithmetic-trilingual.md)
+
+## Tower arithmetic on the selected theta data
+
+`Source_ReferenceIutTowerArithmetic.lean` adapts `Tower/Main.lean:42`. It assembles (R4), (ii), and (iii) in one `TowerArithmetic D LT TL`. The local facts are about the representation in `D.prime`. Both sums are over `TL.dst` and the different sum uses the normalization of the same `LT`. [Leaf](receipts/round-ci-021729-842755bc-result.json) · [Project and axiom review](receipts/round-ci-021742-eb56803e-result.json) · [Independent trilingual readback](readbacks/tower-arithmetic-trilingual.md)
+
+## Pointwise P7 with the selected q-pilot
+
+`PointThetaData` exposes the initial data and the q-pilot chosen for the same point and prime, with the existing six identities and bounds. `concreteThetaDataExistence_of_pointwise` consumes local theory and tower arithmetic for that selected object, including its actual q-pilot bad characteristics. It makes the arithmetic input a condition on those selected data. [Leaf](receipts/round-ci-021734-e798309d-result.json) · [Project and axiom review](receipts/round-ci-021743-f33906a6-result.json)
+
+## Infinite-place local theory
+
+`Source_ReferenceIutConcreteLocalArchimedean.lean` supplies the projective integral unit ball, normalized Haar volume, least radial hull, and the logarithm shell scaled by $\pi^{|I|}$. It proves the invariance and admissibility properties of the factor automorphisms used for Proposition 1.5. [Leaf](receipts/round-ci-021732-661a23a8-result.json) · [Project and axiom review](receipts/round-ci-021744-b251f5a2-result.json)
+
+## Finite-place local theory
+
+`Source_ReferenceIutConcreteLocalHaar.lean` and `Source_ReferenceIutConcreteLocalFiniteHull.lean` give the normalized Haar volume, its precise prime-preimage scaling law, and the least principal hull for admissible regions. The scaling law uses the tuple over the same rational prime. The least-hull theorem also handles the zero-ring packet. These results supply the corresponding fields of `LocalTheory`. The source declarations are in [Haar.lean](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Concrete/LocalConstruct/Haar.lean#L221), [Volume.lean](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Concrete/LocalConstruct/Volume.lean) and [Hull.lean](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Concrete/LocalConstruct/Hull.lean#L159). [Project and axiom review](receipts/round-ci-021756-7f9a2015-result.json)
+
+`Source_ReferenceIutConcreteLocalFiniteIndeterminacy.lean`, `Source_ReferenceIutConcreteLocalFiniteLogShell.lean` and `Source_ReferenceIutConcreteLocalProp14.lean` supply the finite automorphisms, the saturated log-shell, and Proposition 1.4(iii)–(iv). The genuine packet uses the transported Scene1 saturated shell. The other branch uses its integral region. Proposition 1.4(iii) uses the same all-over-prime hypothesis, retains the different and ramification terms, and uses the principal region scaled by the rational prime raised to the floor of the normalized order. [Indeterminacy](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Concrete/LocalConstruct/Indeterminacy.lean) · [LogShell](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Concrete/LocalConstruct/LogShell.lean) · [Proposition 1.4](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Concrete/LocalConstruct/Prop14.lean#L161) · [Project and axiom review](receipts/round-ci-021801-bea652a9-result.json) · [Independent trilingual readback](readbacks/finite-place-tensor-trilingual.md)
+
+`Source_ReferenceIutConcreteLocalTheory.lean` assembles all 41 fields of the local theory on one number field. Its finite branch uses the Haar, hull, indeterminacy and log-shell laws above. Its archimedean branch uses the projective integral unit ball and radial hull. `PointThetaData.localTheory` instantiates this construction on the point's own torsion field. [Pinned Theory.lean](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Concrete/LocalConstruct/Theory.lean) · [Leaf](receipts/round-ci-021818-2b32f85f-result.json) · [Project and axiom review](receipts/round-ci-021840-0b7a0de4-result.json) · [Independent trilingual readback](readbacks/concrete-local-theory-trilingual.md)
+
+## CanLift analytic reduction
+
+The polynomial descent expresses a holomorphic function constant on first-coordinate fibers as a polynomial in that coordinate under the stated growth bound. The lift lemmas give precomposition by the deck action and vanishing from a zero at one point for a continuous lift of an integral element. The invariant-coordinate and complex descent arguments consume these facts. [Pinned FEtLattice.lean](https://github.com/lana-agents/oka/blob/75dcdc3faadd10b986afb9283e89902bcdddecd4/Oka/Uniformization/FEtLattice.lean) · [Pinned FEtTransitive.lean](https://github.com/lana-agents/oka/blob/75dcdc3faadd10b986afb9283e89902bcdddecd4/Oka/Uniformization/FEtTransitive.lean) · [Project and axiom review](receipts/round-ci-021835-440b2a29-result.json) · [Independent trilingual readback](readbacks/canlift-analytic-reduction-trilingual.md)
+
+`fixes_normalization_x` adapts Theorem G to the unsigned normalization at level one. Passing the same evaluation map `ι₀` to `locPres_of_unramified` fixes the two argument mismatches in the preceding leaf. Four `letI` style warnings remain. [Pinned Theorem G](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/U2/TheoremG.lean) · [Failed leaf](receipts/round-ci-021897-2cc87a88-result.json) · [Main agent leaf](receipts/round-ci-021922-e0a843dc-result.json)
+
+A subagent edited FixX and the review materials in the shared workspace and submitted four overlapping jobs with the main agent ID, contrary to `AGENTS.md`. The leaf and artifact jobs for FixX used the same source hash as the main agent's jobs. The main agent's downstream artifact was built after all four jobs reached terminal status and was followed by the independent project and axiom review cited below. [Subagent leaf](receipts/round-ci-021918-abdd1b9d-result.json) · [Subagent artifact](receipts/round-ci-021931-6e6d6b06-result.json) · [Subagent assembly](receipts/round-ci-021940-93a275bd-result.json) · [Subagent review](receipts/round-ci-021941-ad2fc0d6-result.json) · [Main agent downstream artifact](receipts/round-ci-021947-ff1caaa2-result.json)
+
+## Actual local theta data on the selected point
+
+The completion-place comparison transports the Tate parameter and supplies its `2ℓ`-th root when the given curve has rational 2-torsion. The order formula uses the same normalized valuation and the weighted sum uses the actual bad places above each rational prime. `concreteThetaDataExistence_of_localArithmetic` takes the concrete theory and root data for the selected point and uses its own q-pilot. The anabelian existence, rational 2-torsion, and tower arithmetic remain explicit in its interface. [Pinned local data](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Concrete/ThetaLocalConstruct/Data.lean) · [Pointwise source](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/Main.lean#L86) · [Project and axiom review](receipts/round-ci-021884-70058d70-result.json) · [Independent trilingual readback](readbacks/point-local-theta-trilingual.md)
+
+## Step III for the chosen Legendre curve
+
+The Legendre tower is unramified from the actual tripodal field to the torsion field at the good places required by `TowerLocalFacts.relRamIdx_eq_one`. At the specified bad places the ramification index from the field of moduli to the tripodal field is at most two. The consumer `step_iii_of_curve` uses those two results with the actual bad-characteristic set and the tripodal Galois instance. Its remaining tower premises are the wild bound and the bound of `30 * ℓ` away from `{2, 3, 5, ℓ}`. [Unramified source](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/Unramified.lean#L376) · [Tripodal ramification source](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/TpdRamIdx.lean) · [Project and axiom review](receipts/round-ci-021885-759d4e11-result.json) · [Independent trilingual readback](readbacks/tripod-step-iii-trilingual.md)
+
+## The complex six-power torsion bound
+
+The lattice point map is additive and gives the required uniformization of the lattice model. Its combination with modular `j` surjectivity and the two fundamental-domain comparisons proves the general six-power bound for complex elliptic curves. The Legendre specialization supplies the witness used to choose `C₀`. The cyclic subgroup consumer takes the Vélu estimate at the same constant. [General bound and Legendre specialization](../../../Solutions/Source_ReferenceHeightsTorsionBound.lean#L12) · [Cyclic consumer](../../../Solutions/Source_TripodCyclicBoundFromSource.lean#L28) · [Project and axiom review](receipts/round-ci-021929-7709d914-result.json) · [Independent trilingual readback](readbacks/heights-torsion-bound-trilingual.md)
+
+## Complex CanLift with the commensurator condition
+
+For each complex elliptic curve outside the four exceptional `j`-values, the input supplies a uniformization on which every element of the commensurator fixes the first coordinate. The proof uses holomorphic lift transitivity and the commensurator membership of a lift of each covering automorphism. It descends the unchanged first coordinate through the unramified Galois closure, then applies the rigidity and uniqueness of the sign quotient cover. The conclusion is `CanLift27Complex`. The uniformization with the stated commensurator property and both steps of the characteristic-zero Lefschetz descent remain open. [Complex assembly](../../../Solutions/Source_ReferenceIutCanLiftComplexAssembly.lean#L21) · [Project and axiom review](receipts/round-ci-021953-47fff188-result.json) · [Independent trilingual readback](readbacks/canlift-complex-assembly-trilingual.md)
+
+## MCP-CI receipts for this batch
+
+Each job uses an exclusive worktree. Successful and failed receipt rows use compiler wall time and peak process-tree RSS when available. Timeout rows use the elapsed compile time as a lower bound. The receipt stores the exact source hash, input paths and diagnostics.
+
+| Job | Target | Input SHA-256 prefix | Status | Exit | Wall (s) | CPU total (user + system, s) | Peak RSS (GiB) |
+| --- | --- | --- | --- | ---: | ---: | ---: | ---: |
+| [`ci-020970-a4f4c181`](receipts/round-ci-020970-a4f4c181-result.json) | `Source_TripodCyclicLocal` | `f92e5ae5ee45` | timeout | unknown | 180.06 | unknown | unknown |
+| [`ci-020977-fe33da7d`](receipts/round-ci-020977-fe33da7d-result.json) | `Def_AbcAdaptation_Reference_Iut_Tripod_CyclicTorsionBound` | `f7d620ede476` | succeeded | 0 | 68.86 | 65.13 (1.95 + 63.18) | 2.93 |
+| [`ci-020978-f1a1f43a`](receipts/round-ci-020978-f1a1f43a-result.json) | `Source_ReferenceIutInitialThetaData` | `775b55889862` | succeeded | 0 | 90.70 | 86.63 (3.03 + 83.60) | 4.06 |
+| [`ci-020980-21308cab`](receipts/round-ci-020980-21308cab-result.json) | `Source_ReferenceIutTateFamilyBridge` | `af2880f12f37` | timeout | unknown | 180.11 | unknown | unknown |
+| [`ci-020982-e9892113`](receipts/round-ci-020982-e9892113-result.json) | `Source_ReferenceIutInitialThetaData` | `775b55889862` | succeeded | 0 | 109.97 | 101.85 (4.17 + 97.68) | 4.10 |
+| [`ci-020983-a6aab846`](receipts/round-ci-020983-a6aab846-result.json) | `Def_AbcAdaptation_Reference_Iut_Tripod_CyclicTorsionBound` | `f7d620ede476` | succeeded | 0 | 73.88 | 67.42 (2.50 + 64.92) | 2.97 |
+| [`ci-020991-ef904f5d`](receipts/round-ci-020991-ef904f5d-result.json) | `ReviewInitialThetaData` | `4a13db300c0c` | succeeded | 0 | 168.46 | 161.51 (6.51 + 155.00) | 8.07 |
+| [`ci-020992-e7860cdf`](receipts/round-ci-020992-e7860cdf-result.json) | `Source_ReferenceIutQPilot` | `e02ac03f9a8a` | succeeded | 0 | 138.43 | 131.34 (6.25 + 125.09) | 7.50 |
+| [`ci-020993-2f7ef46d`](receipts/round-ci-020993-2f7ef46d-result.json) | `Source_TripodCyclicBoundFromSource` | `eff133daf8b7` | succeeded | 0 | 134.16 | 125.76 (5.95 + 119.81) | 7.49 |
+| [`ci-020994-651732f6`](receipts/round-ci-020994-651732f6-result.json) | `Source_ReferenceIutTateFamilyBridge` | `af2880f12f37` | succeeded | 0 | 135.79 | 128.84 (11.67 + 117.17) | 7.51 |
+| [`ci-021003-044a40f0`](receipts/round-ci-021003-044a40f0-result.json) | `Source_ReferenceIutTateFamilyBridge` | `af2880f12f37` | succeeded | 0 | 173.87 | 159.81 (11.64 + 148.17) | 7.51 |
+| [`ci-021004-ca789d9a`](receipts/round-ci-021004-ca789d9a-result.json) | `Source_ReferenceIutQPilot` | `e02ac03f9a8a` | succeeded | 0 | 165.21 | 150.88 (6.95 + 143.93) | 7.53 |
+| [`ci-021005-56b64774`](receipts/round-ci-021005-56b64774-result.json) | `Source_TripodCyclicBoundFromSource` | `eff133daf8b7` | succeeded | 0 | 160.83 | 146.70 (5.67 + 141.03) | 7.41 |
+| [`ci-021006-ca1443c9`](receipts/round-ci-021006-ca1443c9-result.json) | `Source_TripodCyclicDecomposition` | `7f242f46bbea` | failed | 1 | 79.55 | 72.62 (3.00 + 69.62) | 3.89 |
+| [`ci-021007-3ecd62cd`](receipts/round-ci-021007-3ecd62cd-result.json) | `Source_TripodCyclicPrimeSubgroups` | `4122550c81be` | failed | 1 | 44.29 | 38.71 (2.25 + 36.46) | 2.10 |
+| [`ci-021008-d1014204`](receipts/round-ci-021008-d1014204-result.json) | `Thm_AbcAdaptation_Tripod_legendre_torsion_x_le` | `324181b6173b` | succeeded | 0 | 55.39 | 50.42 (2.25 + 48.17) | 2.95 |
+| [`ci-021009-001c6dff`](receipts/round-ci-021009-001c6dff-result.json) | `Thm_AbcAdaptation_Tripod_Cyclic_main_bound` | `5baf7e423305` | succeeded | 0 | 156.73 | 147.72 (5.37 + 142.35) | 7.38 |
+| [`ci-021011-82dde4bc`](receipts/round-ci-021011-82dde4bc-result.json) | `Thm_AbcAdaptation_Tripod_cyclicLocalGraphLine` | `a4e35972784e` | succeeded | 0 | 141.14 | 133.93 (5.26 + 128.67) | 7.38 |
+| [`ci-021017-ba34a3d2`](receipts/round-ci-021017-ba34a3d2-result.json) | `Source_ReferenceIutCurveTateFamily` | `4a13527d19df` | timeout | unknown | 180.08 | unknown | unknown |
+| [`ci-021018-0891354d`](receipts/round-ci-021018-0891354d-result.json) | `ReviewQPilot` | `690aa3cccbda` | succeeded | 0 | 223.20 | 204.26 (6.20 + 198.06) | 8.07 |
+| [`ci-021019-7fdc70e3`](receipts/round-ci-021019-7fdc70e3-result.json) | `ReviewCyclicBoundFromSource` | `e8f91fcb6948` | succeeded | 0 | 219.36 | 201.30 (6.32 + 194.98) | 8.07 |
+| [`ci-021020-6f1297ae`](receipts/round-ci-021020-6f1297ae-result.json) | `Source_TripodCyclicDecomposition` | `4d1c24e7f4df` | succeeded | 0 | 116.86 | 102.40 (3.25 + 99.15) | 3.91 |
+| [`ci-021021-bcdf50ff`](receipts/round-ci-021021-bcdf50ff-result.json) | `Source_TripodCyclicPrimeSubgroups` | `5f4bf3dbdab3` | succeeded | 0 | 70.30 | 60.65 (2.37 + 58.28) | 2.13 |
+| [`ci-021022-78e498d3`](receipts/round-ci-021022-78e498d3-result.json) | `Thm_AbcAdaptation_Tripod_legendre_torsion_x_le` | `324181b6173b` | succeeded | 0 | 114.09 | 104.10 (2.01 + 102.09) | 2.96 |
+| [`ci-021023-2d6d01f8`](receipts/round-ci-021023-2d6d01f8-result.json) | `Thm_AbcAdaptation_Tripod_Cyclic_main_bound` | `5baf7e423305` | succeeded | 0 | 198.53 | 184.42 (4.82 + 179.60) | 7.38 |
+| [`ci-021025-e4cc585e`](receipts/round-ci-021025-e4cc585e-result.json) | `Thm_AbcAdaptation_Tripod_cyclicLocalGraphLine` | `a4e35972784e` | succeeded | 0 | 174.14 | 167.75 (4.93 + 162.82) | 7.44 |
+| [`ci-021036-48c12b04`](receipts/round-ci-021036-48c12b04-result.json) | `Source_ReferenceIutCurveTateFamily` | `4a13527d19df` | failed | 1 | 146.23 | 142.44 (6.51 + 135.93) | 7.50 |
+| [`ci-021040-9363a3ed`](receipts/round-ci-021040-9363a3ed-result.json) | `Source_TripodCyclicLocal` | `83442d6e34be` | failed | 1 | 141.25 | 137.01 (9.42 + 127.59) | 7.55 |
+| [`ci-021041-a2673082`](receipts/round-ci-021041-a2673082-result.json) | `Thm_AbcAdaptation_Tripod_cyclicBoundOdd` | `336e3a5c9a13` | succeeded | 0 | 135.46 | 127.99 (4.18 + 123.81) | 7.32 |
+| [`ci-021042-adaad4f9`](receipts/round-ci-021042-adaad4f9-result.json) | `Sketch_Tripod_cyclicBoundOdd` | `79ce8afa71b6` | succeeded | 0 | 133.09 | 125.96 (4.95 + 121.01) | 7.50 |
+| [`ci-021055-c957c548`](receipts/round-ci-021055-c957c548-result.json) | `Source_ReferenceIutCurveTateFamily` | `ff772bb7ddc0` | succeeded | 0 | 251.25 | 234.18 (5.15 + 229.03) | 7.40 |
+| [`ci-021057-403b93b0`](receipts/round-ci-021057-403b93b0-result.json) | `Thm_AbcAdaptation_Tripod_cyclicBoundOdd` | `336e3a5c9a13` | succeeded | 0 | 235.35 | 221.03 (5.64 + 215.39) | 7.50 |
+| [`ci-021058-664a4c90`](receipts/round-ci-021058-664a4c90-result.json) | `Def_AbcAdaptation_Reference_Iut_Concrete_LocalTheory` | `6dedb4b3519b` | succeeded | 0 | 120.28 | 114.81 (4.28 + 110.53) | 4.09 |
+| [`ci-021066-3f1df09c`](receipts/round-ci-021066-3f1df09c-result.json) | `Source_TripodCyclicLocal` | `f03181dc9557` | failed | 1 | 200.04 | 198.46 (11.62 + 186.84) | 7.57 |
+| [`ci-021067-60f01360`](receipts/round-ci-021067-60f01360-result.json) | `Sketch_Tripod_cyclicBoundOdd` | `79ce8afa71b6` | succeeded | 0 | 193.43 | 188.60 (5.85 + 182.75) | 7.50 |
+| [`ci-021069-f33ba10b`](receipts/round-ci-021069-f33ba10b-result.json) | `Source_ReferenceIutPointThetaData` | `9365101b2f77` | timeout | unknown | 180.05 | unknown | unknown |
+| [`ci-021071-aa486ce7`](receipts/round-ci-021071-aa486ce7-result.json) | `ReviewCurveTateFamily` | `5293b1677d10` | failed | 1 | 181.70 | 180.21 (5.06 + 175.15) | 8.07 |
+| [`ci-021077-6e4a92b6`](receipts/round-ci-021077-6e4a92b6-result.json) | `Def_AbcAdaptation_Reference_Iut_Concrete_LocalTheory` | `6dedb4b3519b` | succeeded | 0 | 78.90 | 78.49 (4.64 + 73.85) | 4.13 |
+| [`ci-021095-a05fa104`](receipts/round-ci-021095-a05fa104-result.json) | `ReviewCyclicBoundReduction` | `973b04119656` | failed | 0 | 140.89 | 136.41 (5.10 + 131.31) | 7.93 |
+| [`ci-021096-88b726c0`](receipts/round-ci-021096-88b726c0-result.json) | `ReviewCurveTateFamily` | `6dd601f9ef74` | succeeded | 0 | 140.83 | 135.67 (6.32 + 129.35) | 8.09 |
+| [`ci-021097-81ca14f0`](receipts/round-ci-021097-81ca14f0-result.json) | `Source_ReferenceIutPointThetaData` | `9365101b2f77` | succeeded | 0 | 125.59 | 119.76 (5.62 + 114.14) | 7.51 |
+| [`ci-021098-347dc0ca`](receipts/round-ci-021098-347dc0ca-result.json) | `Source_ReferenceIutConcreteFibers` | `a92388593f28` | succeeded | 0 | 59.78 | 56.48 (2.31 + 54.17) | 3.95 |
+| [`ci-021104-74aaefd7`](receipts/round-ci-021104-74aaefd7-result.json) | `Source_ReferenceIutConcreteFibers` | `a92388593f28` | succeeded | 0 | 62.73 | 61.57 (3.28 + 58.29) | 4.07 |
+| [`ci-021105-c95ca126`](receipts/round-ci-021105-c95ca126-result.json) | `ReviewCyclicBoundReduction` | `973b04119656` | succeeded | 0 | 114.24 | 111.88 (5.29 + 106.59) | 7.97 |
+| [`ci-021106-42bed987`](receipts/round-ci-021106-42bed987-result.json) | `Source_ReferenceIutPointThetaData` | `9365101b2f77` | succeeded | 0 | 109.12 | 106.44 (5.35 + 101.09) | 7.52 |
+| [`ci-021113-826459f1`](receipts/round-ci-021113-826459f1-result.json) | `ReviewConcreteFibers` | `09206588165c` | succeeded | 0 | 133.94 | 128.84 (5.39 + 123.45) | 8.07 |
+| [`ci-021114-34799f4b`](receipts/round-ci-021114-34799f4b-result.json) | `ReviewPointThetaData` | `8bcc85c490cd` | succeeded | 0 | 135.19 | 128.98 (5.00 + 123.98) | 7.80 |
+| [`ci-021115-88da22ae`](receipts/round-ci-021115-88da22ae-result.json) | `Source_ReferenceIutConcreteContainer` | `eececb6c54b4` | failed | 1 | 60.05 | 58.71 (3.06 + 55.65) | 4.08 |
+| [`ci-021131-9063c9ce`](receipts/round-ci-021131-9063c9ce-result.json) | `Source_TripodCoreGeometry` | `540253206f51` | succeeded | 0 | 56.54 | 56.41 (3.20 + 53.21) | 4.12 |
+| [`ci-021135-11c0e597`](receipts/round-ci-021135-11c0e597-result.json) | `Source_TripodCoreGeometry` | `540253206f51` | succeeded | 0 | 57.49 | 57.38 (3.18 + 54.20) | 4.12 |
+| [`ci-021139-9792c77f`](receipts/round-ci-021139-9792c77f-result.json) | `Source_TripodCoreModel` | `cc8b83636395` | succeeded | 0 | 56.87 | 56.29 (2.40 + 53.89) | 4.03 |
+| [`ci-021144-43a32291`](receipts/round-ci-021144-43a32291-result.json) | `Source_TripodCoreModel` | `cc8b83636395` | succeeded | 0 | 51.16 | 50.44 (2.73 + 47.71) | 4.02 |
+| [`ci-021147-606ee1da`](receipts/round-ci-021147-606ee1da-result.json) | `ReviewTripodCoreModel` | `eb8cceff8753` | succeeded | 0 | 115.59 | 114.57 (5.12 + 109.45) | 7.83 |
+| [`ci-021167-409d592e`](receipts/round-ci-021167-409d592e-result.json) | `Source_ReferenceIutTowerLocalFacts` | `f6c29d8fe1d8` | succeeded | 0 | 50.82 | 51.60 (6.34 + 45.26) | 4.11 |
+| [`ci-021169-b1f48043`](receipts/round-ci-021169-b1f48043-result.json) | `Source_ReferenceIutTowerLocalFacts` | `f6c29d8fe1d8` | succeeded | 0 | 47.17 | 47.43 (5.92 + 41.51) | 4.10 |
+| [`ci-021174-f7028043`](receipts/round-ci-021174-f7028043-result.json) | `Source_ReferenceIutConcreteContainer` | `20450654a225` | succeeded | 0 | 48.89 | 46.74 (2.65 + 44.09) | 4.05 |
+| [`ci-021175-bb46c6bf`](receipts/round-ci-021175-bb46c6bf-result.json) | `Source_TripodCyclicLocal` | `e08e8712be6b` | failed | 1 | 96.56 | 97.74 (9.40 + 88.34) | 7.57 |
+| [`ci-021176-2af17504`](receipts/round-ci-021176-2af17504-result.json) | `Source_ReferenceIutTowerRamIdx` | `76ca9a6bdc8b` | failed | 1 | 56.46 | 55.63 (8.79 + 46.84) | 4.14 |
+| [`ci-021187-e20c5b25`](receipts/round-ci-021187-e20c5b25-result.json) | `Source_ReferenceIutConcreteContainer` | `20450654a225` | succeeded | 0 | 65.82 | 65.46 (3.84 + 61.62) | 4.09 |
+| [`ci-021188-a24859aa`](receipts/round-ci-021188-a24859aa-result.json) | `Source_TripodCyclicLocal` | `ccd09f0cc498` | succeeded | 0 | 110.73 | 113.11 (11.15 + 101.96) | 7.57 |
+| [`ci-021189-233bca40`](receipts/round-ci-021189-233bca40-result.json) | `Source_ReferenceIutTowerRamIdx` | `2eacb7dd8d78` | failed | 1 | 60.83 | 60.25 (9.00 + 51.25) | 4.13 |
+| [`ci-021199-884a20d3`](receipts/round-ci-021199-884a20d3-result.json) | `Source_ReferenceIutConcreteThetaRegion` | `4a80cbe5e0e6` | failed | 1 | 129.95 | 123.29 (5.20 + 118.09) | 7.51 |
+| [`ci-021200-5a4e6c8b`](receipts/round-ci-021200-5a4e6c8b-result.json) | `ReviewConcreteContainerAndTower` | `0b1b0f4bf453` | succeeded | 0 | 140.52 | 133.87 (5.23 + 128.64) | 7.88 |
+| [`ci-021201-c749f731`](receipts/round-ci-021201-c749f731-result.json) | `Source_TripodCyclicLocal` | `ccd09f0cc498` | succeeded | 0 | 124.09 | 122.60 (12.32 + 110.28) | 7.58 |
+| [`ci-021202-85bbdf32`](receipts/round-ci-021202-85bbdf32-result.json) | `Source_ReferenceIutTowerRamIdx` | `a1d873ca5b7d` | succeeded | 0 | 61.48 | 59.69 (8.87 + 50.82) | 4.13 |
+| [`ci-021207-70c84ff6`](receipts/round-ci-021207-70c84ff6-result.json) | `Source_ReferenceIutConcreteThetaRegion` | `6a72169fb99a` | succeeded | 0 | 118.13 | 112.05 (5.46 + 106.59) | 7.51 |
+| [`ci-021208-4b457ebf`](receipts/round-ci-021208-4b457ebf-result.json) | `ReviewCyclicLocal` | `09431ecd0294` | succeeded | 0 | 128.78 | 123.85 (5.50 + 118.35) | 8.08 |
+| [`ci-021209-89629b6e`](receipts/round-ci-021209-89629b6e-result.json) | `Source_ReferenceIutTowerRamIdx` | `a1d873ca5b7d` | succeeded | 0 | 59.01 | 57.56 (8.39 + 49.17) | 4.12 |
+| [`ci-021214-d2adbcde`](receipts/round-ci-021214-d2adbcde-result.json) | `Source_ReferenceIutConcreteThetaRegion` | `6a72169fb99a` | succeeded | 0 | 117.86 | 113.05 (6.10 + 106.95) | 7.55 |
+| [`ci-021215-021e43b6`](receipts/round-ci-021215-021e43b6-result.json) | `ReviewTowerRamIdx` | `fce5ec209699` | succeeded | 0 | 126.43 | 121.66 (4.71 + 116.95) | 7.79 |
+| [`ci-021216-16355172`](receipts/round-ci-021216-16355172-result.json) | `Source_ReferenceIutTowerDifferentFormula` | `228a9344fe3f` | failed | 1 | 58.90 | 56.79 (5.84 + 50.95) | 4.11 |
+| [`ci-021221-fe31f887`](receipts/round-ci-021221-fe31f887-result.json) | `Source_ReferenceIutConcreteInvariants` | `c8c873064dc7` | failed | 1 | 124.76 | 123.59 (7.09 + 116.50) | 7.54 |
+| [`ci-021222-3381d9bc`](receipts/round-ci-021222-3381d9bc-result.json) | `Source_ReferenceIutTowerDifferentArithmetic` | `8c2274572f05` | failed | 1 | 62.28 | 60.54 (7.01 + 53.53) | 4.13 |
+| [`ci-021223-4784b8ac`](receipts/round-ci-021223-4784b8ac-result.json) | `Source_ReferenceIutTowerDifferentFormula` | `874201b23ca0` | failed | 1 | 56.61 | 54.44 (5.90 + 48.54) | 4.11 |
+| [`ci-021231-c4b187c7`](receipts/round-ci-021231-c4b187c7-result.json) | `Source_ReferenceIutConcreteInvariants` | `86a61728bdc2` | failed | 1 | 105.70 | 102.83 (5.87 + 96.96) | 7.53 |
+| [`ci-021232-da1ab244`](receipts/round-ci-021232-da1ab244-result.json) | `Source_ReferenceIutTowerDifferentArithmetic` | `961936b4737b` | succeeded | 0 | 56.25 | 52.88 (6.32 + 46.56) | 4.13 |
+| [`ci-021233-977f9c72`](receipts/round-ci-021233-977f9c72-result.json) | `Source_ReferenceIutTowerDifferentFormula` | `e4dd94a30493` | succeeded | 0 | 53.53 | 49.57 (5.57 + 44.00) | 4.11 |
+| [`ci-021234-07b064a8`](receipts/round-ci-021234-07b064a8-result.json) | `Source_ReferenceIutConcreteLocalArithmetic` | `0ceef9fbd146` | failed | 1 | 48.46 | 44.32 (2.59 + 41.73) | 4.00 |
+| [`ci-021248-f876f76b`](receipts/round-ci-021248-f876f76b-result.json) | `Source_ReferenceIutConcreteInvariants` | `b2ec46092708` | succeeded | 0 | 142.03 | 139.71 (7.26 + 132.45) | 7.54 |
+| [`ci-021249-0ae7ab85`](receipts/round-ci-021249-0ae7ab85-result.json) | `Source_ReferenceIutConcreteLocalArithmetic` | `d3450657e94b` | succeeded | 0 | 62.80 | 58.96 (3.18 + 55.78) | 4.07 |
+| [`ci-021250-226b76a1`](receipts/round-ci-021250-226b76a1-result.json) | `Source_ReferenceIutTowerDifferentArithmetic` | `961936b4737b` | succeeded | 0 | 63.85 | 61.97 (7.82 + 54.15) | 4.13 |
+| [`ci-021251-2e43e50b`](receipts/round-ci-021251-2e43e50b-result.json) | `Source_ReferenceIutTowerDifferentFormula` | `e4dd94a30493` | succeeded | 0 | 70.89 | 67.49 (6.35 + 61.14) | 4.11 |
+| [`ci-021252-dea0c46b`](receipts/round-ci-021252-dea0c46b-result.json) | `Source_ReferenceIutTowerIdealOrder` | `3c3ca179bf74` | succeeded | 0 | 62.44 | 59.63 (2.85 + 56.78) | 3.92 |
+| [`ci-021253-b0249bd2`](receipts/round-ci-021253-b0249bd2-result.json) | `Source_ReferenceIutTowerQuotientBasis` | `85bc4665e960` | succeeded | 0 | 60.98 | 60.24 (2.90 + 57.34) | 3.20 |
+| [`ci-021258-004275f0`](receipts/round-ci-021258-004275f0-result.json) | `Source_ReferenceIutConcreteInvariants` | `b2ec46092708` | succeeded | 0 | 140.27 | 137.37 (6.98 + 130.39) | 7.54 |
+| [`ci-021259-24d648fa`](receipts/round-ci-021259-24d648fa-result.json) | `Source_ReferenceIutConcreteLocalArithmetic` | `d3450657e94b` | succeeded | 0 | 69.76 | 66.63 (2.96 + 63.67) | 4.08 |
+| [`ci-021260-58b07a74`](receipts/round-ci-021260-58b07a74-result.json) | `Source_ReferenceIutTowerIdealOrder` | `3c3ca179bf74` | succeeded | 0 | 67.19 | 64.45 (2.75 + 61.70) | 3.88 |
+| [`ci-021261-6388f35f`](receipts/round-ci-021261-6388f35f-result.json) | `Source_ReferenceIutTowerQuotientBasis` | `85bc4665e960` | succeeded | 0 | 47.68 | 45.07 (2.28 + 42.79) | 3.12 |
+| [`ci-021263-eac61cdf`](receipts/round-ci-021263-eac61cdf-result.json) | `Source_ReferenceIutTowerStepIII` | `d9cf0fe0dcbe` | failed | 1 | 83.76 | 86.70 (20.60 + 66.10) | 4.26 |
+| [`ci-021270-ac3cb671`](receipts/round-ci-021270-ac3cb671-result.json) | `ReviewConcreteThetaInvariants` | `0607632f04a5` | succeeded | 0 | 233.99 | 229.37 (7.09 + 222.28) | 8.08 |
+| [`ci-021271-3fcf7b4a`](receipts/round-ci-021271-3fcf7b4a-result.json) | `Source_ReferenceIutConcreteLocalEstimate` | `af0952d46e43` | failed | 1 | 169.83 | 165.62 (8.98 + 156.64) | 7.57 |
+| [`ci-021272-006a8269`](receipts/round-ci-021272-006a8269-result.json) | `Source_ReferenceIutConcreteDifferentDegree` | `840b5f35e2e4` | failed | 1 | 166.00 | 159.17 (6.32 + 152.85) | 7.51 |
+| [`ci-021273-795ab8de`](receipts/round-ci-021273-795ab8de-result.json) | `Source_ReferenceIutTowerDifferentPowers` | `69b824658168` | failed | 1 | 83.99 | 81.49 (4.06 + 77.43) | 4.09 |
+| [`ci-021291-69d8c813`](receipts/round-ci-021291-69d8c813-result.json) | `Source_ReferenceIutConcreteLocalEstimate` | `b0933bac6ee8` | failed | 1 | 105.51 | 101.29 (8.98 + 92.31) | 7.58 |
+| [`ci-021292-fe610ea0`](receipts/round-ci-021292-fe610ea0-result.json) | `Source_ReferenceIutEmbedCompletion` | `ac63ebed39ba` | failed | 1 | 50.89 | 49.30 (4.29 + 45.01) | 4.07 |
+| [`ci-021293-d1b1e969`](receipts/round-ci-021293-d1b1e969-result.json) | `Source_ReferenceIutTateRoots` | `45681d68abc2` | succeeded | 0 | 36.33 | 35.40 (2.39 + 33.01) | 3.13 |
+| [`ci-021294-6d3b4575`](receipts/round-ci-021294-6d3b4575-result.json) | `Source_ReferenceIutCanLiftPresentation` | `4c1bf0543f21` | failed | 1 | 100.33 | 97.07 (8.01 + 89.06) | 7.62 |
+| [`ci-021320-4bd9032e`](receipts/round-ci-021320-4bd9032e-result.json) | `Source_ReferenceIutConcreteLocalEstimate` | `dd57a9ff37b0` | failed | 1 | 184.10 | 184.85 (7.48 + 177.37) | 7.58 |
+| [`ci-021324-dfcdd9b6`](receipts/round-ci-021324-dfcdd9b6-result.json) | `Source_ReferenceIutTateRoots` | `45681d68abc2` | succeeded | 0 | 67.45 | 66.92 (1.96 + 64.96) | 3.11 |
+| [`ci-021338-71910910`](receipts/round-ci-021338-71910910-result.json) | `Source_ReferenceIutConcreteLocalEstimate` | `3e242c2b3d43` | succeeded | 0 | 205.33 | 204.17 (8.78 + 195.39) | 7.58 |
+| [`ci-021340-fefab1d1`](receipts/round-ci-021340-fefab1d1-result.json) | `Source_ReferenceIutCanLiftPresentation` | `3efb9eefe42d` | succeeded | 0 | 187.50 | 184.32 (7.17 + 177.15) | 7.61 |
+| [`ci-021341-52f08107`](receipts/round-ci-021341-52f08107-result.json) | `Source_ReferenceIutCanLiftPolynomialDegree` | `e7f1f7b78325` | succeeded | 0 | 50.29 | 48.78 (2.10 + 46.68) | 2.76 |
+| [`ci-021342-672fe423`](receipts/round-ci-021342-672fe423-result.json) | `Source_ReferenceIutCanLiftCoverDescent` | `016c2a91b9d5` | succeeded | 0 | 63.66 | 61.77 (2.67 + 59.10) | 3.67 |
+| [`ci-021358-42a0bc66`](receipts/round-ci-021358-42a0bc66-result.json) | `Source_ReferenceIutCanLiftCoverDescent` | `016c2a91b9d5` | succeeded | 0 | 70.78 | 66.38 (2.53 + 63.85) | 3.65 |
+| [`ci-021359-75c78f0a`](receipts/round-ci-021359-75c78f0a-result.json) | `Source_ReferenceIutCanLiftPresentation` | `3efb9eefe42d` | succeeded | 0 | 176.43 | 171.43 (8.54 + 162.89) | 7.64 |
+| [`ci-021360-3dc1dbcb`](receipts/round-ci-021360-3dc1dbcb-result.json) | `Source_ReferenceIutCanLiftPolynomialDegree` | `e7f1f7b78325` | succeeded | 0 | 52.34 | 48.97 (2.54 + 46.43) | 2.79 |
+| [`ci-021368-04a24c77`](receipts/round-ci-021368-04a24c77-result.json) | `Source_ReferenceIutConcreteLocalEstimate` | `3e242c2b3d43` | succeeded | 0 | 170.40 | 171.38 (8.87 + 162.51) | 7.58 |
+| [`ci-021375-2c3207e2`](receipts/round-ci-021375-2c3207e2-result.json) | `Source_ReferenceIutCanLiftPolynomialRamification` | `504bdb5dedc8` | failed | 1 | 83.19 | 81.34 (2.56 + 78.78) | 3.31 |
+| [`ci-021376-3814489c`](receipts/round-ci-021376-3814489c-result.json) | `Source_ReferenceIutConcreteExistence` | `e1e8fba4df2d` | timeout | unknown | 180.07 | unknown | unknown |
+| [`ci-021377-b789e151`](receipts/round-ci-021377-b789e151-result.json) | `Source_ReferenceIutCanLiftBranchMultiplicity` | `93792202d417` | timeout | unknown | 181.65 | unknown | unknown |
+| [`ci-021378-1f310001`](receipts/round-ci-021378-1f310001-result.json) | `Source_ReferenceIutCanLiftComplex` | `9e021f91ac17` | timeout | unknown | 180.32 | unknown | unknown |
+| [`ci-021379-ad1d1868`](receipts/round-ci-021379-ad1d1868-result.json) | `Source_ReferenceIutCanLiftLefschetzAssembly` | `e0ee03b0b640` | timeout | unknown | 180.13 | unknown | unknown |
+| [`ci-021380-91c6737e`](receipts/round-ci-021380-91c6737e-result.json) | `ReviewCanLiftFoundations` | `2c40217dd45e` | succeeded | 0 | 282.58 | 275.39 (5.96 + 269.43) | 8.06 |
+| [`ci-021381-8cd409b0`](receipts/round-ci-021381-8cd409b0-result.json) | `Source_ReferenceIutCanLiftPolynomialRigidity` | `7232f754a40d` | succeeded | 0 | 101.06 | 97.19 (3.32 + 93.87) | 3.55 |
+| [`ci-021390-964c6d68`](receipts/round-ci-021390-964c6d68-result.json) | `Source_ReferenceIutConcreteExistence` | `e1e8fba4df2d` | succeeded | 0 | 219.08 | 213.43 (5.76 + 207.67) | 7.48 |
+| [`ci-021401-ad9fab7a`](receipts/round-ci-021401-ad9fab7a-result.json) | `Source_ReferenceIutCanLiftComplex` | `9e021f91ac17` | succeeded | 0 | 204.47 | 192.61 (6.51 + 186.10) | 7.59 |
+| [`ci-021402-d442a30b`](receipts/round-ci-021402-d442a30b-result.json) | `Source_ReferenceIutCanLiftPolynomialRamification` | `a3f848c1987b` | succeeded | 0 | 72.91 | 69.78 (2.28 + 67.50) | 3.30 |
+| [`ci-021403-03f891ca`](receipts/round-ci-021403-03f891ca-result.json) | `Source_ReferenceIutCanLiftLefschetzAssembly` | `e0ee03b0b640` | failed | 1 | 204.37 | 192.48 (6.78 + 185.70) | 7.57 |
+| [`ci-021404-67cf9634`](receipts/round-ci-021404-67cf9634-result.json) | `Source_ReferenceIutCurveConcreteExistence` | `6be153f264aa` | timeout | unknown | 180.07 | unknown | unknown |
+| [`ci-021405-7008ce12`](receipts/round-ci-021405-7008ce12-result.json) | `ReviewConcreteLocalEstimate` | `24e64929c024` | succeeded | 0 | 256.86 | 246.40 (5.37 + 241.03) | 7.84 |
+| [`ci-021406-f824be01`](receipts/round-ci-021406-f824be01-result.json) | `Source_ReferenceIutCanLiftBranchMultiplicity` | `93792202d417` | succeeded | 0 | 231.72 | 222.66 (8.29 + 214.37) | 7.60 |
+| [`ci-021418-6ae2447f`](receipts/round-ci-021418-6ae2447f-result.json) | `Source_ReferenceIutCurveConcreteExistence` | `6be153f264aa` | succeeded | 0 | 282.90 | 271.27 (5.45 + 265.82) | 7.51 |
+| [`ci-021419-7fd481c6`](receipts/round-ci-021419-7fd481c6-result.json) | `Source_ReferenceIutCanLiftNormalizationEmbed` | `c37f139651a5` | failed | 1 | 81.66 | 80.25 (19.75 + 60.50) | 3.33 |
+| [`ci-021420-ca43813b`](receipts/round-ci-021420-ca43813b-result.json) | `Source_ReferenceIutCanLiftLefschetzAssembly` | `d487fc0f95ff` | succeeded | 0 | 227.94 | 216.86 (7.01 + 209.85) | 7.58 |
+| [`ci-021421-a1aa5fbb`](receipts/round-ci-021421-a1aa5fbb-result.json) | `Source_ReferenceIutCanLiftTameInertia` | `51eef15b469b` | succeeded | 0 | 67.18 | 63.20 (5.92 + 57.28) | 3.13 |
+| [`ci-021422-7a36ef10`](receipts/round-ci-021422-7a36ef10-result.json) | `Source_ReferenceIutCanLiftGaloisCore` | `52b956bbc7b1` | succeeded | 0 | 70.26 | 67.70 (8.89 + 58.81) | 3.11 |
+| [`ci-021423-e2df4f90`](receipts/round-ci-021423-e2df4f90-result.json) | `Source_ReferenceIutCanLiftXDescent` | `16180cb7d627` | timeout | unknown | 180.06 | unknown | unknown |
+| [`ci-021424-d3603d7b`](receipts/round-ci-021424-d3603d7b-result.json) | `Source_ReferenceIutCanLiftHemiRigid` | `dad8ed900233` | timeout | unknown | 180.06 | unknown | unknown |
+| [`ci-021429-1c8c9c84`](receipts/round-ci-021429-1c8c9c84-result.json) | `Source_ReferenceIutCanLiftNoether` | `94e955b5f3f3` | succeeded | 0 | 105.91 | 100.48 (2.34 + 98.14) | 2.72 |
+| [`ci-021440-f6c510e9`](receipts/round-ci-021440-f6c510e9-result.json) | `ReviewConcreteExistence` | `192f6c11b7c9` | succeeded | 0 | 320.18 | 316.10 (5.75 + 310.35) | 8.06 |
+| [`ci-021441-1c695540`](receipts/round-ci-021441-1c695540-result.json) | `Source_ReferenceIutCanLiftXDescent` | `16180cb7d627` | succeeded | 0 | 239.94 | 234.86 (4.76 + 230.10) | 7.53 |
+| [`ci-021442-24146b1d`](receipts/round-ci-021442-24146b1d-result.json) | `Source_ReferenceIutCanLiftGaloisRamification` | `28e61ba8e1e4` | failed | 1 | 108.79 | 116.13 (17.20 + 98.93) | 3.46 |
+| [`ci-021446-ef4a6c70`](receipts/round-ci-021446-ef4a6c70-result.json) | `Source_ReferenceIutCanLiftHemiRigid` | `dad8ed900233` | failed | 1 | 226.76 | 226.36 (10.21 + 216.15) | 7.61 |
+| [`ci-021470-4add9083`](receipts/round-ci-021470-4add9083-result.json) | `Thm_AbcAdaptation_Reference_Heights_exists_torsion_x_bound` | `3a54dadd14cd` | succeeded | 0 | 58.54 | 54.71 (2.71 + 52.00) | 3.04 |
+| [`ci-021471-1b0fea16`](receipts/round-ci-021471-1b0fea16-result.json) | `Source_ReferenceIutConcreteLocalOrder` | `9e9f0d0aa5f2` | succeeded | 0 | 80.83 | 77.71 (3.00 + 74.71) | 4.07 |
+| [`ci-021472-131246a6`](receipts/round-ci-021472-131246a6-result.json) | `Source_TripodCyclicArch` | `bccaf62c0086` | succeeded | 0 | 59.17 | 57.05 (4.84 + 52.21) | 3.07 |
+| [`ci-021473-386725b5`](receipts/round-ci-021473-386725b5-result.json) | `Source_ReferenceIutCanLiftNormalizationEmbed` | `7504d5989799` | succeeded | 0 | 67.09 | 70.07 (20.62 + 49.45) | 3.35 |
+| [`ci-021483-ab25526b`](receipts/round-ci-021483-ab25526b-result.json) | `ReviewCyclicArch` | `07637703b7e2` | succeeded | 0 | 151.29 | 148.08 (4.93 + 143.15) | 7.90 |
+| [`ci-021484-e188518e`](receipts/round-ci-021484-e188518e-result.json) | `Source_ReferenceIutCanLiftGaloisRamification` | `ce63939611fc` | succeeded | 0 | 57.09 | 66.10 (18.73 + 47.37) | 3.48 |
+| [`ci-021485-b464462e`](receipts/round-ci-021485-b464462e-result.json) | `Source_ReferenceIutTowerDifferentPowers` | `690d96f91db3` | succeeded | 0 | 68.39 | 66.74 (3.28 + 63.46) | 4.09 |
+| [`ci-021486-3e9f7135`](receipts/round-ci-021486-3e9f7135-result.json) | `Source_ReferenceIutCanLiftRealization` | `0501e2bc2c34` | succeeded | 0 | 72.49 | 74.96 (13.40 + 61.56) | 4.12 |
+| [`ci-021487-f075d9b3`](receipts/round-ci-021487-f075d9b3-result.json) | `Source_ReferenceIutConcreteLocalPacket` | `b7a3430d6333` | succeeded | 0 | 68.63 | 68.74 (5.73 + 63.01) | 4.11 |
+| [`ci-021494-894e3321`](receipts/round-ci-021494-894e3321-result.json) | `Source_ReferenceIutCanLiftHemiRigid` | `77522870495a` | failed | 1 | 133.93 | 133.88 (11.60 + 122.28) | 7.61 |
+| [`ci-021503-acdfe227`](receipts/round-ci-021503-acdfe227-result.json) | `Source_ReferenceIutConcreteLocalPacketEquiv` | `b135c83cf413` | failed | 1 | 66.74 | 64.90 (4.92 + 59.98) | 4.13 |
+| [`ci-021504-b3d1e00d`](receipts/round-ci-021504-b3d1e00d-result.json) | `Source_ReferenceIutCanLiftGaloisAction` | `10262479b434` | failed | 1 | 57.34 | 60.17 (13.75 + 46.42) | 3.39 |
+| [`ci-021505-6d16e48c`](receipts/round-ci-021505-6d16e48c-result.json) | `Source_ReferenceIutConcreteDifferentDegree` | `e6afd8cefb71` | succeeded | 0 | 133.28 | 130.46 (6.75 + 123.71) | 7.54 |
+| [`ci-021506-2cdf81e9`](receipts/round-ci-021506-2cdf81e9-result.json) | `ReviewCyclicArchReduction` | `9839175d42ab` | succeeded | 0 | 64.23 | 62.86 (2.79 + 60.07) | 3.72 |
+| [`ci-021507-b683305a`](receipts/round-ci-021507-b683305a-result.json) | `Source_ReferenceHeightsTorsionLattice` | `3cf6faf0c7c0` | succeeded | 0 | 59.98 | 60.97 (5.71 + 55.26) | 3.60 |
+| [`ci-021508-c4065ea3`](receipts/round-ci-021508-c4065ea3-result.json) | `Source_ReferenceIutCanLiftEtalePoints` | `f76bbcb83f31` | succeeded | 0 | 64.95 | 63.87 (3.64 + 60.23) | 3.91 |
+| [`ci-021514-f0ffb817`](receipts/round-ci-021514-f0ffb817-result.json) | `Source_ReferenceHeightsWeierstrassDifferential` | `098bcd6fceaa` | succeeded | 0 | 39.26 | 35.07 (2.01 + 33.06) | 3.43 |
+| [`ci-021515-270ccede`](receipts/round-ci-021515-270ccede-result.json) | `Source_ReferenceIutConcreteLocalPacketEquiv` | `6497a886cca5` | succeeded | 0 | 46.50 | 43.98 (5.56 + 38.42) | 4.14 |
+| [`ci-021516-0bc97e99`](receipts/round-ci-021516-0bc97e99-result.json) | `Source_ReferenceIutCanLiftHemiRigid` | `6676efd3ca64` | failed | 1 | 97.73 | 94.67 (11.60 + 83.07) | 7.61 |
+| [`ci-021517-da5af225`](receipts/round-ci-021517-da5af225-result.json) | `Source_ReferenceIutTowerStepIII` | `4a0f1cb56749` | failed | 1 | 48.52 | 47.97 (9.51 + 38.46) | 4.17 |
+| [`ci-021518-b9461f20`](receipts/round-ci-021518-b9461f20-result.json) | `Source_ReferenceIutCanLiftEtaleLocal` | `3a799d448182` | succeeded | 0 | 45.45 | 42.81 (5.06 + 37.75) | 3.93 |
+| [`ci-021519-232386b3`](receipts/round-ci-021519-232386b3-result.json) | `Source_ReferenceIutCanLiftGaloisAction` | `514e5d65120a` | succeeded | 0 | 41.27 | 42.70 (11.60 + 31.10) | 3.38 |
+| [`ci-021531-66b7da6a`](receipts/round-ci-021531-66b7da6a-result.json) | `Source_ReferenceHeightsWeierstrassFibers` | `c4dd68d68014` | succeeded | 0 | 55.03 | 51.04 (2.75 + 48.29) | 3.45 |
+| [`ci-021532-c1962d99`](receipts/round-ci-021532-c1962d99-result.json) | `Source_ReferenceIutCanLiftHemiRigid` | `0614230309f1` | succeeded | 0 | 121.98 | 116.02 (11.21 + 104.81) | 7.62 |
+| [`ci-021534-9f07f95d`](receipts/round-ci-021534-9f07f95d-result.json) | `ReviewConcreteLocalPacket` | `36d4afd6dfc8` | succeeded | 0 | 129.62 | 122.68 (5.42 + 117.26) | 7.78 |
+| [`ci-021535-d9ca78fc`](receipts/round-ci-021535-d9ca78fc-result.json) | `Source_ReferenceIutTowerStepIII` | `b87a080dcecd` | succeeded | 0 | 62.77 | 61.87 (8.73 + 53.14) | 4.17 |
+| [`ci-021536-76511b9c`](receipts/round-ci-021536-76511b9c-result.json) | `Source_ReferenceIutCanLiftAnalyticBounds` | `207541998134` | succeeded | 0 | 48.23 | 45.59 (2.42 + 43.17) | 3.11 |
+| [`ci-021537-3b4ec618`](receipts/round-ci-021537-3b4ec618-result.json) | `Source_ReferenceIutCanLiftRamificationTransport` | `0c20f3f33de0` | succeeded | 0 | 51.81 | 50.49 (2.60 + 47.89) | 3.37 |
+| [`ci-021546-97516644`](receipts/round-ci-021546-97516644-result.json) | `Source_ReferenceIutCanLiftCoveringSections` | `2506e1735a50` | failed | 1 | 31.95 | 29.32 (1.31 + 28.01) | 2.03 |
+| [`ci-021547-e13b757c`](receipts/round-ci-021547-e13b757c-result.json) | `Source_ReferenceIutCanLiftAnalyticRoots` | `8bc84272633a` | succeeded | 0 | 54.37 | 51.93 (4.03 + 47.90) | 3.56 |
+| [`ci-021548-ca8905c3`](receipts/round-ci-021548-ca8905c3-result.json) | `Source_ReferenceIutCanLiftAnalyticInput` | `6901500f76af` | failed | 1 | 141.56 | 124.06 (6.06 + 118.00) | 7.56 |
+| [`ci-021549-ea717c9f`](receipts/round-ci-021549-ea717c9f-result.json) | `Source_ReferenceIutCanLiftUnramifiedClosure` | `1fa041cd051a` | failed | 1 | 155.77 | 141.26 (23.00 + 118.26) | 7.66 |
+| [`ci-021550-a26d38d4`](receipts/round-ci-021550-a26d38d4-result.json) | `Source_ReferenceIutCanLiftEtaleCoordinates` | `42654600968c` | failed | 1 | 53.43 | 52.27 (4.92 + 47.35) | 3.61 |
+| [`ci-021551-dc1d2a81`](receipts/round-ci-021551-dc1d2a81-result.json) | `Source_ReferenceIutTowerSerreCore` | `6ddb657f8a3c` | failed | 1 | 66.42 | 67.85 (10.60 + 57.25) | 3.31 |
+| [`ci-021566-133d1dd4`](receipts/round-ci-021566-133d1dd4-result.json) | `Source_ReferenceHeightsLatticePointMap` | `aa16d0727826` | failed | 1 | 59.06 | 54.40 (3.01 + 51.39) | 3.98 |
+| [`ci-021567-5384a6cb`](receipts/round-ci-021567-5384a6cb-result.json) | `Source_ReferenceHeightsModularCusp` | `4f169f1ba8bc` | failed | 1 | 58.69 | 53.74 (3.90 + 49.84) | 3.99 |
+| [`ci-021568-d07cfdd4`](receipts/round-ci-021568-d07cfdd4-result.json) | `Source_ReferenceIutCanLiftCoveringSections` | `04093bcff6af` | failed | 1 | 40.10 | 37.52 (1.65 + 35.87) | 2.06 |
+| [`ci-021569-f47bd4e2`](receipts/round-ci-021569-f47bd4e2-result.json) | `ReviewTowerStepIII` | `1ae28cf94e6e` | succeeded | 0 | 133.96 | 129.79 (5.87 + 123.92) | 8.09 |
+| [`ci-021570-d46e7a2a`](receipts/round-ci-021570-d46e7a2a-result.json) | `Source_ReferenceHeightsTorsionCurve` | `88aca311d90f` | succeeded | 0 | 49.04 | 46.08 (3.65 + 42.43) | 3.59 |
+| [`ci-021571-05ada488`](receipts/round-ci-021571-05ada488-result.json) | `Source_ReferenceIutTowerSerreCore` | `858fff11e38d` | failed | 1 | 51.60 | 54.53 (9.82 + 44.71) | 3.33 |
+| [`ci-021580-7461197f`](receipts/round-ci-021580-7461197f-result.json) | `Source_ReferenceIutCanLiftAnalyticInput` | `3f3f89a2c731` | succeeded | 0 | 105.71 | 101.51 (5.28 + 96.23) | 7.58 |
+| [`ci-021581-51b92031`](receipts/round-ci-021581-51b92031-result.json) | `Source_ReferenceIutCanLiftEtaleCoordinates` | `efb8fa276f5f` | succeeded | 0 | 49.71 | 49.57 (4.68 + 44.89) | 3.63 |
+| [`ci-021582-1febe339`](receipts/round-ci-021582-1febe339-result.json) | `Source_ReferenceIutCanLiftUnramifiedClosure` | `0dc39df2dcda` | failed | 1 | 119.53 | 119.44 (22.15 + 97.29) | 7.67 |
+| [`ci-021588-5456b49c`](receipts/round-ci-021588-5456b49c-result.json) | `Source_ReferenceIutCanLiftCoveringSections` | `5e0b53e3ef5d` | succeeded | 0 | 28.76 | 28.15 (1.73 + 26.42) | 2.10 |
+| [`ci-021598-ac6b1618`](receipts/round-ci-021598-ac6b1618-result.json) | `Source_ReferenceIutTowerSerreCore` | `7cc5ef8c2b56` | failed | 1 | 66.55 | 65.85 (9.39 + 56.46) | 3.31 |
+| [`ci-021599-ccbfee3d`](receipts/round-ci-021599-ccbfee3d-result.json) | `Source_ReferenceIutConcreteLocalIntegral` | `1c7ca185cab0` | failed | 1 | 78.79 | 76.33 (6.23 + 70.10) | 4.16 |
+| [`ci-021600-b7e05641`](receipts/round-ci-021600-b7e05641-result.json) | `Source_ReferenceIutCanLiftUnramifiedClosure` | `1c47f33ad475` | failed | 1 | 160.22 | 157.63 (24.12 + 133.51) | 7.66 |
+| [`ci-021602-3e104202`](receipts/round-ci-021602-3e104202-result.json) | `Source_ReferenceIutTowerStepIIIForTheta` | `af6806bda844` | succeeded | 0 | 142.65 | 136.04 (6.01 + 130.03) | 7.52 |
+| [`ci-021603-c34a5f2a`](receipts/round-ci-021603-c34a5f2a-result.json) | `Source_ReferenceHeightsLatticeModular` | `0d884d263c3e` | succeeded | 0 | 75.90 | 71.10 (3.35 + 67.75) | 3.99 |
+| [`ci-021604-03622920`](receipts/round-ci-021604-03622920-result.json) | `Source_ReferenceHeightsModularCusp` | `48c006c3feaf` | succeeded | 0 | 72.58 | 67.45 (3.14 + 64.31) | 3.99 |
+| [`ci-021615-42598a95`](receipts/round-ci-021615-42598a95-result.json) | `Source_ReferenceIutTowerSerreCore` | `7f6de7687553` | succeeded | 0 | 54.80 | 56.06 (10.64 + 45.42) | 3.31 |
+| [`ci-021616-6e2ea5a0`](receipts/round-ci-021616-6e2ea5a0-result.json) | `ReviewTowerStepIIIForTheta` | `ca117a983036` | succeeded | 0 | 159.71 | 147.91 (6.32 + 141.59) | 7.89 |
+| [`ci-021617-fb4d9a8a`](receipts/round-ci-021617-fb4d9a8a-result.json) | `ReviewHeightsModularCusp` | `7ae224f1b035` | succeeded | 0 | 156.52 | 146.05 (5.98 + 140.07) | 8.07 |
+| [`ci-021618-bdf4e6c7`](receipts/round-ci-021618-bdf4e6c7-result.json) | `Source_ReferenceHeightsLatticePointMap` | `2fc6c3c5d401` | succeeded | 0 | 66.08 | 61.78 (3.57 + 58.21) | 3.98 |
+| [`ci-021619-ba5cf530`](receipts/round-ci-021619-ba5cf530-result.json) | `Source_ReferenceIutCanLiftAnalyticLocal` | `d521db6608a7` | succeeded | 0 | 65.30 | 61.04 (4.14 + 56.90) | 3.92 |
+| [`ci-021620-8c518d6c`](receipts/round-ci-021620-8c518d6c-result.json) | `Source_ReferenceIutCanLiftUnramifiedClosure` | `947d489bc337` | succeeded | 0 | 171.57 | 168.08 (24.15 + 143.93) | 7.69 |
+| [`ci-021621-c7fa6c71`](receipts/round-ci-021621-c7fa6c71-result.json) | `Source_ReferenceIutCanLiftWeierstrassGerms` | `8b8175b313ef` | failed | 1 | 72.10 | 69.08 (8.46 + 60.62) | 3.24 |
+| [`ci-021629-af1fc0b9`](receipts/round-ci-021629-af1fc0b9-result.json) | `Source_ReferenceIutTowerSerreBound` | `64651abcaf96` | succeeded | 0 | 81.05 | 77.61 (10.35 + 67.26) | 4.14 |
+| [`ci-021630-d335e5cc`](receipts/round-ci-021630-d335e5cc-result.json) | `Source_ReferenceIutConcreteLocalIntegral` | `8aa40069e424` | failed | 1 | 92.07 | 87.93 (6.15 + 81.78) | 4.15 |
+| [`ci-021632-cb4dd3c0`](receipts/round-ci-021632-cb4dd3c0-result.json) | `Source_ReferenceIutCanLiftAnalyticChart` | `804dce25c61d` | succeeded | 0 | 72.46 | 67.83 (4.01 + 63.82) | 3.93 |
+| [`ci-021634-3b277bcf`](receipts/round-ci-021634-3b277bcf-result.json) | `Source_ReferenceIutThetaLocalBadChars` | `d9d9680b68b3` | timeout | unknown | 180.04 | unknown | unknown |
+| [`ci-021635-02f7a659`](receipts/round-ci-021635-02f7a659-result.json) | `Source_TripodTpdGalois` | `298d336e2b49` | succeeded | 0 | 116.40 | 117.81 (13.56 + 104.25) | 4.26 |
+| [`ci-021636-bc9102a0`](receipts/round-ci-021636-bc9102a0-result.json) | `Source_ReferenceIutEmbedCompletion` | `9ceb1db9a12b` | succeeded | 0 | 104.09 | 99.86 (4.96 + 94.90) | 4.10 |
+| [`ci-021637-da4eea75`](receipts/round-ci-021637-da4eea75-result.json) | `Source_ReferenceHeightsLatticePointMapInjectivity` | `260a078183fc` | succeeded | 0 | 97.85 | 93.78 (3.43 + 90.35) | 3.98 |
+| [`ci-021639-f2a3f73a`](receipts/round-ci-021639-f2a3f73a-result.json) | `Source_ReferenceHeightsModularComparisons` | `8298de28d83e` | failed | 1 | 109.70 | 105.41 (3.09 + 102.32) | 3.97 |
+| [`ci-021631-5a00aac0`](receipts/round-ci-021631-5a00aac0-result.json) | `ReviewCanLiftClosure` | `939ca8563bc5` | succeeded | 0 | 211.22 | 199.48 (6.31 + 193.17) | 7.94 |
+| [`ci-021638-e2d71441`](receipts/round-ci-021638-e2d71441-result.json) | `Source_ReferenceHeightsModularRange` | `aab396ad31f1` | succeeded | 0 | 125.71 | 120.96 (2.59 + 118.37) | 3.90 |
+| [`ci-021649-3ffa7c78`](receipts/round-ci-021649-3ffa7c78-result.json) | `Source_ReferenceIutThetaLocalBadChars` | `d9d9680b68b3` | succeeded | 0 | 214.47 | 203.49 (7.21 + 196.28) | 7.53 |
+| [`ci-021650-9fef3fb8`](receipts/round-ci-021650-9fef3fb8-result.json) | `Source_ReferenceIutTowerInertia` | `2cd6b3ff7209` | succeeded | 0 | 87.77 | 79.19 (4.40 + 74.79) | 4.06 |
+| [`ci-021651-5fdc99f2`](receipts/round-ci-021651-5fdc99f2-result.json) | `ReviewTripodTpdGalois` | `ab30e4dfe776` | succeeded | 0 | 270.43 | 260.22 (6.37 + 253.85) | 8.02 |
+| [`ci-021647-79c40b1e`](receipts/round-ci-021647-79c40b1e-result.json) | `Source_ReferenceIutTowerDifferentBound` | `a447f9d5f677` | failed | 1 | 105.76 | 97.02 (3.79 + 93.23) | 4.09 |
+| [`ci-021648-f52797c5`](receipts/round-ci-021648-f52797c5-result.json) | `Source_ReferenceIutConcreteLocalIntegral` | `50aadf09e9ce` | succeeded | 0 | 99.72 | 91.65 (7.14 + 84.51) | 4.16 |
+| [`ci-021652-c41c2a60`](receipts/round-ci-021652-c41c2a60-result.json) | `ReviewHeightsLatticePointAndRange` | `ba34886112e7` | succeeded | 0 | 252.35 | 242.81 (6.50 + 236.31) | 7.86 |
+| [`ci-021653-17da42ae`](receipts/round-ci-021653-17da42ae-result.json) | `Source_ReferenceIutCanLiftAnalyticCovering` | `0fe7b2f8818b` | succeeded | 0 | 112.33 | 110.60 (4.64 + 105.96) | 3.95 |
+| [`ci-021654-d6dcd274`](receipts/round-ci-021654-d6dcd274-result.json) | `Source_ReferenceIutCanLiftWeierstrassGerms` | `e6384bfcf26b` | succeeded | 0 | 91.73 | 89.99 (4.78 + 85.21) | 3.27 |
+| [`ci-021655-fb4d46d2`](receipts/round-ci-021655-fb4d46d2-result.json) | `Source_ReferenceHeightsModularComparisons` | `4602dd4a4826` | succeeded | 0 | 99.54 | 96.75 (3.35 + 93.40) | 3.97 |
+| [`ci-021660-c768ca58`](receipts/round-ci-021660-c768ca58-result.json) | `Source_ReferenceIutTowerDifferentBound` | `99dbbb87d580` | succeeded | 0 | 111.42 | 102.96 (5.68 + 97.28) | 4.11 |
+| [`ci-021661-9daca3c9`](receipts/round-ci-021661-9daca3c9-result.json) | `Source_ReferenceIutConcreteLocalHaar` | `fab62abd78fd` | succeeded | 0 | 109.01 | 100.22 (5.76 + 94.46) | 4.15 |
+| [`ci-021662-fb650ace`](receipts/round-ci-021662-fb650ace-result.json) | `Source_ReferenceIutTateCompat` | `6ccb2d81845b` | failed | 1 | 111.67 | 102.23 (6.75 + 95.48) | 4.11 |
+| [`ci-021666-feeb4503`](receipts/round-ci-021666-feeb4503-result.json) | `Source_ReferenceHeightsWeierstrassSurjectivity` | `6f918663ad76` | succeeded | 0 | 94.75 | 86.15 (4.03 + 82.12) | 3.99 |
+| [`ci-021663-26f00e0b`](receipts/round-ci-021663-26f00e0b-result.json) | `Source_ReferenceIutTowerReductionKernel` | `08697b538591` | succeeded | 0 | 71.56 | 64.28 (3.21 + 61.07) | 2.86 |
+| [`ci-021664-ebc771f0`](receipts/round-ci-021664-ebc771f0-result.json) | `Source_ReferenceIutCanLiftCayley` | `56b9f67af9d2` | succeeded | 0 | 79.57 | 72.05 (2.34 + 69.71) | 3.13 |
+| [`ci-021665-a706a93e`](receipts/round-ci-021665-a706a93e-result.json) | `Source_ReferenceIutCanLiftEntirePolynomial` | `77a3358f884e` | succeeded | 0 | 81.87 | 76.03 (3.10 + 72.93) | 3.41 |
+| [`ci-021667-f7dd1302`](receipts/round-ci-021667-f7dd1302-result.json) | `ReviewStepIIIBadChars` | `8b79c37c2dc9` | succeeded | 0 | 180.53 | 171.04 (5.50 + 165.54) | 7.85 |
+| [`ci-021668-80e34e19`](receipts/round-ci-021668-80e34e19-result.json) | `ReviewHeightsModularComparisons` | `623478053b4b` | succeeded | 0 | 172.64 | 168.21 (5.82 + 162.39) | 7.96 |
+| [`ci-021675-79e26edc`](receipts/round-ci-021675-79e26edc-result.json) | `Source_ReferenceIutTowerDifferent` | `749c44bcc6a4` | failed | 1 | 160.14 | 141.20 (6.25 + 134.95) | 4.14 |
+| [`ci-021676-658769a3`](receipts/round-ci-021676-658769a3-result.json) | `ReviewTowerSerreBound` | `76c9a2554ce1` | interrupted | unknown | unknown | unknown | unknown |
+| [`ci-021678-d775db09`](receipts/round-ci-021678-d775db09-result.json) | `Source_ReferenceIutConcreteLocalFiniteHull` | `87c77077a509` | failed | 1 | 168.30 | 172.36 (47.40 + 124.96) | 4.50 |
+| [`ci-021679-f78fe30d`](receipts/round-ci-021679-f78fe30d-result.json) | `Source_ReferenceIutConcreteLocalArchimedean` | `a814f3df4b2c` | failed | 1 | 141.64 | 126.21 (8.98 + 117.23) | 4.16 |
+| [`ci-021682-936ae3f9`](receipts/round-ci-021682-936ae3f9-result.json) | `Source_ReferenceIutTowerTorsionRigid` | `d7b5f665fba6` | succeeded | 0 | 130.83 | 113.32 (3.54 + 109.78) | 4.11 |
+| [`ci-021683-9a513cee`](receipts/round-ci-021683-9a513cee-result.json) | `Source_ReferenceIutCanLiftHalfPlaneAut` | `05d6907995e5` | succeeded | 0 | 126.75 | 119.10 (4.65 + 114.45) | 3.54 |
+| [`ci-021684-130f31cf`](receipts/round-ci-021684-130f31cf-result.json) | `Source_ReferenceIutThetaLocalOrder` | `98d3b5006f44` | failed | 1 | 153.65 | 145.80 (3.23 + 142.57) | 4.10 |
+| [`ci-021685-f2ec1920`](receipts/round-ci-021685-f2ec1920-result.json) | `Source_TripodTwoTorsion` | `7d17d3c60d4a` | failed | 1 | 126.02 | 121.19 (2.54 + 118.65) | 3.94 |
+| [`ci-021686-d9ddab91`](receipts/round-ci-021686-d9ddab91-result.json) | `Source_ReferenceIutPointThetaData` | `7a24f1202653` | interrupted | unknown | unknown | unknown | unknown |
+| [`ci-021692-f4cf2515`](receipts/round-ci-021692-f4cf2515-result.json) | `Source_ReferenceIutTowerDifferent` | `7bef44fcc7bd` | succeeded | 0 | 53.88 | 45.95 (6.50 + 39.45) | 4.15 |
+| [`ci-021693-678cb693`](receipts/round-ci-021693-678cb693-result.json) | `ReviewTowerSerreBound` | `76c9a2554ce1` | succeeded | 0 | 113.85 | 100.27 (5.79 + 94.48) | 8.05 |
+| [`ci-021694-2a5e58ce`](receipts/round-ci-021694-2a5e58ce-result.json) | `Source_ReferenceIutTateCompat` | `4c519b31ad39` | succeeded | 0 | 50.80 | 46.71 (7.75 + 38.96) | 4.13 |
+| [`ci-021695-c283686a`](receipts/round-ci-021695-c283686a-result.json) | `Source_ReferenceIutThetaLocalOrder` | `cc50bae0fa3d` | succeeded | 0 | 48.14 | 42.73 (3.92 + 38.81) | 4.10 |
+| [`ci-021696-ee99a7c6`](receipts/round-ci-021696-ee99a7c6-result.json) | `Source_TripodTwoTorsion` | `17f90044c723` | succeeded | 0 | 46.43 | 40.54 (3.17 + 37.37) | 4.05 |
+| [`ci-021697-6b3de098`](receipts/round-ci-021697-6b3de098-result.json) | `Source_ReferenceIutCanLiftUniformizationCover` | `f27b0960996a` | succeeded | 0 | 43.23 | 38.35 (4.65 + 33.70) | 3.69 |
+| [`ci-021698-b8725f13`](receipts/round-ci-021698-b8725f13-result.json) | `Source_ReferenceIutPointThetaData` | `7a24f1202653` | succeeded | 0 | 95.64 | 82.60 (5.59 + 77.01) | 7.50 |
+| [`ci-021732-661a23a8`](receipts/round-ci-021732-661a23a8-result.json) | `Source_ReferenceIutConcreteLocalArchimedean` | `2958f19b1b3a` | succeeded | 0 | 52.42 | 50.82 (9.23 + 41.59) | 4.15 |
+| [`ci-021729-842755bc`](receipts/round-ci-021729-842755bc-result.json) | `Source_ReferenceIutTowerArithmetic` | `c11fb3127fcf` | succeeded | 0 | 116.92 | 103.11 (7.18 + 95.93) | 7.52 |
+| [`ci-021730-14751bfe`](receipts/round-ci-021730-14751bfe-result.json) | `ReviewTowerDifferent` | `fb5106cf7f52` | succeeded | 0 | 133.80 | 119.27 (6.40 + 112.87) | 7.86 |
+| [`ci-021731-f83bdb03`](receipts/round-ci-021731-f83bdb03-result.json) | `Source_ReferenceIutConcreteLocalFiniteHull` | `5a2398a4170d` | failed | 1 | 76.22 | 71.82 (29.12 + 42.70) | 4.32 |
+| [`ci-021733-e3b51b8b`](receipts/round-ci-021733-e3b51b8b-result.json) | `Source_ReferenceIutThetaLocalRoots` | `23750aae79a3` | failed | 1 | 112.98 | 102.86 (10.26 + 92.60) | 7.55 |
+| [`ci-021734-e798309d`](receipts/round-ci-021734-e798309d-result.json) | `Source_ReferenceIutCurveConcreteExistence` | `4efe580fb10d` | succeeded | 0 | 110.25 | 98.32 (6.25 + 92.07) | 7.51 |
+| [`ci-021735-b018ec34`](receipts/round-ci-021735-b018ec34-result.json) | `Source_ReferenceIutCanLiftPolynomialDescent` | `5d9b88ae2b49` | failed | 1 | 71.68 | 63.32 (3.56 + 59.76) | 3.96 |
+| [`ci-021736-36a3bde8`](receipts/round-ci-021736-36a3bde8-result.json) | `Source_ReferenceHeightsWeierstrassPrincipalPart` | `59167a5cada3` | succeeded | 0 | 54.03 | 50.82 (7.04 + 43.78) | 3.51 |
+| [`ci-021737-b021feb5`](receipts/round-ci-021737-b021feb5-result.json) | `Source_ReferenceHeightsWeierstrassPFiber` | `23a03643a7d0` | succeeded | 0 | 46.11 | 40.25 (2.71 + 37.54) | 3.41 |
+| [`ci-021742-eb56803e`](receipts/round-ci-021742-eb56803e-result.json) | `ReviewTowerArithmetic` | `e730aaee528e` | succeeded | 0 | 87.81 | 79.84 (6.06 + 73.78) | 8.11 |
+| [`ci-021744-b251f5a2`](receipts/round-ci-021744-b251f5a2-result.json) | `ReviewLocalArchimedean` | `553d77da542f` | succeeded | 0 | 81.51 | 74.87 (5.45 + 69.42) | 7.87 |
+| [`ci-021745-58805c7d`](receipts/round-ci-021745-58805c7d-result.json) | `Source_ReferenceIutConcreteLocalFiniteHull` | `8ebc3751211c` | succeeded | 0 | 39.98 | 39.50 (8.00 + 31.50) | 4.17 |
+| [`ci-021747-762a95ab`](receipts/round-ci-021747-762a95ab-result.json) | `Source_ReferenceIutCanLiftAnalyticLiftFacts` | `38a98bb5230b` | failed | 1 | 46.28 | 46.15 (5.62 + 40.53) | 3.97 |
+| [`ci-021743-f33906a6`](receipts/round-ci-021743-f33906a6-result.json) | `ReviewPointwiseP7` | `32e0595fc489` | succeeded | 0 | 84.64 | 77.25 (5.57 + 71.68) | 8.09 |
+| [`ci-021746-70530b67`](receipts/round-ci-021746-70530b67-result.json) | `Source_TripodUnramifiedBase` | `cc6c943064fe` | failed | 1 | 36.84 | 39.23 (8.75 + 30.48) | 4.23 |
+| [`ci-021748-17c31447`](receipts/round-ci-021748-17c31447-result.json) | `Source_ReferenceHeightsWeierstrassAdditionDifferential` | `9b18451c213c` | succeeded | 0 | 36.78 | 36.93 (4.48 + 32.45) | 3.49 |
+| [`ci-021756-7f9a2015`](receipts/round-ci-021756-7f9a2015-result.json) | `ReviewFiniteLocalVolumeAndHull` | `3302ea885dea` | succeeded | 0 | 124.05 | 119.04 (5.89 + 113.15) | 7.99 |
+| [`ci-021757-a124d957`](receipts/round-ci-021757-a124d957-result.json) | `Source_ReferenceIutConcreteLocalFiniteIndeterminacy` | `fe102f2e3ef2` | succeeded | 0 | 58.92 | 56.97 (6.04 + 50.93) | 4.17 |
+| [`ci-021758-41ef5e9c`](receipts/round-ci-021758-41ef5e9c-result.json) | `Source_ReferenceIutThetaLocalRoots` | `31ffc07de62e` | failed | 1 | 104.62 | 101.68 (9.26 + 92.42) | 7.56 |
+| [`ci-021759-7f231e36`](receipts/round-ci-021759-7f231e36-result.json) | `Source_ReferenceIutCanLiftPolynomialDescent` | `bbca31644de2` | failed | 1 | 48.29 | 45.84 (2.42 + 43.42) | 3.89 |
+| [`ci-021760-ad28dde9`](receipts/round-ci-021760-ad28dde9-result.json) | `Source_ReferenceHeightsWeierstrassAdditionLocal` | `21637253b37a` | succeeded | 0 | 40.21 | 37.86 (2.90 + 34.96) | 3.46 |
+| [`ci-021781-bac5be78`](receipts/round-ci-021781-bac5be78-result.json) | `Source_ReferenceIutConcreteLocalFiniteLogShell` | `7a0235d9ba01` | succeeded | 0 | 66.50 | 60.99 (7.17 + 53.82) | 4.44 |
+| [`ci-021782-4f3d1c74`](receipts/round-ci-021782-4f3d1c74-result.json) | `Source_ReferenceIutConcreteLocalProp14` | `c0b3cc7fabf7` | succeeded | 0 | 55.34 | 50.90 (5.26 + 45.64) | 4.16 |
+| [`ci-021783-62c8c49f`](receipts/round-ci-021783-62c8c49f-result.json) | `Source_ReferenceIutCanLiftPolynomialDescent` | `e883bd82d43d` | succeeded | 0 | 49.98 | 46.50 (4.21 + 42.29) | 4.00 |
+| [`ci-021784-6019ad2b`](receipts/round-ci-021784-6019ad2b-result.json) | `Source_ReferenceIutCanLiftAnalyticLiftFacts` | `368790818340` | succeeded | 0 | 47.59 | 42.59 (3.95 + 38.64) | 3.94 |
+| [`ci-021785-eeb5e5a8`](receipts/round-ci-021785-eeb5e5a8-result.json) | `Source_TripodUnramifiedBase` | `760e2903c59a` | succeeded | 0 | 52.81 | 52.41 (9.73 + 42.68) | 4.24 |
+| [`ci-021786-3b8ea5bc`](receipts/round-ci-021786-3b8ea5bc-result.json) | `Source_ReferenceHeightsWeierstrassAddition` | `5451571e63b6` | succeeded | 0 | 38.63 | 36.58 (3.46 + 33.12) | 3.48 |
+| [`ci-021801-bea652a9`](receipts/round-ci-021801-bea652a9-result.json) | `ReviewFiniteLocalLogShell` | `e562db258e01` | succeeded | 0 | 141.52 | 134.73 (6.84 + 127.89) | 8.07 |
+| [`ci-021802-fadb9b6b`](receipts/round-ci-021802-fadb9b6b-result.json) | `Source_ReferenceIutThetaLocalRoots` | `15dd9ac1992c` | succeeded | 0 | 128.69 | 122.65 (10.53 + 112.12) | 7.56 |
+| [`ci-021803-be3cea0c`](receipts/round-ci-021803-be3cea0c-result.json) | `Source_ReferenceIutCanLiftInvariantCoordinates` | `d1df5348539d` | failed | 1 | 60.29 | 56.46 (4.89 + 51.57) | 4.00 |
+| [`ci-021804-cc7f139b`](receipts/round-ci-021804-cc7f139b-result.json) | `Source_ReferenceIutCanLiftAnalyticTransitivity` | `b33316daea2e` | succeeded | 0 | 58.51 | 53.32 (5.06 + 48.26) | 3.95 |
+| [`ci-021805-6874d919`](receipts/round-ci-021805-6874d919-result.json) | `Source_ReferenceIutCanLiftDeckGroup` | `383f70cd12f7` | succeeded | 0 | 52.64 | 48.49 (4.93 + 43.56) | 3.68 |
+| [`ci-021806-7020411f`](receipts/round-ci-021806-7020411f-result.json) | `Source_ReferenceHeightsLatticePointMapAddition` | `8a0b798aeca8` | failed | 1 | 55.64 | 52.04 (4.15 + 47.89) | 3.99 |
+| [`ci-021807-b0bde7bd`](receipts/round-ci-021807-b0bde7bd-result.json) | `Source_TripodTpdRamIdx` | `fc0dcffde300` | failed | 1 | 56.71 | 57.92 (6.60 + 51.32) | 4.14 |
+| [`ci-021818-2b32f85f`](receipts/round-ci-021818-2b32f85f-result.json) | `Source_ReferenceIutConcreteLocalTheory` | `c865f165e9c0` | succeeded | 0 | 60.73 | 58.25 (5.46 + 52.79) | 4.41 |
+| [`ci-021819-a1f17889`](receipts/round-ci-021819-a1f17889-result.json) | `Source_ReferenceIutCanLiftInvariantCoordinates` | `10024954b65c` | succeeded | 0 | 54.06 | 52.49 (4.43 + 48.06) | 4.00 |
+| [`ci-021820-8e1c5508`](receipts/round-ci-021820-8e1c5508-result.json) | `Source_ReferenceIutTorsionFaithful` | `e553b53abd27` | failed | 1 | 45.55 | 44.99 (4.57 + 40.42) | 3.98 |
+| [`ci-021821-b729dc7c`](receipts/round-ci-021821-b729dc7c-result.json) | `Source_TripodTpdGalois` | `57a6d095a818` | succeeded | 0 | 50.16 | 55.06 (14.25 + 40.81) | 4.26 |
+| [`ci-021829-c6ba75e9`](receipts/round-ci-021829-c6ba75e9-result.json) | `Source_ReferenceIutConcreteLocalTheory` | `c865f165e9c0` | succeeded | 0 | 82.97 | 78.32 (6.42 + 71.90) | 4.43 |
+| [`ci-021830-79e70319`](receipts/round-ci-021830-79e70319-result.json) | `Source_ReferenceIutThetaLocalRoots` | `15dd9ac1992c` | succeeded | 0 | 139.46 | 134.93 (11.15 + 123.78) | 7.56 |
+| [`ci-021831-4d615b5d`](receipts/round-ci-021831-4d615b5d-result.json) | `Source_ReferenceIutCanLiftInvariantCoordinates` | `10024954b65c` | succeeded | 0 | 65.06 | 60.61 (4.76 + 55.85) | 4.01 |
+| [`ci-021832-acf77054`](receipts/round-ci-021832-acf77054-result.json) | `Source_ReferenceIutCanLiftAnalyticTransitivity` | `b33316daea2e` | succeeded | 0 | 62.72 | 57.85 (4.35 + 53.50) | 3.95 |
+| [`ci-021833-9ff7f547`](receipts/round-ci-021833-9ff7f547-result.json) | `Source_ReferenceIutCanLiftDeckGroup` | `383f70cd12f7` | succeeded | 0 | 62.49 | 58.47 (4.90 + 53.57) | 3.69 |
+| [`ci-021834-4bb65932`](receipts/round-ci-021834-4bb65932-result.json) | `Source_TripodTpdGalois` | `57a6d095a818` | succeeded | 0 | 72.19 | 75.19 (14.46 + 60.73) | 4.27 |
+| [`ci-021835-440b2a29`](receipts/round-ci-021835-440b2a29-result.json) | `ReviewCanLiftAnalyticReduction` | `4f87cbaa6944` | succeeded | 0 | 143.26 | 140.18 (7.20 + 132.98) | 8.06 |
+| [`ci-021836-3773059c`](receipts/round-ci-021836-3773059c-result.json) | `Source_ReferenceHeightsLatticePointMapAddition` | `acd28d0bf99f` | succeeded | 0 | 58.91 | 57.46 (4.04 + 53.42) | 4.00 |
+| [`ci-021840-0b7a0de4`](receipts/round-ci-021840-0b7a0de4-result.json) | `ReviewConcreteLocalTheory` | `deda439a66b6` | succeeded | 0 | 138.41 | 131.97 (6.04 + 125.93) | 8.07 |
+| [`ci-021841-8a6ac6c3`](receipts/round-ci-021841-8a6ac6c3-result.json) | `Source_ReferenceIutCanLiftMobius` | `891ed66f991e` | succeeded | 0 | 61.16 | 58.88 (5.73 + 53.15) | 4.01 |
+| [`ci-021842-03cb87e5`](receipts/round-ci-021842-03cb87e5-result.json) | `Source_ReferenceIutTorsionFaithful` | `9c51d7cd1ca2` | succeeded | 0 | 57.70 | 55.08 (5.35 + 49.73) | 3.97 |
+| [`ci-021843-b961e0a7`](receipts/round-ci-021843-b961e0a7-result.json) | `Source_TripodTpdRamIdx` | `fc0dcffde300` | succeeded | 0 | 57.03 | 58.55 (9.48 + 49.07) | 4.15 |
+| [`ci-021844-033323fe`](receipts/round-ci-021844-033323fe-result.json) | `Source_ReferenceHeightsLatticePointMapAddition` | `acd28d0bf99f` | succeeded | 0 | 56.99 | 55.86 (4.65 + 51.21) | 4.01 |
+| [`ci-021847-bdbcde56`](receipts/round-ci-021847-bdbcde56-result.json) | `Source_ReferenceIutThetaLocalData` | `a431b549e1ad` | succeeded | 0 | 121.31 | 118.47 (7.96 + 110.51) | 7.54 |
+| [`ci-021848-35662250`](receipts/round-ci-021848-35662250-result.json) | `Source_ReferenceIutCanLiftMobius` | `891ed66f991e` | succeeded | 0 | 58.58 | 55.80 (3.98 + 51.82) | 3.97 |
+| [`ci-021849-53d7f2e8`](receipts/round-ci-021849-53d7f2e8-result.json) | `Source_ReferenceIutTorsionFaithful` | `9c51d7cd1ca2` | succeeded | 0 | 54.20 | 52.20 (5.31 + 46.89) | 3.98 |
+| [`ci-021850-6b20449f`](receipts/round-ci-021850-6b20449f-result.json) | `Source_TripodTpdRamIdx` | `fc0dcffde300` | succeeded | 0 | 54.04 | 55.67 (9.60 + 46.07) | 4.15 |
+| [`ci-021852-ac1e7fa2`](receipts/round-ci-021852-ac1e7fa2-result.json) | `Source_ReferenceIutCanLiftMobiusCommensurator` | `d371aae0414a` | succeeded | 0 | 100.00 | 97.39 (5.39 + 92.00) | 3.99 |
+| [`ci-021854-08194afa`](receipts/round-ci-021854-08194afa-result.json) | `Source_TripodUnramified` | `2321121cc50e` | succeeded | 0 | 98.43 | 96.38 (5.40 + 90.98) | 4.18 |
+| [`ci-021855-29503304`](receipts/round-ci-021855-29503304-result.json) | `Source_ReferenceIutThetaLocalData` | `a431b549e1ad` | succeeded | 0 | 225.64 | 222.92 (8.42 + 214.50) | 7.55 |
+| [`ci-021861-93251ecc`](receipts/round-ci-021861-93251ecc-result.json) | `Source_ReferenceIutPointLocalTheta` | `b9fb8061afcf` | succeeded | 0 | 120.80 | 117.41 (6.15 + 111.26) | 7.52 |
+| [`ci-021862-ed7db7d6`](receipts/round-ci-021862-ed7db7d6-result.json) | `Source_ReferenceIutCanLiftMobiusCommensurator` | `d371aae0414a` | succeeded | 0 | 58.77 | 55.88 (4.32 + 51.56) | 3.98 |
+| [`ci-021863-4e968a40`](receipts/round-ci-021863-4e968a40-result.json) | `Source_TripodUnramified` | `2321121cc50e` | succeeded | 0 | 54.68 | 53.23 (4.56 + 48.67) | 4.17 |
+| [`ci-021868-218756b5`](receipts/round-ci-021868-218756b5-result.json) | `Source_ReferenceIutCanLiftFixX` | `d02d2873e06b` | failed | 1 | 96.32 | 93.79 (5.59 + 88.20) | 7.57 |
+| [`ci-021869-3b6db133`](receipts/round-ci-021869-3b6db133-result.json) | `Source_TripodTowerStepIII` | `867aae91d4db` | succeeded | 0 | 93.54 | 90.90 (5.64 + 85.26) | 7.57 |
+| [`ci-021871-6f880c2d`](receipts/round-ci-021871-6f880c2d-result.json) | `Source_ReferenceHeightsTorsionArchimedean` | `5e1ed447988d` | failed | 1 | 43.10 | 41.41 (2.71 + 38.70) | 3.93 |
+| [`ci-021875-64463767`](receipts/round-ci-021875-64463767-result.json) | `Source_ReferenceIutPointLocalTheta` | `b9fb8061afcf` | succeeded | 0 | 104.72 | 99.36 (6.40 + 92.96) | 7.57 |
+| [`ci-021876-2e499dbc`](receipts/round-ci-021876-2e499dbc-result.json) | `Source_TripodTowerStepIII` | `867aae91d4db` | succeeded | 0 | 103.81 | 98.09 (6.09 + 92.00) | 7.57 |
+| [`ci-021877-487a17ab`](receipts/round-ci-021877-487a17ab-result.json) | `ReviewTripodGoodReduction` | `c40d3a2f6a45` | succeeded | 0 | 114.76 | 110.19 (5.87 + 104.32) | 8.08 |
+| [`ci-021884-70058d70`](receipts/round-ci-021884-70058d70-result.json) | `ReviewPointLocalTheta` | `aef659d69846` | succeeded | 0 | 141.66 | 130.64 (7.07 + 123.57) | 8.10 |
+| [`ci-021885-759d4e11`](receipts/round-ci-021885-759d4e11-result.json) | `ReviewTripodTowerStepIII` | `f0e93101451a` | succeeded | 0 | 139.08 | 128.42 (6.53 + 121.89) | 8.09 |
+| [`ci-021886-0a0b2a6b`](receipts/round-ci-021886-0a0b2a6b-result.json) | `Source_ReferenceIutCanLiftFixX` | `933eba4a40a9` | failed | 1 | 117.31 | 108.13 (5.93 + 102.20) | 7.57 |
+| [`ci-021887-2c9398ec`](receipts/round-ci-021887-2c9398ec-result.json) | `Source_ReferenceHeightsTorsionArchimedean` | `8a9e1a365311` | succeeded | 0 | 55.63 | 52.18 (3.06 + 49.12) | 3.96 |
+| [`ci-021897-2cc87a88`](receipts/round-ci-021897-2cc87a88-result.json) | `Source_ReferenceIutCanLiftFixX` | `659bf592a4fc` | failed | 1 | 126.19 | 122.21 (7.39 + 114.82) | 7.59 |
+| [`ci-021898-8e4a2881`](receipts/round-ci-021898-8e4a2881-result.json) | `Source_ReferenceHeightsTorsionArchimedean` | `8a9e1a365311` | succeeded | 0 | 61.40 | 57.44 (4.21 + 53.23) | 4.00 |
+| [`ci-021906-e744b110`](receipts/round-ci-021906-e744b110-result.json) | `Source_ReferenceHeightsTorsionBound` | `82ccb210fa06` | succeeded | 0 | 60.54 | 59.21 (2.89 + 56.32) | 3.90 |
+| [`ci-021909-68a2fb4b`](receipts/round-ci-021909-68a2fb4b-result.json) | `Source_ReferenceHeightsTorsionBound` | `82ccb210fa06` | succeeded | 0 | 61.17 | 60.40 (2.81 + 57.59) | 3.94 |
+| [`ci-021911-b40ef1a6`](receipts/round-ci-021911-b40ef1a6-result.json) | `Source_TripodCyclicBoundFromSource` | `6f3f049f62b0` | succeeded | 0 | 120.58 | 115.85 (5.98 + 109.87) | 7.42 |
+| [`ci-021918-abdd1b9d`](receipts/round-ci-021918-abdd1b9d-result.json) | `Source_ReferenceIutCanLiftFixX` | `2787022b7238` | succeeded | 0 | 136.31 | 131.26 (7.42 + 123.84) | 7.59 |
+| [`ci-021922-e0a843dc`](receipts/round-ci-021922-e0a843dc-result.json) | `Source_ReferenceIutCanLiftFixX` | `2787022b7238` | succeeded | 0 | 123.38 | 118.21 (8.06 + 110.15) | 7.59 |
+| [`ci-021923-191e3814`](receipts/round-ci-021923-191e3814-result.json) | `Source_TripodCyclicBoundFromSource` | `6f3f049f62b0` | succeeded | 0 | 119.25 | 111.07 (6.39 + 104.68) | 7.51 |
+| [`ci-021929-7709d914`](receipts/round-ci-021929-7709d914-result.json) | `ReviewHeightsTorsionBound` | `3df6a95caf5a` | succeeded | 0 | 127.26 | 122.95 (6.42 + 116.53) | 8.09 |
+| [`ci-021930-9a866028`](receipts/round-ci-021930-9a866028-result.json) | `Source_ReferenceIutCanLiftFixX` | `2787022b7238` | succeeded | 0 | 109.72 | 104.50 (7.57 + 96.93) | 7.59 |
+| [`ci-021931-6e6d6b06`](receipts/round-ci-021931-6e6d6b06-result.json) | `Source_ReferenceIutCanLiftFixX` (.olean) | `2787022b7238` | succeeded | 0 | 109.63 | 104.46 (7.12 + 97.34) | 7.59 |
+| [`ci-021940-93a275bd`](receipts/round-ci-021940-93a275bd-result.json) | `Source_ReferenceIutCanLiftComplexAssembly` | `876a168af1aa` | succeeded | 0 | 134.84 | 126.99 (6.03 + 120.96) | 7.58 |
+| [`ci-021941-ad2fc0d6`](receipts/round-ci-021941-ad2fc0d6-result.json) | `ReviewCanLiftFixX` | `3862409a0b8c` | succeeded | 0 | 151.66 | 143.69 (6.82 + 136.87) | 8.08 |
+| [`ci-021935-909f8c9d`](receipts/round-ci-021935-909f8c9d-result.json) | `Source_ReferenceIutCanLiftComplexAssembly` | `876a168af1aa` | succeeded | 0 | 137.70 | 134.63 (5.90 + 128.73) | 7.44 |
+| [`ci-021947-ff1caaa2`](receipts/round-ci-021947-ff1caaa2-result.json) | `Source_ReferenceIutCanLiftComplexAssembly` | `876a168af1aa` | succeeded | 0 | 129.22 | 128.00 (5.32 + 122.68) | 7.56 |
+| [`ci-021953-47fff188`](receipts/round-ci-021953-47fff188-result.json) | `ReviewCanLiftComplexAssembly` | `cf58694fc972` | succeeded | 0 | 142.68 | 135.83 (5.12 + 130.71) | 7.85 |
+| [`ci-021987-43324269`](receipts/round-ci-021987-43324269-result.json) | `Source_ReferenceIutTowerDifferentArithmetic` | `c7b372b9791c` | succeeded | 0 | 69.88 | 65.66 (7.23 + 58.43) | 4.13 |
+| [`ci-021988-3edc625f`](receipts/round-ci-021988-3edc625f-result.json) | `Source_ReferenceIutTowerDifferentFormula` | `1581b2a2e23c` | succeeded | 0 | 60.14 | 56.87 (6.20 + 50.67) | 4.11 |

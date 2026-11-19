@@ -1,0 +1,17 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutPointLocalTheta
+import Solutions.Source_TripodTwoTorsion
+
+open AbcAdaptation.Reference.Iut
+open AbcAdaptation.Reference.Iut.CurveInputs
+
+#print axioms exists_qroot
+#print axioms ordp_qrootOf
+#print axioms sum_weight_ordp_qrootOf
+#print axioms thetaLocalData
+#print axioms PointThetaData.localTheory
+#print axioms PointThetaData.localThetaData
+#print axioms concreteThetaDataExistence_of_localArithmetic

@@ -1,0 +1,34 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftPresentation
+import Solutions.Source_ReferenceIutCanLiftPolynomialDegree
+import Solutions.Source_ReferenceIutCanLiftCoverDescent
+
+set_option autoImplicit false
+
+open JoshiTeich.Act1Scene1
+open JoshiTeich.ReferenceIut.Anabelian.Genuine
+open AbcAdaptation.Reference.Iut.Anabelian
+
+#check normalizationPresentation
+#check signedNormalizationCover
+#check normalizationHasCore_oncePunctured
+#check AffineOrbicurvePresentation.Cover.descend
+#check natDegree_eq_one_of_etale
+
+#print axioms AffineOrbicurvePresentation.LocBar
+#print axioms AffineOrbicurvePresentation.IsCoreOf
+#print axioms normalizationPresentation
+#print axioms signedNormalizationCover
+#print axioms canLiftExceptionalJ
+#print axioms CanLift27
+#print axioms CanLift27Complex
+#print axioms normalizationHasCore
+#print axioms normalizationHasCore_oncePunctured
+#print axioms AffineOrbicurvePresentation.Cover.descend
+#print axioms polynomialRamificationIdx
+#print axioms hemiMultiplicity
+#print axioms polynomialRamificationIdx_pos
+#print axioms natDegree_eq_one_of_etale

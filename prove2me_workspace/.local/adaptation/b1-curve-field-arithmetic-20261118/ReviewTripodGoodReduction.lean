@@ -1,0 +1,12 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodUnramified
+import Solutions.Source_TripodTpdRamIdx
+
+open AbcAdaptation.Tripod
+
+#print axioms relRamIdx_torsion_tpd_eq_one
+#print axioms relRamIdx_tpd_le_two
+#print axioms relRamIdxModLeTwo_curve

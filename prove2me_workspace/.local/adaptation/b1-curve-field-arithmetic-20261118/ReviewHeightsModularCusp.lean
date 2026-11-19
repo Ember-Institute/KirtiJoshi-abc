@@ -1,0 +1,20 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceHeightsModularCusp
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Heights
+
+#check exists_mem_fd_modularJ_eq
+#print axioms latticeCurve_discriminant_eq_silvermanDiscriminant
+#print axioms latticeCurve_isElliptic
+#print axioms latticeCurve_j_eq_modularJ
+#print axioms modularJ_smul
+#print axioms exists_mem_fd_modularJ_eq
+#print axioms E₄_tendsto_atImInfty
+#print axioms scaled_modularJ_tendsto
+#print axioms modularJ_mdifferentiable
+#print axioms modularJ_norm_tendsto_atImInfty

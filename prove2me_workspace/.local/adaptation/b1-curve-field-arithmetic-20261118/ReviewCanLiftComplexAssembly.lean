@@ -1,0 +1,12 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftComplexAssembly
+
+open AbcAdaptation.Reference.Iut.Anabelian
+open AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic
+
+#print axioms IsUniformization.exists_coord_of_invariant
+#print axioms IsUniformization.fixes_normalization_x
+#print axioms canLift27Complex_of_uniformization

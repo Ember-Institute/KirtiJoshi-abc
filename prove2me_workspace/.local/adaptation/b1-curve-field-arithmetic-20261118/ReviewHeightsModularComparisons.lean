@@ -1,0 +1,12 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceHeightsModularComparisons
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Heights
+
+#print axioms modularDeltaJ_fd_comparison
+#print axioms modularIm_logLogJ_fd_comparison

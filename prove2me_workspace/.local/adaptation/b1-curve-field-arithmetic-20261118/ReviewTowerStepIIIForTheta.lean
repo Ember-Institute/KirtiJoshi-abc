@@ -1,0 +1,12 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutTowerStepIIIForTheta
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Iut
+
+#check ThetaLocalData.step_iii_of_localFacts
+#print axioms ThetaLocalData.step_iii_of_localFacts

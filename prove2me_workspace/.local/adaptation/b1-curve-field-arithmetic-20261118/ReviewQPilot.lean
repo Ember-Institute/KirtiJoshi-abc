@@ -1,0 +1,9 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutQPilot
+
+#print axioms AbcAdaptation.Reference.Iut.QPilotInputs.qPilot
+#print axioms AbcAdaptation.Reference.Iut.EllipticCurveData.qPilotInputs
+#print axioms AbcAdaptation.Reference.Iut.EllipticCurveData.logQ_eq

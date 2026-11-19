@@ -1,0 +1,18 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutConcreteLocalFiniteLogShell
+import Solutions.Source_ReferenceIutConcreteLocalProp14
+
+open AbcAdaptation.Reference.Iut.LocalConstruct
+
+#print axioms finiteIndAut_exists_algEquiv
+#print axioms theta_admissible_finite
+#print axioms prop14_iv
+#print axioms isCompact_closure_finiteLogShell
+#print axioms integral_subset_finiteLogShell
+#print axioms finiteLogShell_eq_integral_of_unramified
+#print axioms finiteIndAut_logShell
+#print axioms thetaShell_admissible_finite
+#print axioms prop14iii_of_isOver

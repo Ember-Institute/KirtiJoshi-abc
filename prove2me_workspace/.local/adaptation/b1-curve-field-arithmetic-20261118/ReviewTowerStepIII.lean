@@ -1,0 +1,19 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutTowerStepIII
+import Solutions.Source_ReferenceIutConcreteDifferentDegree
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Iut
+
+#check sum_log_distinguished_le
+#check ThetaLocalData.sum_dst_logDK_eq
+
+#print axioms sum_bad_log_le
+#print axioms sum_ramified_log_le
+#print axioms sum_log_distinguished_le
+#print axioms LocalTheory.sum_logDK_eq
+#print axioms ThetaLocalData.sum_dst_logDK_eq

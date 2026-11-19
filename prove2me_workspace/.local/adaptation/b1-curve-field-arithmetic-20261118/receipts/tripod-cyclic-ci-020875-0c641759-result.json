@@ -1,0 +1,353 @@
+{
+  "job_id": "ci-020875-0c641759",
+  "attempt_id": "attempt-43b9d7fffdff",
+  "status": "failed",
+  "submitted_at": 1795008393.4308834,
+  "started_at": 1795008393.4427252,
+  "finished_at": 1795008494.9903374,
+  "queue_time_seconds": 0.011841773986816406,
+  "compile_time_seconds": 101.54761219024658,
+  "progress": {},
+  "resources": {
+    "affinity_applied": true,
+    "affinity_error": null,
+    "allocated_cpu_count": 4,
+    "cpu_affinity": [
+      24,
+      25,
+      26,
+      27
+    ],
+    "cpu_system_seconds": 91.76,
+    "cpu_time_seconds": 97.96000000000001,
+    "cpu_user_seconds": 6.2,
+    "memory_decision": {
+      "host_pressure": "normal",
+      "total_worker_bytes": 34544664576,
+      "worker_pressure": "normal"
+    },
+    "peak_pss_bytes": null,
+    "peak_rss_bytes": 8077262848,
+    "wall_time_seconds": 99.79322660001344
+  },
+  "deduplicated": false,
+  "request": {
+    "agent_id": "/root",
+    "environment": {
+      "LEAN_PATH": "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean:/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+      "PATH": "/root/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/root/.nvm/versions/node/v22.23.2/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/root/.codex-key3/tmp/arg0-linux/codex-arg09EKFI6:/root/.cabal/bin:/root/.ghcup/bin:/root/.nvm/versions/node/v22.23.2/bin:/root/.opam/Coq900/bin:/root/.elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+    },
+    "exclusive": true,
+    "expected_duration": 60,
+    "expected_memory": 17179869184,
+    "idempotency_key": "p2m-tripod-cyclic-bound-odd-leaf-1-61ddaf21d9e0b762",
+    "language": "lean",
+    "parameters": {
+      "source": "Solutions/Source_TripodCyclicBoundOdd.lean"
+    },
+    "priority": 0,
+    "profile": "default",
+    "project_id": "ArithmeticTeichmullerSpaces",
+    "scheduler_timeout_seconds": 180,
+    "session_id": "p2m-curve-field-01a1ecf6",
+    "snapshot_manifest": {
+      "configuration_hashes": {
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+      },
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "external_dependencies": [
+        {
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474",
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a"
+        },
+        {
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0",
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68"
+        }
+      ],
+      "head": "e10d20a264da657418ebc978507df73f59cfb769",
+      "input_hashes": {
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveFacts.lean": "95f04febadb0f9a6fe35e15ef2a99228aaf5e82b48cf1a0e6880b5150f502707",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TatePoleOrder.lean": "2663c32b502b8434944907c9662aa94e9121ff29530613a3978b6d01c813c8da",
+        "Running": "[WARNING]",
+        "Solutions/Source_ModEllRepGalois.lean": "e3e26ac1f1ebaacdec75603b7c986550df06dd5c4d2b7f45932633153a775e3a",
+        "Solutions/Source_ReferenceIutTateLocalModels.lean": "9c34f6fa838b35c592f21fe159cbfea75d89508aa6f88561f4a558eb698184a6",
+        "Solutions/Source_TripodCyclicBoundOdd.lean": "61ddaf21d9e0b76245f650f6f47c7398ec7bec88dd3474c31c1f6b269a103fe9"
+      },
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "modified_files": [
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md"
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+      ],
+      "resource_estimate_basis": "First leaf check uses the repository default estimate.",
+      "source_sha256": "61ddaf21d9e0b76245f650f6f47c7398ec7bec88dd3474c31c1f6b269a103fe9",
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Solutions/Source_TripodCyclicBoundOdd.lean"
+      ],
+      "worktree_id": "/home/admin-wsl/Coq/abc"
+    },
+    "target": "file",
+    "task_type": "leaf",
+    "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "workspace_mode": "exclusive_worktree",
+    "workspace_source": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "worktree_manifest": {
+      "configuration_hashes": {
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+      },
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "external_dependencies": [
+        {
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474",
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a"
+        },
+        {
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0",
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68"
+        }
+      ],
+      "head": "e10d20a264da657418ebc978507df73f59cfb769",
+      "input_hashes": {
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveFacts.lean": "95f04febadb0f9a6fe35e15ef2a99228aaf5e82b48cf1a0e6880b5150f502707",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TatePoleOrder.lean": "2663c32b502b8434944907c9662aa94e9121ff29530613a3978b6d01c813c8da",
+        "Running": "[WARNING]",
+        "Solutions/Source_ModEllRepGalois.lean": "e3e26ac1f1ebaacdec75603b7c986550df06dd5c4d2b7f45932633153a775e3a",
+        "Solutions/Source_ReferenceIutTateLocalModels.lean": "9c34f6fa838b35c592f21fe159cbfea75d89508aa6f88561f4a558eb698184a6",
+        "Solutions/Source_TripodCyclicBoundOdd.lean": "61ddaf21d9e0b76245f650f6f47c7398ec7bec88dd3474c31c1f6b269a103fe9"
+      },
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "modified_files": [
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md"
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+      ],
+      "resource_estimate_basis": "First leaf check uses the repository default estimate.",
+      "source_sha256": "61ddaf21d9e0b76245f650f6f47c7398ec7bec88dd3474c31c1f6b269a103fe9",
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Solutions/Source_TripodCyclicBoundOdd.lean"
+      ],
+      "worktree_id": "/home/admin-wsl/Coq/abc"
+    }
+  },
+  "result": {
+    "actual_arguments": [
+      "lean",
+      "Solutions/Source_TripodCyclicBoundOdd.lean"
+    ],
+    "artifacts": [
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-020875-0c641759/stdout.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-020875-0c641759/stderr.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-020875-0c641759/result.json"
+    ],
+    "compiler": {
+      "name": "lean",
+      "version": null
+    },
+    "diagnostics": [
+      {
+        "column": 34,
+        "line": 80,
+        "message": "`AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.instDecidableEqTorsionField` has already been declared",
+        "path": "Solutions/Source_TripodCyclicBoundOdd.lean",
+        "severity": "error"
+      },
+      {
+        "column": 28,
+        "line": 134,
+        "message": "Function expected at",
+        "path": "Solutions/Source_TripodCyclicBoundOdd.lean",
+        "severity": "error"
+      },
+      {
+        "column": 78,
+        "line": 115,
+        "message": "unsolved goals",
+        "path": "Solutions/Source_TripodCyclicBoundOdd.lean",
+        "severity": "error"
+      },
+      {
+        "column": 15,
+        "line": 195,
+        "message": "typeclass instance problem is stuck",
+        "path": "Solutions/Source_TripodCyclicBoundOdd.lean",
+        "severity": "error"
+      }
+    ],
+    "exit_code": 1,
+    "resources": {
+      "affinity_applied": true,
+      "affinity_error": null,
+      "allocated_cpu_count": 4,
+      "cpu_affinity": [
+        24,
+        25,
+        26,
+        27
+      ],
+      "cpu_system_seconds": 91.76,
+      "cpu_time_seconds": 97.96000000000001,
+      "cpu_user_seconds": 6.2,
+      "memory_decision": {
+        "host_pressure": "normal",
+        "total_worker_bytes": 34544664576,
+        "worker_pressure": "normal"
+      },
+      "peak_pss_bytes": null,
+      "peak_rss_bytes": 8077262848,
+      "wall_time_seconds": 99.79322660001344
+    },
+    "snapshot": {
+      "fingerprint": null,
+      "manifest": {
+        "configuration_hashes": {
+          "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+          "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+          "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+        },
+        "dependency_lock": "lake-manifest.json",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "external_dependencies": [
+          {
+            "head": "0df444a360eaa60ab8c11dca51a86af692955474",
+            "path": "/home/admin-wsl/Coq/mathlib4-0df444a"
+          },
+          {
+            "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0",
+            "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+            "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68"
+          }
+        ],
+        "head": "e10d20a264da657418ebc978507df73f59cfb769",
+        "input_hashes": {
+          "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveFacts.lean": "95f04febadb0f9a6fe35e15ef2a99228aaf5e82b48cf1a0e6880b5150f502707",
+          "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_TatePoleOrder.lean": "2663c32b502b8434944907c9662aa94e9121ff29530613a3978b6d01c813c8da",
+          "Running": "[WARNING]",
+          "Solutions/Source_ModEllRepGalois.lean": "e3e26ac1f1ebaacdec75603b7c986550df06dd5c4d2b7f45932633153a775e3a",
+          "Solutions/Source_ReferenceIutTateLocalModels.lean": "9c34f6fa838b35c592f21fe159cbfea75d89508aa6f88561f4a558eb698184a6",
+          "Solutions/Source_TripodCyclicBoundOdd.lean": "61ddaf21d9e0b76245f650f6f47c7398ec7bec88dd3474c31c1f6b269a103fe9"
+        },
+        "local_configuration": [
+          "lean-toolchain",
+          "lakefile.lean",
+          "lake-manifest.json"
+        ],
+        "modified_files": [
+          "docs/对Joshi'sFAQ的独立形式化审查.md",
+          "docs/开发计划.V1Act1log1.md",
+          "docs/开发计划.V1Act1log2.md",
+          "docs/开发计划.V1Act1log3.md",
+          "docs/开发计划.V1Act1log4.md",
+          "docs/开发计划.V1Act1log5.md"
+        ],
+        "required_artifacts": [
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+          "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+        ],
+        "resource_estimate_basis": "First leaf check uses the repository default estimate.",
+        "source_sha256": "61ddaf21d9e0b76245f650f6f47c7398ec7bec88dd3474c31c1f6b269a103fe9",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "untracked_files": [
+          "docs/Email.txt",
+          "docs/Mochizuki审计.md",
+          "docs/Scene1进度总览3.md",
+          "docs/olds/Scene1进度总览1.md",
+          "docs/olds/具有明确参考来源指示的证明义务.old.md",
+          "docs/olds/开发计划.V1Act1log1.md",
+          "docs/olds/开发计划.V1Act1log2.md",
+          "docs/olds/开发计划.V1Act1log3.md",
+          "docs/olds/开发计划.V1Act1log4.md",
+          "docs/olds/开发计划.V1Act1log5.md",
+          "prove2me_workspace/Solutions/Source_TripodCyclicBoundOdd.lean"
+        ],
+        "worktree_id": "/home/admin-wsl/Coq/abc"
+      },
+      "snapshot_id": null,
+      "workspace_mode": "exclusive_worktree"
+    },
+    "stderr": "",
+    "stdout": "Solutions/Source_TripodCyclicBoundOdd.lean:80:34: error: `AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData.instDecidableEqTorsionField` has already been declared\nSolutions/Source_TripodCyclicBoundOdd.lean:134:28: error: Function expected at\n  v\nbut this term has type\n  (P.localData x).ι\n\nNote: Expected a function because this term is being applied to the argument\n  (P.curve x).E.j\nSolutions/Source_TripodCyclicBoundOdd.lean:115:78: error: unsolved goals\nP : CurveProviders\nx : Pt\nhdeg : ↑(P.localData x).deg = ↑(Module.finrank ℚ (P.curve x).F)\nhdeg0 : ↑(Module.finrank ℚ (P.curve x).F) ≠ 0\nv : (P.localData x).ι\nhv : v ∈ {v ∈ (P.localData x).bad | (P.localData x).p v ≠ 2}\nhv' : v ∈ (P.curve x).badAll\nhposLog :\n  log⁺ (v (P.curve x).E.j) = ↑((P.tate x).qOrder v hv') * ↑(inertDeg (P.curve x).F v) * Real.log ↑(residueChar v)\nhterm : 0 < ↑((P.tate x).qOrder v hv') * ↑(inertDeg (P.curve x).F v) * Real.log ↑(residueChar v)\nhlog : 0 < Real.log sorry\n⊢ max 0 (Real.log (v (P.curve x).E.j)) =\n    Real.log\n      ((have this := v;\n        this)\n        (P.curve x).E.j)\nSolutions/Source_TripodCyclicBoundOdd.lean:142:34: error(lean.dependsOnNoncomputable): failed to compile definition, consider marking it as 'noncomputable' because it depends on 'Classical.propDecidable', which is 'noncomputable'\nSolutions/Source_TripodCyclicBoundOdd.lean:151:10: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  NumberField (P.curve x).F\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\nSolutions/Source_TripodCyclicBoundOdd.lean:168:12: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  NumberField (P.curve x).F\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\nSolutions/Source_TripodCyclicBoundOdd.lean:170:32: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  Algebra (P.curve x).F ↥(P.modRep x ℓ hℓ).torsionField\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\nSolutions/Source_TripodCyclicBoundOdd.lean:195:15: error: typeclass instance problem is stuck\n  NumberField ↥?m.49\n\nNote: Lean will not try to resolve this typeclass instance problem because the first and second type arguments to `NumberField` contain metavariables. These arguments must be fully determined before Lean will try to resolve the typeclass.\n\nHint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.\n"
+  }
+}

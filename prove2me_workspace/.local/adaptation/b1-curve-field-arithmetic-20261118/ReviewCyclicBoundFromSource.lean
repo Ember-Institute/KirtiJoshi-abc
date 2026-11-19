@@ -1,0 +1,11 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodCyclicBoundFromSource
+
+#print axioms AbcAdaptation.Tripod.LegendreTorsionXBound
+#print axioms AbcAdaptation.Tripod.torsionConst
+#print axioms AbcAdaptation.Tripod.one_le_torsionConst
+#print axioms AbcAdaptation.Tripod.torsionConst_spec
+#print axioms AbcAdaptation.Tripod.cyclicBoundOdd_of_source
