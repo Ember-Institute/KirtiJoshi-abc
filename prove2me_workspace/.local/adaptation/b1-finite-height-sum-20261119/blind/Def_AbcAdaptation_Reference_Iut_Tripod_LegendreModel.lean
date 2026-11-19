@@ -1,0 +1,5 @@
+namespace AbcAdaptation.Tripod
+
+open WeierstrassCurve
+
+def legendre {R : Type*} [CommRing R] (l : R) : WeierstrassCurve R := ⟨0, -(1 + l), 0, l, 0⟩

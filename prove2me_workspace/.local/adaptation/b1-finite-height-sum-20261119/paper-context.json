@@ -1,0 +1,65 @@
+{
+  "papers": {
+    "GenEll": {
+      "author": "Shinichi Mochizuki",
+      "title": "Arithmetic Elliptic Curves in General Position",
+      "version": "February 2009",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf",
+      "local_pdf": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Arithmetic Elliptic Curves in General Position.pdf",
+      "sha256": "b9dc115af61dca7fe434332ebafddf6a376a9e2926dad4e1ea2dcc0d2441f768",
+      "acquired_date": "2026-11-12, according to docs/三语术语名词关键对照.md; reused local file, no download in this task",
+      "file_page_numbering": "Cited file pages 14 and 15 have identical printed page numbers."
+    },
+    "IV": {
+      "author": "Shinichi Mochizuki",
+      "title": "Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations",
+      "version": "April 2020",
+      "official_url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Inter-universal%20Teichmuller%20Theory%20IV.pdf",
+      "local_pdf": "/home/admin-wsl/Coq/abc/refer/Mochizuki/Inter-universal Teichmuller Theory IV.pdf",
+      "sha256": "5bf4b1e0a8c2686562a6859e5009d301335044cfb5efec5d3a9edf764e4af87f",
+      "retrieved_date": "Existing local original; this task made no download. Acquisition date not independently established here.",
+      "file_page_numbering": "All cited PDF file pages were rendered and display the same printed page number.",
+      "version_evidence": {
+        "page_image_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-001.png",
+        "page_image_sha256": "f826290e074d346841456e2b21762c7482fb6cd2e5559cfaf79967aaff973dac",
+        "raw_text_path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/evidence/IV-001.raw.txt",
+        "raw_text_sha256": "419edd82e3fc7b986773c22510b523146f5384c2d6d216d2a208a7405dc06adb"
+      }
+    }
+  },
+  "quotations": [
+    {
+      "id": "GenEll-local-height",
+      "paper": "GenEll",
+      "locator": "§3, Definition 3.3, complete definition",
+      "printed_pages": [
+        15
+      ],
+      "file_pages": [
+        15
+      ],
+      "quote_markdown": "We shall refer to the positive integer $v_K(q_E)\\in\\mathbb Z_{>0}$ as the local height of $E$ [or $E_K$].",
+      "typography": "Original PDF visually checked in v188. Line breaks, line-end hyphenation, and ligatures normalized; mathematical typography transcribed to renderable LaTeX. No prose splicing."
+    },
+    {
+      "id": "IV-local-global-height",
+      "paper": "IV",
+      "locator": "§2, proof of Corollary 2.2(ii), complete paragraph from Next, let us write through holds.",
+      "printed_pages": [
+        44
+      ],
+      "file_pages": [
+        44
+      ],
+      "quote_markdown": "Next, let us write\n\n$$h\\overset{\\mathrm{def}}{=}\\log(q^{\\forall})=\\frac{1}{[F:\\mathbb Q]}\\cdot\\sum_{v\\in\\mathbb V(F)^{\\mathrm{non}}}h_v\\cdot f_v\\cdot\\log(p_v)$$\n\n— that is to say, $h_v=0$ for those $v$ at which $E_F$ has good reduction; $h_v\\in\\mathbb N_{\\geq1}$ is the local height of $E_F$ [cf. [GenEll], Definition 3.3] for those $v$ at which $E_F$ has bad multiplicative reduction. Now it follows [by assertion (i); [GenEll], Proposition 1.4, (iv)] that the inequality $h^{1/2}<\\xi_{\\mathrm{prm}}$ [cf. the notation of Proposition 2.1, (ii)] implies that there is only a finite number of possibilities for the $j$-invariant of $E_F$. Thus, by possibly enlarging the finite set $\\mathfrak{Exc}_d$ [in a fashion that depends only on $K_V$, $d$, and $\\epsilon_d$ and in such a way that $h\\leq H_{\\mathrm{unif}}$ on $\\mathfrak{Exc}_d$ for some positive real number $H_{\\mathrm{unif}}$ that is independent of $K_V$], we may assume without loss of generality that the inequality\n\n$$h^{1/2}\\geq\\xi_{\\mathrm{prm}}\\geq5$$\n\nholds.",
+      "typography": "Original PDF visually checked in v188. Line breaks, line-end hyphenation, and ligatures normalized; mathematical typography transcribed to renderable LaTeX. No prose splicing."
+    }
+  ],
+  "quotationSource": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-provider-height-publication-v194-20261117/paper-context.json",
+  "quotationSourceSHA256": "eb98875e8e6cc94dcedb8f37fe7785199a484eabc490f3fde1b1ffc2a6cb7513",
+  "scope": {
+    "en": "Definition 3.3 identifies the local integer Tate order. The proof of Corollary 2.2(ii) sums these orders with the residue degree and the logarithm of the residue characteristic. The finite-height equality itself comes from the reference Lean theorem at Height.lean:582.",
+    "zh-Hans": "定义 3.3 给出 Tate 参数的局部整数阶。推论 2.2（二）的证明用剩余次数及剩余标数的对数为权重，对这些局部阶求和。有限高度等式的直接出处是参考 Lean 工程 Height.lean 第 582 行。",
+    "ja": "定義 3.3 は Tate パラメータの局所位数を整数として定める。系 2.2(ii) の証明では剰余次数と剰余標数の対数を重みとして、その局所位数の和を取る。高さの有限部分との等式は、参照 Lean 実装の Height.lean 第 582 行にある。"
+  }
+}

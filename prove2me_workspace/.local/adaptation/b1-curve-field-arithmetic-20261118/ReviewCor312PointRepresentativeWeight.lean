@@ -1,0 +1,12 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCor312PointRepresentativeWeight
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Iut
+
+#check CurveInputs.pointThetaData_qPilot_lhs_eq_sum_section_log_norm_with_fiber_weight
+#print axioms CurveInputs.pointThetaData_qPilot_lhs_eq_sum_section_log_norm_with_fiber_weight

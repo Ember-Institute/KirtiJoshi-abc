@@ -1,0 +1,14 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutConcreteLocalFinitePrincipalVolume
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Iut.LocalConstruct
+
+#check finiteIndAut_iUnion_incl_smul_integral
+#check finiteComponentVol_incl_smul_integral
+#print axioms finiteIndAut_iUnion_incl_smul_integral
+#print axioms finiteComponentVol_incl_smul_integral

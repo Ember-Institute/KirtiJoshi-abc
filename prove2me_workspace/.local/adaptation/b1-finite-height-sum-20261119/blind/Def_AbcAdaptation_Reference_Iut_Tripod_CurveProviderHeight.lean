@@ -1,0 +1,14 @@
+namespace AbcAdaptation.Tripod.CurveProviders
+
+open AbcAdaptation.Reference.Iut
+
+variable (P : CurveProviders)
+
+noncomputable def tate (x : Pt) : (P.curve x).TateInputs := (P.curve x).tateInputs
+
+noncomputable def localData (x : Pt) : LocalHeightData :=
+  (P.curve x).localHeightData (P.arith x) (P.tate x)
+
+noncomputable def h (x : Pt) : ℝ := (P.localData x).height
+
+end AbcAdaptation.Tripod.CurveProviders

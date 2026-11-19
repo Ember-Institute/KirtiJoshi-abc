@@ -18,7 +18,7 @@
 | --- | --- |
 | Scene1 整体 | **未完成，G1–G4 关闭 0/4** |
 | 有明确来源指示的父义务 | **15 项均开放**。见[证明义务清单](具有明确参考来源指示的证明义务.md) |
-| iut 参考链适配 | **143/158（90.5%）**。Tate 判别式和参数存在性完成跨版本与私有平台验收，CanLift 的 Lefschetz 装配通过联合公理审查。 [适配计划 §4.1](开发计划.Prove2Me适配.md#41-参考链审计) |
+| iut 参考链适配 | **146/161（90.7%）**。规范 P7 已验收 q-pilot 代表处权重与无穷处 θ 包络体积，CanLift 已接入第一坐标刚性。 [适配计划 §4.1](开发计划.Prove2Me适配.md#41-参考链审计) |
 | 最新 Scene1 数学单元 | 原二阶点平移仿射图的分式域沿原包含映射的像等于原无符号正规化域。 [分式域像等式](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/InitialThetaInfinityShiftedChartFractionField.lean#L156) |
 | 几何路线的下一处缺口 | 在平移仿射图的同一剩余中心证明逆坐标公式的分母可逆，再用局部整闭性识别原无符号正规化的上层剩余域 |
 | 本地构建环境 | Lean `v4.33.1`，Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`。见[环境锁](../ArithmeticTeichmullerSpaces/migration/environment.lock.json) |
@@ -313,3 +313,13 @@ CanLift 的实际二次归一化已接入可数模型下降和沿域嵌入下降
 同一 P7 的 q-pilot 已核对完整纤维式、模域 $j$ 对数式和按相对局部次数加权的代表处式，11 条声明通过项目与公理审查。论文代表处与当前截面的对应，以及右端的局部测度和全局平均体积身份仍待证明。 [q-pilot 等式与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#full-fiber-and-selected-place-q-pilot-identities)
 
 CanLift 的 R3 多项式计数已通过审查。把三个二挠点横坐标赋予重数二后，次数二与三的例外分别迫使 $j=1728$ 与 $j=0$。排除这两个值后，满足带权分歧前提的多项式求值是单射。实际复一致化仍须供应该前提及第一坐标刚性所需的生成元。 [R3 计数与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#r3-polynomial-covering-count-for-canlift)
+
+同一规范 P7 的代表处权重已写成 $1/([K_{t,s(v)}:M_v]\sum_{a\mid v_{\mathbb Q}}[M_a:\mathbb Q_{v_{\mathbb Q}}])$。内层遍历完整模域纤维，与望月第三篇注记 3.1.1(ii) 的分母一致。审查通过且已归档三语读回，适配计划 §4.1 达到 **144/159（90.6%）**。 [代表处权重与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#the-moduli-fiber-weight-in-the-p7-q-pilot)
+
+规范 P7 所用无穷处 θ 包络的每个分量等于对应的对数壳。整体乘积权重之和为一，每个标签集 $S$ 的包络对数体积等于 $|S|\log\pi$。项目和公理审查通过，适配计划 §4.1 达到 **145/160（90.6%）**。有限处包络体积与全局平均仍待验收，论文 θ 区域及测度的身份仍需证明。 [无穷处来源与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#the-archimedean-theta-hull-volume-in-the-concrete-local-theory)
+
+CanLift 已把 Weierstrass 方程给出的横坐标消失阶用于解析刚性。给定复一致化，若正次数多项式在可公度子作用下不变且其纤维为群轨道，则该群固定第一坐标。两项声明通过项目与公理审查，适配计划 §4.1 达到 **146/161（90.7%）**。实际一致化与这样的多项式仍待构造。 [CanLift 来源与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#first-coordinate-rigidity-from-an-invariant-polynomial)
+
+有限高度求和的主定理已在目标 Lean 中核对完整来源类型、两份证明项和公理依赖，独立英、中、日读回已归档。对应的适配项仍待私有平台验收。 [有限高度求和来源与审查](../prove2me_workspace/.local/adaptation/b1-finite-height-sum-20261119/SOURCE_LEDGER.md)
+
+规范 P7 的有限处张量分量只在一个因子上缩放时，各因子自同构保持该主区域。该区域的归一化对数体积等于缩放因子的对数范数除以该完备化的局部次数。两条等式通过项目与公理审查，三语读回已归档。适配计划 §4.1 达到 **147/162（90.7%）**。 [有限处主区域与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#finite-principal-regions-in-the-concrete-local-theory)

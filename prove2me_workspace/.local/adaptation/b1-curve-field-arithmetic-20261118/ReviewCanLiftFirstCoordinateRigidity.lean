@@ -1,0 +1,14 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftComplexAssembly
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Iut.Anabelian
+
+#check CanLiftAnalytic.IsUniformization.fst_smul_eq_of_invariant_polynomial
+#check canLift27Complex_of_invariant_polynomial_uniformization
+#print axioms CanLiftAnalytic.IsUniformization.fst_smul_eq_of_invariant_polynomial
+#print axioms canLift27Complex_of_invariant_polynomial_uniformization

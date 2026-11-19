@@ -70,7 +70,7 @@
 
 `refer/iut/Iut/Cor312/LogVolume.lean` 的实际接口给定严格正的实数处权重，要求每条有理处纤维上的权重之和为一，再把标签上的权重相乘。文件说明把预期权重写为局部次数除以全局次数；望月新一《集合论多宇宙间算术 Teichmüller 理论》第三篇注记 3.1.1（二）（印刷及文件第 94 页）使用的系数则为 `1 / ([K_ṽ : (F_mod)_v] · ∑_{w|v_Q} [(F_mod)_w : Q_v_Q])`。当前尚未给出这两种表达在实际处集、扩张和体积归一化上的换算，不能从说明文字直接认定二者相同。
 
-仍需在共同来源的处集上构造满足该接口全部字段的权重和局部体积，并证明标签集对应的数据包体积、标签集递增族上的平均体积及全局体积确实读回所选论文公式。若通过同时调整权重与局部体积建立对应，必须保留并证明素数倍乘的反像使对数体积增加该素数的对数等既有归一化法律，以及纤维重数和张量乘积的组合公式。这项来源身份属于既有体积传递与权重会计义务；参考定义模块的移植不完成它，也不证明两种规范化在所有可能实现中不相容。原文页图、公式及固定源码差异保存在 `prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/paper-context.json`。
+仍需在共同来源的处集上构造满足该接口全部字段的权重和局部体积，并证明标签集对应的数据包体积、标签集递增族上的平均体积及全局体积确实读回所选论文公式。若通过同时调整权重与局部体积建立对应，必须保留并证明素数倍乘的反像使对数体积增加该素数的对数等既有归一化法律，以及纤维重数和张量乘积的组合公式。原文页图、公式及固定源码差异保存在 `prove2me_workspace/.local/adaptation/reference-volume-tate-carriers-20261115/paper-context.json`。
 
 还须区分左侧输入的权重和上述体积接口的权重：`refer/iut/Iut/Cor312/LeftHandSide.lean:58` 的 `QPilotData` 只要求坏处权重严格为正，没有给出局部次数除以全局次数的等式，也没有纤维权重和为一的法律。`refer/iut/Iut/Implication/Invariants.lean:115` 的 `logQAt` 只按剩余特征分组；其求和等于 `QPilotData.logQ` 的恒等式不能识别论文的归一化纤维量。望月新一第四篇定义 1.9（二）（印刷及文件第 22 页）的分母是固定非空纤维内的局部次数之和，须另外证明它与所用全局次数、实际 q 参数及主界系数的换算；不能仅按源码说明中的名称认定身份。原始引文和完整来源命令见 `prove2me_workspace/.local/adaptation/reference-main-bound-carriers-20261115/paper-materials-v1/paper-context.json`。
 
@@ -78,7 +78,7 @@
 
 `refer/iut/Iut/Cor312/ThetaData/Basic.lean:96` 保存模域到扭点域的代数结构 `algebraModK`，随后保存 `towerModK` 标量塔字段。实际编译类型表明，后者使用从原数域到扭点域的规范标量作用限制到模域后得到的作用，其类型没有引用所保存的 `algebraModK`；因此不能据该字段宣称已证明所保存的代数结构与规范包含相容。Tate 族采用规范包含所诱导的模域代数结构，而局部数据和赋值截面接收所保存的结构，二者的身份必须另行核对。
 
-`pointThetaData_algebraMap_moduli_torsion` 已证明规范 P7 的模域映射等于规范包含的复合。论文适配仍需匹配原数域、模域、扭点域及完成域，核对代表处截面和坏处支持。P7 排除剩余特征 $2,\ell$，Joshi 的奇分裂乘法约化处集仍可能包含 $\ell$ 上方的处。对应须处理这一差异，并核对 Haar 绝对值的剩余次数换算、模域次数权重及原文的符号冲突。 [规范 P7 映射](../prove2me_workspace/Solutions/Source_ReferenceIutPointModuliMap.lean#L16) · [原文及公式对照](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/readbacks/p7-cor312-source-comparison.md)
+`pointThetaData_algebraMap_moduli_torsion` 已证明规范 P7 的模域映射等于规范包含的复合，q-pilot 已用完整模域纤维的局部次数和写出代表处权重。论文适配仍需匹配原数域、模域、扭点域及完成域，核对代表处截面和坏处支持。P7 排除剩余特征 $2,\ell$，Joshi 的奇分裂乘法约化处集仍可能包含 $\ell$ 上方的处。对应须处理这一差异，并核对 Haar 绝对值的剩余次数换算及原文的符号冲突。 [规范 P7 映射](../prove2me_workspace/Solutions/Source_ReferenceIutPointModuliMap.lean#L16) · [代表处权重](../prove2me_workspace/Solutions/Source_ReferenceIutCor312PointRepresentativeWeight.lean#L21) · [原文及公式对照](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/readbacks/p7-cor312-source-comparison.md)
 
 ### Prologue 与 Scene1 必要依赖闭包的映射
 
@@ -86,13 +86,16 @@
 
 特别需要细化 `ProducerContracts.lean` 中只选择命题的 `xxxLaw : Prop` 槽位；它们既没有给出具体论文法律，也没有给出其证明。四类真实来源义务仍归 Scene1，不通过扩大 Prologue 假设关闭；旧 `Prologue/Obligations/Constructors.lean` 的四个占位构造器也不能作为现成证明导入。定义文件只供应实际定义与已证明结构事实，尚未实现的存在性保持开放；若后续真实构造揭示新的基础需求，按动态边界审计契约处理。
 
+### CanLift 复一致化与可公度子
+
+给定复一致化和正次数多项式，若其值在可公度子作用下不变且纤维为群轨道，则横坐标在可公度子作用下不变。这个条件结论已接入复 CanLift。还须对每条非例外复椭圆曲线提供实际一致化，构造上半平面到格点补集的全纯覆盖、纤维轨道和两个 deck 生成元，再沿模函数 $j$ 与 Weierstrass 换元把覆盖搬到该曲线。生成多项式的路线还需要证明 deck 群在其可公度子中的相对指数有限，以及可公度子作用后横坐标的多项式增长界。这两个结论分别支持有限陪集多项式与系数下降。 [第一坐标刚性与复数组合](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#first-coordinate-rigidity-from-an-invariant-polynomial)
+
 ## 4. 未完成自然语言读回的证明义务
 
 - `AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Tripod_TatePoleOrder`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Tripod_GoodReductionHeight`：无待决译名。
-- `AbcAdaptation_Reference_Iut_Tripod_FiniteHeightSum`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv`：无待决译名。
 - `Source_TripodPlaceUnder`：无待决译名。
 - `Source_TripodRelativeValuation`：无待决译名。
