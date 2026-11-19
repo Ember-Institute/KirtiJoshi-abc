@@ -1,0 +1,16 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodWildRamIdx
+
+open AbcAdaptation.Reference.Iut AbcAdaptation.Tripod
+
+#print axioms ReductionKernel.nsmul_ne_zero_of_one_lt_of_preΨ'_eq
+#print axioms IntegralTorsion.valuation_le_one_of_nsmul_eq_zero
+#print axioms InertiaInvolution.map_eq_self
+#print axioms not_two_dvd_relRamIdx_torsionField
+#print axioms padicValNat_mul_le_wildConst
+#print axioms finrank_tpd_dvd
+#print axioms not_dvd_relRamIdx_torsionField_of_ne_two
+#print axioms padicValNat_relRamIdx_le

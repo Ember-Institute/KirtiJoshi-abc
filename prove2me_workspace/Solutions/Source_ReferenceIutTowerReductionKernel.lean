@@ -73,25 +73,35 @@ private lemma valuation_coeff_preΨ'_le_one (ha₁ : v W.a₁ ≤ 1) (ha₂ : v 
 
 variable [NeZero (2 : K)]
 
-/-- **The kernel of reduction has no prime-to-`p` torsion**: for an affine point `P = (x, y)`
-with `v(x) > 1` and an odd `n` with `v(n) = 1`, `n • P ≠ 0`. -/
-theorem nsmul_ne_zero_of_one_lt (ha₁ : W.a₁ = 0) (ha₃ : W.a₃ = 0) (ha₂ : v W.a₂ ≤ 1)
-    (ha₄ : v W.a₄ ≤ 1) (ha₆ : v W.a₆ ≤ 1) {n : ℕ} (hodd : Odd n)
-    (hn : v (n : K) = 1) {x y : K} (h : W.Nonsingular x y) (hx : 1 < v x) :
+/-- A short model with the same odd division polynomial as an integral model has no
+prime-to-residue-characteristic torsion with nonintegral x coordinate. -/
+theorem nsmul_ne_zero_of_one_lt_of_preΨ'_eq {W' : Affine K}
+    (ha₁ : W'.a₁ = 0) (ha₃ : W'.a₃ = 0) (h₁ : v W.a₁ ≤ 1) (h₂ : v W.a₂ ≤ 1)
+    (h₃ : v W.a₃ ≤ 1) (h₄ : v W.a₄ ≤ 1) (h₆ : v W.a₆ ≤ 1) {n : ℕ}
+    (hodd : Odd n) (hn : v (n : K) = 1) (hpre : W'.preΨ' n = W.preΨ' n)
+    {x y : K} (h : W'.Nonsingular x y) (hx : 1 < v x) :
     n • Point.some x y h ≠ 0 := by
   rw [Ne, JoshiTeich.ReferenceIut.Torsion.smul_eq_zero_iff_eds ha₁ ha₃ h,
     JoshiTeich.ReferenceIut.Torsion.eds, normEDS_eq_eval_preΨ' ha₁ ha₃ h.1,
-    if_neg (Nat.not_even_iff_odd.mpr hodd), mul_one]
+    if_neg (Nat.not_even_iff_odd.mpr hodd), mul_one, hpre]
   intro h0
   have hn0 : (n : K) ≠ 0 := fun h => by rw [h, map_zero] at hn; exact zero_ne_one hn
   have hlead : v (W.preΨ' n).leadingCoeff = 1 := by
     rw [W.leadingCoeff_preΨ' hn0, if_neg (Nat.not_even_iff_odd.mpr hodd)]
     exact hn
-  have := valuation_eval_eq_pow v
-    (valuation_coeff_preΨ'_le_one v (by rw [ha₁, map_zero]; exact zero_le_one) ha₂
-      (by rw [ha₃, map_zero]; exact zero_le_one) ha₄ ha₆ n) hlead hx
+  have := valuation_eval_eq_pow v (valuation_coeff_preΨ'_le_one v h₁ h₂ h₃ h₄ h₆ n) hlead hx
   rw [h0, map_zero] at this
   exact pow_ne_zero _ (zero_lt_one.trans hx).ne' this.symm
+
+/-- The kernel of reduction has no odd prime-to-residue-characteristic torsion
+on a short Weierstrass model. -/
+theorem nsmul_ne_zero_of_one_lt (ha₁ : W.a₁ = 0) (ha₃ : W.a₃ = 0) (ha₂ : v W.a₂ ≤ 1)
+    (ha₄ : v W.a₄ ≤ 1) (ha₆ : v W.a₆ ≤ 1) {n : ℕ} (hodd : Odd n)
+    (hn : v (n : K) = 1) {x y : K} (h : W.Nonsingular x y) (hx : 1 < v x) :
+    n • Point.some x y h ≠ 0 :=
+  nsmul_ne_zero_of_one_lt_of_preΨ'_eq v ha₁ ha₃
+    (by rw [ha₁, map_zero]; exact zero_le_one) ha₂
+    (by rw [ha₃, map_zero]; exact zero_le_one) ha₄ ha₆ hodd hn rfl h hx
 
 /-- **Prime-to-`p` torsion points are integral**. -/
 theorem valuation_le_one_of_nsmul_eq_zero (ha₁ : W.a₁ = 0) (ha₃ : W.a₃ = 0) (ha₂ : v W.a₂ ≤ 1)

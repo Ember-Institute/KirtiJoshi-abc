@@ -442,6 +442,26 @@ The representations `repF` on 3- and 5-torsion act on the same Legendre curve ov
 
 The square roots selected over `F` give two distinct nonzero points `T₁,T₂` killed by 2 and points `R₁,R₂` with `2Rᵢ = Tᵢ`. After base change to the actual ℓ-torsion field, the two coordinate differences are the images of `-√λ` and `-√(1-λ)`. The base-change identity identifies these points with the corresponding points in the chosen algebraic closure. The ratio descent will combine them with the chosen odd-order subgroup. [Point definitions and consumers](../../../Solutions/Source_TripodCyclicVeluPoints.lean#L168) · [Leaf](receipts/round-ci-022232-d1190d06-result.json) · [Project and axiom review](receipts/round-ci-022264-0b6cd23c-result.json) · [Trilingual readback](readbacks/cyclic-velu-points-trilingual.md)
 
+## Descent of the designated Vélu ratios
+
+The actual `ℓ`-torsion field contains every point of the geometric subgroup of order `ℓ`. Base change identifies its preimage `HL` with the original subgroup and transports each ratio. The two ratios are nonzero because the subgroup has odd order and the points satisfy the designated doubling formulas. Under Galois stability of the subgroup, their product descends to a nonzero element of `F` and satisfies the logarithmic product formula there. This supplies the product formula required to sum the finite-place and infinite-place estimates. [Source descent](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/CyclicIsogeny.lean#L273) · [Leaf](receipts/round-ci-022337-967b971f-result.json) · [Project and axiom review](receipts/round-ci-022356-38c5d13c-result.json) · [Trilingual readback](readbacks/cyclic-velu-descent-trilingual.md)
+
+## Tame ramification in residue characteristic 2
+
+At a place above 2, the stable model supplied by the Legendre curve has unit discriminant or unit `c₄` after a change of variables over `F`. Integral coordinates for the odd torsion and the tangent-slope calculation imply that an inertia involution acts trivially on that torsion. Its action is faithful, so inertia has odd order by Cauchy's theorem. This gives the characteristic 2 case of tameness for `K/F`. A downstream import detected a name collision between generated local instances. The final artifact gives the instance an explicit name. [Reference](https://github.com/lana-agents/iut/blob/2d8f000457da6447fa4df4bfec7365c1a49b6384/Iut/Tripod/TameTwo.lean#L206) · [Final artifact](receipts/round-ci-022406-aa16afa6-result.json) · [Project and axiom review](receipts/round-ci-022416-8f790241-result.json) · [Trilingual readback](readbacks/tame-two-trilingual.md)
+
+## Wild ramification of the Legendre tower
+
+The action on the signs of the three square roots and on the 3- and 5-torsion proves that the lower degree divides 184320. The upper degree divides the order of the mod-ℓ general linear group. At odd residue characteristic distinct from ℓ, the known good-place index-one and bad-place inertia exponent prove tameness. Multiplicativity of relative indices and the two degree divisibilities give the wild bounds 12, 2, 1 and 1 at residue characteristics 2, 3, 5 and ℓ respectively, and 0 elsewhere. The output is the wild ramification field of `TowerLocalFacts` for the actual Legendre torsion field. [Reference tower bound](https://github.com/lana-agents/iut/blob/2d8f000457da6447fa4df4bfec7365c1a49b6384/Iut/Tripod/WildRamIdx.lean#L183) · [Leaf](receipts/round-ci-022410-f598c120-result.json) · [Project and axiom review](receipts/round-ci-022416-8f790241-result.json) · [Trilingual readback](readbacks/wild-ramification-trilingual.md)
+
+## Local facts on the actual Legendre tower
+
+The admissible prime data uses the same representation as the curve. The wild bound, the unramified assertion over a good tripodal place outside the exceptional characteristics, and the bound 30ℓ form one `TowerLocalFacts` for its torsion field. `step_iii_of_curve_from_source` evaluates the sum over the distinguished primes selected by the same q-pilot and uses the known bound on lower ramification over bad moduli places. [Reference](https://github.com/lana-agents/iut/blob/2d8f000457da6447fa4df4bfec7365c1a49b6384/Iut/Tripod/TowerFacts.lean#L99) · [Leaf](receipts/round-ci-022425-1c8a3663-result.json) · [Project and axiom review](receipts/round-ci-022444-83f19d6e-result.json) · [Trilingual readback](readbacks/tripod-tower-local-facts-trilingual.md)
+
+## Pointwise P7 with tower arithmetic from the Legendre curve
+
+The theorem supplies the concrete local data for each admissible point and prime of the curve inputs built by `curveInputs_from_source`. It uses the Legendre curve's rational 2-torsion and builds (R4), (ii) and (iii) for one local theta datum on the field of the selected initial datum. Its inputs retain the curve providers, the cyclic subgroup estimate in `CF`, core finiteness, Northcott and anabelian existence. [Reference P7](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/Main.lean#L86) · [Leaf](receipts/round-ci-022436-76b5a5d1-result.json) · [Project and axiom review](receipts/round-ci-022444-83f19d6e-result.json) · [Trilingual readback](readbacks/tripod-p7-trilingual.md)
+
 ## MCP-CI receipts for this batch
 
 Each job uses an exclusive worktree. Successful and failed receipt rows use compiler wall time and peak process-tree RSS when available. Timeout rows use the elapsed compile time as a lower bound. The receipt stores the exact source hash, input paths and diagnostics.
@@ -810,3 +830,35 @@ Each job uses an exclusive worktree. Successful and failed receipt rows use comp
 | [`ci-022249-c543c091`](receipts/round-ci-022249-c543c091-result.json) | `Source_TripodCyclicVeluPoints` | `4205eec4043f` | succeeded | 0 | 96.44 | 98.13 (8.12 + 90.01) | 7.62 |
 | [`ci-022255-2c5b55c1`](receipts/round-ci-022255-2c5b55c1-result.json) | `ReviewTripodTowerRamIdx` | `c02d29ad6b8b` | succeeded | 0 | 100.99 | 100.44 (5.46 + 94.98) | 8.09 |
 | [`ci-022264-0b6cd23c`](receipts/round-ci-022264-0b6cd23c-result.json) | `ReviewTripodVeluPoints` | `b031d47dd1a5` | succeeded | 0 | 100.86 | 100.40 (5.45 + 94.95) | 8.09 |
+| [`ci-022306-56e690f5`](receipts/round-ci-022306-56e690f5-result.json) | `Source_ReferenceIutTowerWildBound` | `651e5417981e` | failed | 1 | 82.68 | 81.67 (3.60 + 78.07) | 4.07 |
+| [`ci-022311-9a20d92b`](receipts/round-ci-022311-9a20d92b-result.json) | `Source_TripodTpdDegree` | `4fc8ae1b8dbb` | succeeded | 0 | 118.98 | 116.10 (5.79 + 110.31) | 7.55 |
+| [`ci-022313-c3a6c91d`](receipts/round-ci-022313-c3a6c91d-result.json) | `Source_TripodCyclicVeluDescent` | `60ffcaccf47b` | failed | 1 | 94.77 | 94.68 (7.51 + 87.17) | 7.60 |
+| [`ci-022323-985b38a1`](receipts/round-ci-022323-985b38a1-result.json) | `Source_ReferenceIutTowerWildBound` | `c0ab2d8bc522` | succeeded | 0 | 40.83 | 40.18 (2.54 + 37.64) | 4.04 |
+| [`ci-022327-24e76b6c`](receipts/round-ci-022327-24e76b6c-result.json) | `Source_TripodCyclicVeluDescent` | `9e1cdaae5914` | failed | 1 | 93.57 | 94.07 (8.03 + 86.04) | 7.60 |
+| [`ci-022337-967b971f`](receipts/round-ci-022337-967b971f-result.json) | `Source_TripodCyclicVeluDescent` | `7fd99f2c22ab` | succeeded | 0 | 85.00 | 85.54 (7.84 + 77.70) | 7.60 |
+| [`ci-022340-4fe7ef07`](receipts/round-ci-022340-4fe7ef07-result.json) | `Source_ReferenceIutTowerWildBound` | `c0ab2d8bc522` | succeeded | 0 | 46.26 | 45.39 (2.75 + 42.64) | 4.03 |
+| [`ci-022344-f1081ac2`](receipts/round-ci-022344-f1081ac2-result.json) | `Source_TripodTpdDegree` | `4fc8ae1b8dbb` | succeeded | 0 | 91.18 | 90.57 (5.73 + 84.84) | 7.55 |
+| [`ci-022346-6bc9f5b8`](receipts/round-ci-022346-6bc9f5b8-result.json) | `Source_ReferenceIutTowerReductionKernel` | `19007feab158` | succeeded | 0 | 29.14 | 28.16 (1.68 + 26.48) | 2.76 |
+| [`ci-022348-8a787b6f`](receipts/round-ci-022348-8a787b6f-result.json) | `Source_TripodCyclicVeluDescent` | `7fd99f2c22ab` | succeeded | 0 | 93.76 | 93.60 (7.70 + 85.90) | 7.60 |
+| [`ci-022356-38c5d13c`](receipts/round-ci-022356-38c5d13c-result.json) | `ReviewTripodVeluDescent` | `ce8f53b6cb94` | succeeded | 0 | 103.98 | 102.69 (4.73 + 97.96) | 7.80 |
+| [`ci-022365-84ffdfdb`](receipts/round-ci-022365-84ffdfdb-result.json) | `Source_ReferenceIutTowerReductionKernel` | `19007feab158` | succeeded | 0 | 32.13 | 31.47 (1.57 + 29.90) | 2.79 |
+| [`ci-022366-82933329`](receipts/round-ci-022366-82933329-result.json) | `Source_ReferenceIutTowerIntegralTorsion` | `ba030e90cbcf` | succeeded | 0 | 83.08 | 83.18 (6.37 + 76.81) | 7.57 |
+| [`ci-022378-b611603a`](receipts/round-ci-022378-b611603a-result.json) | `Source_ReferenceIutTowerIntegralTorsion` | `ba030e90cbcf` | succeeded | 0 | 75.26 | 74.49 (4.92 + 69.57) | 7.55 |
+| [`ci-022380-71bbc1ff`](receipts/round-ci-022380-71bbc1ff-result.json) | `Source_ReferenceIutTowerInertiaInvolution` | `91431d72e371` | succeeded | 0 | 76.41 | 78.43 (8.43 + 70.00) | 7.61 |
+| [`ci-022382-817e0736`](receipts/round-ci-022382-817e0736-result.json) | `Source_ReferenceIutTowerInertiaInvolution` | `91431d72e371` | succeeded | 0 | 78.52 | 79.85 (8.45 + 71.40) | 7.59 |
+| [`ci-022385-4490b584`](receipts/round-ci-022385-4490b584-result.json) | `Source_TripodTameTwo` | `0ea5aef5139d` | failed | 1 | 78.33 | 78.04 (6.15 + 71.89) | 7.61 |
+| [`ci-022396-1ecb6f52`](receipts/round-ci-022396-1ecb6f52-result.json) | `Source_TripodTameTwo` | `21d46327b7cc` | succeeded | 0 | 86.38 | 86.53 (7.14 + 79.39) | 7.61 |
+| [`ci-022399-527e6a18`](receipts/round-ci-022399-527e6a18-result.json) | `Source_TripodTameTwo` | `21d46327b7cc` | succeeded | 0 | 83.29 | 83.10 (6.48 + 76.62) | 7.61 |
+| [`ci-022402-b5ce66ff`](receipts/round-ci-022402-b5ce66ff-result.json) | `Source_TripodWildRamIdx` | `9df98061d7e5` | failed | 1 | 79.31 | 78.34 (3.14 + 75.20) | 7.20 |
+| [`ci-022406-aa16afa6`](receipts/round-ci-022406-aa16afa6-result.json) | `Source_TripodTameTwo` | `b7b4a7c7177c` | succeeded | 0 | 82.17 | 82.12 (6.75 + 75.37) | 7.61 |
+| [`ci-022410-f598c120`](receipts/round-ci-022410-f598c120-result.json) | `Source_TripodWildRamIdx` | `9df98061d7e5` | succeeded | 0 | 82.24 | 81.74 (5.37 + 76.37) | 7.59 |
+| [`ci-022412-f24083e4`](receipts/round-ci-022412-f24083e4-result.json) | `Source_TripodWildRamIdx` | `9df98061d7e5` | succeeded | 0 | 79.77 | 78.91 (5.37 + 73.54) | 7.58 |
+| [`ci-022416-8f790241`](receipts/round-ci-022416-8f790241-result.json) | `ReviewTripodWildRamIdx` | `2ab1b5543792` | succeeded | 0 | 94.74 | 93.60 (5.17 + 88.43) | 7.80 |
+| [`ci-022419-a354af65`](receipts/round-ci-022419-a354af65-result.json) | `Source_TripodTowerLocalFacts` | `b415e3798010` | failed | 1 | 80.77 | 80.15 (4.53 + 75.62) | 7.59 |
+| [`ci-022422-92072e45`](receipts/round-ci-022422-92072e45-result.json) | `Source_TripodTowerLocalFacts` | `070eccb65a9c` | failed | 1 | 115.54 | 114.88 (5.20 + 109.68) | 7.59 |
+| [`ci-022425-1c8a3663`](receipts/round-ci-022425-1c8a3663-result.json) | `Source_TripodTowerLocalFacts` | `9b43e19acc04` | succeeded | 0 | 105.15 | 104.69 (5.59 + 99.10) | 7.60 |
+| [`ci-022427-91a544c2`](receipts/round-ci-022427-91a544c2-result.json) | `Source_TripodTowerLocalFacts` | `9b43e19acc04` | succeeded | 0 | 150.08 | 77.57 (5.39 + 72.18) | 7.62 |
+| [`ci-022430-c2bb0aaa`](receipts/round-ci-022430-c2bb0aaa-result.json) | `Source_TripodP7` | `a1b368687cd2` | failed | 1 | 85.40 | 84.45 (5.10 + 79.35) | 7.57 |
+| [`ci-022436-76b5a5d1`](receipts/round-ci-022436-76b5a5d1-result.json) | `Source_TripodP7` | `e14c86cc0842` | succeeded | 0 | 89.71 | 89.44 (5.73 + 83.71) | 7.66 |
+| [`ci-022440-ab346cb5`](receipts/round-ci-022440-ab346cb5-result.json) | `Source_TripodP7` | `e14c86cc0842` | succeeded | 0 | 88.44 | 87.51 (4.67 + 82.84) | 7.65 |
+| [`ci-022444-83f19d6e`](receipts/round-ci-022444-83f19d6e-result.json) | `ReviewTripodP7` | `ce88a8d509e4` | succeeded | 0 | 109.27 | 108.48 (5.42 + 103.06) | 8.11 |

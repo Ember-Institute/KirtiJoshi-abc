@@ -1,0 +1,13 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodP7
+
+open AbcAdaptation.Tripod
+
+#check concreteThetaDataExistence_from_source
+#print axioms two_torsion_curveOf
+#print axioms towerLocalFacts_of_primeData
+#print axioms step_iii_of_curve_from_source
+#print axioms concreteThetaDataExistence_from_source
