@@ -1,0 +1,29 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftConstantExtension
+import Solutions.Source_ReferenceIutCanLiftLefschetzAssembly
+import Solutions.Source_TripodCyclicVeluTate
+
+open JoshiTeich.Act1Scene1.FunctionFieldNormalization
+
+#print axioms mem_rationalBase_extension
+#print axioms mem_polynomialBase_extension
+#print axioms polynomialBaseMap
+#print axioms rationalBaseMap
+#print axioms transcendental_of_constantExtension
+#print axioms isIntegral_polynomialBase_extension
+#print axioms constantExtensionMap
+#print axioms coe_constantExtensionMap
+#print axioms constantExtensionMap_injective
+#print axioms constantExtensionMap_comp_ringMap
+#print axioms mem_polynomialBase_of_mem_extension
+#print axioms mem_polynomialBase_of_isIntegral
+#print axioms mem_rationalBase_of_isAlgebraic_extension
+#print axioms map_minpoly_constantExtension
+#print axioms isIntegral_polynomialBase_of_constantExtension
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.canLift27_of_complex_of_descent
+
+#print axioms AbcAdaptation.Tripod.Cyclic.tate_bound
+#print axioms AbcAdaptation.Tripod.Cyclic.finite_tate

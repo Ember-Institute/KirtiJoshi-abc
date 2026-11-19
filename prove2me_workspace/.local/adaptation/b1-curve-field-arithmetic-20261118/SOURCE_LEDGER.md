@@ -462,6 +462,30 @@ The admissible prime data uses the same representation as the curve. The wild bo
 
 The theorem supplies the concrete local data for each admissible point and prime of the curve inputs built by `curveInputs_from_source`. It uses the Legendre curve's rational 2-torsion and builds (R4), (ii) and (iii) for one local theta datum on the field of the selected initial datum. Its inputs retain the curve providers, the cyclic subgroup estimate in `CF`, core finiteness, Northcott and anabelian existence. [Reference P7](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/Main.lean#L86) · [Leaf](receipts/round-ci-022436-76b5a5d1-result.json) · [Project and axiom review](receipts/round-ci-022444-83f19d6e-result.json) · [Trilingual readback](readbacks/tripod-p7-trilingual.md)
 
+## The Legendre Newton bound and transport of Vélu estimates
+
+For a Legendre curve over a number field, the coordinate change $x=\lambda^2 X$, $y=\lambda^3 Y$ gives an integral model at finite places with $|\lambda|>1$. The weighted Newton estimate after rescaling gives $|n|^2|x|\le\max(1,|\lambda|)^2$ for the given $n$-torsion. The Vélu sum then gives a bound for each ratio on the same torsion field. The two finite bounds descend via the positive power $ef$. At an infinite place the absolute-value equality for restriction transports the two bounds with the original $C_0$. [Newton source](../../../../refer/iut/Iut/Tripod/TorsionNewton.lean#L141) · [Transport source](../../../../refer/iut/Iut/Tripod/CyclicIsogeny.lean#L574) · [Project and axiom review](receipts/round-ci-022561-d4e2ce4d-result.json) · [Trilingual readback](readbacks/cyclic-velu-finite-trilingual.md)
+
+## Countable coefficient model for CanLift
+
+The primitive element of the finite cover, its monic minimal polynomial, the two coordinate expressions, and the curve coefficients determine a countable algebraically closed subfield. The finite lower extension contains both coordinates. Extension of constants recovers the upper extension inside the original ambient field. This is the input for descent of integrality and equality of ramification multiplicities. [Pi1 source](https://github.com/lana-agents/pi1/blob/ca7def953193f861a462aa0831eec8f0a31ff69f/Pi1/Orbicurve/LefschetzMain.lean#L129) · [Project and axiom review](receipts/round-ci-022572-9dbbddda-result.json) · [Trilingual readback](readbacks/canlift-countable-cover-field-trilingual.md)
+
+## Reference Corollary 2.2 on the canonical auxiliary height
+
+The reference `I.c2` consumes the fully quantified concrete Legendre P7 family conditional on its curve and geometric inputs. The selected $x$ uses the canonical point, different and conductor. Its provider height agrees with `auxiliaryHeight`. The exceptional set, threshold and additive constant use the same `I` as the proof. The statement retains the cyclic estimate, finiteness of the core exceptions, anabelian existence, prime estimates and the universal `h312` premise. [Reference construction](../../../../refer/iut/Iut/Tripod/Main.lean#L119) · [Project and axiom review](receipts/round-ci-022584-92ffefcd-result.json) · [Trilingual readback](readbacks/tripod-canonical-corollary22-trilingual.md)
+
+## Vélu estimate at odd multiplicative places
+
+The Tate graph-line hypothesis on the torsion field gives the bound for the fourth power of the product of the two designated Vélu ratios. The identification of the Tate and original j-invariants supplies the factor $|j|_w^{ℓ-1}$. The same inequality descends to a finite place of the base field via the positive local degree. The bound also applies when the residue characteristic is $ℓ$. [Reference](../../../../refer/iut/Iut/Tripod/CyclicIsogeny.lean#L425) · [Project and axiom review](receipts/round-ci-022670-0b60f6c5-result.json) · [Trilingual readback](readbacks/cyclic-velu-tate-trilingual.md)
+
+## Integrality under extension of constants for CanLift
+
+For a transcendental parameter $t$, the polynomial ring over $K$ intersects $k(t)$ in $k[t]$. If $k$ is algebraically closed, $k(t)$ is relatively algebraically closed in $K(t)$. Minimal polynomials of elements algebraic over $k(t)$ commute with the change of constants. These identities give descent of integrality and compatible injective maps of normalization rings. [Pi1 descent](https://github.com/lana-agents/pi1/blob/ca7def953193f861a462aa0831eec8f0a31ff69f/Pi1/Orbicurve/Descent.lean#L96) · [Project and axiom review](receipts/round-ci-022670-0b60f6c5-result.json) · [Trilingual readback](readbacks/canlift-constant-extension-trilingual.md)
+
+## Conditional Lefschetz assembly for CanLift
+
+Every countable field of characteristic zero embeds in the complex numbers. The four exclusions on the j-invariant are preserved and reflected along embeddings. The assembly takes the complex result, descent along a field embedding and determination by countable algebraically closed subfields as explicit inputs to derive `CanLift27.{0}`. [Pi1 assembly](https://github.com/lana-agents/pi1/blob/ca7def953193f861a462aa0831eec8f0a31ff69f/Pi1/Orbicurve/LefschetzMain.lean#L280) · [Project and axiom review](receipts/round-ci-022670-0b60f6c5-result.json) · [Trilingual readback](readbacks/canlift-lefschetz-assembly-trilingual.md)
+
 ## MCP-CI receipts for this batch
 
 Each job uses an exclusive worktree. Successful and failed receipt rows use compiler wall time and peak process-tree RSS when available. Timeout rows use the elapsed compile time as a lower bound. The receipt stores the exact source hash, input paths and diagnostics.
@@ -862,3 +886,35 @@ Each job uses an exclusive worktree. Successful and failed receipt rows use comp
 | [`ci-022436-76b5a5d1`](receipts/round-ci-022436-76b5a5d1-result.json) | `Source_TripodP7` | `e14c86cc0842` | succeeded | 0 | 89.71 | 89.44 (5.73 + 83.71) | 7.66 |
 | [`ci-022440-ab346cb5`](receipts/round-ci-022440-ab346cb5-result.json) | `Source_TripodP7` | `e14c86cc0842` | succeeded | 0 | 88.44 | 87.51 (4.67 + 82.84) | 7.65 |
 | [`ci-022444-83f19d6e`](receipts/round-ci-022444-83f19d6e-result.json) | `ReviewTripodP7` | `ce88a8d509e4` | succeeded | 0 | 109.27 | 108.48 (5.42 + 103.06) | 8.11 |
+| [`ci-022465-e6916c62`](receipts/round-ci-022465-e6916c62-result.json) | `Source_TripodCyclicVeluFinite` | `449c40579006` | succeeded | 0 | 104.73 | 104.29 (6.25 + 98.04) | 7.57 |
+| [`ci-022476-2a77004d`](receipts/round-ci-022476-2a77004d-result.json) | `Source_TripodCyclicVeluFinite` | `449c40579006` | succeeded | 0 | 92.54 | 91.90 (6.40 + 85.50) | 7.56 |
+| [`ci-022478-3f78166e`](receipts/round-ci-022478-3f78166e-result.json) | `Source_TripodCyclicVeluTate` | `4e4477215785` | failed | 1 | 97.71 | 96.82 (8.42 + 88.40) | 7.60 |
+| [`ci-022485-66fa1083`](receipts/round-ci-022485-66fa1083-result.json) | `Source_TripodCyclicVeluTransport` | `bc2c472ec311` | failed | 1 | 86.10 | 85.73 (5.48 + 80.25) | 7.59 |
+| [`ci-022486-e79c296a`](receipts/round-ci-022486-e79c296a-result.json) | `Source_ReferenceIutCanLiftCountableCoverField` | `249ee544cd40` | failed | 1 | 50.61 | 50.79 (5.42 + 45.37) | 2.89 |
+| [`ci-022491-4a454cdf`](receipts/round-ci-022491-4a454cdf-result.json) | `Source_TripodCyclicVeluTransport` | `93e6b4f2b468` | failed | 1 | 142.40 | 140.49 (6.39 + 134.10) | 7.58 |
+| [`ci-022500-414ae026`](receipts/round-ci-022500-414ae026-result.json) | `Source_TripodCyclicVeluTate` | `fd7988f66931` | failed | 1 | 93.53 | 93.91 (7.23 + 86.68) | 7.60 |
+| [`ci-022505-d4e2d1d0`](receipts/round-ci-022505-d4e2d1d0-result.json) | `Source_ReferenceIutCanLiftCountableCoverField` | `c609a20096b1` | succeeded | 0 | 36.70 | 36.91 (5.45 + 31.46) | 2.88 |
+| [`ci-022509-9c2db9c8`](receipts/round-ci-022509-9c2db9c8-result.json) | `Source_TripodCanonicalCorollary22` | `acfc3430c30b` | succeeded | 0 | 113.58 | 112.93 (5.20 + 107.73) | 7.65 |
+| [`ci-022518-dcefa340`](receipts/round-ci-022518-dcefa340-result.json) | `Source_TripodCyclicVeluTransport` | `6250695c55cb` | succeeded | 0 | 99.79 | 99.43 (6.31 + 93.12) | 7.59 |
+| [`ci-022521-7ca1f615`](receipts/round-ci-022521-7ca1f615-result.json) | `Source_TripodCyclicVeluTate` | `3ffd5addb32e` | failed | 1 | 96.49 | 97.10 (11.32 + 85.78) | 7.61 |
+| [`ci-022527-974d0ff7`](receipts/round-ci-022527-974d0ff7-result.json) | `Source_ReferenceIutCanLiftCountableCoverField` | `c609a20096b1` | succeeded | 0 | 37.83 | 38.19 (6.65 + 31.54) | 2.89 |
+| [`ci-022530-a9623071`](receipts/round-ci-022530-a9623071-result.json) | `Source_TripodCanonicalCorollary22` | `acfc3430c30b` | succeeded | 0 | 114.09 | 113.14 (5.75 + 107.39) | 7.65 |
+| [`ci-022541-a2d2eb9e`](receipts/round-ci-022541-a2d2eb9e-result.json) | `Source_TripodCyclicVeluTransport` | `6250695c55cb` | succeeded | 0 | 93.63 | 93.18 (6.23 + 86.95) | 7.59 |
+| [`ci-022547-86f02d7b`](receipts/round-ci-022547-86f02d7b-result.json) | `Source_TripodCyclicVeluTate` | `6123f2ab7497` | failed | 1 | 97.29 | 97.85 (8.54 + 89.31) | 7.62 |
+| [`ci-022556-537d5b2f`](receipts/round-ci-022556-537d5b2f-result.json) | `Source_TripodCyclicVeluTate` | `5fde98153f95` | failed | 1 | 114.36 | 114.50 (8.71 + 105.79) | 7.61 |
+| [`ci-022561-d4e2ce4d`](receipts/round-ci-022561-d4e2ce4d-result.json) | `ReviewTripodVeluFinite` | `035029783fd5` | succeeded | 0 | 165.64 | 164.28 (5.57 + 158.71) | 7.92 |
+| [`ci-022572-9dbbddda`](receipts/round-ci-022572-9dbbddda-result.json) | `ReviewCanLiftCountableCoverField` | `7f187476cd65` | succeeded | 0 | 108.84 | 108.45 (6.53 + 101.92) | 7.86 |
+| [`ci-022584-92ffefcd`](receipts/round-ci-022584-92ffefcd-result.json) | `ReviewTripodCanonicalCorollary22` | `aedec4986d1e` | succeeded | 0 | 109.34 | 108.60 (5.62 + 102.98) | 8.13 |
+| [`ci-022590-a0cf4a02`](receipts/round-ci-022590-a0cf4a02-result.json) | `Source_TripodCyclicVeluTate` | `79fda000066f` | failed | 1 | 95.99 | 95.98 (7.42 + 88.56) | 7.60 |
+| [`ci-022601-6f5952a9`](receipts/round-ci-022601-6f5952a9-result.json) | `Source_TripodCyclicVeluTate` | `2c5404705436` | failed | 1 | 100.02 | 99.96 (8.40 + 91.56) | 7.61 |
+| [`ci-022606-f96f7b89`](receipts/round-ci-022606-f96f7b89-result.json) | `Source_ReferenceIutCanLiftConstantExtension` | `ae7c0789b5aa` | failed | 1 | 85.12 | 89.19 (55.51 + 33.68) | 5.32 |
+| [`ci-022611-16e190cd`](receipts/round-ci-022611-16e190cd-result.json) | `Source_TripodCyclicVeluTate` | `6f7f9eba4f20` | failed | 1 | 106.48 | 107.07 (8.07 + 99.00) | 7.61 |
+| [`ci-022621-486c8083`](receipts/round-ci-022621-486c8083-result.json) | `Source_TripodCyclicVeluTate` | `ebb77ce3211a` | succeeded | 0 | 96.62 | 96.53 (7.21 + 89.32) | 7.61 |
+| [`ci-022624-7fcf2ec7`](receipts/round-ci-022624-7fcf2ec7-result.json) | `Source_ReferenceIutCanLiftConstantExtension` | `fd5925550259` | succeeded | 0 | 42.10 | 46.70 (13.00 + 33.70) | 3.49 |
+| [`ci-022642-3cc0447c`](receipts/round-ci-022642-3cc0447c-result.json) | `Source_TripodCyclicVeluTate` | `ebb77ce3211a` | succeeded | 0 | 341.91 | 335.82 (8.17 + 327.65) | 7.61 |
+| [`ci-022658-c94ec91e`](receipts/round-ci-022658-c94ec91e-result.json) | `Source_TripodCyclicVeluTate` | `ebb77ce3211a` | succeeded | 0 | 274.65 | 262.07 (9.82 + 252.25) | 7.63 |
+| [`ci-022659-11d20da6`](receipts/round-ci-022659-11d20da6-result.json) | `Source_ReferenceIutCanLiftConstantExtension` | `fd5925550259` | succeeded | 0 | 99.98 | 95.32 (15.79 + 79.53) | 3.49 |
+| [`ci-022662-6b98e797`](receipts/round-ci-022662-6b98e797-result.json) | `Source_TripodProviderRepresentation` | `cb017806bb8d` | timeout | unknown | 180.09 | unknown | unknown |
+| [`ci-022669-4d6cbff6`](receipts/round-ci-022669-4d6cbff6-result.json) | `Source_TripodProviderRepresentation` | `cb017806bb8d` | failed | 1 | 184.45 | 177.30 (6.15 + 171.15) | 7.58 |
+| [`ci-022670-0b60f6c5`](receipts/round-ci-022670-0b60f6c5-result.json) | `ReviewVeluTateAndCanLift` | `f6a3705d9af5` | succeeded | 0 | 192.40 | 184.66 (5.71 + 178.95) | 8.08 |
+| [`ci-022671-ef6c0fda`](receipts/round-ci-022671-ef6c0fda-result.json) | `Source_TripodCyclicVeluLog` | `068295f74087` | succeeded | 0 | 177.29 | 170.96 (7.51 + 163.45) | 7.61 |

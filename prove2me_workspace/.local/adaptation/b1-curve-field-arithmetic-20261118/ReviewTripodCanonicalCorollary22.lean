@@ -1,0 +1,11 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodCanonicalCorollary22
+
+open AbcAdaptation.Tripod
+
+#check canonicalCorollary22HighHeightEstimate_of_source
+#print axioms providerHeight_eq_auxiliaryHeight
+#print axioms canonicalCorollary22HighHeightEstimate_of_source
