@@ -105,8 +105,6 @@
 - `AbcAdaptation_Reference_Iut_Tripod_TatePoleOrder`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Tripod_GoodReductionHeight`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv`：无待决译名。
-- `Source_TripodPlaceUnder`：无待决译名。
-- `Source_TripodRelativeValuation`：无待决译名。
 - `Source_TripodRelativeDegreeTower`：无待决译名。
 - `Source_TripodRelativeDegreeSum`：无待决译名。
 - `Source_TripodRelativeAbsoluteValue`：无待决译名。

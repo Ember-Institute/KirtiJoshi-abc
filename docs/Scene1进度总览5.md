@@ -329,3 +329,5 @@ CanLift 已把 Weierstrass 方程给出的横坐标消失阶用于解析刚性�
 CanLift 的陪集多项式、Lüroth 多项式生成元和给定复一致化之间的唯一性已通过联合审查。有限陪集乘积的系数刻画较大群的轨道，生成元给出多项式子代数元素的复合表示。复一致化的存在性、可公度子有限指数及坐标增长界仍开放。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#coset-polynomials-and-complex-uniformization-uniqueness)
 
 有理 Legendre 曲线族 $x_m=5^m/(2\cdot5^m+1)$ 的 $5$ 进赋值与范数，以及具体主区域所需的条件标量界，已通过联合审查。有限处整包体积、同一数据上的全局平均及实际 P7 的 q-pilot 搬运仍开放。适配计划 §4.1 达到 **149/164（90.9%）**，原有 15 项开放。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#rational-legendre-family-and-the-conditional-principal-volume-bound)
+
+下方有限处与相对赋值补出七条源端完整声明。目标内核通过十四条模块声明和有限处关系的跨版本核对。三语读回已归档，私有平台验收仍待取得。 [来源与回执](../prove2me_workspace/.local/adaptation/b1-place-under-relative-valuation-20261119/SOURCE_LEDGER.md#本轮验收)

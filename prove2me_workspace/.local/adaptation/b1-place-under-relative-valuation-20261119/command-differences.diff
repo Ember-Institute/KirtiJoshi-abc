@@ -1,0 +1,21 @@
+--- /home/admin-wsl/Coq/abc/refer/iut/Iut/Concrete/ThetaLocalConstruct/EmbedCompletion.lean:162
++++ /home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeValuation.lean:19
+@@ -1,2 +1,2 @@
+-abbrev relRamIdx (v : FinitePlace K) (w : FinitePlace k) : ℕ :=
++noncomputable abbrev relRamIdx (v : FinitePlace K) (w : FinitePlace k) : ℕ :=
+   w.maximalIdeal.asIdeal.ramificationIdx' v.maximalIdeal.asIdeal
+--- /home/admin-wsl/Coq/abc/refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean:189
++++ /home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeValuation.lean:23
+@@ -1,2 +1,2 @@
+-abbrev relInertDeg (v : FinitePlace K) (w : FinitePlace k) : ℕ :=
++noncomputable abbrev relInertDeg (v : FinitePlace K) (w : FinitePlace k) : ℕ :=
+   w.maximalIdeal.asIdeal.inertiaDeg' v.maximalIdeal.asIdeal
+--- /home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/ValuationTransfer.lean:72
++++ /home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean:363
+@@ -3,4 +3,6 @@
+       v.maximalIdeal.valuation k x ^
+         v.maximalIdeal.asIdeal.ramificationIdx' w.maximalIdeal.asIdeal := by
+   haveI : w.maximalIdeal.asIdeal.LiesOver v.maximalIdeal.asIdeal := hwv
++  rw [Ideal.ramificationIdx'_eq_ramificationIdx
++    v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal v.maximalIdeal.ne_bot]
+   exact (valuation_liesOver K v.maximalIdeal w.maximalIdeal x).symm

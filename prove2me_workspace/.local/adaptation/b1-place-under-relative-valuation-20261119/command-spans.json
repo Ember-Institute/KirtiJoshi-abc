@@ -1,0 +1,296 @@
+[
+  {
+    "source_name": "Iut.primeUnder",
+    "source": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/PlaceUnder.lean",
+      "first_line": 31,
+      "last_line": 36,
+      "start_byte": 1253,
+      "end_byte_exclusive": 1640,
+      "sha256": "d8c913ad05fd309be703cea9a426b410fd890e22f75d6da53ef26eb5a386ce1c",
+      "command": "noncomputable def primeUnder (w : FinitePlace K) : HeightOneSpectrum (𝓞 k) where\n  asIdeal := w.maximalIdeal.asIdeal.comap (algebraMap (𝓞 k) (𝓞 K))\n  isPrime := Ideal.comap_isPrime _ _\n  ne_bot := by\n    obtain ⟨x, hx, hx0⟩ := Submodule.exists_mem_ne_zero_of_ne_bot w.maximalIdeal.ne_bot\n    exact Ideal.comap_ne_bot_of_integral_mem hx0 hx (Algebra.IsIntegral.isIntegral x)\n"
+    },
+    "target_name": "AbcAdaptation.Tripod.primeUnder",
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodPlaceUnder.lean",
+      "first_line": 18,
+      "last_line": 23,
+      "start_byte": 600,
+      "end_byte_exclusive": 987,
+      "sha256": "d8c913ad05fd309be703cea9a426b410fd890e22f75d6da53ef26eb5a386ce1c",
+      "command": "noncomputable def primeUnder (w : FinitePlace K) : HeightOneSpectrum (𝓞 k) where\n  asIdeal := w.maximalIdeal.asIdeal.comap (algebraMap (𝓞 k) (𝓞 K))\n  isPrime := Ideal.comap_isPrime _ _\n  ne_bot := by\n    obtain ⟨x, hx, hx0⟩ := Submodule.exists_mem_ne_zero_of_ne_bot w.maximalIdeal.ne_bot\n    exact Ideal.comap_ne_bot_of_integral_mem hx0 hx (Algebra.IsIntegral.isIntegral x)\n"
+    },
+    "source_target_byte_identical": true,
+    "source_replay_owner": "cached source module"
+  },
+  {
+    "source_name": "Iut.placeUnder",
+    "source": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/PlaceUnder.lean",
+      "first_line": 39,
+      "last_line": 40,
+      "start_byte": 1701,
+      "end_byte_exclusive": 1801,
+      "sha256": "70190c88b4d35c2b93ebfe73b254606101852aa144a5553e8856563b8c98e2bb",
+      "command": "noncomputable def placeUnder (w : FinitePlace K) : FinitePlace k :=\n  FinitePlace.mk (primeUnder w)\n"
+    },
+    "target_name": "AbcAdaptation.Tripod.placeUnder",
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodPlaceUnder.lean",
+      "first_line": 26,
+      "last_line": 27,
+      "start_byte": 1048,
+      "end_byte_exclusive": 1148,
+      "sha256": "70190c88b4d35c2b93ebfe73b254606101852aa144a5553e8856563b8c98e2bb",
+      "command": "noncomputable def placeUnder (w : FinitePlace K) : FinitePlace k :=\n  FinitePlace.mk (primeUnder w)\n"
+    },
+    "source_target_byte_identical": true,
+    "source_replay_owner": "cached source module"
+  },
+  {
+    "source_name": "Iut.placeUnder_maximalIdeal",
+    "source": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/PlaceUnder.lean",
+      "first_line": 42,
+      "last_line": 46,
+      "start_byte": 1802,
+      "end_byte_exclusive": 2030,
+      "sha256": "07dfa721e7dde4230e33674d9188ff5597ced06dd60f03fad7c1be7ccc8c19e2",
+      "command": "lemma placeUnder_maximalIdeal (w : FinitePlace K) :\n    (placeUnder (k := k) w).maximalIdeal.asIdeal =\n      w.maximalIdeal.asIdeal.comap (algebraMap (𝓞 k) (𝓞 K)) := by\n  rw [placeUnder, FinitePlace.maximalIdeal_mk]\n  rfl\n"
+    },
+    "target_name": "AbcAdaptation.Tripod.placeUnder_maximalIdeal",
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodPlaceUnder.lean",
+      "first_line": 29,
+      "last_line": 33,
+      "start_byte": 1149,
+      "end_byte_exclusive": 1377,
+      "sha256": "07dfa721e7dde4230e33674d9188ff5597ced06dd60f03fad7c1be7ccc8c19e2",
+      "command": "lemma placeUnder_maximalIdeal (w : FinitePlace K) :\n    (placeUnder (k := k) w).maximalIdeal.asIdeal =\n      w.maximalIdeal.asIdeal.comap (algebraMap (𝓞 k) (𝓞 K)) := by\n  rw [placeUnder, FinitePlace.maximalIdeal_mk]\n  rfl\n"
+    },
+    "source_target_byte_identical": true,
+    "source_replay_owner": "cached source module"
+  },
+  {
+    "source_name": "Iut.liesOver_placeUnder",
+    "source": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/PlaceUnder.lean",
+      "first_line": 49,
+      "last_line": 50,
+      "start_byte": 2072,
+      "end_byte_exclusive": 2210,
+      "sha256": "71be30fba6cab02e279c5c56134a0aa1bfa8d68c413b12d42bba4d3d4b3d6542",
+      "command": "lemma liesOver_placeUnder (w : FinitePlace K) : FinitePlace.LiesOver w (placeUnder (k := k) w) :=\n  ⟨by rw [placeUnder_maximalIdeal]⟩\n"
+    },
+    "target_name": "AbcAdaptation.Tripod.liesOver_placeUnder",
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodPlaceUnder.lean",
+      "first_line": 36,
+      "last_line": 37,
+      "start_byte": 1419,
+      "end_byte_exclusive": 1557,
+      "sha256": "71be30fba6cab02e279c5c56134a0aa1bfa8d68c413b12d42bba4d3d4b3d6542",
+      "command": "lemma liesOver_placeUnder (w : FinitePlace K) : FinitePlace.LiesOver w (placeUnder (k := k) w) :=\n  ⟨by rw [placeUnder_maximalIdeal]⟩\n"
+    },
+    "source_target_byte_identical": true,
+    "source_replay_owner": "cached source module"
+  },
+  {
+    "source_name": "Iut.placeUnder_eq_of_liesOver_place",
+    "source": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Height.lean",
+      "first_line": 142,
+      "last_line": 148,
+      "start_byte": 6514,
+      "end_byte_exclusive": 6802,
+      "sha256": "72b6bbc8eb6b58283b436906bb3ab3c191b2f59d41191e6fd62fd7eb40404563",
+      "command": "lemma placeUnder_eq_of_liesOver_place {w : FinitePlace K} {v : FinitePlace k}\n    (hwv : FinitePlace.LiesOver w v) : placeUnder w = v := by\n  symm\n  apply (FinitePlace.maximalIdeal_inj _ _).mp\n  apply IsDedekindDomain.HeightOneSpectrum.ext\n  rw [placeUnder_maximalIdeal]\n  exact hwv.over\n"
+    },
+    "target_name": "AbcAdaptation.Tripod.placeUnder_eq_of_liesOver_place",
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodPlaceUnder.lean",
+      "first_line": 40,
+      "last_line": 46,
+      "start_byte": 1592,
+      "end_byte_exclusive": 1880,
+      "sha256": "72b6bbc8eb6b58283b436906bb3ab3c191b2f59d41191e6fd62fd7eb40404563",
+      "command": "lemma placeUnder_eq_of_liesOver_place {w : FinitePlace K} {v : FinitePlace k}\n    (hwv : FinitePlace.LiesOver w v) : placeUnder w = v := by\n  symm\n  apply (FinitePlace.maximalIdeal_inj _ _).mp\n  apply IsDedekindDomain.HeightOneSpectrum.ext\n  rw [placeUnder_maximalIdeal]\n  exact hwv.over\n"
+    },
+    "source_target_byte_identical": true,
+    "source_replay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "first_line": 1499,
+      "last_line": 1505,
+      "start_byte": 67834,
+      "end_byte_exclusive": 68122,
+      "sha256": "72b6bbc8eb6b58283b436906bb3ab3c191b2f59d41191e6fd62fd7eb40404563",
+      "command": "lemma placeUnder_eq_of_liesOver_place {w : FinitePlace K} {v : FinitePlace k}\n    (hwv : FinitePlace.LiesOver w v) : placeUnder w = v := by\n  symm\n  apply (FinitePlace.maximalIdeal_inj _ _).mp\n  apply IsDedekindDomain.HeightOneSpectrum.ext\n  rw [placeUnder_maximalIdeal]\n  exact hwv.over\n"
+    },
+    "source_replay_byte_identical": true
+  },
+  {
+    "source_name": "Iut.relRamIdx",
+    "source": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Concrete/ThetaLocalConstruct/EmbedCompletion.lean",
+      "first_line": 162,
+      "last_line": 163,
+      "start_byte": 7766,
+      "end_byte_exclusive": 7897,
+      "sha256": "1ff46518a9482a61c11fb10bd7495af52e819691a1ee028d1e7cd88273169241",
+      "command": "abbrev relRamIdx (v : FinitePlace K) (w : FinitePlace k) : ℕ :=\n  w.maximalIdeal.asIdeal.ramificationIdx' v.maximalIdeal.asIdeal\n"
+    },
+    "target_name": "AbcAdaptation.Tripod.relRamIdx",
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeValuation.lean",
+      "first_line": 19,
+      "last_line": 20,
+      "start_byte": 668,
+      "end_byte_exclusive": 813,
+      "sha256": "c04c5a3b041270512a0c8264ba409e822910c597f7b5d6eeee2e4a8cbfe11c22",
+      "command": "noncomputable abbrev relRamIdx (v : FinitePlace K) (w : FinitePlace k) : ℕ :=\n  w.maximalIdeal.asIdeal.ramificationIdx' v.maximalIdeal.asIdeal\n"
+    },
+    "source_target_byte_identical": false,
+    "source_replay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "first_line": 472,
+      "last_line": 473,
+      "start_byte": 23121,
+      "end_byte_exclusive": 23252,
+      "sha256": "1ff46518a9482a61c11fb10bd7495af52e819691a1ee028d1e7cd88273169241",
+      "command": "abbrev relRamIdx (v : FinitePlace K) (w : FinitePlace k) : ℕ :=\n  w.maximalIdeal.asIdeal.ramificationIdx' v.maximalIdeal.asIdeal\n"
+    },
+    "source_replay_byte_identical": true
+  },
+  {
+    "source_name": "Iut.relInertDeg",
+    "source": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean",
+      "first_line": 189,
+      "last_line": 190,
+      "start_byte": 8458,
+      "end_byte_exclusive": 8586,
+      "sha256": "8de049f8cb8a0da16787a05b3c5dd4f871c8d21a1d040b1600408b08e8bf9f26",
+      "command": "abbrev relInertDeg (v : FinitePlace K) (w : FinitePlace k) : ℕ :=\n  w.maximalIdeal.asIdeal.inertiaDeg' v.maximalIdeal.asIdeal\n"
+    },
+    "target_name": "AbcAdaptation.Tripod.relInertDeg",
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeValuation.lean",
+      "first_line": 23,
+      "last_line": 24,
+      "start_byte": 866,
+      "end_byte_exclusive": 1008,
+      "sha256": "0bc3e597c0ef8915a1e949c675408edc27b2f0bbc506b69fa65407e85aea48bb",
+      "command": "noncomputable abbrev relInertDeg (v : FinitePlace K) (w : FinitePlace k) : ℕ :=\n  w.maximalIdeal.asIdeal.inertiaDeg' v.maximalIdeal.asIdeal\n"
+    },
+    "source_target_byte_identical": false,
+    "source_replay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "first_line": 616,
+      "last_line": 617,
+      "start_byte": 29099,
+      "end_byte_exclusive": 29227,
+      "sha256": "8de049f8cb8a0da16787a05b3c5dd4f871c8d21a1d040b1600408b08e8bf9f26",
+      "command": "abbrev relInertDeg (v : FinitePlace K) (w : FinitePlace k) : ℕ :=\n  w.maximalIdeal.asIdeal.inertiaDeg' v.maximalIdeal.asIdeal\n"
+    },
+    "source_replay_byte_identical": true
+  },
+  {
+    "source_name": "Iut.ramificationIdx'_ne_zero",
+    "source": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/ValuationTransfer.lean",
+      "first_line": 66,
+      "last_line": 69,
+      "start_byte": 2675,
+      "end_byte_exclusive": 2951,
+      "sha256": "a7eea1c055893abb199f69c00f822349bf8f18e223c857dcdd0c90a413ab75d7",
+      "command": "lemma ramificationIdx'_ne_zero :\n    v.maximalIdeal.asIdeal.ramificationIdx' w.maximalIdeal.asIdeal ≠ 0 := by\n  haveI : w.maximalIdeal.asIdeal.LiesOver v.maximalIdeal.asIdeal := hwv\n  exact Ideal.IsDedekindDomain.ramificationIdx'_ne_zero_of_liesOver _ v.maximalIdeal.ne_bot\n"
+    },
+    "target_name": "AbcAdaptation.Tripod.ramificationIdx'_ne_zero",
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeValuation.lean",
+      "first_line": 31,
+      "last_line": 34,
+      "start_byte": 1179,
+      "end_byte_exclusive": 1455,
+      "sha256": "a7eea1c055893abb199f69c00f822349bf8f18e223c857dcdd0c90a413ab75d7",
+      "command": "lemma ramificationIdx'_ne_zero :\n    v.maximalIdeal.asIdeal.ramificationIdx' w.maximalIdeal.asIdeal ≠ 0 := by\n  haveI : w.maximalIdeal.asIdeal.LiesOver v.maximalIdeal.asIdeal := hwv\n  exact Ideal.IsDedekindDomain.ramificationIdx'_ne_zero_of_liesOver _ v.maximalIdeal.ne_bot\n"
+    },
+    "source_target_byte_identical": true,
+    "source_replay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "first_line": 357,
+      "last_line": 360,
+      "start_byte": 18589,
+      "end_byte_exclusive": 18865,
+      "sha256": "a7eea1c055893abb199f69c00f822349bf8f18e223c857dcdd0c90a413ab75d7",
+      "command": "lemma ramificationIdx'_ne_zero :\n    v.maximalIdeal.asIdeal.ramificationIdx' w.maximalIdeal.asIdeal ≠ 0 := by\n  haveI : w.maximalIdeal.asIdeal.LiesOver v.maximalIdeal.asIdeal := hwv\n  exact Ideal.IsDedekindDomain.ramificationIdx'_ne_zero_of_liesOver _ v.maximalIdeal.ne_bot\n"
+    },
+    "source_replay_byte_identical": true
+  },
+  {
+    "source_name": "Iut.valuation_algebraMap_eq_pow",
+    "source": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/ValuationTransfer.lean",
+      "first_line": 72,
+      "last_line": 77,
+      "start_byte": 3043,
+      "end_byte_exclusive": 3393,
+      "sha256": "fc03d115820f90c8e6ddd2f9b8046db92fc1e5b1eabbc6376342e9ce3a209ac9",
+      "command": "lemma valuation_algebraMap_eq_pow (x : k) :\n    w.maximalIdeal.valuation K (algebraMap k K x) =\n      v.maximalIdeal.valuation k x ^\n        v.maximalIdeal.asIdeal.ramificationIdx' w.maximalIdeal.asIdeal := by\n  haveI : w.maximalIdeal.asIdeal.LiesOver v.maximalIdeal.asIdeal := hwv\n  exact (valuation_liesOver K v.maximalIdeal w.maximalIdeal x).symm\n"
+    },
+    "target_name": "AbcAdaptation.Tripod.valuation_algebraMap_eq_pow",
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeValuation.lean",
+      "first_line": 37,
+      "last_line": 42,
+      "start_byte": 1547,
+      "end_byte_exclusive": 1897,
+      "sha256": "fc03d115820f90c8e6ddd2f9b8046db92fc1e5b1eabbc6376342e9ce3a209ac9",
+      "command": "lemma valuation_algebraMap_eq_pow (x : k) :\n    w.maximalIdeal.valuation K (algebraMap k K x) =\n      v.maximalIdeal.valuation k x ^\n        v.maximalIdeal.asIdeal.ramificationIdx' w.maximalIdeal.asIdeal := by\n  haveI : w.maximalIdeal.asIdeal.LiesOver v.maximalIdeal.asIdeal := hwv\n  exact (valuation_liesOver K v.maximalIdeal w.maximalIdeal x).symm\n"
+    },
+    "source_target_byte_identical": true,
+    "source_replay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "first_line": 363,
+      "last_line": 370,
+      "start_byte": 18957,
+      "end_byte_exclusive": 19428,
+      "sha256": "41cb5e54bf439ad751c206336f68eab483e206b316d07c9aa77d9696488b8d81",
+      "command": "lemma valuation_algebraMap_eq_pow (x : k) :\n    w.maximalIdeal.valuation K (algebraMap k K x) =\n      v.maximalIdeal.valuation k x ^\n        v.maximalIdeal.asIdeal.ramificationIdx' w.maximalIdeal.asIdeal := by\n  haveI : w.maximalIdeal.asIdeal.LiesOver v.maximalIdeal.asIdeal := hwv\n  rw [Ideal.ramificationIdx'_eq_ramificationIdx\n    v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal v.maximalIdeal.ne_bot]\n  exact (valuation_liesOver K v.maximalIdeal w.maximalIdeal x).symm\n"
+    },
+    "source_replay_byte_identical": false
+  },
+  {
+    "source_name": "Iut.relRamIdx_ne_zero",
+    "source": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean",
+      "first_line": 169,
+      "last_line": 169,
+      "start_byte": 7323,
+      "end_byte_exclusive": 7401,
+      "sha256": "33ed15b04c3f3e4f055dc27e75a514a44f2accc2ac33783261414171fcefba33",
+      "command": "lemma relRamIdx_ne_zero : relRamIdx v w ≠ 0 := ramificationIdx'_ne_zero hvw\n"
+    },
+    "target_name": "AbcAdaptation.Tripod.relRamIdx_ne_zero",
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeValuation.lean",
+      "first_line": 51,
+      "last_line": 51,
+      "start_byte": 2074,
+      "end_byte_exclusive": 2152,
+      "sha256": "33ed15b04c3f3e4f055dc27e75a514a44f2accc2ac33783261414171fcefba33",
+      "command": "lemma relRamIdx_ne_zero : relRamIdx v w ≠ 0 := ramificationIdx'_ne_zero hvw\n"
+    },
+    "source_target_byte_identical": true,
+    "source_replay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "first_line": 596,
+      "last_line": 596,
+      "start_byte": 27964,
+      "end_byte_exclusive": 28042,
+      "sha256": "33ed15b04c3f3e4f055dc27e75a514a44f2accc2ac33783261414171fcefba33",
+      "command": "lemma relRamIdx_ne_zero : relRamIdx v w ≠ 0 := ramificationIdx'_ne_zero hvw\n"
+    },
+    "source_replay_byte_identical": true
+  }
+]
