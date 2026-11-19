@@ -434,6 +434,14 @@ For the Legendre curve selected by `CurveProviders`, the inertia action on the `
 
 The first check timed out (ci-022092-641f0296). The second reported a valuation equivalence and a point-type transparency mismatch (ci-022108-55ef14ea). The successful check uses the two explicit directions of the valuation equivalence and a point typed on the base-changed Legendre model. The initial review ci-022125-19cce7ec timed out while scanning all declarations. The replacement prints and checks the transitive axioms of the three mathematical conclusions above.
 
+## The ramification bound over the tripodal field
+
+The representations `repF` on 3- and 5-torsion act on the same Legendre curve over `F`. At a bad place outside residue characteristics 2, 3 and 5, the subgroup `I⁺` fixing the two chosen Legendre square roots has index at most two in inertia. Its two representations are jointly faithful and their elements have orders dividing 3 and 5, respectively. The kernel and image bounds give `|I⁺| ≤ 15`, and hence `e(F/F_tpd) ≤ 30` at those places. Multiplying with the index in `K/F`, and using index one in the good lower branch, proves the `30ℓ` bound over `F_tpd` outside `2, 3, 5, ℓ`. The proof splits the representation powers, joint faithfulness and finite-group count to stay within default heartbeats. [Source inertia argument](https://github.com/lana-agents/iut/blob/04283ddb9192c9fb4d5863ce2cf057741556cbf0/Iut/Tripod/TpdInertia.lean) · [Source tower consumer](https://github.com/lana-agents/iut/blob/2d8f000457da6447fa4df4bfec7365c1a49b6384/Iut/Tripod/TowerFacts.lean#L46) · [Leaf](receipts/round-ci-022222-f3a919cf-result.json) · [Project and axiom review](receipts/round-ci-022255-2c5b55c1-result.json) · [Trilingual readback](readbacks/tripodal-inertia-trilingual.md)
+
+## Two designated Vélu point pairs
+
+The square roots selected over `F` give two distinct nonzero points `T₁,T₂` killed by 2 and points `R₁,R₂` with `2Rᵢ = Tᵢ`. After base change to the actual ℓ-torsion field, the two coordinate differences are the images of `-√λ` and `-√(1-λ)`. The base-change identity identifies these points with the corresponding points in the chosen algebraic closure. The ratio descent will combine them with the chosen odd-order subgroup. [Point definitions and consumers](../../../Solutions/Source_TripodCyclicVeluPoints.lean#L168) · [Leaf](receipts/round-ci-022232-d1190d06-result.json) · [Project and axiom review](receipts/round-ci-022264-0b6cd23c-result.json) · [Trilingual readback](readbacks/cyclic-velu-points-trilingual.md)
+
 ## MCP-CI receipts for this batch
 
 Each job uses an exclusive worktree. Successful and failed receipt rows use compiler wall time and peak process-tree RSS when available. Timeout rows use the elapsed compile time as a lower bound. The receipt stores the exact source hash, input paths and diagnostics.
@@ -794,3 +802,11 @@ Each job uses an exclusive worktree. Successful and failed receipt rows use comp
 | [`ci-022168-7011f51e`](receipts/round-ci-022168-7011f51e-result.json) | `Source_TripodTpdInertia` | `62935f6e8518` | failed | 1 | 126.72 | 128.44 (27.43 + 101.01) | 7.61 |
 | [`ci-022174-4a8195b7`](receipts/round-ci-022174-4a8195b7-result.json) | `Source_TripodCyclicVeluPoints` | `3c539bb7accf` | failed | 1 | 102.89 | 103.96 (9.01 + 94.95) | 7.62 |
 | [`ci-022183-c7d6f502`](receipts/round-ci-022183-c7d6f502-result.json) | `ReviewTripodRamificationTheorems` | `5b476b85953b` | succeeded | 0 | 149.65 | 147.85 (5.31 + 142.54) | 7.81 |
+| [`ci-022210-8e1d476a`](receipts/round-ci-022210-8e1d476a-result.json) | `Source_TripodTpdInertia` | `0e12415b0e9a` | failed | 1 | 105.70 | 107.75 (10.68 + 97.07) | 7.61 |
+| [`ci-022218-10804544`](receipts/round-ci-022218-10804544-result.json) | `Source_TripodCyclicVeluPoints` | `5fd6031bb02f` | failed | 1 | 100.20 | 100.58 (7.29 + 93.29) | 7.61 |
+| [`ci-022222-f3a919cf`](receipts/round-ci-022222-f3a919cf-result.json) | `Source_TripodTpdInertia` | `1e5da1f5c211` | succeeded | 0 | 93.10 | 95.74 (10.57 + 85.17) | 7.62 |
+| [`ci-022232-d1190d06`](receipts/round-ci-022232-d1190d06-result.json) | `Source_TripodCyclicVeluPoints` | `4205eec4043f` | succeeded | 0 | 93.16 | 95.16 (8.09 + 87.07) | 7.62 |
+| [`ci-022238-ee692ddb`](receipts/round-ci-022238-ee692ddb-result.json) | `Source_TripodTpdInertia` | `1e5da1f5c211` | succeeded | 0 | 91.18 | 93.80 (10.70 + 83.10) | 7.62 |
+| [`ci-022249-c543c091`](receipts/round-ci-022249-c543c091-result.json) | `Source_TripodCyclicVeluPoints` | `4205eec4043f` | succeeded | 0 | 96.44 | 98.13 (8.12 + 90.01) | 7.62 |
+| [`ci-022255-2c5b55c1`](receipts/round-ci-022255-2c5b55c1-result.json) | `ReviewTripodTowerRamIdx` | `c02d29ad6b8b` | succeeded | 0 | 100.99 | 100.44 (5.46 + 94.98) | 8.09 |
+| [`ci-022264-0b6cd23c`](receipts/round-ci-022264-0b6cd23c-result.json) | `ReviewTripodVeluPoints` | `b031d47dd1a5` | succeeded | 0 | 100.86 | 100.40 (5.45 + 94.95) | 8.09 |

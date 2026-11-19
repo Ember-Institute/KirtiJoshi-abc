@@ -4,7 +4,6 @@
 
 - `refer/iut/Iut/Tripod/Main.lean:129`
 - `refer/iut/Iut/Tripod/Main.lean:119`
-- `refer/iut/Iut/Tripod/TowerFacts.lean:46`
 - `refer/iut/Iut/Tripod/WildRamIdx.lean:185`
 - `refer/iut/Iut/Tripod/TameTwo.lean:231`
 - `refer/iut/Iut/Tripod/CyclicIsogeny.lean:831`

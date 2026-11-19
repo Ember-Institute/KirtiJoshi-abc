@@ -1,0 +1,11 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodTpdInertia
+
+open AbcAdaptation.Tripod
+
+#print axioms card_inertiaPlus_le
+#print axioms relRamIdx_tpd_le_thirty
+#print axioms relRamIdx_le_thirty_mul
