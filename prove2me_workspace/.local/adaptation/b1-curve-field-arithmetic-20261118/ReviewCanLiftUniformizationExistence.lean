@@ -1,0 +1,13 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftUniformizationExistence
+
+open AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic
+
+#print axioms LatticeComplementCover.uniformizes
+#print axioms Generators.deckGroup_eq_pmGroup
+#print axioms Peripheral.trace_commutator
+#print axioms Peripheral.trace_A_ne_zero
+#print axioms uniformization_oncePunctured

@@ -18,7 +18,7 @@
 | --- | --- |
 | Scene1 整体 | **未完成，G1–G4 关闭 0/4** |
 | 有明确来源指示的父义务 | **15 项均开放**。见[证明义务清单](具有明确参考来源指示的证明义务.md) |
-| iut 参考链适配 | **149/164（90.9%）**。规范 P7 已验收代表处权重、无穷处 θ 包络体积和有限处单分量体积。CanLift 已验收陪集多项式、Lüroth 多项式生成元和已有复一致化的唯一性。 [适配计划 §4.1](开发计划.Prove2Me适配.md#41-参考链审计) |
+| iut 参考链适配 | **150/165（90.9%）**。规范 P7 已验收代表处权重、无穷处 θ 包络体积和有限处单分量体积。CanLift 已验收陪集多项式、Lüroth 多项式生成元和已有复一致化的唯一性。 [适配计划 §4.1](开发计划.Prove2Me适配.md#41-参考链审计) |
 | 最新 Scene1 数学单元 | 原二阶点平移仿射图的分式域沿原包含映射的像等于原无符号正规化域。 [分式域像等式](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/InitialThetaInfinityShiftedChartFractionField.lean#L156) |
 | 几何路线的下一处缺口 | 在平移仿射图的同一剩余中心证明逆坐标公式的分母可逆，再用局部整闭性识别原无符号正规化的上层剩余域 |
 | 本地构建环境 | Lean `v4.33.1`，Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`。见[环境锁](../ArithmeticTeichmullerSpaces/migration/environment.lock.json) |
@@ -188,7 +188,7 @@ Corollary 3.12 的字面左端为 $-\lvert\operatorname{logVol}(\Theta_M)\rvert/
 ### 参考 `c2` 装配中仍开放的曲线输入
 
 - **循环子群估计。** 复挠点界、Legendre 特化和奇乘法约化处的图线判据已接到 Vélu 主界。主界以同一个 $C_0$ 汇总奇坏处 Tate 界、其余有限处的估计和无穷处估计，再用乘积公式得到 $(\ell-2)(h-h_2)/24\le 2\log\ell+T_K$。固定常数的公开 `cyclicBoundOdd` 已供应推论 2.2 所需的 `CurveFactsProp`。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#the-fixed-constant-cyclic-subgroup-bound)
-- **core 例外有限性。** 对给定的 `EtalePi1Theory`，四个例外有理 $j$ 值 $0$、$1728$、$488095744/125$、$1556068/81$ 各给出非零多项式 $256(X^2-X+1)^3-cX^2(X-1)^2$，其根集有限。`coreFiniteness_of_modelAG` 以此供应 `CoreFinitenessHyp`。实际有符号与无符号归一化已接到同一个 Weierstrass 二次模型，沿域嵌入的下降及可数代数闭模型的判定已接入 `canLift27_of_complex`。仍须对每条非例外复椭圆曲线构造解析一致化，并证明一致化群的可公度子固定第一坐标。这个结果供应复数情形 `CanLift27Complex`，经 Lefschetz 下降后即可为 `genuinePi1Theory` 提供 CanLift 命题 2.7。 [模型组合](../prove2me_workspace/Solutions/Source_TripodCoreModel.lean) · [Lefschetz 来源及回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#lefschetz-descent-on-the-signed-normalization)
+- **core 例外有限性。** 对给定的 `EtalePi1Theory`，四个例外有理 $j$ 值 $0$、$1728$、$488095744/125$、$1556068/81$ 各给出非零多项式 $256(X^2-X+1)^3-cX^2(X-1)^2$，其根集有限。`coreFiniteness_of_modelAG` 以此供应 `CoreFinitenessHyp`。实际有符号与无符号归一化已接到同一个 Weierstrass 二次模型，沿域嵌入的下降及可数代数闭模型的判定已接入 `canLift27_of_complex`。每条复椭圆曲线已有一次穿孔的解析一致化。仍须在四个例外值之外证明一致化群的可公度子固定第一坐标。这个结果供应复数情形 `CanLift27Complex`，经 Lefschetz 下降后即可为 `genuinePi1Theory` 提供 CanLift 命题 2.7。 [模型组合](../prove2me_workspace/Solutions/Source_TripodCoreModel.lean) · [Lefschetz 来源及回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#lefschetz-descent-on-the-signed-normalization)
 - **P7 及高度身份。** Legendre 曲线的逐点 P7 已用同一表示的核固定域构造初始 θ 数据、q-pilot、实际局部理论和 Tate 参数的 $2\ell$ 次根。二挠点有理性、野分歧界、良处分歧指数为一及 $30\ell$ 界已接入同一份局部 θ 数据。塔算术给出 (R4)、(ii) 和 (iii)，其中步骤 (iii) 在同一 q-pilot 的指定素数集上求和。还须落实曲线提供器、核心例外集有限性、Northcott 及远 Abel 存在性的来源，使这些前提对 P7 所需的完整数据族同时成立。参考 `c2` 的条件组合已使用同一局部估计、证书和实际点域、高度、不同理想、导子，给出规范高高度估计。循环子群估计已接入这项组合。两项素数估计也已接入。全称 `h312` 仍为显式输入。上述字段仍需独立依赖打包、跨版本类型及公理对应和私有平台验收。 [逐点 P7 来源与回执](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#pointwise-p7-with-tower-arithmetic-from-the-legendre-curve)
 
 ## 已排除的具体路线
@@ -331,3 +331,5 @@ CanLift 的陪集多项式、Lüroth 多项式生成元和给定复一致化之�
 有理 Legendre 曲线族 $x_m=5^m/(2\cdot5^m+1)$ 的 $5$ 进赋值与范数，以及具体主区域所需的条件标量界，已通过联合审查。有限处整包体积、同一数据上的全局平均及实际 P7 的 q-pilot 搬运仍开放。适配计划 §4.1 达到 **149/164（90.9%）**，原有 15 项开放。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#rational-legendre-family-and-the-conditional-principal-volume-bound)
 
 下方有限处与相对赋值补出七条源端完整声明。目标内核通过十四条模块声明和有限处关系的跨版本核对。三语读回已归档，私有平台验收仍待取得。 [来源与回执](../prove2me_workspace/.local/adaptation/b1-place-under-relative-valuation-20261119/SOURCE_LEDGER.md#本轮验收)
+
+CanLift U1 的存在性已通过项目与公理审查。格点补集覆盖和边配对供应实际一致化，交换子的迹为 $-2$，第一生成元的迹非零。余下可公度子义务需要有限相对指数与坐标增长估计。适配计划 §4.1 达到 **150/165（90.9%）**。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#existence-of-uniformization-for-a-once-punctured-complex-elliptic-curve)

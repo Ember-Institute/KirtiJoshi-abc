@@ -88,9 +88,7 @@
 
 ### CanLift 复一致化与可公度子
 
-给定复一致化和正次数多项式，若其值在可公度子作用下不变且纤维为群轨道，则横坐标在可公度子作用下不变。这个条件结论已接入复 CanLift。还须对每条非例外复椭圆曲线提供实际一致化，构造上半平面到格点补集的全纯覆盖、纤维轨道和两个 deck 生成元，再沿模函数 $j$ 与 Weierstrass 换元把覆盖搬到该曲线。生成多项式的路线还需要证明 deck 群在其可公度子中的相对指数有限，以及可公度子作用后横坐标的多项式增长界。这两个结论分别支持有限陪集多项式与系数下降。 [第一坐标刚性与复数组合](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#first-coordinate-rigidity-from-an-invariant-polynomial)
-
-陪集多项式已证明有限指数下的轨道分离，Lüroth 生成元已证明多项式子代数中的复合表示。任意两份已给出的复一致化之间已有一个同时相容于覆盖和覆盖变换群的共轭。仍需为目标椭圆曲线构造至少一份这样的覆盖，并在同一覆盖上供应可公度子指数和坐标增长条件。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#coset-polynomials-and-complex-uniformization-uniqueness)
+一次穿孔复椭圆曲线已由 `uniformization_oncePunctured` 供应实际一致化。CanLift 的余下解析义务是在同一覆盖上证明甲板群在其可公度子中的相对指数有限，并证明可公度子作用后横坐标的多项式增长界。增长证明需要在格点一致化中比较轨道深度与 Weierstrass 第一坐标，再沿 Möbius 共轭和 Weierstrass 换元搬运。有限指数需要对应上游的核心条件和四个例外 `j` 值。两个结论共同供应不变多项式生成元，接到已证的第一坐标刚性。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#existence-of-uniformization-for-a-once-punctured-complex-elliptic-curve)
 
 ### 规范 P7 的有限处整包与曲线 q-pilot
 

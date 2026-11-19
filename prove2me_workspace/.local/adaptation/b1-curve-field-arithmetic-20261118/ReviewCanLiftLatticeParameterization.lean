@@ -1,0 +1,18 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftLatticeDeckGroup
+import Solutions.Source_ReferenceIutCanLiftLatticeParameterization
+
+open AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic
+
+#print axioms LatticeComplementCover.exists_mem_deckGroup
+#print axioms LatticeComplementCover.sub_mem_lattice_iff
+#print axioms LatticeComplementCover.eq_one_or_neg_one
+#print axioms latticeParameterization_equation
+#print axioms latticeParameterization_surjective
+#print axioms latticeParameterization_eq_iff
+#print axioms latticeParameterization_immersion
+#print axioms isUniformization_latticeParameterization
+#print axioms exists_variableChange_latticeCurve
