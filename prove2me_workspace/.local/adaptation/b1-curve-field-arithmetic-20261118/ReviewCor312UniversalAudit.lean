@@ -1,0 +1,17 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCor312UniversalAudit
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Iut
+
+#check ThetaLocalData.not_forall_corollary312Variant
+
+#print axioms LocalTheory.withArchimedeanRadius
+#print axioms ThetaLocalData.withArchimedeanRadius
+#print axioms ThetaLocalData.rhs_withArchimedeanRadius
+#print axioms ThetaLocalData.exists_not_corollary312Variant
+#print axioms ThetaLocalData.not_forall_corollary312Variant

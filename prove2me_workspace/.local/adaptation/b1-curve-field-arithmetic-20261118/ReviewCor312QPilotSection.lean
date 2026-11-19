@@ -1,0 +1,28 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCor312QPilotLeftHandSide
+import Solutions.Source_ReferenceIutCor312QPilotModuli
+import Solutions.Source_ReferenceIutCor312RepresentativeQPilot
+import Solutions.Source_ReferenceIutPointModuliMap
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Iut
+
+#check ThetaLocalData.qPilot_lhs_eq_neg_sum_neg_log_norm_qroot
+#check ThetaLocalData.qPilot_lhs_eq_sum_section_log_norm
+#check CurveInputs.pointThetaData_qPilot_lhs_eq_sum_section_log_norm
+
+#print axioms ThetaLocalData.qPilot_lhs_eq_neg_sum_neg_log_norm_qroot
+#print axioms InitialThetaData.moduliJ
+#print axioms InitialThetaData.log_j_eq_qOrder
+#print axioms QPilotInputs.badModuliFinset
+#print axioms QPilotInputs.mem_badModuliFinset
+#print axioms QPilotInputs.logQ_eq_moduli_jLogSum
+#print axioms QPilotInputs.lhs_eq_neg_moduli_jLogSum
+#print axioms ThetaLocalData.log_norm_qroot_div_relLocalDeg
+#print axioms ThetaLocalData.qPilot_lhs_eq_sum_section_log_norm
+#print axioms CurveInputs.pointThetaData_algebraMap_moduli_torsion
+#print axioms CurveInputs.pointThetaData_qPilot_lhs_eq_sum_section_log_norm

@@ -22,4 +22,21 @@ theorem canonicalCorollary22HighHeightEstimate_of_explicitPrimeEstimates
   canonicalCorollary22HighHeightEstimate_of_cyclicBound P hcore anab
     chebyshevBoundExplicit primeCountingBoundExplicit h312
 
+/-- The explicit prime estimates with Corollary 3.12 on the source (P7) bundles. -/
+theorem canonicalCorollary22HighHeightEstimate_of_explicitPrimeEstimates_on_sourceP7
+    (P : CurveProviders)
+    (hcore : ∀ K d, CoreFinitenessHyp P K d AG)
+    (anab : AnabelianExistence AG TG)
+    (h312 : ∀ (K : CompactlyBounded) (d : ℕ) (X : Corollary312VariantData.{0, 0} AG TG),
+      let CF : CurveFactsProp P K d
+          (cyclicConst K (torsionConst K.c (legendre_torsion_x_le K.c))) := ⟨cyclicBoundOdd P K d⟩
+      let CI := curveInputs_from_source P K d CF (hcore K d) northcottHyp
+        (legendreHeight P K) (twoAdicBound P K)
+      IsSourceP7Variant CI anab X → Corollary312Variant X) :
+    CanonicalCorollary22HighHeightEstimate :=
+  canonicalCorollary22HighHeightEstimate_of_sourceP7 P
+    (TK := fun K => cyclicConst K (torsionConst K.c (legendre_torsion_x_le K.c)))
+    (fun K d => ⟨cyclicBoundOdd P K d⟩) hcore anab
+    chebyshevBoundExplicit primeCountingBoundExplicit h312
+
 end AbcAdaptation.Tripod

@@ -1,0 +1,20 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftWeierstrassOrbifoldCount
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Iut.Anabelian
+
+#check polynomial_orbifold_count
+#check polynomial_eval_injective_of_hemi_orbifold
+#print axioms polynomial_sub_C_ne_zero
+#print axioms mem_polynomial_roots_sub_C
+#print axioms polynomialRamificationIdx_sub_one
+#print axioms sum_rootMultiplicity_polynomial_derivative
+#print axioms sum_polynomialRamificationIdx_fiber
+#print axioms natDegree_eq_one_of_etale
+#print axioms polynomial_orbifold_count
+#print axioms polynomial_eval_injective_of_hemi_orbifold

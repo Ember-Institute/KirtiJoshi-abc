@@ -1,0 +1,22 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodStatementIIOnSourceP7
+
+set_option autoImplicit false
+
+open AbcAdaptation.Tripod
+
+#check IsSourceP7Variant
+#check pointThetaDataExistence_from_source
+#check canonicalCorollary22HighHeightEstimate_of_explicitPrimeEstimates_on_sourceP7
+#check statementII_of_explicitPrimeEstimates_on_sourceP7
+
+#print axioms IsSourceP7Variant
+#print axioms pointThetaDataExistence_from_source
+#print axioms concreteThetaDataExistence_from_source
+#print axioms canonicalCorollary22HighHeightEstimate_of_sourceP7
+#print axioms canonicalCorollary22HighHeightEstimate_of_explicitPrimeEstimates_on_sourceP7
+#print axioms canonicalCorollary22HighHeightEstimate_of_explicitPrimeEstimates
+#print axioms statementII_of_explicitPrimeEstimates_on_sourceP7

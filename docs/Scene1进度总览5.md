@@ -198,6 +198,7 @@ Corollary 3.12 的字面左端为 $-\lvert\operatorname{logVol}(\Theta_M)\rvert/
 | 🔴 | 在已审计的旧 period 与 transfer 装配中，用实际收缩 q 根的范数直接充作 `thetaBase.norm` 会与所需的非负 `logVolume` 冲突。正长度 ordinary-log 包络的 signed Haar log-volume 也不能直接充作该非负量。 |
 | 🔴 | 在已审计的处集和归一化下，现有 canonical q-log 总和严格小于论文候选代表和。实际扭点来源的分歧质量也排除了该来源上的纤维质量为一。 |
 | 🔴 | 当前收缩 q-root 的有理类不在已归一化主单位类生成的那条 $\mathbb Q_p$ 直线上。这项排除针对已有普通对数路线的特定单生成空间。 |
+| 🔴 | 旧高高度入口的 `h312` 量化任意 `LocalTheory`。给定一组合法局部数据，可固定 q-pilot 与有限处贡献，取无穷处 `indAut` 为 `{id}`，并把对数壳半径缩至 $0<r\le1$。3.12 的右端等于单位半径的右端加 $\log r$，可低于左端。须用来源条件刻画 P7 实际供应的完整数据族，并对该族证明 3.12。 [反例与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#counterexample-to-the-unrestricted-corollary-312-premise) |
 
 负面证据的具体假设和 Lean 入口见 [Scene1 开发计划第 4 节](开发计划.V1Act1Scene1.md#4-负面证据和路线排除)。
 
@@ -304,3 +305,11 @@ Tate 级数可求和性、第六系数及第六系数解析估计均完成目标
 Tate 判别式与参数存在性均通过跨版本内核和标准公理复审，两个定义包已私有发布并逐字段回读。审查保留完整证明，对参数次序不同的签名验证往返等同性，并回放参数存在性的生成声明 `jSeq._unsafe_rec`。§4.1 达到 **143/158（90.5%）**。 [判别式复审](../prove2me_workspace/.local/adaptation/b1-tate-existence-v227-20261118/analytic-packages/Discriminant/binder-permutation/round-ci-023002-882877d3-result.json) · [参数存在性复审](../prove2me_workspace/.local/adaptation/b1-tate-existence-v227-20261118/analytic-packages/JExistence/binder-permutation/round-ci-023028-61dfe200-result.json) · [私有回读](../prove2me_workspace/.local/adaptation/b1-tate-existence-v227-20261118/analytic-publication/j-existence/publication-validation.json)
 
 CanLift 的实际二次归一化已接入可数模型下降和沿域嵌入下降，`canLift27_of_complex` 将两项证明接入 Lefschetz 装配。联合审查核对的 13 条声明均只依赖 Lean 标准公理。仍须在每条非例外复椭圆曲线上构造解析一致化，并证明使一致化群与其共轭群可公度的元素固定第一坐标，由此供应 `CanLift27Complex`。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#lefschetz-descent-on-the-signed-normalization)
+
+旧入口对任意 `LocalTheory` 的全称 `h312` 已有 Lean 反例，五条相关声明均通过项目与标准公理审查。规范 P7 数据族上的 3.12 仍开放。 [反例与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#counterexample-to-the-unrestricted-corollary-312-premise)
+
+参考 `c2` 已接到规范 P7 的同一份数据及证书。把 3.12 的前提限定在该数据族后，现有高度比较、误差界和 Northcott 有限性给出条件性的 `StatementII`。七条相关声明通过项目与公理审查。要消除 3.12 输入，仍须把规范 P7 数据上的 q-pilot、局部测度和平均对数体积与论文公式逐项接合。 [规范 P7 与下游组合](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#corollaries-22-and-23-on-the-source-p7-family)
+
+同一 P7 的 q-pilot 已核对完整纤维式、模域 $j$ 对数式和按相对局部次数加权的代表处式，11 条声明通过项目与公理审查。论文代表处与当前截面的对应，以及右端的局部测度和全局平均体积身份仍待证明。 [q-pilot 等式与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#full-fiber-and-selected-place-q-pilot-identities)
+
+CanLift 的 R3 多项式计数已通过审查。把三个二挠点横坐标赋予重数二后，次数二与三的例外分别迫使 $j=1728$ 与 $j=0$。排除这两个值后，满足带权分歧前提的多项式求值是单射。实际复一致化仍须供应该前提及第一坐标刚性所需的生成元。 [R3 计数与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#r3-polynomial-covering-count-for-canlift)

@@ -21,6 +21,35 @@ open AbcAdaptation.Reference.Iut
 
 variable {AG : AnabelianGeometry.{0}} {TG : TemperedGeometry AG}
 
+private theorem canonicalCorollary22HighHeightEstimate_of_thetaDataExistence
+    (P : CurveProviders) {TK : CompactlyBounded → ℝ}
+    (CF : ∀ K d, CurveFactsProp P K d (TK K))
+    (hcore : ∀ K d, CoreFinitenessHyp P K d AG)
+    (cheb : ChebyshevBound) (pnt : PrimeCountingBound)
+    (dataPredicate : CompactlyBounded → ℕ → Corollary312VariantData.{0, 0} AG TG → Prop)
+    (ex : ∀ K d, ThetaDataExistence (dataPredicate K d)
+      (curveInputs_from_source P K d (CF K d) (hcore K d) northcottHyp
+        (legendreHeight P K) (twoAdicBound P K)).toCorollary22Inputs)
+    (h312 : ∀ K d X, dataPredicate K d X → Corollary312Variant X) :
+    CanonicalCorollary22HighHeightEstimate := by
+  intro d hd K
+  let CI := curveInputs_from_source P K d (CF K d) (hcore K d) northcottHyp
+    (legendreHeight P K) (twoAdicBound P K)
+  let I := CI.toCorollary22Inputs
+  let E : Set Pt := I.excCore ∩ (tripodTheory.cbsSet K ∩ tripodTheory.ptLE tripodTheory.tripod d)
+  refine ⟨E, I.threshold cheb, 40 * pnt.η + I.B / 3, I.excCore_finite, ?_⟩
+  intro x hxK hxd hxE hxH
+  have hx : x ∈ tripodTheory.cbsSet K ∩ tripodTheory.ptLE tripodTheory.tripod d :=
+    ⟨hxK, mem_ptLE.mpr hxd⟩
+  have hxe : x ∉ I.excCore := fun h => hxE ⟨h, hx⟩
+  have hheight : I.h x = auxiliaryHeight x := providerHeight_eq_auxiliaryHeight P x
+  have hH : I.threshold cheb ≤ I.h x := by
+    rw [hheight]
+    exact hxH
+  have hEstimate := I.c2 hd (ex K d) cheb pnt (h312 K d) x hx hxe hH
+  rw [hheight] at hEstimate
+  exact hEstimate
+
 /-- The reference Corollary 2.2 conclusion on the actual tripod, with the fixed
 auxiliary height and the concrete initial data from the Legendre curves. -/
 theorem canonicalCorollary22HighHeightEstimate_of_source
@@ -32,26 +61,30 @@ theorem canonicalCorollary22HighHeightEstimate_of_source
       (TL : ThetaLocalData D LT) (QI : QPilotInputs D),
       Corollary312Variant (concreteVariantData D LT TL QI)) :
     CanonicalCorollary22HighHeightEstimate := by
-  intro d hd K
-  let CI := curveInputs_from_source P K d (CF K d) (hcore K d) northcottHyp
-    (legendreHeight P K) (twoAdicBound P K)
-  let I := CI.toCorollary22Inputs
-  have ex : ConcreteThetaDataExistence.{0, 0} (AG := AG) (TG := TG) I :=
-    concreteThetaDataExistence_from_source P K d (CF K d) (hcore K d) northcottHyp anab
-  let E : Set Pt := I.excCore ∩ (tripodTheory.cbsSet K ∩ tripodTheory.ptLE tripodTheory.tripod d)
-  refine ⟨E, I.threshold cheb, 40 * pnt.η + I.B / 3, I.excCore_finite, ?_⟩
-  intro x hxK hxd hxE hxH
-  have hx : x ∈ tripodTheory.cbsSet K ∩ tripodTheory.ptLE tripodTheory.tripod d :=
-    ⟨hxK, mem_ptLE.mpr hxd⟩
-  have hxe : x ∉ I.excCore := fun h => hxE ⟨h, hx⟩
-  have hheight : I.h x = auxiliaryHeight x := providerHeight_eq_auxiliaryHeight P x
-  have hH : I.threshold cheb ≤ I.h x := by
-    rw [hheight]
-    exact hxH
-  have hEstimate := I.c2 (P := IsConcrete) hd ex.toThetaDataExistence cheb pnt
-    (fun _ ⟨D, LT, TL, QI, hX⟩ => hX ▸ h312 D LT TL QI) x hx hxe hH
-  rw [hheight] at hEstimate
-  exact hEstimate
+  exact canonicalCorollary22HighHeightEstimate_of_thetaDataExistence P CF hcore cheb pnt
+    (fun _ _ => IsConcrete)
+    (fun K d =>
+      (concreteThetaDataExistence_from_source P K d (CF K d) (hcore K d)
+        northcottHyp anab).toThetaDataExistence)
+    (fun _ _ _ ⟨D, LT, TL, QI, hX⟩ => hX ▸ h312 D LT TL QI)
+
+/-- Corollary 2.2 from the variant on the bundles produced by the source (P7). -/
+theorem canonicalCorollary22HighHeightEstimate_of_sourceP7
+    (P : CurveProviders) {TK : CompactlyBounded → ℝ}
+    (CF : ∀ K d, CurveFactsProp P K d (TK K))
+    (hcore : ∀ K d, CoreFinitenessHyp P K d AG)
+    (anab : AnabelianExistence AG TG) (cheb : ChebyshevBound) (pnt : PrimeCountingBound)
+    (h312 : ∀ (K : CompactlyBounded) (d : ℕ) (X : Corollary312VariantData.{0, 0} AG TG),
+      let CI := curveInputs_from_source P K d (CF K d) (hcore K d) northcottHyp
+        (legendreHeight P K) (twoAdicBound P K)
+      IsSourceP7Variant CI anab X → Corollary312Variant X) :
+    CanonicalCorollary22HighHeightEstimate :=
+  canonicalCorollary22HighHeightEstimate_of_thetaDataExistence P CF hcore cheb pnt
+    (fun K d => IsSourceP7Variant
+      (curveInputs_from_source P K d (CF K d) (hcore K d) northcottHyp
+        (legendreHeight P K) (twoAdicBound P K)) anab)
+    (fun K d => pointThetaDataExistence_from_source P K d (CF K d) (hcore K d) northcottHyp anab)
+    h312
 
 /-- The canonical Corollary 2.2 estimate with the cyclic bound supplied by the
 Vélu estimates and the complex torsion bound. -/

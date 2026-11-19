@@ -62,6 +62,8 @@
 
 第 3 篇定理 3.12 的上下文至少要求数域 `L` 无实嵌入、严格 Belyi 型椭圆曲线、初始 theta 数据、`L/L_mod` Galois、全部六阶扭点有理、`ell ≥ 5`、`ell` 不整除 `[L:L_mod]`、模 `ell` 表示像包含 `SL₂`、核域 `L′` 以及处集双射；作者明确说初始 theta 数据是全局存在断言，不能由局部构造代替。Form 2 与 Corollary 3.12 的实际来源构造及全称适配仍待拆分。
 
+`IsSourceP7Variant CI anab X` 已给出 `c2` 所需的来源范围。尚须证明 `∀ X, IsSourceP7Variant CI anab X → Corollary312Variant X`，保留任意次数界，并核对同一 P7 数据下 q-pilot 左端和对数体积右端的论文身份。现有 Scene1 桥要求 `[D.F : ℚ] = 1` 和指定实际 hull 的体积等式，一般次数的换算及该体积等式仍须落实。 [规范 P7 消费者](../prove2me_workspace/Solutions/Source_TripodCanonicalCorollary22PrimeEstimates.lean#L26) · [现有 Scene1 桥](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalCorollary312Bridge.lean#L20)
+
 四个 Scene1 producer owner 仍分别是 `AdelicThetaLink`、`ThetaLiftLog`、`PacketCollationHull`、`VolumeTransfer`：现有跨处 Tate／q 来源和部分规范化、Fontaine 事实只能供应局部前提；纸面 theta locus、Bloch–Kato theta 类与 log-shell 身份、跨 holomorphoid 代表拼接、实际 volume-measure 同一性仍缺少来源构造。显式负面障碍包括：字面 Corollary 3.12 的符号与实际收缩根的负对数相反；raw、全局次数、剩余次数、`2ell`、纸面权重和 `p*` 归一化尚无同一 carrier 上的等式；一般 `L` 情形不能假定度为一；现有选取根集的 q-log 总和严格小于纸面选定处集的总和，且 omitted mass/degree defect 未闭合；实际扭点来源的分歧指数至少为 `ell`，故质数纤维不满足 mass-one；普通 `H¹`／Kummer 类尚非论文的 `H¹_e`／crystalline／Bloch–Kato 输入；固定局部完成域的单位拼接不是论文的跨来源代表拼接；现有实际 raw/Haar 体积界也未识别纸面 theta locus、测度和无穷处归一化。Form2、cor312、G1–G4 均仍开放；不得将既有算术 accounting 的局部通过扩大解释为任何全局 theta 结论。
 
 ### 对数体积处权重与局部归一化的来源适配
@@ -76,7 +78,7 @@
 
 `refer/iut/Iut/Cor312/ThetaData/Basic.lean:96` 保存模域到扭点域的代数结构 `algebraModK`，随后保存 `towerModK` 标量塔字段。实际编译类型表明，后者使用从原数域到扭点域的规范标量作用限制到模域后得到的作用，其类型没有引用所保存的 `algebraModK`；因此不能据该字段宣称已证明所保存的代数结构与规范包含相容。Tate 族采用规范包含所诱导的模域代数结构，而局部数据和赋值截面接收所保存的结构，二者的身份必须另行核对。
 
-后续共同来源生产者须对同一初始数据给出明确的一致性义务：记模域、原数域、扭点域分别为 $M,F,K$，对每个 $m\in M$，所保存的映射 $M\to K$ 的值须等于规范包含 $M\to F\to K$ 的复合值，并据此核对两组处集限制及坏处条件。不得把这一要求当成任意初始数据自动满足的事实，也不得用标量塔字段的名称代替等式证明。实际类型和独立读回证据分别保存在 `prove2me_workspace/.local/adaptation/reference-initial-theta-carriers-20261115/readback-compiler-type-slices.json` 与该单元的原始读回材料中；原定义移植不完成这项来源一致性义务。
+`pointThetaData_algebraMap_moduli_torsion` 已证明规范 P7 的模域映射等于规范包含的复合。论文适配仍需匹配原数域、模域、扭点域及完成域，核对代表处截面和坏处支持。P7 排除剩余特征 $2,\ell$，Joshi 的奇分裂乘法约化处集仍可能包含 $\ell$ 上方的处。对应须处理这一差异，并核对 Haar 绝对值的剩余次数换算、模域次数权重及原文的符号冲突。 [规范 P7 映射](../prove2me_workspace/Solutions/Source_ReferenceIutPointModuliMap.lean#L16) · [原文及公式对照](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/readbacks/p7-cor312-source-comparison.md)
 
 ### Prologue 与 Scene1 必要依赖闭包的映射
 

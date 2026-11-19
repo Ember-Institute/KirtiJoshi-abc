@@ -37,15 +37,18 @@ noncomputable def polynomialRamificationIdx (s : K[X]) (w : K) : ℕ :=
 /-- The multiplicity: `2` on `E₂`, `1` elsewhere. -/
 def hemiMultiplicity [DecidableEq K] (E₂ : Finset K) (w : K) : ℕ := if w ∈ E₂ then 2 else 1
 
-private theorem sub_C_ne_zero {s : K[X]} (hs : 0 < s.natDegree) (v : K) : s - C v ≠ 0 := by
+/-- A fiber polynomial of a nonconstant polynomial is nonzero. -/
+theorem polynomial_sub_C_ne_zero {s : K[X]} (hs : 0 < s.natDegree) (v : K) : s - C v ≠ 0 := by
   intro h
   have hdeg : (s - C v).natDegree = s.natDegree := natDegree_sub_C
   rw [h, natDegree_zero] at hdeg
   exact (Nat.ne_of_gt hs) hdeg.symm
 
-private theorem mem_roots_sub_C [DecidableEq K] {s : K[X]} (hs : 0 < s.natDegree) {v w : K} :
+/-- The roots of the fiber polynomial are precisely the points in that fiber. -/
+theorem mem_polynomial_roots_sub_C [DecidableEq K] {s : K[X]} (hs : 0 < s.natDegree)
+    {v w : K} :
     w ∈ (s - C v).roots.toFinset ↔ s.eval w = v := by
-  rw [Multiset.mem_toFinset, mem_roots (sub_C_ne_zero hs v), IsRoot, eval_sub, eval_C,
+  rw [Multiset.mem_toFinset, mem_roots (polynomial_sub_C_ne_zero hs v), IsRoot, eval_sub, eval_C,
     sub_eq_zero]
 
 private theorem sum_rootMultiplicity_sub_C [DecidableEq K] [IsAlgClosed K] (s : K[X]) (v : K) :
@@ -57,22 +60,32 @@ private theorem sum_rootMultiplicity_sub_C [DecidableEq K] [IsAlgClosed K] (s : 
 /-- A nonconstant polynomial has positive ramification index at each point. -/
 theorem polynomialRamificationIdx_pos {s : K[X]} (hs : 0 < s.natDegree) (w : K) :
     0 < polynomialRamificationIdx s w := by
-  rw [polynomialRamificationIdx, rootMultiplicity_pos (sub_C_ne_zero hs _)]
+  rw [polynomialRamificationIdx, rootMultiplicity_pos (polynomial_sub_C_ne_zero hs _)]
   simp
 
-private theorem polynomialRamificationIdx_sub_one [CharZero K] (s : K[X]) (w : K) :
+/-- The ramification index minus one is the root multiplicity of the derivative. -/
+theorem polynomialRamificationIdx_sub_one [CharZero K] (s : K[X]) (w : K) :
     polynomialRamificationIdx s w - 1 = rootMultiplicity w (derivative s) := by
   have h := derivative_rootMultiplicity_of_root (p := s - C (s.eval w)) (t := w) (by simp)
   rw [derivative_sub, derivative_C, sub_zero] at h
   rw [polynomialRamificationIdx, h]
 
-private theorem sum_rootMultiplicity_derivative [DecidableEq K] [IsAlgClosed K] [CharZero K]
-    (s : K[X]) :
+/-- In characteristic zero, the derivative counts total finite ramification. -/
+theorem sum_rootMultiplicity_polynomial_derivative [DecidableEq K] [IsAlgClosed K]
+    [CharZero K] (s : K[X]) :
     ∑ w ∈ (derivative s).roots.toFinset, rootMultiplicity w (derivative s) =
       s.natDegree - 1 := by
   simp_rw [← count_roots]
   rw [Multiset.toFinset_sum_count_eq, IsAlgClosed.card_roots_eq_natDegree,
     natDegree_derivative]
+
+/-- The sum of the ramification indices in a fiber is the degree. -/
+theorem sum_polynomialRamificationIdx_fiber [DecidableEq K] [IsAlgClosed K]
+    {s : K[X]} (hs : 0 < s.natDegree) (v : K) :
+    ∑ w ∈ (s - C v).roots.toFinset, polynomialRamificationIdx s w = s.natDegree := by
+  rw [Finset.sum_congr rfl fun w hw ↦ by
+    rw [polynomialRamificationIdx, (mem_polynomial_roots_sub_C hs).mp hw]]
+  exact sum_rootMultiplicity_sub_C s v
 
 end Roots
 
@@ -103,7 +116,7 @@ theorem natDegree_eq_one_of_etale {p : K[X]} (hp : 0 < p.natDegree) {E : Finset 
     have h1 := h w
     rwa [hmult w, if_neg hw, mul_one] at h1
   set F : K → Finset K := fun t ↦ (p - C t).roots.toFinset
-  have hF : ∀ t w, w ∈ F t ↔ p.eval w = t := fun t w ↦ mem_roots_sub_C hp
+  have hF : ∀ t w, w ∈ F t ↔ p.eval w = t := fun t w ↦ mem_polynomial_roots_sub_C hp
   set S := E.biUnion F
   have hS : ∀ w, w ∈ S ↔ p.eval w ∈ E := by
     intro w
@@ -115,10 +128,8 @@ theorem natDegree_eq_one_of_etale {p : K[X]} (hp : 0 < p.natDegree) {E : Finset 
     rw [Function.onFun, Finset.disjoint_left]
     intro w hw hw'
     exact hvv' (((hF v w).mp hw).symm.trans ((hF v' w).mp hw'))
-  have hsumF : ∀ t, ∑ w ∈ F t, polynomialRamificationIdx p w = D := by
-    intro t
-    rw [Finset.sum_congr rfl fun w hw ↦ by rw [polynomialRamificationIdx, (hF t w).mp hw]]
-    exact sum_rootMultiplicity_sub_C p t
+  have hsumF : ∀ t, ∑ w ∈ F t, polynomialRamificationIdx p w = D :=
+    sum_polynomialRamificationIdx_fiber hp
   -- total ramification over `E`
   have htot : ∑ w ∈ S, polynomialRamificationIdx p w = 3 * D := by
     rw [Finset.sum_biUnion hdisj, Finset.sum_congr rfl fun t _ ↦ hsumF t, Finset.sum_const,
@@ -148,7 +159,7 @@ theorem natDegree_eq_one_of_etale {p : K[X]} (hp : 0 < p.natDegree) {E : Finset 
     · rintro ⟨hpE, hwE⟩
       rw [hNw w hwE, hmult, if_pos hpE]; omega
   have hRH : (S \ E).card = D - 1 := by
-    rw [← sum_rootMultiplicity_derivative p, hcrit, Finset.card_eq_sum_ones]
+    rw [← sum_rootMultiplicity_polynomial_derivative p, hcrit, Finset.card_eq_sum_ones]
     refine Finset.sum_congr rfl fun w hw ↦ ?_
     obtain ⟨hwS, hwE⟩ := Finset.mem_sdiff.mp hw
     rw [← polynomialRamificationIdx_sub_one, hNw w hwE, hmult, if_pos ((hS w).mp hwS)]
