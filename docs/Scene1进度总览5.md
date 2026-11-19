@@ -18,7 +18,7 @@
 | --- | --- |
 | Scene1 整体 | **未完成，G1–G4 关闭 0/4** |
 | 有明确来源指示的父义务 | **15 项均开放**。见[证明义务清单](具有明确参考来源指示的证明义务.md) |
-| iut 参考链适配 | **146/161（90.7%）**。规范 P7 已验收 q-pilot 代表处权重与无穷处 θ 包络体积，CanLift 已接入第一坐标刚性。 [适配计划 §4.1](开发计划.Prove2Me适配.md#41-参考链审计) |
+| iut 参考链适配 | **149/164（90.9%）**。规范 P7 已验收代表处权重、无穷处 θ 包络体积和有限处单分量体积。CanLift 已验收陪集多项式、Lüroth 多项式生成元和已有复一致化的唯一性。 [适配计划 §4.1](开发计划.Prove2Me适配.md#41-参考链审计) |
 | 最新 Scene1 数学单元 | 原二阶点平移仿射图的分式域沿原包含映射的像等于原无符号正规化域。 [分式域像等式](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/InitialThetaInfinityShiftedChartFractionField.lean#L156) |
 | 几何路线的下一处缺口 | 在平移仿射图的同一剩余中心证明逆坐标公式的分母可逆，再用局部整闭性识别原无符号正规化的上层剩余域 |
 | 本地构建环境 | Lean `v4.33.1`，Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`。见[环境锁](../ArithmeticTeichmullerSpaces/migration/environment.lock.json) |
@@ -325,3 +325,7 @@ CanLift 已把 Weierstrass 方程给出的横坐标消失阶用于解析刚性�
 规范 P7 的有限处张量分量只在一个因子上缩放时，各因子自同构保持该主区域。该区域的归一化对数体积等于缩放因子的对数范数除以该完备化的局部次数。两条等式通过项目与公理审查，三语读回已归档。适配计划 §4.1 达到 **147/162（90.7%）**。 [有限处主区域与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#finite-principal-regions-in-the-concrete-local-theory)
 
 数域同构保持有限高度的主定理和有限处搬运已通过跨版本审查。审查覆盖十条手写声明和三条生成引理，主定理的独立三语读回已归档。对应的适配项仍待私有平台验收。 [有限高度不变性来源与审查](../prove2me_workspace/.local/adaptation/b1-finite-height-map-equiv-20261119/SOURCE_LEDGER.md)
+
+CanLift 的陪集多项式、Lüroth 多项式生成元和给定复一致化之间的唯一性已通过联合审查。有限陪集乘积的系数刻画较大群的轨道，生成元给出多项式子代数元素的复合表示。复一致化的存在性、可公度子有限指数及坐标增长界仍开放。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#coset-polynomials-and-complex-uniformization-uniqueness)
+
+有理 Legendre 曲线族 $x_m=5^m/(2\cdot5^m+1)$ 的 $5$ 进赋值与范数，以及具体主区域所需的条件标量界，已通过联合审查。有限处整包体积、同一数据上的全局平均及实际 P7 的 q-pilot 搬运仍开放。适配计划 §4.1 达到 **149/164（90.9%）**，原有 15 项开放。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#rational-legendre-family-and-the-conditional-principal-volume-bound)

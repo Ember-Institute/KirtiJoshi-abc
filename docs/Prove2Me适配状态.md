@@ -90,6 +90,14 @@
 
 给定复一致化和正次数多项式，若其值在可公度子作用下不变且纤维为群轨道，则横坐标在可公度子作用下不变。这个条件结论已接入复 CanLift。还须对每条非例外复椭圆曲线提供实际一致化，构造上半平面到格点补集的全纯覆盖、纤维轨道和两个 deck 生成元，再沿模函数 $j$ 与 Weierstrass 换元把覆盖搬到该曲线。生成多项式的路线还需要证明 deck 群在其可公度子中的相对指数有限，以及可公度子作用后横坐标的多项式增长界。这两个结论分别支持有限陪集多项式与系数下降。 [第一坐标刚性与复数组合](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#first-coordinate-rigidity-from-an-invariant-polynomial)
 
+陪集多项式已证明有限指数下的轨道分离，Lüroth 生成元已证明多项式子代数中的复合表示。任意两份已给出的复一致化之间已有一个同时相容于覆盖和覆盖变换群的共轭。仍需为目标椭圆曲线构造至少一份这样的覆盖，并在同一覆盖上供应可公度子指数和坐标增长条件。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#coset-polynomials-and-complex-uniformization-uniqueness)
+
+### 规范 P7 的有限处整包与曲线 q-pilot
+
+有限处的公开单分量公式已验收。整包计算还须在同一 `ThetaLocalData` 上把每个标签配置的体积拆成加权和，消去其他标签的边际，按模域的完整纤维合并局部次数，得出 $-j^2\operatorname{logQAt}(p)/(2\ell)$。全局计算随后须与无穷处公式合并，并由 P7 的坏处有限集控制有理处求和的支撑。
+
+有理 Legendre 族已有 $v_5(j(x_m))=-2m$ 的证明。仍须沿实际点域嵌入把该赋值搬回曲线提供器，证明相应有限处确为该曲线的 P7 坏处，读取同一 Tate 参数的次数，并把所求项纳入 q-pilot。条件标量界使用的全局体积前提仍须从上面的整包计算得到。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#rational-legendre-family-and-the-conditional-principal-volume-bound)
+
 ## 4. 未完成自然语言读回的证明义务
 
 - `AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply`：无待决译名。

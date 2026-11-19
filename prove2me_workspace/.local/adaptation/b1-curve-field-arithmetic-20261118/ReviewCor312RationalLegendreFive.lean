@@ -1,0 +1,13 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCor312PrincipalVolumeBound
+import Solutions.Source_TripodRationalLegendreFive
+
+open AbcAdaptation.Reference.Iut.ThetaLocalData
+open AbcAdaptation.Tripod
+
+#print axioms logQ_le_of_globalVolume_bound
+#print axioms padicValRat_j_rationalLegendreFive
+#print axioms padicNorm_legendreJ_rationalLegendreFiveParam
