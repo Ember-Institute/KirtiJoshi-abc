@@ -1,0 +1,504 @@
+{
+  "job_id": "ci-022889-f4514897",
+  "attempt_id": "attempt-2763bd538ed9",
+  "status": "succeeded",
+  "submitted_at": 1795082052.6768453,
+  "started_at": 1795082052.686718,
+  "finished_at": 1795082155.7983973,
+  "queue_time_seconds": 0.009872674942016602,
+  "compile_time_seconds": 103.11167931556702,
+  "progress": {},
+  "resources": {
+    "memory_decision": {
+      "worker_pressure": "normal",
+      "host_pressure": "normal",
+      "total_worker_bytes": 17220669440
+    },
+    "cpu_time_seconds": 102.71000000000001,
+    "peak_rss_bytes": 8328110080,
+    "peak_pss_bytes": null,
+    "cpu_user_seconds": 18.78,
+    "cpu_system_seconds": 83.93,
+    "wall_time_seconds": 103.07978879999791,
+    "allocated_cpu_count": 4,
+    "cpu_affinity": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "affinity_applied": true,
+    "affinity_error": null
+  },
+  "deduplicated": false,
+  "request": {
+    "language": "lean",
+    "task_type": "leaf",
+    "project_id": "ArithmeticTeichmullerSpaces",
+    "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "exclusive": true,
+    "target": "file",
+    "parameters": {
+      "args": [
+        "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "-o",
+        ".lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.olean"
+      ]
+    },
+    "environment": {
+      "LEAN_PATH": "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean:/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+      "PATH": "/root/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/root/.nvm/versions/node/v22.23.2/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/root/.codex-key3/tmp/arg0-linux/codex-arg09EKFI6:/root/.cabal/bin:/root/.ghcup/bin:/root/.nvm/versions/node/v22.23.2/bin:/root/.opam/Coq900/bin:/root/.elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+    },
+    "expected_duration": 125,
+    "expected_memory": 10737418240,
+    "session_id": "p2m-curve-field-01a1ecf6",
+    "agent_id": "/root",
+    "worktree_manifest": {
+      "worktree_id": "/home/admin-wsl/Coq/abc",
+      "head": "0b6c34e43f29f39c5aa94ccf388db21e7be90c03",
+      "modified_files": [
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md",
+        "prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftRealization.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean"
+      ],
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftCoreCriterion.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftExtendedCover.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftQuadraticModel.lean"
+      ],
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+      },
+      "external_dependencies": [
+        {
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+        }
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+      ],
+      "input_hashes": {
+        "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean": "dabed72ad1be90754a19e62ca835b8d11e333971887eebc819a5b4342853ffd5",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftGaloisAction.olean": "e0d3fe0148b972987fd41a3073c1621dd3698a6bf67365388c22ab5c14d2d3ee",
+        "Solutions/Source_ReferenceIutCanLiftGaloisAction.lean": "514e5d65120a6c6766e2deae312331550edc162d56a55033846f9c71cfb6b58b",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftGaloisRamification.olean": "431d9c15a09228a3ddd4a68d779c6e60d9fa577076935b318f30a3328e49e246",
+        "Solutions/Source_ReferenceIutCanLiftGaloisRamification.lean": "ce63939611fcd0d107f3f005634100b15319ab21d3a552b30a3947d8ae785b27",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftRealization.olean": "d41ebda481864a62baa03e408afd8b6d0673d4c7932aa1a58caeea74a1bb51d8",
+        "Solutions/Source_ReferenceIutCanLiftRealization.lean": "8c25ec780b34cebb7db8ead4e018dc10e5c50339c7e38a32dd47378f2692327b",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftXDescent.olean": "abb56787c58a4d352059bb5a08f67e5d39d98163c2efbd36e0ab086eacca11d0",
+        "Solutions/Source_ReferenceIutCanLiftXDescent.lean": "16180cb7d6279ae3deafb5fd95c2ec0d86673addba991810e009aeb7401ab4b4",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/FieldTheory/Normal/Closure.olean": "53cc261aed5e9c9fd96f0e458a91e6a64ba81db69f61df7da71cfa7154fc2256",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftRamificationTransport.olean": "404b7e39e90d95509dab0a00915cf56e8bdb83177b0526cec9a51bdf8d144f98",
+        "Solutions/Source_ReferenceIutCanLiftRamificationTransport.lean": "0c20f3f33de0abde05c2fd736743b166cf5fa3f8c007edcb9d15086187db36e4"
+      },
+      "source_sha256": "dabed72ad1be90754a19e62ca835b8d11e333971887eebc819a5b4342853ffd5",
+      "resource_estimate_basis": "The generalized leaf succeeded in 98.77 seconds and peak RSS 7.72 GiB."
+    },
+    "idempotency_key": "p2m-round-p7-cyclic-canlift-closure-general-artifact-dabed72ad1be90754a",
+    "scheduler_timeout_seconds": 375,
+    "priority": 0,
+    "profile": "default",
+    "workspace_source": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "workspace_mode": "exclusive_worktree",
+    "snapshot_manifest": {
+      "worktree_id": "/home/admin-wsl/Coq/abc",
+      "head": "0b6c34e43f29f39c5aa94ccf388db21e7be90c03",
+      "modified_files": [
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md",
+        "prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftRealization.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean"
+      ],
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftCoreCriterion.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftExtendedCover.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftQuadraticModel.lean"
+      ],
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+      },
+      "external_dependencies": [
+        {
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+        }
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+      ],
+      "input_hashes": {
+        "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean": "dabed72ad1be90754a19e62ca835b8d11e333971887eebc819a5b4342853ffd5",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftGaloisAction.olean": "e0d3fe0148b972987fd41a3073c1621dd3698a6bf67365388c22ab5c14d2d3ee",
+        "Solutions/Source_ReferenceIutCanLiftGaloisAction.lean": "514e5d65120a6c6766e2deae312331550edc162d56a55033846f9c71cfb6b58b",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftGaloisRamification.olean": "431d9c15a09228a3ddd4a68d779c6e60d9fa577076935b318f30a3328e49e246",
+        "Solutions/Source_ReferenceIutCanLiftGaloisRamification.lean": "ce63939611fcd0d107f3f005634100b15319ab21d3a552b30a3947d8ae785b27",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftRealization.olean": "d41ebda481864a62baa03e408afd8b6d0673d4c7932aa1a58caeea74a1bb51d8",
+        "Solutions/Source_ReferenceIutCanLiftRealization.lean": "8c25ec780b34cebb7db8ead4e018dc10e5c50339c7e38a32dd47378f2692327b",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftXDescent.olean": "abb56787c58a4d352059bb5a08f67e5d39d98163c2efbd36e0ab086eacca11d0",
+        "Solutions/Source_ReferenceIutCanLiftXDescent.lean": "16180cb7d6279ae3deafb5fd95c2ec0d86673addba991810e009aeb7401ab4b4",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/FieldTheory/Normal/Closure.olean": "53cc261aed5e9c9fd96f0e458a91e6a64ba81db69f61df7da71cfa7154fc2256",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftRamificationTransport.olean": "404b7e39e90d95509dab0a00915cf56e8bdb83177b0526cec9a51bdf8d144f98",
+        "Solutions/Source_ReferenceIutCanLiftRamificationTransport.lean": "0c20f3f33de0abde05c2fd736743b166cf5fa3f8c007edcb9d15086187db36e4"
+      },
+      "source_sha256": "dabed72ad1be90754a19e62ca835b8d11e333971887eebc819a5b4342853ffd5",
+      "resource_estimate_basis": "The generalized leaf succeeded in 98.77 seconds and peak RSS 7.72 GiB."
+    }
+  },
+  "result": {
+    "exit_code": 0,
+    "stdout": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:42:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:43:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:83:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:84:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:85:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:88:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:91:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:117:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:120:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:121:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:122:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:124:4: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:123:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:132:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:135:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:138:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:141:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:151:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:152:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nSolutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean:153:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n",
+    "stderr": "",
+    "diagnostics": [
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 42,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 43,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 83,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 84,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 85,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 88,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 91,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 117,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 120,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 121,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 122,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 124,
+        "column": 4,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 123,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 132,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 135,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 138,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 141,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 151,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 152,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+        "line": 153,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      }
+    ],
+    "actual_arguments": [
+      "lean",
+      "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean",
+      "-o",
+      ".lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.olean"
+    ],
+    "snapshot": {
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "fingerprint": null,
+      "manifest": {
+        "worktree_id": "/home/admin-wsl/Coq/abc",
+        "head": "0b6c34e43f29f39c5aa94ccf388db21e7be90c03",
+        "modified_files": [
+          "docs/对Joshi'sFAQ的独立形式化审查.md",
+          "docs/开发计划.V1Act1log1.md",
+          "docs/开发计划.V1Act1log2.md",
+          "docs/开发计划.V1Act1log3.md",
+          "docs/开发计划.V1Act1log4.md",
+          "docs/开发计划.V1Act1log5.md",
+          "prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md",
+          "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftRealization.lean",
+          "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean"
+        ],
+        "untracked_files": [
+          "docs/Email.txt",
+          "docs/Mochizuki审计.md",
+          "docs/Scene1进度总览3.md",
+          "docs/olds/Scene1进度总览1.md",
+          "docs/olds/具有明确参考来源指示的证明义务.old.md",
+          "docs/olds/开发计划.V1Act1log1.md",
+          "docs/olds/开发计划.V1Act1log2.md",
+          "docs/olds/开发计划.V1Act1log3.md",
+          "docs/olds/开发计划.V1Act1log4.md",
+          "docs/olds/开发计划.V1Act1log5.md",
+          "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftCoreCriterion.lean",
+          "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftExtendedCover.lean",
+          "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftQuadraticModel.lean"
+        ],
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock": "lake-manifest.json",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "local_configuration": [
+          "lean-toolchain",
+          "lakefile.lean",
+          "lake-manifest.json"
+        ],
+        "configuration_hashes": {
+          "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+          "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+          "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+        },
+        "external_dependencies": [
+          {
+            "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+            "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+            "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+            "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+          }
+        ],
+        "required_artifacts": [
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+          "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+        ],
+        "input_hashes": {
+          "Solutions/Source_ReferenceIutCanLiftUnramifiedClosure.lean": "dabed72ad1be90754a19e62ca835b8d11e333971887eebc819a5b4342853ffd5",
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftGaloisAction.olean": "e0d3fe0148b972987fd41a3073c1621dd3698a6bf67365388c22ab5c14d2d3ee",
+          "Solutions/Source_ReferenceIutCanLiftGaloisAction.lean": "514e5d65120a6c6766e2deae312331550edc162d56a55033846f9c71cfb6b58b",
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftGaloisRamification.olean": "431d9c15a09228a3ddd4a68d779c6e60d9fa577076935b318f30a3328e49e246",
+          "Solutions/Source_ReferenceIutCanLiftGaloisRamification.lean": "ce63939611fcd0d107f3f005634100b15319ab21d3a552b30a3947d8ae785b27",
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftRealization.olean": "d41ebda481864a62baa03e408afd8b6d0673d4c7932aa1a58caeea74a1bb51d8",
+          "Solutions/Source_ReferenceIutCanLiftRealization.lean": "8c25ec780b34cebb7db8ead4e018dc10e5c50339c7e38a32dd47378f2692327b",
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftXDescent.olean": "abb56787c58a4d352059bb5a08f67e5d39d98163c2efbd36e0ab086eacca11d0",
+          "Solutions/Source_ReferenceIutCanLiftXDescent.lean": "16180cb7d6279ae3deafb5fd95c2ec0d86673addba991810e009aeb7401ab4b4",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/FieldTheory/Normal/Closure.olean": "53cc261aed5e9c9fd96f0e458a91e6a64ba81db69f61df7da71cfa7154fc2256",
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftRamificationTransport.olean": "404b7e39e90d95509dab0a00915cf56e8bdb83177b0526cec9a51bdf8d144f98",
+          "Solutions/Source_ReferenceIutCanLiftRamificationTransport.lean": "0c20f3f33de0abde05c2fd736743b166cf5fa3f8c007edcb9d15086187db36e4"
+        },
+        "source_sha256": "dabed72ad1be90754a19e62ca835b8d11e333971887eebc819a5b4342853ffd5",
+        "resource_estimate_basis": "The generalized leaf succeeded in 98.77 seconds and peak RSS 7.72 GiB."
+      }
+    },
+    "compiler": {
+      "name": "lean",
+      "version": null
+    },
+    "resources": {
+      "memory_decision": {
+        "worker_pressure": "normal",
+        "host_pressure": "normal",
+        "total_worker_bytes": 17220669440
+      },
+      "cpu_time_seconds": 102.71000000000001,
+      "peak_rss_bytes": 8328110080,
+      "peak_pss_bytes": null,
+      "cpu_user_seconds": 18.78,
+      "cpu_system_seconds": 83.93,
+      "wall_time_seconds": 103.07978879999791,
+      "allocated_cpu_count": 4,
+      "cpu_affinity": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "affinity_applied": true,
+      "affinity_error": null
+    },
+    "artifacts": [
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-022889-f4514897/stdout.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-022889-f4514897/stderr.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-022889-f4514897/result.json"
+    ]
+  }
+}

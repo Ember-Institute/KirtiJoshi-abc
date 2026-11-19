@@ -1,0 +1,14 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodCanonicalCorollary22PrimeEstimates
+import Solutions.Source_ReferenceIutCor312QPilotNormalization
+
+open AbcAdaptation.Reference.Iut AbcAdaptation.Tripod
+
+#print axioms two_thirds_mul_le_theta
+#print axioms chebyshevBoundExplicit
+#print axioms primeCountingBoundExplicit
+#print axioms canonicalCorollary22HighHeightEstimate_of_explicitPrimeEstimates
+#print axioms TowerArithmetic.logQAt_div_two_ell_eq_sum_neg_log_norm_qroot

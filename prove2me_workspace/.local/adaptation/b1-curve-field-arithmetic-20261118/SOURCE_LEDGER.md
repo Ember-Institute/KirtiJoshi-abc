@@ -538,6 +538,30 @@ The sign-quotient multiplicity equals the ramification index of the quadratic co
 
 The change of parameter and extension of constants give compatible contractions on the polynomial lines. The sign-quotient multiplicities agree under that compatibility at nonzero contractions. The étale identity consequently descends to the smaller constant field and the given quadratic-cover rigidity condition identifies the value of the descended map. [Pi1 source](https://github.com/lana-agents/pi1/blob/ca7def953193f861a462aa0831eec8f0a31ff69f/Pi1/Orbicurve/Lefschetz.lean) · [Project and axiom review](receipts/round-ci-022857-2bd71c3a-result.json) · [Trilingual readback](readbacks/canlift-descended-cover-trilingual.md)
 
+## Realization of finite covers over a general base field
+
+A chosen transcendental integral parameter realizes both affine coordinate rings as normalizations inside the same algebraic closure of a rational function field. The cover map corresponds to the inclusion of those normalizations. The general realization retains the complex specialization used by the existing CanLift route. [Project and axiom review](receipts/round-ci-022884-1f96e82a-result.json) · [Trilingual readback](readbacks/canlift-realization-trilingual.md)
+
+## The quadratic Weierstrass model for CanLift
+
+The Weierstrass coordinate equation with a transcendental first coordinate yields a function-field embedding at the two chosen coordinates. The signed and unsigned normalization rings identify with the two rings in the quadratic model. Their canonical map is compatible with the inclusion of normalization rings in the same ambient field. [Project and axiom review](receipts/round-ci-022884-1f96e82a-result.json) · [Trilingual readback](readbacks/canlift-quadratic-model-trilingual.md)
+
+## Core criterion and extension of a quadratic cover
+
+The characteristic-zero unramified Galois closure and uniqueness of maps on each cover give the core criterion. Forward extension of a quadratic cover preserves its étale condition, so upper-field rigidity implies lower-field rigidity. [Project and axiom review](receipts/round-ci-022911-3f6a3a0a-result.json) · [Trilingual readback](readbacks/canlift-core-criterion-and-extended-cover-trilingual.md)
+
+## Lefschetz descent on the signed normalization
+
+On the actual signed and unsigned models, core uniqueness and quadratic-cover rigidity imply each other. Rigidity on countable algebraically closed models gives rigidity over the original algebraically closed field. The core property also descends along a field embedding. Both descent theorems supply `canLift27_of_complex`, which takes `CanLift27Complex` as its input. The joint project review checked 13 declarations. Each depends only on `propext`, `Classical.choice`, and `Quot.sound`. [Core comparison](readbacks/canlift-corestar-trilingual.md) · [Countable descent](readbacks/canlift-countable-rigidity-trilingual.md) · [Embedding descent build](receipts/round-ci-023015-92216e88-result.json) · [Project and axiom review](receipts/round-ci-023046-3367d913-result.json)
+
+## Explicit prime estimates for Corollary 2.2
+
+The Chebyshev certificate has threshold $10^{12}$ and factors $2/3$ and $2$. The prime-counting certificate has factor $3/2$ beyond a real threshold greater than one. The canonical Corollary 2.2 specialization consumes both certificates and retains the curve provider, core finiteness, anabelian existence and the universal `h312`. [Reference](../../../../refer/iut/Iut/Implication/ChebyshevExplicit.lean) · [Project and axiom review](receipts/round-ci-022926-2a7dcca5-result.json) · [Chebyshev readback](readbacks/chebyshev-explicit-trilingual.md) · [Prime-counting readback](readbacks/prime-counting-explicit-trilingual.md)
+
+## The q-pilot normalization for Corollary 3.12
+
+For each rational prime, the concrete q-pilot contribution divided by $2\ell$ equals the sum of the negative logarithms of the chosen Tate-root norms over the complete prime fiber, divided by the torsion field degree. The identity tracks the same local theta data and uses the same quantity as the finite-place volume bound. [Project and axiom review](receipts/round-ci-022926-2a7dcca5-result.json) · [Trilingual readback](readbacks/cor312-q-pilot-normalization-trilingual.md)
+
 ## MCP-CI receipts for this batch
 
 Each job uses an exclusive worktree. Successful and failed receipt rows use compiler wall time and peak process-tree RSS when available. Timeout rows use the elapsed compile time as a lower bound. The receipt stores the exact source hash, input paths and diagnostics.
@@ -1023,3 +1047,39 @@ Each job uses an exclusive worktree. Successful and failed receipt rows use comp
 | [`ci-022858-2a5be950`](receipts/round-ci-022858-2a5be950-result.json) | `Source_ReferenceIutCanLiftQuadraticModel` | `2c6d31268e84` | failed | 1 | 96.98 | 100.11 (14.51 + 85.60) | 7.69 |
 | [`ci-022863-2dc015f6`](receipts/round-ci-022863-2dc015f6-result.json) | `Source_ReferenceIutCanLiftQuadraticModel` | `d03df1a5ae85` | failed | 1 | 93.35 | 95.63 (13.95 + 81.68) | 7.70 |
 | [`ci-022864-8e45067c`](receipts/round-ci-022864-8e45067c-result.json) | `Source_ReferenceIutCanLiftRealization` | `25d67a5d826d` | failed | 1 | 51.09 | 54.16 (19.98 + 34.18) | 3.63 |
+| [`ci-022869-50e2e5b4`](receipts/round-ci-022869-50e2e5b4-result.json) | `Source_ReferenceIutCanLiftQuadraticModel` | `eafce0edb4ab` | succeeded | 0 | 105.27 | 109.71 (15.98 + 93.73) | 7.71 |
+| [`ci-022870-3c9c8d72`](receipts/round-ci-022870-3c9c8d72-result.json) | `Source_ReferenceIutCanLiftRealization` | `8c25ec780b34` | succeeded | 0 | 41.67 | 44.65 (9.76 + 34.89) | 3.64 |
+| [`ci-022876-b4db7b99`](receipts/round-ci-022876-b4db7b99-result.json) | `Source_ReferenceIutCanLiftQuadraticModel` | `eafce0edb4ab` | succeeded | 0 | 95.63 | 99.02 (17.31 + 81.71) | 7.73 |
+| [`ci-022877-123f64ff`](receipts/round-ci-022877-123f64ff-result.json) | `Source_ReferenceIutCanLiftRealization` | `8c25ec780b34` | succeeded | 0 | 42.86 | 45.14 (11.21 + 33.93) | 3.64 |
+| [`ci-022883-f2794060`](receipts/round-ci-022883-f2794060-result.json) | `Source_ReferenceIutCanLiftUnramifiedClosure` | `dabed72ad1be` | succeeded | 0 | 98.77 | 96.66 (16.76 + 79.90) | 7.72 |
+| [`ci-022884-1f96e82a`](receipts/round-ci-022884-1f96e82a-result.json) | `ReviewCanLiftRealizationAndQuadraticModel` | `91e776c1a11e` | succeeded | 0 | 101.86 | 96.18 (6.37 + 89.81) | 8.08 |
+| [`ci-022889-f4514897`](receipts/round-ci-022889-f4514897-result.json) | `Source_ReferenceIutCanLiftUnramifiedClosure` | `dabed72ad1be` | succeeded | 0 | 103.08 | 102.71 (18.78 + 83.93) | 7.76 |
+| [`ci-022890-ca7a0cb4`](receipts/round-ci-022890-ca7a0cb4-result.json) | `Source_ReferenceIutCanLiftExtendedCover` | `bdc6f3f8fa51` | succeeded | 0 | 48.74 | 58.21 (26.25 + 31.96) | 3.59 |
+| [`ci-022892-470be574`](receipts/round-ci-022892-470be574-result.json) | `Source_ReferenceIutPrimeCountingExplicit` | `48f32b5f83fa` | succeeded | 0 | 40.99 | 37.82 (2.34 + 35.48) | 3.94 |
+| [`ci-022893-e0f2c3ff`](receipts/round-ci-022893-e0f2c3ff-result.json) | `Source_ReferenceIutCanLiftCoreCriterion` | `bfed0861f249` | succeeded | 0 | 79.95 | 77.16 (4.79 + 72.37) | 7.56 |
+| [`ci-022894-6e421982`](receipts/round-ci-022894-6e421982-result.json) | `Source_ReferenceIutCanLiftExtendedCover` | `bdc6f3f8fa51` | succeeded | 0 | 45.46 | 53.33 (24.90 + 28.43) | 3.62 |
+| [`ci-022899-6e73563b`](receipts/round-ci-022899-6e73563b-result.json) | `Source_ReferenceIutPrimeCountingExplicit` | `48f32b5f83fa` | succeeded | 0 | 39.24 | 36.05 (2.04 + 34.01) | 3.89 |
+| [`ci-022900-64b43f34`](receipts/round-ci-022900-64b43f34-result.json) | `Source_ReferenceIutCanLiftCoreCriterion` | `bfed0861f249` | succeeded | 0 | 80.18 | 74.15 (4.78 + 69.37) | 7.54 |
+| [`ci-022901-9e7b7555`](receipts/round-ci-022901-9e7b7555-result.json) | `Source_ReferenceIutCor312QPilotNormalization` | `ed1b010b3a3c` | failed | 1 | 80.04 | 73.68 (5.15 + 68.53) | 7.52 |
+| [`ci-022905-43837a77`](receipts/round-ci-022905-43837a77-result.json) | `Source_ReferenceIutCanLiftCoreStar` | `59dbf69614b0` | failed | 1 | 87.39 | 95.07 (28.29 + 66.78) | 7.73 |
+| [`ci-022906-bd4213ca`](receipts/round-ci-022906-bd4213ca-result.json) | `Source_ReferenceIutChebyshevExplicit` | `90fa992ba934` | succeeded | 0 | 34.67 | 33.21 (2.84 + 30.37) | 3.44 |
+| [`ci-022907-fcc7953c`](receipts/round-ci-022907-fcc7953c-result.json) | `Source_ReferenceIutCor312QPilotNormalization` | `734c28846b5b` | succeeded | 0 | 77.01 | 71.89 (5.50 + 66.39) | 7.53 |
+| [`ci-022909-af7dd6a8`](receipts/round-ci-022909-af7dd6a8-result.json) | `Source_ReferenceIutChebyshevExplicit` | `90fa992ba934` | succeeded | 0 | 33.67 | 32.18 (3.00 + 29.18) | 3.44 |
+| [`ci-022910-5ab80b74`](receipts/round-ci-022910-5ab80b74-result.json) | `Source_ReferenceIutCor312QPilotNormalization` | `734c28846b5b` | succeeded | 0 | 79.17 | 75.30 (5.12 + 70.18) | 7.52 |
+| [`ci-022911-3f6a3a0a`](receipts/round-ci-022911-3f6a3a0a-result.json) | `ReviewCanLiftCoreCriterionAndExtendedCover` | `d5129a459bd4` | succeeded | 0 | 90.55 | 85.37 (4.73 + 80.64) | 7.81 |
+| [`ci-022914-3a6b1907`](receipts/round-ci-022914-3a6b1907-result.json) | `Source_ReferenceIutCanLiftCoreStar` | `c57157293e36` | failed | 1 | 86.18 | 94.97 (28.12 + 66.85) | 7.74 |
+| [`ci-022915-599729ac`](receipts/round-ci-022915-599729ac-result.json) | `Source_TripodCanonicalCorollary22PrimeEstimates` | `0e168a69e5cf` | succeeded | 0 | 75.92 | 72.29 (4.90 + 67.39) | 7.64 |
+| [`ci-022918-9ded0a79`](receipts/round-ci-022918-9ded0a79-result.json) | `Source_TripodCanonicalCorollary22PrimeEstimates` | `0e168a69e5cf` | succeeded | 0 | 81.43 | 79.96 (4.89 + 75.07) | 7.68 |
+| [`ci-022926-2a7dcca5`](receipts/round-ci-022926-2a7dcca5-result.json) | `ReviewCorollary22PrimeEstimatesAndQPilot` | `5926a1b94345` | succeeded | 0 | 83.92 | 83.43 (5.25 + 78.18) | 8.14 |
+| [`ci-022942-9cafaffb`](receipts/round-ci-022942-9cafaffb-result.json) | `Source_ReferenceIutCanLiftCoreStar` | `6bc5b9f96f93` | failed | 1 | 81.73 | 91.25 (25.00 + 66.25) | 7.78 |
+| [`ci-022945-71d179dc`](receipts/round-ci-022945-71d179dc-result.json) | `Source_ReferenceIutCanLiftCoreStar` | `b87faf1a5444` | succeeded | 0 | 158.38 | 96.07 (21.37 + 74.70) | 7.73 |
+| [`ci-022951-b5c0f3ca`](receipts/round-ci-022951-b5c0f3ca-result.json) | `Source_ReferenceIutCanLiftCoreStar` | `b87faf1a5444` | succeeded | 0 | 85.77 | 95.04 (25.29 + 69.75) | 7.76 |
+| [`ci-022956-5db02b9d`](receipts/round-ci-022956-5db02b9d-result.json) | `Source_ReferenceIutCanLiftCountableRigidity` | `cd194346c7cd` | failed | 1 | 127.43 | 126.69 (7.62 + 119.07) | 7.60 |
+| [`ci-022968-0c264d0d`](receipts/round-ci-022968-0c264d0d-result.json) | `Source_ReferenceIutCanLiftCountableRigidity` | `2bb133eff894` | succeeded | 0 | 93.64 | 93.51 (6.78 + 86.73) | 7.60 |
+| [`ci-022977-1d051a00`](receipts/round-ci-022977-1d051a00-result.json) | `Source_ReferenceIutCanLiftCountableRigidity` | `2bb133eff894` | succeeded | 0 | 131.69 | 130.93 (6.76 + 124.17) | 7.60 |
+| [`ci-022986-cf361e8d`](receipts/round-ci-022986-cf361e8d-result.json) | `Source_ReferenceIutCanLiftEmbeddingDescent` | `45c859224625` | failed | 1 | 150.96 | 148.91 (6.81 + 142.10) | 7.59 |
+| [`ci-023007-722a5c99`](receipts/round-ci-023007-722a5c99-result.json) | `Source_ReferenceIutCanLiftEmbeddingDescent` | `ffc19400c926` | succeeded | 0 | 174.30 | 172.16 (5.96 + 166.20) | 7.56 |
+| [`ci-023015-92216e88`](receipts/round-ci-023015-92216e88-result.json) | `Source_ReferenceIutCanLiftEmbeddingDescent` | `ffc19400c926` | succeeded | 0 | 150.92 | 149.04 (5.76 + 143.28) | 7.55 |
+| [`ci-023023-b44f7634`](receipts/round-ci-023023-b44f7634-result.json) | `Source_ReferenceIutCanLiftLefschetz` | `c5cdb2c85f31` | succeeded | 0 | 102.11 | 101.63 (5.51 + 96.12) | 7.58 |
+| [`ci-023037-1420731c`](receipts/round-ci-023037-1420731c-result.json) | `Source_ReferenceIutCanLiftLefschetz` | `c5cdb2c85f31` | succeeded | 0 | 96.95 | 95.74 (4.48 + 91.26) | 7.49 |
+| [`ci-023046-3367d913`](receipts/round-ci-023046-3367d913-result.json) | `ReviewCanLiftLefschetz` | `0cd6d839e652` | succeeded | 0 | 124.51 | 121.13 (4.98 + 116.15) | 7.87 |

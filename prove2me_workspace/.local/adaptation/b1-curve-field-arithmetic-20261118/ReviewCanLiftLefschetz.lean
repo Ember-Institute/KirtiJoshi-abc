@@ -1,0 +1,25 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftLefschetz
+
+set_option autoImplicit false
+
+open AbcAdaptation.Reference.Iut.Anabelian
+open JoshiTeich.Act1Scene1.FunctionFieldNormalization
+
+#check canLift27_of_complex
+#print axioms ramificationIdx_constantExtension_of_comap_bot
+#print axioms etale_constantExtension
+#print axioms parameterMap_ramification_iff
+#print axioms signQuotientMultiplicity_constantExtension
+#print axioms quadraticCoverMap_eq_of_descended
+#print axioms quadraticCoverRigidity_of_constantExtension
+#print axioms unsignedQuadraticModelEquiv
+#print axioms signedQuadraticModelEquiv
+#print axioms isCoreOf_of_unique_covers
+#print axioms normalizationCoreStar_iff_quadraticCoverRigidity
+#print axioms normalizationIsCore_of_map
+#print axioms normalizationIsCore_of_countable_models
+#print axioms canLift27_of_complex

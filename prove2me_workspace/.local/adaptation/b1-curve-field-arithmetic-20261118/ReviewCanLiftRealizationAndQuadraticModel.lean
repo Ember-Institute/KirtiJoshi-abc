@@ -1,0 +1,15 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftRealization
+import Solutions.Source_ReferenceIutCanLiftQuadraticModel
+
+open AbcAdaptation.Reference.Iut.Anabelian
+
+#print axioms exists_realization
+#print axioms normal_ratFuncClosure
+#print axioms exists_functionField_embedding_of_quadratic
+#print axioms unsignedQuadraticModelEquiv
+#print axioms signedQuadraticModelEquiv
+#print axioms quadraticModelEquiv_square

@@ -1,0 +1,13 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftCoreCriterion
+import Solutions.Source_ReferenceIutCanLiftExtendedCover
+
+open AbcAdaptation.Reference.Iut.Anabelian
+open JoshiTeich.Act1Scene1.FunctionFieldNormalization
+
+#print axioms exists_unramified_galoisClosure
+#print axioms isCoreOf_of_unique_covers
+#print axioms quadraticCoverRigidity_of_constantExtension

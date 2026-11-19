@@ -21,14 +21,23 @@ namespace AbcAdaptation.Reference.Iut.Anabelian
 open IntermediateField Ideal JoshiTeich.Act1Scene1
 open JoshiTeich.Act1Scene1.AffineOrbicurvePresentation (Cover)
 open JoshiTeich.Act1Scene1.FunctionFieldNormalization
+open scoped IntermediateField.algebraAdjoinAdjoin
 
-private theorem cover_ramification_of_realization {Y Z : AffineOrbicurvePresentation ℂ}
+universe u
+
+variable {k : Type u} [Field k]
+
+local notation "Ω" => ratFuncClosure k
+local notation "t" => ratFuncClosureParameter k
+local notation "K₀" => rationalBase k t
+
+private theorem cover_ramification_of_realization {Y Z : AffineOrbicurvePresentation k}
     (ψ : Cover Z Y) (hZ : ∀ w : Ideal Z.A, w.IsMaximal → Z.mult w = 1)
-    {F L : IntermediateField (rationalBase ℂ tΩ) Ωt} [IsDedekindDomain (coordRing tΩ F)]
-    (hFL : F ≤ L) (eY : Y.A ≃ₐ[ℂ] coordRing tΩ F) (eZ : Z.A ≃ₐ[ℂ] coordRing tΩ L)
+    {F L : IntermediateField K₀ Ω} [IsDedekindDomain (coordRing t F)]
+    (hFL : F ≤ L) (eY : Y.A ≃ₐ[k] coordRing t F) (eZ : Z.A ≃ₐ[k] coordRing t L)
     (hψ : ∀ a, eZ (ψ.f a) = ringMap hFL (eY a))
-    (w : Ideal (coordRing tΩ L)) (hw : w.IsMaximal) :
-    (letI := ringMapAlgebra hFL; w.ramificationIdx (coordRing tΩ F)) =
+    (w : Ideal (coordRing t L)) (hw : w.IsMaximal) :
+    (letI := ringMapAlgebra hFL; w.ramificationIdx (coordRing t F)) =
       Y.mult ((w.comap (ringMap hFL)).comap eY) := by
   letI : w.IsPrime := hw.isPrime
   letI : w.IsMaximal := hw
@@ -48,18 +57,18 @@ private theorem cover_ramification_of_realization {Y Z : AffineOrbicurvePresenta
     ((ramificationIdx_comp_equiv ψ.f.toRingHom eZ.toRingEquiv w).trans
       (hram.trans (congrArg Y.mult hcomap.symm))))
 
-private noncomputable def unramifiedNormalizationCover {Z : AffineOrbicurvePresentation ℂ}
+private noncomputable def unramifiedNormalizationCover {Z : AffineOrbicurvePresentation k}
     (hZ : ∀ v : Ideal Z.A, v.IsMaximal → Z.mult v = 1)
-    {L M : IntermediateField (rationalBase ℂ tΩ) Ωt}
-    [FiniteDimensional (rationalBase ℂ tΩ) M] [Algebra.IsSeparable (rationalBase ℂ tΩ) M]
-    (eZ : Z.A ≃ₐ[ℂ] coordRing tΩ L) (hLM : L ≤ M)
-    (he : ∀ w : Ideal (coordRing tΩ M), w.IsMaximal →
-      (letI := ringMapAlgebra hLM; w.ramificationIdx (coordRing tΩ L)) = 1) :
-    let T : AffineOrbicurvePresentation ℂ := {
-      A := coordRing tΩ M
-      isDedekindDomain := dedekindRing tΩ transcendental_tΩ M
-      finiteType := finiteTypeRing tΩ transcendental_tΩ M
-      not_isField := notFieldRing tΩ transcendental_tΩ M
+    {L M : IntermediateField K₀ Ω}
+    [FiniteDimensional K₀ M] [Algebra.IsSeparable K₀ M]
+    (eZ : Z.A ≃ₐ[k] coordRing t L) (hLM : L ≤ M)
+    (he : ∀ w : Ideal (coordRing t M), w.IsMaximal →
+      (letI := ringMapAlgebra hLM; w.ramificationIdx (coordRing t L)) = 1) :
+    let T : AffineOrbicurvePresentation k := {
+      A := coordRing t M
+      isDedekindDomain := dedekindRing t transcendental_ratFuncClosureParameter M
+      finiteType := finiteTypeRing t transcendental_ratFuncClosureParameter M
+      not_isField := notFieldRing t transcendental_ratFuncClosureParameter M
       mult := fun _ => 1
       mult_pos := fun _ _ => Nat.one_pos
       finite_mult := by simp
@@ -73,13 +82,13 @@ private noncomputable def unramifiedNormalizationCover {Z : AffineOrbicurvePrese
   intro w hw
   letI : w.IsMaximal := hw
   letI : w.IsPrime := hw.isPrime
-  letI : FiniteDimensional (rationalBase ℂ tΩ) L :=
+  letI : FiniteDimensional K₀ L :=
     FiniteDimensional.of_injective (IntermediateField.inclusion hLM).toLinearMap
       (IntermediateField.inclusion hLM).injective
-  letI : Algebra.IsSeparable (rationalBase ℂ tΩ) L :=
-    Algebra.IsSeparable.of_algHom (F := rationalBase ℂ tΩ) (E := L) (E' := M)
+  letI : Algebra.IsSeparable K₀ L :=
+    Algebra.IsSeparable.of_algHom (F := K₀) (E := L) (E' := M)
       (IntermediateField.inclusion hLM)
-  letI := dedekindRing tΩ transcendental_tΩ L
+  letI := dedekindRing t transcendental_ratFuncClosureParameter L
   have hq : (w.comap f).IsMaximal :=
     Ideal.isMaximal_comap_of_isIntegral_of_isMaximal' f.toRingHom
       (RingHom.IsIntegral.trans _ _ (RingHom.isIntegral_of_surjective _ eZ.surjective)
@@ -87,9 +96,9 @@ private noncomputable def unramifiedNormalizationCover {Z : AffineOrbicurvePrese
   change (letI := f.toRingHom.toAlgebra; w.ramificationIdx Z.A) * 1 = Z.mult (w.comap f)
   have hidx : (letI := f.toRingHom.toAlgebra; w.ramificationIdx Z.A) =
       (letI := ringMapAlgebra hLM;
-        (w : Ideal (coordRing tΩ M)).ramificationIdx (coordRing tΩ L)) :=
+        (w : Ideal (coordRing t M)).ramificationIdx (coordRing t L)) :=
     ramificationIdx_equiv_comp eZ.toRingEquiv (ringMap hLM).toRingHom (ringMap_injective hLM)
-      (w : Ideal (coordRing tΩ M))
+      (w : Ideal (coordRing t M))
   calc
     _ = 1 * 1 := congrArg (· * 1) (hidx.trans (he w hw))
     _ = 1 := Nat.mul_one 1
@@ -97,15 +106,22 @@ private noncomputable def unramifiedNormalizationCover {Z : AffineOrbicurvePrese
 
 /-- An affine orbicurve cover of multiplicity one has an unramified Galois closure over its source.
 The closure ring is fixed precisely over the coordinate ring of the original target. -/
-theorem canLift27UnramifiedGaloisClosure : CanLift27UnramifiedGaloisClosure := by
-  intro Z Y ψ hZ
+theorem exists_unramified_galoisClosure [CharZero k] {Z Y : AffineOrbicurvePresentation k}
+    (ψ : Cover Z Y) (hZ : ∀ w : Ideal Z.A, w.IsMaximal → Z.mult w = 1) :
+    ∃ (T : AffineOrbicurvePresentation k) (γ : Cover T Z) (G : Type u) (hG : Group G),
+      letI := hG
+      ∃ hact : MulSemiringAction G T.A,
+        letI := hact
+        letI := (γ.f.comp ψ.f).toRingHom.toAlgebra
+        IsGaloisGroup G Y.A T.A := by
+  letI : CharZero K₀ := charZero_of_injective_algebraMap (algebraMap k K₀).injective
   obtain ⟨F, L, hF, hL, hFL, eY, eZ, hψ⟩ := exists_realization ψ
-  let N := IntermediateField.normalClosure (rationalBase ℂ tΩ) L Ωt
-  letI : FiniteDimensional (rationalBase ℂ tΩ) F := hF
-  letI : FiniteDimensional (rationalBase ℂ tΩ) L := hL
-  letI : FiniteDimensional (rationalBase ℂ tΩ) N := inferInstance
-  letI : IsGalois (rationalBase ℂ tΩ) N := by
-    letI : Algebra.IsSeparable (rationalBase ℂ tΩ) N :=
+  let N := IntermediateField.normalClosure K₀ L Ω
+  letI : FiniteDimensional K₀ F := hF
+  letI : FiniteDimensional K₀ L := hL
+  letI : FiniteDimensional K₀ N := inferInstance
+  letI : IsGalois K₀ N := by
+    letI : Algebra.IsSeparable K₀ N :=
       Algebra.IsAlgebraic.isSeparable_of_perfectField
     exact IsGalois.mk
   let M := galoisClosure (N := N) F L
@@ -113,36 +129,40 @@ theorem canLift27UnramifiedGaloisClosure : CanLift27UnramifiedGaloisClosure := b
   have hLM : L ≤ M := le_galoisClosure hLN
   have hFM : F ≤ M := hFL.trans hLM
   have hMN : M ≤ N := galoisClosure_le
-  letI : FiniteDimensional (rationalBase ℂ tΩ) M :=
+  letI : FiniteDimensional K₀ M :=
     FiniteDimensional.of_injective (IntermediateField.inclusion hMN).toLinearMap
       (IntermediateField.inclusion hMN).injective
-  letI : Algebra.IsSeparable (rationalBase ℂ tΩ) M :=
-    Algebra.IsSeparable.of_algHom (F := rationalBase ℂ tΩ) (E := M) (E' := N)
+  letI : Algebra.IsSeparable K₀ M :=
+    Algebra.IsSeparable.of_algHom (F := K₀) (E := M) (E' := N)
       (IntermediateField.inclusion hMN)
-  letI : Algebra.IsSeparable (rationalBase ℂ tΩ) F :=
-    Algebra.IsSeparable.of_algHom (F := rationalBase ℂ tΩ) (E := F) (E' := N)
+  letI : Algebra.IsSeparable K₀ F :=
+    Algebra.IsSeparable.of_algHom (F := K₀) (E := F) (E' := N)
       (IntermediateField.inclusion (hFL.trans hLN))
-  letI := dedekindRing tΩ transcendental_tΩ F
-  let m : Ideal (coordRing tΩ F) → ℕ := fun q => Y.mult (q.comap eY)
-  have hm (w : Ideal (coordRing tΩ L)) (hw : w.IsMaximal) :
-      (letI := ringMapAlgebra hFL; w.ramificationIdx (coordRing tΩ F)) =
+  letI := dedekindRing t transcendental_ratFuncClosureParameter F
+  let m : Ideal (coordRing t F) → ℕ := fun q => Y.mult (q.comap eY)
+  have hm (w : Ideal (coordRing t L)) (hw : w.IsMaximal) :
+      (letI := ringMapAlgebra hFL; w.ramificationIdx (coordRing t F)) =
         m (w.comap (ringMap hFL)) :=
     cover_ramification_of_realization ψ hZ hFL eY eZ hψ w hw
   let γ := unramifiedNormalizationCover hZ eZ hLM
-    (galoisClosure_ramificationIdx_eq_one transcendental_tΩ hFL hLN m hm)
+    (galoisClosure_ramificationIdx_eq_one transcendental_ratFuncClosureParameter hFL hLN m hm)
   let G := galoisClosureAutomorphisms (N := N) (F := F) (L := L)
   refine ⟨_, γ, G, inferInstance, inferInstance, ?_⟩
-  letI : Algebra Y.A (coordRing tΩ M) := (γ.f.comp ψ.f).toRingHom.toAlgebra
-  letI : Algebra (coordRing tΩ F) (coordRing tΩ M) := ringMapAlgebra hFM
-  letI : IsGaloisGroup G (coordRing tΩ F) (coordRing tΩ M) := galoisClosure_isGaloisGroup hFM
-  refine IsGaloisGroup.of_ringEquiv (G := G) (A := coordRing tΩ F) (A' := Y.A)
-    (B := coordRing tΩ M) eY.symm.toRingEquiv ?_
+  letI : Algebra Y.A (coordRing t M) := (γ.f.comp ψ.f).toRingHom.toAlgebra
+  letI : Algebra (coordRing t F) (coordRing t M) := ringMapAlgebra hFM
+  letI : IsGaloisGroup G (coordRing t F) (coordRing t M) := galoisClosure_isGaloisGroup hFM
+  refine IsGaloisGroup.of_ringEquiv (G := G) (A := coordRing t F) (A' := Y.A)
+    (B := coordRing t M) eY.symm.toRingEquiv ?_
   intro a
   change ringMap hLM (eZ (ψ.f (eY.symm a))) = ringMap hFM a
   rw [hψ, AlgEquiv.apply_symm_apply]
   apply Subtype.ext
   apply Subtype.ext
   rfl
+
+/-- The characteristic-zero closure specialized to the complex case of Theorem G. -/
+theorem canLift27UnramifiedGaloisClosure : CanLift27UnramifiedGaloisClosure :=
+  fun ψ hZ => exists_unramified_galoisClosure ψ hZ
 
 /-- Once automorphism invariance is known, the algebraic closure argument descends the
 horizontal coordinate to every common cover target. -/

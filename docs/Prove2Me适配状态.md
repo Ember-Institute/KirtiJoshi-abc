@@ -86,11 +86,6 @@
 
 ## 4. 未完成自然语言读回的证明义务
 
-- `AbcAdaptation_Reference_TateCurvesTheta_TateCurve_EisensteinSummability`：无待决译名。
-- `AbcAdaptation_Reference_TateCurvesTheta_TateCurve_A6Coefficients`：无待决译名。
-- `AbcAdaptation_Reference_TateCurvesTheta_TateCurve_A6Series`：无待决译名。
-- `AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Discriminant`：无待决译名。
-- `AbcAdaptation_Reference_TateCurvesTheta_QParameter_JExistence`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Tripod_TatePoleOrder`：无待决译名。
