@@ -41,7 +41,7 @@ Then $\ell$ divides the cardinality of the image of $\rho$ in $\operatorname{GL}
 - $\mathcal B$ 是有限集，且 $F$ 的每个有限处 $w$ 都满足 $f_w>0$。
 - 对任意自然数 $n$，将满足 $p(w)=n$ 的所有 $w\in\mathcal B$ 的 $f_w$ 相加，所得总和至多为 $[F:\mathbb Q]$。
 
-给定 $E$ 的泰特输入数据。对每个 $w\in\mathcal B$，该数据给出泰特参数 $q_w\in F_w^\times$，且 $\lVert q_w\rVert_w<1$。这里 $F_w$ 是 $F$ 在 $w$ 处的完备化。$q_w$ 的泰特曲线的 $j$ 不变量等于 $j(E)$ 在 $F_w$ 中的像。数据还给出非零的一致化元 $\pi_w$，其范数小于一。$F_w$ 中每个非零元素的范数都是 $\lVert\pi_w\rVert_w$ 的整数次幂。记 $m(w)$ 为满足 $\lVert q_w\rVert_w=\lVert\pi_w\rVert_w^{m(w)}$ 的自然数。
+给定 $E$ 的泰特输入数据。对每个 $w\in\mathcal B$，该数据给出泰特参数 $q_w\in F_w^\times$，且 $\lVert q_w\rVert_w<1$。这里 $F_w$ 是 $F$ 在 $w$ 处的完备化。$q_w$ 的泰特曲线的 $j$ 不变量等于 $j(E)$ 在 $F_w$ 中的像。数据还给出非零的素元 $\pi_w$，其范数小于一。$F_w$ 中每个非零元素的范数都是 $\lVert\pi_w\rVert_w$ 的整数次幂。记 $m(w)$ 为满足 $\lVert q_w\rVert_w=\lVert\pi_w\rVert_w^{m(w)}$ 的自然数。
 
 设 $\ell$ 为满足 $\ell\ne2$ 的自然数素数。给定关于 $E$ 与 $\overline F$ 的模 $\ell$ 表示记录。记 $E(\overline F)[\ell]$ 为 $E(\overline F)$ 中全部被乘以 $\ell$ 消去的点构成的子群。该记录给出从 $E(\overline F)[\ell]$ 到 $(\mathbb Z/\ell\mathbb Z)^2$ 的加法群同构 $\iota$，以及群同态 $\rho\colon\operatorname{Gal}(\overline F/F)\to\operatorname{GL}_2(\mathbb Z/\ell\mathbb Z)$，其核在克鲁尔拓扑中为开集。对每个 $\sigma\in\operatorname{Gal}(\overline F/F)$ 和 $P\in E(\overline F)[\ell]$，有 $\iota(\sigma P)=\rho(\sigma)\iota(P)$。这里的伽罗瓦作用将 $\sigma$ 作用于仿射坐标，并固定无穷远点。
 
@@ -80,4 +80,4 @@ $\ell\ne2$ を満たす自然数の素数 $\ell$ を取る。$E$ と $\overline 
 
 [Lean statement](/home/admin-wsl/Coq/abc/refer/iut/Iut/Concrete/SL2Image.lean:217) · [Curve arithmetic](/home/admin-wsl/Coq/abc/refer/iut/Iut/Concrete/Existence.lean:110) · [Tate inputs and representation](/home/admin-wsl/Coq/abc/refer/iut/Iut/Concrete/Existence.lean:143)
 
-The Chinese read-back uses `一致化元` as a working translation for “uniformizer.” The terminology choice remains open in the project glossary. [Prove2Me adaptation status](/home/admin-wsl/Coq/abc/docs/Prove2Me适配状态.md:119)
+The Chinese readback uses 素元 for “uniformizer” according to the [project glossary](../../../../../docs/三语术语名词关键对照.md).

@@ -10,7 +10,7 @@
 
 - `globalData` 接收曲线算术数据 `CA` 和见证 `hP5`。该见证给出 `F` 的一个乘法约化有限位点，其剩余特征既不等于 `2`，也不等于 `ℓ`。结论是关于模域所选位点集 `C.VBadOf ℓ` 的 `IsInitialThetaGlobalData`。平方根 `√−1`、`F` 上每个有限位点的稳定约化以及 `6`-挠点在 `F` 上的有理性来自 `CA`。见证位点下方的模域位点具有相同的剩余特征，`CA.mult_invariant` 给出其上方所有位点的乘法约化，从而证明所选位点集非空。由入集条件又可得每个所选位点的剩余特征为奇数，且其上方所有位点均为乘法约化。
 - `primeData` 接收 `CA`、Tate 输入 `TI`、素数 `ℓ ≥ 7` 和模 `ℓ` 表示数据 `R`。`hsl` 给出表示的像包含 `SL₂(𝔽_ℓ)`，`hP2` 给出 `ℓ` 不整除 `C.badAll` 上任一 `TI.qOrder`。所得 `AdmissiblePrimeData` 记录 `ℓ`、所要求的下界 `5 ≤ ℓ`、基与表示、Galois 作用公式、核的开放性及像包含条件。它还给出 Galois 扩张 `F/F_mod` 的次数与 `ℓ` 互素、所选位点的剩余特征与 `ℓ` 互素，以及这些位点上方的 Tate 数据。其中 `q_order_coprime` 表示 `ℓ` 与归一化阶 `ord_w(q_w)` 互素。
-- 在每个这样的位点 `w`，`tateJ_eq` 表示 Tate 曲线的 `j` 不变量等于 `j(E)` 在 `F_w` 中的像。构造沿用 `TI` 在 `w` 处的 Tate 参数、一致化元和等式证明。
+- 在每个这样的位点 `w`，`tateJ_eq` 表示 Tate 曲线的 `j` 不变量等于 `j(E)` 在 `F_w` 中的像。构造沿用 `TI` 在 `w` 处的 Tate 参数、素元和等式证明。
 
 ## 日本語
 
@@ -39,5 +39,5 @@ The first five equalities follow by unfolding `primeData`. The last is the propo
 | --- | --- | --- |
 | field of moduli (`fieldOfModuli`) | 模域 | モジュライ体 |
 | admissible prime (`AdmissiblePrimeData`) | 容许素数 | 許容素数 |
-| uniformizer (`unif`) | 一致化元 | 一様化元 |
+| uniformizer (`unif`) | 素元 | 一様化元 |
 | normalized order of `q_w` (`qOrder`) | 归一化阶，即归一化加性赋值 | 正規化位数、すなわち正規化された加法付値 |

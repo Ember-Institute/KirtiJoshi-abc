@@ -26,25 +26,25 @@ The review reports only `propext`, `Classical.choice`, and `Quot.sound` for the 
 
 ## 中文
 
-取 `P : CurveProviders` 和 `x : Pt`。`P.curve x` 是指定定义数域上的 Legendre 曲线 $E_\lambda\colon y^2=z(z-1)(z-\lambda)$。其三脚架域为 $F_{\mathrm{tpd}}=\mathbb Q(\lambda)$，模域为 $F_{\mathrm{mod}}=\mathbb Q(j(E_\lambda))$。固定素数 $\ell\ge7$，并假设模 $\ell$ 表示的像包含 $\mathrm{SL}_2(\mathbb F_\ell)$。P2 要求在曲线具有乘法约化的每个有限位，Tate 阶数均不被 $\ell$ 整除。P5 要求其中至少有一位的剩余特征在 $\{2,\ell\}$ 之外。另假设 `AnabelianExistence AG TG` 以及 `HasCoreUniversally AG (P.curve x).F (P.curve x).E`。`thetaDataOf` 与 `qPilotInputsOf` 用这条曲线、该表示和对应的 Tate 族给出 $D$ 和 `QI : QPilotInputs D`。定理接收任意 `LT : LocalTheory.{0,v} D.Kt` 与 `TL : ThetaLocalData D LT`。 [点的曲线](../../../../Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveOf.lean#L25) · [步骤 (iii) 的假设](../../../../Solutions/Source_TripodTowerStepIII.lean#L25) · [Legendre 曲线的三脚架域](../../../../Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FieldIdentification.lean#L82)
+取 `P : CurveProviders` 和 `x : Pt`。`P.curve x` 是指定定义数域上的 Legendre 曲线 $E_\lambda\colon y^2=z(z-1)(z-\lambda)$。其三脚架域为 $F_{\mathrm{tpd}}=\mathbb Q(\lambda)$，模域为 $F_{\mathrm{mod}}=\mathbb Q(j(E_\lambda))$。固定素数 $\ell\ge7$，并假设模 $\ell$ 表示的像包含 $\mathrm{SL}_2(\mathbb F_\ell)$。P2 要求在曲线具有乘法约化的每个有限位，Tate 阶数均不被 $\ell$ 整除。P5 要求其中至少有一位的剩余特征在 $\{2,\ell\}$ 之外。另假设 `AnabelianExistence AG TG` 以及 `HasCoreUniversally AG (P.curve x).F (P.curve x).E`。`thetaDataOf` 与 `qPilotInputsOf` 用这条曲线、该表示和对应的 Tate 族给出 $D$ 和 `QI : QPilotInputs D`。定理接收任意 `LT : LocalTheory.{0,v} D.Kt` 与 `TL : ThetaLocalData D LT`。 [点的曲线](../../../../Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveOf.lean#L25) · [步骤 (iii) 的假设](../../../../Solutions/Source_TripodTowerStepIII.lean#L25) · [Legendre 曲线的三足域](../../../../Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FieldIdentification.lean#L82)
 
-记 $K_t$ 为挠点域 `D.Kt`。对于 $K_t$ 的每个有限位 $w$，记其剩余特征为 $p$。$w$ 下方的三脚架域位 $u$ 由 `placeTpd D.F D.E D.prime.torsionField w` 给出，相对分歧指数记作 $e(w/u)$。定理显式接收两项局部假设。
+记 $K_t$ 为挠点域 `D.Kt`。对于 $K_t$ 的每个有限位 $w$，记其剩余特征为 $p$。$w$ 下方的三足域位 $u$ 由 `placeTpd D.F D.E D.prime.torsionField w` 给出，相对分歧指数记作 $e(w/u)$。定理显式接收两项局部假设。
 
 - 对每个 $w$，有 $v_p(e(w/u))\le\operatorname{wildConst}(\ell,p)$。该常数在 $2,3,5,\ell$ 处依次取 $12,2,1,1$，其余处取 $0$。 [野分歧常数](../../../../Solutions/Source_ReferenceIutTowerLocalFacts.lean#L26)
 - 对每个满足 $p\notin\{2,3,5,\ell\}$ 的 $w$，有 $e(w/u)\le30\ell$。 [局部分歧界](../../../../Solutions/Source_TripodTowerStepIII.lean#L50)
 
 证明给出 $F_{\mathrm{tpd}}/F_{\mathrm{mod}}$ 的伽罗瓦实例。当 $p\notin\{2,3,5,\ell\}$ 且 $u$ 上方没有 $D.F$ 的所选坏位时，证明给出 $e(w/u)=1$。经过中间域 $D.F$ 的两个相对分歧指数都等于 $1$，其乘积即为 $e(w/u)$。对于每个 $u$，若它位于所选模域坏位 $u_0\in D.VBad$ 的上方，则 $e(u/u_0)\le2$。q-pilot 提供坏位的有限性，并为每个坏剩余特征给出相应的坏位。 [伽罗瓦实例](../../../../Solutions/Source_TripodTpdGalois.lean#L266) · [相对分歧指数为 1](../../../../Solutions/Source_TripodUnramified.lean#L50) · [相对分歧指数至多为 2](../../../../Solutions/Source_TripodTpdRamIdx.lean#L261) · [q-pilot 接口](../../../../Solutions/Source_ReferenceIutThetaLocalBadChars.lean#L99)
 
-Legendre 特化将两项显式界和相对分歧指数为 1 的结论装入 `TowerLocalFacts`。求和证明使用其中分歧指数为 1 的字段，将例外素数和模域坏剩余特征以外的分歧下推到三脚架域，再用不同理想的次数控制其贡献。对于 $\{2,3,5,\ell\}$ 之外的模域坏剩余特征，证明使用分歧指数至多为 2 的界和导子次数。 $\{2,3,5,\ell\}$ 中的素数贡献至多为 $5+\log\ell$。 [例外素数](../../../../Solutions/Source_ReferenceIutTowerStepIII.lean#L310) · [塔局部条件的组装](../../../../Solutions/Source_TripodTowerStepIII.lean#L62) · [分歧下推及求和界](../../../../Solutions/Source_ReferenceIutTowerStepIII.lean#L354)
+Legendre 特化将两项显式界和相对分歧指数为 1 的结论装入 `TowerLocalFacts`。求和证明使用其中分歧指数为 1 的字段，将例外素数和模域坏剩余特征以外的分歧下推到三足域，再用不同理想的次数控制其贡献。对于 $\{2,3,5,\ell\}$ 之外的模域坏剩余特征，证明使用分歧指数至多为 2 的界和导子次数。 $\{2,3,5,\ell\}$ 中的素数贡献至多为 $5+\log\ell$。 [例外素数](../../../../Solutions/Source_ReferenceIutTowerStepIII.lean#L310) · [塔局部条件的组装](../../../../Solutions/Source_TripodTowerStepIII.lean#L62) · [分歧下推及求和界](../../../../Solutions/Source_ReferenceIutTowerStepIII.lean#L354)
 
-令 $S$ 为 `(TL.withBadChars QI).dst`。它是 $\{2,3,5,\ell\}$、q-pilot 的坏剩余特征集和在 $K_t$ 中分歧的有理素数集的并集。记 $d_{\mathrm{mod}}=[F_{\mathrm{mod}}:\mathbb Q]$，`step_iii_of_curve` 给出
+令 $S$ 为指定素数集 `(TL.withBadChars QI).dst`。它是 $\{2,3,5,\ell\}$、q-pilot 的坏剩余特征集和在 $K_t$ 中分歧的有理素数集的并集。记 $d_{\mathrm{mod}}=[F_{\mathrm{mod}}:\mathbb Q]$，`step_iii_of_curve` 给出
 
 $$
 \sum_{p\in S}\log p
 \le 2d_{\mathrm{mod}}\bigl(\operatorname{logDifferentDeg}(F_{\mathrm{tpd}})+D.\mathrm{logConductorDeg}\bigr)+5+\log\ell.
 $$
 
-其中 `logDifferentDeg` 和 `logConductorDeg` 分别使用 $F_{\mathrm{tpd}}$ 的绝对不同理想和所选三脚架域坏位的对数范数之和，均除以 $[F_{\mathrm{tpd}}:\mathbb Q]$ 作归一化。这是局部数据取为 `TL.withBadChars QI` 时 `TowerArithmetic` 的步骤 (iii) 字段。R4 和步骤 (ii) 是逐点 P7 定理所需的另两个字段。 [归一化次数](../../../../Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TripodalInvariants.lean#L22) · [指定素数集](../../../../Solutions/Source_ReferenceIutConcreteInvariants.lean#L62) · [Legendre 曲线的步骤 (iii)](../../../../Solutions/Source_TripodTowerStepIII.lean#L46) · [塔算术](../../../../Solutions/Source_ReferenceIutConcreteInvariants.lean#L173)
+其中 `logDifferentDeg` 和 `logConductorDeg` 分别使用 $F_{\mathrm{tpd}}$ 的绝对不同理想和所选三足域坏位的对数范数之和，均除以 $[F_{\mathrm{tpd}}:\mathbb Q]$ 作归一化。这是局部数据取为 `TL.withBadChars QI` 时 `TowerArithmetic` 的步骤 (iii) 字段。R4 和步骤 (ii) 是逐点 P7 定理所需的另两个字段。 [归一化次数](../../../../Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TripodalInvariants.lean#L22) · [指定素数集](../../../../Solutions/Source_ReferenceIutConcreteInvariants.lean#L62) · [Legendre 曲线的步骤 (iii)](../../../../Solutions/Source_TripodTowerStepIII.lean#L46) · [塔算术](../../../../Solutions/Source_ReferenceIutConcreteInvariants.lean#L173)
 
 审查对受审声明只报告 `propext`、`Classical.choice` 和 `Quot.sound`。 [Legendre 步骤 (iii) 审查](../../../../.local/adaptation/b1-curve-field-arithmetic-20261118/receipts/round-ci-021885-759d4e11-result.json) · [参考塔算术构造](../../../../../refer/iut/Iut/Tripod/Tower.lean#L69)
 

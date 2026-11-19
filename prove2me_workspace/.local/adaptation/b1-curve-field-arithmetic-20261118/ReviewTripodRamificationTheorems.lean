@@ -1,0 +1,11 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodBadRamIdx
+
+open AbcAdaptation.Tripod
+
+#print axioms iterate_map_eq_self_of_inertia
+#print axioms inertia_pow_eq_one_of_badT
+#print axioms relRamIdx_torsionField_le

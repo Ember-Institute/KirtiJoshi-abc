@@ -96,9 +96,9 @@
 - `AbcAdaptation_Reference_TateCurvesTheta_TateCurve_A6Series`：无待决译名。
 - `AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Discriminant`：无待决译名。
 - `AbcAdaptation_Reference_TateCurvesTheta_QParameter_JExistence`：无待决译名。
-- `AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply`：`uniformizer`（待定：素元／一致化元／均匀化元）。
+- `AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight`：无待决译名。
-- `AbcAdaptation_Reference_Iut_Tripod_TatePoleOrder`：`uniformizer`（待定：素元／一致化元／均匀化元）。
+- `AbcAdaptation_Reference_Iut_Tripod_TatePoleOrder`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Tripod_GoodReductionHeight`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Tripod_FiniteHeightSum`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv`：无待决译名。
@@ -109,23 +109,23 @@
 - `Source_TripodRelativeAbsoluteValue`：无待决译名。
 - `Source_TripodFiniteHeightExtension`：无待决译名。
 - `tripodalFieldOf_eq`、`tpdEquiv_jT`、`h_eq_finHeight_div`：无待决译名。
-- `LegendreHeightHyp`、`legendreHeight`、`canonicalLegendreHeightComparison_of_provider`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
-- `northcott_of_equiv`、`curveInputs_height_eq`、`curveInputs_htCan_equiv`、`curveInputs_northcott`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
-- `TwoAdicBoundHyp`、`twoAdicBound'`、`twoAdicBound`、`curveInputs_B_nonneg`、`curveInputs_heightEq_two_le`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
-- `curveInputs_dmod_le`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
-- `curveInputs_deg_le`、`curveInputs_logDiff_eq`、`curveInputsOfSL2Image`、`CyclicBoundOddHyp`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
-- `EllipticCurveData.prime_dvd_card_range`、`EllipticCurveData.prime_dvd_ramificationIdx`：`uniformizer`（待定：素元／一致化元／均匀化元）。
-- `AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder`：`uniformizer`（待定：素元／一致化元／均匀化元）。
-- `AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime`：`uniformizer`（待定：素元／一致化元／均匀化元）。
-- `AbcAdaptation_JoshiTeich_Prologue_Arithmetic_Basic`：`uniformizer`（待定：素元／一致化元／均匀化元）。
-- `AbcAdaptation_Reference_Genl_GeneralPosition_StatementII`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
-- `AbcAdaptation.Reference.Iut.statementII_of_cor312`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
-- `AbcAdaptation_Reference_Iut_Tripod_Theory`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
-- `AbcAdaptation.Tripod.statementII_bridge`：`compactly bounded subset`（待定：紧有界子集／紧致有界子集）。
-- `AbcAdaptation_Reference_Iut_Concrete_CurveData`：`uniformizer`（待定：素元／一致化元／均匀化元）。
-- `AbcAdaptation_Reference_Iut_Concrete_UniformizerSupply`：`uniformizer`（待定：素元／一致化元／均匀化元）。
-- `TowerArithmetic.localEstimate`：`capsule`（待定：胶囊／囊），`uniformizer`（待定：素元／一致化元／均匀化元）。
+- `LegendreHeightHyp`、`legendreHeight`、`canonicalLegendreHeightComparison_of_provider`：无待决译名。
+- `northcott_of_equiv`、`curveInputs_height_eq`、`curveInputs_htCan_equiv`、`curveInputs_northcott`：无待决译名。
+- `TwoAdicBoundHyp`、`twoAdicBound'`、`twoAdicBound`、`curveInputs_B_nonneg`、`curveInputs_heightEq_two_le`：无待决译名。
+- `curveInputs_dmod_le`：无待决译名。
+- `curveInputs_deg_le`、`curveInputs_logDiff_eq`、`curveInputsOfSL2Image`、`CyclicBoundOddHyp`：无待决译名。
+- `EllipticCurveData.prime_dvd_card_range`、`EllipticCurveData.prime_dvd_ramificationIdx`：无待决译名。
+- `AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder`：无待决译名。
+- `AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime`：无待决译名。
+- `AbcAdaptation_JoshiTeich_Prologue_Arithmetic_Basic`：无待决译名。
+- `AbcAdaptation_Reference_Genl_GeneralPosition_StatementII`：无待决译名。
+- `AbcAdaptation.Reference.Iut.statementII_of_cor312`：无待决译名。
+- `AbcAdaptation_Reference_Iut_Tripod_Theory`：无待决译名。
+- `AbcAdaptation.Tripod.statementII_bridge`：无待决译名。
+- `AbcAdaptation_Reference_Iut_Concrete_CurveData`：无待决译名。
+- `AbcAdaptation_Reference_Iut_Concrete_UniformizerSupply`：无待决译名。
+- `TowerArithmetic.localEstimate`：`capsule`（待定：胶囊／囊）。
 - `ConcreteThetaDataExistence.toThetaDataExistence`、`CurveInputs.concreteThetaDataExistence`：无待决译名。
-- `ThetaLocalData.withBadChars`、`ThetaLocalData.step_iii_of_qPilotInputs`：`distinguished primes`（待定：特出素数／指定素数）。
+- `ThetaLocalData.withBadChars`、`ThetaLocalData.step_iii_of_qPilotInputs`：无待决译名。
 - `pointThetaData`、`concreteThetaDataExistence_of_pointwise`。
 - `archComponentVol_archLogShell`、`exists_leastHull_infinite`、`prop15`。

@@ -19,7 +19,7 @@ open scoped Classical
 
 variable (P : CurveProviders) (x : Pt) {ℓ : ℕ} (R : (P.curve x).ModEllRepData ℓ)
 
-private lemma relRamIdx_torsion_eq_one_at_good_place (hℓ : ℓ.Prime) (hℓ2 : ℓ ≠ 2)
+lemma relRamIdx_torsion_eq_one_at_good_place (hℓ : ℓ.Prime) (hℓ2 : ℓ ≠ 2)
     {v : FinitePlace ↥R.torsionField} {w : FinitePlace (P.curve x).F}
     {u : FinitePlace (tpd P x)} (hvw : FinitePlace.LiesOver v w) (hwu : FinitePlace.LiesOver w u)
     (h2 : residueChar v ≠ 2) (hpℓ : residueChar v ≠ ℓ) (hu : u ∉ badT P x) :
