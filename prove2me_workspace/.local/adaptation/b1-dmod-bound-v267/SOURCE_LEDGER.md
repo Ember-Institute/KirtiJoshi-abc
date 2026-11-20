@@ -14,7 +14,7 @@ The source constructor at `Iut/Tripod/Main.lean:123` consumes this field for the
 
 The bound is $[F_{\mathrm{mod}}:\mathbb Q]\leq d$. The separate bound $[F_\lambda:\mathbb Q]\leq 552960d$, a complete `CurveProviders` value, and the remaining fields of the `CurveInputs` constructor are open.
 
-The trilingual readbacks cover [the four source declarations](readbacks/dmod-bound.md) and [the field proof](readbacks/curve-inputs-dmod-field.md). The Chinese name for `compactly bounded subset` is pending. [Mochizuki paper context](readbacks/paper-context.md)
+The trilingual readbacks cover [the four source declarations](readbacks/dmod-bound.md) and [the field proof](readbacks/curve-inputs-dmod-field.md). The field readback uses 紧致有界子集 for `compactly bounded subset`. [Mochizuki paper context](readbacks/paper-context.md)
 
 ## MCP-CI acceptance
 

@@ -10,7 +10,7 @@ The proof takes the two bounds from `legendreHeight P K` and rewrites $P.h=A$ us
 
 # 简体中文
 
-给定一个实际的 Legendre 曲线供应数据 $P$，`canonicalLegendreHeightComparison_of_provider P` 证明固定的数值比较 `CanonicalLegendreHeightComparison`。对每个【译名待定：compactly bounded subset】 $K$，存在实常数 $B$，使
+给定一个实际的 Legendre 曲线供应数据 $P$，`canonicalLegendreHeightComparison_of_provider P` 证明固定的数值比较 `CanonicalLegendreHeightComparison`。对每个紧致有界子集 $K$，存在实常数 $B$，使
 
 $$\left|A(x)/6-\mathrm{htCan}(x)\right|\leq B\qquad(x\in K),$$
 
@@ -27,3 +27,5 @@ $$\left|A(x)/6-\mathrm{htCan}(x)\right|\leq B\qquad(x\in K)$$
 となる。ここで $A(x)=h_{\mathrm{fin}}(j(\lambda))/[\mathbb Q(\lambda):\mathbb Q]$ は既存の `auxiliaryHeight` であり、$\lambda=\mathrm{gen}(x)$ である。
 
 証明は `legendreHeight P K` の二つの評価を取り出し、`providerHeight_eq_auxiliaryHeight` により $P.h$ を $A$ に書き換える。$B=\max(C_1,C_2)$ とおくと、二つの不等式から上の絶対値評価を得る。次数の制限はなく、$P$ は引き続き入力として必要である。望月新一の「宇宙際 Teichmüller 理論」第 IV 論文、系 2.2(i) が数学的な高さ比較を与える。この補助定理 は、その比較をプロジェクトで固定された数値高さの式で表す。
+
+[Canonical consumer](../../../../Solutions/Source_TripodProviderLegendreComparison.lean#L20) · [Auxiliary height identity](../../../../Solutions/Source_TripodProviderAuxiliaryHeight.lean#L17) · [Source Legendre comparison](../../../../../refer/iut/Iut/Tripod/Height.lean#L791)

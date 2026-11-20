@@ -28,4 +28,4 @@ The provider normalization is `P.h x = finHeight (legendreJ (gen x.1)) / deg x.1
 
 The temporary parent theorem retains the original statement and proof text. Its four private source-name aliases reuse the existing numerical upper bound, lower bound, archimedean triple bound, and the zero-j sixth-power theorem. The last alias specializes the original generic statement to the actual tripod generator and retains the two nonzero premises. The canonical consumer uses `providerHeight_eq_auxiliaryHeight` and the two one-sided inequalities only.
 
-The independent drafts were prepared before compilation and are archived with the editorial terminology and citation adjustments. The Chinese term for “compactly bounded subset” remains pending. Compilation receipts are recorded separately in the source ledger.
+The independent drafts were prepared before compilation and are archived with the editorial terminology and citation adjustments. The Chinese readbacks use 紧致有界子集 for “compactly bounded subset” according to TERM-016. Compilation receipts are recorded separately in the source ledger.

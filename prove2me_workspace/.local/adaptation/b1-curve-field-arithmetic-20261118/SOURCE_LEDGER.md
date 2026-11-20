@@ -1467,3 +1467,148 @@ The joint project and axiom review reports only `propext`, `Classical.choice` an
 | [`ci-024348-618bae19`](receipts/round-ci-024348-618bae19-result.json) | `c7d163f26191` | succeeded / 0 | 94.65 | 90.54 (4.20 + 86.34) | 3.54 | Limits at finite poles and infinity |
 | [`ci-024373-aeca5446`](receipts/round-ci-024373-aeca5446-result.json) | `a35c8a0f03b5` | succeeded / 0 | 93.74 | 90.91 (4.20 + 86.71) | 3.54 | Remove the unused simplification argument and create the dependency artifact |
 | [`ci-024387-d0e0419a`](receipts/round-ci-024387-d0e0419a-result.json) | `2a805d983672` | succeeded / 0 | 324.74 | 306.82 (5.93 + 300.89) | 7.88 | Joint project and axiom review of nine declarations |
+
+## Fricke normal form and transport of trace integrality
+
+Nielsen moves decrease the sum of the absolute traces by at least two until the three strict triangle inequalities hold. Generator signs make all three traces positive. The explicit normal-form matrices have these traces and the same commutator trace, so Fricke rigidity gives simultaneous real conjugacy. Changing signs preserves the commensurator through commensurability. The conjugation then transports density and the squared trace of each element. The complex CanLift assembly consumes integrality on these normal forms and the classified uniformizations of the four models. [Pinned normal form](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/Fuchsian/OneInftyLattice.lean#L348) · [Normal form](../../../Solutions/Source_ReferenceIutCanLiftFrickeNormalForm.lean#L166) · [Trace transport and consumer](../../../Solutions/Source_ReferenceIutCanLiftFrickeTraceTransport.lean#L114) · [Three-language readback](readbacks/canlift-fricke-normal-form-trilingual.md)
+
+The joint project and axiom review reports twelve declarations using only Lean's standard axioms. PSS is unavailable. [Review input](ReviewCanLiftFrickeNormalForm.lean) · [Review receipt](receipts/round-ci-024440-1c1f5385-result.json)
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024301-55c37bb4`](receipts/round-ci-024301-55c37bb4-result.json) | `c78ba6a5c5ee` | failed / 1 | 44.13 | 44.65 (4.20 + 40.45) | 2.80 | Open matrix entry goals and multiplication order |
+| [`ci-024317-7338a3b6`](receipts/round-ci-024317-7338a3b6-result.json) | `9b51f84b125b` | failed / 1 | 49.77 | 50.21 (3.79 + 46.42) | 2.79 | Two zero entries and two exhausted tactic goals |
+| [`ci-024325-5483a004`](receipts/round-ci-024325-5483a004-result.json) | `c00ae8ecb979` | succeeded / 0 | 39.74 | 42.19 (6.84 + 35.35) | 2.83 | Fricke normal form leaf |
+| [`ci-024337-4eb87548`](receipts/round-ci-024337-4eb87548-result.json) | `c00ae8ecb979` | succeeded / 0 | 53.70 | 54.04 (4.79 + 49.25) | 2.80 | Fricke normal form dependency artifact |
+| [`ci-024350-402d0e43`](receipts/round-ci-024350-402d0e43-result.json) | `faae56717f36` | failed / 1 | 151.49 | 149.13 (7.35 + 141.78) | 7.63 | Subgroup-map composition failed to unfold |
+| [`ci-024363-9d42d8f6`](receipts/round-ci-024363-9d42d8f6-result.json) | `8513706e5b07` | failed / 1 | 179.73 | 172.18 (7.00 + 165.18) | 7.64 | Rewrite ran into the Monoid.End coercion |
+| [`ci-024389-e7db564b`](receipts/round-ci-024389-e7db564b-result.json) | `804995777586` | succeeded / 0 | 313.68 | 299.76 (5.51 + 294.25) | 7.62 | Conjugation intertwines the subgroup maps by direct membership proof |
+| [`ci-024419-988c5dc8`](receipts/round-ci-024419-988c5dc8-result.json) | `804995777586` | succeeded / 0 | 230.36 | 223.25 (6.10 + 217.15) | 7.63 | Fricke trace transport dependency artifact |
+| [`ci-024440-1c1f5385`](receipts/round-ci-024440-1c1f5385-result.json) | `3fc49216ea59` | succeeded / 0 | 479.49 | 426.04 (7.37 + 418.67) | 8.13 | Joint project and axiom review of twelve declarations |
+
+## General SL₂ image theorems from the Tate source
+
+The handoff from session `01a1ecf6-2a67-7292-a661-53696e834cf6` identified the source route from selected-place ramification to image order and SL₂ inclusion. The two general local theorems preserve the source curve arithmetic, Tate inputs and representation. Conditions (P2) and (P5) supply ramification divisibility at a chosen place. Its ramification index divides the Galois group order, which equals the image order. Condition (P4) excludes an invariant line, so the generation theorem applies to the element of prime order in the image. The actual tripod constructor uses these general theorems on the same curve and representation. [Source](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Concrete/SL2Image.lean#L217) · [Image theorems](../../../Solutions/Source_SL2ImageFromSource.lean#L21) · [Tripod consumer](../../../Solutions/Source_TripodCurveInputsFromSource.lean#L23) · [Three-language readback](readbacks/sl2-image-endpoints-trilingual.md)
+
+The review imports Checks, ImportAudit, Act1Scene1 and AxiomAudit. The five declarations use only `propext`, `Classical.choice` and `Quot.sound`. The platform proof mirror still needs a compatible dependency closure for the local Tate square-root descent and the Tate uniformization. [Review input](ReviewSL2ImageFromSource.lean) · [Review receipt](receipts/round-ci-024541-423ac386-result.json)
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024403-066c94c4`](receipts/round-ci-024403-066c94c4-result.json) | `64a422bd4a05` | timeout / unknown | 180.07 (scheduler) | unknown (unknown + unknown) | unknown | Initial leaf reached the 180 s scheduler limit |
+| [`ci-024425-509c237e`](receipts/round-ci-024425-509c237e-result.json) | `64a422bd4a05` | succeeded / 0 | 418.39 | 396.96 (7.81 + 389.15) | 7.50 | General SL₂ image order and inclusion leaf |
+| [`ci-024470-052530a8`](receipts/round-ci-024470-052530a8-result.json) | `64a422bd4a05` | succeeded / 0 | 236.56 | 231.93 (5.43 + 226.50) | 7.51 | General image proof import artifact |
+| [`ci-024516-a819b159`](receipts/round-ci-024516-a819b159-result.json) | `4c26772645dd` | succeeded / 0 | 318.82 | 306.32 (5.54 + 300.78) | 7.56 | Tripod consumer using both general theorems |
+| [`ci-024541-423ac386`](receipts/round-ci-024541-423ac386-result.json) | `d33b914439f1` | succeeded / 0 | 250.85 | 242.27 (5.79 + 236.48) | 8.07 | Joint project and axiom review of five declarations |
+
+## Rational projective representatives for the Fricke commensurator
+
+For a Fricke normal form whose three squared traces are rational, rescaling the generators gives rational matrices. The unipotent cusp and its conjugate recover the required field membership from powers of elements in the generated subgroup. This gives a rational projective representative for each element of the same commensurator. The determinant is nonzero, and any two rational representatives differ by a nonzero rational scalar. The p-adic action consumes the representatives and scalar uniqueness. Separately, the complex embedding lemma supplies an embedding that moves any irrational real number. The proof that every such embedding fixes the three squared traces and the p-adic bounds for all primes remain open. [Pinned M2 assembly](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/M2/Final.lean#L268) · [Rational commensurator](../../../Solutions/Source_ReferenceIutCanLiftFrickeRationalCommensurator.lean#L122) · [p-adic action](../../../Solutions/Source_ReferenceIutCanLiftPadicAction.lean#L52) · [Three-language readback](readbacks/canlift-m2-rational-commensurator-trilingual.md)
+
+The joint review imports Checks, ImportAudit, Act1Scene1 and AxiomAudit. The sixteen declarations use only `propext`, `Classical.choice` and `Quot.sound`. Wall and CPU times are in seconds. RSS is the process-tree peak from MCP-CI. PSS and the resource degradation marker are unavailable. [Review input](ReviewCanLiftFrickeRational.lean) · [Review receipt](receipts/round-ci-024595-fc1260fc-result.json)
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024365-acf0d9f8`](receipts/round-ci-024365-acf0d9f8-result.json) | `030104529240` | failed / 1 | 47.42 | 46.25 (4.10 + 42.15) | 2.79 | fricke rational — line 78, unsolved goals (4 errors in receipt) |
+| [`ci-024392-6b924bcb`](receipts/round-ci-024392-6b924bcb-result.json) | `bb4354177cc3` | failed / 1 | 110.34 | 103.95 (3.14 + 100.81) | 3.53 | complex embedding — line 109, Type mismatch: After simplification, term |
+| [`ci-024396-280368db`](receipts/round-ci-024396-280368db-result.json) | `4cf76dad96b4` | succeeded / 0 | 101.66 | 100.16 (1.85 + 98.31) | 2.70 | fricke rational retry (4 warnings in receipt) |
+| [`ci-024401-2c9425b5`](receipts/round-ci-024401-2c9425b5-result.json) | `15b057ea1d7f` | failed / 1 | 87.33 | 84.76 (3.76 + 81.00) | 3.53 | complex embedding retry — line 110, Type mismatch (2 errors in receipt) |
+| [`ci-024417-e3d52c62`](receipts/round-ci-024417-e3d52c62-result.json) | `86bde59dd9c3` | failed / 1 | 88.47 | 84.55 (3.32 + 81.23) | 3.53 | complex embedding retry2 — line 108, typeclass instance problem is stuck (2 errors in receipt) |
+| [`ci-024418-6d1eebe8`](receipts/round-ci-024418-6d1eebe8-result.json) | `0400d75a80ed` | succeeded / 0 | 65.59 | 63.54 (3.54 + 60.00) | 2.79 | fricke rational artifact |
+| [`ci-024439-c1d96928`](receipts/round-ci-024439-c1d96928-result.json) | `26d629832839` | succeeded / 0 | 106.17 | 102.93 (2.04 + 100.89) | 2.70 | fricke rational rep |
+| [`ci-024441-95ffbe19`](receipts/round-ci-024441-95ffbe19-result.json) | `e96709dde3a8` | succeeded / 0 | 124.66 | 110.48 (8.59 + 101.89) | 2.83 | fricke trace field |
+| [`ci-024442-d41299e2`](receipts/round-ci-024442-d41299e2-result.json) | `6f05c41df7d7` | succeeded / 0 | 183.57 | 167.93 (2.51 + 165.42) | 3.41 | complex embedding retry3 (4 warnings in receipt) |
+| [`ci-024461-ee9bd624`](receipts/round-ci-024461-ee9bd624-result.json) | `26d629832839` | succeeded / 0 | 96.59 | 92.74 (1.65 + 91.09) | 2.68 | fricke rational rep artifact |
+| [`ci-024478-242d5eeb`](receipts/round-ci-024478-242d5eeb-result.json) | `e96709dde3a8` | succeeded / 0 | 102.95 | 100.68 (5.54 + 95.14) | 2.82 | fricke trace field artifact |
+| [`ci-024488-a7d8e2c3`](receipts/round-ci-024488-a7d8e2c3-result.json) | `6f05c41df7d7` | succeeded / 0 | 114.85 | 107.84 (4.06 + 103.78) | 3.55 | complex embedding artifact (4 warnings in receipt) |
+| [`ci-024529-74698986`](receipts/round-ci-024529-74698986-result.json) | `d07c5b7eafda` | failed / 1 | 92.74 | 88.35 (2.03 + 86.32) | 2.78 | fricke rational commensurator — line 23, no macro or `[quot_precheck]` instance for syntax kind `Lean.Parser.Term.proj` found (13 errors in receipt) |
+| [`ci-024543-e71f2372`](receipts/round-ci-024543-e71f2372-result.json) | `992fa8536db0` | failed / 1 | 76.27 | 72.09 (2.78 + 69.31) | 2.78 | fricke rational commensurator retry — line 98, unsolved goals |
+| [`ci-024552-a67af0a0`](receipts/round-ci-024552-a67af0a0-result.json) | `ff771521a901` | failed / 1 | 55.84 | 54.16 (3.70 + 50.46) | 3.01 | padic action — line 38, unsolved goals |
+| [`ci-024557-6e7b03e9`](receipts/round-ci-024557-6e7b03e9-result.json) | `279635e2921f` | succeeded / 0 | 45.56 | 43.64 (2.54 + 41.10) | 2.77 | fricke rational commensurator retry2 (3 warnings in receipt) |
+| [`ci-024569-71368321`](receipts/round-ci-024569-71368321-result.json) | `279635e2921f` | succeeded / 0 | 49.22 | 46.78 (2.50 + 44.28) | 2.78 | fricke rational commensurator artifact (3 warnings in receipt) |
+| [`ci-024572-f7eed5e9`](receipts/round-ci-024572-f7eed5e9-result.json) | `8819db3b1c24` | succeeded / 0 | 54.25 | 53.10 (3.31 + 49.79) | 3.00 | padic action retry |
+| [`ci-024589-af53e625`](receipts/round-ci-024589-af53e625-result.json) | `8819db3b1c24` | succeeded / 0 | 49.18 | 47.78 (3.46 + 44.32) | 3.00 | padic action artifact |
+| [`ci-024595-fc1260fc`](receipts/round-ci-024595-fc1260fc-result.json) | `c0529c3d7d22` | succeeded / 0 | 176.96 | 173.74 (5.42 + 168.32) | 7.88 | review fricke rational |
+
+
+## Projective triples and boundary measure for CanLift superrigidity
+
+An invertible two-by-two matrix acts continuously on the projective line. Three distinct points determine the relative position used to recover an action from a point map. The tail convexity and probability limit lemmas provide measurable limits for the boundary kernel. Cauchy measure is equivalent to the boundary measure and gives a change-of-variables bound for the action. These estimates give almost-everywhere convergent subsequences for varying group elements. For a countable doubly ergodic group, almost invariant sets are null or conull and almost invariant measurable maps into countably separated spaces are almost everywhere constant. The pair-space results also give the corresponding assertions for single points. [Projective continuity](../../../Solutions/Source_ReferenceIutCanLiftProjectiveLine.lean#L653) · [Boundary limits](../../../Solutions/Source_ReferenceIutCanLiftBoundaryMeasure.lean#L344) · [Ergodic consequences](../../../Solutions/Source_ReferenceIutCanLiftErgodicUse.lean#L56) · [Three-language readback](readbacks/canlift-m2-boundary-superrigidity-trilingual.md)
+
+The joint review imports Checks, ImportAudit, Act1Scene1 and AxiomAudit. It verifies thirteen declarations with only Lean standard axioms. The double ergodicity of the actual normal-form lattice and the boundary kernel construction remain open. Wall and CPU times are in seconds. The memory column is the MCP-CI process-tree peak RSS in GiB. PSS and the resource degradation marker are unavailable. [Review input](ReviewCanLiftBoundaryErgodic.lean) · [Review receipt](receipts/round-ci-024631-b0700736-result.json)
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024420-7c0d941e`](receipts/round-ci-024420-7c0d941e-result.json) | `ab5bb016fc31` | failed / 1 | 122.73 | 125.85 (7.65 + 118.20) | 3.06 | projective line |
+| [`ci-024443-0ece4116`](receipts/round-ci-024443-0ece4116-result.json) | `4db1ce2a8e60` | succeeded / 0 | 167.00 | 159.02 (3.81 + 155.21) | 2.76 | tail convex |
+| [`ci-024444-26a0aead`](receipts/round-ci-024444-26a0aead-result.json) | `8919f81f74f5` | succeeded / 0 | 101.19 | 95.42 (8.03 + 87.39) | 3.07 | projective line retry |
+| [`ci-024487-6f4e7d70`](receipts/round-ci-024487-6f4e7d70-result.json) | `4db1ce2a8e60` | succeeded / 0 | 83.88 | 76.76 (3.42 + 73.34) | 2.77 | tail convex artifact |
+| [`ci-024506-3ae55c04`](receipts/round-ci-024506-3ae55c04-result.json) | `8919f81f74f5` | succeeded / 0 | 118.93 | 123.60 (10.20 + 113.40) | 3.08 | projective line artifact |
+| [`ci-024507-335bfe81`](receipts/round-ci-024507-335bfe81-result.json) | `c4877ecadb79` | failed / 1 | 132.42 | 128.45 (2.60 + 125.85) | 3.61 | m2 setup |
+| [`ci-024530-df682faf`](receipts/round-ci-024530-df682faf-result.json) | `0d34044d6ed0` | succeeded / 0 | 108.91 | 107.43 (6.01 + 101.42) | 3.62 | furstenberg limit (2 warnings in receipt) |
+| [`ci-024534-1fcbd2bc`](receipts/round-ci-024534-1fcbd2bc-result.json) | `207cb4c94fb6` | failed / 1 | 126.35 | 102.91 (3.01 + 99.90) | 3.61 | m2 setup retry |
+| [`ci-024537-490cd0f2`](receipts/round-ci-024537-490cd0f2-result.json) | `cfd9d9e959db` | succeeded / 0 | 109.75 | 86.52 (1.35 + 85.17) | 2.75 | three point |
+| [`ci-024548-5236b4d7`](receipts/round-ci-024548-5236b4d7-result.json) | `17476979682c` | succeeded / 0 | 102.69 | 99.68 (2.56 + 97.12) | 3.60 | m2 setup retry2 |
+| [`ci-024549-a5f34094`](receipts/round-ci-024549-a5f34094-result.json) | `0d34044d6ed0` | succeeded / 0 | 100.42 | 98.21 (4.95 + 93.26) | 3.61 | furstenberg limit artifact (2 warnings in receipt) |
+| [`ci-024551-d974c829`](receipts/round-ci-024551-d974c829-result.json) | `cfd9d9e959db` | succeeded / 0 | 60.65 | 58.12 (1.95 + 56.17) | 2.90 | three point artifact |
+| [`ci-024567-a260cc7b`](receipts/round-ci-024567-a260cc7b-result.json) | `17476979682c` | succeeded / 0 | 69.69 | 65.84 (3.31 + 62.53) | 3.63 | m2 setup artifact |
+| [`ci-024581-7c60125a`](receipts/round-ci-024581-7c60125a-result.json) | `a271e76e0d49` | succeeded / 0 | 63.80 | 62.10 (7.92 + 54.18) | 3.71 | boundary measure (5 warnings in receipt) |
+| [`ci-024588-cba07478`](receipts/round-ci-024588-cba07478-result.json) | `a271e76e0d49` | succeeded / 0 | 60.85 | 63.02 (8.81 + 54.21) | 3.72 | boundary measure artifact (5 warnings in receipt) |
+| [`ci-024602-ea6a827d`](receipts/round-ci-024602-ea6a827d-result.json) | `269cc3b78e1c` | succeeded / 0 | 69.81 | 69.51 (2.84 + 66.67) | 3.65 | ergodic use |
+| [`ci-024619-5fe6436b`](receipts/round-ci-024619-5fe6436b-result.json) | `269cc3b78e1c` | succeeded / 0 | 55.84 | 54.11 (2.60 + 51.51) | 3.64 | ergodic use artifact |
+| [`ci-024631-b0700736`](receipts/round-ci-024631-b0700736-result.json) | `f55c802bc99d` | succeeded / 0 | 299.80 | 294.85 (5.57 + 289.28) | 7.80 | review boundary ergodic |
+
+
+## Takeuchi uniformizations of the four model curves
+
+The certified rational function pulls back along the half-period Weierstrass coordinate to a covering of the modular orbifold on the complement of the lattice. The modular j charts give orders 3 and 2 at the elliptic points and order 1 elsewhere. The two directions of orbifold lifting give a holomorphic left inverse after a modular correction, which produces a real Möbius map. Periodicity over twice the lattice makes the conjugate of each squared deck transformation preserve modular j. Its integral trace gives an integral squared trace for the original deck transformation. The classification and the four Belyi certificates then supply `exists_takeuchiPair_ccurve`, which the complex CanLift assembly calls directly. Its remaining input is `M2.NormalFormTraceIntegrality`. [Upstream classification](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/S1/Belyi.lean#L72) · [Model uniformizations](../../../Solutions/Source_ReferenceIutCanLiftTakeuchiModelUniformizations.lean#L27) · [Complex assembly](../../../Solutions/Source_ReferenceIutCanLiftComplexFromFricke.lean#L15) · [Three-language readback](readbacks/canlift-takeuchi-model-uniformizations-trilingual.md)
+
+The joint review imports Checks, ImportAudit, Act1Scene1 and AxiomAudit. The twenty-one declarations use only Lean standard axioms. Wall and CPU times are in seconds. RSS is the MCP-CI process-tree peak in GiB. PSS and the resource degradation marker are unavailable, and superseded failures retain their original diagnostics and source hashes. [Review input](ReviewCanLiftTakeuchiModelUniformizations.lean) · [Review receipt](receipts/round-ci-024660-f80e76b6-result.json)
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024298-0acce0a2`](receipts/round-ci-024298-0acce0a2-result.json) | `2d9d760209ba` | succeeded / 0 | 50.65 | 49.14 (1.79 + 47.35) | 3.30 | takeuchi orbifold local form |
+| [`ci-024300-0a604b9c`](receipts/round-ci-024300-0a604b9c-result.json) | `2d9d760209ba` | succeeded / 0 | 55.26 | 54.39 (2.29 + 52.10) | 3.39 | takeuchi orbifold local form artifact |
+| [`ci-024366-6d1ba5d5`](receipts/round-ci-024366-6d1ba5d5-result.json) | `50be4c4d3f0b` | succeeded / 0 | 83.20 | 80.28 (2.68 + 77.60) | 3.91 | takeuchi elliptic x |
+| [`ci-024367-f97d8e7e`](receipts/round-ci-024367-f97d8e7e-result.json) | `4c1903dd5b19` | succeeded / 0 | 59.56 | 57.34 (2.25 + 55.09) | 3.31 | takeuchi orbifold cover (2 warnings in receipt) |
+| [`ci-024388-9a7ed4ed`](receipts/round-ci-024388-9a7ed4ed-result.json) | `50be4c4d3f0b` | succeeded / 0 | 184.45 | 177.12 (2.70 + 174.42) | 3.89 | takeuchi elliptic x artifact |
+| [`ci-024390-06cae0e0`](receipts/round-ci-024390-06cae0e0-result.json) | `4c1903dd5b19` | succeeded / 0 | 130.27 | 116.69 (2.32 + 114.37) | 3.30 | takeuchi orbifold cover artifact (2 warnings in receipt) |
+| [`ci-024393-b6943452`](receipts/round-ci-024393-b6943452-result.json) | `be5a9145155a` | failed / 1 | 121.36 | 112.75 (2.75 + 110.00) | 3.41 | takeuchi rotation local form — line 46, Tactic `rewrite` failed: Did not find an occurrence of the pattern |
+| [`ci-024394-b012f9cf`](receipts/round-ci-024394-b012f9cf-result.json) | `ed7b1af584a3` | failed / 1 | 115.39 | 109.29 (5.48 + 103.81) | 4.15 | takeuchi cayley action — line 18, unexpected token 'hiding'; expected command |
+| [`ci-024402-0d9ee495`](receipts/round-ci-024402-0d9ee495-result.json) | `52accfb9c0d2` | succeeded / 0 | 105.97 | 105.73 (6.31 + 99.42) | 4.15 | takeuchi cayley action retry |
+| [`ci-024404-aa1291ab`](receipts/round-ci-024404-aa1291ab-result.json) | `ae4d703be282` | timeout / unknown | 180.06 (scheduler) | unknown (unknown + unknown) | unknown | takeuchi orbifold local lift — scheduler timeout with 60 estimated duration |
+| [`ci-024405-76adce03`](receipts/round-ci-024405-76adce03-result.json) | `7a2153099713` | succeeded / 0 | 120.65 | 118.62 (3.81 + 114.81) | 4.01 | takeuchi elliptic orbifold cover (1 warnings in receipt) |
+| [`ci-024421-e50b3180`](receipts/round-ci-024421-e50b3180-result.json) | `d0bc61e6b58a` | succeeded / 0 | 104.79 | 102.41 (3.37 + 99.04) | 3.42 | takeuchi rotation local form retry |
+| [`ci-024422-d644e148`](receipts/round-ci-024422-d644e148-result.json) | `52accfb9c0d2` | succeeded / 0 | 141.10 | 140.45 (5.10 + 135.35) | 4.15 | takeuchi cayley action artifact |
+| [`ci-024423-4eb532fe`](receipts/round-ci-024423-4eb532fe-result.json) | `ae4d703be282` | succeeded / 0 | 103.18 | 100.28 (4.28 + 96.00) | 3.84 | takeuchi orbifold local lift retry |
+| [`ci-024424-bddb4448`](receipts/round-ci-024424-bddb4448-result.json) | `7a2153099713` | succeeded / 0 | 107.73 | 104.30 (4.76 + 99.54) | 4.03 | takeuchi elliptic orbifold cover artifact (1 warnings in receipt) |
+| [`ci-024457-5d0cbd86`](receipts/round-ci-024457-5d0cbd86-result.json) | `af157218ea5c` | failed / 1 | 129.11 | 117.60 (5.34 + 112.26) | 4.14 | takeuchi modular stabilizers — line 18, unexpected token 'hiding'; expected command (3 errors in receipt) |
+| [`ci-024458-942e97de`](receipts/round-ci-024458-942e97de-result.json) | `d0bc61e6b58a` | succeeded / 0 | 115.33 | 109.72 (4.15 + 105.57) | 3.42 | takeuchi rotation local form artifact |
+| [`ci-024459-90923672`](receipts/round-ci-024459-90923672-result.json) | `67b3d73a474d` | failed / 1 | 125.63 | 121.04 (3.31 + 117.73) | 4.07 | takeuchi belyi pullback — line 36, Type mismatch: After simplification, term (4 errors in receipt) |
+| [`ci-024460-58539c21`](receipts/round-ci-024460-58539c21-result.json) | `ae4d703be282` | succeeded / 0 | 119.88 | 117.30 (4.48 + 112.82) | 3.84 | takeuchi orbifold local lift artifact |
+| [`ci-024479-8c16822e`](receipts/round-ci-024479-8c16822e-result.json) | `0a4646e7e955` | failed / 1 | 119.98 | 118.64 (2.71 + 115.93) | 3.98 | takeuchi modular mobius — line 116, Type mismatch: After simplification, term |
+| [`ci-024503-359e1b1f`](receipts/round-ci-024503-359e1b1f-result.json) | `dfff34022c45` | succeeded / 0 | 156.69 | 151.31 (6.92 + 144.39) | 4.15 | takeuchi modular stabilizers retry |
+| [`ci-024504-0508d7eb`](receipts/round-ci-024504-0508d7eb-result.json) | `c7885d61359d` | failed / 1 | 162.42 | 156.01 (4.64 + 151.37) | 4.14 | takeuchi j local charts — line 131, Type mismatch |
+| [`ci-024505-688e05a7`](receipts/round-ci-024505-688e05a7-result.json) | `31aea1d539a2` | failed / 1 | 128.83 | 124.74 (2.32 + 122.42) | 3.73 | takeuchi orbifold lift — line 60, Tactic `rewrite` failed: Did not find an occurrence of the pattern |
+| [`ci-024512-ebe17bf6`](receipts/round-ci-024512-ebe17bf6-result.json) | `66987046f7ca` | succeeded / 0 | 155.99 | 149.60 (3.12 + 146.48) | 4.11 | takeuchi belyi pullback retry |
+| [`ci-024517-e0d776e0`](receipts/round-ci-024517-e0d776e0-result.json) | `af43b1ece77c` | succeeded / 0 | 155.73 | 151.52 (3.56 + 147.96) | 4.01 | takeuchi modular mobius retry (3 warnings in receipt) |
+| [`ci-024526-640dcbc7`](receipts/round-ci-024526-640dcbc7-result.json) | `dfff34022c45` | succeeded / 0 | 138.89 | 133.74 (5.73 + 128.01) | 4.15 | takeuchi modular stabilizers artifact |
+| [`ci-024527-d954953e`](receipts/round-ci-024527-d954953e-result.json) | `e0c8eead5801` | succeeded / 0 | 138.17 | 133.23 (3.45 + 129.78) | 4.12 | takeuchi j local charts retry (2 warnings in receipt) |
+| [`ci-024535-f22adfa8`](receipts/round-ci-024535-f22adfa8-result.json) | `e7857cef63a2` | succeeded / 0 | 138.20 | 133.19 (2.37 + 130.82) | 3.72 | takeuchi orbifold lift retry |
+| [`ci-024539-2ee1ee74`](receipts/round-ci-024539-2ee1ee74-result.json) | `66987046f7ca` | succeeded / 0 | 119.33 | 113.64 (2.79 + 110.85) | 4.10 | takeuchi belyi pullback artifact |
+| [`ci-024540-f4450ff1`](receipts/round-ci-024540-f4450ff1-result.json) | `af43b1ece77c` | succeeded / 0 | 115.97 | 110.40 (3.15 + 107.25) | 3.96 | takeuchi modular mobius artifact (3 warnings in receipt) |
+| [`ci-024544-5964a51a`](receipts/round-ci-024544-5964a51a-result.json) | `e0c8eead5801` | succeeded / 0 | 111.12 | 106.81 (4.06 + 102.75) | 4.13 | takeuchi j local charts artifact (2 warnings in receipt) |
+| [`ci-024550-86c14c63`](receipts/round-ci-024550-86c14c63-result.json) | `e7857cef63a2` | succeeded / 0 | 68.93 | 67.52 (2.82 + 64.70) | 3.75 | takeuchi orbifold lift artifact |
+| [`ci-024568-3a2e9b87`](receipts/round-ci-024568-3a2e9b87-result.json) | `db1861b11aee` | succeeded / 0 | 78.67 | 74.60 (3.29 + 71.31) | 4.13 | takeuchi j orb |
+| [`ci-024580-a00ba05c`](receipts/round-ci-024580-a00ba05c-result.json) | `db1861b11aee` | succeeded / 0 | 67.99 | 64.37 (2.87 + 61.50) | 4.10 | takeuchi j orb artifact |
+| [`ci-024591-40d5ebfd`](receipts/round-ci-024591-40d5ebfd-result.json) | `06f74d733af9` | succeeded / 0 | 67.11 | 66.68 (3.42 + 63.26) | 4.25 | takeuchi modular lift |
+| [`ci-024596-ecbe02fb`](receipts/round-ci-024596-ecbe02fb-result.json) | `06f74d733af9` | succeeded / 0 | 67.52 | 65.74 (3.42 + 62.32) | 4.24 | takeuchi modular lift artifact |
+| [`ci-024606-9b81e4a8`](receipts/round-ci-024606-9b81e4a8-result.json) | `f48246219771` | succeeded / 0 | 67.78 | 67.08 (3.12 + 63.96) | 4.25 | takeuchi integral traces (1 warnings in receipt) |
+| [`ci-024612-5084c13e`](receipts/round-ci-024612-5084c13e-result.json) | `f48246219771` | succeeded / 0 | 59.83 | 58.82 (2.51 + 56.31) | 4.17 | takeuchi integral traces artifact (1 warnings in receipt) |
+| [`ci-024613-8e76938b`](receipts/round-ci-024613-8e76938b-result.json) | `71fdaa84d7cc` | succeeded / 0 | 155.84 | 153.76 (4.70 + 149.06) | 7.42 | takeuchi belyi |
+| [`ci-024620-35b532b6`](receipts/round-ci-024620-35b532b6-result.json) | `71fdaa84d7cc` | succeeded / 0 | 179.89 | 177.33 (6.12 + 171.21) | 7.59 | takeuchi belyi artifact |
+| [`ci-024624-31be2099`](receipts/round-ci-024624-31be2099-result.json) | `1334e2b3b967` | timeout / unknown | 180.06 (scheduler) | unknown (unknown + unknown) | unknown | takeuchi model uniformizations — scheduler timeout with 60 estimated duration |
+| [`ci-024644-3737dc5e`](receipts/round-ci-024644-3737dc5e-result.json) | `1334e2b3b967` | succeeded / 0 | 168.57 | 168.05 (5.20 + 162.85) | 7.59 | takeuchi model uniformizations retry |
+| [`ci-024649-3b4b18e8`](receipts/round-ci-024649-3b4b18e8-result.json) | `1334e2b3b967` | succeeded / 0 | 99.72 | 97.21 (4.50 + 92.71) | 7.58 | takeuchi model uniformizations artifact |
+| [`ci-024655-bc32df4f`](receipts/round-ci-024655-bc32df4f-result.json) | `f1608e6a6fa2` | succeeded / 0 | 101.37 | 99.77 (5.10 + 94.67) | 7.62 | complex from fricke |
+| [`ci-024658-ddfe2617`](receipts/round-ci-024658-ddfe2617-result.json) | `f1608e6a6fa2` | succeeded / 0 | 121.85 | 59.17 (1.85 + 57.32) | 4.17 | complex from fricke artifact |
+| [`ci-024660-f80e76b6`](receipts/round-ci-024660-f80e76b6-result.json) | `c61b99c4c616` | succeeded / 0 | 132.90 | 130.98 (5.56 + 125.42) | 7.94 | review takeuchi model uniformizations |

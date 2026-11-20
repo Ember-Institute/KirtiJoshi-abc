@@ -11,14 +11,14 @@ Mochizuki's IUT IV, Corollary 2.2(i), supplies the paper context. Its proof comp
 
 # 简体中文
 
-对每个给定的 Legendre 曲线供应数据 $P$ 和【译名待定：compactly bounded subset】 $K$，`legendreHeight P K` 证明 `LegendreHeightHyp P K`。令 $c=K.c$、$V=K.V$、$H=\mathrm{htCan}$。对每个 $x\in K$，证明给出的显式界为
+对每个给定的 Legendre 曲线供应数据 $P$ 和紧致有界子集 $K$，`legendreHeight P K` 证明 `LegendreHeightHyp P K`。令 $c=K.c$、$V=K.V$、$H=\mathrm{htCan}$。对每个 $x\in K$，证明给出的显式界为
 
 $$P.h(x)/6\leq H(x)+\log(2)/3,$$
 $$H(x)\leq P.h(x)/6+c|V|+c+\log(2)/3.$$
 
 证明中记 $\lambda=\mathrm{gen}(x)$、$d=[\mathbb Q(\lambda):\mathbb Q]$。记相对对数高度为 $h$。供应数据的归一化给出 $P.h(x)=h_{\mathrm{fin}}(j(\lambda))/d$，且 $H(x)=h(\lambda)/d$。先将 $h_{\mathrm{fin}}(j(\lambda))$ 与 $\lambda$、$\lambda^{-1}$、$(\lambda-1)^{-1}$ 的有限高度之和的两倍比较。紧有界条件控制 $V$ 上方的有限处与阿基米德部分。高度的取逆不变性及加法估计给出 $\log(2)/3$ 项。若 $j(\lambda)=0$，则利用 $\lambda^6=1$ 说明两个归一化高度均为零。最后除以正数 $d$，得到上述常数，无需次数上界。
 
-论文背景来自 望月新一《集合论多宇宙间算术 Teichmüller 理论》第四篇推论 2.2(i)。原文证明在【译名待定：compactly bounded subset】上比较 q-除子的归一化次数与模空间无穷远除子的高度，再利用 Legendre 参数直线上次数为六的拉回得到 $1/6$。Lean 定理通过显式的有限处与阿基米德估计证明其中这一部分，结论是给定 $P$ 的高度比较。
+论文背景来自 望月新一《集合论多宇宙间算术 Teichmüller 理论》第四篇推论 2.2(i)。原文证明在紧致有界子集上比较 q-除子的归一化次数与模空间无穷远除子的高度，再利用 Legendre 参数直线上次数为六的拉回得到 $1/6$。Lean 定理通过显式的有限处与阿基米德估计证明其中这一部分，结论是给定 $P$ 的高度比较。
 
 # 日本語
 
@@ -30,3 +30,5 @@ $$H(x)\leq P.h(x)/6+c|V|+c+\log(2)/3.$$
 証明では $\lambda=\mathrm{gen}(x)$、$d=[\mathbb Q(\lambda):\mathbb Q]$ とおく。相対対数高さを $h$ とする。供給データの正規化により $P.h(x)=h_{\mathrm{fin}}(j(\lambda))/d$ となり、$H(x)=h(\lambda)/d$ である。まず $h_{\mathrm{fin}}(j(\lambda))$ を、$\lambda$、$\lambda^{-1}$、$(\lambda-1)^{-1}$ の有限高さの和の二倍と比較する。コンパクト有界性は $V$ の上の有限素点とアルキメデス部分を制御する。逆数による高さの不変性と加法の評価から $\log(2)/3$ の項を得る。$j(\lambda)=0$ の場合は $\lambda^6=1$ を用い、二つの正規化された高さが零であることを示す。最後に正数 $d$ で割ることで上の定数を得る。次数の上限は必要ない。
 
 論文上の背景は 望月新一の「宇宙際 Teichmüller 理論」第 IV 論文、系 2.2(i) にある。その証明は、コンパクト有界集合上で q-因子の正規化次数とモジュライ空間の無限遠因子の高さを比較する。Legendre パラメータ直線への引き戻しの次数が六であることから、係数 $1/6$ を得る。Lean の定理は、有限素点とアルキメデス部分の明示的な評価によって、この高さ比較を与えられた $P$ に対して証明する。
+
+[Local legendreHeight](../../../../Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_LegendreHeight.lean#L49) · [Source legendreHeight](../../../../../refer/iut/Iut/Tripod/Height.lean#L791)

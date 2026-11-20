@@ -10,7 +10,7 @@ Source: `lana-agents/iut` at `07cb1da58f6d428a670dbb5dd6093d428bcbcdd8`, Apache 
 | `curveInputs_htCan_equiv` | `CurveFacts.lean:508` uses `legendreHeight P K` with the original scale of one sixth. This proof applies to the entire set, independent of the degree bound. `Corollary23.lean:100` uses the comparison to recover the bound for Weil height. |
 | `curveInputs_northcott` | `CurveFacts.lean:509` combines the same comparison with Northcott. `Corollary23.lean:76` uses it to show that the low height part of the exceptional set is finite. |
 
-The latter three declarations give the exact field values for `h := P.h`; the full `curveInputs` structure and the actual supplier's existence remain open. The independent three-language drafts and paper context are in `readbacks/`. Source text matches, target builds and the axiom review do not constitute a cross-version kernel correspondence or acceptance on Prove2Me.
+The latter three declarations give the exact field values for `h := P.h`; the full `curveInputs` structure and the actual supplier's existence remain open. The trilingual readbacks cover the exact local height, Weil height comparison, and Northcott field declarations. [Trilingual readbacks](readbacks/) Source text matches, target builds and the axiom review do not constitute a cross-version kernel correspondence or acceptance on Prove2Me.
 
 | Job | Outcome | Wall time | CPU total (user + system) | Peak RSS |
 | --- | --- | ---: | ---: | ---: |

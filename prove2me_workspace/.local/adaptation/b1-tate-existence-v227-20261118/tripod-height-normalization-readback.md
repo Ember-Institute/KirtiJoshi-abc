@@ -1,23 +1,23 @@
-# English
+# Tripodal field and provider height
 
-For the Legendre curve with parameter $\lambda$, the affine rational points killed by multiplication by two have $y=0$ and $x\in\{0,1,\lambda\}$. Its $j$-invariant is a rational expression in $\lambda$. The tripodal field, generated over $\mathbb Q$ by those three coordinates and $j$, therefore identifies with $\mathbb Q(\lambda)$, and the field isomorphism sends the curve's $j$ to that same expression in the parameter field.
+## English
 
-The sum of local contributions equals the finite height of $j$ divided by the absolute degree of the curve's field of definition. Transporting $j$ from the tripodal field to the curve's field multiplies its finite height by the relative field degree. The same degree occurs in the denominator, so it cancels. The resulting height is exactly `auxiliaryHeight`.
+- Let $x$ be a tripod point with parameter $\lambda\ne0,1$. Given finiteness proofs for its $3$- and $5$-torsion sets, form the Legendre curve $E_\lambda$ over $F_\lambda$. The $F_\lambda$-rational affine points killed by multiplication by $2$ have coordinates $(0,0)$, $(1,0)$ and $(\lambda,0)$. The invariant $j(E_\lambda)$ is a rational expression in $\lambda$. Thus `tripodalFieldOf_eq` identifies two subfields inside $F_\lambda$, namely the field $\mathbb Q(j(E_\lambda),0,1,\lambda)$ and $\mathbb Q(\lambda)$.
+- For a supplied curve provider $P$ and a tripod point $x$, let $j_T$ be the Legendre $j$ expression in the tripodal field of the curve supplied by $P$ at $x$. The $\mathbb Q$-algebra isomorphism `tpdEquiv P x` sends this field to the point field $\mathbb Q(\lambda)$ and sends its chosen generator to $\lambda$. The theorem `tpdEquiv_jT` gives the image $j(\lambda)$ of $j_T$ under this same isomorphism.
+- The theorem `h_eq_finHeight_div` gives $P.h(x)=h_{\mathrm{fin}}^{\mathbb Q(\lambda)}(j(\lambda))/[\mathbb Q(\lambda):\mathbb Q]$ for every such $P$ and $x$. The finite height of $j$ in $F_\lambda$ equals $[F_\lambda:\mathbb Q]P.h(x)$. Finite height is invariant under the isomorphism of the tripodal field with $\mathbb Q(\lambda)$. The extension to $F_\lambda$ multiplies the finite height and absolute degree by the same relative degree. After cancellation, the quotient is the project's `auxiliaryHeight`.
 
-Paper context: Mochizuki, *Inter-universal Teichmüller Theory IV*, Theorem 1.10 and Proposition 1.8; *Arithmetic Elliptic Curves in General Position*, Definition 3.3. Formal sources: `Iut/Concrete/Invariants.lean:198`, `Iut/Tripod/Legendre.lean:30`, `Iut/Tripod/CurveFacts.lean:164`, `Iut/Tripod/TwoAdic.lean:384` and `Iut/Tripod/Height.lean:249,540,603`. The equalities with `auxiliaryHeight` are project adapters.
+## 简体中文
 
-# 简体中文
+- 设 $x$ 为参数 $\lambda\ne0,1$ 的三足点，给定该点的 $3$ 阶、$5$ 阶挠点集的有限性证明，以此在 $F_\lambda$ 上构造 Legendre 曲线 $E_\lambda$。其被倍乘 $2$ 消去的 $F_\lambda$-有理仿射点为 $(0,0)$、$(1,0)$ 和 $(\lambda,0)$，$j(E_\lambda)$ 又是 $\lambda$ 的有理式。`tripodalFieldOf_eq` 因此给出 $F_\lambda$ 内两个子域的等式 $\mathbb Q(j(E_\lambda),0,1,\lambda)=\mathbb Q(\lambda)$。
+- 给定曲线供应数据 $P$ 与三足点 $x$，令 $j_T$ 为 $P$ 在 $x$ 处提供的曲线的三足域中的 Legendre $j$ 表达式。$\mathbb Q$-代数同构 `tpdEquiv P x` 将该域映到点域 $\mathbb Q(\lambda)$，并将选定生成元映到 $\lambda$。`tpdEquiv_jT` 证明在同一个同构下，$j_T$ 的像为 $j(\lambda)$。
+- 对每个这样的 $P$ 和 $x$，`h_eq_finHeight_div` 给出 $P.h(x)=h_{\mathrm{fin}}^{\mathbb Q(\lambda)}(j(\lambda))/[\mathbb Q(\lambda):\mathbb Q]$。$j$ 在 $F_\lambda$ 中的有限高度等于 $[F_\lambda:\mathbb Q]P.h(x)$。有限高度在三足域与 $\mathbb Q(\lambda)$ 的同构下保持不变，扩张到 $F_\lambda$ 则使有限高度和绝对次数乘上同一个相对扩张次数。约去该次数后即得项目中的 `auxiliaryHeight`。
 
-在参数为 $\lambda$ 的 Legendre 曲线上，倍乘二得到零的仿射有理点恰好是纵坐标为零、横坐标为 $0$、$1$ 或 $\lambda$ 的点。曲线的 $j$ 不变量是 $\lambda$ 的有理式。因此，由三个横坐标与 $j$ 在有理数域上生成的三足域同构于 $\mathbb Q(\lambda)$；该同构把曲线的 $j$ 不变量送到参数域中的同一有理式。
+## 日本語
 
-局部贡献之和等于 $j$ 的有限高度除以曲线定义域在有理数域上的次数。把 $j$ 从三足域送入曲线定义域时，有限高度乘以相对扩张次数。分母也乘以同一次数，约去之后就得到项目中已定义的辅助高度。
+- $x$ をパラメータ $\lambda\ne0,1$ をもつ三脚の点とする。$3$ と $5$ で消える点の集合の有限性を仮定し、$F_\lambda$ 上の Legendre 曲線 $E_\lambda$ を作る。二倍すると零点になる $F_\lambda$ 上のアフィン有理点は $(0,0)$、$(1,0)$、$(\lambda,0)$ である。また $j(E_\lambda)$ は $\lambda$ の有理式である。`tripodalFieldOf_eq` は $F_\lambda$ の中で $\mathbb Q(j(E_\lambda),0,1,\lambda)=\mathbb Q(\lambda)$ となることを示す。
+- 曲線の供給データ $P$ と三脚の点 $x$ に対し、$j_T$ を $P$ が $x$ に与える曲線の三脚体における Legendre の $j$ の式とする。$\mathbb Q$-代数同型 `tpdEquiv P x` はその体を点の体 $\mathbb Q(\lambda)$ に移し、選んだ生成元を $\lambda$ に写す。`tpdEquiv_jT` によると、同じ同型による $j_T$ の像は $j(\lambda)$ である。
+- このようなすべての $P$ と $x$ について、`h_eq_finHeight_div` は $P.h(x)=h_{\mathrm{fin}}^{\mathbb Q(\lambda)}(j(\lambda))/[\mathbb Q(\lambda):\mathbb Q]$ を与える。$F_\lambda$ での $j$ の有限高さは $[F_\lambda:\mathbb Q]P.h(x)$ に等しい。三脚体と $\mathbb Q(\lambda)$ の間の同型は有限高さを保つ。$F_\lambda$ への拡大では有限高さと絶対拡大次数に同じ相対拡大次数が掛かる。これを約分すると、プロジェクトの `auxiliaryHeight` を得る。
 
-论文背景见望月新一《集合论多宇宙间算术 Teichmüller 理论》第四篇定理 1.10、命题 1.8，以及《处于一般位置的算术椭圆曲线》定义 3.3。形式证明的位置见英文段落；与辅助高度的等式由本项目接入。
+Paper context appears in Mochizuki’s *Inter-universal Teichmüller Theory IV*, Theorem 1.10 and Proposition 1.8, and *Arithmetic Elliptic Curves in General Position*, Definition 3.3. [IUT IV](../../../../refer/Mochizuki/Inter-universal_Teichmuller_Theory_4.md) · [GenEll](../../../../refer/Mochizuki/Arithmetic_Elliptic_Curves_in_General_Position.md)
 
-# 日本語
-
-パラメータ $\lambda$ の Legendre 曲線において、二倍すると零点になるアフィン有理点は、$y$ 座標が零で $x$ 座標が $0$、$1$ または $\lambda$ である点に限る。曲線の $j$ 不変量は $\lambda$ の有理式である。したがって、これらの $x$ 座標と $j$ 不変量が有理数体上で生成する体は $\mathbb Q(\lambda)$ と同型であり、この同型による $j$ 不変量の像はパラメータの体における同じ有理式で表される。
-
-局所寄与の和は、$j$ 不変量の有限高さを曲線の定義体の絶対拡大次数で割った値に等しい。$j$ 不変量を生成体から定義体に移すと、有限高さと分母に同じ相対拡大次数が掛かる。これを約分すると、既に定義した補助高さを得る。
-
-論文の背景については、望月新一の *Inter-universal Teichmüller Theory IV* の定理 1.10 および命題 1.8 と、*Arithmetic Elliptic Curves in General Position* の定義 3.3 を参照。形式証明の出典は英語節のとおりである。補助高さとの等式は本プロジェクトで接続したものである。
+[Local tripodal field](../../../Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FieldIdentification.lean#L82) · [Local j-invariant transport](../../../Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_JTransport.lean#L44) · [Local normalized height](../../../Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_HeightNormalization.lean#L23) · [Source tripodal field](../../../../refer/iut/Iut/Tripod/CurveFacts.lean#L241) · [Source j-invariant transport](../../../../refer/iut/Iut/Tripod/Height.lean#L554) · [Source normalized height](../../../../refer/iut/Iut/Tripod/Height.lean#L603)

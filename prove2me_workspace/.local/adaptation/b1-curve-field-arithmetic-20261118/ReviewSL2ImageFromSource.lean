@@ -1,0 +1,14 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodCurveInputsFromSource
+
+open AbcAdaptation.Reference.Iut
+open AbcAdaptation.Tripod
+
+#print axioms EllipticCurveData.prime_dvd_ramificationIdx_from_source
+#print axioms EllipticCurveData.prime_dvd_card_range_from_source
+#print axioms EllipticCurveData.sl_le_range_of_from_source
+#print axioms sl2Image_from_source
+#print axioms curveInputs_from_source

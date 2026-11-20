@@ -10,7 +10,7 @@ The source constructor chooses `h := P.h` and the provider's actual curves and i
 
 # 简体中文
 
-设 $P$ 是实际的 Legendre 曲线供应数据，$K$ 是【译名待定：compactly bounded subset】，$d$ 是自然数。对满足 $x\in K$ 及 $[\mathbb Q(x):\mathbb Q]\leq d$ 的 三足点 $x$，`curveInputs_height_eq` 陈述
+设 $P$ 是实际的 Legendre 曲线供应数据，$K$ 是紧致有界子集，$d$ 是自然数。对满足 $x\in K$ 及 $[\mathbb Q(x):\mathbb Q]\leq d$ 的 三足点 $x$，`curveInputs_height_eq` 陈述
 
 $$\bigl((P.\mathrm{curve}(x)).\mathrm{localHeightData}(P.\mathrm{arith}(x),P.\mathrm{tate}(x))\bigr).\mathrm{height}=P.h(x).$$
 
@@ -27,3 +27,5 @@ $$\bigl((P.\mathrm{curve}(x)).\mathrm{localHeightData}(P.\mathrm{arith}(x),P.\ma
 を主張する。両辺は同じ供給データの曲線、算術的証明書、Tate 入力を用いる。証明は定義上の等式である。所属の引数は完全な `CurveInputs.height_eq` フィールドの型に合わせるためにあり、証明自体では使わない。与えられた $P$ に対し、この等式はすべての tripod の点で成り立つ。
 
 ソースの構成子は `h := P.h` とし、供給データに含まれる曲線と入力を選ぶ。`toCorollary22Inputs` はこの等式を `localData_height` として渡す。その後、`Corollary22Inputs.c2` が、選んだ曲線の局所高さを閾値と結論に現れる大域的な高さと同一視する。この等式は 供給データによる高さを計算するものであり、供給データや完全な `CurveInputs` レコードを構成しない。望月新一の「宇宙際 Teichmüller 理論」第 IV 論文、系 2.2(i) は、すべての有限素点を含む q-高さを、局所 q-パラメータが定める因子の正規化次数として定義する。この原文の定義が、同じ局所データを一貫して使う数学的背景となる。
+
+[Local height field](../../../../Solutions/Source_TripodCurveInputsHeightFields.lean#L27) · [Source height field](../../../../../refer/iut/Iut/Tripod/CurveFacts.lean#L503)

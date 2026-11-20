@@ -1,4 +1,4 @@
-The three readbacks cover the integrated curve height fields. They contain English, Simplified Chinese, and Japanese sections. The Chinese name for “compactly bounded subset” is pending. The Japanese コンパクト有界部分集合 is formed by analogy with the English compound and follows the earlier Statement II readback.
+The three readbacks cover the integrated curve height fields. They contain English, Simplified Chinese, and Japanese sections. The Chinese readbacks use 紧致有界子集 for “compactly bounded subset” according to TERM-016. The Japanese コンパクト有界部分集合 is formed by analogy with the English compound and follows the earlier Statement II readback.
 
 Precise inputs and outputs:
 

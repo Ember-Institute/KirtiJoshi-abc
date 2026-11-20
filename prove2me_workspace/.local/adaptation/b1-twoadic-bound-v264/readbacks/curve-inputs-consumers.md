@@ -12,7 +12,7 @@ The results retain the actual supplied curve data. They establish these two fiel
 
 # 简体中文
 
-对所提供的 Legendre 曲线数据 $P$ 和【译名待定：compactly bounded subset】$K$，源码选取
+对所提供的 Legendre 曲线数据 $P$ 和紧致有界子集$K$，源码选取
 
 $$B=\max(4K.c,0)。$$
 
@@ -33,3 +33,5 @@ $$B=\max(4K.c,0)$$
 この二つの結果は、ソースが選ぶ `B` とともに、`CurveInputs` のフィールド `B_nonneg` と `heightEq_two_le` の正確な値を与える。ソースは三つのフィールドをそのまま `Corollary22Inputs` に渡す。その定理 `c2` は、この上限を三つの段階で用いる。巡回部分群を排除する議論で、素数 $2$ の寄与を除いた高さを制御する。素数 $2$ と選んだ素数の両方から離れた場所に、乗法的還元をもつ素点が存在することを示す際にも用いる。さらに、この二つの素数を除いた高さから全素点の高さを復元する際の誤差を制御する。同じ $B$ は高さの閾値と、最後の加法項 $40\eta+B/3$ にも現れる。$\eta$ は与えられた素数計数定数である。
 
 これらの結果は実際に与えられた曲線データを保ち、そのような各入力に対して二つのフィールドに必要な結論を証明する。完全な曲線入力レコードや、`c2` に必要な他のデータを構成するものではない。Mochizuki の IUT IV、系 2.2(ii) の証明も、対応する算術評価において、全素点の高さと素数 $2$ を除いた高さとの差の上限を用いる。
+
+[Local B_nonneg field](../../../../Solutions/Source_TripodCurveInputsTwoAdicField.lean#L21) · [Local contribution field](../../../../Solutions/Source_TripodCurveInputsTwoAdicField.lean#L25) · [Source B_nonneg field](../../../../../refer/iut/Iut/Tripod/CurveFacts.lean#L511) · [Source contribution field](../../../../../refer/iut/Iut/Tripod/CurveFacts.lean#L512)

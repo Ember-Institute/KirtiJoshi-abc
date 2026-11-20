@@ -1,0 +1,19 @@
+# Fricke 正规形与平方迹整性的搬运 · Fricke normal form and squared trace integrality · Fricke 標準形と跡の二乗の整数性
+
+设 $A,B\in\mathrm{SL}_2(\mathbb R)$，$\operatorname{tr}(ABA^{-1}B^{-1})=-2$，且 $\operatorname{tr}A\ne0$。三个迹 $x,y,z$ 满足 $x^2+y^2+z^2=xyz$。若 $|z|\ge |x|+|y|$，则 $(xy-z)z=x^2+y^2$，且 $|x|,|y|>2$，所以 $|xy-z|+2\le |z|$。轮换三个迹可处理其余两个不等式。每次 Nielsen 变换保持生成群，并使绝对值之和至少减少 $2$。下降终止后，改变生成元的符号，使三个迹都为正。 [固定上游的下降与共轭](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/Fuchsian/OneInftyLattice.lean#L205)
+
+与归约后迹三元组相同的显式矩阵见下式。直接计算给出 $A_0B_0=\left(\begin{smallmatrix}z&-1/z\\ z&0\end{smallmatrix}\right)$ 和交换子 $\left(\begin{smallmatrix}-1&-2\\0&-1\end{smallmatrix}\right)$。Fricke 刚性将归约后的生成元同时共轭到 $A_0,B_0$。改变符号前后的生成群可公度，共轭把稠密的可公度子传到正规形一侧。任一原群元素或其负元属于换号后的群。平方迹对符号和共轭均不变，因此正规形一侧的平方迹整性可传回原来的格覆盖群。 [本地正规形](../../../../Solutions/Source_ReferenceIutCanLiftFrickeNormalForm.lean) · [本地整性搬运](../../../../Solutions/Source_ReferenceIutCanLiftFrickeTraceTransport.lean) · [固定上游的 M2 组装](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/M2/Final.lean#L592)
+
+$$
+A_0=\begin{pmatrix}x-y/z & x/z^2\\ x & y/z\end{pmatrix},
+\qquad
+B_0=\begin{pmatrix}y-x/z & -y/z^2\\ -y & x/z\end{pmatrix}.
+$$
+
+Let $A,B\in\mathrm{SL}_2(\mathbb R)$ have commutator trace $-2$ and $\operatorname{tr}A\ne0$. Their three traces satisfy $x^2+y^2+z^2=xyz$. If $|z|\ge |x|+|y|$, then $(xy-z)z=x^2+y^2$ and $|x|,|y|>2$. These bounds give $|xy-z|+2\le |z|$. Cycle the coordinates to handle each other failed triangle inequality. Each Nielsen move preserves the generated group and decreases the sum of absolute traces by at least two. At the end of the descent, choose generator signs to make all three traces positive. [Pinned descent and conjugacy](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/Fuchsian/OneInftyLattice.lean#L205)
+
+The matrices $A_0,B_0$ above have the three traces after descent. The commutator is $\left(\begin{smallmatrix}-1&-2\\0&-1\end{smallmatrix}\right)$. Fricke rigidity gives a simultaneous real conjugation from the pair after descent to $A_0,B_0$. The two sign choices give commensurable subgroups. Conjugation maps the dense commensurator into the commensurator of the normal-form group. Each element of the original group or its negative lies in the group with the new signs. Conjugation and sign changes preserve squared traces. Thus integrality of squared traces in the normal-form group gives integrality in the original lattice covering group. [Local normal form](../../../../Solutions/Source_ReferenceIutCanLiftFrickeNormalForm.lean) · [Local transport](../../../../Solutions/Source_ReferenceIutCanLiftFrickeTraceTransport.lean) · [Pinned M2 assembly](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/M2/Final.lean#L592)
+
+$A,B\in\mathrm{SL}_2(\mathbb R)$ の交換子の跡を $-2$ とし、$\operatorname{tr}A\ne0$ とする。三つの跡は $x^2+y^2+z^2=xyz$ を満たす。$|z|\ge |x|+|y|$ ならば $(xy-z)z=x^2+y^2$ と $|x|,|y|>2$ より $|xy-z|+2\le |z|$ である。他の三角不等式についても座標を巡回置換して同じ評価を得る。各 Nielsen 変換は生成部分群を保ち、跡の絶対値の和を少なくとも $2$ 減らす。降下の後で生成元の符号を選び、三つの跡を正にする。 [固定した上流の降下と共役](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/Fuchsian/OneInftyLattice.lean#L205)
+
+上式の行列 $A_0,B_0$ は降下後の跡をもち、交換子は $\left(\begin{smallmatrix}-1&-2\\0&-1\end{smallmatrix}\right)$ になる。Fricke 剛性により、降下後の生成元は $A_0,B_0$ に同時共役である。符号変更の前後で生成部分群は互いに可公度である。共役は稠密な可公度化群を標準形の可公度化群へ移す。もとの群の各元またはその負元が、符号変更後の群に属する。跡の二乗は符号変更と共役で保たれるので、標準形の群における整数性をもとの格子被覆の群に移せる。 [ローカルの標準形](../../../../Solutions/Source_ReferenceIutCanLiftFrickeNormalForm.lean) · [ローカルの移送](../../../../Solutions/Source_ReferenceIutCanLiftFrickeTraceTransport.lean) · [固定した上流の M2 における組み立て](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/M2/Final.lean#L592)

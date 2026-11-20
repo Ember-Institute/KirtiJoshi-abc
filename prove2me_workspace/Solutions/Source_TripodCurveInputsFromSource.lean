@@ -8,9 +8,7 @@ Original revision 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8
 Original path Iut/Tripod/CurveFacts.lean (sl2Image and curveInputs)
                 Iut/Concrete/SL2Image.lean (prime_dvd_card_range and sl_le_range_of)
 -/
-import Solutions.Source_SL2ImageLocalTate
-import Solutions.Source_SL2ImageOfCardinality
-import Solutions.Source_SL2ImageRangeCardinality
+import Solutions.Source_SL2ImageFromSource
 import Solutions.Source_TripodCurveInputs
 import Solutions.Source_TripodLogCond
 import Solutions.Source_TripodTorsionBasis
@@ -35,14 +33,8 @@ theorem sl2Image_from_source (P : CurveProviders) : SL2ImageHyp P := by
       AbcAdaptation.Reference.Iut.residueChar w ≠ ℓ := by
     obtain ⟨w, hw, h⟩ := hP5
     exact ⟨w, (P.arith x).badAll_finite.mem_toFinset.mp hw, h⟩
-  let C := P.curve x
-  let R := P.modRep x ℓ hℓ
-  have hdvd := C.prime_dvd_card_range_of_ramification R (P.tate x)
-    (fun {w} hw h2 hwℓ hcop {w'} hw'w =>
-      C.prime_dvd_ramificationIdx_from_source (P.arith x) (P.tate x) hℓ (by omega) R
-        (w := w) hw h2 hwℓ hcop (w' := w') hw'w)
-    hP2' hP5'
-  exact R.sl_le_range_of_dvd_card hℓ hdvd hP4 A
+  exact (P.curve x).sl_le_range_of_from_source (P.arith x) (P.tate x) hℓ (P.modRep x ℓ hℓ)
+    h5 hP2' hP4 hP5' A
 
 /-- Assemble the curve inputs using the proved image, torsion-degree and conductor fields. -/
 noncomputable def curveInputs_from_source (P : CurveProviders) (K : CompactlyBounded) (d : ℕ)

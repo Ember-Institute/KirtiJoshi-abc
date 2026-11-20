@@ -1,0 +1,32 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftComplexFromFricke
+import Solutions.Source_ReferenceIutCanLiftTakeuchiCayleyAction
+import Solutions.Source_ReferenceIutCanLiftTakeuchiEllipticX
+
+open AbcAdaptation.Reference.Iut.Anabelian
+open CanLiftAnalytic.Takeuchi
+
+#print axioms exists_chart
+#print axioms ellX_eq_or
+#print axioms cay_smulC
+#print axioms exists_localForm_of_rot
+#print axioms orbifoldLocalLiftData
+#print axioms ellOrbStatement
+#print axioms RatCert.ellipticOrbifoldCover
+#print axioms exists_SL2R_eq_of_leftInverse
+#print axioms exists_SL2Z_eq_of_modularJ
+#print axioms cmul_sq_of_fix_I
+#print axioms cmul_cube_of_fix_ρ
+#print axioms exists_jChartData
+#print axioms orbLiftStatement
+#print axioms jOrbStatement
+#print axioms exists_mobius_lift_of_orbifold
+#print axioms exists_int_tr_of_modularJ
+#print axioms int_sq_traces
+#print axioms exists_takeuchi
+#print axioms exists_uniformizes_ccurve
+#print axioms exists_takeuchiPair_ccurve
+#print axioms canLift27Complex_of_fricke_integrality

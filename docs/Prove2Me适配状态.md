@@ -88,17 +88,10 @@
 
 ### CanLift 复一致化与可公度子
 
-复 CanLift 的 Margulis 输入要求在实际格覆盖的生成群上从可公度子稠密性推出每个元素的迹平方整性。仍需证明复数域嵌入固定正规形的三个迹平方，在同一正规形可公度子上构造有理矩阵代表，并推出每个素数处的范数界。这些结论须沿共轭与生成元变换搬回实际格覆盖的生成群。 [上游 Margulis 组装](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/M2/Final.lean#L595) · [本地整性消费者](../prove2me_workspace/Solutions/Source_ReferenceIutCanLiftPadicSquaredTraces.lean#L45)
-
-四条模型曲线的分类一致化仍需从各自的 Belyi 证书构造椭圆曲线的轨形覆盖，与模 $j$ 的轨形覆盖接合并提升，再把模群的整数迹平方性质传给各模型的一致化群。结论须供应四个模型各自的 Takeuchi 矩阵对及相应的一致化。 [上游 Belyi 组装](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/S1/Belyi.lean#L72) · [本地 CanLift 消费者](../prove2me_workspace/Solutions/Source_ReferenceIutCanLiftComplexFromModelUniformizations.lean#L21)
+复 CanLift 的 Margulis 输入现为 Fricke 正规形的可公度子稠密时，该正规形生成群每个元素的迹平方整性。仍需由可公度子稠密推出所有实到复的域嵌入固定正规形的三个迹平方，从而得到有理性。在三个迹平方有理的条件下，有理射影代表及其逐素数作用已有来源证明。仍须证明格的双遍历性、构造等变边界核并延拓作用，从而在每个素数处推出平方迹所需的范数界。 [上游 Margulis 组装](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/M2/Final.lean#L595) · [本地整性消费者](../prove2me_workspace/Solutions/Source_ReferenceIutCanLiftPadicSquaredTraces.lean#L45) · [本地组装](../prove2me_workspace/Solutions/Source_ReferenceIutCanLiftComplexFromFricke.lean#L15)
 
 ## 4. 未完成自然语言读回的证明义务
 
-- `tripodalFieldOf_eq`、`tpdEquiv_jT`、`h_eq_finHeight_div`：无待决译名。
-- `LegendreHeightHyp`、`legendreHeight`、`canonicalLegendreHeightComparison_of_provider`：无待决译名。
-- `northcott_of_equiv`、`curveInputs_height_eq`、`curveInputs_htCan_equiv`、`curveInputs_northcott`：无待决译名。
-- `TwoAdicBoundHyp`、`twoAdicBound'`、`twoAdicBound`、`curveInputs_B_nonneg`、`curveInputs_heightEq_two_le`：无待决译名。
-- `curveInputs_dmod_le`：无待决译名。
 - `AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime`：无待决译名。
 - `AbcAdaptation_JoshiTeich_Prologue_Arithmetic_Basic`：无待决译名。

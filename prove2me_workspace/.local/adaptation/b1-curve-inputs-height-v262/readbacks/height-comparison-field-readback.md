@@ -10,7 +10,7 @@ The source `curveInputs` stores this proof as `htCan_equiv`, and `toCorollary22I
 
 # 简体中文
 
-固定一个实际的 Legendre 曲线供应数据 $P$ 和一个【译名待定：compactly bounded subset】$K$。`curveInputs_htCan_equiv P K` 证明 $P.h/6$ 与固定的绝对对数 Weil 高度 $\mathrm{htCan}$ 在整个 $K$ 上的差异有界。等价地，存在实常数 $C_1,C_2$，使每个 $x\in K$ 都满足
+固定一个实际的 Legendre 曲线供应数据 $P$ 和一个紧致有界子集$K$。`curveInputs_htCan_equiv P K` 证明 $P.h/6$ 与固定的绝对对数 Weil 高度 $\mathrm{htCan}$ 在整个 $K$ 上的差异有界。等价地，存在实常数 $C_1,C_2$，使每个 $x\in K$ 都满足
 
 $$P.h(x)/6\leq\mathrm{htCan}(x)+C_1,\qquad \mathrm{htCan}(x)\leq P.h(x)/6+C_2.$$
 
@@ -27,3 +27,5 @@ $$P.h(x)/6\leq\mathrm{htCan}(x)+C_1,\qquad \mathrm{htCan}(x)\leq P.h(x)/6+C_2$$
 が成り立つ。証明は `legendreHeight P K` を用いる。このフィールドには次数上限の入力がない。正確な型には `tripodTheory.cbsSet K` と `tripodTheory.htCan tripodTheory.tripod` が現れ、それぞれ既存の集合と高さに帰着する。
 
 ソースの `curveInputs` はこの証明を `htCan_equiv` に格納し、`toCorollary22Inputs` がそのまま渡す。Northcott フィールドは第二の不等式により、$P.h$ の上限を Weil 高さの上限に移す。`statementII_of_cor312` も同じ方向を使い、有限例外集合の外で高さに関する評価を $\mathrm{htCan}$ の評価へ移す。論文上の比較は 望月新一の「宇宙際 Teichmüller 理論」第 IV 論文、系 2.2(i) にある。その証明は、Legendre パラメータ直線に引き戻した無限遠因子の次数が六であり、$\omega_X(D)$ の次数が一であることから係数 $1/6$ を得る。
+
+[Local height comparison field](../../../../Solutions/Source_TripodCurveInputsHeightFields.lean#L22) · [Source height comparison field](../../../../../refer/iut/Iut/Tripod/CurveFacts.lean#L508)

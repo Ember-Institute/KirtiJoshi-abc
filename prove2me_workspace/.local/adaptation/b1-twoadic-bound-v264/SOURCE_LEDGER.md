@@ -40,4 +40,6 @@ Requests and results are in `../main-chain-open-20261116/` as `b1-twoadic-*.json
 
 The review used the same exclusive workspace with no snapshot. It exited zero with `review.passed = true` and no diagnostics. Each of the three printed theorem axiom sets was `[propext, Classical.choice, Quot.sound]`. The audit checked newly generated declarations as well as the source declarations.
 
-The independent trilingual drafts are in `readbacks/`. Cross-version kernel correspondence, the pending Chinese term, private Prove2Me acceptance, and insertion into the full `CurveInputs` constructor remain open.
+The trilingual readbacks use 紧致有界子集 and cover the bound and the two curve input fields. [Trilingual readbacks](readbacks/)
+
+Cross-version kernel correspondence, private Prove2Me acceptance, and insertion into the full `CurveInputs` constructor remain open.
