@@ -1684,3 +1684,43 @@ The project review reports nine declarations using only `propext`, `Classical.ch
 | [`ci-024889-e569c247`](receipts/round-ci-024889-e569c247-result.json) | `17b9fd372312` | succeeded / 0 | 147.80 | 137.96 (5.43 + 132.53) | 3.68 | superrigid artifact (1 warnings in receipt) |
 | [`ci-024891-f050d119`](receipts/round-ci-024891-f050d119-result.json) | `b12d04f9cb3e` | succeeded / 0 | 134.06 | 114.45 (1.42 + 113.03) | 2.48 | selection artifact (2 warnings in receipt) |
 | [`ci-024946-f7e80616`](receipts/round-ci-024946-f7e80616-result.json) | `974d3c47c10a` | succeeded / 0 | 331.96 | 319.79 (6.17 + 313.62) | 8.06 | review boundary extension |
+
+## Hopf coordinates, invariant measure and continuity
+
+Hopf coordinates identify the real special linear group with the upper half plane times the stabilizer of the base point. The resulting measure is left invariant, projects to hyperbolic area over sets of base points, and is invariant under the required diagonal and unipotent right shifts. Translations act continuously in the integrated difference of bounded measurable functions on finite-measure sets. These statements supply the measure and continuity inputs for the weighted unfolding and Mautner argument. [Trilingual readback](readbacks/canlift-m2-hopf-trilingual.md)
+
+The two reviews use only Lean standard axioms. Wall and CPU times are in seconds. RSS is the peak process-tree resident memory reported by MCP-CI in GiB. PSS and the degradation marker are unavailable. [Measure review](receipts/round-ci-024994-022464bc-result.json) · [Continuity review](receipts/round-ci-024995-b6c85418-result.json)
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024839-52cb5614`](receipts/round-ci-024839-52cb5614-result.json) | `a492204753b5` | failed / 1 | 94.65 | 90.78 (4.03 + 86.75) | 3.63 | hopf coords — line 92, ring failed, ring expressions not equal (2 errors in receipt) |
+| [`ci-024885-d184a6ed`](receipts/round-ci-024885-d184a6ed-result.json) | `05a6e8a9bd24` | succeeded / 0 | 137.50 | 122.90 (4.73 + 118.17) | 3.67 | hopf coords retry (3 warnings in receipt) |
+| [`ci-024911-65c39892`](receipts/round-ci-024911-65c39892-result.json) | `05a6e8a9bd24` | succeeded / 0 | 145.97 | 133.49 (1.53 + 131.96) | 3.13 | hopf coords artifact (3 warnings in receipt) |
+| [`ci-024957-6d96fe96`](receipts/round-ci-024957-6d96fe96-result.json) | `b3fbb323c4f6` | succeeded / 0 | 99.70 | 94.28 (5.78 + 88.50) | 3.81 | hopf finite (1 warnings in receipt) |
+| [`ci-024973-653bcb1e`](receipts/round-ci-024973-653bcb1e-result.json) | `b3fbb323c4f6` | succeeded / 0 | 125.93 | 71.91 (6.04 + 65.87) | 3.83 | hopf finite artifact (1 warnings in receipt) |
+| [`ci-024994-022464bc`](receipts/round-ci-024994-022464bc-result.json) | `a3d5c2eacba4` | succeeded / 0 | 225.92 | 220.36 (6.54 + 213.82) | 8.06 | review m2 hopf |
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024955-127c0f96`](receipts/round-ci-024955-127c0f96-result.json) | `45a8a5a44ad6` | succeeded / 0 | 118.62 | 111.57 (2.31 + 109.26) | 3.54 | hopf continuity |
+| [`ci-024975-88a43ff5`](receipts/round-ci-024975-88a43ff5-result.json) | `45a8a5a44ad6` | succeeded / 0 | 105.72 | 53.91 (3.40 + 50.51) | 3.66 | hopf continuity artifact |
+| [`ci-024995-b6c85418`](receipts/round-ci-024995-b6c85418-result.json) | `fc6d63e54d65` | succeeded / 0 | 233.48 | 228.46 (5.76 + 222.70) | 7.82 | review m2 hopf continuity |
+
+## P7 readbacks for bad residue characteristics and pointwise assembly
+
+The first readback records how `withBadChars` preserves the packet and q-pilot data while replacing the bad residue characteristics. It explains the hypotheses of the resulting step (iii) estimate. The second covers the pointwise data constructor and its assembly into the quantified P7 provider. The supplier uses `TowerArithmetic` on the updated local data for the selected point. [Bad residue characteristics](readbacks/theta-local-bad-chars-trilingual.md) · [Pointwise assembly](readbacks/point-theta-and-pointwise-p7-trilingual.md) · [Local review](receipts/round-ci-021667-f7dd1302-result.json) · [Pointwise review](receipts/round-ci-021743-f33906a6-result.json)
+
+## Triple nullity for Furstenberg boundary kernels
+
+The kernel products are measurable and inherit equivariance. If an element in the lattice sends a fixed triple toward a degenerate triple in the target, double ergodicity and non-elementarity imply that the product cube of the boundary measure at almost every point gives zero mass to the distinct triples. The point-map theorem uses this nullity to reduce the kernel to at most two support points. [Kernel construction](../../../Solutions/Source_ReferenceIutCanLiftBoundaryKernelProducts.lean) · [Triple nullity](../../../Solutions/Source_ReferenceIutCanLiftTripleNull.lean) · [Trilingual readback](readbacks/canlift-m2-triple-null-trilingual.md)
+
+The joint review uses only Lean standard axioms. Wall and CPU times are in seconds. RSS is the MCP-CI process-tree peak in GiB. PSS and the degradation marker are unavailable. [Review receipt](receipts/round-ci-025003-ceba85a9-result.json)
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024869-fa388cfe`](receipts/round-ci-024869-fa388cfe-result.json) | `53b4ec00ef0e` | failed / 1 | 72.28 | 68.95 (2.95 + 66.00) | 3.62 | boundary kernel products (3 warnings in receipt) |
+| [`ci-024910-556d6d86`](receipts/round-ci-024910-556d6d86-result.json) | `06617dfa1727` | succeeded / 0 | 131.94 | 130.40 (2.48 + 127.92) | 3.53 | boundary kernel products retry (3 warnings in receipt) |
+| [`ci-024962-3be651d7`](receipts/round-ci-024962-3be651d7-result.json) | `06617dfa1727` | succeeded / 0 | 70.85 | 68.88 (2.68 + 66.20) | 3.62 | boundary kernel products artifact (3 warnings in receipt) |
+| [`ci-024976-d62b610a`](receipts/round-ci-024976-d62b610a-result.json) | `a5f21af53bd8` | succeeded / 0 | 78.29 | 76.72 (4.54 + 72.18) | 3.68 | triple null (2 warnings in receipt) |
+| [`ci-024985-9a6a92d7`](receipts/round-ci-024985-9a6a92d7-result.json) | `a5f21af53bd8` | succeeded / 0 | 112.60 | 58.93 (5.29 + 53.64) | 3.71 | triple null artifact (2 warnings in receipt) |
+| [`ci-025003-ceba85a9`](receipts/round-ci-025003-ceba85a9-result.json) | `c29a123d8f95` | succeeded / 0 | 255.18 | 243.87 (5.92 + 237.95) | 7.84 | review m2 triple null |

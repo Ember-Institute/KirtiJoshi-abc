@@ -96,5 +96,3 @@
 - `AbcAdaptation.Tripod.statementII_bridge`：无待决译名。
 - `TowerArithmetic.localEstimate`：无待决译名。
 - `ConcreteThetaDataExistence.toThetaDataExistence`、`CurveInputs.concreteThetaDataExistence`：无待决译名。
-- `ThetaLocalData.withBadChars`、`ThetaLocalData.step_iii_of_qPilotInputs`：无待决译名。
-- `pointThetaData`、`concreteThetaDataExistence_of_pointwise`。

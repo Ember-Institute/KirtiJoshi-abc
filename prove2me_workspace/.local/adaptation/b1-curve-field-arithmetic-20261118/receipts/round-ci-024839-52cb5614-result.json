@@ -1,0 +1,375 @@
+{
+  "job_id": "ci-024839-52cb5614",
+  "attempt_id": "attempt-63aa05d47bf7",
+  "status": "failed",
+  "submitted_at": 1795150045.845888,
+  "started_at": 1795150045.8747237,
+  "finished_at": 1795150140.598649,
+  "queue_time_seconds": 0.028835773468017578,
+  "compile_time_seconds": 94.72392535209656,
+  "progress": {},
+  "resources": {
+    "memory_decision": {
+      "worker_pressure": "normal",
+      "host_pressure": "normal",
+      "total_worker_bytes": 15935180800
+    },
+    "cpu_time_seconds": 90.78,
+    "peak_rss_bytes": 3901374464,
+    "peak_pss_bytes": null,
+    "cpu_user_seconds": 4.03,
+    "cpu_system_seconds": 86.75,
+    "wall_time_seconds": 94.65129109998816,
+    "allocated_cpu_count": 4,
+    "cpu_affinity": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "affinity_applied": true,
+    "affinity_error": null
+  },
+  "deduplicated": false,
+  "request": {
+    "language": "lean",
+    "project_id": "ArithmeticTeichmullerSpaces",
+    "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "target": "file",
+    "exclusive": true,
+    "task_type": "leaf",
+    "parameters": {
+      "source": "Solutions/Source_ReferenceIutCanLiftHopfCoords.lean"
+    },
+    "environment": {
+      "LEAN_PATH": "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean:/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+      "PATH": "/root/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/root/.nvm/versions/node/v22.23.2/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/root/.codex-key3/tmp/arg0-linux/codex-arg09EKFI6:/root/.cabal/bin:/root/.ghcup/bin:/root/.nvm/versions/node/v22.23.2/bin:/root/.opam/Coq900/bin:/root/.elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+    },
+    "expected_duration": 60,
+    "expected_memory": 17179869184,
+    "session_id": "01a1f575-a867-75d1-9ba5-04ce946763c8",
+    "agent_id": "/root",
+    "worktree_manifest": {
+      "worktree_id": "/home/admin-wsl/Coq/abc",
+      "head": "4013f81a0524597b6cde59dad62df264b45b0acf",
+      "modified_files": [
+        "docs/Scene1进度总览5.md",
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md"
+      ],
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftFordCover.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftFrickeDiscreteness.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftFrickePingPong.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftFrickeStripCover.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftGoodLattice.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftHopfContinuity.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftHopfCoords.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftHopfFinite.lean"
+      ],
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+      },
+      "external_dependencies": [
+        {
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+        }
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+      ],
+      "input_hashes": {
+        "Solutions/Source_ReferenceIutCanLiftHopfCoords.lean": "a492204753b5868768e4596f9f238b5caa9432336490b1c032f30d9ad81f7a1c",
+        ".lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftM2Setup.olean": "c53566539e6128a3cd4bf4566ef4ad8221a4e42fb920ee5f6dc5a7a4f0e0c8f3",
+        "Solutions/Source_ReferenceIutCanLiftM2Setup.lean": "17476979682c83ab194b4709083f38db72e694bad95f96a1ce6985c30fb0f4cc"
+      },
+      "source_sha256": "a492204753b5868768e4596f9f238b5caa9432336490b1c032f30d9ad81f7a1c",
+      "resource_estimate_basis": "Initial leaf under project policy"
+    },
+    "idempotency_key": "p2m-iut-handoff-01a1f575-hopf-coords-a492204753b5868768",
+    "scheduler_timeout_seconds": 180,
+    "priority": 0,
+    "profile": "default",
+    "workspace_source": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "workspace_mode": "exclusive_worktree",
+    "snapshot_manifest": {
+      "worktree_id": "/home/admin-wsl/Coq/abc",
+      "head": "4013f81a0524597b6cde59dad62df264b45b0acf",
+      "modified_files": [
+        "docs/Scene1进度总览5.md",
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md"
+      ],
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftFordCover.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftFrickeDiscreteness.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftFrickePingPong.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftFrickeStripCover.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftGoodLattice.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftHopfContinuity.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftHopfCoords.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftHopfFinite.lean"
+      ],
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+      },
+      "external_dependencies": [
+        {
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+        }
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+      ],
+      "input_hashes": {
+        "Solutions/Source_ReferenceIutCanLiftHopfCoords.lean": "a492204753b5868768e4596f9f238b5caa9432336490b1c032f30d9ad81f7a1c",
+        ".lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftM2Setup.olean": "c53566539e6128a3cd4bf4566ef4ad8221a4e42fb920ee5f6dc5a7a4f0e0c8f3",
+        "Solutions/Source_ReferenceIutCanLiftM2Setup.lean": "17476979682c83ab194b4709083f38db72e694bad95f96a1ce6985c30fb0f4cc"
+      },
+      "source_sha256": "a492204753b5868768e4596f9f238b5caa9432336490b1c032f30d9ad81f7a1c",
+      "resource_estimate_basis": "Initial leaf under project policy"
+    }
+  },
+  "result": {
+    "exit_code": 1,
+    "stdout": "Solutions/Source_ReferenceIutCanLiftHopfCoords.lean:92:2: error: ring failed, ring expressions not equal\nσ t : ℝ\nh : rexp σ * rexp (-σ) = 1\n⊢ ↑(⟨!![rexp σ, 0; 0, rexp (-σ)], ⋯⟩ * ⟨!![1, t; 0, 1], ⋯⟩) 0 0 - rexp σ * t + rexp σ ^ 2 * t * rexp (-σ) -\n      ↑(⟨!![1, rexp σ * rexp σ * t; 0, 1], ⋯⟩ * ⟨!![rexp σ, 0; 0, rexp (-σ)], ⋯⟩) 0 0 =\n    0\nSolutions/Source_ReferenceIutCanLiftHopfCoords.lean:91:23: warning: This simp argument is unused:\n  Matrix.mul_apply\n\nHint: Omit it from the simp argument list.\n  [apply] simp [diagA, unip, Fin.sum_univ_two, exp_two_mul']\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nSolutions/Source_ReferenceIutCanLiftHopfCoords.lean:91:41: warning: This simp argument is unused:\n  Fin.sum_univ_two\n\nHint: Omit it from the simp argument list.\n  [apply] simp [diagA, unip, Matrix.mul_apply, exp_two_mul']\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nSolutions/Source_ReferenceIutCanLiftHopfCoords.lean:205:13: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead\nSolutions/Source_ReferenceIutCanLiftHopfCoords.lean:250:15: error(lean.unknownIdentifier): Unknown identifier `lintegral_image_eq_lintegral_abs_deriv_mul`\nSolutions/Source_ReferenceIutCanLiftHopfCoords.lean:230:73: error: unsolved goals\nγ : SL(2, ℝ)\nK : ℝ → ℝ≥0∞\nhdet : ↑γ 0 0 * ↑γ 1 1 - ↑γ 0 1 * ↑γ 1 0 = 1\nS : Set ℝ := {x | cocy γ x ≠ 0}\nhS : MeasurableSet S\nhderiv : ∀ x ∈ S, HasDerivWithinAt (mob γ) (cocy γ x ^ 2)⁻¹ S x\nhinj : InjOn (mob γ) S\n⊢ ∫⁻ (x : ℝ), ENNReal.ofReal (cocy γ x ^ 2)⁻¹ * K (mob γ x) = ∫⁻ (x : ℝ), K x\n",
+    "stderr": "",
+    "diagnostics": [
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftHopfCoords.lean",
+        "line": 92,
+        "column": 2,
+        "severity": "error",
+        "message": "ring failed, ring expressions not equal"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftHopfCoords.lean",
+        "line": 91,
+        "column": 23,
+        "severity": "warning",
+        "message": "This simp argument is unused:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftHopfCoords.lean",
+        "line": 91,
+        "column": 41,
+        "severity": "warning",
+        "message": "This simp argument is unused:"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftHopfCoords.lean",
+        "line": 205,
+        "column": 13,
+        "severity": "warning",
+        "message": "`Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutCanLiftHopfCoords.lean",
+        "line": 230,
+        "column": 73,
+        "severity": "error",
+        "message": "unsolved goals"
+      }
+    ],
+    "actual_arguments": [
+      "lean",
+      "Solutions/Source_ReferenceIutCanLiftHopfCoords.lean"
+    ],
+    "snapshot": {
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "fingerprint": null,
+      "manifest": {
+        "worktree_id": "/home/admin-wsl/Coq/abc",
+        "head": "4013f81a0524597b6cde59dad62df264b45b0acf",
+        "modified_files": [
+          "docs/Scene1进度总览5.md",
+          "docs/对Joshi'sFAQ的独立形式化审查.md",
+          "docs/开发计划.V1Act1log1.md",
+          "docs/开发计划.V1Act1log2.md",
+          "docs/开发计划.V1Act1log3.md",
+          "docs/开发计划.V1Act1log4.md",
+          "docs/开发计划.V1Act1log5.md"
+        ],
+        "untracked_files": [
+          "docs/Email.txt",
+          "docs/Mochizuki审计.md",
+          "docs/Scene1进度总览3.md",
+          "docs/olds/Scene1进度总览1.md",
+          "docs/olds/具有明确参考来源指示的证明义务.old.md",
+          "docs/olds/开发计划.V1Act1log1.md",
+          "docs/olds/开发计划.V1Act1log2.md",
+          "docs/olds/开发计划.V1Act1log3.md",
+          "docs/olds/开发计划.V1Act1log4.md",
+          "docs/olds/开发计划.V1Act1log5.md",
+          "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftFordCover.lean",
+          "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftFrickeDiscreteness.lean",
+          "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftFrickePingPong.lean",
+          "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftFrickeStripCover.lean",
+          "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftGoodLattice.lean",
+          "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftHopfContinuity.lean",
+          "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftHopfCoords.lean",
+          "prove2me_workspace/Solutions/Source_ReferenceIutCanLiftHopfFinite.lean"
+        ],
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock": "lake-manifest.json",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "local_configuration": [
+          "lean-toolchain",
+          "lakefile.lean",
+          "lake-manifest.json"
+        ],
+        "configuration_hashes": {
+          "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+          "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+          "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+        },
+        "external_dependencies": [
+          {
+            "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+            "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+            "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+            "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+          }
+        ],
+        "required_artifacts": [
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+          "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+        ],
+        "input_hashes": {
+          "Solutions/Source_ReferenceIutCanLiftHopfCoords.lean": "a492204753b5868768e4596f9f238b5caa9432336490b1c032f30d9ad81f7a1c",
+          ".lake/build/lib/lean/Solutions/Source_ReferenceIutCanLiftM2Setup.olean": "c53566539e6128a3cd4bf4566ef4ad8221a4e42fb920ee5f6dc5a7a4f0e0c8f3",
+          "Solutions/Source_ReferenceIutCanLiftM2Setup.lean": "17476979682c83ab194b4709083f38db72e694bad95f96a1ce6985c30fb0f4cc"
+        },
+        "source_sha256": "a492204753b5868768e4596f9f238b5caa9432336490b1c032f30d9ad81f7a1c",
+        "resource_estimate_basis": "Initial leaf under project policy"
+      }
+    },
+    "compiler": {
+      "name": "lean",
+      "version": null
+    },
+    "resources": {
+      "memory_decision": {
+        "worker_pressure": "normal",
+        "host_pressure": "normal",
+        "total_worker_bytes": 15935180800
+      },
+      "cpu_time_seconds": 90.78,
+      "peak_rss_bytes": 3901374464,
+      "peak_pss_bytes": null,
+      "cpu_user_seconds": 4.03,
+      "cpu_system_seconds": 86.75,
+      "wall_time_seconds": 94.65129109998816,
+      "allocated_cpu_count": 4,
+      "cpu_affinity": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "affinity_applied": true,
+      "affinity_error": null
+    },
+    "artifacts": [
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-024839-52cb5614/stdout.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-024839-52cb5614/stderr.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-024839-52cb5614/result.json"
+    ]
+  }
+}

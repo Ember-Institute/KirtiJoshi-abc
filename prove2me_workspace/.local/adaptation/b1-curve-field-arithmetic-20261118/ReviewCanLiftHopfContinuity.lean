@@ -1,0 +1,8 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftHopfContinuity
+
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.tendsto_lintegral_hopfN
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.tendsto_lintegral_hopfMeasure_unip
