@@ -1664,3 +1664,23 @@ The joint review reports only `propext`, `Classical.choice`, and `Quot.sound` fo
 | [`ci-024766-3b12e957`](receipts/round-ci-024766-3b12e957-result.json) | `15e07afa41cd` | succeeded / 0 | 101.29 | 108.04 (16.29 + 91.75) | 4.03 | furstenberg retry3 (12 warnings in receipt) |
 | [`ci-024776-6ef83db1`](receipts/round-ci-024776-6ef83db1-result.json) | `15e07afa41cd` | succeeded / 0 | 123.20 | 129.32 (16.64 + 112.68) | 4.03 | furstenberg artifact (12 warnings in receipt) |
 | [`ci-024784-36f5c2a9`](receipts/round-ci-024784-36f5c2a9-result.json) | `2550f6f21180` | succeeded / 0 | 237.28 | 235.46 (7.34 + 228.12) | 8.08 | review furstenberg |
+
+## Archived readbacks for local arithmetic and prime selection
+
+The updated Chinese text uses 素元 for “uniformizer” in the three archived trilingual readbacks. The NormalizedOrder and AdmissiblePrime readbacks cover eight and six declarations, respectively, including all fifteen fields of `AdmissiblePrimeData`. Their audited source is identical to the private platform source, where the prose is stored in `natural_language_statement`. The Basic readback covers the nineteen declarations in the v8 wrapper checked by `ci-015603-d408e934`. Its platform publication is still open. [Updated readbacks and source hashes](readbacks/section4-carrier-readbacks-trilingual.json) · [Terminology](../../../../docs/三语术语名词关键对照.md#L44)
+
+The concrete archimedean readback now includes the least positive radial scale of the projective tensor unit ball and containment of the log-shell under induced factor automorphisms. The declarations are `exists_leastHull_infinite` and `prop15`, both covered by the previously archived review. [Trilingual readback](readbacks/p7-archimedean-volume-trilingual.md) · [Review receipt](receipts/round-ci-021744-b251f5a2-result.json)
+
+## Continuity of the commensurator action and measurable selections
+
+For a dense subgroup of the real special linear group, a measurable equivariant point map that separates almost every pair gives a projective action of the full group that extends the subgroup action and is continuous in each orbit map. The measurable selection results recover a representative of a Dirac measure or an atom of mass strictly greater than one half. The boundary kernel to point map proof uses both selections. The commensurator superrigidity assembly uses the projective extension. [Extension](../../../Solutions/Source_ReferenceIutCanLiftSuperrigid.lean) · [Selections](../../../Solutions/Source_ReferenceIutCanLiftSelection.lean) · [Trilingual readback](readbacks/canlift-m2-boundary-extension-trilingual.md)
+
+The project review reports nine declarations using only `propext`, `Classical.choice`, and `Quot.sound`. Wall and CPU times are in seconds. RSS is the MCP-CI process-tree peak in GiB. PSS and the resource degradation marker are unavailable. [Review input](ReviewCanLiftBoundaryExtension.lean) · [Review receipt](receipts/round-ci-024946-f7e80616-result.json)
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024856-df0abebd`](receipts/round-ci-024856-df0abebd-result.json) | `17b9fd372312` | succeeded / 0 | 88.37 | 84.54 (3.90 + 80.64) | 3.67 | superrigid (1 warnings in receipt) |
+| [`ci-024868-accf434d`](receipts/round-ci-024868-accf434d-result.json) | `b12d04f9cb3e` | succeeded / 0 | 45.47 | 42.59 (2.06 + 40.53) | 2.55 | selection (2 warnings in receipt) |
+| [`ci-024889-e569c247`](receipts/round-ci-024889-e569c247-result.json) | `17b9fd372312` | succeeded / 0 | 147.80 | 137.96 (5.43 + 132.53) | 3.68 | superrigid artifact (1 warnings in receipt) |
+| [`ci-024891-f050d119`](receipts/round-ci-024891-f050d119-result.json) | `b12d04f9cb3e` | succeeded / 0 | 134.06 | 114.45 (1.42 + 113.03) | 2.48 | selection artifact (2 warnings in receipt) |
+| [`ci-024946-f7e80616`](receipts/round-ci-024946-f7e80616-result.json) | `974d3c47c10a` | succeeded / 0 | 331.96 | 319.79 (6.17 + 313.62) | 8.06 | review boundary extension |

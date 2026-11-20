@@ -1,0 +1,16 @@
+import Solutions.Source_ReferenceIutCanLiftSuperrigid
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftSelection
+
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.ae_eq_of_equivariant
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.equivariant_commensurator
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.gl_smul_eq_of_ae
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.tendsto_smul_of_tendsto_triple
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.exists_gl_of_dense
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.exists_extension
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.exists_measurable_dirac_selection
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.mem_iff_of_heavy
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.exists_measurable_heavy_selection

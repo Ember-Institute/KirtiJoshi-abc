@@ -92,9 +92,6 @@
 
 ## 4. 未完成自然语言读回的证明义务
 
-- `AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder`：无待决译名。
-- `AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime`：无待决译名。
-- `AbcAdaptation_JoshiTeich_Prologue_Arithmetic_Basic`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Tripod_Theory`：无待决译名。
 - `AbcAdaptation.Tripod.statementII_bridge`：无待决译名。
 - `TowerArithmetic.localEstimate`：无待决译名。
