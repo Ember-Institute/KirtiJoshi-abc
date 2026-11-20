@@ -21,7 +21,8 @@ open AbcAdaptation.Reference.Iut
 
 variable {AG : AnabelianGeometry.{0}} {TG : TemperedGeometry AG}
 
-private theorem canonicalCorollary22HighHeightEstimate_of_thetaDataExistence
+/-- The canonical Corollary 2.2 estimate from pointwise theta data and the variant. -/
+theorem canonicalCorollary22HighHeightEstimate_of_thetaDataExistence
     (P : CurveProviders) {TK : CompactlyBounded → ℝ}
     (CF : ∀ K d, CurveFactsProp P K d (TK K))
     (hcore : ∀ K d, CoreFinitenessHyp P K d AG)

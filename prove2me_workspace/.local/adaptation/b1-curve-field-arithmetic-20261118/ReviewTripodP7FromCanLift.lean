@@ -1,0 +1,9 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodP7FromCanLift
+
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.canLift27
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.genuineEtalePi1Theory
+#print axioms AbcAdaptation.Tripod.pointThetaDataExistence_from_canLift27

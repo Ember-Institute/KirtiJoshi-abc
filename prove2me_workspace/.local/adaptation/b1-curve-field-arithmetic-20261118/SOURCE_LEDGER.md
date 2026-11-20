@@ -1826,3 +1826,87 @@ The joint review uses only Lean standard axioms. Wall and CPU times are in secon
 | [`ci-025174-7347cc98`](receipts/round-ci-025174-7347cc98-result.json) | `ebe5f31e73a5` | succeeded / 0 | 60.89 | 64.81 (10.39 + 54.42) | 3.95 | ergodic retry2 (9 warnings in receipt) |
 | [`ci-025212-c584beae`](receipts/round-ci-025212-c584beae-result.json) | `ebe5f31e73a5` | succeeded / 0 | 56.21 | 59.36 (9.32 + 50.04) | 3.94 | ergodic artifact (9 warnings in receipt) |
 | [`ci-025219-18783fff`](receipts/round-ci-025219-18783fff-result.json) | `48caaf2a392e` | succeeded / 0 | 123.44 | 121.94 (5.96 + 115.98) | 8.09 | review m2 ergodic |
+
+## Squared trace integrality and CanLift Proposition 2.7
+
+For a positive Fricke normal form with dense commensurator, the commutator and its conjugates provide the real translations used by rigidity. Commensurator superrigidity and complex unipotent rigidity fix the three generating squared traces under each embedding of the real coefficient field into the complex numbers. The resulting rational projective action has squared traces of norm at most one at every prime, by superrigidity, the p-adic unipotent action and the degeneration criterion. The rational integrality criterion gives `normalFormTraceIntegrality`, which `canLift27Complex` supplies to the complex assembly with the four proven Takeuchi uniformizations. Lefschetz descent gives `canLift27 : CanLift27.{0}`, used by the concrete P7 entry point. [Pinned M2 assembly](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/M2/Final.lean#L595) · [Public CanLift theorem](../../../Solutions/Source_ReferenceIutCanLiftProp27.lean#L13) · [Trilingual readback](readbacks/canlift-m2-arithmetic-prop27-trilingual.md) · [Review input](ReviewCanLiftProp27.lean) · [Review receipt](receipts/round-ci-025270-2668a125-result.json)
+
+The review imports Checks, ImportAudit, Act1Scene1 and AxiomAudit. The reported dependencies are `propext`, `Classical.choice` and `Quot.sound`. Wall and CPU times are in seconds. The RSS column reports the MCP-CI process-tree physical peak in GiB. PSS and the degradation marker are unavailable.
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024915-ece82390`](receipts/round-ci-024915-ece82390-result.json) | `e63382063337` | succeeded / 0 | 113.14 | 100.74 (1.34 + 99.40) | 2.83 | unipotent |
+| [`ci-024944-f931e3b3`](receipts/round-ci-024944-f931e3b3-result.json) | `386314a5fb6b` | succeeded / 0 | 138.81 | 132.58 (2.51 + 130.07) | 3.62 | fricke unipotent commensurator |
+| [`ci-024959-9a59ee58`](receipts/round-ci-024959-9a59ee58-result.json) | `e63382063337` | succeeded / 0 | 89.57 | 87.40 (4.59 + 82.81) | 3.07 | unipotent artifact |
+| [`ci-024960-f348930e`](receipts/round-ci-024960-f348930e-result.json) | `386314a5fb6b` | succeeded / 0 | 75.37 | 73.59 (3.28 + 70.31) | 3.74 | fricke unipotent commensurator artifact |
+| [`ci-024971-f5d1d9e5`](receipts/round-ci-024971-f5d1d9e5-result.json) | `bc7dac0da5c4` | succeeded / 0 | 62.48 | 61.52 (2.51 + 59.01) | 3.05 | unipotent padic |
+| [`ci-024972-8e799272`](receipts/round-ci-024972-8e799272-result.json) | `588ee15bdc14` | failed / 1 | 49.28 | 50.83 (7.18 + 43.65) | 3.11 | unipotent complex — line 111, Tactic `rewrite` failed: Did not find an occurrence of the pattern (2 errors in receipt) |
+| [`ci-024984-e4080293`](receipts/round-ci-024984-e4080293-result.json) | `bc7dac0da5c4` | succeeded / 0 | 118.36 | 55.94 (2.60 + 53.34) | 3.07 | unipotent padic artifact |
+| [`ci-025004-beffa9a4`](receipts/round-ci-025004-beffa9a4-result.json) | `475c0cd09103` | succeeded / 0 | 89.74 | 85.34 (7.89 + 77.45) | 3.12 | unipotent complex retry (1 warnings in receipt) |
+| [`ci-025035-2c076397`](receipts/round-ci-025035-2c076397-result.json) | `475c0cd09103` | succeeded / 0 | 45.09 | 45.93 (6.37 + 39.56) | 3.12 | unipotent complex artifact (1 warnings in receipt) |
+| [`ci-025216-0aa34641`](receipts/round-ci-025216-0aa34641-result.json) | `5f3999b6925a` | succeeded / 0 | 56.80 | 53.87 (2.89 + 50.98) | 3.99 | superrigidity (2 warnings in receipt) |
+| [`ci-025225-8bda04e1`](receipts/round-ci-025225-8bda04e1-result.json) | `5f3999b6925a` | succeeded / 0 | 52.43 | 51.29 (3.17 + 48.12) | 4.03 | superrigidity artifact (2 warnings in receipt) |
+| [`ci-025229-a12c3a4f`](receipts/round-ci-025229-a12c3a4f-result.json) | `540b73b0b8c6` | succeeded / 0 | 43.48 | 41.58 (3.68 + 37.90) | 4.04 | fricke complex trace rationality |
+| [`ci-025230-2d97ca4f`](receipts/round-ci-025230-2d97ca4f-result.json) | `ab5230682730` | succeeded / 0 | 43.12 | 41.02 (4.09 + 36.93) | 4.07 | fricke padic trace bound (2 warnings in receipt) |
+| [`ci-025233-90d150f6`](receipts/round-ci-025233-90d150f6-result.json) | `540b73b0b8c6` | succeeded / 0 | 44.58 | 43.25 (2.57 + 40.68) | 4.03 | fricke complex trace rationality artifact |
+| [`ci-025235-b7584555`](receipts/round-ci-025235-b7584555-result.json) | `ab5230682730` | succeeded / 0 | 41.18 | 39.96 (2.67 + 37.29) | 4.05 | fricke padic trace bound artifact (2 warnings in receipt) |
+| [`ci-025245-5ef5d62d`](receipts/round-ci-025245-5ef5d62d-result.json) | `dda810704efa` | succeeded / 0 | 96.90 | 95.28 (5.14 + 90.14) | 7.51 | m2 final (1 warnings in receipt) |
+| [`ci-025252-b245682d`](receipts/round-ci-025252-b245682d-result.json) | `dda810704efa` | succeeded / 0 | 91.39 | 90.20 (4.70 + 85.50) | 7.65 | m2 final artifact (1 warnings in receipt) |
+| [`ci-025259-bc6729ac`](receipts/round-ci-025259-bc6729ac-result.json) | `60aadda5425f` | succeeded / 0 | 109.97 | 108.23 (4.59 + 103.64) | 7.57 | canlift prop27 |
+| [`ci-025267-f785f3c4`](receipts/round-ci-025267-f785f3c4-result.json) | `60aadda5425f` | succeeded / 0 | 83.36 | 82.50 (5.18 + 77.32) | 7.68 | canlift prop27 artifact |
+| [`ci-025270-2668a125`](receipts/round-ci-025270-2668a125-result.json) | `6069ac2bbf11` | succeeded / 0 | 107.53 | 105.21 (5.50 + 99.71) | 7.96 | review canlift prop27 |
+
+## Core invariance and the genuine étale fundamental group
+
+A cover of model orbicurves induces the inclusion of their normalization fields over a common base. Galois ramification bounds the index in the compositum of two such fields by the least common multiple of their two indices over the base. Normalization in that compositum assigns the base multiplicity divided by its ramification index to each closed point. The two projections are covers by the ramification tower formula. Common-cover pullbacks identify the two classes of presentations, so the existence and uniqueness of covers to the core transfer along the model cover. This supplies the core law of `genuineEtalePi1Theory`. Its étale fundamental groups and cover maps are the existing profinite stabilizer inertia quotients and their induced open embeddings. [Normalization cover](../../../Solutions/Source_ReferenceIutGenuineNormalizationCover.lean#L148) · [Common-cover pullback](../../../Solutions/Source_ReferenceIutCanLiftPresentationPullback.lean#L85) · [Core law and étale theory](../../../Solutions/Source_ReferenceIutGenuineCore.lean#L73) · [Review input](ReviewGenuineEtaleCore.lean) · [Review receipt](receipts/round-ci-025258-a9dd731f-result.json)
+
+The review imports Checks, ImportAudit, Act1Scene1 and AxiomAudit. The reported dependencies are `propext`, `Classical.choice` and `Quot.sound`. Wall and CPU times are in seconds. The RSS column reports the MCP-CI process-tree physical peak in GiB. PSS and the degradation marker are unavailable.
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024974-583ed5c0`](receipts/round-ci-024974-583ed5c0-result.json) | `bbb2e46dd469` | failed / 1 | 163.65 | 164.02 (18.95 + 145.07) | 7.65 | genuine normalization cover — line 54, (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached (2 errors in receipt) |
+| [`ci-025039-a05bacf6`](receipts/round-ci-025039-a05bacf6-result.json) | `2edadcb91a72` | succeeded / 0 | 61.07 | 70.61 (18.85 + 51.76) | 3.46 | galois ramification visibility (12 warnings in receipt) |
+| [`ci-025040-0dcd0414`](receipts/round-ci-025040-0dcd0414-result.json) | `5d20118fe216` | succeeded / 0 | 121.97 | 121.66 (8.43 + 113.23) | 7.64 | genuine normalization cover retry |
+| [`ci-025083-9536fcb5`](receipts/round-ci-025083-9536fcb5-result.json) | `2edadcb91a72` | succeeded / 0 | 55.13 | 64.52 (18.01 + 46.51) | 3.49 | galois ramification visibility artifact (12 warnings in receipt) |
+| [`ci-025088-2498f8e8`](receipts/round-ci-025088-2498f8e8-result.json) | `5d20118fe216` | succeeded / 0 | 207.31 | 206.72 (10.54 + 196.18) | 7.66 | genuine normalization cover artifact |
+| [`ci-025121-7c25fb09`](receipts/round-ci-025121-7c25fb09-result.json) | `a769b71a20c0` | failed / 1 | 84.93 | 85.92 (8.28 + 77.64) | 3.39 | compositum ramification — line 73, Application type mismatch: The argument |
+| [`ci-025131-825c797e`](receipts/round-ci-025131-825c797e-result.json) | `7993d25c9e29` | succeeded / 0 | 150.33 | 152.77 (12.93 + 139.84) | 7.70 | genuine normalization cover map |
+| [`ci-025141-3dd13b89`](receipts/round-ci-025141-3dd13b89-result.json) | `a9dd84a9d880` | succeeded / 0 | 56.44 | 56.85 (5.45 + 51.40) | 3.38 | compositum ramification retry (7 warnings in receipt) |
+| [`ci-025145-fcf01d7c`](receipts/round-ci-025145-fcf01d7c-result.json) | `7993d25c9e29` | succeeded / 0 | 157.53 | 157.22 (13.79 + 143.43) | 7.72 | genuine normalization cover map artifact |
+| [`ci-025147-d0242b0c`](receipts/round-ci-025147-d0242b0c-result.json) | `a9dd84a9d880` | succeeded / 0 | 67.42 | 68.70 (7.06 + 61.64) | 3.41 | compositum ramification artifact (7 warnings in receipt) |
+| [`ci-025158-601e94e7`](receipts/round-ci-025158-601e94e7-result.json) | `54880dea104e` | succeeded / 0 | 73.08 | 71.16 (19.18 + 51.98) | 3.42 | subfield pullback (12 warnings in receipt) |
+| [`ci-025161-12fbbd2b`](receipts/round-ci-025161-12fbbd2b-result.json) | `54880dea104e` | succeeded / 0 | 79.44 | 78.07 (20.12 + 57.95) | 3.43 | subfield pullback artifact (12 warnings in receipt) |
+| [`ci-025173-d4debc5e`](receipts/round-ci-025173-d4debc5e-result.json) | `0ae77d2e0b88` | failed / 1 | 64.48 | 63.71 (17.98 + 45.73) | 3.73 | presentation pullback — line 38, (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached |
+| [`ci-025210-56ecdc18`](receipts/round-ci-025210-56ecdc18-result.json) | `d49718188e14` | succeeded / 0 | 64.92 | 64.86 (7.60 + 57.26) | 3.73 | presentation pullback retry (1 warnings in receipt) |
+| [`ci-025215-49bce4c8`](receipts/round-ci-025215-49bce4c8-result.json) | `d49718188e14` | succeeded / 0 | 124.39 | 47.07 (8.07 + 39.00) | 3.79 | presentation pullback artifact (1 warnings in receipt) |
+| [`ci-025222-2922542e`](receipts/round-ci-025222-2922542e-result.json) | `614a1ba93c3b` | succeeded / 0 | 114.05 | 112.11 (12.29 + 99.82) | 7.61 | genuine core (1 warnings in receipt) |
+| [`ci-025228-7ff4654c`](receipts/round-ci-025228-7ff4654c-result.json) | `614a1ba93c3b` | succeeded / 0 | 97.80 | 95.55 (12.68 + 82.87) | 7.63 | genuine core artifact (1 warnings in receipt) |
+| [`ci-025239-337c2caf`](receipts/round-ci-025239-337c2caf-result.json) | `f4d58d9fa9c6` | succeeded / 0 | 95.66 | 94.88 (5.48 + 89.40) | 7.61 | tripod core from canlift |
+| [`ci-025248-3252840a`](receipts/round-ci-025248-3252840a-result.json) | `f4d58d9fa9c6` | succeeded / 0 | 88.71 | 87.18 (5.26 + 81.92) | 7.53 | tripod core from canlift artifact |
+| [`ci-025258-a9dd731f`](receipts/round-ci-025258-a9dd731f-result.json) | `5d8d44cf5162` | succeeded / 0 | 123.33 | 121.40 (5.65 + 115.75) | 8.10 | review genuine etale core |
+
+## Pointwise P7 with the proved CanLift theorem
+
+The model `genuineEtalePi1Theory canLift27` supplies core finiteness to `curveInputs_from_source`. The P7 entry point over that model supplies the same pointwise witnesses, local estimates, certificates and arithmetic comparisons as `pointThetaDataExistence_from_source`. Its inputs include the curve providers, the cyclic subgroup bound, Northcott and far-away Abel existence for the given tempered geometry. [Pinned P7 construction](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/Main.lean#L86) · [P7 proof](../../../Solutions/Source_TripodP7FromCanLift.lean#L15) · [Trilingual readback](readbacks/genuine-etale-core-to-p7-trilingual.md) · [Review input](ReviewTripodP7FromCanLift.lean) · [Review receipt](receipts/round-ci-025284-b707887b-result.json)
+
+The review imports Checks, ImportAudit, Act1Scene1 and AxiomAudit. The reported dependencies are `propext`, `Classical.choice` and `Quot.sound`. Wall and CPU times are in seconds. The RSS column reports the MCP-CI process-tree physical peak in GiB. PSS and the degradation marker are unavailable.
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-025271-7a722906`](receipts/round-ci-025271-7a722906-result.json) | `d45634e1e06b` | succeeded / 0 | 106.45 | 104.94 (6.07 + 98.87) | 7.79 | tripod p7 from canlift |
+| [`ci-025280-e809b08c`](receipts/round-ci-025280-e809b08c-result.json) | `d45634e1e06b` | succeeded / 0 | 92.10 | 91.69 (5.96 + 85.73) | 7.80 | tripod p7 from canlift artifact |
+| [`ci-025284-b707887b`](receipts/round-ci-025284-b707887b-result.json) | `b8fdb093a8d4` | succeeded / 0 | 128.91 | 127.40 (6.45 + 120.95) | 8.10 | review tripod p7 from canlift |
+
+## Canonical Corollary 2.2 consuming the CanLift P7 witness
+
+The canonical Corollary 2.2 composition consumes `pointThetaDataExistence_from_canLift27` with the same model, curve provider, and curve inputs as its `h312` premise. The construction supplies the cyclic subgroup bound, Northcott, and both prime estimates. The given tempered geometry and its anabelian existence supply the geometry for the pointwise witness. For this source P7 family the theorem assumes `Corollary312Variant` and concludes the canonical high-height estimate. The existing composition now has public scope for use by the dedicated CanLift module. [Pinned P7 and variant composition](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/Main.lean#L129) · [High-height estimate](../../../Solutions/Source_TripodCanonicalCorollary22FromCanLift.lean#L17) · [Trilingual readback](readbacks/tripod-canonical-corollary22-from-canlift-trilingual.md) · [Review input](ReviewTripodCanonicalCorollary22FromCanLift.lean) · [Review receipt](receipts/round-ci-025322-1f722588-result.json)
+
+The project review reports only `propext`, `Classical.choice` and `Quot.sound`. Times are in seconds and RSS is the process-tree physical peak in GiB. PSS and the degradation marker are unavailable.
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-025301-cfdcf52a`](receipts/round-ci-025301-cfdcf52a-result.json) | `747255732596` | succeeded / 0 | 89.44 | 88.35 (4.37 + 83.98) | 7.55 | canonical c2 public |
+| [`ci-025305-9fbcb67b`](receipts/round-ci-025305-9fbcb67b-result.json) | `747255732596` | succeeded / 0 | 97.66 | 96.75 (6.18 + 90.57) | 7.67 | canonical c2 public artifact |
+| [`ci-025311-ee534421`](receipts/round-ci-025311-ee534421-result.json) | `3487f51ebf24` | succeeded / 0 | 118.78 | 117.55 (5.93 + 111.62) | 7.75 | canonical c2 from canlift |
+| [`ci-025316-c53617d4`](receipts/round-ci-025316-c53617d4-result.json) | `3487f51ebf24` | succeeded / 0 | 94.45 | 93.78 (5.78 + 88.00) | 7.82 | canonical c2 from canlift artifact |
+| [`ci-025322-1f722588`](receipts/round-ci-025322-1f722588-result.json) | `2bffc9b14597` | succeeded / 0 | 126.64 | 125.19 (6.35 + 118.84) | 8.04 | review canonical c2 from canlift |

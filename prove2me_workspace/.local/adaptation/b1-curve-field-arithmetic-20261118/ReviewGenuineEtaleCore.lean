@@ -1,0 +1,36 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodCoreFromCanLift
+
+open JoshiTeich.Act1Scene1.AffineOrbicurvePresentation
+open JoshiTeich.Act1Scene1.FunctionFieldNormalization
+open AbcAdaptation.Reference.Iut.Anabelian
+open AbcAdaptation.Tripod
+
+#check ramificationIdx_sup_dvd
+#check exists_pullback_subfield
+#check pullback_ofSubfield
+#check normalizationCoverOfModelCover_eq_ringMap
+#check normalizationHasCore_iff_of_cover
+#check genuineEtalePi1Theory
+#check coreFiniteness_of_canLift27Complex
+
+#print axioms isCyclic_normalization_inertia
+#print axioms ramificationIdx_mul_card_inertia
+#print axioms ramificationIdx_sup_dvd
+#print axioms exists_pullback_subfield
+#print axioms subfieldPresentation
+#print axioms pullback_ofSubfield
+#print axioms normalizationCoverOfModelCover
+#print axioms normalizationCoverOfModelCover_eq_ringMap
+#print axioms isCoreOf_iff_of_pullback
+#print axioms normalizationHasCore_iff_of_cover
+#print axioms profiniteInertiaQuotient
+#print axioms genuinePi1
+#print axioms genuinePi1Cover
+#print axioms genuinePi1Cover_continuous
+#print axioms genuinePi1Cover_isOpenEmbedding
+#print axioms genuineEtalePi1Theory
+#print axioms coreFiniteness_of_canLift27Complex

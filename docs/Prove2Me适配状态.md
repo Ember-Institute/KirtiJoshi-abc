@@ -86,8 +86,4 @@
 
 特别需要细化 `ProducerContracts.lean` 中只选择命题的 `xxxLaw : Prop` 槽位；它们既没有给出具体论文法律，也没有给出其证明。四类真实来源义务仍归 Scene1，不通过扩大 Prologue 假设关闭；旧 `Prologue/Obligations/Constructors.lean` 的四个占位构造器也不能作为现成证明导入。定义文件只供应实际定义与已证明结构事实，尚未实现的存在性保持开放；若后续真实构造揭示新的基础需求，按动态边界审计契约处理。
 
-### CanLift 复一致化与可公度子
-
-复 CanLift 的 Margulis 输入现为 Fricke 正规形的可公度子稠密时，该正规形生成群每个元素的迹平方整性。仍需由可公度子稠密推出所有实到复的域嵌入固定正规形的三个迹平方，从而得到有理性。在三个迹平方有理的条件下，有理射影代表及其逐素数作用已有来源证明。正 Fricke 正规形的格条件已通过叶检查。边界概率核、三重积零测、等变点映射和射影延拓各自已有审查。双遍历性及可公度子超刚性的总装配仍在验收，平方迹有理性及逐素数范数界以该总装配为输入。 [上游 Margulis 组装](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/M2/Final.lean#L595) · [本地整性消费者](../prove2me_workspace/Solutions/Source_ReferenceIutCanLiftPadicSquaredTraces.lean#L45) · [本地组装](../prove2me_workspace/Solutions/Source_ReferenceIutCanLiftComplexFromFricke.lean#L15)
-
 ## 4. 未完成自然语言读回的证明义务

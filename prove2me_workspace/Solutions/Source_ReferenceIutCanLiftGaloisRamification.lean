@@ -82,7 +82,7 @@ private theorem faithfulSMul_normalization [Algebra.IsSeparable (rationalBase k 
   rw [map_div₀, map_div₀]
   exact congrArg Subtype.val (congrArg₂ (· / ·) (hcoeff a) (hcoeff b))
 
-private theorem isCyclic_normalization_inertia (ht : Transcendental k t)
+theorem isCyclic_normalization_inertia (ht : Transcendental k t)
     (P : Ideal (coordRing t N)) [hP : P.IsMaximal] : IsCyclic (P.inertia G) := by
   letI := dedekindRing t ht N
   letI := faithfulSMul_normalization (N := N)
@@ -92,7 +92,7 @@ private theorem isCyclic_normalization_inertia (ht : Transcendental k t)
   exact AbcAdaptation.Reference.Iut.TameInertia.isCyclic_inertia P
     (Ring.ne_bot_of_isMaximal_of_not_isField hP (notFieldRing t ht N))
 
-private theorem ramificationIdx_mul_card_inertia (ht : Transcendental k t)
+theorem ramificationIdx_mul_card_inertia (ht : Transcendental k t)
     (hFL : F ≤ L) (hLN : L ≤ N) (P : Ideal (coordRing t N)) [P.IsMaximal] :
     (letI := ringMapAlgebra hFL; (P.comap (ringMap hLN)).ramificationIdx (coordRing t F)) *
         Nat.card ((P.inertia G) ⊓ fixSub N L : Subgroup G) =
