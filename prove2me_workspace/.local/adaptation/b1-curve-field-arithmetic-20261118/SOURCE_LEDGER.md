@@ -1687,7 +1687,7 @@ The project review reports nine declarations using only `propext`, `Classical.ch
 
 ## Hopf coordinates, invariant measure and continuity
 
-Hopf coordinates identify the real special linear group with the upper half plane times the stabilizer of the base point. The resulting measure is left invariant, projects to hyperbolic area over sets of base points, and is invariant under the required diagonal and unipotent right shifts. Translations act continuously in the integrated difference of bounded measurable functions on finite-measure sets. These statements supply the measure and continuity inputs for the weighted unfolding and Mautner argument. [Trilingual readback](readbacks/canlift-m2-hopf-trilingual.md)
+Hopf coordinates identify the real special linear group with the upper half plane times the stabilizer of the base point. The resulting measure is left invariant and its base-point pushforward is π times hyperbolic area. It is invariant under the required diagonal and unipotent right shifts. The integrated displacement of a measurable integrable function under a right unipotent shift tends to zero at the identity. These statements supply the measure and continuity inputs for the weighted unfolding and Mautner argument. [Trilingual readback](readbacks/canlift-m2-hopf-trilingual.md)
 
 The two reviews use only Lean standard axioms. Wall and CPU times are in seconds. RSS is the peak process-tree resident memory reported by MCP-CI in GiB. PSS and the degradation marker are unavailable. [Measure review](receipts/round-ci-024994-022464bc-result.json) · [Continuity review](receipts/round-ci-024995-b6c85418-result.json)
 
@@ -1765,3 +1765,12 @@ The review uses only Lean standard axioms. Wall and CPU times are in seconds. RS
 | [`ci-024989-09e2dffd`](receipts/round-ci-024989-09e2dffd-result.json) | `84089fcacea3` | succeeded / 0 | 71.46 | 71.43 (4.09 + 67.34) | 3.16 | padic unbounded retry |
 | [`ci-025011-f84d5178`](receipts/round-ci-025011-f84d5178-result.json) | `84089fcacea3` | succeeded / 0 | 86.19 | 85.58 (4.54 + 81.04) | 3.16 | padic unbounded artifact |
 | [`ci-025043-4ceee2d2`](receipts/round-ci-025043-4ceee2d2-result.json) | `afbd081eb6d7` | succeeded / 0 | 197.55 | 195.04 (6.78 + 188.26) | 8.07 | review m2 padic unbounded |
+
+## P7 readbacks for local estimates and the concrete existence provider
+
+The local estimate readback lists all seven fields and the use of the resulting local estimate in the P7 conversion and theorem 1.10. The existence readback records the general supplier and the conversion to the reference P7 interface. It records the source hash of the original supplier audit and the unchanged supplier declaration in the current module. [Local estimate readback](readbacks/tower-local-estimate-trilingual.md) · [Concrete existence readback](readbacks/concrete-p7-existence-trilingual.md)
+
+
+## Tripod height theory and Statement II readbacks
+
+The height theory readback describes the height, discriminant, conductor, conjugates and degree on algebraic points distinct from zero and one. The private bridge in the archived native review identifies the fixed tripod theory's general Statement II with the concrete formulation. The archived review covers that equivalence. [Height theory](readbacks/tripod-theory-trilingual.md) · [Statement II bridge](readbacks/statement-ii-bridge-trilingual.md)
