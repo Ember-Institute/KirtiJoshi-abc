@@ -88,21 +88,16 @@
 
 ### CanLift 复一致化与可公度子
 
-复 CanLift 的 Margulis 输入现为 Fricke 正规形的可公度子稠密时，该正规形生成群每个元素的迹平方整性。仍需由可公度子稠密推出所有实到复的域嵌入固定正规形的三个迹平方，从而得到有理性。在三个迹平方有理的条件下，有理射影代表及其逐素数作用已有来源证明。仍须证明格的双遍历性、构造等变边界核并延拓作用，从而在每个素数处推出平方迹所需的范数界。 [上游 Margulis 组装](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/M2/Final.lean#L595) · [本地整性消费者](../prove2me_workspace/Solutions/Source_ReferenceIutCanLiftPadicSquaredTraces.lean#L45) · [本地组装](../prove2me_workspace/Solutions/Source_ReferenceIutCanLiftComplexFromFricke.lean#L15)
+复 CanLift 的 Margulis 输入现为 Fricke 正规形的可公度子稠密时，该正规形生成群每个元素的迹平方整性。仍需由可公度子稠密推出所有实到复的域嵌入固定正规形的三个迹平方，从而得到有理性。在三个迹平方有理的条件下，有理射影代表及其逐素数作用已有来源证明。等变边界概率核已由 `GoodLattice` 构造。仍需证明正 Fricke 正规形群满足格条件及双遍历性，从边界核推出等变点映射并延拓作用，再在每个素数处推出平方迹所需的范数界。 [上游 Margulis 组装](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/M2/Final.lean#L595) · [本地整性消费者](../prove2me_workspace/Solutions/Source_ReferenceIutCanLiftPadicSquaredTraces.lean#L45) · [本地组装](../prove2me_workspace/Solutions/Source_ReferenceIutCanLiftComplexFromFricke.lean#L15)
 
 ## 4. 未完成自然语言读回的证明义务
 
 - `AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime`：无待决译名。
 - `AbcAdaptation_JoshiTeich_Prologue_Arithmetic_Basic`：无待决译名。
-- `AbcAdaptation_Reference_Genl_GeneralPosition_StatementII`：无待决译名。
-- `AbcAdaptation.Reference.Iut.statementII_of_cor312`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Tripod_Theory`：无待决译名。
 - `AbcAdaptation.Tripod.statementII_bridge`：无待决译名。
-- `AbcAdaptation_Reference_Iut_Concrete_CurveData`：无待决译名。
-- `AbcAdaptation_Reference_Iut_Concrete_UniformizerSupply`：无待决译名。
-- `TowerArithmetic.localEstimate`：`capsule`（待定：胶囊／囊）。
+- `TowerArithmetic.localEstimate`：无待决译名。
 - `ConcreteThetaDataExistence.toThetaDataExistence`、`CurveInputs.concreteThetaDataExistence`：无待决译名。
 - `ThetaLocalData.withBadChars`、`ThetaLocalData.step_iii_of_qPilotInputs`：无待决译名。
 - `pointThetaData`、`concreteThetaDataExistence_of_pointwise`。
-- `archComponentVol_archLogShell`、`exists_leastHull_infinite`、`prop15`。

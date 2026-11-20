@@ -219,7 +219,7 @@ The current batch's Checks, ImportAudit, Act1Scene1 aggregate and AxiomAudit gat
 
 ## Finite exceptional Legendre parameters for the core condition
 
-`Source_TripodCoreFiniteness.lean` adapts the polynomial argument in `Iut/Tripod/Core.lean:31–64,112` at the pinned iut revision. The public lemma `finite_curve_j_preimage` sends the actual provider curve's (j)-invariant to the Legendre value in `Qbar` through the existing field embedding. `coreFiniteness_of_exceptionalJ` consumes that finiteness result and returns the `CoreFinitenessHyp` expected by `curveInputs_from_source` from a finite rational exceptional set and the geometric inclusion for the same `AG` and curves.
+`Source_TripodCoreFiniteness.lean` adapts the polynomial argument in `Iut/Tripod/Core.lean:31–64,112` at the pinned iut revision. The public lemma `finite_curve_j_preimage` sends the actual provider curve's (j)-invariant to the Legendre value in `Qbar` through the existing field embedding. `coreFiniteness_of_exceptionalJ` consumes that finiteness result and returns the `CoreFinitenessHyp` expected by `curveInputs_from_source` from a finite rational exceptional set and the geometric inclusion for the same `AG` and curves. [Three-language readback](readbacks/tripod-core-finiteness-trilingual.md)
 
 The geometric inclusion in `Core.lean:72` still needs the `CanLift` result and compatibility of base change with the once-punctured curve and its sign quotient in the chosen model. The pin uses Pi1 `ca7def953193f861a462aa0831eec8f0a31ff69f` and OrbicurveCores `61616dcd77fbe45c083a8ebfa7cc80728f86e841`. Their source proofs are available in the legacy source checkout. The two direct imports `Pi1.Orbicurve.LefschetzMain` and `OrbicurveCores.U2.Assembly` lack compatible artifacts in the target environment.
 
@@ -1534,7 +1534,7 @@ The joint review imports Checks, ImportAudit, Act1Scene1 and AxiomAudit. The six
 
 An invertible two-by-two matrix acts continuously on the projective line. Three distinct points determine the relative position used to recover an action from a point map. The tail convexity and probability limit lemmas provide measurable limits for the boundary kernel. Cauchy measure is equivalent to the boundary measure and gives a change-of-variables bound for the action. These estimates give almost-everywhere convergent subsequences for varying group elements. For a countable doubly ergodic group, almost invariant sets are null or conull and almost invariant measurable maps into countably separated spaces are almost everywhere constant. The pair-space results also give the corresponding assertions for single points. [Projective continuity](../../../Solutions/Source_ReferenceIutCanLiftProjectiveLine.lean#L653) · [Boundary limits](../../../Solutions/Source_ReferenceIutCanLiftBoundaryMeasure.lean#L344) · [Ergodic consequences](../../../Solutions/Source_ReferenceIutCanLiftErgodicUse.lean#L56) · [Three-language readback](readbacks/canlift-m2-boundary-superrigidity-trilingual.md)
 
-The joint review imports Checks, ImportAudit, Act1Scene1 and AxiomAudit. It verifies thirteen declarations with only Lean standard axioms. The double ergodicity of the actual normal-form lattice and the boundary kernel construction remain open. Wall and CPU times are in seconds. The memory column is the MCP-CI process-tree peak RSS in GiB. PSS and the resource degradation marker are unavailable. [Review input](ReviewCanLiftBoundaryErgodic.lean) · [Review receipt](receipts/round-ci-024631-b0700736-result.json)
+The joint review imports Checks, ImportAudit, Act1Scene1 and AxiomAudit. It verifies thirteen declarations with only Lean standard axioms. The double ergodicity of the actual normal-form lattice remains open. The boundary kernel is constructed below from the good-lattice hypothesis. Wall and CPU times are in seconds. The memory column is the MCP-CI process-tree peak RSS in GiB. PSS and the resource degradation marker are unavailable. [Review input](ReviewCanLiftBoundaryErgodic.lean) · [Review receipt](receipts/round-ci-024631-b0700736-result.json)
 
 | MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
 | --- | --- | --- | ---: | ---: | ---: | --- |
@@ -1612,3 +1612,55 @@ The joint review imports Checks, ImportAudit, Act1Scene1 and AxiomAudit. The twe
 | [`ci-024655-bc32df4f`](receipts/round-ci-024655-bc32df4f-result.json) | `f1608e6a6fa2` | succeeded / 0 | 101.37 | 99.77 (5.10 + 94.67) | 7.62 | complex from fricke |
 | [`ci-024658-ddfe2617`](receipts/round-ci-024658-ddfe2617-result.json) | `f1608e6a6fa2` | succeeded / 0 | 121.85 | 59.17 (1.85 + 57.32) | 4.17 | complex from fricke artifact |
 | [`ci-024660-f80e76b6`](receipts/round-ci-024660-f80e76b6-result.json) | `c61b99c4c616` | succeeded / 0 | 132.90 | 130.98 (5.56 + 125.42) | 7.94 | review takeuchi model uniformizations |
+
+
+## Projective actions and exclusion of an equivariant pair
+
+The four-point cross ratio is measurable and invariant under projective matrices. Its values against two distinct reference pairs give the finiteness assertion used by `noPair`. For a countable doubly ergodic subgroup and a non-elementary action, `ae_ne_of_equivariant` makes the images of almost every pair distinct. Under the same hypotheses, `noPair` excludes an almost-everywhere equivariant pair of distinct target points. Separately, the image of the Fricke commutator under a real-to-complex embedding acts by translation by two. The powers send the standard triple to a degenerate limit, supplying the orbit condition for the complex superrigidity argument. [Point-map separation](../../../Solutions/Source_ReferenceIutCanLiftPointMaps.lean#L88) · [Exclusion of a pair](../../../Solutions/Source_ReferenceIutCanLiftNoPair.lean#L357) · [Complex projective action](../../../Solutions/Source_ReferenceIutCanLiftFrickeComplexAction.lean#L104) · [Three-language readback](readbacks/canlift-m2-projective-action-trilingual.md)
+
+The joint project and axiom review reports six declarations using only Lean standard axioms. Wall and CPU times are in seconds. RSS is the MCP-CI process-tree peak in GiB. PSS and the resource degradation marker are unavailable. [Review input](ReviewCanLiftM2ProjectiveAction.lean) · [Review receipt](receipts/round-ci-024686-dc6126a7-result.json)
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024648-b674c23f`](receipts/round-ci-024648-b674c23f-result.json) | `1a0ca34b547e` | succeeded / 0 | 50.84 | 49.54 (3.78 + 45.76) | 3.65 | cross ratio (1 warnings in receipt) |
+| [`ci-024650-4d8e0eae`](receipts/round-ci-024650-4d8e0eae-result.json) | `a274703ad532` | succeeded / 0 | 44.01 | 42.37 (2.89 + 39.48) | 3.04 | fricke complex action |
+| [`ci-024652-ad7c02ff`](receipts/round-ci-024652-ad7c02ff-result.json) | `1a0ca34b547e` | succeeded / 0 | 46.76 | 47.00 (4.68 + 42.32) | 3.68 | cross ratio artifact (1 warnings in receipt) |
+| [`ci-024653-e150337f`](receipts/round-ci-024653-e150337f-result.json) | `a274703ad532` | succeeded / 0 | 39.90 | 38.49 (3.51 + 34.98) | 3.05 | fricke complex action artifact |
+| [`ci-024656-4d61aac4`](receipts/round-ci-024656-4d61aac4-result.json) | `b96a692cac97` | succeeded / 0 | 43.73 | 41.58 (2.60 + 38.98) | 3.64 | point maps |
+| [`ci-024657-4553d132`](receipts/round-ci-024657-4553d132-result.json) | `b96a692cac97` | succeeded / 0 | 122.15 | 50.57 (3.42 + 47.15) | 3.67 | point maps artifact |
+| [`ci-024670-5f94f415`](receipts/round-ci-024670-5f94f415-result.json) | `433a5c3b94e7` | succeeded / 0 | 108.56 | 109.06 (7.64 + 101.42) | 3.71 | no pair (2 warnings in receipt) |
+| [`ci-024673-8794b333`](receipts/round-ci-024673-8794b333-result.json) | `433a5c3b94e7` | succeeded / 0 | 106.40 | 106.44 (6.35 + 100.09) | 3.71 | no pair artifact (2 warnings in receipt) |
+| [`ci-024686-dc6126a7`](receipts/round-ci-024686-dc6126a7-result.json) | `a5dd91ce4284` | succeeded / 0 | 152.04 | 149.94 (6.01 + 143.93) | 7.77 | review m2 projective action |
+
+
+## Non-elementary Fricke actions and finite-index lattice subgroups
+
+A nontrivial projective translation forces a point fixed by a finite-index subgroup to be infinity. A generator moving infinity excludes that point. The real-to-complex matrix embedding gives these two witnesses for the complex action. The rational representatives give the analogous translation and movement at each prime. The determinant and squared trace norm comparison is the numerical input for the later p-adic degeneration proof. The lattice module proves that a finite-index subgroup inherits the fundamental-set conditions by a finite union of translated sets. A nontrivial translation also gives a uniform lower bound on bottom rows in a discrete group, which yields finite multiplicity in a strip of positive lower height. [Non-elementary action](../../../Solutions/Source_ReferenceIutCanLiftNonElementary.lean#L55) · [p-adic action](../../../Solutions/Source_ReferenceIutCanLiftFrickePadicAction.lean#L34) · [Lattice subgroups](../../../Solutions/Source_ReferenceIutCanLiftGoodLatticeBasic.lean#L25) · [Three-language readback](readbacks/canlift-m2-fricke-action-lattice-trilingual.md)
+
+The joint review reports eight declarations using only Lean standard axioms. Wall and CPU times are in seconds. RSS is the process-tree peak in GiB from MCP-CI. PSS and the resource degradation marker are unavailable. [Review input](ReviewCanLiftFrickeActionLattice.lean) · [Review receipt](receipts/round-ci-024720-29535532-result.json)
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024667-271fa1ff`](receipts/round-ci-024667-271fa1ff-result.json) | `53be9440eeb3` | succeeded / 0 | 100.78 | 101.25 (6.65 + 94.60) | 3.90 | good lattice basic (2 warnings in receipt) |
+| [`ci-024679-39cab1e3`](receipts/round-ci-024679-39cab1e3-result.json) | `53be9440eeb3` | succeeded / 0 | 100.78 | 101.69 (6.43 + 95.26) | 3.91 | good lattice basic artifact (2 warnings in receipt) |
+| [`ci-024684-7f5b71cd`](receipts/round-ci-024684-7f5b71cd-result.json) | `8bdf2d311080` | succeeded / 0 | 66.05 | 64.52 (3.40 + 61.12) | 3.07 | fricke padic action |
+| [`ci-024685-1418cf24`](receipts/round-ci-024685-1418cf24-result.json) | `674f0f1827af` | succeeded / 0 | 70.72 | 68.93 (3.03 + 65.90) | 3.66 | non elementary |
+| [`ci-024698-a1d068e6`](receipts/round-ci-024698-a1d068e6-result.json) | `674f0f1827af` | succeeded / 0 | 69.73 | 67.99 (3.67 + 64.32) | 3.67 | non elementary artifact |
+| [`ci-024700-18ff5a9a`](receipts/round-ci-024700-18ff5a9a-result.json) | `8bdf2d311080` | succeeded / 0 | 56.24 | 55.19 (3.34 + 51.85) | 3.07 | fricke padic action artifact |
+| [`ci-024720-29535532`](receipts/round-ci-024720-29535532-result.json) | `5072b9e09d55` | succeeded / 0 | 164.48 | 162.98 (5.59 + 157.39) | 7.93 | review fricke action lattice |
+
+
+## Furstenberg boundary map and probability kernel
+
+For a group satisfying `GoodLattice` and acting continuously on a compact metrizable space, averages of translates of a probability measure give a measurable map on the real projective boundary. Common tail convex weights and asymptotic invariance yield almost-everywhere equivariance for each element of the group. The second theorem packages the map as a probability kernel with the same equivariance. The pinned superrigidity proof passes this kernel to the triple-null and point-map theorems. [Local endpoints](../../../Solutions/Source_ReferenceIutCanLiftFurstenberg.lean#L601) · [Pinned superrigidity consumer](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/M2/Superrigidity.lean#L69) · [Three-language readback](readbacks/canlift-m2-furstenberg-boundary-kernel-trilingual.md)
+
+The joint review reports only `propext`, `Classical.choice`, and `Quot.sound` for both endpoints. Three compatibility attempts failed on matrix coercions, component equalities, and second countability. Wall and CPU times are in seconds. RSS is the MCP-CI process-tree peak in GiB. PSS and the resource degradation marker are unavailable. [Review input](ReviewCanLiftFurstenberg.lean) · [Review receipt](receipts/round-ci-024784-36f5c2a9-result.json)
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024668-8fe03cf5`](receipts/round-ci-024668-8fe03cf5-result.json) | `9505de1dc9e9` | failed / 1 | 143.11 | 148.82 (14.15 + 134.67) | 4.02 | furstenberg — line 57, unsolved goals (7 errors in receipt) |
+| [`ci-024697-af3d2a81`](receipts/round-ci-024697-af3d2a81-result.json) | `6a0b9be508af` | failed / 1 | 75.02 | 79.03 (12.28 + 66.75) | 3.99 | furstenberg retry — line 61, Tactic `rewrite` failed: Did not find an occurrence of the pattern (5 errors in receipt) |
+| [`ci-024754-798e4b6a`](receipts/round-ci-024754-798e4b6a-result.json) | `348e0b044b58` | failed / 1 | 86.42 | 91.00 (12.82 + 78.18) | 4.01 | furstenberg retry2 — line 118, Type mismatch: After simplification, term |
+| [`ci-024766-3b12e957`](receipts/round-ci-024766-3b12e957-result.json) | `15e07afa41cd` | succeeded / 0 | 101.29 | 108.04 (16.29 + 91.75) | 4.03 | furstenberg retry3 (12 warnings in receipt) |
+| [`ci-024776-6ef83db1`](receipts/round-ci-024776-6ef83db1-result.json) | `15e07afa41cd` | succeeded / 0 | 123.20 | 129.32 (16.64 + 112.68) | 4.03 | furstenberg artifact (12 warnings in receipt) |
+| [`ci-024784-36f5c2a9`](receipts/round-ci-024784-36f5c2a9-result.json) | `2550f6f21180` | succeeded / 0 | 237.28 | 235.46 (7.34 + 228.12) | 8.08 | review furstenberg |
