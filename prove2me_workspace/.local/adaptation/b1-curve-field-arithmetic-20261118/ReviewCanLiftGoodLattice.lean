@@ -1,0 +1,9 @@
+import Solutions.Source_ReferenceIutCanLiftGoodLattice
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.Fricke.discreteTopology_normal
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.Fricke.exists_strip_cover_normal
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.goodLattice_normal

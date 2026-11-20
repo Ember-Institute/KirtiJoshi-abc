@@ -32,7 +32,7 @@ theorem volume_smul_SL (g : SL(2, ℝ)) (s : Set ℍ) : volume (g • s) = volum
   rw [h, measure_smul]
 
 /-- A vertical strip bounded away from the real axis has finite hyperbolic area. -/
-private theorem volume_strip_lt_top (a b η : ℝ) (hη : 0 < η) :
+theorem volume_strip_lt_top (a b η : ℝ) (hη : 0 < η) :
     volume {z : ℍ | z.re ∈ Icc a b ∧ η ≤ z.im} < ∞ := by
   rw [UpperHalfPlane.volume_eq_lintegral]
   let T : Set ℂ := Complex.measurableEquivRealProd ⁻¹' (Icc a b ×ˢ Ici η)
