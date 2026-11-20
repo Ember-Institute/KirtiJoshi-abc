@@ -1,0 +1,23 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutTemperedModel
+import Solutions.Source_ReferenceIutOrbicurveData
+import Solutions.Source_ReferenceIutAnabelianExistence
+import Solutions.Source_TripodP7FromCanLiftTempered
+
+set_option autoImplicit false
+
+#check AbcAdaptation.Reference.Iut.Anabelian.modelTG
+#check AbcAdaptation.Reference.Iut.Anabelian.orbicurveData
+#check AbcAdaptation.Reference.Iut.Anabelian.anabelianExistence
+#check AbcAdaptation.Tripod.pointThetaDataExistence_from_canLift27_of_temperedTheory
+
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.TemperedPi1Theory
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.canonicalGraphCusp
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.modelTG
+#print axioms AbcAdaptation.Reference.Iut.AdmissiblePrimeData.toJoshi
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.orbicurveData
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.anabelianExistence
+#print axioms AbcAdaptation.Tripod.pointThetaDataExistence_from_canLift27_of_temperedTheory

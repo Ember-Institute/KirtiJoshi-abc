@@ -1,0 +1,8 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutTateUniformizationLaws
+
+#print axioms AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_equation
+#print axioms AbcAdaptation.Reference.Iut.TateParameterUniformization.ofTateParameter

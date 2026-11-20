@@ -1,0 +1,210 @@
+{
+  "lean_version": "4.33.1",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "mission_id": "eeb5193f-68c0-41d0-9263-4a5ff7c801ee",
+  "root_theorem_id": "e33ff731-60a7-43ef-87ae-c12aeba23cb5",
+  "publications": {
+    "definition_order": [
+      {
+        "payload": "AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField.json",
+        "name": "AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField",
+        "imports": [
+          "Mathlib.FieldTheory.Galois.Infinite",
+          "Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_CurveData"
+        ],
+        "workspace_input_sha256": "c7dc2c8bbaf5092604bbdf0284af992762a3cfb7eb803d360152254e109ca254"
+      },
+      {
+        "payload": "AbcAdaptation_Reference_Iut_Tripod_FieldInvariant.json",
+        "name": "AbcAdaptation_Reference_Iut_Tripod_FieldInvariant",
+        "imports": [
+          "Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_EllipticCurveData",
+          "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point",
+          "Mathlib.Algebra.Module.Torsion.Basic",
+          "Mathlib.FieldTheory.IntermediateField.Adjoin.Basic"
+        ],
+        "workspace_input_sha256": "9786fe19f317aacec2c4af59039791bbcc44ecff26109c3c58cf9f1fc20afedc"
+      },
+      {
+        "payload": "AbcAdaptation_Reference_Iut_Concrete_TripodalInvariants.json",
+        "name": "AbcAdaptation_Reference_Iut_Concrete_TripodalInvariants",
+        "imports": [
+          "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_FieldInvariant",
+          "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_GlobalField",
+          "Mathlib.NumberTheory.NumberField.Discriminant.Different"
+        ],
+        "workspace_input_sha256": "6257db39b2706460ac8ea99e3bdbeaaaec8d4c5626af6954ed6bf7b0925a85a3"
+      },
+      {
+        "payload": "AbcAdaptation_Reference_Iut_Concrete_CurveInputs.json",
+        "name": "AbcAdaptation_Reference_Iut_Concrete_CurveInputs",
+        "imports": [
+          "Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_LocalHeightDataAssembly",
+          "Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_TripodalInvariants",
+          "Definitions.Def_AbcAdaptation_Reference_Iut_Implication_Corollary22"
+        ],
+        "workspace_input_sha256": "befd5e9dedb7090cb7a072b245f9615665df5b63c725aa934b93142d2ed7d90b"
+      },
+      {
+        "payload": "AbcAdaptation_Reference_Iut_Tripod_CurveFacts.json",
+        "name": "AbcAdaptation_Reference_Iut_Tripod_CurveFacts",
+        "imports": [
+          "Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_CurveInputs",
+          "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight",
+          "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_Theory",
+          "Definitions.Def_AbcAdaptation_Reference_Iut_Implication_PrimeSelection_HeightParts"
+        ],
+        "workspace_input_sha256": "95f04febadb0f9a6fe35e15ef2a99228aaf5e82b48cf1a0e6880b5150f502707"
+      }
+    ],
+    "submit_problem_batch": "submit-problem.json",
+    "problems": [
+      {
+        "name": "AbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_ramificationIdx",
+        "imports": [
+          "Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField"
+        ],
+        "workspace_input_sha256": "4cbacceaf0fe585f745f313232bb60567f573e64e70c6250826ead5ad10fbe13"
+      },
+      {
+        "name": "AbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_card_range",
+        "imports": [
+          "Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_CurveData"
+        ],
+        "workspace_input_sha256": "e45a22546a12e03d6c590589053b63c075daa167a8e8c2e26a61ce6aa12f5c77"
+      },
+      {
+        "name": "AbcAdaptation.Reference.Iut.EllipticCurveData.sl_le_range_of",
+        "imports": [
+          "Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_CurveInputs"
+        ],
+        "workspace_input_sha256": "425260cb4e52e91995e608c6816b23df159ada865046d835dabf94d05925bc8e"
+      },
+      {
+        "name": "AbcAdaptation.Tripod.sl2Image",
+        "imports": [
+          "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveFacts"
+        ],
+        "workspace_input_sha256": "9a30ff869f9ceafa515edeb6074ad880372176130079f845597aa7c2476f664b"
+      }
+    ],
+    "payload_sha256": {
+      "AbcAdaptation_Reference_Iut_Concrete_CurveInputs.json": "3bfe3fecae32a13aab936f0e2c17bb23e5ca12b64f8b1c7945e247485071eabd",
+      "AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField.json": "b79a7862af5f6b73380cac8e0fe962bae959210071393fe7301a8cc663c7b4c8",
+      "AbcAdaptation_Reference_Iut_Concrete_TripodalInvariants.json": "9dbc5bde02a742e820141f16d08b354af49ddb3a3959d54f809ea0477569fe7f",
+      "AbcAdaptation_Reference_Iut_Tripod_CurveFacts.json": "850d82b81515e5471c9728850f4cea16937fe0eeb6a96bbfe132474c851d33e3",
+      "AbcAdaptation_Reference_Iut_Tripod_FieldInvariant.json": "a23e58eb6e1ce0074013b1baf9c76d7ff9c6d3f9b2bc6dc4b0e0ef848b26d77d",
+      "submit-problem.json": "a85f21fe15c548695965cf2756159ad92e6069ef3e1443e9f76042971137fa74",
+      "verify-requests.json": "f4c7d5684f243e150d6c02f1e418714c2a5810ce5d85c5393af96615d9698fd3"
+    }
+  },
+  "verification": [
+    {
+      "target": "AbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_card_range",
+      "depends_on": "AbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_ramificationIdx",
+      "file": "Solutions/Sketch_EllipticCurveData_prime_dvd_card_range.lean",
+      "imports": [
+        "Mathlib.SetTheory.Cardinal.Finite",
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField",
+        "Mathlib.FieldTheory.Galois.IsGaloisGroup",
+        "Mathlib.NumberTheory.RamificationInertia.Galois",
+        "Mathlib.RingTheory.Ideal.GoingUp",
+        "Theorems.Thm_AbcAdaptation_Reference_Iut_EllipticCurveData_prime_dvd_ramificationIdx"
+      ],
+      "original_sketch_job_id": "ci-020348-5fd9b2d6",
+      "sha256": "10d831067e254e0232ce1656f525055a9e209b4f5add12ba7ab689f3b4fdac3d",
+      "expected_platform_status": "SKETCH_ACCEPTED",
+      "local_evidence_scope": "historical receipt covers original split source. Flattened draft pending MCP-CI."
+    },
+    {
+      "target": "AbcAdaptation.Reference.Iut.EllipticCurveData.sl_le_range_of",
+      "depends_on": "AbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_card_range",
+      "file": "Solutions/Sketch_EllipticCurveData_sl_le_range_of.lean",
+      "imports": [
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_CurveInputs",
+        "Mathlib.Algebra.Field.ZMod",
+        "Mathlib.LinearAlgebra.Matrix.CharP",
+        "Mathlib.LinearAlgebra.Matrix.Charpoly.Coeff",
+        "Mathlib.LinearAlgebra.Matrix.GeneralLinearGroup.Defs",
+        "Mathlib.GroupTheory.Perm.Cycle.Type",
+        "Theorems.Thm_AbcAdaptation_Reference_Iut_EllipticCurveData_prime_dvd_card_range"
+      ],
+      "original_sketch_job_id": "ci-020154-18a44ada",
+      "sha256": "26f1dc1c8f05cfccf0cceb82d6ae3e2ebc8ee6c83d2b4485ed46fa090573bfed",
+      "expected_platform_status": "SKETCH_ACCEPTED",
+      "local_evidence_scope": "historical receipt covers original split source. Flattened draft pending MCP-CI."
+    },
+    {
+      "target": "AbcAdaptation.Tripod.sl2Image",
+      "depends_on": "AbcAdaptation.Reference.Iut.EllipticCurveData.sl_le_range_of",
+      "file": "Solutions/Sketch_Tripod_sl2Image.lean",
+      "imports": [
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveFacts",
+        "Theorems.Thm_AbcAdaptation_Reference_Iut_EllipticCurveData_sl_le_range_of"
+      ],
+      "original_sketch_job_id": "ci-020060-c7613467",
+      "sha256": "04cd0fe62cbd831e74e8b8a81fef397a902e89c1b5d2a22b69560029d5128717",
+      "expected_platform_status": "SKETCH_ACCEPTED",
+      "local_evidence_scope": "byte-identical original sketch"
+    }
+  ],
+  "inputs_sha256": {
+    "Solutions/Sketch_EllipticCurveData_prime_dvd_card_range.lean": "e1a3ff13f2e71e7333740172e50e8a5098906a62d72ba420826de60a152b0411",
+    "Solutions/Sketch_EllipticCurveData_sl_le_range_of.lean": "6f1b40cb9394de9acbe3545f1cc5d90c03338865476fec0c443c26657780b63d",
+    "Solutions/Sketch_Tripod_sl2Image.lean": "04cd0fe62cbd831e74e8b8a81fef397a902e89c1b5d2a22b69560029d5128717",
+    "Solutions/Source_ModEllRepGalois.lean": "e3e26ac1f1ebaacdec75603b7c986550df06dd5c4d2b7f45932633153a775e3a",
+    "Solutions/Source_SL2ImageRangeCardinality.lean": "9587a76a9f9533770969e2a4043b0e638351eece7463977e40efa555b418934f",
+    "Solutions/Source_ModEllRepStableLine.lean": "85e0e98bdea9761be7cb771f1adc68731fa53c1a08b9bb20c0a8cc1ae98ab307",
+    "Solutions/Source_ReferenceIutSL2Generation.lean": "41e21010d69a00d1e899d053f47d169a7194e344d801d3f3447ba467bc23d891",
+    "Solutions/Source_SL2ImageOfCardinality.lean": "3a9ea71ebcad1e15fc9671d665a39f15b7d484787368d4dd513745eb071e34e2"
+  },
+  "archived_root_proof_edges": [
+    {
+      "parent": "abc.goal.lt_constant_mul_fix",
+      "parent_id": "e33ff731-60a7-43ef-87ae-c12aeba23cb5",
+      "child": "AbcAdaptation.classical",
+      "child_id": "19488657-c338-470b-b0b0-eb3eec739d17",
+      "accepted_submission_id": "80c88f89-ed79-4458-96ac-6744400042a5"
+    },
+    {
+      "parent": "AbcAdaptation.classical",
+      "parent_id": "19488657-c338-470b-b0b0-eb3eec739d17",
+      "child": "AbcAdaptation.classicalInt",
+      "child_id": "503043eb-a419-42ec-95e1-8e2e193a8bcb",
+      "accepted_submission_id": "6857752c-3cc3-4b15-9eec-d3feb963aeb1"
+    },
+    {
+      "parent": "AbcAdaptation.classicalInt",
+      "parent_id": "503043eb-a419-42ec-95e1-8e2e193a8bcb",
+      "child": "AbcAdaptation.rationalHeight",
+      "child_id": "905ccf0a-2831-4751-852f-92b19b256a89",
+      "accepted_submission_id": "d8aeee8d-e34b-47dd-8db7-5bd8865f0627"
+    },
+    {
+      "parent": "AbcAdaptation.rationalHeight",
+      "parent_id": "905ccf0a-2831-4751-852f-92b19b256a89",
+      "child": "AbcAdaptation.Tripod.statementII",
+      "child_id": "420a0f5f-e5da-4fc9-9b52-20b73cac9431",
+      "accepted_submission_id": "4dfdef9e-807a-4ad2-88a7-ce77f3d9c6bb"
+    },
+    {
+      "parent": "AbcAdaptation.Tripod.statementII",
+      "parent_id": "420a0f5f-e5da-4fc9-9b52-20b73cac9431",
+      "child": "AbcAdaptation.Tripod.highHeightEstimate",
+      "child_id": "54209a9c-d508-41f4-b24c-f8a293eacdb9",
+      "accepted_submission_id": "6e2a176e-b41c-430a-aa8b-7f8125292be0"
+    },
+    {
+      "parent": "AbcAdaptation.Tripod.highHeightEstimate",
+      "parent_id": "54209a9c-d508-41f4-b24c-f8a293eacdb9",
+      "child": "AbcAdaptation.Tripod.canonicalCorollary22HighHeightEstimate",
+      "child_id": "ee827c56-06a5-4702-b9a8-163bb4c539d7",
+      "accepted_submission_id": "fc4e169e-ab98-4ee7-92d1-d3d5288fddfe"
+    }
+  ],
+  "archived_platform_inputs_sha256": {
+    "prove2me_workspace/.local/adaptation/lmod-prime-counting-v35-20261116/publication-v37/platform/root-graph-after.json": "3947435df13436638c5ae9073453c953b22b0ccd3d378954439b704528dc43fe",
+    "prove2me_workspace/.local/adaptation/canonical-high-height-20261113/high-height-to-canonical-verify-result.json": "48792d8c6b2c89676a9d8d5d0419f7f8a2211f46203711f37ff93240f97af9f9",
+    "prove2me_workspace/.local/adaptation/canonical-high-height-20261113/published-child-ids.json": "652da1e6d20a79e3337b8484076643088ecbe90029ba0d7bf0db95dd69de279d"
+  }
+}

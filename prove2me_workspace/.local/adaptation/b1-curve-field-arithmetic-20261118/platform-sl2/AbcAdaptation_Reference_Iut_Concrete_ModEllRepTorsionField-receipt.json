@@ -1,0 +1,44 @@
+{
+  "job": {
+    "id": "6a0cc964-e43b-4a0c-a57e-8c4ce054a2c1",
+    "kind": "definition",
+    "theorem_name": "AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField",
+    "theorem_title": "The torsion field of a mod-$\\ell$ representation",
+    "formal_statement": "",
+    "natural_language_statement": "**English**\n\nLet $\\rho_\\ell$ be the mod-$\\ell$ Galois representation of an elliptic curve over a number field $F$. Its torsion field is the fixed field of $\\ker\\rho_\\ell$ in the chosen algebraic closure of $F$. The open kernel gives a finite extension of $F$, so the fixed field is a number field.\n\n**简体中文**\n\n设 $\\rho_\\ell$ 是数域 $F$ 上椭圆曲线的模 $\\ell$ 伽罗瓦表示。其挠点域是 $\\ker\\rho_\\ell$ 在选定的 $F$ 的代数闭包中的不动域。核是开子群，因而该不动域是 $F$ 的有限扩张，也是数域。\n\n**日本語**\n\n数体 $F$ 上の楕円曲線の法 $\\ell$ ガロア表現を $\\rho_\\ell$ とする。捩れ点体は、選んだ $F$ の代数閉包における $\\ker\\rho_\\ell$ の固定体である。核は開部分群なので、この固定体は $F$ の有限拡大であり、数体である。",
+    "definitions": "/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n\nOriginal repository https://github.com/lana-agents/iut\nOriginal revision 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8\nOriginal paths Iut/Concrete/Existence.lean and Iut/Cor312/ThetaData/LocalConditions.lean\n-/\nimport Mathlib.FieldTheory.Galois.Infinite\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_CurveData\n\nset_option autoImplicit false\n\nnamespace AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData\n\nopen NumberField\n\nuniverse u\n\nvariable {C : EllipticCurveData.{u}} {ℓ : ℕ} (R : C.ModEllRepData ℓ)\n\n/-- The torsion field cut out by the kernel of the mod-`ℓ` representation. -/\nnoncomputable def torsionField : IntermediateField C.F C.Fbar :=\n  IntermediateField.fixedField R.rep.ker\n\n/-- The fixed field is finite over the base number field because the kernel is open. -/\ninstance numberField_torsionField : NumberField ↥R.torsionField := by\n  have hle : R.rep.ker ≤ R.torsionField.fixingSubgroup :=\n    (IntermediateField.le_iff_le R.rep.ker R.torsionField).mp le_rfl\n  have hopen : IsOpen (R.torsionField.fixingSubgroup : Set (C.Fbar ≃ₐ[C.F] C.Fbar)) :=\n    Subgroup.isOpen_mono hle R.ker_isOpen\n  haveI : FiniteDimensional C.F ↥R.torsionField :=\n    (InfiniteGalois.isOpen_iff_finite R.torsionField).mp hopen\n  exact NumberField.of_module_finite C.F ↥R.torsionField\n\nend AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData\n",
+    "source": "Shinichi Mochizuki, Inter-universal Teichmüller Theory I, Definition 3.1(c). Formal source of the kernel fixed field and number field proof at the fixed iut revision. https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Cor312/ThetaData/AdmissiblePrime.lean#L171 https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Cor312/ThetaData/LocalConditions.lean#L96",
+    "tags": [
+      "abc-conjecture",
+      "arithmetic-teichmuller-spaces",
+      "arithmetic-geometry"
+    ],
+    "visibility": "private",
+    "status": "PUBLISHED",
+    "error_message": "",
+    "theorem_id": "c9853da7-3eff-403c-9ae3-8e628ac912c8",
+    "created_at": "2026-11-20T08:46:31.62135+00:00",
+    "updated_at": "2026-11-20T08:46:43.810684+00:00"
+  },
+  "article": {
+    "definition_id": "c9853da7-3eff-403c-9ae3-8e628ac912c8",
+    "definition_name": "AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField",
+    "definition_title": "The torsion field of a mod-$\\ell$ representation",
+    "natural_language_statement": "**English**\n\nLet $\\rho_\\ell$ be the mod-$\\ell$ Galois representation of an elliptic curve over a number field $F$. Its torsion field is the fixed field of $\\ker\\rho_\\ell$ in the chosen algebraic closure of $F$. The open kernel gives a finite extension of $F$, so the fixed field is a number field.\n\n**简体中文**\n\n设 $\\rho_\\ell$ 是数域 $F$ 上椭圆曲线的模 $\\ell$ 伽罗瓦表示。其挠点域是 $\\ker\\rho_\\ell$ 在选定的 $F$ 的代数闭包中的不动域。核是开子群，因而该不动域是 $F$ 的有限扩张，也是数域。\n\n**日本語**\n\n数体 $F$ 上の楕円曲線の法 $\\ell$ ガロア表現を $\\rho_\\ell$ とする。捩れ点体は、選んだ $F$ の代数閉包における $\\ker\\rho_\\ell$ の固定体である。核は開部分群なので、この固定体は $F$ の有限拡大であり、数体である。",
+    "created_at": "2026-11-20T08:46:42.745901+00:00",
+    "vote_count": 0,
+    "tags": [
+      "abc-conjecture",
+      "arithmetic-geometry",
+      "arithmetic-teichmuller-spaces"
+    ],
+    "definition": "/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n\nOriginal repository https://github.com/lana-agents/iut\nOriginal revision 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8\nOriginal paths Iut/Concrete/Existence.lean and Iut/Cor312/ThetaData/LocalConditions.lean\n-/\nimport Mathlib.FieldTheory.Galois.Infinite\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_CurveData\n\nset_option autoImplicit false\n\nnamespace AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData\n\nopen NumberField\n\nuniverse u\n\nvariable {C : EllipticCurveData.{u}} {ℓ : ℕ} (R : C.ModEllRepData ℓ)\n\n/-- The torsion field cut out by the kernel of the mod-`ℓ` representation. -/\nnoncomputable def torsionField : IntermediateField C.F C.Fbar :=\n  IntermediateField.fixedField R.rep.ker\n\n/-- The fixed field is finite over the base number field because the kernel is open. -/\ninstance numberField_torsionField : NumberField ↥R.torsionField := by\n  have hle : R.rep.ker ≤ R.torsionField.fixingSubgroup :=\n    (IntermediateField.le_iff_le R.rep.ker R.torsionField).mp le_rfl\n  have hopen : IsOpen (R.torsionField.fixingSubgroup : Set (C.Fbar ≃ₐ[C.F] C.Fbar)) :=\n    Subgroup.isOpen_mono hle R.ker_isOpen\n  haveI : FiniteDimensional C.F ↥R.torsionField :=\n    (InfiniteGalois.isOpen_iff_finite R.torsionField).mp hopen\n  exact NumberField.of_module_finite C.F ↥R.torsionField\n\nend AbcAdaptation.Reference.Iut.EllipticCurveData.ModEllRepData\n",
+    "source": "Shinichi Mochizuki, Inter-universal Teichmüller Theory I, Definition 3.1(c). Formal source of the kernel fixed field and number field proof at the fixed iut revision. https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Cor312/ThetaData/AdmissiblePrime.lean#L171 https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Cor312/ThetaData/LocalConditions.lean#L96",
+    "deprecated_at": null,
+    "deprecated_by": null,
+    "visibility": "private",
+    "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "audits": [],
+    "readback": null
+  }
+}

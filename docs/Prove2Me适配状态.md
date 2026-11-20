@@ -44,6 +44,15 @@
 
 ## 3. 不属于以上两类来源的证明义务
 
+
+### 局部分歧整除的私有平台证明
+
+`EllipticCurveData.prime_dvd_ramificationIdx` 仍需在私有平台重放。给定原表示的核固定域以及覆盖指定坏处的完成域，须在同一个域上由全体有理挠点取得判别式平方根，输送 Tate 均匀化并推出分歧指数整除。依赖打包须保留点方程、加法、满射及平方根下降的实际证明。 [本地完整证明](../prove2me_workspace/Solutions/Source_SL2ImageLocalTate.lean#L81)
+
+### 具体缓和基本群理论
+
+仍需把固定 Pi1 库的 étale 纤维函子自同构群与当前模型上的闭惯性商群比较，再用规范缓和基本群的连续比较供应 `TemperedPi1Theory`。须保留参考实现的特征零归一化轨形表示和正特征分支。固定版本下的依赖预构建在 `Models.Specialization` 与 `Orbicurve.ValuationInertia` 报出版本兼容错误。 [上游构造](../refer/iut/Iut/Anabelian/Tempered.lean#L134)
+
 ### 尚未对应到现成来源陈述的具体几何义务
 
 `Fermat.heightNormalization` 仍需把实际点域 `ℚ(u,v)` 与 `ℚ(u^N)` 的高度归一化、幂的高度公式，以及 `[u:v:1]` 与 `[u:1]` 的一致比较接到底层节点；不能把 `(N−3)/N` 系数误换成覆盖次数 `N²` 的倒数。`Fermat.liftDifferent` 仍需拆出实际根的存在性、完整点域的 `N²` 次数界，以及相同扩张上的归一化判别式／导子估计；单用子域判别式单调性不能证明完整点域的上界。

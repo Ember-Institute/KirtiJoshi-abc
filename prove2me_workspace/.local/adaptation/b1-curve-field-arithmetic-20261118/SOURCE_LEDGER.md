@@ -1910,3 +1910,52 @@ The project review reports only `propext`, `Classical.choice` and `Quot.sound`. 
 | [`ci-025311-ee534421`](receipts/round-ci-025311-ee534421-result.json) | `3487f51ebf24` | succeeded / 0 | 118.78 | 117.55 (5.93 + 111.62) | 7.75 | canonical c2 from canlift |
 | [`ci-025316-c53617d4`](receipts/round-ci-025316-c53617d4-result.json) | `3487f51ebf24` | succeeded / 0 | 94.45 | 93.78 (5.78 + 88.00) | 7.82 | canonical c2 from canlift artifact |
 | [`ci-025322-1f722588`](receipts/round-ci-025322-1f722588-result.json) | `2bffc9b14597` | succeeded / 0 | 126.64 | 125.19 (6.35 + 118.84) | 8.04 | review canonical c2 from canlift |
+
+## Anabelian existence with a tempered fundamental group theory
+
+The model accepts a tempered group and its continuous map to the specified étale group. The curve data use the same torsion field and representation, keep the Tate parameter and its valuation order, and construct the four orbicurves and their cover square. The selected place section supplies the actual graph line and decomposition subgroup. On either sign of the canonical class, the image of the distinguished cusp is the cusp selected by the Tate structure. The P7 specialization takes the same `T` in `modelTG` and `anabelianExistence` and retains the curve provider, cyclic subgroup bound and Northcott hypothesis. [Upstream existence and P7](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Anabelian/Existence.lean#L577) · [Tempered model](readbacks/tempered-model-trilingual.md) · [Orbicurves](readbacks/model-orbicurve-data-trilingual.md) · [Existence](readbacks/model-anabelian-existence-trilingual.md) · [P7](readbacks/tripod-p7-from-canlift-tempered-trilingual.md) · [Project review](ReviewTripodP7FromCanLiftTempered.lean)
+
+## The Tate point equation and the SL₂ reductions
+
+The Tate equation has an independent leaf with the original proof term. The ordinary uniformization constructor imports it to apply the addition and surjectivity laws. The Lean 4.33.1 native comparison checked the upstream type and the expanded local type, including the transposition of the unit and characteristic binders, and recorded 349 Tate declarations. [Readback](readbacks/tate-point-equation-trilingual.md) · [Native comparison](receipts/tate-point-equation-native-facts.json) · [Project review](ReviewTatePointEquation.lean)
+
+The private Prove2Me environment published the five input definitions and four exact theorem statements. All three reduction sketches reached `SKETCH_ACCEPTED`. The ramification-index statement remains `Open`. The reductions keep the same input curve and representation, and their sketches consume the open child via its platform module. [Release manifest](platform-sl2/manifest.json) · [Publication batch](platform-sl2/theorem-batch-submission.json)
+
+| Parent | Private theorem ID | Accepted reduction | Child |
+| --- | --- | --- | --- |
+| `AbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_card_range` | `4e5e1826-5af5-4dbe-add1-6054b1f65d58` | [`086b01ef-3d73-4302-8fdf-feccfa7fbf7e`](platform-sl2/AbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_card_range-verify-result.json) | `AbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_ramificationIdx` |
+| `AbcAdaptation.Reference.Iut.EllipticCurveData.sl_le_range_of` | `3429b087-90da-49e3-a970-15663bfd0d7b` | [`6018851a-cd3b-4c78-9862-f45d547daa60`](platform-sl2/AbcAdaptation.Reference.Iut.EllipticCurveData.sl_le_range_of-verify-result.json) | `AbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_card_range` |
+| `AbcAdaptation.Tripod.sl2Image` | `b1da5e0c-ce54-4c57-878b-200de86a8b5b` | [`3fea711a-ccc1-4074-8e06-e64ce759c02e`](platform-sl2/AbcAdaptation.Tripod.sl2Image-verify-result.json) | `AbcAdaptation.Reference.Iut.EllipticCurveData.sl_le_range_of` |
+
+## Mathlib cache recovery and acceptance receipts
+
+The first upstream dependency build scheduled a shared Mathlib rebuild before cancellation. It left 32 modules without six artifacts each. The recovery fetched the exact archives for Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`, compared each trace output and hash against the previous build records, and restored all 192 files. The full Mathlib source scan found every expected `.olean`. The next dependency build used the existing Mathlib artifacts and reached two upstream compatibility failures in `Models.Specialization` and `Orbicurve.ValuationInertia`. [Verified cache recovery](receipts/mathlib-fixed-0df444a-cache-restored.json)
+
+Both project reviews import Checks, ImportAudit, Act1Scene1 and AxiomAudit. The seven anabelian declarations and the two Tate declarations report only `propext`, `Classical.choice` and `Quot.sound`. The three local platform leaf checks verify the exact sketches with their declared open children. Times are in seconds. Peak physical memory is process-tree RSS in GiB. PSS is unavailable in these receipts.
+
+| MCP-CI job | Input hash prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-025344-1fec19cd`](receipts/round-ci-025344-1fec19cd-result.json) | `76ccfa20be4f` | succeeded / 0 | 48.89 | 47.74 (2.51 + 45.23) | 3.99 | Tempered model leaf |
+| [`ci-025348-b925abab`](receipts/round-ci-025348-b925abab-result.json) | `76ccfa20be4f` | succeeded / 0 | 48.68 | 47.57 (2.89 + 44.68) | 4.03 | Tempered model artifact |
+| [`ci-025353-fa209012`](receipts/round-ci-025353-fa209012-result.json) | `adf00333bda2` | failed / 1 | 103.48 | 105.67 (24.03 + 81.64) | 7.63 | Orbicurve draft with structure and instance mismatches |
+| [`ci-025369-f92fcb63`](receipts/round-ci-025369-f92fcb63-result.json) | `9e79c7305a01` | failed / 1 | 110.28 | 112.85 (25.40 + 87.45) | 7.63 | Orbicurve retry with remaining instance and type conversion errors |
+| [`ci-025378-8a25cfa3`](receipts/round-ci-025378-8a25cfa3-result.json) | `38e936a01df3` | failed / 1 | 87.69 | 87.74 (10.17 + 77.57) | 7.55 | Orbicurve retry with remaining type conversions |
+| [`ci-025384-a76095f2`](receipts/round-ci-025384-a76095f2-result.json) | `c896b566c7f1` | failed / 1 | 106.09 | 106.15 (10.45 + 95.70) | 7.54 | Orbicurve retry with final order conversion error |
+| [`ci-025388-c39dd27b`](receipts/round-ci-025388-c39dd27b-result.json) | `8afaff020fa8` | succeeded / 0 | 129.28 | 128.22 (8.54 + 119.68) | 7.54 | Orbicurve data leaf |
+| [`ci-025394-a9c3c5f8`](receipts/round-ci-025394-a9c3c5f8-result.json) | `8afaff020fa8` | succeeded / 0 | 139.60 | 138.79 (9.98 + 128.81) | 7.54 | Orbicurve data artifact |
+| [`ci-025397-6c21230c`](receipts/round-ci-025397-6c21230c-result.json) | `edadf6728cd9` | cancelled / -15 | 153.37 | 1666.61 (97.55 + 1569.06) | 25.78 | Cancelled the dependency build when it scheduled Mathlib rebuilds |
+| [`ci-025404-7984811d`](receipts/round-ci-025404-7984811d-result.json) | `01f61ed4e38e` | failed / 1 | 32.61 | 32.19 (1.21 + 30.98) | 2.18 | Missing Mathlib import before elaboration |
+| [`ci-025459-dc26b754`](receipts/round-ci-025459-dc26b754-result.json) | `01f61ed4e38e` | failed / 1 | 181.66 | 179.83 (19.12 + 160.71) | 7.59 | Cusp conditional rewrite failed after the cache recovery |
+| [`ci-025460-0c3242dc`](receipts/round-ci-025460-0c3242dc-result.json) | `27da95b3872f` | succeeded / 0 | 58.78 | 56.89 (1.82 + 55.07) | 3.42 | Independent Tate point equation leaf |
+| [`ci-025463-78f105ec`](receipts/round-ci-025463-78f105ec-result.json) | `e8986f25fe19` | failed / 1 | 1646.50 | 7011.95 (722.37 + 6289.58) | 46.02 | Isolated dependency build stopped on two Lean compatibility errors |
+| [`ci-025471-3859bf07`](receipts/round-ci-025471-3859bf07-result.json) | `27da95b3872f` | succeeded / 0 | 60.95 | 57.19 (2.46 + 54.73) | 3.46 | Tate point equation artifact |
+| [`ci-025475-b7b8d422`](receipts/round-ci-025475-b7b8d422-result.json) | `4d2a09926aa3` | succeeded / 0 | 179.77 | 179.79 (19.76 + 160.03) | 7.60 | Existence proof and artifact after the cusp equality repair |
+| [`ci-025480-ff80d0b1`](receipts/round-ci-025480-ff80d0b1-result.json) | `c624a9399408` | succeeded / 0 | 163.98 | 162.13 (5.92 + 156.21) | 7.48 | Tate uniformization consumer artifact |
+| [`ci-025489-10857638`](receipts/round-ci-025489-10857638-result.json) | `be132dce6d46` | succeeded / 0 | 170.63 | 167.93 (5.51 + 162.42) | 7.74 | P7 specialization leaf |
+| [`ci-025491-39c02226`](receipts/round-ci-025491-39c02226-result.json) | `01151e36009b` | succeeded / 0 | 79.39 | 78.29 (5.53 + 72.76) | 4.18 | Tate point equation native comparison and axiom review |
+| [`ci-025503-df20e04b`](receipts/round-ci-025503-df20e04b-result.json) | `be132dce6d46` | succeeded / 0 | 204.92 | 201.15 (5.56 + 195.59) | 7.80 | P7 specialization artifact |
+| [`ci-025509-25794f42`](receipts/round-ci-025509-25794f42-result.json) | `a073af71856b` | succeeded / 0 | 231.54 | 225.95 (5.64 + 220.31) | 7.80 | Tate point equation project and axiom review |
+| [`ci-025510-1e4d5003`](receipts/round-ci-025510-1e4d5003-result.json) | `10d831067e25` | succeeded / 0 | 90.47 | 87.77 (3.85 + 83.92) | 3.98 | Exact platform reduction for divisibility of the image order |
+| [`ci-025511-b3cc8291`](receipts/round-ci-025511-b3cc8291-result.json) | `26f1dc1c8f05` | succeeded / 0 | 95.44 | 95.23 (5.78 + 89.45) | 4.15 | Exact platform reduction for general SL₂ containment |
+| [`ci-025516-8cdf97cc`](receipts/round-ci-025516-8cdf97cc-result.json) | `04cd0fe62cbd` | succeeded / 0 | 98.67 | 96.73 (2.67 + 94.06) | 3.99 | Exact platform reduction for the tripod curve |
+| [`ci-025521-02a1eded`](receipts/round-ci-025521-02a1eded-result.json) | `560e2bb7916a` | succeeded / 0 | 156.44 | 154.87 (5.64 + 149.23) | 8.17 | Anabelian chain project and axiom review |

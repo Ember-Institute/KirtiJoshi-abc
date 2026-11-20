@@ -1,0 +1,46 @@
+{
+  "job": {
+    "id": "53942d77-df5c-46be-8650-3d8c2f75b01e",
+    "kind": "problem",
+    "theorem_name": "AbcAdaptation.Tripod.sl2Image",
+    "theorem_title": "Special linear image for the tripod curve provider",
+    "formal_statement": "namespace AbcAdaptation.Tripod\n\ntheorem sl2Image (P : CurveProviders) : SL2ImageHyp P := by\n  sorry\n\nend AbcAdaptation.Tripod",
+    "natural_language_statement": "**English**\n\nFix a tripod curve provider $P$, a tripod point $x$, and a prime $\\ell\\ge5$. Assume that $\\ell$ divides none of the Tate parameter orders at the bad places in the local height data (P2). Assume the curve at $x$ has no Galois-stable cyclic subgroup of order $\\ell$ (P4). Assume the local height data give a bad place of residue characteristic different from $2$ and $\\ell$ (P5). Then the mod-$\\ell$ image at $x$ contains $\\mathrm{SL}_2(\\mathbb F_\\ell)$.\n\n**简体中文**\n\n固定三脚曲线供应器 $P$、三脚点 $x$ 和素数 $\\ell\\ge5$。假定 $\\ell$ 不整除局部高度数据中任何坏处的泰特参数阶（P2），$x$ 对应的曲线没有伽罗瓦稳定的 $\\ell$ 阶循环子群（P4），而且局部高度数据给出剩余特征不同于 $2$ 和 $\\ell$ 的坏处（P5）。则 $x$ 处模 $\\ell$ 表示的像包含 $\\mathrm{SL}_2(\\mathbb F_\\ell)$。\n\n**日本語**\n\n三脚の曲線の供給データ $P$、三脚の点 $x$、および素数 $\\ell\\ge5$ を固定する。$\\ell$ は局所高さデータのどの悪い素点でもテイトパラメータの位数を割らないとする (P2)。$x$ の曲線にガロア作用で安定な位数 $\\ell$ の巡回部分群は存在しないとする (P4)。局所高さデータに、剰余標数が $2$ と $\\ell$ のいずれとも異なる悪い素点があるとする (P5)。このとき $x$ での法 $\\ell$ 表現の像は $\\mathrm{SL}_2(\\mathbb F_\\ell)$ を含む。",
+    "definitions": "/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n\nOriginal repository https://github.com/lana-agents/iut\nOriginal revision 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8\nOriginal path Iut/Tripod/CurveFacts.lean (sl2Image)\n-/\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveFacts\n\nset_option autoImplicit false",
+    "source": "Shinichi Mochizuki, Arithmetic Elliptic Curves in General Position, Lemma 3.1(iii). Shinichi Mochizuki, Inter-universal Teichmüller Theory IV, proof of Corollary 2.2. Exact formal source in Iut/Tripod/CurveFacts.lean, sl2Image and SL2ImageHyp. https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/CurveFacts.lean#L442 https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf",
+    "tags": [
+      "abc-conjecture",
+      "arithmetic-teichmuller-spaces",
+      "arithmetic-geometry"
+    ],
+    "visibility": "private",
+    "status": "PUBLISHED",
+    "error_message": "",
+    "theorem_id": "b1da5e0c-ce54-4c57-878b-200de86a8b5b",
+    "created_at": "2026-11-20T08:49:54.68898+00:00",
+    "updated_at": "2026-11-20T08:51:19.31398+00:00"
+  },
+  "article": {
+    "theorem_id": "b1da5e0c-ce54-4c57-878b-200de86a8b5b",
+    "theorem_name": "AbcAdaptation.Tripod.sl2Image",
+    "theorem_title": "Special linear image for the tripod curve provider",
+    "status": "Open",
+    "formal_statement": "namespace AbcAdaptation.Tripod\n\ntheorem sl2Image (P : CurveProviders) : SL2ImageHyp P := by\n  sorry\n\nend AbcAdaptation.Tripod",
+    "natural_language_statement": "**English**\n\nFix a tripod curve provider $P$, a tripod point $x$, and a prime $\\ell\\ge5$. Assume that $\\ell$ divides none of the Tate parameter orders at the bad places in the local height data (P2). Assume the curve at $x$ has no Galois-stable cyclic subgroup of order $\\ell$ (P4). Assume the local height data give a bad place of residue characteristic different from $2$ and $\\ell$ (P5). Then the mod-$\\ell$ image at $x$ contains $\\mathrm{SL}_2(\\mathbb F_\\ell)$.\n\n**简体中文**\n\n固定三脚曲线供应器 $P$、三脚点 $x$ 和素数 $\\ell\\ge5$。假定 $\\ell$ 不整除局部高度数据中任何坏处的泰特参数阶（P2），$x$ 对应的曲线没有伽罗瓦稳定的 $\\ell$ 阶循环子群（P4），而且局部高度数据给出剩余特征不同于 $2$ 和 $\\ell$ 的坏处（P5）。则 $x$ 处模 $\\ell$ 表示的像包含 $\\mathrm{SL}_2(\\mathbb F_\\ell)$。\n\n**日本語**\n\n三脚の曲線の供給データ $P$、三脚の点 $x$、および素数 $\\ell\\ge5$ を固定する。$\\ell$ は局所高さデータのどの悪い素点でもテイトパラメータの位数を割らないとする (P2)。$x$ の曲線にガロア作用で安定な位数 $\\ell$ の巡回部分群は存在しないとする (P4)。局所高さデータに、剰余標数が $2$ と $\\ell$ のいずれとも異なる悪い素点があるとする (P5)。このとき $x$ での法 $\\ell$ 表現の像は $\\mathrm{SL}_2(\\mathbb F_\\ell)$ を含む。",
+    "created_at": "2026-11-20T08:51:18.331962+00:00",
+    "vote_count": 0,
+    "tags": [
+      "abc-conjecture",
+      "arithmetic-geometry",
+      "arithmetic-teichmuller-spaces"
+    ],
+    "preamble": "/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n\nOriginal repository https://github.com/lana-agents/iut\nOriginal revision 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8\nOriginal path Iut/Tripod/CurveFacts.lean (sl2Image)\n-/\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveFacts\n\nset_option autoImplicit false",
+    "source": "Shinichi Mochizuki, Arithmetic Elliptic Curves in General Position, Lemma 3.1(iii). Shinichi Mochizuki, Inter-universal Teichmüller Theory IV, proof of Corollary 2.2. Exact formal source in Iut/Tripod/CurveFacts.lean, sl2Image and SL2ImageHyp. https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/CurveFacts.lean#L442 https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf",
+    "deprecated_at": null,
+    "deprecated_by": null,
+    "visibility": "private",
+    "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "audits": [],
+    "readback": null
+  }
+}

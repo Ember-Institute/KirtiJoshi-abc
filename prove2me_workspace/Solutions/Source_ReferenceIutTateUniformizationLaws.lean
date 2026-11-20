@@ -10,7 +10,7 @@ The bridge uses the same parameter, Weierstrass model, and coordinate series
 in both namespaces. The point maps agree by proof irrelevance.
 -/
 import TateCurvesTheta.TateCurve.TateUniformization
-import Solutions.Source_ReferenceIutTateUniformization
+import Solutions.Source_ReferenceIutTatePointEquation
 
 set_option autoImplicit false
 
@@ -24,12 +24,6 @@ private def upstreamParameter (t : TateParameter k) : _root_.TateCurvesTheta.Tat
   ⟨t.q, t.norm_lt_one⟩
 
 variable [CompleteSpace k] [IsUltrametricDist k]
-
-/-- The affine Tate coordinates satisfy the equation off the orbit of `q`. -/
-theorem tatePoint_equation (t : TateParameter k) (h12 : (12 : k) ≠ 0) :
-    t.TatePointEquation := by
-  intro u hu
-  exact _root_.TateCurvesTheta.TateParameter.tatePoint_mem' (upstreamParameter t) h12 hu
 
 private theorem tatePoint_eq_upstream (t : TateParameter k) (hmem : t.TatePointEquation)
     (h12 : (12 : k) ≠ 0) (h2 : ‖(2 : k)‖ = 1) (u : kˣ) :

@@ -1,0 +1,15 @@
+{
+  "request": {
+    "theorem_id": "3429b087-90da-49e3-a970-15663bfd0d7b",
+    "proof_type": "prove",
+    "explanation": "**English**\n\nFor a prime $\\ell\\ge5$, conditions (P2), (P4), and (P5) give\n$$\n\\mathrm{SL}_2(\\mathbb F_\\ell)\\subseteq\\operatorname{im}\\rho_\\ell.\n$$\n\nThe open image order child gives divisibility by $\\ell$. Its hypotheses hold by (P2), (P5), and $\\ell\\ge5$. By Cauchy's theorem, the image contains an element $T$ of order $\\ell$. In characteristic $\\ell$, the matrix $T-I$ is nilpotent. In dimension two this gives\n$$\nT\\ne I,\\qquad (T-I)^2=0.\n$$\n\nBy (P4), the image preserves no line. A stable line would give a Galois-stable cyclic subgroup of order $\\ell$ in the torsion points. Take a nonzero vector $v$ fixed by $T$. Pick an element $g$ of the image such that $gv$ lies outside the line of $v$. In the basis $(v,gv)$, the transvections $T$ and $gTg^{-1}$ give elementary matrices in the two opposite positions. Their powers generate all elementary matrices over the prime field. These matrices generate the special linear group.\n\n**简体中文**\n\n设 $\\ell\\ge5$ 为素数。由（P2）、（P4）和（P5）得\n$$\n\\mathrm{SL}_2(\\mathbb F_\\ell)\\subseteq\\operatorname{im}\\rho_\\ell.\n$$\n\n开放的像阶子定理给出 $\\ell$ 整除像阶。条件（P2）、（P5）和 $\\ell\\ge5$ 满足该子定理的假设。由柯西定理，像中存在阶为 $\\ell$ 的元素 $T$。在特征 $\\ell$ 下，$T-I$ 是幂零矩阵。由维数为二可得\n$$\nT\\ne I,\\qquad (T-I)^2=0.\n$$\n\n由（P4），像没有不变直线。不变直线会在挠点中给出一个伽罗瓦稳定的 $\\ell$ 阶循环子群。取 $T$ 固定的非零向量 $v$，再取像中的元素 $g$，使 $gv$ 不在 $v$ 张成的直线上。以 $(v,gv)$ 为基，$T$ 和 $gTg^{-1}$ 给出两个相反位置的初等矩阵。取它们的幂得到素域上的全部初等矩阵。这些矩阵生成特殊线性群。\n\n**日本語**\n\n$\\ell\\ge5$ を素数とする。条件 (P2)、(P4)、(P5) から\n$$\n\\mathrm{SL}_2(\\mathbb F_\\ell)\\subseteq\\operatorname{im}\\rho_\\ell\n$$\nを得る。\n\n未証明の像の位数の子定理により、$\\ell$ は像の位数を割る。(P2)、(P5) と $\\ell\\ge5$ がその仮定を満たす。コーシーの定理により、像は位数 $\\ell$ の元 $T$ を含む。標数 $\\ell$ において $T-I$ は冪零である。次元が二であることから\n$$\nT\\ne I,\\qquad (T-I)^2=0\n$$\nが成り立つ。\n\n(P4) により像が保つ直線はない。不変直線があれば、捩れ点の中にガロア作用で安定な位数 $\\ell$ の巡回部分群ができる。$T$ が固定する非零ベクトル $v$ を取る。$gv$ が $v$ の張る直線の外にあるように像の元 $g$ を取る。基底 $(v,gv)$ では $T$ と $gTg^{-1}$ は反対側の成分にある基本行列を与える。それらの冪から素体上のすべての基本行列が得られ、特殊線形群を生成する。"
+  },
+  "response": {
+    "submission_id": "6018851a-cd3b-4c78-9862-f45d547daa60",
+    "status": "PENDING",
+    "message": "Proof submitted for verification. Poll GET /submission/{id} for results.",
+    "guidelines": "Reminder: write the explanation like a section of a math paper, not a tactic-by-tactic transcript. Walk through the mathematical argument and show how it maps onto your Lean code, in Markdown with KaTeX math. The explanation is the only part of a submission you can edit later, via PATCH /api/v1/submissions/:id. Full principles: references/prove.md#attach-an-explanation"
+  },
+  "source_sha256": "26f1dc1c8f05cfccf0cceb82d6ae3e2ebc8ee6c83d2b4485ed46fa090573bfed",
+  "mcp_ci_job": "ci-025511-b3cc8291"
+}
