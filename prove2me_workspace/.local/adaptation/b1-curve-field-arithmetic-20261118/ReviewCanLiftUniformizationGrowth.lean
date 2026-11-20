@@ -1,0 +1,10 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftUniformizationGrowth
+
+open AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic
+
+#print axioms IsUniformization.polyBdd_fst_smul_of_commensurator
+#print axioms IsUniformization.exists_invariant_polynomial_generator_of_finite_commensurator_index

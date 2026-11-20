@@ -1,0 +1,15 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftComplexFromDiscrete
+
+open AbcAdaptation.Reference.Iut.Anabelian
+open AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic
+
+#print axioms Peripheral.deckGroup_hasFiniteCovolume
+#print axioms relIndex_ne_zero_of_discrete
+#print axioms Peripheral.closure_relIndex_commensurator_ne_zero_of_discrete
+#print axioms IsUniformization.relIndex_commensurator_ne_zero_iff_of_uniformization
+#print axioms canLift27Complex_of_finite_commensurator_index
+#print axioms canLift27Complex_of_discrete_lattice_commensurator

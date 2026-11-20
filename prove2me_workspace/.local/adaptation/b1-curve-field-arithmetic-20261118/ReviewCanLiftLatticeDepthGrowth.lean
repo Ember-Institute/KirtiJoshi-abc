@@ -1,0 +1,19 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftLatticeDepthGrowth
+
+open AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic
+
+#print axioms Peripheral.exists_conj_translation
+#print axioms Peripheral.exists_cusp_exponential
+#print axioms Peripheral.exists_cusp_normalForm
+#print axioms Peripheral.exists_height
+#print axioms Peripheral.exists_orbit_height
+#print axioms Peripheral.compact_or_cusp
+#print axioms Peripheral.im_le_bound_mul_exp_depth
+#print axioms Peripheral.exp_depth_le_of_cusp_coordinates
+#print axioms Peripheral.cusp_estimates
+#print axioms Peripheral.exists_growth
+#print axioms Peripheral.exists_poly_bound_smul

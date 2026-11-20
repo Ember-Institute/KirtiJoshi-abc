@@ -1,0 +1,19 @@
+# Takeuchi's squared trace classification
+
+## English
+
+Let $X\le Y\le Z$ be positive integers such that $(X+Y+Z)^2=XYZ$ and $2(X+Y+Z)\le XY$. Then $(X,Y,Z)$ is one of $(9,9,9)$, $(8,8,16)$, $(5,20,25)$, and $(6,12,18)$. Put $Z'=XY-2(X+Y)-Z$. We have $Z'\ge Z$ and $ZZ'=(X+Y)^2$, so $Z\le X+Y$. Evaluating the quadratic with roots $Z,Z'$ at $Y$ gives $Y^2(X-4)\le 4XY+X^2$. The local proof derives $5\le X\le9$, $Y\le21$, and $Z\le30$, then checks the finite range. [Markov classification](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/Markov.lean#L53)
+
+Let $A,B\in\mathrm{SL}_2(\mathbb R)$ have commutator trace $-2$ and $\operatorname{tr}A\ne0$. Suppose every element of $\langle A,B\rangle$ has integral squared trace. Then some $A',B'$ generate the same subgroup, have commutator trace $-2$, and have a triple of squared traces in the list above. With $(x,y,z)=(\operatorname{tr}A,\operatorname{tr}B,\operatorname{tr}(AB))$, Fricke's identity gives $x^2+y^2+z^2=xyz$. Nielsen moves preserve the generated subgroup and allow permutations and the replacement $z\mapsto xy-z$. Each replacement that lowers the positive integer sum of squares advances the descent. At a triple where no replacement lowers the sum, sort the squares and apply the Markov classification. [Nielsen descent](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/Takeuchi.lean#L135) · [Integral-trace theorem](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/Takeuchi.lean#L317)
+
+## 中文
+
+设 $X\le Y\le Z$ 为正整数，满足 $(X+Y+Z)^2=XYZ$ 和 $2(X+Y+Z)\le XY$。则 $(X,Y,Z)$ 为 $(9,9,9)$、$(8,8,16)$、$(5,20,25)$ 或 $(6,12,18)$。令 $Z'=XY-2(X+Y)-Z$，则 $Z'\ge Z$ 且 $ZZ'=(X+Y)^2$，故 $Z\le X+Y$。在 $Y$ 处计算以 $Z,Z'$ 为根的二次多项式，得到 $Y^2(X-4)\le4XY+X^2$。本地证明导出 $5\le X\le9$、$Y\le21$、$Z\le30$ 后检查有限范围。 [Markov 分类](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/Markov.lean#L53)
+
+设 $A,B\in\mathrm{SL}_2(\mathbb R)$ 的交换子迹为 $-2$，且 $\operatorname{tr}A\ne0$。假设 $\langle A,B\rangle$ 中每个元素的迹平方均为整数。则存在生成同一子群的 $A',B'$，其交换子迹仍为 $-2$，且三个迹平方属于上列四组。对 $(x,y,z)=(\operatorname{tr}A,\operatorname{tr}B,\operatorname{tr}(AB))$，Fricke 恒等式给出 $x^2+y^2+z^2=xyz$。Nielsen 变换保持所生成的子群，可置换迹或作替换 $z\mapsto xy-z$。每次采用使正整数平方和严格减少的替换。到达无法继续减少平方和的三元组后，将三个平方排序并应用 Markov 分类。 [Nielsen 下降](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/Takeuchi.lean#L135) · [整数平方迹定理](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/Takeuchi.lean#L317)
+
+## 日本語
+
+$X\le Y\le Z$ を正の整数とし、$(X+Y+Z)^2=XYZ$ および $2(X+Y+Z)\le XY$ を仮定する。このとき $(X,Y,Z)$ は $(9,9,9)$、$(8,8,16)$、$(5,20,25)$、$(6,12,18)$ のいずれかである。$Z'=XY-2(X+Y)-Z$ とおくと、$Z'\ge Z$ と $ZZ'=(X+Y)^2$ が成り立つので $Z\le X+Y$ である。$Z,Z'$ を根とする二次多項式を $Y$ で評価すると $Y^2(X-4)\le4XY+X^2$ を得る。適応版の証明では $5\le X\le9$、$Y\le21$、$Z\le30$ を導き、この有限範囲を調べる。 [Markov の分類](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/Markov.lean#L53)
+
+$A,B\in\mathrm{SL}_2(\mathbb R)$ の交換子の跡が $-2$ であり、$\operatorname{tr}A\ne0$ とする。$\langle A,B\rangle$ のすべての元について跡の二乗が整数であると仮定する。このとき、同じ部分群を生成する $A',B'$ が存在し、その交換子の跡も $-2$ である。跡の二乗の三つ組は上記の四つのいずれかである。$(x,y,z)=(\operatorname{tr}A,\operatorname{tr}B,\operatorname{tr}(AB))$ とおくと、Fricke の恒等式から $x^2+y^2+z^2=xyz$ を得る。Nielsen 変換は生成する部分群を保ち、跡の置換と $z\mapsto xy-z$ を実現する。正の整数である二乗和を真に減らす変換を繰り返す。二乗和を減らす変換がなくなったら、二乗を昇順に並べて Markov の分類を適用する。 [Nielsen 降下](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/Takeuchi.lean#L135) · [跡の二乗の整数性による定理](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/Takeuchi.lean#L317)

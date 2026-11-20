@@ -1,0 +1,23 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftComplexFromModelUniformizations
+import Solutions.Source_ReferenceIutCanLiftPadicSquaredTraces
+
+open AbcAdaptation.Reference.Iut.Anabelian
+open AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic
+
+#print axioms IsUniformization.of_closure_eq
+#print axioms IsUniformization.of_signs
+#print axioms IsUniformization.conj_pos
+#print axioms IsUniformization.conj_neg
+#print axioms Takeuchi.uniformizes_takeuchiPair_of_conjugacy
+#print axioms Takeuchi.Rigidity.exists_isLatticeLift
+#print axioms Takeuchi.Rigidity.exists_entire_lift
+#print axioms Takeuchi.j_eq_of_uniformizes
+#print axioms M2.exists_int_of_padicNorm_le_one
+#print axioms M2.trace_sq_eq_of_rational_rep
+#print axioms M2.exists_int_sq_tr_of_padicNorm_le_one
+#print axioms M2.takeuchi_one_infty_of_padicNorm_le_one
+#print axioms canLift27Complex_of_model_uniformizations

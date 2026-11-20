@@ -96,7 +96,7 @@ $$
 - $F$ 的每个有限位相对于其下方有理素数的剩余次数为正。
 - 对每个自然数 $r$，$W$ 中剩余特征为 $r$ 的各位的剩余次数之和至多为 $[F:\mathbb Q]$。
 
-对每个 $w\in W$，$TI$ 给定 $q_w\in F_w^\times$，满足 $\lVert q_w\rVert<1$，其中 $F_w$ 为 $F$ 在 $w$ 处的完备化。$\mathrm{tateJ}(q_w)$ 等于 $j(E)$ 在 $F_w$ 中的像。记录还给定【译名待定：TERM-015】$\pi_w\in F_w$，满足 $0<\lVert\pi_w\rVert<1$。对每个 $x\in F_w^\times$，存在整数 $m$ 使得 $\lVert x\rVert=\lVert\pi_w\rVert^m$。令 $n_w=\mathrm{TI.qOrder}(w,hw)$，即满足 $\lVert q_w\rVert=\lVert\pi_w\rVert^{n_w}$ 的唯一正整数。
+对每个 $w\in W$，$TI$ 给定 $q_w\in F_w^\times$，满足 $\lVert q_w\rVert<1$，其中 $F_w$ 为 $F$ 在 $w$ 处的完备化。$\mathrm{tateJ}(q_w)$ 等于 $j(E)$ 在 $F_w$ 中的像。记录还给定素元$\pi_w\in F_w$，满足 $0<\lVert\pi_w\rVert<1$。对每个 $x\in F_w^\times$，存在整数 $m$ 使得 $\lVert x\rVert=\lVert\pi_w\rVert^m$。令 $n_w=\mathrm{TI.qOrder}(w,hw)$，即满足 $\lVert q_w\rVert=\lVert\pi_w\rVert^{n_w}$ 的唯一正整数。
 
 设 $\ell$ 为自然数中的素数且 $\ell\ne2$。记录 $R$ 给出加法群同构 $b:E(\overline F)[\ell]\simeq(\mathbb Z/\ell\mathbb Z)^2$ 和群同态 $\rho:\operatorname{Aut}_F(\overline F)\to\mathrm{GL}_2(\mathbb Z/\ell\mathbb Z)$。对每个 $\sigma\in\operatorname{Aut}_F(\overline F)$ 和 $P\in E(\overline F)[\ell]$，有 $b(\sigma P)=\rho(\sigma)b(P)$。$\sigma$ 作用于点的坐标并固定无穷远点。$\ker\rho$ 在 Krull 拓扑中是开子群。令 $K=\overline F^{\ker\rho}$，这是一个数域。
 

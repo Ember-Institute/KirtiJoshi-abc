@@ -221,9 +221,9 @@ def seq : ℕ → Set ℂ
   | n + 1 => stepSet (seq n)
 
 /-- The composites `q₁ ∘ ⋯ ∘ qₙ : Uₙ → U₀`. -/
-noncomputable def proj : ℕ → ℂ → ℂ
+noncomputable def koebeProjection : ℕ → ℂ → ℂ
   | 0 => id
-  | n + 1 => proj n ∘ stepMap (seq U₀ n)
+  | n + 1 => koebeProjection n ∘ stepMap (seq U₀ n)
 
 variable {U₀}
 
@@ -231,22 +231,22 @@ theorem Good.good_seq (hU₀ : Good U₀) : ∀ n, Good (seq U₀ n)
   | 0 => hU₀
   | n + 1 => (hU₀.good_seq n).good_stepSet
 
-theorem proj_zero : ∀ n, proj U₀ n 0 = 0
+theorem proj_zero : ∀ n, koebeProjection U₀ n 0 = 0
   | 0 => rfl
-  | n + 1 => by simp [proj, stepMap_zero, proj_zero n]
+  | n + 1 => by simp [koebeProjection, stepMap_zero, proj_zero n]
 
-theorem mapsTo_proj : ∀ n, MapsTo (proj U₀ n) (seq U₀ n) U₀
+theorem mapsTo_proj : ∀ n, MapsTo (koebeProjection U₀ n) (seq U₀ n) U₀
   | 0 => fun _ h ↦ h
   | n + 1 => fun _ h ↦ mapsTo_proj n h
 
 theorem Good.differentiableOn_proj (hU₀ : Good U₀) :
-    ∀ n, DifferentiableOn ℂ (proj U₀ n) (seq U₀ n)
+    ∀ n, DifferentiableOn ℂ (koebeProjection U₀ n) (seq U₀ n)
   | 0 => differentiableOn_id
   | n + 1 => (hU₀.differentiableOn_proj n).comp
       (differentiableOn_stepMap.mono (hU₀.good_seq (n + 1)).subset_ball) fun _ h ↦ h
 
 theorem Good.exists_nhds_injOn_proj (hU₀ : Good U₀) :
-    ∀ n, ∀ z ∈ seq U₀ n, ∃ V ∈ 𝓝 z, InjOn (proj U₀ n) V
+    ∀ n, ∀ z ∈ seq U₀ n, ∃ V ∈ 𝓝 z, InjOn (koebeProjection U₀ n) V
   | 0 => fun z _ ↦ ⟨univ, univ_mem, Function.injective_id.injOn⟩
   | n + 1 => by
     intro z hz
@@ -262,7 +262,7 @@ theorem Good.exists_nhds_injOn_proj (hU₀ : Good U₀) :
     exact φ.injOn hx.1 hy.1 h1
 
 theorem Good.deriv_proj_ne_zero (hU₀ : Good U₀) (n : ℕ) {z : ℂ} (hz : z ∈ seq U₀ n) :
-    deriv (proj U₀ n) z ≠ 0 := by
+    deriv (koebeProjection U₀ n) z ≠ 0 := by
   obtain ⟨V, hV, hinj⟩ := hU₀.exists_nhds_injOn_proj n z hz
   exact deriv_ne_zero_of_injOn ((hU₀.differentiableOn_proj n).mono inter_subset_right)
     (inter_mem hV ((hU₀.good_seq n).isOpen.mem_nhds hz)) (hinj.mono inter_subset_left)
@@ -271,9 +271,9 @@ theorem Good.deriv_proj_ne_zero (hU₀ : Good U₀) (n : ℕ) {z : ℂ} (hz : z 
 `projₙ : Uₙ → U₀`, with a prescribed value at one point. -/
 theorem Good.exists_lift (hU₀ : Good U₀) :
     ∀ n (D : Set ℂ), Convex ℝ D → ∀ g : ℂ → ℂ, ContinuousOn g D → MapsTo g D U₀ →
-      ∀ a₀ e : ℂ, a₀ ∈ D → e ∈ seq U₀ n → proj U₀ n e = g a₀ →
+      ∀ a₀ e : ℂ, a₀ ∈ D → e ∈ seq U₀ n → koebeProjection U₀ n e = g a₀ →
       ∃ σ : ℂ → ℂ, ContinuousOn σ D ∧ MapsTo σ D (seq U₀ n) ∧
-        (∀ a ∈ D, proj U₀ n (σ a) = g a) ∧ σ a₀ = e
+        (∀ a ∈ D, koebeProjection U₀ n (σ a) = g a) ∧ σ a₀ = e
   | 0 => by
     intro D _ g hg hgU a₀ e _ _ he
     exact ⟨g, hg, hgU, fun _ _ ↦ rfl, he.symm⟩
@@ -287,7 +287,7 @@ theorem Good.exists_lift (hU₀ : Good U₀) :
     refine ⟨σ, hσc, fun a ha ↦ ?_, fun a ha ↦ ?_, hσ0⟩
     · change stepMap (seq U₀ n) (σ a) ∈ seq U₀ n
       rw [hσq a ha]; exact hσ'm ha
-    · change proj U₀ n (stepMap (seq U₀ n) (σ a)) = g a
+    · change koebeProjection U₀ n (stepMap (seq U₀ n) (σ a)) = g a
       rw [hσq a ha, hσ'p a ha]
 
 /-! ### Exhaustion -/

@@ -8,9 +8,9 @@ The Tate proofs use `lana-agents/tate-curves-theta` at `ca6c2279d3cea0690cdb0132
 | `tatePoint_mul` | `tatePoint_mul` in `GroupLaw.lean`, Christian Merten, `6e48c9c31299a995332539768711796b40d1894a` | The orbit cases use periodicity and inversion. The general case uses a translating unit and the secant law. The theorem uses `TameResidueChar k` and classical decidable equality. [Group law](/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/TateCurvesTheta/TateCurve/GroupLaw.lean:242) |
 | `tatePoint_surjective` | `tatePoint_surjective` in `TateUniformization.lean`, Christian Merten, `6e48c9c31299a995332539768711796b40d1894a` | The proof separates affine points by `‖x‖ < 1`, `‖x‖ = 1`, and `1 < ‖x‖`. The theorem uses `TameResidueChar k`. [Surjectivity](/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/TateCurvesTheta/TateCurve/TateUniformization.lean:55) |
 
-The bridge builds an upstream `TateParameter` from the Prove2Me parameter's `q` and `norm_lt_one`. The Weierstrass coefficients and coordinate series have the same definitions. The two point maps use the same orbit test, and Lean identifies their nonsingularity proofs by proof irrelevance. The `h2` and `h12` arguments match the two fields of `TameResidueChar`. [Lean draft](/tmp/p2m-01a1ecf6/different-degree-readback/Solutions/Source_ReferenceIutTateUniformizationLaws.lean) · [Tame residue characteristic](/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/TateCurvesTheta/TateCurve/A6Series.lean:71)
+The bridge builds an upstream `TateParameter` from the Prove2Me parameter's `q` and `norm_lt_one`. The Weierstrass coefficients and coordinate series have the same definitions. The two point maps use the same orbit test, and Lean identifies their nonsingularity proofs by proof irrelevance. The `h2` and `h12` arguments match the two fields of `TameResidueChar`. [Point-law bridge](../../../../Solutions/Source_ReferenceIutTateUniformizationLaws.lean#L29) · [Tame residue characteristic](/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/TateCurvesTheta/TateCurve/A6Series.lean:71)
 
-The three declarations match `hEquation`, `hAdd`, and `hSurjective` on `tateStructureOfTorsion_from_source`. `TateParameterUniformization.ofTateParameter` also supplies all three laws to `ofTatePoint`. [Provider](/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_ReferenceIutTateStructureOfTorsion.lean:84)
+`TateParameterUniformization.ofTateParameter` gives all three laws to `ofTatePoint`. `prime_dvd_ramificationIdx_from_source` passes this uniformization to `tateStructureOfBadPlace`. [Provider](../../../../Solutions/Source_ReferenceIutTateUniformizationLaws.lean#L67) · [Ramification proof](../../../../Solutions/Source_SL2ImageLocalTate.lean#L81)
 
 ## Compiled imports
 
@@ -20,7 +20,7 @@ The bridge imports `TateCurvesTheta.TateCurve.TateUniformization` and `Solutions
 /home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean
 ```
 
-The Tate source import closure has 51 modules. All 51 have `.olean` files whose headers identify Lean `4.33.1`, build `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`. The three root artifacts contain the declaration names. The bridge awaits Lean verification.
+The Tate source import closure has 51 modules. All 51 have `.olean` files whose headers identify Lean `4.33.1`, build `819816b2e0a3bf405af45ae5c7af2491d8f5bee6`. The three root artifacts contain the declaration names. MCP-CI job `ci-020624-9ee61ed1` compiled the bridge successfully. [Build receipt](../receipts/local-tate-ci-020624-9ee61ed1-result.json)
 
 The entries below give the exact Tate import edges. Each module name has the prefix `TateCurvesTheta.`. The `TatePointOnCurve` closure has 27 modules. The `GroupLaw` closure has 47 modules and includes `TatePointOnCurve`. The `TateUniformization` closure includes both.
 

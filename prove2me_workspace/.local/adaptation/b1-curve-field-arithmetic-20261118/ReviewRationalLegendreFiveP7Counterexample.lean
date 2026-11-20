@@ -1,0 +1,12 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodRationalLegendreFiveP7Counterexample
+
+open AbcAdaptation.Tripod
+
+#check exists_sourceP7Counterexample_rationalLegendreFiveLocus
+#print axioms exists_sourceP7Counterexample_rationalLegendreFivePoint
+#print axioms exists_sourceP7Counterexample_rationalLegendreFive
+#print axioms exists_sourceP7Counterexample_rationalLegendreFiveLocus

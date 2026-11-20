@@ -76,7 +76,7 @@ theorem PlaneData.deriv_ne_zero (h : PlaneData Ω U₀ p₀) {u : ℂ} (hu : u �
 
 /-- The rescaled maps `Gₙ z = projₙ (ρₙ z)`, defined on the whole unit disc. -/
 noncomputable def rescaled (U₀ : Set ℂ) (n : ℕ) (z : ℂ) : ℂ :=
-  proj U₀ n (inradius (seq U₀ n) * z)
+  koebeProjection U₀ n (inradius (seq U₀ n) * z)
 
 theorem Good.mul_mem_seq (hU₀ : Good U₀) (n : ℕ) {z : ℂ} (hz : z ∈ ball (0 : ℂ) 1) :
     (inradius (seq U₀ n) : ℂ) * z ∈ seq U₀ n := by
@@ -198,7 +198,7 @@ theorem PlaneData.exists_section (h : PlaneData Ω U₀ p₀) {φ : ℕ → ℕ}
     obtain ⟨σ', hσ'c, hσ'm, hσ'p, hσ'0⟩ := hU₀.exists_lift n Δ (convex_ball w ε) τ hτc hτU u₀
       ((inradius (seq U₀ n) : ℂ) * z) hn (hU₀.mul_mem_seq n hz) (by rw [hτ0]; rfl)
     have hσ'd : DifferentiableOn ℂ σ' Δ := fun u hu ↦ by
-      refine (differentiableAt_of_comp_eq (f := proj U₀ n) (g := τ)
+      refine (differentiableAt_of_comp_eq (f := koebeProjection U₀ n) (g := τ)
         (hasStrictDerivAt_of_differentiableOn (hU₀.differentiableOn_proj n)
           (hU₀.good_seq n).isOpen (hσ'm hu))
         (hU₀.deriv_proj_ne_zero n (hσ'm hu)) (hσ'c.continuousAt (isOpen_ball.mem_nhds hu)) ?_

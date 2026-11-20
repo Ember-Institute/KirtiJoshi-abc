@@ -17,7 +17,7 @@
 - $W$ 是有限集合。$F$ 的每个有限位相对于其下方有理素数的剩余次数为正。
 - 对每个自然数 $r$，$W$ 中剩余特征为 $r$ 的各位的剩余次数之和至多为 $[F:\mathbb Q]$。
 
-对每个 $w\in W$，记录 $TI:C.\mathrm{TateInputs}$ 给出 $q_w\in F_w^\times$，满足 $\lVert q_w\rVert<1$，其中 $F_w$ 是 $F$ 在 $w$ 处的完备化。由 $q_w$ 确定的 Tate 曲线的 $j$ 不变量等于 $j(E)$ 在 $F_w$ 中的像。记录还给出一个【译名待定：TERM-015】$\pi_w$。它满足 $\pi_w\ne0$ 和 $\lVert\pi_w\rVert<1$，并且 $F_w^\times$ 中每个元素的范数都是 $\lVert\pi_w\rVert$ 的某个整数次幂。令 $n_w$ 为满足 $\lVert q_w\rVert=\lVert\pi_w\rVert^{n_w}$ 的唯一正整数。这个自然数即 `TI.qOrder w hw`。
+对每个 $w\in W$，记录 $TI:C.\mathrm{TateInputs}$ 给出 $q_w\in F_w^\times$，满足 $\lVert q_w\rVert<1$，其中 $F_w$ 是 $F$ 在 $w$ 处的完备化。由 $q_w$ 确定的 Tate 曲线的 $j$ 不变量等于 $j(E)$ 在 $F_w$ 中的像。记录还给出一个素元$\pi_w$。它满足 $\pi_w\ne0$ 和 $\lVert\pi_w\rVert<1$，并且 $F_w^\times$ 中每个元素的范数都是 $\lVert\pi_w\rVert$ 的某个整数次幂。令 $n_w$ 为满足 $\lVert q_w\rVert=\lVert\pi_w\rVert^{n_w}$ 的唯一正整数。这个自然数即 `TI.qOrder w hw`。
 
 设 $\ell$ 是不等于 $2$ 的素数。记录 $R:C.\mathrm{ModEllRepData}\,\ell$ 给出加法群同构 $b:E(\overline F)[\ell]\simeq\mathbb F_\ell^2$，以及群同态 $\rho:\operatorname{Aut}_F(\overline F)\to\mathrm{GL}_2(\mathbb F_\ell)$。$\rho$ 的核在 Krull 拓扑下是开子群。对每个 $\sigma\in\operatorname{Aut}_F(\overline F)$ 和 $P\in E(\overline F)[\ell]$，记录要求 $b(\sigma P)=\rho(\sigma)b(P)$，其中 $\sigma$ 作用于点的坐标并固定单位元。令 $K=\overline F^{\ker\rho}$ 为 $R$ 所定义的挠点域。$K$ 是数域。
 

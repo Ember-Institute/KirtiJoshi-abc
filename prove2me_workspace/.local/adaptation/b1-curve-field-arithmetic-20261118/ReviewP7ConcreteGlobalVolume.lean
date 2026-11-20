@@ -1,0 +1,16 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCor312GlobalVolume
+
+open AbcAdaptation.Reference.Iut.ThetaLocalData
+
+#print axioms thetaHull_region_finite
+#print axioms packetVol_finite_thetaHull
+#print axioms globalVol_thetaHull_eq_of_packetVolumes
+#print axioms rhs_thetaHull_eq_of_packetVolumes
+#print axioms corollary312Variant_iff_absLogQ_bound_of_packetVolumes
+#print axioms globalVol_thetaHull_eq
+#print axioms rhs_thetaHull_eq
+#print axioms corollary312Variant_iff_absLogQ_bound

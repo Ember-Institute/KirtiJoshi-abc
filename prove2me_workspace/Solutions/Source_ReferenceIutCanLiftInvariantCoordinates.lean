@@ -40,7 +40,8 @@ namespace IsUniformization
 
 variable [W.IsElliptic]
 
-private theorem exists_lift_neg (h : IsUniformization W A B π) :
+/-- Weierstrass negation lifts to a holomorphic map of the upper half-plane. -/
+theorem exists_lift_neg (h : IsUniformization W A B π) :
     ∃ T : ℍ → ℍ, HolomorphicH T ∧
       ∀ τ : ℍ, π (T τ) = ((π τ).1, W.toAffine.negY (π τ).1 (π τ).2) := by
   let πneg : ℂ → ℂ × ℂ := fun z ↦ ((π z).1, W.toAffine.negY (π z).1 (π z).2)

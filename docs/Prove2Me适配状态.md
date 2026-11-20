@@ -62,7 +62,7 @@
 
 第 3 篇定理 3.12 的上下文至少要求数域 `L` 无实嵌入、严格 Belyi 型椭圆曲线、初始 theta 数据、`L/L_mod` Galois、全部六阶扭点有理、`ell ≥ 5`、`ell` 不整除 `[L:L_mod]`、模 `ell` 表示像包含 `SL₂`、核域 `L′` 以及处集双射；作者明确说初始 theta 数据是全局存在断言，不能由局部构造代替。Form 2 与 Corollary 3.12 的实际来源构造及全称适配仍待拆分。
 
-`IsSourceP7Variant CI anab X` 已给出 `c2` 所需的来源范围。尚须证明 `∀ X, IsSourceP7Variant CI anab X → Corollary312Variant X`，保留任意次数界，并核对同一 P7 数据下 q-pilot 左端和对数体积右端的论文身份。现有 Scene1 桥要求 `[D.F : ℚ] = 1` 和指定实际 hull 的体积等式，一般次数的换算及该体积等式仍须落实。 [规范 P7 消费者](../prove2me_workspace/Solutions/Source_TripodCanonicalCorollary22PrimeEstimates.lean#L26) · [现有 Scene1 桥](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalCorollary312Bridge.lean#L20)
+现有 `IsSourceP7Variant CI anab X` 的具体体积比较已有严格反例。后续要在同一实际数据中供应论文的 θ 区域和测度，并证明修正后的来源范围覆盖全部适用点和指定素数。现有 Scene1 桥要求 $[D.F:\mathbb Q]=1$ 和指定实际 hull 的体积等式，一般次数的换算及论文体积身份仍须落实。最后在参考 `c2` 的实际数据和局部估计上复核消费者使用的比较陈述。 [反例、读回与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#counterexample-to-the-concrete-source-p7-volume-comparison) · [现有 Scene1 桥](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalCorollary312Bridge.lean#L20)
 
 四个 Scene1 producer owner 仍分别是 `AdelicThetaLink`、`ThetaLiftLog`、`PacketCollationHull`、`VolumeTransfer`：现有跨处 Tate／q 来源和部分规范化、Fontaine 事实只能供应局部前提；纸面 theta locus、Bloch–Kato theta 类与 log-shell 身份、跨 holomorphoid 代表拼接、实际 volume-measure 同一性仍缺少来源构造。显式负面障碍包括：字面 Corollary 3.12 的符号与实际收缩根的负对数相反；raw、全局次数、剩余次数、`2ell`、纸面权重和 `p*` 归一化尚无同一 carrier 上的等式；一般 `L` 情形不能假定度为一；现有选取根集的 q-log 总和严格小于纸面选定处集的总和，且 omitted mass/degree defect 未闭合；实际扭点来源的分歧指数至少为 `ell`，故质数纤维不满足 mass-one；普通 `H¹`／Kummer 类尚非论文的 `H¹_e`／crystalline／Bloch–Kato 输入；固定局部完成域的单位拼接不是论文的跨来源代表拼接；现有实际 raw/Haar 体积界也未识别纸面 theta locus、测度和无穷处归一化。Form2、cor312、G1–G4 均仍开放；不得将既有算术 accounting 的局部通过扩大解释为任何全局 theta 结论。
 
@@ -88,32 +88,17 @@
 
 ### CanLift 复一致化与可公度子
 
-一次穿孔复椭圆曲线已由 `uniformization_oncePunctured` 供应实际一致化。CanLift 的余下解析义务是在同一覆盖上证明甲板群在其可公度子中的相对指数有限，并证明可公度子作用后横坐标的多项式增长界。增长证明需要在格点一致化中比较轨道深度与 Weierstrass 第一坐标，再沿 Möbius 共轭和 Weierstrass 换元搬运。有限指数需要对应上游的核心条件和四个例外 `j` 值。两个结论共同供应不变多项式生成元，接到已证的第一坐标刚性。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#existence-of-uniformization-for-a-once-punctured-complex-elliptic-curve)
+复 CanLift 的 Margulis 输入要求在实际格覆盖的生成群上从可公度子稠密性推出每个元素的迹平方整性。仍需证明复数域嵌入固定正规形的三个迹平方，在同一正规形可公度子上构造有理矩阵代表，并推出每个素数处的范数界。这些结论须沿共轭与生成元变换搬回实际格覆盖的生成群。 [上游 Margulis 组装](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/M2/Final.lean#L595) · [本地整性消费者](../prove2me_workspace/Solutions/Source_ReferenceIutCanLiftPadicSquaredTraces.lean#L45)
 
-### 规范 P7 的有限处整包与曲线 q-pilot
-
-有限处的公开单分量公式已验收。整包计算还须在同一 `ThetaLocalData` 上把每个标签配置的体积拆成加权和，消去其他标签的边际，按模域的完整纤维合并局部次数，得出 $-j^2\operatorname{logQAt}(p)/(2\ell)$。全局计算随后须与无穷处公式合并，并由 P7 的坏处有限集控制有理处求和的支撑。
-
-有理 Legendre 族已有 $v_5(j(x_m))=-2m$ 的证明。仍须沿实际点域嵌入把该赋值搬回曲线提供器，证明相应有限处确为该曲线的 P7 坏处，读取同一 Tate 参数的次数，并把所求项纳入 q-pilot。条件标量界使用的全局体积前提仍须从上面的整包计算得到。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#rational-legendre-family-and-the-conditional-principal-volume-bound)
+四条模型曲线的分类一致化仍需从各自的 Belyi 证书构造椭圆曲线的轨形覆盖，与模 $j$ 的轨形覆盖接合并提升，再把模群的整数迹平方性质传给各模型的一致化群。结论须供应四个模型各自的 Takeuchi 矩阵对及相应的一致化。 [上游 Belyi 组装](https://github.com/lana-agents/orbicurve-cores/blob/61616dcd77fbe45c083a8ebfa7cc80728f86e841/OrbicurveCores/S1/Belyi.lean#L72) · [本地 CanLift 消费者](../prove2me_workspace/Solutions/Source_ReferenceIutCanLiftComplexFromModelUniformizations.lean#L21)
 
 ## 4. 未完成自然语言读回的证明义务
 
-- `AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply`：无待决译名。
-- `AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight`：无待决译名。
-- `AbcAdaptation_Reference_Iut_Tripod_TatePoleOrder`：无待决译名。
-- `AbcAdaptation_Reference_Iut_Tripod_GoodReductionHeight`：无待决译名。
-- `AbcAdaptation_Reference_Iut_Tripod_FiniteHeightMapEquiv`：无待决译名。
-- `Source_TripodRelativeDegreeTower`：无待决译名。
-- `Source_TripodRelativeDegreeSum`：无待决译名。
-- `Source_TripodRelativeAbsoluteValue`：无待决译名。
-- `Source_TripodFiniteHeightExtension`：无待决译名。
 - `tripodalFieldOf_eq`、`tpdEquiv_jT`、`h_eq_finHeight_div`：无待决译名。
 - `LegendreHeightHyp`、`legendreHeight`、`canonicalLegendreHeightComparison_of_provider`：无待决译名。
 - `northcott_of_equiv`、`curveInputs_height_eq`、`curveInputs_htCan_equiv`、`curveInputs_northcott`：无待决译名。
 - `TwoAdicBoundHyp`、`twoAdicBound'`、`twoAdicBound`、`curveInputs_B_nonneg`、`curveInputs_heightEq_two_le`：无待决译名。
 - `curveInputs_dmod_le`：无待决译名。
-- `curveInputs_deg_le`、`curveInputs_logDiff_eq`、`curveInputsOfSL2Image`、`CyclicBoundOddHyp`：无待决译名。
-- `EllipticCurveData.prime_dvd_card_range`、`EllipticCurveData.prime_dvd_ramificationIdx`：无待决译名。
 - `AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder`：无待决译名。
 - `AbcAdaptation_Reference_Iut_Cor312_ThetaData_AdmissiblePrime`：无待决译名。
 - `AbcAdaptation_JoshiTeich_Prologue_Arithmetic_Basic`：无待决译名。

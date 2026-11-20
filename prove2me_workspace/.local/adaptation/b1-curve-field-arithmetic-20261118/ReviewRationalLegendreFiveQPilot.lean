@@ -1,0 +1,13 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodRationalLegendreFiveQPilot
+
+open AbcAdaptation.Tripod
+
+#print axioms norm_j_rationalLegendreFivePoint
+#print axioms mem_badAll_rationalLegendreFivePoint
+#print axioms mem_VBadOf_rationalLegendreFivePoint
+#print axioms rationalLegendreFivePoint_p5
+#print axioms rationalLegendreFivePoint_qPilot
