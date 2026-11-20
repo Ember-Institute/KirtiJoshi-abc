@@ -1,0 +1,12 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutCanLiftFromProb
+
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.exists_pair_of_triple_null
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.two_point_diag
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.two_point_heavy
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.two_point_pair
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.heavy_unique
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.exists_pointMap_of_triple_null

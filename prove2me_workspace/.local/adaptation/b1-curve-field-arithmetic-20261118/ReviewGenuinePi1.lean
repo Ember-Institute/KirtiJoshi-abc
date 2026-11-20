@@ -1,0 +1,13 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_ReferenceIutGenuinePi1
+
+open AbcAdaptation.Reference.Iut.Anabelian
+
+#print axioms profiniteInertiaQuotient
+#print axioms genuinePi1
+#print axioms genuinePi1Cover
+#print axioms genuinePi1Cover_continuous
+#print axioms genuinePi1Cover_isOpenEmbedding

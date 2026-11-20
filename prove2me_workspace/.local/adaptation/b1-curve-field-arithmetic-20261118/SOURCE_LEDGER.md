@@ -1724,3 +1724,44 @@ The joint review uses only Lean standard axioms. Wall and CPU times are in secon
 | [`ci-024976-d62b610a`](receipts/round-ci-024976-d62b610a-result.json) | `a5f21af53bd8` | succeeded / 0 | 78.29 | 76.72 (4.54 + 72.18) | 3.68 | triple null (2 warnings in receipt) |
 | [`ci-024985-9a6a92d7`](receipts/round-ci-024985-9a6a92d7-result.json) | `a5f21af53bd8` | succeeded / 0 | 112.60 | 58.93 (5.29 + 53.64) | 3.71 | triple null artifact (2 warnings in receipt) |
 | [`ci-025003-ceba85a9`](receipts/round-ci-025003-ceba85a9-result.json) | `c29a123d8f95` | succeeded / 0 | 255.18 | 243.87 (5.92 + 237.95) | 7.84 | review m2 triple null |
+
+## Equivariant point maps from boundary probability kernels
+
+The vanishing of the distinct triple mass bounds the support of the boundary kernel by two points almost everywhere. The two-point case of equal mass gives an equivariant unordered pair and is excluded by `noPair`. In the remaining case measurable selection yields an equivariant point map. This point map supplies the measurable starting point for commensurator superrigidity. [Point map theorem](../../../Solutions/Source_ReferenceIutCanLiftFromProb.lean#L213) · [Trilingual readback](readbacks/canlift-m2-from-prob-trilingual.md)
+
+The joint review uses only Lean standard axioms. Wall and CPU times are in seconds. RSS is the MCP-CI process-tree peak in GiB. PSS and the degradation marker are unavailable. [Review receipt](receipts/round-ci-025022-20245482-result.json)
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024979-e440c983`](receipts/round-ci-024979-e440c983-result.json) | `e947d7a8ec40` | succeeded / 0 | 75.83 | 73.89 (6.43 + 67.46) | 3.72 | from prob (4 warnings in receipt) |
+| [`ci-024992-8d2b00f7`](receipts/round-ci-024992-8d2b00f7-result.json) | `e947d7a8ec40` | succeeded / 0 | 77.56 | 77.11 (8.57 + 68.54) | 3.72 | from prob artifact (4 warnings in receipt) |
+| [`ci-025022-20245482`](receipts/round-ci-025022-20245482-result.json) | `8baba5973f3c` | succeeded / 0 | 147.20 | 145.28 (6.14 + 139.14) | 8.08 | review m2 from prob |
+
+## Profinite fundamental group of the normalized orbicurve model
+
+The characteristic-zero branch uses the closed normal inertia quotient of the profinite stabilizer. Its quotient topology is totally disconnected because an open subgroup containing inertia separates each nontrivial coset from the identity component. The map associated to a model cover is induced by the stabilizer inclusion and is a continuous open embedding. The positive-characteristic branch of the fixed upstream model has the trivial quotient. These declarations supply four fields of the concrete étale theory. [Local proof](../../../Solutions/Source_ReferenceIutGenuinePi1.lean#L57) · [Upstream Pi1](https://github.com/lana-agents/pi1/blob/ca7def953193f861a462aa0831eec8f0a31ff69f/Pi1/Orbicurve/GaloisPi1.lean#L55) · [Upstream iut](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Anabelian/GenuineEtale.lean#L81)
+
+The review reports five declarations using only Lean standard axioms. Wall and CPU times are in seconds. RSS is the MCP-CI process-tree peak in GiB. The initial scheduler timeout gives a wall-clock lower bound. PSS and the degradation marker are unavailable. [Review receipt](receipts/round-ci-025042-ee21913e-result.json)
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024961-8b14722c`](receipts/round-ci-024961-8b14722c-result.json) | `9523b7ad0188` | timeout / unknown | 180.05 (scheduler) | unknown (unknown + unknown) | unknown | genuine pi1 — scheduler timeout with 60 estimated duration |
+| [`ci-024983-3fab9ac3`](receipts/round-ci-024983-3fab9ac3-result.json) | `7c6c025967ea` | succeeded / 0 | 168.29 | 164.27 (11.21 + 153.06) | 7.63 | genuine pi1 retry |
+| [`ci-025002-0949675f`](receipts/round-ci-025002-0949675f-result.json) | `7c6c025967ea` | succeeded / 0 | 280.70 | 272.65 (12.70 + 259.95) | 7.64 | genuine pi1 artifact |
+| [`ci-025042-ee21913e`](receipts/round-ci-025042-ee21913e-result.json) | `ce21b75d6e3c` | succeeded / 0 | 189.02 | 186.80 (5.59 + 181.21) | 8.04 | review genuine pi1 |
+
+## Characteristic roots and p-adic degeneration
+
+When the norm of the squared trace exceeds the norm of the determinant, Hensel lifting provides two distinct p-adic eigenvalues of unequal norm. A corresponding eigenbasis gives a conjugated projective matrix whose powers send the standard triple to a degenerate limit. The local norm bound uses this limit in the commensurator superrigidity hypothesis. [Roots](../../../Solutions/Source_ReferenceIutCanLiftPadicCharacteristicRoots.lean#L20) · [Degeneration](../../../Solutions/Source_ReferenceIutCanLiftPadicUnbounded.lean#L85) · [Trilingual readback](readbacks/canlift-m2-padic-unbounded-trilingual.md)
+
+The review uses only Lean standard axioms. Wall and CPU times are in seconds. RSS is the MCP-CI process-tree peak in GiB. PSS and the degradation marker are unavailable. [Review receipt](receipts/round-ci-025043-4ceee2d2-result.json)
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-024884-c4f4ba47`](receipts/round-ci-024884-c4f4ba47-result.json) | `73ed2ba2b3a8` | failed / 1 | 121.21 | 104.72 (3.07 + 101.65) | 2.88 | padic characteristic roots — line 29, Invalid rewrite argument: Expected an equality or iff proof or definition name, but `ε` is a value of type (2 errors in receipt) |
+| [`ci-024940-72dcf3b3`](receipts/round-ci-024940-72dcf3b3-result.json) | `16bb9bdd3a54` | succeeded / 0 | 111.66 | 109.74 (1.78 + 107.96) | 2.83 | padic characteristic roots retry |
+| [`ci-024964-af213db5`](receipts/round-ci-024964-af213db5-result.json) | `16bb9bdd3a54` | succeeded / 0 | 67.48 | 65.25 (2.46 + 62.79) | 2.88 | padic characteristic roots artifact |
+| [`ci-024980-160fe459`](receipts/round-ci-024980-160fe459-result.json) | `c94e7438c26f` | failed / 1 | 59.37 | 55.80 (2.40 + 53.40) | 3.07 | padic unbounded — line 91, Type mismatch |
+| [`ci-024989-09e2dffd`](receipts/round-ci-024989-09e2dffd-result.json) | `84089fcacea3` | succeeded / 0 | 71.46 | 71.43 (4.09 + 67.34) | 3.16 | padic unbounded retry |
+| [`ci-025011-f84d5178`](receipts/round-ci-025011-f84d5178-result.json) | `84089fcacea3` | succeeded / 0 | 86.19 | 85.58 (4.54 + 81.04) | 3.16 | padic unbounded artifact |
+| [`ci-025043-4ceee2d2`](receipts/round-ci-025043-4ceee2d2-result.json) | `afbd081eb6d7` | succeeded / 0 | 197.55 | 195.04 (6.78 + 188.26) | 8.07 | review m2 padic unbounded |

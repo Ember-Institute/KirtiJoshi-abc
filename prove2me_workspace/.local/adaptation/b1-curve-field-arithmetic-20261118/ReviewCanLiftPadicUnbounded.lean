@@ -1,0 +1,8 @@
+import Solutions.Source_ReferenceIutCanLiftPadicUnbounded
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.Padic.exists_roots_of_norm_lt
+#print axioms AbcAdaptation.Reference.Iut.Anabelian.CanLiftAnalytic.M2.Padic.exists_degenerate_limit
