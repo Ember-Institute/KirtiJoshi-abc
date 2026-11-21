@@ -1,0 +1,22 @@
+{
+  "theorem_id": "bc257ddc-faf2-4fe7-a1bf-bd0458023713",
+  "theorem_name": "AbcAdaptation.Tripod.finHeight_algebraMap",
+  "theorem_title": "Scaling of finite height in a number field extension",
+  "status": "Proved",
+  "formal_statement": "theorem AbcAdaptation.Tripod.finHeight_algebraMap {k K : Type*} [Field k] [NumberField k] [Field K] [NumberField K]\n    [Algebra k K] (y : k) :\n    finHeight (algebraMap k K y) = Module.finrank k K * finHeight y := by sorry",
+  "natural_language_statement": "Let $K/k$ be an extension of number fields, and let $y\\in k$. The finite height $h_{\\mathrm{fin},K}$ is the sum of the positive parts of the logarithms of the absolute values at the finite places of $K$. When $y$ is viewed in $K$, the height satisfies\n\n$$h_{\\mathrm{fin},K}(y)=[K:k]\\,h_{\\mathrm{fin},k}(y).$$\n\nThis is the base-extension step in the comparison between the heights of the supplied curve and its point field.",
+  "created_at": "2026-11-21T03:24:56.739113+00:00",
+  "vote_count": 0,
+  "tags": [
+    "arithmetic-geometry",
+    "number-theory"
+  ],
+  "preamble": "import Definitions.Def_TripodCanonicalHighHeightInputs\n\nset_option autoImplicit false\n\nopen AbcAdaptation.Tripod\nopen NumberField\n\n",
+  "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/Height.lean#L199",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "private",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": null
+}

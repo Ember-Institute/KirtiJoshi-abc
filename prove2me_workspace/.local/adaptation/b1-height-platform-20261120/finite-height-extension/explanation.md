@@ -1,0 +1,1 @@
+Group the finitely supported logarithmic sum on $K$ by places below in $k$. At each place above $v$, the summand for the image of $y$ is the summand at $v$ multiplied by the corresponding relative local degree. The relative local degrees over each $v$ sum to $[K:k]$. Pull out this constant from the reindexed sum.

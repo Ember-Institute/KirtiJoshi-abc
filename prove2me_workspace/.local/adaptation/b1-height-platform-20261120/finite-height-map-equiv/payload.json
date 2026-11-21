@@ -1,0 +1,14 @@
+{
+  "theorem_name": "AbcAdaptation.Tripod.finHeight_mapEquiv",
+  "theorem_title": "Finite height under an isomorphism of number fields",
+  "preamble": "import Definitions.Def_TripodCanonicalHighHeightInputs\n\nset_option autoImplicit false\n\nopen AbcAdaptation.Tripod (finHeight)\nopen NumberField\n\n",
+  "formal_statement": "theorem AbcAdaptation.Tripod.finHeight_mapEquiv {T : Type*} [Field T] [NumberField T]\n    {T' : Type*} [Field T'] [NumberField T'] (e : T ≃+* T') (y : T) :\n    finHeight (e y) = finHeight y := by sorry",
+  "natural_language_statement": "Let $T$ and $T'$ be number fields and $e\\colon T\\simeq T'$ a field isomorphism. For any $y\\in T$, define the finite height $h_{\\mathrm{fin},T}(y)$ by summing $\\max(0,\\log|y|_v)$ at the finite places of $T$, with the absolute value supplied by the completion. Then\n\n$$h_{\\mathrm{fin},T'}(e(y))=h_{\\mathrm{fin},T}(y).$$\n\nThis identity transports the finite height of the supplied curve to the given point field.",
+  "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/Height.lean#L110",
+  "tags": [
+    "number-theory",
+    "arithmetic-geometry"
+  ],
+  "env": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "private": true
+}

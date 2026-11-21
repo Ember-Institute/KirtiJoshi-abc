@@ -1,0 +1,9 @@
+# Normalized finite height of the Legendre j-invariant
+
+Fix curve data \(P\) and a point \(x\) of the tripod, with parameter \(\lambda\in\overline{\mathbb Q}\setminus\{0,1\}\). The data \(P\) supply finiteness proofs for the Legendre \(3\)- and \(5\)-torsion sets at every algebraic parameter, and give the curve arithmetic and the mod-\(\ell\) Galois representation for every tripod point and each prime \(\ell\). At \(x\) the curve is \(E_\lambda\) with equation \(y^2=X(X-1)(X-\lambda)\) over the field \(F_\lambda\) generated over \(\mathbb Q\) by \(\lambda\), the chosen square roots of \(-1,\lambda,1-\lambda\), and the affine coordinates of its \(3\)- and \(5\)-torsion points. Write \(h_P(x)=[F_\lambda:\mathbb Q]^{-1}\sum_w n_w f_w\log p_w\), where the sum runs over the finite places \(w\) of \(F_\lambda\) at which \(E_\lambda\) has multiplicative reduction. Here \(p_w\) and \(f_w\) are the residue characteristic and residue degree, and \(n_w\) is the order of the chosen Tate parameter \(q_w\) with \(j(E_{q_w})=j(E_\lambda)\) in the completion. The order uses the chosen uniformizer \(\pi_w\) and satisfies \(\|q_w\|=\|\pi_w\|^{n_w}\).
+
+For every such \(P\) and \(x\), put \(k=\mathbb Q(\lambda)\) and \(J_\lambda=256(\lambda^2-\lambda+1)^3/(\lambda^2(\lambda-1)^2)\in k\). The theorem asserts
+\[
+h_P(x)=\frac{\displaystyle\sum_{v\text{ finite in }k}^{\mathrm f}\max\{0,\log|J_\lambda|_v\}}{[k:\mathbb Q]}.
+\]
+The absolute value \(|\cdot|_v\) is obtained from the norm of the completion at \(v\). The sum uses the real logarithm with \(\log 0=0\), so a zero value of \(J_\lambda\) gives zero on the right. The denominator is the degree of the minimal polynomial of \(\lambda\) over \(\mathbb Q\), which is positive. The sum defining \(h_P(x)\) is zero if \(E_\lambda\) has no finite places of multiplicative reduction.

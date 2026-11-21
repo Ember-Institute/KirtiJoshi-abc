@@ -1,0 +1,23 @@
+import Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveOf
+import Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_CurveData
+
+namespace AbcAdaptation.Tripod
+open AbcAdaptation.Reference.Iut
+open WeierstrassCurve NumberField Polynomial
+open scoped IntermediateField
+
+structure CurveProviders where
+    torsionFinite3 : ∀ l : Qbar, TorsionFinite l 3
+    torsionFinite5 : ∀ l : Qbar, TorsionFinite l 5
+    arith : ∀ x : Pt, (curveOf x (torsionFinite3 x.1) (torsionFinite5 x.1)).CurveArithmetic
+    modRep : ∀ (x : Pt) (ℓ : ℕ), ℓ.Prime →
+    (curveOf x (torsionFinite3 x.1) (torsionFinite5 x.1)).ModEllRepData ℓ
+
+namespace CurveProviders
+variable (P : CurveProviders)
+
+noncomputable def curve (x : Pt) : EllipticCurveData :=
+  curveOf x (P.torsionFinite3 x.1) (P.torsionFinite5 x.1)
+
+end CurveProviders
+end AbcAdaptation.Tripod

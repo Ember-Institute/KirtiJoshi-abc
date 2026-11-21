@@ -1,0 +1,302 @@
+{
+  "under_int_eq_under_int": {
+    "reference": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean",
+      "firstLine": 156,
+      "lastLine": 159,
+      "sha256": "42fbed4ae51d9c9584e74372cf25d5d75167fd93847ffbd367760731a83655a3",
+      "command": "lemma under_int_eq_under_int : v.maximalIdeal.asIdeal.under ℤ = w.maximalIdeal.asIdeal.under ℤ := by\n  haveI : v.maximalIdeal.asIdeal.LiesOver w.maximalIdeal.asIdeal := hvw\n  rw [← Ideal.under_under (B := 𝓞 k) v.maximalIdeal.asIdeal,\n    ← Ideal.over_def v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal]\n"
+    },
+    "sourceReplay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "firstLine": 583,
+      "lastLine": 586,
+      "sha256": "42fbed4ae51d9c9584e74372cf25d5d75167fd93847ffbd367760731a83655a3",
+      "command": "lemma under_int_eq_under_int : v.maximalIdeal.asIdeal.under ℤ = w.maximalIdeal.asIdeal.under ℤ := by\n  haveI : v.maximalIdeal.asIdeal.LiesOver w.maximalIdeal.asIdeal := hvw\n  rw [← Ideal.under_under (B := 𝓞 k) v.maximalIdeal.asIdeal,\n    ← Ideal.over_def v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal]\n",
+      "matchesReferenceCommand": true
+    },
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeDegreeTower.lean",
+      "firstLine": 22,
+      "lastLine": 25,
+      "sha256": "42fbed4ae51d9c9584e74372cf25d5d75167fd93847ffbd367760731a83655a3",
+      "command": "lemma under_int_eq_under_int : v.maximalIdeal.asIdeal.under ℤ = w.maximalIdeal.asIdeal.under ℤ := by\n  haveI : v.maximalIdeal.asIdeal.LiesOver w.maximalIdeal.asIdeal := hvw\n  rw [← Ideal.under_under (B := 𝓞 k) v.maximalIdeal.asIdeal,\n    ← Ideal.over_def v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal]\n",
+      "matchesReferenceCommand": true
+    }
+  },
+  "residueChar_eq_of_liesOver": {
+    "reference": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean",
+      "firstLine": 162,
+      "lastLine": 166,
+      "sha256": "2516e3ac7c0a2e29ef71e26dc86a87a1e8ba2ae17b892814b86ee5aa52a52bc0",
+      "command": "lemma residueChar_eq_of_liesOver : residueChar v = residueChar w := by\n  have h := under_int_eq_under_int hvw\n  rw [under_int_eq, under_int_eq, Ideal.span_singleton_eq_span_singleton] at h\n  have h' := Int.natAbs_eq_iff_associated.mpr h\n  simpa using h'\n"
+    },
+    "sourceReplay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "firstLine": 589,
+      "lastLine": 593,
+      "sha256": "2516e3ac7c0a2e29ef71e26dc86a87a1e8ba2ae17b892814b86ee5aa52a52bc0",
+      "command": "lemma residueChar_eq_of_liesOver : residueChar v = residueChar w := by\n  have h := under_int_eq_under_int hvw\n  rw [under_int_eq, under_int_eq, Ideal.span_singleton_eq_span_singleton] at h\n  have h' := Int.natAbs_eq_iff_associated.mpr h\n  simpa using h'\n",
+      "matchesReferenceCommand": true
+    },
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeDegreeTower.lean",
+      "firstLine": 28,
+      "lastLine": 32,
+      "sha256": "2516e3ac7c0a2e29ef71e26dc86a87a1e8ba2ae17b892814b86ee5aa52a52bc0",
+      "command": "lemma residueChar_eq_of_liesOver : residueChar v = residueChar w := by\n  have h := under_int_eq_under_int hvw\n  rw [under_int_eq, under_int_eq, Ideal.span_singleton_eq_span_singleton] at h\n  have h' := Int.natAbs_eq_iff_associated.mpr h\n  simpa using h'\n",
+      "matchesReferenceCommand": true
+    }
+  },
+  "ramIdx_eq_mul": {
+    "reference": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean",
+      "firstLine": 172,
+      "lastLine": 186,
+      "sha256": "22f775461f32f8a6068c86c8bac88e05a6c39b6098b690e054289d2a2a2a2f1d",
+      "command": "lemma ramIdx_eq_mul : ramIdx K v = ramIdx k w * relRamIdx v w := by\n  haveI : v.maximalIdeal.asIdeal.LiesOver w.maximalIdeal.asIdeal := hvw\n  have hp : v.maximalIdeal.asIdeal.under ℤ ≠ ⊥ := under_int_ne_bot v\n  haveI : w.maximalIdeal.asIdeal.LiesOver (v.maximalIdeal.asIdeal.under ℤ) :=\n    Ideal.LiesOver.tower_bot v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal _\n  have h1 : ramIdx K v = (v.maximalIdeal.asIdeal.under ℤ).ramificationIdx' v.maximalIdeal.asIdeal :=\n    (Ideal.ramificationIdx'_eq_ramificationIdx _ v.maximalIdeal.asIdeal hp).symm\n  have h2 : ramIdx k w =\n      (v.maximalIdeal.asIdeal.under ℤ).ramificationIdx' w.maximalIdeal.asIdeal := by\n    have := (Ideal.ramificationIdx'_eq_ramificationIdx (w.maximalIdeal.asIdeal.under ℤ)\n      w.maximalIdeal.asIdeal (under_int_ne_bot w)).symm\n    rw [under_int_eq_under_int hvw]\n    exact this\n  rw [h1, h2]\n  exact Ideal.ramificationIdx'_algebra_tower' _ w.maximalIdeal.asIdeal v.maximalIdeal.asIdeal\n"
+    },
+    "sourceReplay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "firstLine": 599,
+      "lastLine": 613,
+      "sha256": "22f775461f32f8a6068c86c8bac88e05a6c39b6098b690e054289d2a2a2a2f1d",
+      "command": "lemma ramIdx_eq_mul : ramIdx K v = ramIdx k w * relRamIdx v w := by\n  haveI : v.maximalIdeal.asIdeal.LiesOver w.maximalIdeal.asIdeal := hvw\n  have hp : v.maximalIdeal.asIdeal.under ℤ ≠ ⊥ := under_int_ne_bot v\n  haveI : w.maximalIdeal.asIdeal.LiesOver (v.maximalIdeal.asIdeal.under ℤ) :=\n    Ideal.LiesOver.tower_bot v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal _\n  have h1 : ramIdx K v = (v.maximalIdeal.asIdeal.under ℤ).ramificationIdx' v.maximalIdeal.asIdeal :=\n    (Ideal.ramificationIdx'_eq_ramificationIdx _ v.maximalIdeal.asIdeal hp).symm\n  have h2 : ramIdx k w =\n      (v.maximalIdeal.asIdeal.under ℤ).ramificationIdx' w.maximalIdeal.asIdeal := by\n    have := (Ideal.ramificationIdx'_eq_ramificationIdx (w.maximalIdeal.asIdeal.under ℤ)\n      w.maximalIdeal.asIdeal (under_int_ne_bot w)).symm\n    rw [under_int_eq_under_int hvw]\n    exact this\n  rw [h1, h2]\n  exact Ideal.ramificationIdx'_algebra_tower' _ w.maximalIdeal.asIdeal v.maximalIdeal.asIdeal\n",
+      "matchesReferenceCommand": true
+    },
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeDegreeTower.lean",
+      "firstLine": 35,
+      "lastLine": 49,
+      "sha256": "22f775461f32f8a6068c86c8bac88e05a6c39b6098b690e054289d2a2a2a2f1d",
+      "command": "lemma ramIdx_eq_mul : ramIdx K v = ramIdx k w * relRamIdx v w := by\n  haveI : v.maximalIdeal.asIdeal.LiesOver w.maximalIdeal.asIdeal := hvw\n  have hp : v.maximalIdeal.asIdeal.under ℤ ≠ ⊥ := under_int_ne_bot v\n  haveI : w.maximalIdeal.asIdeal.LiesOver (v.maximalIdeal.asIdeal.under ℤ) :=\n    Ideal.LiesOver.tower_bot v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal _\n  have h1 : ramIdx K v = (v.maximalIdeal.asIdeal.under ℤ).ramificationIdx' v.maximalIdeal.asIdeal :=\n    (Ideal.ramificationIdx'_eq_ramificationIdx _ v.maximalIdeal.asIdeal hp).symm\n  have h2 : ramIdx k w =\n      (v.maximalIdeal.asIdeal.under ℤ).ramificationIdx' w.maximalIdeal.asIdeal := by\n    have := (Ideal.ramificationIdx'_eq_ramificationIdx (w.maximalIdeal.asIdeal.under ℤ)\n      w.maximalIdeal.asIdeal (under_int_ne_bot w)).symm\n    rw [under_int_eq_under_int hvw]\n    exact this\n  rw [h1, h2]\n  exact Ideal.ramificationIdx'_algebra_tower' _ w.maximalIdeal.asIdeal v.maximalIdeal.asIdeal\n",
+      "matchesReferenceCommand": true
+    }
+  },
+  "inertDeg_eq_mul": {
+    "reference": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean",
+      "firstLine": 193,
+      "lastLine": 211,
+      "sha256": "cba857c74446d3f77356d1dbc8a2481b85b858ee5b6ac2e1ab53ad9904f161b1",
+      "command": "lemma inertDeg_eq_mul : inertDeg K v = inertDeg k w * relInertDeg v w := by\n  haveI : v.maximalIdeal.asIdeal.LiesOver w.maximalIdeal.asIdeal := hvw\n  haveI : w.maximalIdeal.asIdeal.LiesOver (v.maximalIdeal.asIdeal.under ℤ) :=\n    Ideal.LiesOver.tower_bot v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal _\n  haveI : (v.maximalIdeal.asIdeal.under ℤ).IsMaximal := under_int_isMaximal v\n  haveI : w.maximalIdeal.asIdeal.IsMaximal :=\n    w.maximalIdeal.isPrime.isMaximal w.maximalIdeal.ne_bot\n  haveI : v.maximalIdeal.asIdeal.IsMaximal :=\n    v.maximalIdeal.isPrime.isMaximal v.maximalIdeal.ne_bot\n  have h1 : inertDeg K v = (v.maximalIdeal.asIdeal.under ℤ).inertiaDeg' v.maximalIdeal.asIdeal :=\n    (Ideal.inertiaDeg'_eq_inertiaDeg _ v.maximalIdeal.asIdeal).symm\n  have h2 : inertDeg k w = (v.maximalIdeal.asIdeal.under ℤ).inertiaDeg' w.maximalIdeal.asIdeal := by\n    haveI : (w.maximalIdeal.asIdeal.under ℤ).IsMaximal := under_int_isMaximal w\n    have := (Ideal.inertiaDeg'_eq_inertiaDeg (w.maximalIdeal.asIdeal.under ℤ)\n      w.maximalIdeal.asIdeal).symm\n    rw [under_int_eq_under_int hvw]\n    exact this\n  rw [h1, h2]\n  exact Ideal.inertiaDeg'_algebra_tower _ w.maximalIdeal.asIdeal v.maximalIdeal.asIdeal\n"
+    },
+    "sourceReplay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "firstLine": 620,
+      "lastLine": 638,
+      "sha256": "cba857c74446d3f77356d1dbc8a2481b85b858ee5b6ac2e1ab53ad9904f161b1",
+      "command": "lemma inertDeg_eq_mul : inertDeg K v = inertDeg k w * relInertDeg v w := by\n  haveI : v.maximalIdeal.asIdeal.LiesOver w.maximalIdeal.asIdeal := hvw\n  haveI : w.maximalIdeal.asIdeal.LiesOver (v.maximalIdeal.asIdeal.under ℤ) :=\n    Ideal.LiesOver.tower_bot v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal _\n  haveI : (v.maximalIdeal.asIdeal.under ℤ).IsMaximal := under_int_isMaximal v\n  haveI : w.maximalIdeal.asIdeal.IsMaximal :=\n    w.maximalIdeal.isPrime.isMaximal w.maximalIdeal.ne_bot\n  haveI : v.maximalIdeal.asIdeal.IsMaximal :=\n    v.maximalIdeal.isPrime.isMaximal v.maximalIdeal.ne_bot\n  have h1 : inertDeg K v = (v.maximalIdeal.asIdeal.under ℤ).inertiaDeg' v.maximalIdeal.asIdeal :=\n    (Ideal.inertiaDeg'_eq_inertiaDeg _ v.maximalIdeal.asIdeal).symm\n  have h2 : inertDeg k w = (v.maximalIdeal.asIdeal.under ℤ).inertiaDeg' w.maximalIdeal.asIdeal := by\n    haveI : (w.maximalIdeal.asIdeal.under ℤ).IsMaximal := under_int_isMaximal w\n    have := (Ideal.inertiaDeg'_eq_inertiaDeg (w.maximalIdeal.asIdeal.under ℤ)\n      w.maximalIdeal.asIdeal).symm\n    rw [under_int_eq_under_int hvw]\n    exact this\n  rw [h1, h2]\n  exact Ideal.inertiaDeg'_algebra_tower _ w.maximalIdeal.asIdeal v.maximalIdeal.asIdeal\n",
+      "matchesReferenceCommand": true
+    },
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeDegreeTower.lean",
+      "firstLine": 52,
+      "lastLine": 70,
+      "sha256": "cba857c74446d3f77356d1dbc8a2481b85b858ee5b6ac2e1ab53ad9904f161b1",
+      "command": "lemma inertDeg_eq_mul : inertDeg K v = inertDeg k w * relInertDeg v w := by\n  haveI : v.maximalIdeal.asIdeal.LiesOver w.maximalIdeal.asIdeal := hvw\n  haveI : w.maximalIdeal.asIdeal.LiesOver (v.maximalIdeal.asIdeal.under ℤ) :=\n    Ideal.LiesOver.tower_bot v.maximalIdeal.asIdeal w.maximalIdeal.asIdeal _\n  haveI : (v.maximalIdeal.asIdeal.under ℤ).IsMaximal := under_int_isMaximal v\n  haveI : w.maximalIdeal.asIdeal.IsMaximal :=\n    w.maximalIdeal.isPrime.isMaximal w.maximalIdeal.ne_bot\n  haveI : v.maximalIdeal.asIdeal.IsMaximal :=\n    v.maximalIdeal.isPrime.isMaximal v.maximalIdeal.ne_bot\n  have h1 : inertDeg K v = (v.maximalIdeal.asIdeal.under ℤ).inertiaDeg' v.maximalIdeal.asIdeal :=\n    (Ideal.inertiaDeg'_eq_inertiaDeg _ v.maximalIdeal.asIdeal).symm\n  have h2 : inertDeg k w = (v.maximalIdeal.asIdeal.under ℤ).inertiaDeg' w.maximalIdeal.asIdeal := by\n    haveI : (w.maximalIdeal.asIdeal.under ℤ).IsMaximal := under_int_isMaximal w\n    have := (Ideal.inertiaDeg'_eq_inertiaDeg (w.maximalIdeal.asIdeal.under ℤ)\n      w.maximalIdeal.asIdeal).symm\n    rw [under_int_eq_under_int hvw]\n    exact this\n  rw [h1, h2]\n  exact Ideal.inertiaDeg'_algebra_tower _ w.maximalIdeal.asIdeal v.maximalIdeal.asIdeal\n",
+      "matchesReferenceCommand": true
+    }
+  },
+  "localDeg_eq_mul": {
+    "reference": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean",
+      "firstLine": 214,
+      "lastLine": 217,
+      "sha256": "5fab899347a2b98cc4e561be02f0cf8d66508650ee7347cd462d9dbbb524cddf",
+      "command": "lemma localDeg_eq_mul : localDeg K v = localDeg k w * (relRamIdx v w * relInertDeg v w) := by\n  unfold localDeg\n  rw [ramIdx_eq_mul hvw, inertDeg_eq_mul hvw]\n  ring\n"
+    },
+    "sourceReplay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "firstLine": 641,
+      "lastLine": 644,
+      "sha256": "5fab899347a2b98cc4e561be02f0cf8d66508650ee7347cd462d9dbbb524cddf",
+      "command": "lemma localDeg_eq_mul : localDeg K v = localDeg k w * (relRamIdx v w * relInertDeg v w) := by\n  unfold localDeg\n  rw [ramIdx_eq_mul hvw, inertDeg_eq_mul hvw]\n  ring\n",
+      "matchesReferenceCommand": true
+    },
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeDegreeTower.lean",
+      "firstLine": 73,
+      "lastLine": 76,
+      "sha256": "5fab899347a2b98cc4e561be02f0cf8d66508650ee7347cd462d9dbbb524cddf",
+      "command": "lemma localDeg_eq_mul : localDeg K v = localDeg k w * (relRamIdx v w * relInertDeg v w) := by\n  unfold localDeg\n  rw [ramIdx_eq_mul hvw, inertDeg_eq_mul hvw]\n  ring\n",
+      "matchesReferenceCommand": true
+    }
+  },
+  "relLocalDeg": {
+    "reference": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Height.lean",
+      "firstLine": 151,
+      "lastLine": 152,
+      "sha256": "b54ed94a947511cabc1f5231dd7eb8344c53d620d442ea89d8a2ba90214629b3",
+      "command": "noncomputable abbrev relLocalDeg (w : FinitePlace K) (v : FinitePlace k) : ℕ :=\n  relRamIdx w v * relInertDeg w v\n"
+    },
+    "sourceReplay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "firstLine": 1508,
+      "lastLine": 1509,
+      "sha256": "b54ed94a947511cabc1f5231dd7eb8344c53d620d442ea89d8a2ba90214629b3",
+      "command": "noncomputable abbrev relLocalDeg (w : FinitePlace K) (v : FinitePlace k) : ℕ :=\n  relRamIdx w v * relInertDeg w v\n",
+      "matchesReferenceCommand": true
+    },
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeDegreeTower.lean",
+      "firstLine": 81,
+      "lastLine": 82,
+      "sha256": "b54ed94a947511cabc1f5231dd7eb8344c53d620d442ea89d8a2ba90214629b3",
+      "command": "noncomputable abbrev relLocalDeg (w : FinitePlace K) (v : FinitePlace k) : ℕ :=\n  relRamIdx w v * relInertDeg w v\n",
+      "matchesReferenceCommand": true
+    }
+  },
+  "relLocalDeg_ne_zero": {
+    "reference": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Height.lean",
+      "firstLine": 154,
+      "lastLine": 160,
+      "sha256": "61b7bdd283ada7bf5591a02c00e854290d62297d22697d789bb3f474c3b45a4a",
+      "command": "lemma relLocalDeg_ne_zero {w : FinitePlace K} {v : FinitePlace k}\n    (hwv : FinitePlace.LiesOver w v) : relLocalDeg w v ≠ 0 := by\n  have h := inertDeg_eq_mul hwv\n  have hpos := inertDeg_pos' w\n  refine mul_ne_zero (relRamIdx_ne_zero hwv) fun h0 => ?_\n  rw [h, h0, mul_zero] at hpos\n  exact lt_irrefl _ hpos\n"
+    },
+    "sourceReplay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "firstLine": 1511,
+      "lastLine": 1517,
+      "sha256": "61b7bdd283ada7bf5591a02c00e854290d62297d22697d789bb3f474c3b45a4a",
+      "command": "lemma relLocalDeg_ne_zero {w : FinitePlace K} {v : FinitePlace k}\n    (hwv : FinitePlace.LiesOver w v) : relLocalDeg w v ≠ 0 := by\n  have h := inertDeg_eq_mul hwv\n  have hpos := inertDeg_pos' w\n  refine mul_ne_zero (relRamIdx_ne_zero hwv) fun h0 => ?_\n  rw [h, h0, mul_zero] at hpos\n  exact lt_irrefl _ hpos\n",
+      "matchesReferenceCommand": true
+    },
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeDegreeTower.lean",
+      "firstLine": 84,
+      "lastLine": 90,
+      "sha256": "61b7bdd283ada7bf5591a02c00e854290d62297d22697d789bb3f474c3b45a4a",
+      "command": "lemma relLocalDeg_ne_zero {w : FinitePlace K} {v : FinitePlace k}\n    (hwv : FinitePlace.LiesOver w v) : relLocalDeg w v ≠ 0 := by\n  have h := inertDeg_eq_mul hwv\n  have hpos := inertDeg_pos' w\n  refine mul_ne_zero (relRamIdx_ne_zero hwv) fun h0 => ?_\n  rw [h, h0, mul_zero] at hpos\n  exact lt_irrefl _ hpos\n",
+      "matchesReferenceCommand": true
+    }
+  },
+  "sum_localDeg_liesOver": {
+    "reference": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Concrete/ThetaLocalConstruct/Ordp.lean",
+      "firstLine": 245,
+      "lastLine": 275,
+      "sha256": "308b396096fb3775ff48fe4d349ea3c096d9a03c463a2693628895fbb821ad5f",
+      "command": "theorem sum_localDeg_liesOver (w : FinitePlace k) (s : Finset (FinitePlace K))\n    (hs : ∀ v, v ∈ s ↔ FinitePlace.LiesOver v w) :\n    ∑ v ∈ s, localDeg K v = Module.finrank k K * localDeg k w := by\n  classical\n  haveI : w.maximalIdeal.asIdeal.IsMaximal :=\n    w.maximalIdeal.isPrime.isMaximal w.maximalIdeal.ne_bot\n  have hp0 : w.maximalIdeal.asIdeal ≠ ⊥ := w.maximalIdeal.ne_bot\n  have hsum := Ideal.sum_ramification_inertia (𝓞 K) k K hp0 (p := w.maximalIdeal.asIdeal)\n  have hbij : ∑ v ∈ s, (relRamIdx v w * relInertDeg v w) =\n      ∑ P ∈ IsDedekindDomain.primesOverFinset w.maximalIdeal.asIdeal (𝓞 K),\n        w.maximalIdeal.asIdeal.ramificationIdx' P * w.maximalIdeal.asIdeal.inertiaDeg' P := by\n    refine Finset.sum_bij (fun v _ => v.maximalIdeal.asIdeal) ?_ ?_ ?_ ?_\n    · intro v hv\n      haveI : v.maximalIdeal.asIdeal.LiesOver w.maximalIdeal.asIdeal := (hs v).mp hv\n      exact (IsDedekindDomain.mem_primesOverFinset_iff hp0 (𝓞 K)).mpr ⟨inferInstance, inferInstance⟩\n    · intro v₁ _ v₂ _ h\n      exact (FinitePlace.maximalIdeal_inj _ _).mp (HeightOneSpectrum.ext h)\n    · intro P hP\n      obtain ⟨hprime, hover⟩ := (IsDedekindDomain.mem_primesOverFinset_iff hp0 (𝓞 K)).mp hP\n      have hne : P ≠ ⊥ := Ideal.ne_bot_of_liesOver_of_ne_bot hp0 P\n      refine ⟨FinitePlace.mk ⟨P, hprime, hne⟩, ?_, ?_⟩\n      · rw [hs]\n        unfold FinitePlace.LiesOver\n        rw [FinitePlace.maximalIdeal_mk]\n        exact hover\n      · rw [FinitePlace.maximalIdeal_mk]\n    · intro v _\n      rfl\n  have h : ∀ v ∈ s, localDeg K v = localDeg k w * (relRamIdx v w * relInertDeg v w) :=\n    fun v hv => localDeg_eq_mul ((hs v).mp hv)\n  rw [Finset.sum_congr rfl h, ← Finset.mul_sum, hbij, hsum, mul_comm]\n"
+    },
+    "sourceReplay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "firstLine": 654,
+      "lastLine": 684,
+      "sha256": "308b396096fb3775ff48fe4d349ea3c096d9a03c463a2693628895fbb821ad5f",
+      "command": "theorem sum_localDeg_liesOver (w : FinitePlace k) (s : Finset (FinitePlace K))\n    (hs : ∀ v, v ∈ s ↔ FinitePlace.LiesOver v w) :\n    ∑ v ∈ s, localDeg K v = Module.finrank k K * localDeg k w := by\n  classical\n  haveI : w.maximalIdeal.asIdeal.IsMaximal :=\n    w.maximalIdeal.isPrime.isMaximal w.maximalIdeal.ne_bot\n  have hp0 : w.maximalIdeal.asIdeal ≠ ⊥ := w.maximalIdeal.ne_bot\n  have hsum := Ideal.sum_ramification_inertia (𝓞 K) k K hp0 (p := w.maximalIdeal.asIdeal)\n  have hbij : ∑ v ∈ s, (relRamIdx v w * relInertDeg v w) =\n      ∑ P ∈ IsDedekindDomain.primesOverFinset w.maximalIdeal.asIdeal (𝓞 K),\n        w.maximalIdeal.asIdeal.ramificationIdx' P * w.maximalIdeal.asIdeal.inertiaDeg' P := by\n    refine Finset.sum_bij (fun v _ => v.maximalIdeal.asIdeal) ?_ ?_ ?_ ?_\n    · intro v hv\n      haveI : v.maximalIdeal.asIdeal.LiesOver w.maximalIdeal.asIdeal := (hs v).mp hv\n      exact (IsDedekindDomain.mem_primesOverFinset_iff hp0 (𝓞 K)).mpr ⟨inferInstance, inferInstance⟩\n    · intro v₁ _ v₂ _ h\n      exact (FinitePlace.maximalIdeal_inj _ _).mp (HeightOneSpectrum.ext h)\n    · intro P hP\n      obtain ⟨hprime, hover⟩ := (IsDedekindDomain.mem_primesOverFinset_iff hp0 (𝓞 K)).mp hP\n      have hne : P ≠ ⊥ := Ideal.ne_bot_of_liesOver_of_ne_bot hp0 P\n      refine ⟨FinitePlace.mk ⟨P, hprime, hne⟩, ?_, ?_⟩\n      · rw [hs]\n        unfold FinitePlace.LiesOver\n        rw [FinitePlace.maximalIdeal_mk]\n        exact hover\n      · rw [FinitePlace.maximalIdeal_mk]\n    · intro v _\n      rfl\n  have h : ∀ v ∈ s, localDeg K v = localDeg k w * (relRamIdx v w * relInertDeg v w) :=\n    fun v hv => localDeg_eq_mul ((hs v).mp hv)\n  rw [Finset.sum_congr rfl h, ← Finset.mul_sum, hbij, hsum, mul_comm]\n",
+      "matchesReferenceCommand": true
+    },
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeDegreeSum.lean",
+      "firstLine": 18,
+      "lastLine": 48,
+      "sha256": "308b396096fb3775ff48fe4d349ea3c096d9a03c463a2693628895fbb821ad5f",
+      "command": "theorem sum_localDeg_liesOver (w : FinitePlace k) (s : Finset (FinitePlace K))\n    (hs : ∀ v, v ∈ s ↔ FinitePlace.LiesOver v w) :\n    ∑ v ∈ s, localDeg K v = Module.finrank k K * localDeg k w := by\n  classical\n  haveI : w.maximalIdeal.asIdeal.IsMaximal :=\n    w.maximalIdeal.isPrime.isMaximal w.maximalIdeal.ne_bot\n  have hp0 : w.maximalIdeal.asIdeal ≠ ⊥ := w.maximalIdeal.ne_bot\n  have hsum := Ideal.sum_ramification_inertia (𝓞 K) k K hp0 (p := w.maximalIdeal.asIdeal)\n  have hbij : ∑ v ∈ s, (relRamIdx v w * relInertDeg v w) =\n      ∑ P ∈ IsDedekindDomain.primesOverFinset w.maximalIdeal.asIdeal (𝓞 K),\n        w.maximalIdeal.asIdeal.ramificationIdx' P * w.maximalIdeal.asIdeal.inertiaDeg' P := by\n    refine Finset.sum_bij (fun v _ => v.maximalIdeal.asIdeal) ?_ ?_ ?_ ?_\n    · intro v hv\n      haveI : v.maximalIdeal.asIdeal.LiesOver w.maximalIdeal.asIdeal := (hs v).mp hv\n      exact (IsDedekindDomain.mem_primesOverFinset_iff hp0 (𝓞 K)).mpr ⟨inferInstance, inferInstance⟩\n    · intro v₁ _ v₂ _ h\n      exact (FinitePlace.maximalIdeal_inj _ _).mp (HeightOneSpectrum.ext h)\n    · intro P hP\n      obtain ⟨hprime, hover⟩ := (IsDedekindDomain.mem_primesOverFinset_iff hp0 (𝓞 K)).mp hP\n      have hne : P ≠ ⊥ := Ideal.ne_bot_of_liesOver_of_ne_bot hp0 P\n      refine ⟨FinitePlace.mk ⟨P, hprime, hne⟩, ?_, ?_⟩\n      · rw [hs]\n        unfold FinitePlace.LiesOver\n        rw [FinitePlace.maximalIdeal_mk]\n        exact hover\n      · rw [FinitePlace.maximalIdeal_mk]\n    · intro v _\n      rfl\n  have h : ∀ v ∈ s, localDeg K v = localDeg k w * (relRamIdx v w * relInertDeg v w) :=\n    fun v hv => localDeg_eq_mul ((hs v).mp hv)\n  rw [Finset.sum_congr rfl h, ← Finset.mul_sum, hbij, hsum, mul_comm]\n",
+      "matchesReferenceCommand": true
+    }
+  },
+  "sum_relLocalDeg_liesOver": {
+    "reference": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Height.lean",
+      "firstLine": 188,
+      "lastLine": 197,
+      "sha256": "6ee767fcd7a37a93c206c171a3268ba4111cb89b8bf3df6ef97f24173bdd823f",
+      "command": "lemma sum_relLocalDeg_liesOver (v : FinitePlace k) (s : Finset (FinitePlace K))\n    (hs : ∀ w, w ∈ s ↔ FinitePlace.LiesOver w v) :\n    ∑ w ∈ s, relLocalDeg w v = Module.finrank k K := by\n  have h := sum_localDeg_liesOver v s hs\n  have h' : ∑ w ∈ s, localDeg K w = localDeg k v * ∑ w ∈ s, relLocalDeg w v := by\n    rw [Finset.mul_sum]\n    exact Finset.sum_congr rfl fun w hw => localDeg_eq_mul ((hs w).mp hw)\n  have hpos : 0 < localDeg k v := Nat.mul_pos (ramIdx_pos' v) (inertDeg_pos' v)\n  rw [h', mul_comm (Module.finrank k K)] at h\n  exact Nat.eq_of_mul_eq_mul_left hpos h\n"
+    },
+    "sourceReplay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "firstLine": 1545,
+      "lastLine": 1554,
+      "sha256": "6ee767fcd7a37a93c206c171a3268ba4111cb89b8bf3df6ef97f24173bdd823f",
+      "command": "lemma sum_relLocalDeg_liesOver (v : FinitePlace k) (s : Finset (FinitePlace K))\n    (hs : ∀ w, w ∈ s ↔ FinitePlace.LiesOver w v) :\n    ∑ w ∈ s, relLocalDeg w v = Module.finrank k K := by\n  have h := sum_localDeg_liesOver v s hs\n  have h' : ∑ w ∈ s, localDeg K w = localDeg k v * ∑ w ∈ s, relLocalDeg w v := by\n    rw [Finset.mul_sum]\n    exact Finset.sum_congr rfl fun w hw => localDeg_eq_mul ((hs w).mp hw)\n  have hpos : 0 < localDeg k v := Nat.mul_pos (ramIdx_pos' v) (inertDeg_pos' v)\n  rw [h', mul_comm (Module.finrank k K)] at h\n  exact Nat.eq_of_mul_eq_mul_left hpos h\n",
+      "matchesReferenceCommand": true
+    },
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeDegreeSum.lean",
+      "firstLine": 51,
+      "lastLine": 60,
+      "sha256": "6ee767fcd7a37a93c206c171a3268ba4111cb89b8bf3df6ef97f24173bdd823f",
+      "command": "lemma sum_relLocalDeg_liesOver (v : FinitePlace k) (s : Finset (FinitePlace K))\n    (hs : ∀ w, w ∈ s ↔ FinitePlace.LiesOver w v) :\n    ∑ w ∈ s, relLocalDeg w v = Module.finrank k K := by\n  have h := sum_localDeg_liesOver v s hs\n  have h' : ∑ w ∈ s, localDeg K w = localDeg k v * ∑ w ∈ s, relLocalDeg w v := by\n    rw [Finset.mul_sum]\n    exact Finset.sum_congr rfl fun w hw => localDeg_eq_mul ((hs w).mp hw)\n  have hpos : 0 < localDeg k v := Nat.mul_pos (ramIdx_pos' v) (inertDeg_pos' v)\n  rw [h', mul_comm (Module.finrank k K)] at h\n  exact Nat.eq_of_mul_eq_mul_left hpos h\n",
+      "matchesReferenceCommand": true
+    }
+  },
+  "apply_algebraMap_eq_pow": {
+    "reference": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Height.lean",
+      "firstLine": 163,
+      "lastLine": 179,
+      "sha256": "0f7365640b676f5a83ae0d0ba80e265eb3aefcd85ac585405a24b47cdba15114",
+      "command": "lemma apply_algebraMap_eq_pow {w : FinitePlace K} {v : FinitePlace k}\n    (hwv : FinitePlace.LiesOver w v) (y : k) :\n    w (algebraMap k K y) = v y ^ relLocalDeg w v := by\n  by_cases hy : y = 0\n  · subst hy\n    rw [map_zero, map_zero, map_zero, zero_pow (relLocalDeg_ne_zero hwv)]\n  have hy' : algebraMap k K y ≠ 0 := (map_ne_zero _).mpr hy\n  have hpos : 0 < w (algebraMap k K y) := FinitePlace.pos_iff.mpr hy'\n  have hpos' : 0 < v y := FinitePlace.pos_iff.mpr hy\n  have hlog : Real.log (w (algebraMap k K y)) = relLocalDeg w v * Real.log (v y) := by\n    rw [Iut.Tripod.log_apply_eq w hy', Iut.Tripod.log_apply_eq v hy,\n      valuation_algebraMap_eq_pow hwv, log_pow, inertDeg_eq_mul hwv,\n      residueChar_eq_of_liesOver hwv]\n    simp only [nsmul_eq_mul]\n    push_cast\n    ring\n  rw [← Real.exp_log hpos, hlog, ← Real.log_pow, Real.exp_log (pow_pos hpos' _)]\n"
+    },
+    "sourceReplay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "firstLine": 1520,
+      "lastLine": 1536,
+      "sha256": "0f7365640b676f5a83ae0d0ba80e265eb3aefcd85ac585405a24b47cdba15114",
+      "command": "lemma apply_algebraMap_eq_pow {w : FinitePlace K} {v : FinitePlace k}\n    (hwv : FinitePlace.LiesOver w v) (y : k) :\n    w (algebraMap k K y) = v y ^ relLocalDeg w v := by\n  by_cases hy : y = 0\n  · subst hy\n    rw [map_zero, map_zero, map_zero, zero_pow (relLocalDeg_ne_zero hwv)]\n  have hy' : algebraMap k K y ≠ 0 := (map_ne_zero _).mpr hy\n  have hpos : 0 < w (algebraMap k K y) := FinitePlace.pos_iff.mpr hy'\n  have hpos' : 0 < v y := FinitePlace.pos_iff.mpr hy\n  have hlog : Real.log (w (algebraMap k K y)) = relLocalDeg w v * Real.log (v y) := by\n    rw [Iut.Tripod.log_apply_eq w hy', Iut.Tripod.log_apply_eq v hy,\n      valuation_algebraMap_eq_pow hwv, log_pow, inertDeg_eq_mul hwv,\n      residueChar_eq_of_liesOver hwv]\n    simp only [nsmul_eq_mul]\n    push_cast\n    ring\n  rw [← Real.exp_log hpos, hlog, ← Real.log_pow, Real.exp_log (pow_pos hpos' _)]\n",
+      "matchesReferenceCommand": true
+    },
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeAbsoluteValue.lean",
+      "firstLine": 17,
+      "lastLine": 33,
+      "sha256": "7c57d77b404ea93debe2362517b66f05e5aec5c195b8e6d6f52577148a9d89ab",
+      "command": "lemma apply_algebraMap_eq_pow {w : FinitePlace K} {v : FinitePlace k}\n    (hwv : FinitePlace.LiesOver w v) (y : k) :\n    w (algebraMap k K y) = v y ^ relLocalDeg w v := by\n  by_cases hy : y = 0\n  · subst hy\n    rw [map_zero, map_zero, map_zero, zero_pow (relLocalDeg_ne_zero hwv)]\n  have hy' : algebraMap k K y ≠ 0 := (map_ne_zero _).mpr hy\n  have hpos : 0 < w (algebraMap k K y) := FinitePlace.pos_iff.mpr hy'\n  have hpos' : 0 < v y := FinitePlace.pos_iff.mpr hy\n  have hlog : Real.log (w (algebraMap k K y)) = relLocalDeg w v * Real.log (v y) := by\n    rw [AbcAdaptation.Tripod.log_apply_eq w hy', AbcAdaptation.Tripod.log_apply_eq v hy,\n      valuation_algebraMap_eq_pow hwv, log_pow, inertDeg_eq_mul hwv,\n      residueChar_eq_of_liesOver hwv]\n    simp only [nsmul_eq_mul]\n    push_cast\n    ring\n  rw [← Real.exp_log hpos, hlog, ← Real.log_pow, Real.exp_log (pow_pos hpos' _)]\n",
+      "matchesReferenceCommand": false
+    }
+  },
+  "posLog_apply_algebraMap_eq": {
+    "reference": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Height.lean",
+      "firstLine": 182,
+      "lastLine": 185,
+      "sha256": "bf2711a8410c18450418f46302ff1f404eaaa081fc6e4e4bf581971e4e8d9a7e",
+      "command": "lemma posLog_apply_algebraMap_eq {w : FinitePlace K} {v : FinitePlace k}\n    (hwv : FinitePlace.LiesOver w v) (y : k) :\n    log⁺ (w (algebraMap k K y)) = relLocalDeg w v * log⁺ (v y) := by\n  rw [apply_algebraMap_eq_pow hwv, Real.posLog_pow]\n"
+    },
+    "sourceReplay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "firstLine": 1539,
+      "lastLine": 1542,
+      "sha256": "bf2711a8410c18450418f46302ff1f404eaaa081fc6e4e4bf581971e4e8d9a7e",
+      "command": "lemma posLog_apply_algebraMap_eq {w : FinitePlace K} {v : FinitePlace k}\n    (hwv : FinitePlace.LiesOver w v) (y : k) :\n    log⁺ (w (algebraMap k K y)) = relLocalDeg w v * log⁺ (v y) := by\n  rw [apply_algebraMap_eq_pow hwv, Real.posLog_pow]\n",
+      "matchesReferenceCommand": true
+    },
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeAbsoluteValue.lean",
+      "firstLine": 36,
+      "lastLine": 39,
+      "sha256": "bf2711a8410c18450418f46302ff1f404eaaa081fc6e4e4bf581971e4e8d9a7e",
+      "command": "lemma posLog_apply_algebraMap_eq {w : FinitePlace K} {v : FinitePlace k}\n    (hwv : FinitePlace.LiesOver w v) (y : k) :\n    log⁺ (w (algebraMap k K y)) = relLocalDeg w v * log⁺ (v y) := by\n  rw [apply_algebraMap_eq_pow hwv, Real.posLog_pow]\n",
+      "matchesReferenceCommand": true
+    }
+  },
+  "finHeight_algebraMap": {
+    "reference": {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Height.lean",
+      "firstLine": 201,
+      "lastLine": 237,
+      "sha256": "3b1023099796dc1691d50a8869df36e697c2982edf0e0b648d3357e6177ac2e9",
+      "command": "theorem finHeight_algebraMap (y : k) :\n    finHeight (algebraMap k K y) = Module.finrank k K * finHeight y := by\n  classical\n  set Sk := (hasFiniteSupport_posLog y).toFinset with hSk\n  set SK := (hasFiniteSupport_posLog (algebraMap k K y)).toFinset with hSK\n  have hmemk : ∀ v, v ∈ Sk ↔ log⁺ (v y) ≠ 0 := fun v => by\n    rw [hSk, Set.Finite.mem_toFinset, Function.mem_support]\n  have hmemK : ∀ w, w ∈ SK ↔ log⁺ (w (algebraMap k K y)) ≠ 0 := fun w => by\n    rw [hSK, Set.Finite.mem_toFinset, Function.mem_support]\n  have hfib : ∀ w : FinitePlace K,\n      log⁺ (w (algebraMap k K y)) = relLocalDeg w (placeUnder w) * log⁺ (placeUnder w y) :=\n    fun w => posLog_apply_algebraMap_eq (liesOver_placeUnder w) y\n  have hmaps : ∀ w ∈ SK, placeUnder w ∈ Sk := by\n    intro w hw\n    rw [hmemK, hfib] at hw\n    rw [hmemk]\n    exact (mul_ne_zero_iff.mp hw).2\n  rw [finHeight_eq_sum fun w hw => (hmemK w).mpr hw, finHeight_eq_sum fun v hv => (hmemk v).mpr hv,\n    ← Finset.sum_fiberwise_of_maps_to hmaps, Finset.mul_sum]\n  refine Finset.sum_congr rfl fun v hv => ?_\n  have hs : ∀ w, w ∈ SK.filter (fun w => placeUnder w = v) ↔ FinitePlace.LiesOver w v := by\n    intro w\n    rw [Finset.mem_filter, hmemK]\n    constructor\n    · rintro ⟨-, rfl⟩\n      exact liesOver_placeUnder w\n    · intro hwv\n      have hv' := placeUnder_eq_of_liesOver_place hwv\n      refine ⟨?_, hv'⟩\n      rw [hfib, hv']\n      exact mul_ne_zero (by exact_mod_cast relLocalDeg_ne_zero hwv) ((hmemk v).mp hv)\n  calc ∑ w ∈ SK.filter (fun w => placeUnder w = v), log⁺ (w (algebraMap k K y))\n      = ∑ w ∈ SK.filter (fun w => placeUnder w = v), (relLocalDeg w v : ℝ) * log⁺ (v y) := by\n        refine Finset.sum_congr rfl fun w hw => ?_\n        rw [posLog_apply_algebraMap_eq ((hs w).mp hw)]\n    _ = (Module.finrank k K : ℝ) * log⁺ (v y) := by\n        rw [← Finset.sum_mul, ← Nat.cast_sum, sum_relLocalDeg_liesOver v _ hs]\n"
+    },
+    "sourceReplay": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean",
+      "firstLine": 1558,
+      "lastLine": 1599,
+      "sha256": "8fa8e029747f9878a9f7e59fc8f337a6f01090f1fe5a791d149c4da4ba8a1b29",
+      "command": "theorem finHeight_algebraMap (y : k) :\n    finHeight (algebraMap k K y) = Module.finrank k K * finHeight y := by\n  classical\n  set Sk := (hasFiniteSupport_posLog y).toFinset with hSk\n  set SK := (hasFiniteSupport_posLog (algebraMap k K y)).toFinset with hSK\n  have hmemk : ∀ v, v ∈ Sk ↔ log⁺ (v y) ≠ 0 := fun v => by\n    have hs : (Function.support (fun v : FinitePlace k => log⁺ (v y))).Finite :=\n      hasFiniteSupport_posLog y\n    exact Set.Finite.mem_toFinset hs\n  have hmemK : ∀ w, w ∈ SK ↔ log⁺ (w (algebraMap k K y)) ≠ 0 := fun w => by\n    have hs : (Function.support\n        (fun w : FinitePlace K => log⁺ (w (algebraMap k K y)))).Finite :=\n      hasFiniteSupport_posLog (algebraMap k K y)\n    exact Set.Finite.mem_toFinset hs\n  have hfib : ∀ w : FinitePlace K,\n      log⁺ (w (algebraMap k K y)) = relLocalDeg w (placeUnder w) * log⁺ (placeUnder w y) :=\n    fun w => posLog_apply_algebraMap_eq (liesOver_placeUnder w) y\n  have hmaps : ∀ w ∈ SK, placeUnder w ∈ Sk := by\n    intro w hw\n    rw [hmemK, hfib] at hw\n    rw [hmemk]\n    exact (mul_ne_zero_iff.mp hw).2\n  rw [finHeight_eq_sum fun w hw => (hmemK w).mpr hw, finHeight_eq_sum fun v hv => (hmemk v).mpr hv,\n    ← Finset.sum_fiberwise_of_maps_to hmaps, Finset.mul_sum]\n  refine Finset.sum_congr rfl fun v hv => ?_\n  have hs : ∀ w, w ∈ SK.filter (fun w => placeUnder w = v) ↔ FinitePlace.LiesOver w v := by\n    intro w\n    rw [Finset.mem_filter, hmemK]\n    constructor\n    · rintro ⟨-, rfl⟩\n      exact liesOver_placeUnder w\n    · intro hwv\n      have hv' := placeUnder_eq_of_liesOver_place hwv\n      refine ⟨?_, hv'⟩\n      rw [hfib, hv']\n      exact mul_ne_zero (by exact_mod_cast relLocalDeg_ne_zero hwv) ((hmemk v).mp hv)\n  calc ∑ w ∈ SK.filter (fun w => placeUnder w = v), log⁺ (w (algebraMap k K y))\n      = ∑ w ∈ SK.filter (fun w => placeUnder w = v), (relLocalDeg w v : ℝ) * log⁺ (v y) := by\n        refine Finset.sum_congr rfl fun w hw => ?_\n        rw [posLog_apply_algebraMap_eq ((hs w).mp hw)]\n    _ = (Module.finrank k K : ℝ) * log⁺ (v y) := by\n        rw [← Finset.sum_mul, ← Nat.cast_sum, sum_relLocalDeg_liesOver v _ hs]\n",
+      "matchesReferenceCommand": false
+    },
+    "target": {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodFiniteHeightExtension.lean",
+      "firstLine": 21,
+      "lastLine": 61,
+      "sha256": "3b73a6defe44af1f14619a2665c414fc933ad9c884eeaf4969ca94782b964600",
+      "command": "theorem finHeight_algebraMap (y : k) :\n    finHeight (algebraMap k K y) = Module.finrank k K * finHeight y := by\n  classical\n  have hk : (Function.support fun v : FinitePlace k => log⁺ (v y)).Finite :=\n    hasFiniteSupport_posLog y\n  have hK : (Function.support fun w : FinitePlace K => log⁺ (w (algebraMap k K y))).Finite :=\n    hasFiniteSupport_posLog (algebraMap k K y)\n  set Sk := hk.toFinset with hSk\n  set SK := hK.toFinset with hSK\n  have hmemk : ∀ v, v ∈ Sk ↔ log⁺ (v y) ≠ 0 := fun v => by\n    rw [hSk, Set.Finite.mem_toFinset, Function.mem_support]\n  have hmemK : ∀ w, w ∈ SK ↔ log⁺ (w (algebraMap k K y)) ≠ 0 := fun w => by\n    rw [hSK, Set.Finite.mem_toFinset, Function.mem_support]\n  have hfib : ∀ w : FinitePlace K,\n      log⁺ (w (algebraMap k K y)) = relLocalDeg w (placeUnder w) * log⁺ (placeUnder w y) :=\n    fun w => posLog_apply_algebraMap_eq (liesOver_placeUnder w) y\n  have hmaps : ∀ w ∈ SK, placeUnder w ∈ Sk := by\n    intro w hw\n    rw [hmemK, hfib] at hw\n    rw [hmemk]\n    exact (mul_ne_zero_iff.mp hw).2\n  rw [finHeight_eq_sum fun w hw => (hmemK w).mpr hw, finHeight_eq_sum fun v hv => (hmemk v).mpr hv,\n    ← Finset.sum_fiberwise_of_maps_to hmaps, Finset.mul_sum]\n  refine Finset.sum_congr rfl fun v hv => ?_\n  have hs : ∀ w, w ∈ SK.filter (fun w => placeUnder w = v) ↔ FinitePlace.LiesOver w v := by\n    intro w\n    rw [Finset.mem_filter, hmemK]\n    constructor\n    · rintro ⟨-, rfl⟩\n      exact liesOver_placeUnder w\n    · intro hwv\n      have hv' := placeUnder_eq_of_liesOver_place hwv\n      refine ⟨?_, hv'⟩\n      rw [hfib, hv']\n      exact mul_ne_zero (by exact_mod_cast relLocalDeg_ne_zero hwv) ((hmemk v).mp hv)\n  calc ∑ w ∈ SK.filter (fun w => placeUnder w = v), log⁺ (w (algebraMap k K y))\n      = ∑ w ∈ SK.filter (fun w => placeUnder w = v), (relLocalDeg w v : ℝ) * log⁺ (v y) := by\n        refine Finset.sum_congr rfl fun w hw => ?_\n        rw [posLog_apply_algebraMap_eq ((hs w).mp hw)]\n    _ = (Module.finrank k K : ℝ) * log⁺ (v y) := by\n        rw [← Finset.sum_mul, ← Nat.cast_sum, sum_relLocalDeg_liesOver v _ hs]\n",
+      "matchesReferenceCommand": false
+    }
+  }
+}

@@ -1,0 +1,79 @@
+import Mathlib.NumberTheory.Chebyshev
+import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Analysis.Complex.ExponentialBounds
+
+namespace AbcAdaptation.Reference
+
+
+
+universe w
+
+namespace Iut
+
+open Finset Real
+
+structure ChebyshevBound where
+    ξ : ℝ
+    five_le : 5 ≤ ξ
+    lower : ∀ x : ℝ, ξ ≤ x → 2 / 3 * x ≤ Chebyshev.theta x
+    upper : ∀ x : ℝ, ξ ≤ x → Chebyshev.theta x ≤ 2 * x
+
+noncomputable def thetaSet (A : Finset ℕ) : ℝ := ∑ p ∈ A, Real.log p
+
+
+
+
+
+
+
+
+
+
+
+namespace ChebyshevBound
+
+variable (cheb : ChebyshevBound)
+
+
+
+end ChebyshevBound
+
+structure LocalHeightData : Type (w + 1) where
+    ι : Type w
+    bad : Finset ι
+    p : ι → ℕ
+    hv : ι → ℕ
+    f : ι → ℕ
+    deg : ℕ
+    one_le_deg : 1 ≤ deg
+    p_prime : ∀ v ∈ bad, (p v).Prime
+    one_le_hv : ∀ v ∈ bad, 1 ≤ hv v
+    one_le_f : ∀ v ∈ bad, 1 ≤ f v
+    sum_f_le : ∀ q : ℕ, ∑ v ∈ bad.filter (fun v => p v = q), f v ≤ deg
+
+namespace LocalHeightData
+
+variable (L : LocalHeightData)
+
+noncomputable def height : ℝ :=
+  (∑ v ∈ L.bad, (L.hv v : ℝ) * L.f v * Real.log (L.p v)) / L.deg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+end LocalHeightData
+
+end Iut
+
+end AbcAdaptation.Reference

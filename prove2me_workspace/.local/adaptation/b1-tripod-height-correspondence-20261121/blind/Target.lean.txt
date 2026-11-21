@@ -1,0 +1,7 @@
+import Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight
+import Definitions.Def_TripodCanonicalHighHeightInputs
+
+open AbcAdaptation.Tripod
+
+theorem AbcAdaptation.Tripod.h_eq_finHeight_div (P : CurveProviders) (x : Pt) :
+    P.h x = finHeight (legendreJ (gen x.1)) / deg x.1

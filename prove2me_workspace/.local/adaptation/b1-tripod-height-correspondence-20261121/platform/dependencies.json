@@ -1,0 +1,92 @@
+{
+  "target": "AbcAdaptation.Tripod.h_eq_finHeight_div",
+  "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/Height.lean#L603",
+  "statementImports": [
+    "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight",
+    "Definitions.Def_TripodCanonicalHighHeightInputs"
+  ],
+  "solutionImports": [
+    "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight",
+    "Definitions.Def_TripodCanonicalHighHeightInputs",
+    "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_JTransport",
+    "Theorems.Thm_AbcAdaptation_Tripod_finrank_mul_h_eq_finHeight",
+    "Theorems.Thm_AbcAdaptation_Tripod_finHeight_mapEquiv",
+    "Theorems.Thm_AbcAdaptation_Tripod_finHeight_algebraMap",
+    "Mathlib.Tactic.Ring",
+    "Lean.Elab.Tactic.NormCast"
+  ],
+  "sourceTheoremCommandSha256": "d2dbfc4ae022867e8abdaa84810ed6e30d3a3dafb7232212f9b1c42ef25a355b",
+  "targetTheoremCommandSha256": "d2dbfc4ae022867e8abdaa84810ed6e30d3a3dafb7232212f9b1c42ef25a355b",
+  "solutionProofBodySha256": "320213491abb952101876c284cb9ced7202be7ed80cae8458d3b142b072aed82",
+  "definitionPackagesInDependencyOrder": [
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_FieldInvariant",
+      "file": "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FieldInvariant.lean",
+      "sourceSha256": "9786fe19f317aacec2c4af59039791bbcc44ecff26109c3c58cf9f1fc20afedc",
+      "imports": [
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_EllipticCurveData",
+        "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point",
+        "Mathlib.Algebra.Module.Torsion.Basic",
+        "Mathlib.FieldTheory.IntermediateField.Adjoin.Basic"
+      ]
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_FieldLegendreFacts",
+      "file": "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FieldLegendreFacts.lean",
+      "sourceSha256": "478a6aa70dfcec45be828b69b2a96c1f28a8cfe0d1cb193c6f530b408f378859",
+      "imports": [
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_LegendreModel",
+        "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.LinearCombination",
+        "Mathlib.Tactic.FieldSimp"
+      ]
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_FieldIdentification",
+      "file": "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FieldIdentification.lean",
+      "sourceSha256": "f7840162e1c8f24dc2f67178ea5d45d5ccaea27782a2e84550d21eb22cc35b54",
+      "imports": [
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviders",
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_FieldInvariant",
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_FieldLegendreFacts"
+      ]
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_FieldTransport",
+      "file": "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_FieldTransport.lean",
+      "sourceSha256": "d9d9d16100dc61108548a3be51846208ae096d048e8b72ce548d7010462e878a",
+      "imports": [
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_FieldIdentification"
+      ]
+    },
+    {
+      "module": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_JTransport",
+      "file": "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_JTransport.lean",
+      "sourceSha256": "5776d90497a8fc94b2fd337742b6072f31088bcfa71906bd5b22c8a223225bc2",
+      "imports": [
+        "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_FieldTransport",
+        "Definitions.Def_TripodCanonicalHighHeightInputs"
+      ]
+    }
+  ],
+  "archivedPlatformDependencies": [
+    {
+      "name": "AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight",
+      "id": "3ac4b294-b315-40ed-a3c1-ba72b9a3fdab",
+      "status": "published"
+    },
+    {
+      "name": "AbcAdaptation.Tripod.finrank_mul_h_eq_finHeight",
+      "id": "e7ec8de2-9b70-4787-85e3-c22303ff9616",
+      "status": "Proved"
+    },
+    {
+      "name": "AbcAdaptation.Tripod.finHeight_mapEquiv",
+      "id": "92e7ddc1-91ad-4c7b-aff5-e3295561cecc",
+      "status": "Open"
+    }
+  ],
+  "pendingPlatformDependency": "AbcAdaptation.Tripod.finHeight_algebraMap"
+}

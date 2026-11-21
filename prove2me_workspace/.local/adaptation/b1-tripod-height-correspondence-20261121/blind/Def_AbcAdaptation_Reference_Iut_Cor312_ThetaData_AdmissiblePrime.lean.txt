@@ -1,0 +1,143 @@
+import Mathlib.Algebra.Algebra.Defs
+import Mathlib.Algebra.Algebra.Equiv
+import Mathlib.Algebra.Algebra.Rat
+import Mathlib.Algebra.CharZero.Infinite
+import Mathlib.Algebra.Field.Defs
+import Mathlib.Algebra.Field.Rat
+import Mathlib.Algebra.Group.Action.Defs
+import Mathlib.Algebra.Group.Basic
+import Mathlib.Algebra.Group.Defs
+import Mathlib.Algebra.Group.Equiv.Defs
+import Mathlib.Algebra.Group.Hom.Defs
+import Mathlib.Algebra.Group.Subgroup.Defs
+import Mathlib.Algebra.Group.Subgroup.Ker
+import Mathlib.Algebra.Group.Units.Defs
+import Mathlib.Algebra.GroupWithZero.Action.Defs
+import Mathlib.Algebra.Module.Defs
+import Mathlib.Algebra.Module.Torsion.Basic
+import Mathlib.Algebra.Notation.Pi.Defs
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.Algebra.Ring.Hom.Defs
+import Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Basic
+import Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point
+import Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass
+import Mathlib.Data.Finite.Defs
+import Mathlib.Data.FunLike.Basic
+import Mathlib.Data.FunLike.Equiv
+import Mathlib.Data.SetLike.Basic
+import Mathlib.Data.Fintype.Basic
+import Mathlib.Data.Int.Cast.Defs
+import Mathlib.Data.Matrix.Mul
+import Mathlib.Data.Nat.Prime.Defs
+import Mathlib.Data.Set.Defs
+import Mathlib.Data.ZMod.Defs
+import Mathlib.FieldTheory.Galois.Basic
+import Mathlib.FieldTheory.IntermediateField.Basic
+import Mathlib.FieldTheory.KrullTopology
+import Mathlib.LinearAlgebra.Matrix.Defs
+import Mathlib.LinearAlgebra.Matrix.GeneralLinearGroup.Defs
+import Mathlib.LinearAlgebra.Matrix.SpecialLinearGroup
+import Mathlib.NumberTheory.NumberField.Basic
+import Mathlib.NumberTheory.NumberField.Completion.FinitePlace
+import Mathlib.RingTheory.DedekindDomain.AdicValuation
+import Mathlib.Topology.Defs.Basic
+import Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_GlobalField
+import Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_Places
+import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_Basic
+import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_NormalizedOrder
+import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_PrimeToOrder
+import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_JInvariant
+
+set_option relaxedAutoImplicit false
+set_option maxSynthPendingDepth 3
+
+namespace AbcAdaptation.Reference
+
+
+namespace Iut
+
+open NumberField IsDedekindDomain WeierstrassCurve TateCurvesTheta
+
+section GaloisAction
+
+variable (F : Type*) [Field F] [NumberField F] (E : WeierstrassCurve F) [E.IsElliptic]
+
+variable (Fbar : Type*) [Field Fbar] [Algebra F Fbar]
+
+open scoped Classical in
+noncomputable def galPointMap (σ : Fbar ≃ₐ[F] Fbar) :
+    Affine.Point (Affine.baseChange E Fbar) →+ Affine.Point (Affine.baseChange E Fbar) :=
+  Affine.Point.map (W' := E) σ.toAlgHom
+
+omit [NumberField F] [E.IsElliptic] in
+open scoped Classical in
+lemma galPointMap_torsionBy (σ : Fbar ≃ₐ[F] Fbar) {n : ℕ}
+    {P : Affine.Point (Affine.baseChange E Fbar)}
+    (hP : P ∈ AddSubgroup.torsionBy (Affine.Point (Affine.baseChange E Fbar)) n) :
+    galPointMap F E Fbar σ P ∈
+      AddSubgroup.torsionBy (Affine.Point (Affine.baseChange E Fbar)) n := by
+  rw [AddSubgroup.torsionBy.nsmul_iff] at hP ⊢
+  rw [← map_nsmul, hP, map_zero]
+
+end GaloisAction
+
+section LocalCompletion
+
+variable {F : Type*} [Field F] [NumberField F]
+
+noncomputable abbrev localCompletion (w : FinitePlace F) : Type _ :=
+  w.maximalIdeal.adicCompletion F
+
+end LocalCompletion
+
+section Data
+
+variable (F : Type*) [Field F] [NumberField F] (E : WeierstrassCurve F) [E.IsElliptic]
+
+variable (Fbar : Type*) [Field Fbar] [Algebra F Fbar]
+
+variable (VBad : Set (FinitePlace ↥(fieldOfModuli F E)))
+
+open scoped Classical in
+structure AdmissiblePrimeData : Type _ where
+    ℓ : ℕ
+    ℓ_prime : ℓ.Prime
+    five_le : 5 ≤ ℓ
+    torsionBasis :
+    AddSubgroup.torsionBy (Affine.Point (Affine.baseChange E Fbar)) ℓ ≃+
+      (Fin 2 → ZMod ℓ)
+    rep : (Fbar ≃ₐ[F] Fbar) →* Matrix.GeneralLinearGroup (Fin 2) (ZMod ℓ)
+    rep_spec : ∀ (σ : Fbar ≃ₐ[F] Fbar)
+    (P : AddSubgroup.torsionBy (Affine.Point (Affine.baseChange E Fbar)) ℓ),
+    torsionBasis ⟨galPointMap F E Fbar σ P.1, galPointMap_torsionBy F E Fbar σ P.2⟩ =
+      (rep σ : Matrix (Fin 2) (Fin 2) (ZMod ℓ)).mulVec (torsionBasis P)
+    sl_le_range : ∀ A : Matrix.SpecialLinearGroup (Fin 2) (ZMod ℓ), A.toGL ∈ rep.range
+    ker_isOpen : IsOpen (rep.ker : Set (Fbar ≃ₐ[F] Fbar))
+    galois_deg_prime : IsGaloisOfDegreePrimeTo F E ℓ
+    residueChar_coprime : ∀ v ∈ VBad, Nat.Coprime ℓ (residueChar v)
+    tate : ∀ w ∈ badPlacesOver F E VBad, TateParameter (localCompletion w)
+    tateJ_eq : ∀ w (hw : w ∈ badPlacesOver F E VBad),
+    (tate w hw).tateJ = FinitePlace.embedding w.maximalIdeal E.j
+    unif : ∀ w ∈ badPlacesOver F E VBad, localCompletion w
+    unif_isUniformizer : ∀ w (hw : w ∈ badPlacesOver F E VBad),
+    IsUniformizer (unif w hw)
+    q_order_coprime : ∀ w (hw : w ∈ badPlacesOver F E VBad),
+    ((tate w hw).toOrdered (unif_isUniformizer w hw)).PrimeToOrder ℓ
+
+namespace AdmissiblePrimeData
+
+variable {F E Fbar VBad} (D : AdmissiblePrimeData F E Fbar VBad)
+
+noncomputable def torsionField : IntermediateField F Fbar :=
+  IntermediateField.fixedField D.rep.ker
+
+noncomputable def qOrder (w : FinitePlace F) (hw : w ∈ badPlacesOver F E VBad) : ℕ :=
+  ((D.tate w hw).toOrdered (D.unif_isUniformizer w hw)).orderNat
+
+end AdmissiblePrimeData
+
+end Data
+
+end Iut
+
+end AbcAdaptation.Reference

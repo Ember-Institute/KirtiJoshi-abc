@@ -1,0 +1,42 @@
+import Definitions.Def_TripodStatementIIInputs
+
+set_option autoImplicit false
+
+open NumberField
+
+namespace AbcAdaptation.Tripod
+
+noncomputable def finHeight {F : Type*} [Field F] [NumberField F] (y : F) : ℝ :=
+  ∑ᶠ v : FinitePlace F, Real.posLog (v y)
+
+noncomputable def legendreJ {F : Type*} [Field F] (z : F) : F :=
+  256 * (z ^ 2 - z + 1) ^ 3 / (z ^ 2 * (z - 1) ^ 2)
+
+noncomputable def auxiliaryHeight (x : Pt) : ℝ :=
+  finHeight (legendreJ (gen x.1)) / deg x.1
+
+noncomputable def deltaBound (d : ℕ) : ℝ := 552960 * (d : ℝ)
+
+noncomputable def epsilonE (δ h : ℝ) : ℝ :=
+  (60 * δ) ^ 2 * Real.log (2 * δ * h) / Real.sqrt h
+
+def CanonicalLegendreHeightComparison : Prop :=
+  ∀ K : CompactlyBounded, ∃ B : ℝ,
+    ∀ x : Pt, x ∈ K.set → |auxiliaryHeight x / 6 - htCan x| ≤ B
+
+def CanonicalCorollary22HighHeightEstimate : Prop :=
+  ∀ (d : ℕ), 0 < d → ∀ K : CompactlyBounded,
+    ∃ (E : Set Pt) (H C : ℝ), E.Finite ∧
+      ∀ x : Pt, x ∈ K.set → deg x.1 ≤ d → x ∉ E → H ≤ auxiliaryHeight x →
+        (1 / 6 : ℝ) * auxiliaryHeight x ≤
+            (1 + epsilonE (deltaBound d) (auxiliaryHeight x)) *
+              (logDiff x + logCond x) + C ∧
+          epsilonE (deltaBound d) (auxiliaryHeight x) ≤ 1 ∧
+          0 ≤ logDiff x + logCond x
+
+def EpsilonELargeHeight : Prop :=
+  ∀ (δ h ε : ℝ), 1 ≤ δ → 0 < ε →
+    ((60 * δ) ^ 2 * (2 * δ + 4) / ε) ^ 4 ≤ h → 1 ≤ h →
+      epsilonE δ h ≤ ε
+
+end AbcAdaptation.Tripod

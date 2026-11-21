@@ -1,0 +1,34 @@
+import Mathlib.Algebra.Field.Defs
+import Mathlib.Algebra.Group.Defs
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass
+import Mathlib.Analysis.Normed.Field.Basic
+import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_Basic
+import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Weierstrass
+import Mathlib.Topology.MetricSpace.Ultra.Basic
+
+set_option relaxedAutoImplicit false
+set_option maxSynthPendingDepth 3
+
+namespace AbcAdaptation.Reference
+
+
+noncomputable section
+
+namespace TateCurvesTheta
+
+namespace TateParameter
+
+variable {K : Type*} [NormedField K] [CompleteSpace K] [IsUltrametricDist K]
+
+variable (t : TateParameter K)
+
+def tateJ : K := t.tateCurve.c₄ ^ 3 / t.tateCurve.Δ
+
+end TateParameter
+
+end TateCurvesTheta
+
+end
+
+end AbcAdaptation.Reference

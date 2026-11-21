@@ -1,0 +1,42 @@
+import Mathlib.Algebra.Field.Defs
+import Mathlib.Algebra.Group.Basic
+import Mathlib.Algebra.Group.Defs
+import Mathlib.Algebra.Group.Units.Defs
+import Mathlib.Algebra.GroupWithZero.Units.Basic
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.Analysis.Normed.Field.Basic
+import Mathlib.Analysis.Normed.Group.Basic
+import Mathlib.Analysis.Normed.Group.Defs
+import Mathlib.Analysis.Normed.Ring.Basic
+import Mathlib.Data.Real.Basic
+
+set_option relaxedAutoImplicit false
+set_option maxSynthPendingDepth 3
+
+namespace AbcAdaptation.Reference
+
+
+open Filter Topology
+
+namespace TateCurvesTheta
+
+variable (K : Type*) [NormedField K]
+
+structure TateParameter where
+    q : Kˣ
+    norm_lt_one : ‖(q : K)‖ < 1
+
+namespace TateParameter
+
+variable {K}
+
+variable (t : TateParameter K)
+
+lemma norm_q_pos : 0 < ‖(t.q : K)‖ :=
+  norm_pos_iff.mpr t.q.ne_zero
+
+end TateParameter
+
+end TateCurvesTheta
+
+end AbcAdaptation.Reference

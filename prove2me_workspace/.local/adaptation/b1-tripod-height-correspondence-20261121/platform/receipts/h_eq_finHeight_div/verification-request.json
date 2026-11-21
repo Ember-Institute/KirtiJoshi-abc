@@ -1,0 +1,12 @@
+{
+  "request": {
+    "theorem_id": "3ba94824-130b-402a-bc95-e768360bb56d",
+    "proof_type": "prove",
+    "explanation": "Let $F$ be the field of definition of the Legendre curve supplied at $x$, and let $T\\subset F$ be its tripodal field. The normalized finite-height identity is\n$$\nh_P(x)=\\frac{h_{\\mathrm{fin},\\mathbb Q(\\lambda)}(J_\\lambda)}\n              {[\\mathbb Q(\\lambda):\\mathbb Q]},\n$$\nwhere $J_\\lambda$ is the Legendre $j$-invariant.\n\nThe finite-height sum formula identifies $[F:\\mathbb Q]\\,h_P(x)$ with the finite height in $F$ of the curve's $j$-invariant. This invariant comes from an element of $T$, so the extension formula expresses its finite height in $F$ as $[F:T]$ times the finite height of that element in $T$. The isomorphism $T\\simeq\\mathbb Q(\\lambda)$ carries the element to $J_\\lambda$ and preserves its finite height.\n\nThe tower law gives $[F:\\mathbb Q]=[F:T]\\,[\\mathbb Q(\\lambda):\\mathbb Q]$. Both factors are positive. Cancel the relative degree and divide by the absolute degree of the point field."
+  },
+  "solution_sha256": "1b57a7c37b72d08ed8cc296fa4561641afb3b9b9157d69b6da68789258a0e083",
+  "submission_id": "93da123b-c25a-4eff-b7e3-dbeee8b2bd29",
+  "status": "PENDING",
+  "message": "Proof submitted for verification. Poll GET /submission/{id} for results.",
+  "guidelines": "Reminder: write the explanation like a section of a math paper, not a tactic-by-tactic transcript. Walk through the mathematical argument and show how it maps onto your Lean code, in Markdown with KaTeX math. The explanation is the only part of a submission you can edit later, via PATCH /api/v1/submissions/:id. Full principles: references/prove.md#attach-an-explanation"
+}

@@ -1,0 +1,51 @@
+import Mathlib.Algebra.Algebra.Defs
+import Mathlib.Algebra.CharP.Defs
+import Mathlib.Algebra.Field.Defs
+import Mathlib.Algebra.Quotient
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.NumberTheory.NumberField.Basic
+import Mathlib.NumberTheory.NumberField.Completion.FinitePlace
+import Mathlib.NumberTheory.NumberField.InfinitePlace.Basic
+import Mathlib.RingTheory.DedekindDomain.Ideal.Lemmas
+import Mathlib.RingTheory.Ideal.Defs
+import Mathlib.RingTheory.Ideal.Over
+import Mathlib.RingTheory.Ideal.Quotient.Defs
+
+set_option relaxedAutoImplicit false
+set_option maxSynthPendingDepth 3
+
+namespace AbcAdaptation.Reference
+
+
+namespace Iut
+
+open NumberField
+
+variable (k : Type*) [Field k] [NumberField k]
+
+def Place : Type _ := FinitePlace k ⊕ InfinitePlace k
+
+variable {k}
+
+namespace Place
+
+def finite (w : FinitePlace k) : Place k := Sum.inl w
+
+def infinite (w : InfinitePlace k) : Place k := Sum.inr w
+
+end Place
+
+def FinitePlace.LiesOver {K : Type*} [Field K] [NumberField K] [Algebra k K]
+    (w : FinitePlace K) (v : FinitePlace k) : Prop :=
+  w.maximalIdeal.asIdeal.LiesOver v.maximalIdeal.asIdeal
+
+namespace Place
+
+end Place
+
+noncomputable def residueChar (w : FinitePlace k) : ℕ :=
+  ringChar (𝓞 k ⧸ w.maximalIdeal.asIdeal)
+
+end Iut
+
+end AbcAdaptation.Reference

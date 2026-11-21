@@ -25,7 +25,7 @@ B1 的有限高度采用有限处正对数的未除次数之和。相对分歧�
 
 ## 核表达式审查
 
-十二条源端记录均保存完整类型、定义值或证明、内核推得的值类型、绑定信息、宇宙、直接依赖和公理，按原始 JSONL 字节导出。目标审查应逐条检查完整类型的定义等价、两份完整证明项或定义值的内核类型、值的定义等价和公理。定理值适用证明无关性。先检查原始源值在兼容转换后确实具有目标类型，随后比较两份值。 [源端表达式](source-facts.jsonl) · [审查配置](review-config.json) · [审查草稿](AuditFiniteExtensionScalingCorrespondence.lean)
+十二条源端记录均保存完整类型、定义值或证明、内核推得的值类型、绑定信息、宇宙、直接依赖和公理，按原始 JSONL 字节导出。目标审查应逐条检查完整类型的定义等价、两份完整证明项或定义值的内核类型、值的定义等价和公理。定理值适用证明无关性。先检查原始源值在兼容转换后确实具有目标类型，随后比较两份值。 [源端表达式](source-facts.jsonl.gz) · [审查配置](review-config.json) · [审查草稿](AuditFiniteExtensionScalingCorrespondence.lean)
 
 首轮目标跨版本审查 `ci-023732-52a7841e` 核对了十二条完整类型和其中八条完整值。其余四条值存在可定位的库接口迁移。复验草稿在相同载体上使用目标端无挠性和域非平凡性证明，恢复相对整数环无挠性别名的两个 `NumberField` 绑定，并按目标端定理签名交换剩余次数比较所需的类型与实例参数。修复只用于重放来源值。 [主工作区首轮结果](/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-finite-extension-scaling-20261120/cross-version-result.json) · [当前修复](AuditFiniteExtensionScalingCorrespondence.lean)
 
@@ -50,4 +50,4 @@ B1 的有限高度采用有限处正对数的未除次数之和。相对分歧�
 
 ## 本轮验收
 
-`ci-023810-a4620839` 在主工作区独占模式下通过 12 条声明的完整类型、定义值或证明项及公理审查。重放 `ramIdx_eq_mul` 时，重定位从源端的 `CharZero` 投影取回原 `NumberField` 实例，保留域与域结构参数。编译退出码为 0，墙钟 69.72 秒，CPU 69.46 秒（用户态 8.03 秒，系统态 61.43 秒），进程树峰值 RSS 为 4.85 GiB，PSS 未取得。私有平台验收仍开放。 [终态回执](round-ci-023810-a4620839-result.json) · [内核结果](cross-version-result.json) · [完整表达式](cross-version-expressions.jsonl)
+`ci-023810-a4620839` 在主工作区独占模式下通过 12 条声明的完整类型、定义值或证明项及公理审查。重放 `ramIdx_eq_mul` 时，重定位从源端的 `CharZero` 投影取回原 `NumberField` 实例，保留域与域结构参数。编译退出码为 0，墙钟 69.72 秒，CPU 69.46 秒（用户态 8.03 秒，系统态 61.43 秒），进程树峰值 RSS 为 4.85 GiB，PSS 未取得。有限处算术与相对次数塔已作为私有定义发布。主定理解答获 `ACCEPTED`，节点回读为 `Proved`。 [私有验收](../b1-height-platform-20261120/SOURCE_LEDGER.md#2026-11-21-有限高度解答验收) [终态回执](round-ci-023810-a4620839-result.json) · [内核结果](cross-version-result.json) · [完整表达式](cross-version-expressions.jsonl.gz)

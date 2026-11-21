@@ -1,0 +1,64 @@
+import Mathlib.Algebra.Field.Defs
+import Mathlib.Algebra.Group.Basic
+import Mathlib.Algebra.Group.Defs
+import Mathlib.Algebra.Group.Units.Defs
+import Mathlib.Algebra.GroupWithZero.Defs
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass
+import Mathlib.Analysis.Normed.Field.Basic
+import Mathlib.Analysis.Normed.Ring.Basic
+import Mathlib.Data.Int.Cast.Defs
+import Mathlib.Data.Nat.Cast.Defs
+import Mathlib.Data.Nat.Init
+import Mathlib.Topology.Algebra.InfiniteSum.Defs
+import Mathlib.Topology.Algebra.InfiniteSum.SummationFilter
+import Mathlib.Topology.MetricSpace.Pseudo.Defs
+import Mathlib.Topology.UniformSpace.Defs
+import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_QParameter_Basic
+import Mathlib.Topology.MetricSpace.Ultra.Basic
+
+set_option relaxedAutoImplicit false
+set_option maxSynthPendingDepth 3
+
+namespace AbcAdaptation.Reference
+
+
+noncomputable section
+
+namespace TateCurvesTheta
+
+namespace TateParameter
+
+variable {K : Type*} [NormedField K]
+
+variable (t : TateParameter K)
+
+def eisenstein (k : ℕ) : K :=
+  ∑' n : ℕ, ((n + 1 : ℕ) : K) ^ k * (t.q : K) ^ (n + 1) / (1 - (t.q : K) ^ (n + 1))
+
+section Nonarchimedean
+
+variable [IsUltrametricDist K]
+
+variable [CompleteSpace K]
+
+end Nonarchimedean
+
+def a₄ : K := -5 * t.eisenstein 3
+
+def a₆ : K := -(5 * t.eisenstein 3 + 7 * t.eisenstein 5) / 12
+
+def tateCurve : WeierstrassCurve K where
+  a₁ := 1
+  a₂ := 0
+  a₃ := 0
+  a₄ := t.a₄
+  a₆ := t.a₆
+
+end TateParameter
+
+end TateCurvesTheta
+
+end
+
+end AbcAdaptation.Reference

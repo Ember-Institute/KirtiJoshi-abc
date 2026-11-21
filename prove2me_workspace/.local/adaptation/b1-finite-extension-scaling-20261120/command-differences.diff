@@ -1,0 +1,41 @@
+--- /home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Height.lean:163
++++ /home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodRelativeAbsoluteValue.lean:17
+@@ -9,5 +9,5 @@
+   have hpos' : 0 < v y := FinitePlace.pos_iff.mpr hy
+   have hlog : Real.log (w (algebraMap k K y)) = relLocalDeg w v * Real.log (v y) := by
+-    rw [Iut.Tripod.log_apply_eq w hy', Iut.Tripod.log_apply_eq v hy,
++    rw [AbcAdaptation.Tripod.log_apply_eq w hy', AbcAdaptation.Tripod.log_apply_eq v hy,
+       valuation_algebraMap_eq_pow hwv, log_pow, inertDeg_eq_mul hwv,
+       residueChar_eq_of_liesOver hwv]
+--- /home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Height.lean:201
++++ /home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/B1SourceReplay.lean:1558
+@@ -5,7 +5,12 @@
+   set SK := (hasFiniteSupport_posLog (algebraMap k K y)).toFinset with hSK
+   have hmemk : ∀ v, v ∈ Sk ↔ log⁺ (v y) ≠ 0 := fun v => by
+-    rw [hSk, Set.Finite.mem_toFinset, Function.mem_support]
++    have hs : (Function.support (fun v : FinitePlace k => log⁺ (v y))).Finite :=
++      hasFiniteSupport_posLog y
++    exact Set.Finite.mem_toFinset hs
+   have hmemK : ∀ w, w ∈ SK ↔ log⁺ (w (algebraMap k K y)) ≠ 0 := fun w => by
+-    rw [hSK, Set.Finite.mem_toFinset, Function.mem_support]
++    have hs : (Function.support
++        (fun w : FinitePlace K => log⁺ (w (algebraMap k K y)))).Finite :=
++      hasFiniteSupport_posLog (algebraMap k K y)
++    exact Set.Finite.mem_toFinset hs
+   have hfib : ∀ w : FinitePlace K,
+       log⁺ (w (algebraMap k K y)) = relLocalDeg w (placeUnder w) * log⁺ (placeUnder w y) :=
+--- /home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Height.lean:201
++++ /home/admin-wsl/Coq/abc/prove2me_workspace/Solutions/Source_TripodFiniteHeightExtension.lean:21
+@@ -2,6 +2,10 @@
+     finHeight (algebraMap k K y) = Module.finrank k K * finHeight y := by
+   classical
+-  set Sk := (hasFiniteSupport_posLog y).toFinset with hSk
+-  set SK := (hasFiniteSupport_posLog (algebraMap k K y)).toFinset with hSK
++  have hk : (Function.support fun v : FinitePlace k => log⁺ (v y)).Finite :=
++    hasFiniteSupport_posLog y
++  have hK : (Function.support fun w : FinitePlace K => log⁺ (w (algebraMap k K y))).Finite :=
++    hasFiniteSupport_posLog (algebraMap k K y)
++  set Sk := hk.toFinset with hSk
++  set SK := hK.toFinset with hSK
+   have hmemk : ∀ v, v ∈ Sk ↔ log⁺ (v y) ≠ 0 := fun v => by
+     rw [hSk, Set.Finite.mem_toFinset, Function.mem_support]

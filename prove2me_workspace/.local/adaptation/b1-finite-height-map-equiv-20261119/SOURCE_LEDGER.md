@@ -31,7 +31,7 @@
 
 提交 `review/file` 时通过 `B1_FINITE_HEIGHT_MAP_EQUIV_REVIEW_CONFIG` 提供配置文件的绝对路径。配置中的 `sourceFactsFile`、`evidenceFile` 与 `resultFile` 使用实际工作区路径。
 
-独占审查 `ci-023566-365b8789` 以退出码 0 完成。十三条声明的完整类型和值全部通过，公理均属于 Lean 标准公理。墙钟 263.30 秒，进程树峰值 RSS 4.74 GiB。源端未导出的 `Iut.FinitePlace.mapEquiv.eq_1` 仍由上文目标端审查覆盖。私有平台验收待取得。 [审查回执](round-ci-023566-365b8789-result.json) · [完整表达式证据](cross-version-expressions.jsonl) · [审查结果](cross-version-result.json)
+独占审查 `ci-023566-365b8789` 以退出码 0 完成。十三条声明的完整类型和值全部通过，公理均属于 Lean 标准公理。墙钟 263.30 秒，进程树峰值 RSS 4.74 GiB。源端未导出的 `Iut.FinitePlace.mapEquiv.eq_1` 仍由上文目标端审查覆盖。私有平台解答获 `ACCEPTED`，节点回读为 `Proved`。 [私有验收](../b1-height-platform-20261120/SOURCE_LEDGER.md#2026-11-21-有限高度解答验收) [审查回执](round-ci-023566-365b8789-result.json) · [完整表达式证据](cross-version-expressions.jsonl) · [审查结果](cross-version-result.json)
 
 ## 原文背景
 

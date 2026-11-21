@@ -1,0 +1,360 @@
+{
+  "job_id": "ci-026081-96ebef55",
+  "attempt_id": "attempt-024a7274e00d",
+  "status": "failed",
+  "submitted_at": 1795231539.2045078,
+  "started_at": 1795231539.239015,
+  "finished_at": 1795231694.4729211,
+  "queue_time_seconds": 0.03450727462768555,
+  "compile_time_seconds": 155.2339060306549,
+  "progress": {},
+  "resources": {
+    "memory_decision": {
+      "worker_pressure": "normal",
+      "host_pressure": "normal",
+      "total_worker_bytes": 10905874432
+    },
+    "cpu_time_seconds": 100.88999999999999,
+    "peak_rss_bytes": 5169061888,
+    "peak_pss_bytes": null,
+    "cpu_user_seconds": 5.18,
+    "cpu_system_seconds": 95.71,
+    "wall_time_seconds": 155.15827199999876,
+    "allocated_cpu_count": 4,
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "affinity_applied": true,
+    "affinity_error": null
+  },
+  "deduplicated": false,
+  "request": {
+    "language": "lean",
+    "project_id": "ArithmeticTeichmullerSpaces",
+    "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "target": "file",
+    "exclusive": true,
+    "task_type": "review",
+    "parameters": {
+      "source": ".local/adaptation/b1-tripod-height-correspondence-20261121/AuditTripodHeightSourceCorrespondence.lean"
+    },
+    "environment": {
+      "LEAN_PATH": "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean:/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+      "PATH": "/root/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/root/.nvm/versions/node/v22.23.2/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/root/.codex-key3/tmp/arg0-linux/codex-arg09EKFI6:/root/.cabal/bin:/root/.ghcup/bin:/root/.nvm/versions/node/v22.23.2/bin:/root/.opam/Coq900/bin:/root/.elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+      "B1_TRIPOD_HEIGHT_REVIEW_CONFIG": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/review-config.json"
+    },
+    "expected_duration": 60,
+    "expected_memory": 17179869184,
+    "session_id": "01a1f575-a867-75d1-9ba5-04ce946763c8",
+    "agent_id": "/root",
+    "worktree_manifest": {
+      "worktree_id": "/home/admin-wsl/Coq/abc",
+      "head": "ebf884c1e568c61589e708789f25aa23c400796a",
+      "modified_files": [
+        "docs/Scene1进度总览5.md",
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md"
+      ],
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/AuditTripodHeightSourceCorrespondence.lean",
+        "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/review-config.json",
+        "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/source-facts.jsonl"
+      ],
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+      },
+      "external_dependencies": [
+        {
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+        }
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+      ],
+      "input_hashes": {
+        ".local/adaptation/b1-tripod-height-correspondence-20261121/AuditTripodHeightSourceCorrespondence.lean": "347fe2d04a88cee47bf2d342c68963ba193051143ef35e7417e7e5968e576863",
+        ".local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/review-config.json": "5193aa271312770284702756fc6bf968f078e913f11c76ccea2e888b06a9aaee",
+        ".local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/source-facts.jsonl": "bf5bb6fa3c5e87625d3c4338c955dd332a81e04981a6120defd114ab7d2aa18a",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Lean.olean": "b6d86d9546713512afdbbaecee5fbc5355e06a30cd70a405f4fa061dce3d56a7",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_HeightNormalization.olean": "dc3a1cf3916067c15288be3b25fddfd9ab1b316bf01f4cccc202a6021b80de11",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_HeightNormalization.lean": "9db6448c3af49fbbda9068dc65d8a80ae221197be2521ca27404e00b8f85e564",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight.olean": "a0ecfcea4023da67c8cb72351c9b05dd22938fc08cfdaaa1744a8e420d868a51",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight.lean": "d24632c93518695858d8a9a4d6956674343836fd3440ce704c048ba3eddacee3"
+      },
+      "source_sha256": "347fe2d04a88cee47bf2d342c68963ba193051143ef35e7417e7e5968e576863",
+      "resource_estimate_basis": "First cross-version height correspondence review for field-and-j"
+    },
+    "idempotency_key": "p2m-iut-handoff-01a1f575-tripod-height-source-field-and-j-347fe2d04a88cee47b",
+    "scheduler_timeout_seconds": 660,
+    "priority": 0,
+    "profile": "default",
+    "workspace_source": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "workspace_mode": "exclusive_worktree",
+    "snapshot_manifest": {
+      "worktree_id": "/home/admin-wsl/Coq/abc",
+      "head": "ebf884c1e568c61589e708789f25aa23c400796a",
+      "modified_files": [
+        "docs/Scene1进度总览5.md",
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md"
+      ],
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/AuditTripodHeightSourceCorrespondence.lean",
+        "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/review-config.json",
+        "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/source-facts.jsonl"
+      ],
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+      },
+      "external_dependencies": [
+        {
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+        }
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+      ],
+      "input_hashes": {
+        ".local/adaptation/b1-tripod-height-correspondence-20261121/AuditTripodHeightSourceCorrespondence.lean": "347fe2d04a88cee47bf2d342c68963ba193051143ef35e7417e7e5968e576863",
+        ".local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/review-config.json": "5193aa271312770284702756fc6bf968f078e913f11c76ccea2e888b06a9aaee",
+        ".local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/source-facts.jsonl": "bf5bb6fa3c5e87625d3c4338c955dd332a81e04981a6120defd114ab7d2aa18a",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Lean.olean": "b6d86d9546713512afdbbaecee5fbc5355e06a30cd70a405f4fa061dce3d56a7",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_HeightNormalization.olean": "dc3a1cf3916067c15288be3b25fddfd9ab1b316bf01f4cccc202a6021b80de11",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_HeightNormalization.lean": "9db6448c3af49fbbda9068dc65d8a80ae221197be2521ca27404e00b8f85e564",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight.olean": "a0ecfcea4023da67c8cb72351c9b05dd22938fc08cfdaaa1744a8e420d868a51",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight.lean": "d24632c93518695858d8a9a4d6956674343836fd3440ce704c048ba3eddacee3"
+      },
+      "source_sha256": "347fe2d04a88cee47bf2d342c68963ba193051143ef35e7417e7e5968e576863",
+      "resource_estimate_basis": "First cross-version height correspondence review for field-and-j"
+    }
+  },
+  "result": {
+    "exit_code": 1,
+    "stdout": ".local/adaptation/b1-tripod-height-correspondence-20261121/AuditTripodHeightSourceCorrespondence.lean:337:0: error: Cross-version comparison failed for [Iut.Tripod.tpdEquiv_jT]. See /home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/cross-version-result.json\n",
+    "stderr": "",
+    "diagnostics": [
+      {
+        "path": ".local/adaptation/b1-tripod-height-correspondence-20261121/AuditTripodHeightSourceCorrespondence.lean",
+        "line": 337,
+        "column": 0,
+        "severity": "error",
+        "message": "Cross-version comparison failed for [Iut.Tripod.tpdEquiv_jT]. See /home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/cross-version-result.json"
+      }
+    ],
+    "actual_arguments": [
+      "lean",
+      ".local/adaptation/b1-tripod-height-correspondence-20261121/AuditTripodHeightSourceCorrespondence.lean"
+    ],
+    "snapshot": {
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "fingerprint": null,
+      "manifest": {
+        "worktree_id": "/home/admin-wsl/Coq/abc",
+        "head": "ebf884c1e568c61589e708789f25aa23c400796a",
+        "modified_files": [
+          "docs/Scene1进度总览5.md",
+          "docs/对Joshi'sFAQ的独立形式化审查.md",
+          "docs/开发计划.V1Act1log1.md",
+          "docs/开发计划.V1Act1log2.md",
+          "docs/开发计划.V1Act1log3.md",
+          "docs/开发计划.V1Act1log4.md",
+          "docs/开发计划.V1Act1log5.md"
+        ],
+        "untracked_files": [
+          "docs/Email.txt",
+          "docs/Mochizuki审计.md",
+          "docs/Scene1进度总览3.md",
+          "docs/olds/Scene1进度总览1.md",
+          "docs/olds/具有明确参考来源指示的证明义务.old.md",
+          "docs/olds/开发计划.V1Act1log1.md",
+          "docs/olds/开发计划.V1Act1log2.md",
+          "docs/olds/开发计划.V1Act1log3.md",
+          "docs/olds/开发计划.V1Act1log4.md",
+          "docs/olds/开发计划.V1Act1log5.md",
+          "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/AuditTripodHeightSourceCorrespondence.lean",
+          "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/review-config.json",
+          "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/source-facts.jsonl"
+        ],
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock": "lake-manifest.json",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "local_configuration": [
+          "lean-toolchain",
+          "lakefile.lean",
+          "lake-manifest.json"
+        ],
+        "configuration_hashes": {
+          "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+          "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+          "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+        },
+        "external_dependencies": [
+          {
+            "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+            "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+            "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+            "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+          }
+        ],
+        "required_artifacts": [
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+          "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+        ],
+        "input_hashes": {
+          ".local/adaptation/b1-tripod-height-correspondence-20261121/AuditTripodHeightSourceCorrespondence.lean": "347fe2d04a88cee47bf2d342c68963ba193051143ef35e7417e7e5968e576863",
+          ".local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/review-config.json": "5193aa271312770284702756fc6bf968f078e913f11c76ccea2e888b06a9aaee",
+          ".local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/source-facts.jsonl": "bf5bb6fa3c5e87625d3c4338c955dd332a81e04981a6120defd114ab7d2aa18a",
+          "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Lean.olean": "b6d86d9546713512afdbbaecee5fbc5355e06a30cd70a405f4fa061dce3d56a7",
+          ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_HeightNormalization.olean": "dc3a1cf3916067c15288be3b25fddfd9ab1b316bf01f4cccc202a6021b80de11",
+          "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_HeightNormalization.lean": "9db6448c3af49fbbda9068dc65d8a80ae221197be2521ca27404e00b8f85e564",
+          ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight.olean": "a0ecfcea4023da67c8cb72351c9b05dd22938fc08cfdaaa1744a8e420d868a51",
+          "Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight.lean": "d24632c93518695858d8a9a4d6956674343836fd3440ce704c048ba3eddacee3"
+        },
+        "source_sha256": "347fe2d04a88cee47bf2d342c68963ba193051143ef35e7417e7e5968e576863",
+        "resource_estimate_basis": "First cross-version height correspondence review for field-and-j"
+      }
+    },
+    "compiler": {
+      "name": "lean",
+      "version": null
+    },
+    "resources": {
+      "memory_decision": {
+        "worker_pressure": "normal",
+        "host_pressure": "normal",
+        "total_worker_bytes": 10905874432
+      },
+      "cpu_time_seconds": 100.88999999999999,
+      "peak_rss_bytes": 5169061888,
+      "peak_pss_bytes": null,
+      "cpu_user_seconds": 5.18,
+      "cpu_system_seconds": 95.71,
+      "wall_time_seconds": 155.15827199999876,
+      "allocated_cpu_count": 4,
+      "cpu_affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "affinity_applied": true,
+      "affinity_error": null
+    },
+    "artifacts": [
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-026081-96ebef55/stdout.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-026081-96ebef55/stderr.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-026081-96ebef55/result.json"
+    ],
+    "review": {
+      "language": "lean",
+      "passed": true,
+      "checks": {
+        "no_sorryAx": true,
+        "assumptions_reported": true
+      },
+      "violations": [],
+      "assumptions": [],
+      "diagnostics": [],
+      "output_excerpt": ".local/adaptation/b1-tripod-height-correspondence-20261121/AuditTripodHeightSourceCorrespondence.lean:337:0: error: Cross-version comparison failed for [Iut.Tripod.tpdEquiv_jT]. See /home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/field-and-j/cross-version-result.json\n"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+import Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveOfGenerator
+import Theorems.Thm_AbcAdaptation_Tripod_legendre_isElliptic
+import Mathlib.FieldTheory.IsAlgClosed.AlgebraicClosure
+
+namespace AbcAdaptation.Tripod
+open WeierstrassCurve NumberField
+open scoped IntermediateField
+
+theorem gen'_ne_zero {l : Qbar} (hl : l ≠ 0) : gen' l ≠ 0 := by
+  intro h
+  exact hl (congrArg Subtype.val h)
+
+theorem gen'_ne_one {l : Qbar} (hl : l ≠ 1) : gen' l ≠ 1 := by
+  intro h
+  exact hl (congrArg Subtype.val h)
+
+instance (F : IntermediateField ℚ Qbar) : Module.IsTorsionFree F Qbar :=
+  Module.isTorsionFree_iff_algebraMap_injective.mpr (algebraMap F Qbar).injective
+
+instance (F : IntermediateField ℚ Qbar) : IsAlgClosure F Qbar := by
+  haveI : Algebra.IsAlgebraic ℚ Qbar := AlgebraicClosure.isAlgebraic ℚ
+  exact (isAlgClosure_iff F Qbar).mpr ⟨inferInstance, Algebra.IsAlgebraic.tower_top (K := ℚ) F⟩
+
+theorem legendre_gen'_isElliptic (x : Pt) : (legendre (gen' x.1)).IsElliptic :=
+  legendre_isElliptic (gen'_ne_zero x.2.1) (gen'_ne_one x.2.2)
+
+end AbcAdaptation.Tripod

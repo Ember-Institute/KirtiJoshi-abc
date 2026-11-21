@@ -1,0 +1,1 @@
+The isomorphism carries prime ideals of the integer ring bijectively to prime ideals of the other integer ring. Its induced map on finite places preserves the absolute value on corresponding arguments. Reindex the finite-place height sum along this bijection.

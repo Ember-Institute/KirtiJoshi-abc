@@ -1,0 +1,4 @@
+def FinitePlace (K : Type*) [Field K] [NumberField K] :=
+  {w : AbsoluteValue K ℝ // ∃ v : HeightOneSpectrum (𝓞 K), place (FinitePlace.embedding v) = w}
+
+noncomputable def FinitePlace.mk [NumberField K] (v : HeightOneSpectrum (𝓞 K)) : FinitePlace K :=
