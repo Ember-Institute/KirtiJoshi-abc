@@ -1,0 +1,17 @@
+{
+  "id": "5020f220-8d9e-4491-b216-628b77164f31",
+  "kind": "problem",
+  "theorem_name": "AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_surjective",
+  "theorem_title": "The Tate point map is surjective",
+  "formal_statement": "theorem AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_surjective\n    {k : Type*} [NormedField k] [CompleteSpace k] [IsUltrametricDist k]\n    (t : TateParameter k) (hmem : t.TatePointEquation)\n    (h12 : (12 : k) ≠ 0) (h2 : ‖(2 : k)‖ = 1) :\n    Function.Surjective (t.tatePoint hmem h12) := by\n  sorry",
+  "natural_language_statement": "Let $K$ be a complete nonarchimedean normed field with $12\\ne 0$ and $\\lvert 2\\rvert=1$. For $q\\in K^\\times$ with $\\lvert q\\rvert<1$, assume the Tate coordinate series satisfy the equation of $E_q$ off $q^{\\mathbb Z}$. Write $P_q:K^\\times\\to E_q(K)$ for the point map from these series, taking each power of $q$ to the point at infinity.\n\nEvery point of the Tate curve is an image of a unit,\n\n$$\n\\forall P\\in E_q(K),\\qquad \\exists u\\in K^\\times,\\quad P_q(u)=P.\n$$\n\nSurjectivity supplies the last step in identifying the analytic quotient with the group of points.",
+  "definitions": "import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_PointMap\n\nset_option autoImplicit false\n\nopen AbcAdaptation.Reference.TateCurvesTheta\nopen scoped Classical",
+  "source": "https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/TateCurve/TateUniformization.lean#L53-L89",
+  "tags": [],
+  "visibility": "private",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "3e19b80c-845e-4348-ae28-5c8ac981e2f3",
+  "created_at": "2026-11-21T02:28:31.755426+00:00",
+  "updated_at": "2026-11-21T02:28:45.77142+00:00"
+}

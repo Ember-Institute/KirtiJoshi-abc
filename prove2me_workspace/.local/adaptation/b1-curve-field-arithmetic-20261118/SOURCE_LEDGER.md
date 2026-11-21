@@ -2132,3 +2132,41 @@ Times are in seconds. Memory is peak physical process-tree RSS in GiB. PSS is un
 | [`ci-025801-c318513b`](receipts/round-ci-025801-c318513b-result.json) | `d3ef9a12b4e2` | 0 | 159.32 | 157.78 (6.71 + 151.07) | 7.95 |
 | [`ci-025811-355a85ae`](receipts/round-ci-025811-355a85ae-result.json) | `d3ef9a12b4e2` | 0 | 270.67 | 267.85 (7.85 + 260.00) | 7.96 |
 | [`ci-025827-e8428346`](receipts/round-ci-025827-e8428346-result.json) | `0a744d261e66` | 0 | 248.11 | 245.83 (7.71 + 238.12) | 8.40 |
+
+## The completed private Tate and SL₂ proof chain
+
+The direct uniformization proof exceeded the platform time limit. The modular proof uses a shared definition for the Tate point map and three theorem statements. The point equation and addition law were accepted as complete proofs. The surjectivity proof uses both the point equation and the addition law. The quotient construction uses all three results on the same parameter and preserves the two specified coordinates. Its type and open-child dependencies were checked together with the project gates before recording the platform result. [Trilingual readback](readbacks/tate-uniformization-modular-trilingual.md)
+
+| Private node | Verification result | Final theorem article |
+| --- | --- | --- |
+| `tatePoint_equation` | [`ACCEPTED`](platform-sl2/modular-tate/AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_equation-verify-result.json) | [`Proved`](platform-sl2/modular-tate/AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_equation-current-item.json) |
+| `tatePoint_mul` | [`ACCEPTED`](platform-sl2/modular-tate/AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_mul-verify-result.json) | [`Proved`](platform-sl2/modular-tate/AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_mul-current-item.json) |
+| `tatePoint_surjective` | [`SKETCH_ACCEPTED`](platform-sl2/modular-tate/AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_surjective-verify-result.json) | [`Proved`](platform-sl2/modular-tate/AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_surjective-current-item.json) |
+| `exists_tateUniformization` | [`SKETCH_ACCEPTED`](platform-sl2/modular-tate/AbcAdaptation.Reference.Iut.exists_tateUniformization-verify-result.json) | [`Proved`](platform-sl2/modular-tate/AbcAdaptation.Reference.Iut.exists_tateUniformization-current-item.json) |
+
+The platform also reports `Proved` for the local Tate structure, ramification divisibility, divisibility of the image order, general SL₂ containment, and the tripod SL₂ theorem. The nine articles match the original formal statements and private Mathlib revision. [Final tripod theorem](platform-sl2/modular-tate/AbcAdaptation.Tripod.sl2Image-current-item.json)
+
+Times are in seconds. Memory is process-tree physical RSS in GiB. PSS is unavailable.
+
+| MCP-CI job | Source SHA-256 prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-025835-cee68b97`](receipts/round-ci-025835-cee68b97-result.json) | `5c4da9302b9d` | succeeded / 0 | 57.36 | 56.83 (2.10 + 54.73) | 2.98 | PointMap leaf |
+| [`ci-025837-c574be29`](receipts/round-ci-025837-c574be29-result.json) | `5c4da9302b9d` | succeeded / 0 | 87.16 | 86.11 (2.21 + 83.90) | 2.92 | PointMap artifact |
+| [`ci-025844-021a9114`](receipts/round-ci-025844-021a9114-result.json) | `994eeafd6f2d` | succeeded / 0 | 429.92 | 412.21 (6.17 + 406.04) | 8.05 | Project gates and four PointMap axiom reports |
+| [`ci-025853-ce7e0a34`](receipts/round-ci-025853-ce7e0a34-result.json) | `017707e7de93` | succeeded / 0 | 102.27 | 98.41 (1.81 + 96.60) | 2.89 | Point equation statement |
+| [`ci-025864-cbae3cb9`](receipts/round-ci-025864-cbae3cb9-result.json) | `017707e7de93` | succeeded / 0 | 74.30 | 73.51 (2.23 + 71.28) | 2.95 | Point equation statement artifact |
+| [`ci-025867-b2770479`](receipts/round-ci-025867-b2770479-result.json) | `ad1044cb9e0f` | succeeded / 0 | 87.79 | 86.88 (2.04 + 84.84) | 2.99 | Addition statement |
+| [`ci-025872-cf75c398`](receipts/round-ci-025872-cf75c398-result.json) | `ad1044cb9e0f` | succeeded / 0 | 54.08 | 53.68 (2.04 + 51.64) | 3.00 | Addition statement artifact |
+| [`ci-025877-def1c606`](receipts/round-ci-025877-def1c606-result.json) | `af736fbb4143` | succeeded / 0 | 45.31 | 44.47 (1.40 + 43.07) | 2.89 | Surjectivity statement |
+| [`ci-025883-8e89e369`](receipts/round-ci-025883-8e89e369-result.json) | `af736fbb4143` | succeeded / 0 | 39.95 | 39.03 (1.32 + 37.71) | 2.87 | Surjectivity statement artifact |
+| [`ci-025887-14bb4d09`](receipts/round-ci-025887-14bb4d09-result.json) | `e6c95aecd503` | succeeded / 0 | 47.49 | 47.65 (2.65 + 45.00) | 3.13 | Quotient reduction leaf |
+| [`ci-025890-5ab034c3`](receipts/round-ci-025890-5ab034c3-result.json) | `f75df1732fd7` | failed / 1 | 80.66 | 105.67 (64.50 + 41.17) | 3.50 | Point equation proof needs explicit coordinate simp lemmas |
+| [`ci-025903-c6548d5e`](receipts/round-ci-025903-c6548d5e-result.json) | `4a29001740f2` | succeeded / 0 | 67.57 | 91.45 (65.20 + 26.25) | 3.48 | Point equation proof leaf |
+| [`ci-025907-97da1069`](receipts/round-ci-025907-97da1069-result.json) | `0586f96501bc` | succeeded / 0 | 70.96 | 101.89 (76.14 + 25.75) | 3.49 | Point equation type and axiom audit |
+| [`ci-025919-6a98f7d0`](receipts/round-ci-025919-6a98f7d0-result.json) | `884bfcbbeb21` | failed / 1 | 57.87 | 148.72 (90.04 + 58.68) | 4.06 | Addition proof needs four upstream simplification declarations |
+| [`ci-025957-76e9d8ab`](receipts/round-ci-025957-76e9d8ab-result.json) | `98f7dc7aa00e` | succeeded / 0 | 79.96 | 141.55 (87.40 + 54.15) | 4.06 | Addition proof leaf |
+| [`ci-025967-272d272b`](receipts/round-ci-025967-272d272b-result.json) | `468a44d85d5f` | succeeded / 0 | 104.25 | 172.32 (99.20 + 73.12) | 4.07 | Addition type and axiom audit |
+| [`ci-025923-17ee2069`](receipts/round-ci-025923-17ee2069-result.json) | `a16791e264e2` | succeeded / 0 | 43.04 | 79.23 (50.09 + 29.14) | 3.51 | Surjectivity reduction leaf |
+| [`ci-025930-88d9e94e`](receipts/round-ci-025930-88d9e94e-result.json) | `565b5e2cb1fc` | failed / 0 | 56.66 | 99.12 (60.17 + 38.95) | 3.46 | Generic audit detects the open child proofs |
+| [`ci-025945-25def952`](receipts/round-ci-025945-25def952-result.json) | `6804c6e251dc` | succeeded / 0 | 37.86 | 72.26 (49.09 + 23.17) | 3.48 | Exact surjectivity type and audit of the two child dependencies |
+| [`ci-025950-81988079`](receipts/round-ci-025950-81988079-result.json) | `1c5fd3872028` | succeeded / 0 | 82.52 | 82.32 (7.51 + 74.81) | 8.11 | Project gates, exact quotient type and audit of the three child dependencies |

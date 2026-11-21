@@ -1,0 +1,17 @@
+{
+  "theorem_id": "3e19b80c-845e-4348-ae28-5c8ac981e2f3",
+  "mcp_ci_leaf": "ci-025923-17ee2069",
+  "mcp_ci_review": "ci-025945-25def952",
+  "source_sha256": "a16791e264e2c9133e146841908724dec462504985dd32a6dd539ec57529fe4a",
+  "request": {
+    "theorem_id": "3e19b80c-845e-4348-ae28-5c8ac981e2f3",
+    "proof_type": "prove",
+    "explanation": "Let $K$ be a complete nonarchimedean normed field with $12\\ne 0$ and $\\lvert 2\\rvert=1$, and let $q\\in K^\\times$ satisfy $\\lvert q\\rvert<1$. For the point map $P_q$ given by the Tate coordinate series and the assumed affine equation, we prove\n$$\n\\forall P\\in E_q(K),\\quad \\exists u\\in K^\\times,\\quad P_q(u)=P.\n$$\n\nThe unit $1$ maps to the point at infinity. For an affine point $(x,y)$ with $\\lvert x\\rvert>1$, an ultrametric Newton iteration solves the equation for the first coordinate starting from $x/y$. The point equation for the Tate series gives the quadratic equation for the second coordinate. Inverting the chosen unit switches between the two possible second coordinates.\n\nFor $\\lvert x\\rvert<1$, the curve equation and the norm bounds on the coefficients force $\\lvert y\\rvert<1$. An annulus estimate supplies an approximate unit. For $\\lvert x\\rvert=1$, the proof starts from the unit approximation $y/(x+y)$. In each case the point is either already in the image or can be translated by image points to the region $\\lvert x\\rvert>1$. Additivity and inversion recover a unit for the original point. This proof uses the separate point-equation and additivity theorems."
+  },
+  "response": {
+    "submission_id": "d2d747ef-94d7-46b2-ae2a-461be0c7f245",
+    "status": "PENDING",
+    "message": "Proof submitted for verification. Poll GET /submission/{id} for results.",
+    "guidelines": "Reminder: write the explanation like a section of a math paper, not a tactic-by-tactic transcript. Walk through the mathematical argument and show how it maps onto your Lean code, in Markdown with KaTeX math. The explanation is the only part of a submission you can edit later, via PATCH /api/v1/submissions/:id. Full principles: references/prove.md#attach-an-explanation"
+  }
+}

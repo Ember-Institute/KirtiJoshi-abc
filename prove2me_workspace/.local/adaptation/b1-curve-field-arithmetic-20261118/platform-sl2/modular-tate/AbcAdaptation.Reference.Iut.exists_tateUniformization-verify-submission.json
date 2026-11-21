@@ -1,0 +1,17 @@
+{
+  "theorem_id": "6ee6a3cd-649a-4604-a2d8-1400087da2d8",
+  "mcp_ci_leaf": "ci-025887-14bb4d09",
+  "mcp_ci_review": null,
+  "source_sha256": "e6c95aecd503ca1455f3d315edc65bddea4d283a55e83d20a01818e902de16ad",
+  "request": {
+    "theorem_id": "6ee6a3cd-649a-4604-a2d8-1400087da2d8",
+    "proof_type": "prove",
+    "explanation": "Let $K$ be a complete nonarchimedean normed field with $12\\ne 0$ and $\\lvert 2\\rvert=1$, and let $q\\in K^\\times$ satisfy $\\lvert q\\rvert<1$. The Tate series induce a group isomorphism\n$$\nK^\\times/q^{\\mathbb Z}\\simeq E_q(K).\n$$\nFor a unit outside $q^{\\mathbb Z}$, the two affine coordinates of its image are the Tate series $X(u)$ and $Y(u)$.\n\nThe point-equation theorem shows that the two series give an affine point away from the powers of $q$. The discriminant makes each such point nonsingular, and the point map sends the powers of $q$ to infinity. The additivity theorem makes this a group homomorphism, and the surjectivity theorem shows that it reaches every curve point.\n\nThe kernel is exactly $q^{\\mathbb Z}$ by inspection of the point map. Taking the quotient gives the isomorphism. The quotient homomorphism maps the class of a unit to its original Tate point, so the two coordinate identities follow from the affine branch of the point-map definition."
+  },
+  "response": {
+    "submission_id": "a2f82cf4-3502-478f-a90a-a50b6f9a79d0",
+    "status": "PENDING",
+    "message": "Proof submitted for verification. Poll GET /submission/{id} for results.",
+    "guidelines": "Reminder: write the explanation like a section of a math paper, not a tactic-by-tactic transcript. Walk through the mathematical argument and show how it maps onto your Lean code, in Markdown with KaTeX math. The explanation is the only part of a submission you can edit later, via PATCH /api/v1/submissions/:id. Full principles: references/prove.md#attach-an-explanation"
+  }
+}

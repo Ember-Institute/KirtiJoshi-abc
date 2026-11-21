@@ -45,10 +45,6 @@
 ## 3. 不属于以上两类来源的证明义务
 
 
-### 带指定坐标的 Tate 一致化私有平台证明
-
-私有节点 `exists_tateUniformization` 仍为 `Open`。目标在完备超度量赋范域上保留指定 Tate 参数曲线、单位群到曲线点的加法同构、满射和标准两条坐标公式。完整稿已通过 Lean 4.33.1 类型与公理审查，平台验证在 300 秒时超时。须按同一参数与曲线的点方程、加法律及满射分包，并在原定理上重放组合证明。 [本地完整构造](../prove2me_workspace/Solutions/Source_ReferenceIutTateUniformizationLaws.lean#L35) · [平台归约](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#the-private-sl₂-ramification-and-tate-structure-reductions)
-
 ### 尚未对应到现成来源陈述的具体几何义务
 
 `Fermat.heightNormalization` 仍需把实际点域 `ℚ(u,v)` 与 `ℚ(u^N)` 的高度归一化、幂的高度公式，以及 `[u:v:1]` 与 `[u:1]` 的一致比较接到底层节点；不能把 `(N−3)/N` 系数误换成覆盖次数 `N²` 的倒数。`Fermat.liftDifferent` 仍需拆出实际根的存在性、完整点域的 `N²` 次数界，以及相同扩张上的归一化判别式／导子估计；单用子域判别式单调性不能证明完整点域的上界。

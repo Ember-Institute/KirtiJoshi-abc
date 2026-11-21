@@ -1,0 +1,30 @@
+{
+  "env": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "private": true,
+  "problems": [
+    {
+      "theorem_name": "AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_equation",
+      "theorem_title": "The Tate coordinates satisfy the Weierstrass equation",
+      "formal_statement": "theorem AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_equation\n    {k : Type*} [NormedField k] [CompleteSpace k] [IsUltrametricDist k]\n    (t : TateParameter k) (h12 : (12 : k) ≠ 0) :\n    t.TatePointEquation := by\n  sorry",
+      "natural_language_statement": "Let $K$ be a complete nonarchimedean normed field in which $12\\ne 0$, and let $q\\in K^\\times$ with $\\lvert q\\rvert<1$. Write $E_q$ for the Tate curve and $X(u),Y(u)$ for the Tate coordinate series at a unit $u\\in K^\\times$.\n\nIf $q^n u\\ne 1$ for every integer $n$, then\n\n$$\n(Y(u))^2+X(u)Y(u)=(X(u))^3+a_4(q)X(u)+a_6(q).\n$$\n\nThis equation supplies the affine points used by the Tate parametrization.",
+      "preamble": "import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_PointMap\n\nset_option autoImplicit false\n\nopen AbcAdaptation.Reference.TateCurvesTheta\nopen scoped Classical",
+      "source": "https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/TateCurve/TatePointOnCurve.lean#L329-L338"
+    },
+    {
+      "theorem_name": "AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_mul",
+      "theorem_title": "The Tate point map sends products to sums",
+      "formal_statement": "theorem AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_mul\n    {k : Type*} [NormedField k] [CompleteSpace k] [IsUltrametricDist k] [DecidableEq k]\n    (t : TateParameter k) (hmem : t.TatePointEquation)\n    (h12 : (12 : k) ≠ 0) (h2 : ‖(2 : k)‖ = 1) (u v : kˣ) :\n    t.tatePoint hmem h12 (u * v) = t.tatePoint hmem h12 u + t.tatePoint hmem h12 v := by\n  sorry",
+      "natural_language_statement": "Let $K$ be a complete nonarchimedean normed field with $12\\ne 0$ and $\\lvert 2\\rvert=1$. For $q\\in K^\\times$ with $\\lvert q\\rvert<1$, assume the Tate coordinate series $X(u),Y(u)$ satisfy the equation of $E_q$ for every $u\\notin q^{\\mathbb Z}$. Let $P_q:K^\\times\\to E_q(K)$ send each such $u$ to $(X(u),Y(u))$ and each power of $q$ to the point at infinity.\n\nFor all $u,v\\in K^\\times$,\n\n$$\nP_q(uv)=P_q(u)+P_q(v).\n$$\n\nThe group law lets the parametrization descend to the quotient by $q^{\\mathbb Z}$.",
+      "preamble": "import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_PointMap\n\nset_option autoImplicit false\n\nopen AbcAdaptation.Reference.TateCurvesTheta\nopen scoped Classical",
+      "source": "https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/TateCurve/GroupLaw.lean#L239-L354"
+    },
+    {
+      "theorem_name": "AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_surjective",
+      "theorem_title": "The Tate point map is surjective",
+      "formal_statement": "theorem AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_surjective\n    {k : Type*} [NormedField k] [CompleteSpace k] [IsUltrametricDist k]\n    (t : TateParameter k) (hmem : t.TatePointEquation)\n    (h12 : (12 : k) ≠ 0) (h2 : ‖(2 : k)‖ = 1) :\n    Function.Surjective (t.tatePoint hmem h12) := by\n  sorry",
+      "natural_language_statement": "Let $K$ be a complete nonarchimedean normed field with $12\\ne 0$ and $\\lvert 2\\rvert=1$. For $q\\in K^\\times$ with $\\lvert q\\rvert<1$, assume the Tate coordinate series satisfy the equation of $E_q$ off $q^{\\mathbb Z}$. Write $P_q:K^\\times\\to E_q(K)$ for the point map from these series, taking each power of $q$ to the point at infinity.\n\nEvery point of the Tate curve is an image of a unit,\n\n$$\n\\forall P\\in E_q(K),\\qquad \\exists u\\in K^\\times,\\quad P_q(u)=P.\n$$\n\nSurjectivity supplies the last step in identifying the analytic quotient with the group of points.",
+      "preamble": "import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_PointMap\n\nset_option autoImplicit false\n\nopen AbcAdaptation.Reference.TateCurvesTheta\nopen scoped Classical",
+      "source": "https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/TateCurve/TateUniformization.lean#L53-L89"
+    }
+  ]
+}

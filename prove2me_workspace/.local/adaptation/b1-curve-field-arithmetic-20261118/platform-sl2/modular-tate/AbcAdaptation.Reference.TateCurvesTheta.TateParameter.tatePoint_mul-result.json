@@ -1,0 +1,17 @@
+{
+  "id": "dcdf8050-8603-4293-b497-3b8af63dcc40",
+  "kind": "problem",
+  "theorem_name": "AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_mul",
+  "theorem_title": "The Tate point map sends products to sums",
+  "formal_statement": "theorem AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_mul\n    {k : Type*} [NormedField k] [CompleteSpace k] [IsUltrametricDist k] [DecidableEq k]\n    (t : TateParameter k) (hmem : t.TatePointEquation)\n    (h12 : (12 : k) ≠ 0) (h2 : ‖(2 : k)‖ = 1) (u v : kˣ) :\n    t.tatePoint hmem h12 (u * v) = t.tatePoint hmem h12 u + t.tatePoint hmem h12 v := by\n  sorry",
+  "natural_language_statement": "Let $K$ be a complete nonarchimedean normed field with $12\\ne 0$ and $\\lvert 2\\rvert=1$. For $q\\in K^\\times$ with $\\lvert q\\rvert<1$, assume the Tate coordinate series $X(u),Y(u)$ satisfy the equation of $E_q$ for every $u\\notin q^{\\mathbb Z}$. Let $P_q:K^\\times\\to E_q(K)$ send each such $u$ to $(X(u),Y(u))$ and each power of $q$ to the point at infinity.\n\nFor all $u,v\\in K^\\times$,\n\n$$\nP_q(uv)=P_q(u)+P_q(v).\n$$\n\nThe group law lets the parametrization descend to the quotient by $q^{\\mathbb Z}$.",
+  "definitions": "import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_PointMap\n\nset_option autoImplicit false\n\nopen AbcAdaptation.Reference.TateCurvesTheta\nopen scoped Classical",
+  "source": "https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/TateCurve/GroupLaw.lean#L239-L354",
+  "tags": [],
+  "visibility": "private",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "057aa6bd-2631-44c6-80b4-2db01c9d5550",
+  "created_at": "2026-11-21T02:28:31.667118+00:00",
+  "updated_at": "2026-11-21T02:28:46.179552+00:00"
+}

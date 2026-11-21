@@ -1,0 +1,11 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_PointMap
+
+open AbcAdaptation.Reference.TateCurvesTheta
+#print axioms TateParameter.mem_zpowers_q_iff
+#print axioms TateParameter.TatePointEquation
+#print axioms TateParameter.tatePoint
+#print axioms TateParameter.tatePoint_eq_zero_iff

@@ -1,0 +1,19 @@
+{
+  "theorem_id": "c7966b08-c656-4338-8750-07e5b9343f16",
+  "theorem_name": "AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_equation",
+  "theorem_title": "The Tate coordinates satisfy the Weierstrass equation",
+  "status": "Open",
+  "formal_statement": "theorem AbcAdaptation.Reference.TateCurvesTheta.TateParameter.tatePoint_equation\n    {k : Type*} [NormedField k] [CompleteSpace k] [IsUltrametricDist k]\n    (t : TateParameter k) (h12 : (12 : k) ≠ 0) :\n    t.TatePointEquation := by\n  sorry",
+  "natural_language_statement": "Let $K$ be a complete nonarchimedean normed field in which $12\\ne 0$, and let $q\\in K^\\times$ with $\\lvert q\\rvert<1$. Write $E_q$ for the Tate curve and $X(u),Y(u)$ for the Tate coordinate series at a unit $u\\in K^\\times$.\n\nIf $q^n u\\ne 1$ for every integer $n$, then\n\n$$\n(Y(u))^2+X(u)Y(u)=(X(u))^3+a_4(q)X(u)+a_6(q).\n$$\n\nThis equation supplies the affine points used by the Tate parametrization.",
+  "created_at": "2026-11-21T02:28:44.309205+00:00",
+  "vote_count": 0,
+  "tags": [],
+  "preamble": "import Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_PointMap\n\nset_option autoImplicit false\n\nopen AbcAdaptation.Reference.TateCurvesTheta\nopen scoped Classical",
+  "source": "https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/TateCurve/TatePointOnCurve.lean#L329-L338",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "private",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": null
+}

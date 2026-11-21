@@ -1,0 +1,23 @@
+{
+  "theorem_id": "695ba887-813b-4044-ab37-33e9d776f8e9",
+  "theorem_name": "AbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_ramificationIdx",
+  "theorem_title": "Prime divisibility of the relative ramification index",
+  "status": "Proved",
+  "formal_statement": "namespace AbcAdaptation.Reference.Iut.EllipticCurveData\n\nopen NumberField\n\nuniverse u\n\n/-- The prime divides the relative ramification index at a place of the torsion field\nabove a multiplicative place with the given residue characteristic and Tate order. -/\ntheorem prime_dvd_ramificationIdx (C : EllipticCurveData.{u}) (CA : C.CurveArithmetic)\n    (TI : C.TateInputs) {ℓ : ℕ} (hℓ : ℓ.Prime) (hodd : ℓ ≠ 2) (R : C.ModEllRepData ℓ)\n    {w : FinitePlace C.F} (hw : w ∈ C.badAll)\n    (h2 : residueChar w ≠ 2) (hwℓ : residueChar w ≠ ℓ) (hP2 : ¬ ℓ ∣ TI.qOrder w hw)\n    {w' : FinitePlace ↥R.torsionField} (hw'w : FinitePlace.LiesOver w' w) :\n    ℓ ∣ w.maximalIdeal.asIdeal.ramificationIdx' w'.maximalIdeal.asIdeal := by\n  sorry\n\nend AbcAdaptation.Reference.Iut.EllipticCurveData",
+  "natural_language_statement": "**English**\n\nLet $E/F$ be an elliptic curve over a number field with its curve arithmetic and Tate inputs. Let $\\rho_\\ell$ be the supplied mod-$\\ell$ representation. Let $\\ell$ be an odd prime and $w$ a place of multiplicative reduction. Assume that its residue characteristic differs from $2$ and $\\ell$, and that $\\ell$ does not divide the order of the Tate parameter at $w$. Then $\\ell$ divides $e(w^{\\prime}/w)$ for every place $w^{\\prime}$ of the $\\ell$-torsion field above $w$.\n\n**简体中文**\n\n设 $E/F$ 是配有曲线算术和泰特输入的数域上的椭圆曲线，$\\rho_\\ell$ 为给定的模 $\\ell$ 表示。设 $\\ell$ 是奇素数，$w$ 是乘法约化处，其剩余特征不同于 $2$ 和 $\\ell$，且 $\\ell$ 不整除该处泰特参数的阶。则对 $\\ell$-挠点域中位于 $w$ 上方的每个有限处 $w^{\\prime}$，都有 $\\ell \\mid e(w^{\\prime}/w)$。\n\n**日本語**\n\n数体上の楕円曲線 $E/F$ に曲線の算術データとテイト入力を与える。与えられた法 $\\ell$ 表現を $\\rho_\\ell$ とする。$\\ell$ を奇素数、$w$ を乗法的還元の素点とする。その剰余標数は $2$ と $\\ell$ のいずれとも異なり、$\\ell$ は $w$ でのテイトパラメータの位数を割らないと仮定する。このとき、$\\ell$-捩れ点体で $w$ の上にある任意の素点 $w^{\\prime}$ について $\\ell \\mid e(w^{\\prime}/w)$ が成り立つ。",
+  "created_at": "2026-11-20T08:50:22.862992+00:00",
+  "vote_count": 0,
+  "tags": [
+    "abc-conjecture",
+    "arithmetic-geometry",
+    "arithmetic-teichmuller-spaces"
+  ],
+  "preamble": "/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n\nOriginal repository https://github.com/lana-agents/iut\nOriginal revision 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8\nOriginal path Iut/Concrete/SL2Image.lean (prime_dvd_ramificationIdx)\n-/\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField\n\nset_option autoImplicit false",
+  "source": "Local ramification step in Shinichi Mochizuki, Arithmetic Elliptic Curves in General Position, Lemma 3.1(iii). Exact formal source in Iut/Concrete/SL2Image.lean, prime_dvd_ramificationIdx. https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Concrete/SL2Image.lean#L162 https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "private",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": null
+}

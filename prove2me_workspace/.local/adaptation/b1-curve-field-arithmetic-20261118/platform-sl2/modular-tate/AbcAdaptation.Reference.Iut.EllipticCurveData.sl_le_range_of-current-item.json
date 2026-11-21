@@ -1,0 +1,23 @@
+{
+  "theorem_id": "3429b087-90da-49e3-a970-15663bfd0d7b",
+  "theorem_name": "AbcAdaptation.Reference.Iut.EllipticCurveData.sl_le_range_of",
+  "theorem_title": "Special linear group in the mod-$\\ell$ image",
+  "status": "Proved",
+  "formal_statement": "namespace AbcAdaptation.Reference.Iut.EllipticCurveData\n\nuniverse u\n\ntheorem sl_le_range_of (C : EllipticCurveData.{u}) (_CA : C.CurveArithmetic)\n    (TI : C.TateInputs) {ℓ : ℕ} (_hℓ : ℓ.Prime) (R : C.ModEllRepData ℓ)\n    (_h5 : 5 ≤ ℓ) (_hP2 : ∀ w (hw : w ∈ C.badAll), ¬ ℓ ∣ TI.qOrder w hw)\n    (_hP4 : ¬ C.HasCyclicSubgroup ℓ)\n    (_hP5 : ∃ w ∈ C.badAll, residueChar w ≠ 2 ∧ residueChar w ≠ ℓ)\n    (A : Matrix.SpecialLinearGroup (Fin 2) (ZMod ℓ)) : A.toGL ∈ R.rep.range := by\n  sorry\n\nend AbcAdaptation.Reference.Iut.EllipticCurveData",
+  "natural_language_statement": "**English**\n\nLet $E/F$ be an elliptic curve over a number field with its curve arithmetic and Tate inputs. Let $\\rho_\\ell$ be the supplied mod-$\\ell$ representation. Let $\\ell\\ge5$ be a prime. Assume that $\\ell$ divides none of the Tate parameter orders at places of multiplicative reduction (P2). Assume the curve has no Galois-stable cyclic subgroup of order $\\ell$ (P4). Assume a place of multiplicative reduction has residue characteristic different from $2$ and $\\ell$ (P5). Then the mod-$\\ell$ image contains $\\mathrm{SL}_2(\\mathbb F_\\ell)$.\n\n**简体中文**\n\n设 $E/F$ 是配有曲线算术和泰特输入的数域上的椭圆曲线，$\\rho_\\ell$ 为给定的模 $\\ell$ 表示。设 $\\ell\\ge5$ 为素数。假设 $\\ell$ 不整除任何乘法约化处的泰特参数阶（P2），曲线没有伽罗瓦稳定的 $\\ell$ 阶循环子群（P4），并且存在剩余特征不同于 $2$ 和 $\\ell$ 的乘法约化处（P5）。则模 $\\ell$ 表示的像包含 $\\mathrm{SL}_2(\\mathbb F_\\ell)$。\n\n**日本語**\n\n数体上の楕円曲線 $E/F$ に曲線の算術データとテイト入力を与える。与えられた法 $\\ell$ 表現を $\\rho_\\ell$ とする。$\\ell\\ge5$ を素数とする。$\\ell$ はどの乗法的還元の素点でもテイトパラメータの位数を割らないとする (P2)。曲線にガロア作用で安定な位数 $\\ell$ の巡回部分群は存在しないとする (P4)。剰余標数が $2$ と $\\ell$ のいずれとも異なる乗法的還元の素点があるとする (P5)。このとき法 $\\ell$ 表現の像は $\\mathrm{SL}_2(\\mathbb F_\\ell)$ を含む。",
+  "created_at": "2026-11-20T08:50:32.146635+00:00",
+  "vote_count": 0,
+  "tags": [
+    "abc-conjecture",
+    "arithmetic-geometry",
+    "arithmetic-teichmuller-spaces"
+  ],
+  "preamble": "/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n\nOriginal repository https://github.com/lana-agents/iut\nOriginal revision 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8\nOriginal path Iut/Concrete/SL2Image.lean (sl_le_range_of)\n-/\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Concrete_CurveInputs\n\nset_option autoImplicit false",
+  "source": "Shinichi Mochizuki, Arithmetic Elliptic Curves in General Position, Lemma 3.1(iii). Exact formal source in Iut/Concrete/SL2Image.lean, sl_le_range_of. https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Concrete/SL2Image.lean#L229 https://www.kurims.kyoto-u.ac.jp/~motizuki/Arithmetic%20Elliptic%20Curves%20in%20General%20Position.pdf",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "private",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": null
+}
