@@ -1,0 +1,17 @@
+{
+  "id": "2b09a349-2b0d-4b26-b776-3b73778cc36d",
+  "kind": "definition",
+  "theorem_name": "AbcAdaptation_Reference_Iut_Tripod_LegendreHeightHyp",
+  "theorem_title": "Bounded discrepancy for Legendre heights",
+  "formal_statement": "",
+  "natural_language_statement": "Fix an actual Legendre curve provider $P$ and a compactly bounded set $K$. Write $h_P(x)=P.h(x)$ for the provider's normalized Tate height and $H(x)=\\mathrm{htCan}(x)$ for the absolute logarithmic Weil height. `LegendreHeightHyp P K` means that $h_P/6$ and $H$ have bounded discrepancy on $K$. The proposition asserts that there exist real constants $C_1,C_2$ such that, for every $x\\in K$, $h_P(x)/6\\leq H(x)+C_1$ and $H(x)\\leq h_P(x)/6+C_2$. The constants are uniform over points of any degree.",
+  "definitions": "/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n\nOriginal repository: https://github.com/lana-agents/iut\nOriginal revision recorded by the current reference adaptation:\n07cb1da58f6d428a670dbb5dd6093d428bcbcdd8.\nSource: Iut/Tripod/CurveFacts.lean:402.\n-/\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight\nimport Definitions.Def_AbcAdaptation_Reference_Genl_Mathlib_Order_BoundedDiscrepancy\n\nnamespace AbcAdaptation.Tripod\n\nopen AbcAdaptation.Reference\n\nvariable (P : CurveProviders) (K : CompactlyBounded)\n\n/-- **IUT IV, Corollary 2.2(i)** ([GenEll], Proposition 3.4): `(1/6)·log(q_∀) ≈ ht_{𝒪(1)}`\non a compactly bounded subset. -/\ndef LegendreHeightHyp : Prop := ((1 / 6 : ℝ) • P.h) ≈[K.set] htCan\n\nend AbcAdaptation.Tripod\n",
+  "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/CurveFacts.lean#L403",
+  "tags": [],
+  "visibility": "private",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "add2ff42-bd50-4c6b-a3e1-5e07563a095c",
+  "created_at": "2026-11-21T05:11:02.874509+00:00",
+  "updated_at": "2026-11-21T05:11:22.130282+00:00"
+}

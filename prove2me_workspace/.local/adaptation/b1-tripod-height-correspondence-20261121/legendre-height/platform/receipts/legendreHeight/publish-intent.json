@@ -1,0 +1,14 @@
+{
+  "problems": [
+    {
+      "theorem_name": "AbcAdaptation.Tripod.legendreHeight",
+      "theorem_title": "Legendre height comparison for a supplied curve provider",
+      "formal_statement": "theorem AbcAdaptation.Tripod.legendreHeight (P : CurveProviders) (K : CompactlyBounded) : LegendreHeightHyp P K := by sorry",
+      "preamble": "import Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_LegendreHeightHyp\n\nset_option autoImplicit false\n\nopen AbcAdaptation.Tripod (CurveProviders CompactlyBounded LegendreHeightHyp)\n",
+      "natural_language_statement": "For every supplied Legendre curve provider $P$ and compactly bounded set $K$, `legendreHeight P K` proves `LegendreHeightHyp P K`. Put $c=K.c$, $V=K.V$, and $H=\\mathrm{htCan}$. Its explicit bounds, valid for every $x\\in K$, are\n\n$$P.h(x)/6\\leq H(x)+\\log(2)/3,$$\n$$H(x)\\leq P.h(x)/6+c|V|+c+\\log(2)/3.$$\n\nTo prove them, write $\\lambda=\\mathrm{gen}(x)$ and $d=[\\mathbb Q(\\lambda):\\mathbb Q]$. Let $h$ denote the relative logarithmic height. The provider normalization gives $P.h(x)=h_{\\mathrm{fin}}(j(\\lambda))/d$, while $H(x)=h(\\lambda)/d$. The proof compares $h_{\\mathrm{fin}}(j(\\lambda))$ with twice the sum of the finite heights of $\\lambda$, $\\lambda^{-1}$, and $(\\lambda-1)^{-1}$. Compact bounds control the finite places over $V$ and the archimedean contributions. Height inversion and the height bound for addition introduce the term $\\log(2)/3$. If $j(\\lambda)=0$, the proof uses $\\lambda^6=1$, so both normalized heights vanish. Division by $d>0$ gives the stated constants without a degree bound.",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/Height.lean#L791"
+    }
+  ],
+  "env": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "private": true
+}

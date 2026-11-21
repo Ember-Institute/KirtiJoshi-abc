@@ -1,0 +1,12 @@
+{
+  "request": {
+    "theorem_id": "107a1761-3e17-4f1b-b82b-a6c9323eda0a",
+    "proof_type": "prove",
+    "explanation": "Fix a point $x$ in $K$ with coordinate $\\lambda$. Let $w$ be a place of the curve field $F_x$ above $2$ where the curve has multiplicative reduction. Write $v$ for the place of the tripodal field below $w$. The valuation of the $j$-invariant gives the order $m_w$ of the Tate parameter. The Legendre formula and the ultrametric inequality give\n$$\nm_w \\le 2\\bigl(\\lvert\\log v_w(\\lambda)\\rvert+\n                  \\lvert\\log v_w(\\lambda-1)\\rvert\\bigr).\n$$\nThe two logarithmic valuations at $w$ are the corresponding values at $v$ multiplied by the relative ramification index $e(w/v)$. The compact bounds control each absolute value at $v$ after multiplication by $f_v\\log 2$. Since $f_w=f_v f(w/v)$, the local summand is therefore at most $4c\\,e(w/v)f(w/v)$.\n\nThe product $e(w/v)f(w/v)$ is at most the absolute local degree $d_w$, because $d_w=d_v e(w/v) f(w/v)$ and $d_v\\ge 1$. The presence of $x$ in $K$ gives $c\\ge 0$, so the summand is at most $4c\\,d_w$. The lemma `term_le` establishes this inequality. Sum over the multiplicative places above $2$ and use $\\sum_{w\\mid 2}d_w=[F_x:\\mathbb Q]$. Division by $[F_x:\\mathbb Q]$ gives the bound $4c$, which is at most $\\max(4c,0)$."
+  },
+  "solution_sha256": "ab8dc81d7d5054c6d3bac6538a128f5dad109632b2b5fd24501e4afa70c073a5",
+  "submission_id": "6bb69978-4bcb-4304-884e-3d90d9e4d46d",
+  "status": "PENDING",
+  "message": "Proof submitted for verification. Poll GET /submission/{id} for results.",
+  "guidelines": "Reminder: write the explanation like a section of a math paper, not a tactic-by-tactic transcript. Walk through the mathematical argument and show how it maps onto your Lean code, in Markdown with KaTeX math. The explanation is the only part of a submission you can edit later, via PATCH /api/v1/submissions/:id. Full principles: references/prove.md#attach-an-explanation"
+}

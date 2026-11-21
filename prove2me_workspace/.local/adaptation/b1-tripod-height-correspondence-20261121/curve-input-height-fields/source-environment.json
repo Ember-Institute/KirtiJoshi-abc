@@ -1,0 +1,82 @@
+{
+  "source": ".local/adaptation/b1-tripod-height-correspondence-20261121/curve-input-height-fields/QueryTripodHeightFieldsSource.lean",
+  "environment": {
+    "LEAN_PATH": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4/.lake/packages/batteries/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4/.lake/packages/Qq/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4/.lake/packages/aesop/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4/.lake/packages/plausible/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4/.lake/packages/importGraph/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4/.lake/packages/Cli/.lake/build/lib/lean:/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/belyi/.lake/build/lib/lean:/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/elliptic-curves/.lake/build/lib/lean:/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/formal-schemes/.lake/build/lib/lean:/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/genl/.lake/build/lib/lean:/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/heights/.lake/build/lib/lean:/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/oka/.lake/build/lib/lean:/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/orbicurve-cores/.lake/build/lib/lean:/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/pi1/.lake/build/lib/lean:/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta/.lake/build/lib/lean:/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tempered-fundamental-groups/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4/.lake/build/lib/lean:/home/admin-wsl/Coq/abc.old/refer/iut/.lake/build/lib/lean:/root/.elan/toolchains/leanprover--lean4---v4.35.0-rc3/lib/lean",
+    "PATH": "/root/.elan/toolchains/leanprover--lean4---v4.35.0-rc3/bin:/root/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/root/.nvm/versions/node/v22.23.2/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/root/.codex-key3/tmp/arg0-linux/codex-arg09EKFI6:/root/.cabal/bin:/root/.ghcup/bin:/root/.nvm/versions/node/v22.23.2/bin:/root/.opam/Coq900/bin:/root/.elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+    "TRIPOD_HEIGHT_FIELD_SOURCE_CONFIG": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/curve-input-height-fields/source-config.json"
+  },
+  "effective_compiler": "leanprover/lean4:v4.35.0-rc3",
+  "source_mathlib_dependency": {
+    "path": "/home/admin-wsl/Coq/mathlib4",
+    "head": "389347a7c1cfa76f6bd5be2ca35d4cb621610ad3",
+    "toolchain": "leanprover/lean4:v4.35.0-rc3",
+    "dependency_lock_sha256": "0a784666ccd0313cc0cc1bf3532e35c1a8c0447bf07212c0a1a1e5e978ddfb21"
+  },
+  "prior_source_environment_job": "ci-018542-4dae4da4",
+  "prior_source_receipt": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/main-chain-open-20261116/b1-source-root-facts-v109-result.json",
+  "source_replay_build_job": "ci-018538-2c5490b3",
+  "source_replay_artifact": {
+    "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/.lake/build/lib/lean/B1SourceReplay.olean",
+    "sha256": "06c40337f26261444a252367b6d317917af7dbf8373d16cbcba0cf6bab28e3cb"
+  },
+  "required_artifacts": [
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/b1-source-replay-v104-20261117/source-project/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/mathlib4/.lake/packages/batteries/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/mathlib4/.lake/packages/Qq/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/mathlib4/.lake/packages/aesop/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/mathlib4/.lake/packages/proofwidgets/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/mathlib4/.lake/packages/plausible/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/mathlib4/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/mathlib4/.lake/packages/importGraph/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/mathlib4/.lake/packages/Cli/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/belyi/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/elliptic-curves/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/formal-schemes/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/genl/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/heights/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/oka/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/orbicurve-cores/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/pi1/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/tempered-fundamental-groups/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/mathlib4/.lake/build/lib/lean",
+    "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/build/lib/lean",
+    "/root/.elan/toolchains/leanprover--lean4---v4.35.0-rc3/lib/lean"
+  ],
+  "reference_source": {
+    "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/CurveFacts.lean",
+    "sha256": "99c2785fdfdfb7a7e9d5f584a6d19ad15ee8a21d25e45e6ca26e125b946857fb",
+    "revision": "07cb1da58f6d428a670dbb5dd6093d428bcbcdd8"
+  },
+  "query_sha256": "28ecc07ab6b0f6272d011339134310d7e2e86d01dd8bb444b2064e06b78fa8f8",
+  "config_sha256": "65a5a1ee47a98e15a2f7962ac6a97ba06c5d7c2e46bed0bec9f239a663f2427b",
+  "direct_import_support_artifacts": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/prove2me_workspace/.local/adaptation/reference-extraction-20261115/source-project/.lake/build/lib/lean/Iut/Tripod/Basic.olean",
+      "sha256": "daabd5cf7cd010468f4696296c57cf0d6924a11d7d5828f64263fda7b6312c10"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/genl/.lake/build/lib/lean/Genl/Mathlib/Order/BoundedDiscrepancy.olean",
+      "sha256": "3aa3d5d3ac6800a4c8c2df0248bfe0c74f25851ed75fc42ce0a7153a17ad74fb"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc.old/refer/iut/.lake/packages/genl/.lake/build/lib/lean/Genl/GeneralPosition/HeightTheory.olean",
+      "sha256": "863924a3bb907fbc1d8c1bf2bcf43080274e1aac72bf58aa1ae4673d5c959963"
+    }
+  ],
+  "reference_inputs": [
+    {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/CurveFacts.lean",
+      "sha256": "99c2785fdfdfb7a7e9d5f584a6d19ad15ee8a21d25e45e6ca26e125b946857fb"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Tripod/Basic.lean",
+      "sha256": "ef9ae664dc1d770221b7153f3ea3c8ab703183233657931b3d26cbbfac9566e4"
+    },
+    {
+      "path": "/home/admin-wsl/Coq/abc/refer/iut/Iut/Concrete/Existence.lean",
+      "sha256": "7f13d5adf2ed0b72f2b0f78059fd7f1731422ce24c7a66deb3b2902a3ba3b314"
+    }
+  ]
+}

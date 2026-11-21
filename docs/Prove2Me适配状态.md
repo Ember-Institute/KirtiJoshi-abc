@@ -67,6 +67,8 @@
 
 四个 Scene1 producer owner 仍分别是 `AdelicThetaLink`、`ThetaLiftLog`、`PacketCollationHull`、`VolumeTransfer`：现有跨处 Tate／q 来源和部分规范化、Fontaine 事实只能供应局部前提；纸面 theta locus、Bloch–Kato theta 类与 log-shell 身份、跨 holomorphoid 代表拼接、实际 volume-measure 同一性仍缺少来源构造。显式负面障碍包括：字面 Corollary 3.12 的符号与实际收缩根的负对数相反；raw、全局次数、剩余次数、`2ell`、纸面权重和 `p*` 归一化尚无同一 carrier 上的等式；一般 `L` 情形不能假定度为一；现有选取根集的 q-log 总和严格小于纸面选定处集的总和，且 omitted mass/degree defect 未闭合；实际扭点来源的分歧指数至少为 `ell`，故质数纤维不满足 mass-one；普通 `H¹`／Kummer 类尚非论文的 `H¹_e`／crystalline／Bloch–Kato 输入；固定局部完成域的单位拼接不是论文的跨来源代表拼接；现有实际 raw/Haar 体积界也未识别纸面 theta locus、测度和无穷处归一化。Form2、cor312、G1–G4 均仍开放；不得将既有算术 accounting 的局部通过扩大解释为任何全局 theta 结论。
 
+`canonicalLinkTarget_selectedPaperAccounting_impossible` 已从次数一桥的 `hEll`、`hLink`、`hDegree` 和 `hq` 推出矛盾。需在论文数据族上重新建立 q 项与体积的换算。现有 `PaperLogWitnessHull` 可消费同一论文拼接的两个局部事实，即 p* 归一化见证属于拼接并集，且每个分量位于对应包的归一化环。最终需把该拼接及其体积装入规范 P7 使用的同一个 `RHSData`。更换区域后须重新证明 `LocalEstimate.thetaPilot_subset`，更换包或测度时还须核对逐包估计的其他字段。Form 2 的充分大素数范围也须与现有 P7 所需的全部适用 `ℓ ≥ 7` 协调。 [次数一桥的反证](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalTargetPaperSumAudit.lean#L78) · [见证与体积](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperLogWitnessHull.lean#L125) · [P7 消费者](../prove2me_workspace/Solutions/Source_TripodCanonicalCorollary22.lean#L24)
+
 ### 对数体积处权重与局部归一化的来源适配
 
 `refer/iut/Iut/Cor312/LogVolume.lean` 的实际接口给定严格正的实数处权重，要求每条有理处纤维上的权重之和为一，再把标签上的权重相乘。文件说明把预期权重写为局部次数除以全局次数；望月新一《集合论多宇宙间算术 Teichmüller 理论》第三篇注记 3.1.1（二）（印刷及文件第 94 页）使用的系数则为 `1 / ([K_ṽ : (F_mod)_v] · ∑_{w|v_Q} [(F_mod)_w : Q_v_Q])`。当前尚未给出这两种表达在实际处集、扩张和体积归一化上的换算，不能从说明文字直接认定二者相同。

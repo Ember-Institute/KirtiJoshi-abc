@@ -6,7 +6,7 @@ For the curve $P.\mathrm{curve}(x)$ over its supplied number field, `curveInputs
 
 # 简体中文
 
-设 $P$ 为每个代数参数提供 $3$ 阶挠点集和 $5$ 阶挠点集的有限性证明，并提供由此得到的 Legendre 曲线的算术数据及模各素数的表示。令 $K$ 指定一个含有 $2$ 的有限素数集和实数界 $c$，从而给出一个紧致有界子集。固定自然数 $d$ 和射影直线去掉 $0,1,\infty$ 后的一个点 $x$，记其坐标为 $\lambda$。假设 $\lambda$ 在 $\mathbb Q$ 上的极小多项式次数至多为 $d$。另假设在 $\mathbb Q(\lambda)$ 的每个无穷处，以及剩余特征属于所指定素数集的每个有限处，$\lambda$ 和 $\lambda-1$ 的局部绝对值取对数后的绝对值均至多为 $c$。
+设 $P$ 为每个代数参数提供 $3$-挠点集和 $5$-挠点集的有限性证明，并提供由此得到的 Legendre 曲线的算术数据及模各素数的表示。令 $K$ 指定一个含有 $2$ 的有限素数集和实数界 $c$。固定自然数 $d$ 和射影直线去掉 $0,1,\infty$ 后的一个点 $x$，记其坐标为 $\lambda$。假设 $\lambda$ 在 $\mathbb Q$ 上的极小多项式次数至多为 $d$。参考代码以如下处上的有界条件表示紧致有界子集的约束：在 $\mathbb Q(\lambda)$ 的每个无穷处，以及剩余特征属于所指定素数集的每个有限处，$\lambda$ 和 $\lambda-1$ 的局部绝对值取对数后的绝对值均至多为 $c$。
 
 对 $P$ 在数域上给出的曲线 $P.\mathrm{curve}(x)$，`curveInputs_dmod_le` 给出 $[\mathbb Q(j(P.\mathrm{curve}(x))):\mathbb Q]\leq d$。证明将 `dmod_le` 用于同一 $P$ 选定的曲线，再使用点的次数界。
 

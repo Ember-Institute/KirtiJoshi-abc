@@ -1,0 +1,77 @@
+{
+  "theorem": "AbcAdaptation.Tripod.legendreHeight",
+  "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/Height.lean#L791",
+  "sourceAndNativeTheoremCommandSHA256": "86ff2cb90f8de5701300bccd8ce42c145563ebf3c7f65dd693f349b9ea796d96",
+  "solutionTheoremBodySHA256": "e8a9d115f4a037f84c748391bb0130d3ff674623fc24f1fa6a020049ad4a96ae",
+  "statementModule": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_LegendreHeightHyp",
+  "statementModuleSHA256": "371d487b5d42c93e7de24bbbd1424eec808069fa2e6145f9f39ca7a9ebfe041c",
+  "proofImports": [
+    "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_LegendreHeightHyp",
+    "Definitions.Def_TripodLegendreHeightBasics",
+    "Theorems.Thm_AbcAdaptation_Tripod_h_eq_finHeight_div",
+    "Theorems.Thm_AbcAdaptation_Tripod_legendreFiniteUpperBound",
+    "Theorems.Thm_AbcAdaptation_Tripod_legendreFiniteLowerBound",
+    "Theorems.Thm_AbcAdaptation_Tripod_legendreArchimedeanTripleBound",
+    "Theorems.Thm_AbcAdaptation_Tripod_legendreZeroJRootOfUnity",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.Positivity"
+  ],
+  "existingPrivateDefinitions": {
+    "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight": {
+      "id": "3ac4b294-b315-40ed-a3c1-ba72b9a3fdab",
+      "source": "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight.lean",
+      "sha256": "d24632c93518695858d8a9a4d6956674343836fd3440ce704c048ba3eddacee3",
+      "readback": "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/platform/platform-import-readback.json"
+    },
+    "Definitions.Def_AbcAdaptation_Reference_Genl_Mathlib_Order_BoundedDiscrepancy": {
+      "id": "27c0474d-b13a-4121-aff1-cf2c79397e57",
+      "source": "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Genl_Mathlib_Order_BoundedDiscrepancy.lean",
+      "sha256": "6c01fd7567e443bd33d85a0c0d41036519de37a57f2f5c9b14a9604171b6f18d",
+      "readback": "prove2me_workspace/.local/adaptation/supplier-carriers-delivery-20261116/discrepancy/payload.json"
+    },
+    "Definitions.Def_TripodLegendreHeightBasics": {
+      "id": "64d00ab9-115e-41cb-abc0-37784d7bb17b",
+      "source": "prove2me_workspace/Definitions/Def_TripodLegendreHeightBasics.lean",
+      "sha256": "e5310355215b1e468bec258b6eb906f916b95885403dc6f9ca167f796b84becf",
+      "readback": "prove2me_workspace/.local/adaptation/legendre-height-20261114/def-TripodLegendreHeightBasics-payload.json",
+      "consumers": [
+        "AbcAdaptation.Tripod.finHeight_le_logHeight₁",
+        "AbcAdaptation.Tripod.finHeight_zero",
+        "AbcAdaptation.Tripod.CompactlyBounded.c_nonneg",
+        "AbcAdaptation.Tripod.gen_ne_one"
+      ]
+    }
+  },
+  "existingPrivateTheorems": {
+    "Theorems.Thm_AbcAdaptation_Tripod_h_eq_finHeight_div": {
+      "theorem": "AbcAdaptation.Tripod.h_eq_finHeight_div",
+      "id": "3ba94824-130b-402a-bc95-e768360bb56d",
+      "readback": "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/platform/receipts/h_eq_finHeight_div/final-item.json"
+    },
+    "Theorems.Thm_AbcAdaptation_Tripod_legendreFiniteUpperBound": {
+      "theorem": "AbcAdaptation.Tripod.legendreFiniteUpperBound",
+      "id": "3c6a05dd-10af-496c-9b31-64a2279106f7",
+      "readback": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/platform-after-legendreFiniteUpperBound.json"
+    },
+    "Theorems.Thm_AbcAdaptation_Tripod_legendreFiniteLowerBound": {
+      "theorem": "AbcAdaptation.Tripod.legendreFiniteLowerBound",
+      "id": "ed4d0e66-2d9d-49a0-b55d-78b28a62583f",
+      "readback": "prove2me_workspace/.local/adaptation/legendre-finite-sourceproof-20261114/platform-after-legendreFiniteLowerBound.json"
+    },
+    "Theorems.Thm_AbcAdaptation_Tripod_legendreArchimedeanTripleBound": {
+      "theorem": "AbcAdaptation.Tripod.legendreArchimedeanTripleBound",
+      "id": "5985b6ed-d8a2-4b9a-9ba9-31ee7ddf8d72",
+      "readback": "prove2me_workspace/.local/adaptation/legendre-height-20261114/platform-after-legendreArchimedeanTripleBound.json"
+    },
+    "Theorems.Thm_AbcAdaptation_Tripod_legendreZeroJRootOfUnity": {
+      "theorem": "AbcAdaptation.Tripod.legendreZeroJRootOfUnity",
+      "id": "6ba60e4b-ae1a-4ec5-9c4c-7df3578b5942",
+      "readback": "prove2me_workspace/.local/adaptation/legendre-height-20261114/platform-after-legendreZeroJRootOfUnity.json"
+    }
+  },
+  "localReviewNormalizationImport": {
+    "platform": "Theorems.Thm_AbcAdaptation_Tripod_h_eq_finHeight_div",
+    "local": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_HeightNormalization"
+  },
+  "sourceTargetKernelReview": "ci-026343-8940ddef"
+}

@@ -1,0 +1,1 @@
+The local height equality is definitional for the same curve, arithmetic and Tate inputs. The Legendre height comparison gives htCan(x) at most P.h(x)/6 plus a uniform constant C. At a fixed P.h height bound H, apply bounded-degree Northcott finiteness with bound H/6+C and take the subset.

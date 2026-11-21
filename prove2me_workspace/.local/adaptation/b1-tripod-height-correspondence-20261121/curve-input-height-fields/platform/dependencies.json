@@ -1,0 +1,105 @@
+{
+  "theorem": "AbcAdaptation.Tripod.curveInputs_height_fields",
+  "env": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "private": true,
+  "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/CurveFacts.lean#L498-L509",
+  "sourceToTargetKernelReview": {
+    "jobId": "ci-026381-11473a1c",
+    "receipt": {
+      "path": "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/curve-input-height-fields/ci-026381-11473a1c.result.json",
+      "sha256": "bb53b8fa4b7a0dd0823415b856ec659aa1610c44853ca1f33254ef244ea8038c"
+    },
+    "result": {
+      "path": "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/curve-input-height-fields/cross-version-result.json",
+      "sha256": "117e6bb7a29883bf5bb7b1077b327570a01edecb4584d712f6b0aae86819a02b"
+    }
+  },
+  "statementImports": [
+    "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_LegendreHeightHyp"
+  ],
+  "proofImports": [
+    "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_LegendreHeightHyp",
+    "Theorems.Thm_AbcAdaptation_Tripod_legendreHeight",
+    "Theorems.Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness",
+    "Mathlib.Tactic.Linarith"
+  ],
+  "pendingPrivateDependencies": {
+    "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_LegendreHeightHyp": {
+      "definition": "AbcAdaptation.Tripod.LegendreHeightHyp",
+      "payload": {
+        "path": "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/legendre-height/platform/LegendreHeightHyp.definition.json",
+        "sha256": "d441900be6d859ea01be9836356857eb8ffd398ad40a12d0c4708dcbfc0aff2d"
+      },
+      "local": {
+        "path": "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_LegendreHeightHyp.lean",
+        "sha256": "371d487b5d42c93e7de24bbbd1424eec808069fa2e6145f9f39ca7a9ebfe041c"
+      }
+    },
+    "Theorems.Thm_AbcAdaptation_Tripod_legendreHeight": {
+      "theorem": "AbcAdaptation.Tripod.legendreHeight",
+      "payload": {
+        "path": "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/legendre-height/platform/legendreHeight.problem.json",
+        "sha256": "fad5aaa83d45e1c2567eb4d227a1a2ca76da7be065c0f0018d67ab7776cb0a1a"
+      },
+      "local": {
+        "path": "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_LegendreHeight.lean",
+        "sha256": "e8255536d6239dc443a5ec3db08bb2b973df2e7c229191d8661b2f5d2b192ff8"
+      },
+      "localReview": {
+        "path": "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/legendre-height/platform/ci-026378-41c5f4db.result.json",
+        "sha256": "9e85db3f1c3493b28e9817cfc4dc75489cee88fb130dd2b6838a6194a5fac32f"
+      }
+    }
+  },
+  "existingPrivateDefinitions": {
+    "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight": {
+      "id": "3ac4b294-b315-40ed-a3c1-ba72b9a3fdab",
+      "source": "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight.lean",
+      "sha256": "d24632c93518695858d8a9a4d6956674343836fd3440ce704c048ba3eddacee3",
+      "readback": "prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/platform/platform-import-readback.json"
+    },
+    "Definitions.Def_AbcAdaptation_Reference_Genl_Mathlib_Order_BoundedDiscrepancy": {
+      "id": "27c0474d-b13a-4121-aff1-cf2c79397e57",
+      "source": "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Genl_Mathlib_Order_BoundedDiscrepancy.lean",
+      "sha256": "6c01fd7567e443bd33d85a0c0d41036519de37a57f2f5c9b14a9604171b6f18d",
+      "readback": "prove2me_workspace/.local/adaptation/supplier-carriers-delivery-20261116/discrepancy/payload.json"
+    }
+  },
+  "existingPrivateTheorems": {
+    "Theorems.Thm_AbcAdaptation_Tripod_boundedDegreeFiniteness": {
+      "theorem": "AbcAdaptation.Tripod.boundedDegreeFiniteness",
+      "id": "bfd60e2f-e299-4833-ab7e-03d2b7ccfd94",
+      "readback": {
+        "path": "prove2me_workspace/.local/adaptation/northcott-sourceproof-20261114/platform-after-parent.json",
+        "sha256": "480f134e308771814c3f10207b66b13ccb8f344b29125b4b364ddbb08977f92d"
+      }
+    }
+  },
+  "nativeFieldTheorems": {
+    "path": "prove2me_workspace/Solutions/Source_TripodCurveInputsHeightFields.lean",
+    "sha256": "0a8894efbfd2c008ec7aed43afe2614dd724715feef3be00f856edf11398f548"
+  },
+  "nativeConsumer": {
+    "definition": "AbcAdaptation.Reference.Iut.CurveInputs.toCorollary22Inputs",
+    "file": {
+      "path": "prove2me_workspace/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_CurveInputs.lean",
+      "sha256": "befd5e9dedb7090cb7a072b245f9615665df5b63c725aa934b93142d2ed7d90b"
+    },
+    "assignments": {
+      "height_eq": "localData_height",
+      "htCan_equiv": "htCan_equiv",
+      "northcott": "northcott"
+    }
+  },
+  "nativeProofImportSubstitution": {
+    "platform": "Theorems.Thm_AbcAdaptation_Tripod_legendreHeight",
+    "local": "Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_LegendreHeight"
+  },
+  "sha256": {
+    "formal-statement.lean": "5f59fd6218261ec1b5368669ed8a79ddd0ecb8d49975a46462bbfe28207f1427",
+    "solution.lean": "109ff414da24f924be8b37f52d306d13be2e1cc3d1a4fd4b37bfd893a3fec063",
+    "ReviewPlatformTripodHeightFields.lean": "a328b3cac7889176b24fadf2e2a20e4ebf63a6d496e2ef4d4f73a3222b20b24a",
+    "readback.md": "ef6357373d13d8bd56531a4ef4fd6914b143e27cb2d35c768781d2fc29657cb5",
+    "curveInputs_height_fields.problem.json": "c60242af7ba299b10a743bec1d90ac62e2b76b6fb614f1fc56cadd82606e5c53"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "problems": [
+    {
+      "theorem_name": "AbcAdaptation.Tripod.curveInputs_twoAdic_fields",
+      "theorem_title": "Two-adic height fields for the supplied tripod curves",
+      "formal_statement": "theorem AbcAdaptation.Tripod.curveInputs_twoAdic_fields (P : CurveProviders) (K : CompactlyBounded) (d : ℕ) :\n    0 ≤ max (4 * K.c) 0 ∧\n      ∀ (x : tripodTheory.Pt tripodTheory.tripod),\n        x ∈ tripodTheory.cbsSet K ∩ tripodTheory.ptLE tripodTheory.tripod d →\n        ((P.curve x).localHeightData (P.arith x) (P.tate x)).heightEq 2 ≤ max (4 * K.c) 0 := by sorry",
+      "preamble": "import Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_Theory\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicBoundHyp\n\nset_option autoImplicit false\n\nopen AbcAdaptation.Tripod AbcAdaptation.Reference.Iut",
+      "natural_language_statement": "## English\n\nLet $P$ supply Legendre curves and their local data on the tripod. Fix a compactly bounded subset $K$ with logarithmic bound $c$ and a natural number $d$. Set $B=\\max(4c,0)$. Show that $B$ is nonnegative and that every $x\\in K$ of degree at most $d$ has local height contribution from the places above $2$ at most $B$. Use the curve, arithmetic data and Tate parameters supplied by $P$ at $x$.\n\n## 简体中文\n\n设 $P$ 提供三足上的 Legendre 曲线及其局部数据。固定对数界为 $c$ 的紧致有界子集 $K$ 和自然数 $d$。令 $B=\\max(4c,0)$。证明 $B$ 非负，并证明对 $K$ 中每个次数至多为 $d$ 的点 $x$，素数 $2$ 上方各处的局部高度贡献至多为 $B$。局部高度使用 $P$ 在 $x$ 处提供的曲线、算术数据和 Tate 参数。\n\n## 日本語\n\n$P$ が三脚上の Legendre 曲線とその局所データを与えるとする。対数の上限が $c$ であるコンパクト有界部分集合 $K$ と自然数 $d$ を固定する。$B=\\max(4c,0)$ とおく。$B$ が非負であることと、$K$ に属する次数 $d$ 以下の各点 $x$ で、$2$ の上の素点からの局所高さの寄与が $B$ 以下であることを示せ。局所高さには、$P$ が $x$ に与える曲線、数論的データ、Tate パラメータを用いる。",
+      "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/CurveFacts.lean#L510-L512"
+    }
+  ],
+  "env": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "private": true
+}

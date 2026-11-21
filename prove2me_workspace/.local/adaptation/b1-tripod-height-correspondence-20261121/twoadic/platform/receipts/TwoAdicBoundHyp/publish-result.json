@@ -1,0 +1,20 @@
+{
+  "id": "66844de6-9aa1-4848-92a4-a24750380573",
+  "kind": "definition",
+  "theorem_name": "AbcAdaptation_Reference_Iut_Tripod_TwoAdicBoundHyp",
+  "theorem_title": "Height from places above a rational prime",
+  "formal_statement": "",
+  "natural_language_statement": "For a rational prime $p$, restrict the supplied curve's local height sum to the places with residue characteristic $p$. Each summand is the order of the Tate parameter times the residue degree and $\\log p$. Divide the sum by the degree of the curve's field over $\\mathbb Q$. For a compactly bounded subset $K$, $\\mathrm{TwoAdicBoundHyp}(P,K,B)$ asserts that this contribution for $p=2$ is at most $B$ at every point in $K$.",
+  "definitions": "/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n\nOriginal repository: https://github.com/lana-agents/iut\nOriginal revision: 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8\n-/\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_CurveProviderHeight\n\nnamespace AbcAdaptation.Reference.Iut.LocalHeightData\n\nopen Finset Real\n\nvariable (L : LocalHeightData)\n\n/-- The part of `log(q_∀)` supported at the places of residue characteristic `q`. -/\nnoncomputable def heightEq (q : ℕ) : ℝ :=\n  (∑ v ∈ L.bad.filter (fun v => L.p v = q), (L.hv v : ℝ) * L.f v * Real.log (L.p v)) / L.deg\n\nend AbcAdaptation.Reference.Iut.LocalHeightData\n\nnamespace AbcAdaptation.Tripod\n\nopen AbcAdaptation.Reference.Iut NumberField IsDedekindDomain\n  IsDedekindDomain.HeightOneSpectrum WithZero WeierstrassCurve\nopen scoped WithZero Real Classical\n\nvariable (P : CurveProviders) (K : CompactlyBounded)\n\ndef TwoAdicBoundHyp (B : ℝ) : Prop := ∀ x ∈ K.set, (P.localData x).heightEq 2 ≤ B\n\nend AbcAdaptation.Tripod\n",
+  "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/CurveFacts.lean#L409",
+  "tags": [
+    "number-theory",
+    "arithmetic-geometry"
+  ],
+  "visibility": "private",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "8e8bfc55-dff6-4673-a8ca-f1690de9eb2f",
+  "created_at": "2026-11-21T05:31:11.631224+00:00",
+  "updated_at": "2026-11-21T05:31:29.175022+00:00"
+}

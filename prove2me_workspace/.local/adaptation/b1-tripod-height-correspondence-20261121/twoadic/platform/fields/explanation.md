@@ -1,0 +1,1 @@
+Set $B=\max(4c,0)$. The second argument of the maximum gives $0\le B$. For a point in the intersection of $K$ with the degree-bounded locus, its membership in the first factor gives membership in $K$. Apply the two-adic bound to that point and the same provider. The provider’s local data are defined from the curve, arithmetic data and Tate parameters in the conclusion.

@@ -1,0 +1,17 @@
+{
+  "id": "e85c6a8d-f5a3-4739-b285-9026ff5cd96c",
+  "kind": "problem",
+  "theorem_name": "AbcAdaptation.Tripod.twoAdicBound",
+  "theorem_title": "Bound for the height from places above 2 on the tripod",
+  "formal_statement": "theorem AbcAdaptation.Tripod.twoAdicBound (P : CurveProviders) (K : CompactlyBounded) :\n    TwoAdicBoundHyp P K (max (4 * K.c) 0) := by sorry",
+  "natural_language_statement": "Let $K$ be a compactly bounded subset of the tripod with logarithmic bound $c$. The bounds on $\\lambda$ and $\\lambda-1$ apply at the finite places of $\\mathbb Q(\\lambda)$ above $2$. Let $P$ be a tripod curve provider. For each point $x$ in $K$, write $F_x$ for the field of its supplied curve. At a place $w$ of multiplicative reduction above $2$, let $m_w$ be the order of the Tate parameter and let $f_w$ be the residue degree over $2$.\n\nProve that for every $x$ in $K$,\n\n$$\\frac{1}{[F_x:\\mathbb Q]}\\sum_{\\substack{w\\mid 2\\\\w\\ \\text{of multiplicative reduction}}} m_w f_w\\log 2\\ \\le\\ \\max(4c,0).$$",
+  "definitions": "import Definitions.Def_AbcAdaptation_Reference_Iut_Tripod_TwoAdicBoundHyp\n\nset_option autoImplicit false\n\nopen AbcAdaptation.Tripod",
+  "source": "https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/TwoAdic.lean#L595",
+  "tags": [],
+  "visibility": "private",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "107a1761-3e17-4f1b-b82b-a6c9323eda0a",
+  "created_at": "2026-11-21T05:31:40.918876+00:00",
+  "updated_at": "2026-11-21T05:32:05.893792+00:00"
+}

@@ -1,0 +1,31 @@
+## English
+
+Fix a supplied Legendre curve provider $P$, a compactly bounded subset $K$ of the tripod, and a degree bound $d\in\mathbb N$. Write $h_P(x)=P.h(x)$ and $h_{\rm can}(x)=\mathrm{htCan}(x)$, the absolute logarithmic Weil height. The three statements supply the height fields of the curve input constructor.
+
+1. For each $x\in K$ of degree at most $d$, compute the local height data from $P.\mathrm{curve}(x)$, $P.\mathrm{arith}(x)$, and $P.\mathrm{tate}(x)$. Its height equals $h_P(x)$ by the definition of the provider height.
+2. On $K$, the functions $h_P/6$ and $h_{\rm can}$ have bounded discrepancy in both directions. The two additive constants apply to every point of $K$.
+3. For every real bound $H$, the set of points in $K$ of degree at most $d$ with $h_P(x)\leq H$ is finite. The comparison gives $h_{\rm can}(x)\leq h_P(x)/6+C$ on $K$. Apply bounded-degree Northcott finiteness at $H/6+C$ and take the subset. This applies across the varying point fields in the fixed algebraic closure of $\mathbb Q$.
+
+The constructor assigns these properties to `height_eq`, `htCan_equiv`, and `northcott`. The function `toCorollary22Inputs` passes them to `localData_height`, `htCan_equiv`, and `northcott` of the Corollary 2.2 input record.
+
+## 简体中文
+
+固定给定的 Legendre 曲线提供器 $P$、三足上的紧致有界子集 $K$，以及次数上界 $d\in\mathbb N$。记 $h_P(x)=P.h(x)$，并记 $h_{\rm can}(x)=\mathrm{htCan}(x)$ 为绝对对数 Weil 高度。以下三项给出曲线输入构造器的高度字段。
+
+1. 对 $K$ 中次数至多为 $d$ 的每个点 $x$，用 $P.\mathrm{curve}(x)$、$P.\mathrm{arith}(x)$ 和 $P.\mathrm{tate}(x)$ 计算局部高度数据。按提供器高度的定义，所得高度等于 $h_P(x)$。
+2. 在 $K$ 上，$h_P/6$ 与 $h_{\rm can}$ 具有双向有界差异。两个加性常数对 $K$ 上所有点统一适用。
+3. 对每个实数上界 $H$，$K$ 中次数至多为 $d$ 且 $h_P(x)\leq H$ 的点集有限。由比较得到 $h_{\rm can}(x)\leq h_P(x)/6+C$。用上界 $H/6+C$ 应用有界次数的 Northcott 有限性，再取子集。点域可在固定的 $\mathbb Q$ 代数闭包中随点变化。
+
+构造器将三项分别填入 `height_eq`、`htCan_equiv` 和 `northcott`。`toCorollary22Inputs` 将它们传给推论 2.2 输入记录的 `localData_height`、`htCan_equiv` 和 `northcott`。
+
+## 日本語
+
+与えられた Legendre 曲線の供給データ $P$、三脚のコンパクト有界部分集合 $K$、次数の上限 $d\in\mathbb N$ を固定する。$h_P(x)=P.h(x)$ とおき、絶対対数 Weil 高さを $h_{\rm can}(x)=\mathrm{htCan}(x)$ とする。次の三つの性質が曲線入力の高さに関するフィールドを与える。
+
+1. $K$ に属し次数が $d$ 以下の各点 $x$ で、$P.\mathrm{curve}(x)$、$P.\mathrm{arith}(x)$、$P.\mathrm{tate}(x)$ から局所高さデータを計算する。その高さは、供給データの高さの定義により $h_P(x)$ に等しい。
+2. $K$ 上で、$h_P/6$ と $h_{\rm can}$ の差は両方向に有界である。二つの加法定数は $K$ のすべての点に共通である。
+3. 任意の実数 $H$ に対し、$K$ に属し次数が $d$ 以下で $h_P(x)\leq H$ を満たす点の集合は有限である。$K$ 上の比較から $h_{\rm can}(x)\leq h_P(x)/6+C$ を得る。高さの上限 $H/6+C$ で次数有界の Northcott の有限性を適用し、部分集合を取る。各点の定義体は固定した $\mathbb Q$ の代数閉包の中で変化してよい。
+
+構成子は三つの性質を `height_eq`、`htCan_equiv`、`northcott` に入れる。`toCorollary22Inputs` はそれぞれを系 2.2 の入力の `localData_height`、`htCan_equiv`、`northcott` に渡す。
+
+[07cb1da · source constructor](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/CurveFacts.lean#L498-L509) · [Northcott transfer](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/Basic.lean#L451-L465) · [Corollary 2.2 input consumer](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Concrete/Existence.lean#L474-L480)

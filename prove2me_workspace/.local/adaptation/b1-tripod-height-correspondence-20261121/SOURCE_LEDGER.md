@@ -4,7 +4,7 @@
 
 源端使用 Lean 4.35.0-rc3 重放并导出原始表达式，目标端为 Lean 4.33.1 和 Mathlib 0df444a360eaa60ab8c11dca51a86af692955474。归一化定理的源命令与目标命令逐字一致。迁移审查在完整内核类型和证明项上核对三足域识别、$j$ 传输和归一化主定理。$j$ 传输的公开绑定位置一致，展开表达式中的内部绑定位置有差异，完整类型通过内核定义相等。归一化证明中的域自作用实例在审查重放时由该域的标准忠实标量作用实例接替。在两份证明均通过完整目标类型检查后，使用证明无关性比较。 [域与 j 审查](field-and-j/cross-version-result-v3.json) · [归一化审查](normalization/cross-version-result-v2.json) · [旧稿和来源摘要](platform/dependencies.json)
 
-CurveProviders.tate、localData、h 的完整类型和定义值也通过内核比较。实际 Tate 输入构造的完整跨版本重放仍开放。 [供应器审查](provider-height/cross-version-result.json)
+CurveProviders.tate、localData、h 的完整类型和定义值也通过内核比较。实际 Tate 输入的七条手写或生成声明均通过完整类型和值的跨版本审查。均匀化元两条证明复核了其调用的 `qOrder` 生成证明。局部参数存在性证明从目标定义实际传给 `Exists.choose` 的证明取名，确认源的 `tateParameter._proof_1` 对应目标的 `tateParameter._proof_5`。两侧完整表达式在内核中定义相等，审查了旧完备化 API 的对应与 JExistence 参数顺序。 [供应器审查](provider-height/cross-version-result.json) · [Tate 输入源端回执](tate-inputs-drafts/ci-026142-15bb9e12.result.json) · [均匀化元存在性](tate-inputs-drafts/uniformizer-proof/uniformizer-proof-review.result.json) · [所选均匀化元的证明](tate-inputs-drafts/uniformizer-proof-2/uniformizer-proof-2-review.result.json) · [参数存在性对应](tate-inputs-drafts/parameter-norm/existence-proof-review.result.json.gz) · [两个定义及 j 等式](tate-inputs-drafts/remaining-supply/remaining-supply-review.result.json.gz)
 
 平台复用了私有 FieldInvariant，并私有发布 FieldLegendreFacts、FieldIdentification、FieldTransport 和 JTransport。h_eq_finHeight_div 使用三项已证的有限高度公式。提交 93da123b-c25a-4eff-b7e3-dbeee8b2bd29 获 ACCEPTED，节点 3ba94824-130b-402a-bc95-e768360bb56d 回读为 Proved。 [平台依赖](platform/platform-import-readback.json) · [验收](platform/receipts/h_eq_finHeight_div/verification-result.json) · [节点终态](platform/receipts/h_eq_finHeight_div/final-item.json)
 
@@ -24,8 +24,22 @@ CurveProviders.tate、localData、h 的完整类型和定义值也通过内核�
 
 回执均为独占工作区，快照 ID 为空。资源使用调度器的进程树 RSS，PSS 和 degraded 标记未知。通过的审查仅报告 propext、Classical.choice 和 Quot.sound。原生七模块的 Checks、ImportAudit、Act1Scene1 和 AxiomAudit 已由 ci-019679-3acf973e 验收，该任务覆盖 84 个声明。 [原生项目回执](../main-chain-open-20261116/b1-tripod-all-review-v260-result.json)
 
+## Tate 输入生成证明
+
+以下审查使用独占工作区 `3da69dc8` 和 Lean `4.33.1`。PSS 和 degraded 标记未知。
+
+| 任务 | 退出码 | 墙钟秒 | CPU 秒（用户态 + 系统态） | 峰值 RSS GiB | 诊断 |
+| --- | ---: | ---: | ---: | ---: | --- |
+| [`ci-026250-cdc3100d`](tate-inputs-drafts/uniformizer-proof/ci-026250-cdc3100d.result.json) | 1 | 68.31 | 68.09（4.39 + 63.70） | 4.58 | 审查工具的 `nameField` 缺少 `do`，阻止元程序执行 |
+| [`ci-026263-81548b47`](tate-inputs-drafts/uniformizer-proof/ci-026263-81548b47.result.json) | 0 | 64.02 | 64.23（4.92 + 59.31） | 4.60 | 补上 `do` 后，完整类型、证明值和公理检查通过 |
+| [`ci-026273-6f179b6c`](tate-inputs-drafts/parameter-norm/ci-026273-6f179b6c.result.json) | 1 | 69.06 | 69.02（5.85 + 63.17） | 4.65 | 对应整数顺序实例缺少映射，Tate 参数生成证明中的证据项数目有差异 |
+| [`ci-026283-d6fd14d8`](tate-inputs-drafts/uniformizer-proof-2/ci-026283-d6fd14d8.result.json) | 0 | 109.56 | 109.80（5.59 + 104.21） | 4.62 | 所选均匀化元的完整类型和证明项通过 |
+| [`ci-026293-dd4511f3`](tate-inputs-drafts/parameter-norm/ci-026293-dd4511f3.result.json) | 1 | 148.59 | 148.49（6.95 + 141.54） | 4.67 | `one_lt_norm_j` 完整内核比较通过，Tate 参数生成证明仍有类型差异 |
+| [`ci-026334-f6579098`](tate-inputs-drafts/parameter-norm/ci-026334-f6579098.result.json) | 0 | 72.11 | 72.13（5.26 + 66.87） | 4.60 | 按实际 `Exists.choose` 调用确定对应，存在性证明检查通过 |
+| [`ci-026342-89288c59`](tate-inputs-drafts/remaining-supply/ci-026342-89288c59.result.json) | 0 | 121.41 | 120.32（7.40 + 112.92） | 4.76 | `tateParameter`、`tateParameter_tateJ`、`tateInputs` 的完整类型与值通过 |
+
 ## 实际 Tate 输入的源端审查
 
-独占审查 ci-026142-15bb9e12 在 Lean 4.35.0-rc3 核对了七条原始声明的完整类型和值，并生成十四份归一化证书。源端仅使用 Lean 标准公理。任务退出码为 0，墙钟 555.29 秒，CPU 467.74 秒（用户态 21.15 秒，系统态 446.59 秒），进程树峰值 RSS 为 9.23 GiB，PSS 未取得。诊断是引用参考工程的一条生成引理。目标端需继续核对同一七条声明。 [审查回执](tate-inputs-drafts/ci-026142-15bb9e12.result.json) · [源端证书](tate-inputs-drafts/source-common-core-certificates.json.gz) · [目标声明候选](tate-inputs-drafts/target-candidates.json)
+独占审查 ci-026142-15bb9e12 在 Lean 4.35.0-rc3 核对了七条原始声明的完整类型和值，并生成十四份归一化证书。源端仅使用 Lean 标准公理。任务退出码为 0，墙钟 555.29 秒，CPU 467.74 秒（用户态 21.15 秒，系统态 446.59 秒），进程树峰值 RSS 为 9.23 GiB，PSS 未取得。诊断是引用参考工程的一条生成引理。同一七条声明的目标端结果见上方对应表。 [审查回执](tate-inputs-drafts/ci-026142-15bb9e12.result.json) · [源端证书](tate-inputs-drafts/source-common-core-certificates.json.gz) · [目标声明候选](tate-inputs-drafts/target-candidates.json)
 
 完整表达式与大型证书以 gzip 归档。复现审查前将相应文件解压至配置记录的路径。 [三足域与 j 传输表达式](field-and-j/cross-version-expressions-v3.jsonl.gz) · [归一化表达式](normalization/cross-version-expressions-v2.jsonl.gz)
