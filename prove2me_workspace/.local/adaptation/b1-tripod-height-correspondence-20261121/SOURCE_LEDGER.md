@@ -43,3 +43,54 @@ CurveProviders.tate、localData、h 的完整类型和定义值也通过内核�
 独占审查 ci-026142-15bb9e12 在 Lean 4.35.0-rc3 核对了七条原始声明的完整类型和值，并生成十四份归一化证书。源端仅使用 Lean 标准公理。任务退出码为 0，墙钟 555.29 秒，CPU 467.74 秒（用户态 21.15 秒，系统态 446.59 秒），进程树峰值 RSS 为 9.23 GiB，PSS 未取得。诊断是引用参考工程的一条生成引理。同一七条声明的目标端结果见上方对应表。 [审查回执](tate-inputs-drafts/ci-026142-15bb9e12.result.json) · [源端证书](tate-inputs-drafts/source-common-core-certificates.json.gz) · [目标声明候选](tate-inputs-drafts/target-candidates.json)
 
 完整表达式与大型证书以 gzip 归档。复现审查前将相应文件解压至配置记录的路径。 [三足域与 j 传输表达式](field-and-j/cross-version-expressions-v3.jsonl.gz) · [归一化表达式](normalization/cross-version-expressions-v2.jsonl.gz)
+
+## Joshi II 的平方和与 P7 的统一素数下界
+
+平方和引理复用已验收的 `sum_affine_quadratic`。四个声明分别给出平方系数、代入 Tate 根对数后的系数、负对数的逐处严格下界，以及总和为负时的有限加权平均比较。以 $m=(\ell-1)/2$ 代入，奇素数 $\ell\ge5$ 足以得到严格数值界。Joshi III 定理 9.11.1（Form 2）仍明列奇素数 $\ell\gg0$。接入规范高高度估计的条件性草稿为每个 $K,d$ 接收统一的 $N(K,d)$，由 Northcott 有限性和既有素数选择将该下界传给同一 P7 见证上的比较。论文区域、包络体积、带符号的 q-pilot 和局部估计的接合仍开放。 [平方和 Lean 草稿](joshi-ii-square-logs/Source_JoshiIINormalizedSquareLogs.lean) · [既有求和恒等式](../../../Theorems/Thm_AbcAdaptation_Reference_Iut_sum_affine_quadratic.lean) · [三语稿及原文页码](c2-prime-bound/readback.md)
+
+原文核对使用 2026-11-21 取得的 arXiv PDF。II v3 的 SHA-256 为 `a25e58456673d905f6be328773926ec8a5dbb419fe278ca478827f163ccdf4af`，III v4 的 SHA-256 为 `86a92ca893e774e1ea591ed9825a30627f3f19d8df0b26b7f5855dc0923f0429`。 [Joshi II](https://arxiv.org/pdf/2303.01662v3#page=28) · [Joshi III](https://arxiv.org/pdf/2401.13508v4#page=127)
+
+三个任务均在 `/home/admin-wsl/Coq/abc/prove2me_workspace` 独占运行，HEAD 为 `9cf23097`，快照 ID 为空。调度器记录进程树峰值 RSS，PSS 和 degraded 标记未知。各目标的 `actual_arguments` 均为 `lean` 加所列单文件。所有显式公理输出仅含 `propext`、`Classical.choice` 和 `Quot.sound`，审查通过且无 `sorryAx`。项目联合审查导入了 `Checks`、`ImportAudit`、`Act1Scene1` 和 `AxiomAudit`。回执的范围是列出的独立草稿及联审文件。 [项目联审源文件](c2-prime-bound/ReviewCorollary22PrimeBoundProject.lean#L8)
+
+| MCP-CI 回执 | 输入文件与 SHA-256 前缀 | 退出码 | 墙钟秒 | CPU 秒（用户态 + 系统态） | 峰值 RSS GiB | 诊断 |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| [ci-026499-66ab10f9](c2-prime-bound/ci-026499-66ab10f9.result.json) | `ReviewCorollary22PrimeBound.lean` · `d59204c50bbecf91` | 0 | 254.81 | 254.17（27.78 + 226.39） | 7.64 | 第 297 行建议将 `simpa` 换为 `simp` |
+| [ci-026517-9dc5bb10](c2-prime-bound/ci-026517-9dc5bb10.result.json) | `ReviewCorollary22PrimeBoundProject.lean` · `988aba8a62256e96` | 0 | 318.92 | 313.19（28.90 + 284.29） | 8.18 | 第 301 行为同一条 lint 建议 |
+| [ci-026524-eff346a4](joshi-ii-square-logs/ci-026524-eff346a4.result.json) | `Source_JoshiIINormalizedSquareLogs.lean` · `bb66ec1398f52dfd` | 0 | 87.90 | 84.71（1.32 + 83.39） | 1.99 | 第 29 行 `ring` 未执行，第 39 行有 tactic 组合 lint 建议 |
+
+
+## 论文右端接入同一 P7
+
+`withRHSData` 保留初始 θ 数据、q-pilot 及 Theorem 1.10 的十二个算术不变量。算术证书的四项证明在新右端上复用。只替换 θ 区域时，原容器、测度与包络系统仍可使用，新的逐包包含证明给出所需 `thetaPilot_subset`。 [右端运输与局部估计](joshi-ii-square-logs/Source_ReferenceIutPaperRHSTransport.lean)
+
+`PaperRHSSupplyAtLeast` 接收同一选中点和素数的实际初始数据、局部数据、q-pilot 和塔算术。它保留模域次数、高度、判别式与导子关系，供应新的论文右端、来源谓词及新右端的局部估计。规范高高度推论 2.2 使用这一供应函数和独立的论文比较条件。供应函数的范围是 `ConcreteThetaDataExistence` 给出的所有满足关系的具体见证。论文标准点、区域、测度及比较的证明保留为显式输入。 [规范 P7 和 c2 的组合](c2-prime-bound/Source_TripodCanonicalCorollary22PaperRHS.lean)
+
+| MCP-CI 独占审查 | 输入 SHA-256 前缀 | 退出码 | 墙钟秒 | CPU 秒（用户态 + 系统态） | 峰值 RSS GiB | 诊断 |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| [ci-026674-84dc49e4](joshi-ii-square-logs/ci-026674-84dc49e4.result.json) | `88948eb6dd10edcf` | 0 | 147.45 | 145.57（6.01 + 139.56） | 7.97 | 四项公理输出，无诊断 |
+| [ci-026706-0e022888](c2-prime-bound/ci-026706-0e022888.result.json) | `ca729e482cadbe4e` | 0 | 158.79 | 154.40（28.28 + 126.12） | 8.22 | 十一项公理输出，既有 `simpa` lint 建议 |
+
+两项审查均导入 Checks、ImportAudit、Act1Scene1 与 AxiomAudit。全部显式公理输出仅含 `propext`、`Classical.choice`、`Quot.sound`。进程树 RSS 来自调度器，PSS 和 degraded 标记未知。
+
+## Joshi III 的归一化乘积与规范 P7 的有限处包体积
+
+令 $m=(\ell-1)/2$，$M=\mathbb Q(j(E))$，并令 $B$ 为 P7 的坏模域处集。对 $v\in B$，取同一 P7 数据选出的代表处 $s(v)$、Tate 根 $r_v=\mathrm{TL.qroot}(s(v))$ 和相对局部次数 $d_v=[K_{t,s(v)}:M_v]$。以 $V_{j,p}$ 表示其第 $j$ 个标签集在有限素数 $p$ 的包络对数体积，$S$ 表示局部数据的有限坏特征集。Lean 专门化保留原见证的等式 `X = concreteVariantData D LT TL QI`，并给出
+
+$$
+\log\!\left(\prod_{j=1}^m\prod_{v\in B}
+  \|r_v\|^{(j/m)^2/(d_v[M:\mathbb Q])}\right)
+=\frac{1}{m^2}\sum_{j=1}^m\sum_{p\in S}V_{j,p}.
+$$
+
+包权重是各坐标处权重的乘积。原有限处包体积公式将未缩放坐标的权重求和为一，得到 $\sum_{p\in S}V_{j,p}=j^2 X.\mathrm{qPilot.lhs}$。代表处公式把同一个带符号的 q-pilot 写成 $\sum_{v\in B}\log\|r_v\|/(d_v[M:\mathbb Q])$。通用引理显式使用模域映射的相容等式，P7 专门化从原点数据取得它。 [包权重](../../../Solutions/Source_ReferenceIutConcreteContainer.lean#L157) · [有限处公式](../../../Solutions/Source_ReferenceIutCor312FiniteThetaHullVolume.lean#L224) · [代表处公式](../../../Solutions/Source_ReferenceIutCor312RepresentativeQPilot.lean#L87) · [P7 专门化](../../../Solutions/Source_ReferenceIutCor312RepresentativeProduct.lean#L117)
+
+乘积使用 Joshi III 式 (9.9.4)–(9.9.6) 的平方指数和 P7 的完整次数归一化。局部权重见 Joshi III §9.10.5，全局次数可写成 Mochizuki III 注记 3.1.1(ii) 的完整模域纤维次数和。原论文的 Bloch–Kato 标准点范数、Form 2 的全纯包络及其体积仍待与 P7 数据逐项识别。 [Joshi III 的乘积](<../../../../refer/JoshiTeich/Arithmetic Teichmuller Spaces 3.tex#L3467>) · [Joshi III 的局部权重](<../../../../refer/JoshiTeich/Arithmetic Teichmuller Spaces 3.tex#L3552>) · [模域纤维权重](../../../Solutions/Source_ReferenceIutCor312PointRepresentativeWeight.lean#L21)
+
+四个任务均从 `/home/admin-wsl/Coq/abc/prove2me_workspace` 以独占模式检查单文件。HEAD 为 `9cf23097`，快照 ID 为空。内存列来自调度器的进程树 RSS，PSS 和 degraded 标记未知。联合审查导入 `Checks`、`ImportAudit`、`Act1Scene1` 和 `AxiomAudit`。显式公理输出仅含 `propext`、`Classical.choice` 和 `Quot.sound`，`no_sorryAx` 检查通过。 [联合审查源码](joshi-iii-representative-product/ReviewCor312RepresentativeProduct.lean)
+
+| MCP-CI 回执 | 输入 SHA-256 前缀 | 退出码 | 墙钟秒 | CPU 秒（用户态 + 系统态） | 峰值 RSS GiB | 诊断 |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| [ci-026631-b9378258](joshi-iii-representative-product/ci-026631-b9378258.result.json) | `cd415337fc121c65` | 1 | 70.98 | 70.57（5.90 + 64.67） | 7.57 | 类型类搜索未取得模域到挠点域所需的标量塔 |
+| [ci-026641-3d10738a](joshi-iii-representative-product/ci-026641-3d10738a.result.json) | `3d80df25e3ddb8c0` | 1 | 149.73 | 147.66（5.76 + 141.90） | 7.55 | 储存的标量塔使用继承的标量作用，实例与指定模域映射不符 |
+| [ci-026663-f887862b](joshi-iii-representative-product/ci-026663-f887862b.result.json) | `1f95f8142c7bf8a6` | 0 | 195.21 | 193.75（6.07 + 187.68） | 7.67 | 无诊断 |
+| [ci-026672-29e2ba52](joshi-iii-representative-product/ci-026672-29e2ba52.result.json) | `fa80d762ea12d09d` | 0 | 150.95 | 150.25（7.60 + 142.65） | 8.17 | 无诊断，五条声明公理审查通过 |

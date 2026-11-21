@@ -3,10 +3,6 @@
 ## 1. 根据 refer/iut 指示尚未拆分的证明义务
 
 - `refer/iut/Iut/Tripod/Main.lean:129`
-- `refer/iut/Iut/Tripod/ClassicalAbcGenuineCanLift.lean:28`
-- `refer/iut/Iut/Implication/Corollary22.lean:284`
-- `refer/iut/Iut/Implication/Corollary22.lean:357`
-- `refer/iut/Iut/Implication/LogVolumeBound.lean:69`
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:52`
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:72`
 - `refer/iut/Iut/Tripod/GeneralPosition.lean:108`
@@ -67,7 +63,9 @@
 
 四个 Scene1 producer owner 仍分别是 `AdelicThetaLink`、`ThetaLiftLog`、`PacketCollationHull`、`VolumeTransfer`：现有跨处 Tate／q 来源和部分规范化、Fontaine 事实只能供应局部前提；纸面 theta locus、Bloch–Kato theta 类与 log-shell 身份、跨 holomorphoid 代表拼接、实际 volume-measure 同一性仍缺少来源构造。显式负面障碍包括：字面 Corollary 3.12 的符号与实际收缩根的负对数相反；raw、全局次数、剩余次数、`2ell`、纸面权重和 `p*` 归一化尚无同一 carrier 上的等式；一般 `L` 情形不能假定度为一；现有选取根集的 q-log 总和严格小于纸面选定处集的总和，且 omitted mass/degree defect 未闭合；实际扭点来源的分歧指数至少为 `ell`，故质数纤维不满足 mass-one；普通 `H¹`／Kummer 类尚非论文的 `H¹_e`／crystalline／Bloch–Kato 输入；固定局部完成域的单位拼接不是论文的跨来源代表拼接；现有实际 raw/Haar 体积界也未识别纸面 theta locus、测度和无穷处归一化。Form2、cor312、G1–G4 均仍开放；不得将既有算术 accounting 的局部通过扩大解释为任何全局 theta 结论。
 
-`canonicalLinkTarget_selectedPaperAccounting_impossible` 已从次数一桥的 `hEll`、`hLink`、`hDegree` 和 `hq` 推出矛盾。需在论文数据族上重新建立 q 项与体积的换算。现有 `PaperLogWitnessHull` 可消费同一论文拼接的两个局部事实，即 p* 归一化见证属于拼接并集，且每个分量位于对应包的归一化环。最终需把该拼接及其体积装入规范 P7 使用的同一个 `RHSData`。更换区域后须重新证明 `LocalEstimate.thetaPilot_subset`，更换包或测度时还须核对逐包估计的其他字段。Form 2 的充分大素数范围也须与现有 P7 所需的全部适用 `ℓ ≥ 7` 协调。 [次数一桥的反证](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalTargetPaperSumAudit.lean#L78) · [见证与体积](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperLogWitnessHull.lean#L125) · [P7 消费者](../prove2me_workspace/Solutions/Source_TripodCanonicalCorollary22.lean#L24)
+`canonicalLinkTarget_selectedPaperAccounting_impossible` 已从次数一桥的 `hEll`、`hLink`、`hDegree` 和 `hq` 推出矛盾。需在论文数据族上重新建立 q 项与体积的换算。现有 `PaperLogWitnessHull` 可消费同一论文拼接的两个局部事实，即 p* 归一化见证属于拼接并集，且每个分量位于对应包的归一化环。最终需把该拼接及其体积装入规范 P7 使用的同一个 `RHSData`。更换区域后须重新证明 `LocalEstimate.thetaPilot_subset`，更换包或测度时还须核对逐包估计的其他字段。 [次数一桥的反证](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalTargetPaperSumAudit.lean#L78) · [见证与体积](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperLogWitnessHull.lean#L125) · [P7 消费者](../prove2me_workspace/Solutions/Source_TripodCanonicalCorollary22.lean#L24)
+
+Joshi III 定理 9.11.1（Form 2）要求奇素数 $\ell\gg0$ 和全局初始 θ 数据。论文适配须提供对每个固定 $K,d$ 统一的充分大下界 $N(K,d)$，或证明原素数窗口中能选到满足全部论文条件的同一个素数。体积比较需在同一实际 P7 数据上建立。固定有理 Legendre 族给出原包络体积严格低于该数据的归一化见证均值，因此这一步需要论文区域及测度的来源构造。将新数据接入参考 `c2` 时，沿用原初始数据、q-pilot 和算术证书，供应新论文来源谓词与新右端的局部估计。仅替换 θ 区域时须证明它包含于原估计的逐包容器。采用新的包或测度时须用对应区域重做逐包体积界与单调性。 [素数下界](../prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/SOURCE_LEDGER.md#joshi-ii-的平方和与-p7-的统一素数下界) · [同一数据的反例](../prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/joshi-ii-square-logs/SOURCE_LEDGER.md) · [右端替换接口](../prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/joshi-ii-square-logs/Source_ReferenceIutPaperRHSTransport.lean)
 
 ### 对数体积处权重与局部归一化的来源适配
 
