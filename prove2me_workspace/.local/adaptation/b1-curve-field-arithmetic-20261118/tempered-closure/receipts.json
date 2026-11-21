@@ -1,0 +1,351 @@
+{
+  "build_target": "TemperedSourceClosure",
+  "lean_toolchain": "leanprover/lean4:v4.33.1",
+  "mathlib_revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "memory_source": "MCP-CI process-tree RSS samples",
+  "memory_confidence": null,
+  "attempts": [
+    {
+      "job_id": "ci-025397-6c21230c",
+      "result_receipt_sha256": "a8840258f83168c24e88477b8461c8d8bfc26e4ac6764846a71b88e4737bbd1a",
+      "workspace": "/tmp/abc-tempered-4.33.1.SmuaeDd9",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "worktree_head": "edadf6728cd99b8fbd452f9e60584fbfb1999d3a",
+      "modified_files": [],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "31d0fdf10859e259818bf5a3fe006e43a553d53418f63213c63db038cf82b040",
+        "lake-manifest.json": "0b33f1bf6ef81f1c35a5486484ede3fd4595f2130786e4512d850217e0aa4b36",
+        "SOURCE_MANIFEST.json": "90603d870f467425f5ba72effd85c2933e2a88c051e14e6c78d7ceba3a51c5ed",
+        "SHA256SUMS": "8c7716e5c418bad437931b6e5c5f0c09f2a4a7539a0d84c950adfe763d4f0bf4"
+      },
+      "input_hashes": {},
+      "actual_arguments": [
+        "lake",
+        "build",
+        "TemperedSourceClosure"
+      ],
+      "status": "cancelled",
+      "exit_code": -15,
+      "description": "The dependency graph scheduled a shared Mathlib rebuild. The submitter cancelled the job.",
+      "diagnostics": [],
+      "resources": {
+        "wall_time_seconds": 153.36947189999046,
+        "cpu_time_seconds": 1666.6100000000006,
+        "cpu_user_seconds": 97.55000000000007,
+        "cpu_system_seconds": 1569.0600000000004,
+        "peak_rss_bytes": 27686014976,
+        "peak_pss_bytes": null
+      }
+    },
+    {
+      "job_id": "ci-025463-78f105ec",
+      "result_receipt_sha256": "0738b7145820ebe70fd071fb931c34a363488fca7d02edc13e0d2f273990c5b0",
+      "workspace": "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "worktree_head": "e8986f25fe198908aece752ae9b5890032781c47",
+      "modified_files": [],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ceace9163c33a707ee37a36e5ace2525c1043760be8b05181abfdd82f6ecdf64",
+        "lake-manifest.json": "b09c5f1dc3e2cbb5d4805ca3ba120acbfc6759e8f444f4383950815c0ad59a7b",
+        "SOURCE_MANIFEST.json": "90603d870f467425f5ba72effd85c2933e2a88c051e14e6c78d7ceba3a51c5ed",
+        "SHA256SUMS": "555fe93355bdca8d551a1bbae55782b4285c2783419bc0c74eb924b7d7e20b48",
+        "prebuilt-mathlib/lakefile.toml": "fb152492447a361bea1a5dc760cd4ef8b6dbffc20b17d2fcf91e156633dbd720",
+        "prebuilt-mathlib/lake-manifest.json": "40feaad399e82bacffb66b24615f60447fa91ceff73e79d6bad89445c825b06a",
+        "prebuilt-mathlib/ARTIFACT_LINKS.json": "d15392821200379333719e27498479753ae6c6380752c66cff20f2d69918b6f7"
+      },
+      "input_hashes": {},
+      "actual_arguments": [
+        "lake",
+        "build",
+        "TemperedSourceClosure"
+      ],
+      "status": "failed",
+      "exit_code": 1,
+      "description": "The artifact package reused Mathlib. Specialization and ValuationInertia failed.",
+      "diagnostics": [
+        "error: TemperedFundamentalGroups/Models/Specialization.lean:195:24: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "error: TemperedFundamentalGroups/Models/Specialization.lean:233:12: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "error: TemperedFundamentalGroups/Models/Specialization.lean:234:12: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "error: TemperedFundamentalGroups/Models/Specialization.lean:279:8: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "error: TemperedFundamentalGroups/Models/Specialization.lean:284:8: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "error: Pi1/Orbicurve/ValuationInertia.lean:383:33: Application type mismatch: The argument",
+        "error: Pi1/Orbicurve/ValuationInertia.lean:383:21: failed to synthesize instance of type class"
+      ],
+      "resources": {
+        "wall_time_seconds": 1646.497623999996,
+        "cpu_time_seconds": 7011.950000000003,
+        "cpu_user_seconds": 722.37,
+        "cpu_system_seconds": 6289.580000000003,
+        "peak_rss_bytes": 49412743168,
+        "peak_pss_bytes": null
+      }
+    },
+    {
+      "job_id": "ci-025538-7c05aa6b",
+      "result_receipt_sha256": "acc4972e696e944784d47766621ef42b92de71f617c47e4e6418af3e697ecd30",
+      "workspace": "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "worktree_head": "e8986f25fe198908aece752ae9b5890032781c47",
+      "modified_files": [
+        "Pi1/Orbicurve/ValuationInertia.lean",
+        "TemperedFundamentalGroups/Models/Specialization.lean"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ceace9163c33a707ee37a36e5ace2525c1043760be8b05181abfdd82f6ecdf64",
+        "lake-manifest.json": "b09c5f1dc3e2cbb5d4805ca3ba120acbfc6759e8f444f4383950815c0ad59a7b",
+        "SOURCE_MANIFEST.json": "90603d870f467425f5ba72effd85c2933e2a88c051e14e6c78d7ceba3a51c5ed",
+        "SHA256SUMS": "555fe93355bdca8d551a1bbae55782b4285c2783419bc0c74eb924b7d7e20b48",
+        "prebuilt-mathlib/lakefile.toml": "fb152492447a361bea1a5dc760cd4ef8b6dbffc20b17d2fcf91e156633dbd720",
+        "prebuilt-mathlib/lake-manifest.json": "40feaad399e82bacffb66b24615f60447fa91ceff73e79d6bad89445c825b06a",
+        "prebuilt-mathlib/ARTIFACT_LINKS.json": "d15392821200379333719e27498479753ae6c6380752c66cff20f2d69918b6f7"
+      },
+      "input_hashes": {
+        "Pi1/Orbicurve/ValuationInertia.lean": "12994432992a1a89c8b807c539335764c6ba0812c0997992727eefcd6a71f3fd",
+        "TemperedFundamentalGroups/Models/Specialization.lean": "eb138ae90aed9bd29242c4df55f3a6af9a6fda072bd06ebacab193422264ee9d",
+        "Specialization.patch": "1f63200efdf517e83fc0e7960cc9d26abb4928102e56825b8307cf908e191754",
+        "ValuationInertia.patch": "704c277a3c31f2144372f40c3ca5ca09241ba8183833ac14712d639c0c5469fb"
+      },
+      "actual_arguments": [
+        "lake",
+        "build",
+        "TemperedSourceClosure"
+      ],
+      "status": "failed",
+      "exit_code": 1,
+      "description": "ValuationInertia passed. The closed-point rewrite still failed in Specialization.",
+      "diagnostics": [
+        "error: TemperedFundamentalGroups/Models/Specialization.lean:195:24: Tactic `rewrite` failed: Did not find an occurrence of the pattern"
+      ],
+      "resources": {
+        "wall_time_seconds": 331.33980810000503,
+        "cpu_time_seconds": 437.1,
+        "cpu_user_seconds": 95.69,
+        "cpu_system_seconds": 341.41,
+        "peak_rss_bytes": 8870785024,
+        "peak_pss_bytes": null
+      }
+    },
+    {
+      "job_id": "ci-025563-631246a7",
+      "result_receipt_sha256": "1e9ca2422377290945d2d95c3a39cdc7675e706ba1e4749c39a884bd26ec8967",
+      "workspace": "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "worktree_head": "e8986f25fe198908aece752ae9b5890032781c47",
+      "modified_files": [
+        "Pi1/Orbicurve/ValuationInertia.lean",
+        "TemperedFundamentalGroups/Models/Specialization.lean"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ceace9163c33a707ee37a36e5ace2525c1043760be8b05181abfdd82f6ecdf64",
+        "lake-manifest.json": "b09c5f1dc3e2cbb5d4805ca3ba120acbfc6759e8f444f4383950815c0ad59a7b",
+        "SOURCE_MANIFEST.json": "90603d870f467425f5ba72effd85c2933e2a88c051e14e6c78d7ceba3a51c5ed",
+        "SHA256SUMS": "555fe93355bdca8d551a1bbae55782b4285c2783419bc0c74eb924b7d7e20b48",
+        "prebuilt-mathlib/lakefile.toml": "fb152492447a361bea1a5dc760cd4ef8b6dbffc20b17d2fcf91e156633dbd720",
+        "prebuilt-mathlib/lake-manifest.json": "40feaad399e82bacffb66b24615f60447fa91ceff73e79d6bad89445c825b06a",
+        "prebuilt-mathlib/ARTIFACT_LINKS.json": "d15392821200379333719e27498479753ae6c6380752c66cff20f2d69918b6f7"
+      },
+      "input_hashes": {
+        "Pi1/Orbicurve/ValuationInertia.lean": "12994432992a1a89c8b807c539335764c6ba0812c0997992727eefcd6a71f3fd",
+        "TemperedFundamentalGroups/Models/Specialization.lean": "51473f125689357ce702c6e3457c1ca4f8d0b2c2883e39a100864ea2587088e5",
+        "Specialization.patch": "1f63200efdf517e83fc0e7960cc9d26abb4928102e56825b8307cf908e191754",
+        "ValuationInertia.patch": "704c277a3c31f2144372f40c3ca5ca09241ba8183833ac14712d639c0c5469fb",
+        "tempered-dependency-compatibility.diff": "4356886280bc2756d79ff10c246e29c10a5afd0bf126d262267ebd92f4475efa"
+      },
+      "actual_arguments": [
+        "lake",
+        "build",
+        "TemperedSourceClosure"
+      ],
+      "status": "failed",
+      "exit_code": 1,
+      "description": "Specialization passed. Projective required a properness instance for an isomorphism.",
+      "diagnostics": [
+        "error: TemperedFundamentalGroups/Models/Projective.lean:75:4: failed to synthesize instance of type class"
+      ],
+      "resources": {
+        "wall_time_seconds": 215.19258959998842,
+        "cpu_time_seconds": 215.65,
+        "cpu_user_seconds": 9.9,
+        "cpu_system_seconds": 205.75,
+        "peak_rss_bytes": 4820414464,
+        "peak_pss_bytes": null
+      }
+    },
+    {
+      "job_id": "ci-025589-f95f5e43",
+      "result_receipt_sha256": "1df03642ae1f6b653e2b1a0893dcd7cd86424332cda08765124c53572c1f7ff8",
+      "workspace": "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "worktree_head": "e8986f25fe198908aece752ae9b5890032781c47",
+      "modified_files": [
+        "Pi1/Orbicurve/ValuationInertia.lean",
+        "TemperedFundamentalGroups/Models/Projective.lean",
+        "TemperedFundamentalGroups/Models/Specialization.lean"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ceace9163c33a707ee37a36e5ace2525c1043760be8b05181abfdd82f6ecdf64",
+        "lake-manifest.json": "b09c5f1dc3e2cbb5d4805ca3ba120acbfc6759e8f444f4383950815c0ad59a7b",
+        "SOURCE_MANIFEST.json": "90603d870f467425f5ba72effd85c2933e2a88c051e14e6c78d7ceba3a51c5ed",
+        "SHA256SUMS": "555fe93355bdca8d551a1bbae55782b4285c2783419bc0c74eb924b7d7e20b48",
+        "prebuilt-mathlib/lakefile.toml": "fb152492447a361bea1a5dc760cd4ef8b6dbffc20b17d2fcf91e156633dbd720",
+        "prebuilt-mathlib/lake-manifest.json": "40feaad399e82bacffb66b24615f60447fa91ceff73e79d6bad89445c825b06a",
+        "prebuilt-mathlib/ARTIFACT_LINKS.json": "d15392821200379333719e27498479753ae6c6380752c66cff20f2d69918b6f7"
+      },
+      "input_hashes": {
+        "Pi1/Orbicurve/ValuationInertia.lean": "12994432992a1a89c8b807c539335764c6ba0812c0997992727eefcd6a71f3fd",
+        "TemperedFundamentalGroups/Models/Projective.lean": "b889ec1d5d3f9e241fee554c45caa27ab36e41fd4a5d570894f4625036bc167e",
+        "TemperedFundamentalGroups/Models/Specialization.lean": "51473f125689357ce702c6e3457c1ca4f8d0b2c2883e39a100864ea2587088e5",
+        "tempered-dependency-projective.diff": "97eaf60bebade0b3acc41c4e7f06d442f5df20ea176760fe18d623ef1b318771"
+      },
+      "actual_arguments": [
+        "lake",
+        "build",
+        "TemperedSourceClosure"
+      ],
+      "status": "failed",
+      "exit_code": 1,
+      "description": "Projective passed. Category failed in the multiplication law and the fibre action.",
+      "diagnostics": [
+        "error: TemperedFundamentalGroups/Tempered/Category.lean:91:8: Tactic `rewrite` failed: motive is not type correct:",
+        "error: TemperedFundamentalGroups/Tempered/Category.lean:273:25: unsolved goals"
+      ],
+      "resources": {
+        "wall_time_seconds": 419.9455581999937,
+        "cpu_time_seconds": 418.56,
+        "cpu_user_seconds": 22.4,
+        "cpu_system_seconds": 396.16,
+        "peak_rss_bytes": 9069064192,
+        "peak_pss_bytes": null
+      }
+    },
+    {
+      "job_id": "ci-025622-816155c9",
+      "result_receipt_sha256": "fdc27dcab45e5926054e9b9319700a7f60f4d32cf71073eacc850e7117f42380",
+      "workspace": "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "worktree_head": "e8986f25fe198908aece752ae9b5890032781c47",
+      "modified_files": [
+        "Pi1/Orbicurve/ValuationInertia.lean",
+        "TemperedFundamentalGroups/Models/Projective.lean",
+        "TemperedFundamentalGroups/Models/Specialization.lean",
+        "TemperedFundamentalGroups/Tempered/Category.lean"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ceace9163c33a707ee37a36e5ace2525c1043760be8b05181abfdd82f6ecdf64",
+        "lake-manifest.json": "b09c5f1dc3e2cbb5d4805ca3ba120acbfc6759e8f444f4383950815c0ad59a7b",
+        "SOURCE_MANIFEST.json": "90603d870f467425f5ba72effd85c2933e2a88c051e14e6c78d7ceba3a51c5ed",
+        "SHA256SUMS": "555fe93355bdca8d551a1bbae55782b4285c2783419bc0c74eb924b7d7e20b48",
+        "prebuilt-mathlib/lakefile.toml": "fb152492447a361bea1a5dc760cd4ef8b6dbffc20b17d2fcf91e156633dbd720",
+        "prebuilt-mathlib/lake-manifest.json": "40feaad399e82bacffb66b24615f60447fa91ceff73e79d6bad89445c825b06a",
+        "prebuilt-mathlib/ARTIFACT_LINKS.json": "d15392821200379333719e27498479753ae6c6380752c66cff20f2d69918b6f7"
+      },
+      "input_hashes": {
+        "Pi1/Orbicurve/ValuationInertia.lean": "12994432992a1a89c8b807c539335764c6ba0812c0997992727eefcd6a71f3fd",
+        "TemperedFundamentalGroups/Models/Projective.lean": "b889ec1d5d3f9e241fee554c45caa27ab36e41fd4a5d570894f4625036bc167e",
+        "TemperedFundamentalGroups/Models/Specialization.lean": "51473f125689357ce702c6e3457c1ca4f8d0b2c2883e39a100864ea2587088e5",
+        "TemperedFundamentalGroups/Tempered/Category.lean": "c51101b987c108c7dedef2ceb232cd1820ca1637398d42a861e93a18c6a7a7b2",
+        "tempered-dependency-category.diff": "4495136c4bc79b669d3384da52968823a6844878013b900875c16d8d87bff924"
+      },
+      "actual_arguments": [
+        "lake",
+        "build",
+        "TemperedSourceClosure"
+      ],
+      "status": "failed",
+      "exit_code": 1,
+      "description": "The fibre action rewrite passed. The multiplication law still required the scheme composition lemma.",
+      "diagnostics": [
+        "error: TemperedFundamentalGroups/Tempered/Category.lean:91:34: Tactic `rewrite` failed: Did not find an occurrence of the pattern"
+      ],
+      "resources": {
+        "wall_time_seconds": 140.5479561999964,
+        "cpu_time_seconds": 143.66,
+        "cpu_user_seconds": 16.6,
+        "cpu_system_seconds": 127.06,
+        "peak_rss_bytes": 9071583232,
+        "peak_pss_bytes": null
+      }
+    },
+    {
+      "job_id": "ci-025634-2505f374",
+      "result_receipt_sha256": "92adb3871d59595df84ff2d54642eabe6cd59881133b44e48ad454326769d2ad",
+      "workspace": "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree",
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "worktree_head": "e8986f25fe198908aece752ae9b5890032781c47",
+      "modified_files": [
+        "Pi1/Orbicurve/ValuationInertia.lean",
+        "TemperedFundamentalGroups/Models/Projective.lean",
+        "TemperedFundamentalGroups/Models/Specialization.lean",
+        "TemperedFundamentalGroups/Tempered/Category.lean"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ceace9163c33a707ee37a36e5ace2525c1043760be8b05181abfdd82f6ecdf64",
+        "lake-manifest.json": "b09c5f1dc3e2cbb5d4805ca3ba120acbfc6759e8f444f4383950815c0ad59a7b",
+        "SOURCE_MANIFEST.json": "90603d870f467425f5ba72effd85c2933e2a88c051e14e6c78d7ceba3a51c5ed",
+        "SHA256SUMS": "555fe93355bdca8d551a1bbae55782b4285c2783419bc0c74eb924b7d7e20b48",
+        "prebuilt-mathlib/lakefile.toml": "fb152492447a361bea1a5dc760cd4ef8b6dbffc20b17d2fcf91e156633dbd720",
+        "prebuilt-mathlib/lake-manifest.json": "40feaad399e82bacffb66b24615f60447fa91ceff73e79d6bad89445c825b06a",
+        "prebuilt-mathlib/ARTIFACT_LINKS.json": "d15392821200379333719e27498479753ae6c6380752c66cff20f2d69918b6f7"
+      },
+      "input_hashes": {
+        "Pi1/Orbicurve/ValuationInertia.lean": "12994432992a1a89c8b807c539335764c6ba0812c0997992727eefcd6a71f3fd",
+        "TemperedFundamentalGroups/Models/Projective.lean": "b889ec1d5d3f9e241fee554c45caa27ab36e41fd4a5d570894f4625036bc167e",
+        "TemperedFundamentalGroups/Models/Specialization.lean": "51473f125689357ce702c6e3457c1ca4f8d0b2c2883e39a100864ea2587088e5",
+        "TemperedFundamentalGroups/Tempered/Category.lean": "97670ff40f426af1071fe1ca4017f6102bd7eea5795eb996a7ecda2eacdf3615",
+        "tempered-dependency-category-comp.diff": "204b8960f483c415cf83091fc34b0040f3efef14dc8575e0cf18ccfed493fc78"
+      },
+      "actual_arguments": [
+        "lake",
+        "build",
+        "TemperedSourceClosure"
+      ],
+      "status": "succeeded",
+      "exit_code": 0,
+      "description": "The build completed the 60-module dependency closure and the entry module.",
+      "diagnostics": [],
+      "resources": {
+        "wall_time_seconds": 609.7019781000126,
+        "cpu_time_seconds": 605.87,
+        "cpu_user_seconds": 42.900000000000006,
+        "cpu_system_seconds": 562.97,
+        "peak_rss_bytes": 9089458176,
+        "peak_pss_bytes": null
+      }
+    }
+  ],
+  "preparation_test": {
+    "reference_job": "ci-025634-2505f374",
+    "source_count_compared_by_byte": 60,
+    "patched_files_compared_by_receipt_sha256": [
+      "Pi1/Orbicurve/ValuationInertia.lean",
+      "TemperedFundamentalGroups/Models/Projective.lean",
+      "TemperedFundamentalGroups/Models/Specialization.lean",
+      "TemperedFundamentalGroups/Tempered/Category.lean"
+    ],
+    "patch_sha256": "204b8960f483c415cf83091fc34b0040f3efef14dc8575e0cf18ccfed493fc78",
+    "entry_module_sha256": "8b60c4d825fc301b1d624f0cfcd48b269e95d531901f41b348282b0752d96a06",
+    "build_configs_compared_by_receipt_sha256": [
+      "lean-toolchain",
+      "lakefile.lean",
+      "lake-manifest.json",
+      "prebuilt-mathlib/lakefile.toml",
+      "prebuilt-mathlib/lake-manifest.json",
+      "prebuilt-mathlib/ARTIFACT_LINKS.json"
+    ],
+    "transitive_external_modules_checked_for_artifacts": 10403
+  }
+}

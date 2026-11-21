@@ -1959,3 +1959,176 @@ Both project reviews import Checks, ImportAudit, Act1Scene1 and AxiomAudit. The 
 | [`ci-025511-b3cc8291`](receipts/round-ci-025511-b3cc8291-result.json) | `26f1dc1c8f05` | succeeded / 0 | 95.44 | 95.23 (5.78 + 89.45) | 4.15 | Exact platform reduction for general SL₂ containment |
 | [`ci-025516-8cdf97cc`](receipts/round-ci-025516-8cdf97cc-result.json) | `04cd0fe62cbd` | succeeded / 0 | 98.67 | 96.73 (2.67 + 94.06) | 3.99 | Exact platform reduction for the tripod curve |
 | [`ci-025521-02a1eded`](receipts/round-ci-025521-02a1eded-result.json) | `560e2bb7916a` | succeeded / 0 | 156.44 | 154.87 (5.64 + 149.23) | 8.17 | Anabelian chain project and axiom review |
+
+## Étale fiber comparison and concrete tempered fundamental groups
+
+| Declaration | Pinned source and adaptation | Consumer |
+| --- | --- | --- |
+| `genuinePi1_eq_profiniteInertiaQuotient` | Expose the characteristic-zero value of the existing model group. The local group uses the proved closed valuation-inertia kernel. [Iut theory](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Anabelian/Genuine/Theory.lean) · [Local group](../../../Solutions/Source_ReferenceIutGenuinePi1.lean#L99) | `modelEtalePi1Equiv` |
+| `modelNormalizationOrbifold` | Transport the actual model stabilizer and unsigned stabilizer to the Galois group over $k(x)$. Use the integral closure in the fixed field of the unsigned stabilizer and the quotient action. [Iut orbifold](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Anabelian/Genuine/Orbifold.lean#L193) · [Local presentation](../../../Solutions/Source_ReferenceIutGenuineEtaleComparison.lean#L140) | `modelEtalePi1Equiv` and the characteristic-zero branch of `modelTemperedPresentation` |
+| `modelEtalePi1Equiv` | Apply the pinned Pi1 comparison to the normalization orbifold. Identify its transported inertia kernel with the local closed kernel using the equality of unsigned and base inertia generators. [Pi1 comparison](https://github.com/lana-agents/pi1/blob/ca7def953193f861a462aa0831eec8f0a31ff69f/Pi1/Orbifold/Comparison.lean#L155) · [Generator comparison](../../../../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/GenuineInertiaGenerators.lean#L78) · [Local isomorphism](../../../Solutions/Source_ReferenceIutGenuineEtaleComparison.lean#L147) | Characteristic-zero comparison in `modelTemperedPresentation` |
+| `modelTemperedPresentation` and `genuineTemperedPi1Theory` | Use the Galois presentation in characteristic zero. Use the geometric presentation and the constant-one comparison in positive characteristic. Obtain the tempered group over the canonical valuation and compose its continuous étale comparison with the selected comparison. [Iut branches](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Anabelian/Tempered.lean#L71) · [Tempered comparison](https://github.com/lana-agents/tempered-fundamental-groups/blob/2006651f52b70ea2fe3388238c7d9db14d21748f/TemperedFundamentalGroups/Tempered/Comparison.lean#L160) · [Local theory](../../../Solutions/Source_ReferenceIutGenuineTempered.lean#L27) | `modelTG`, `anabelianExistence`, and the P7 specialization |
+| `pointThetaDataExistence_from_canLift27_genuineTempered` | Specialize the source P7 wrapper to the concrete tempered theory over `genuineEtalePi1Theory canLift27`. Use the same model for core finiteness and for the pointwise witnesses. [Iut P7](https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Tripod/Main.lean#L86) · [Local specialization](../../../Solutions/Source_TripodP7FromGenuineTempered.lean#L14) | Source P7 witness for the pointwise theta existence statement |
+
+The companion review passed in MCP-CI job `ci-025732-40acb04c`. It imports the project Checks, ImportAudit, Act1Scene1, and AxiomAudit. It checks both characteristic branches and prints the axiom dependencies of the comparison, the concrete theory, and the P7 specialization. [Review input](ReviewGenuineTempered.lean) · [MCP-CI receipt](receipts/round-ci-025732-40acb04c-result.json) · [Trilingual readback](readbacks/genuine-tempered-to-p7-trilingual.md)
+
+The fixed source closure contains 60 modules. The reproduction package records its revisions, exact compatibility patch, and Lake target linked to prebuilt Mathlib dependencies. The local checks and review use the recovered build products through the structured Lean search path. The six printed axiom sets each contain only `propext`, `Classical.choice`, and `Quot.sound`. The characteristic-zero and positive-characteristic branches both pass the explicit comparison checks. [Closure preparation](tempered-closure/README.md)
+
+Times are in seconds. Peak memory is process-tree physical RSS in GiB. PSS is unavailable in the receipts.
+
+| MCP-CI job | Input hash or HEAD prefix | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [ci-025538-7c05aa6b](receipts/round-ci-025538-7c05aa6b-result.json) | `e8986f25fe19` | failed / 1 | 331.34 | 437.10 (95.69 + 341.41) | 8.26 | Finite-place valuation/inertia API and specialization coercion errors |
+| [ci-025563-631246a7](receipts/round-ci-025563-631246a7-result.json) | `e8986f25fe19` | failed / 1 | 215.19 | 215.65 (9.90 + 205.75) | 4.49 | Projective-space API errors |
+| [ci-025589-f95f5e43](receipts/round-ci-025589-f95f5e43-result.json) | `e8986f25fe19` | failed / 1 | 419.95 | 418.56 (22.40 + 396.16) | 8.45 | Tempered category composition API errors |
+| [ci-025622-816155c9](receipts/round-ci-025622-816155c9-result.json) | `e8986f25fe19` | failed / 1 | 140.55 | 143.66 (16.60 + 127.06) | 8.45 | Tempered category composition type error |
+| [ci-025634-2505f374](receipts/round-ci-025634-2505f374-result.json) | `e8986f25fe19` | succeeded / 0 | 609.70 | 605.87 (42.90 + 562.97) | 8.47 | Pinned Pi1, TemperedFundamentalGroups and EllipticCurves closure |
+| [ci-025629-401b2780](receipts/round-ci-025629-401b2780-result.json) | `4072cd0067f9` | succeeded / 0 | 124.13 | 123.62 (12.12 + 111.50) | 7.64 | Characteristic-zero inertia quotient artifact |
+| [ci-025674-5463de89](receipts/round-ci-025674-5463de89-result.json) | `e87fb11afecb` | succeeded / 0 | 100.86 | 101.98 (9.20 + 92.78) | 7.66 | Étale comparison leaf |
+| [ci-025687-2154adba](receipts/round-ci-025687-2154adba-result.json) | `e87fb11afecb` | succeeded / 0 | 59.64 | 50.81 (9.60 + 41.21) | 7.67 | Étale comparison artifact |
+| [ci-025720-afc3d009](receipts/round-ci-025720-afc3d009-result.json) | `911704ad9b87` | succeeded / 0 | 60.88 | 60.30 (5.01 + 55.29) | 7.71 | Concrete tempered theory leaf |
+| [ci-025724-be7f0f7b](receipts/round-ci-025724-be7f0f7b-result.json) | `911704ad9b87` | succeeded / 0 | 61.07 | 60.93 (5.39 + 55.54) | 7.72 | Concrete tempered theory artifact |
+| [ci-025726-0e1828c2](receipts/round-ci-025726-0e1828c2-result.json) | `e22a23204a29` | succeeded / 0 | 46.12 | 45.22 (5.01 + 40.21) | 7.82 | P7 specialization leaf |
+| [ci-025728-947b5d1d](receipts/round-ci-025728-947b5d1d-result.json) | `e22a23204a29` | succeeded / 0 | 53.71 | 52.73 (3.73 + 49.00) | 7.82 | P7 specialization artifact |
+| [ci-025732-40acb04c](receipts/round-ci-025732-40acb04c-result.json) | `c24c7dfe8992` | succeeded / 0 | 106.86 | 105.62 (5.92 + 99.70) | 8.37 | Project gates, characteristic branches and six axiom reports |
+
+## The private SL₂ ramification and Tate structure reductions
+
+### English
+
+Prove2Me accepted two private reductions in the environment pinned to Mathlib
+`0df444a360eaa60ab8c11dca51a86af692955474`. Each terminal verification reports
+`SKETCH_ACCEPTED`. The recorded theorem edges run from
+`EllipticCurveData.prime_dvd_ramificationIdx` to
+`nonempty_tateStructure_of_torsion`, then to `exists_tateUniformization`.
+The last theorem was recorded as `Open` in its publication and decomposition receipts.
+
+The ramification sketch uses the fixed field $K$ of the kernel of the given
+modulo-$\ell$ representation. It descends the geometric $\ell$-torsion to $K$.
+It shows that the given place $w'$ over the multiplicative place $w$
+lies over a selected place of the field of moduli.
+The Tate structure at $w'$ gives a root class in the local multiplicative
+quotient. The relative valuation then gives $\ell\mid e(w'/w)$.
+Here $e(w'/w)$ is the ramification index and $q_w$ is the given Tate parameter
+at $w$. The sketch retains $\ell\nmid\operatorname{ord}_w(q_w)$ and the
+exclusions of residue characteristics $2$ and $\ell$ at $w$.
+[Ramification sketch](platform-sl2/Sketch_EllipticCurveData_prime_dvd_ramificationIdx.lean:642) · [Local source proof](../../../Solutions/Source_SL2ImageLocalTate.lean:81)
+
+The Tate structure reduction uses a Weierstrass elliptic curve $E/F$,
+a chosen algebraic closure $\overline F$, and an intermediate number field $K$.
+Each selected place $v$ of the field of moduli $\mathbb Q(j(E))$ has residue
+characteristic different from $2$. The curve has multiplicative reduction
+at every place of $F$ over each $v$. For an odd prime $\ell$, it uses an
+additive subgroup $T_K\subseteq E(K)[\ell]$ with
+$\operatorname{Nat.card}(T_K)\geq\ell^2$. At each finite place $w'$ of $K$ over a selected $v$, it obtains
+a Tate structure on $E_{K_{w'}}$. This structure includes the Tate parameter,
+the Weierstrass variable change, the quotient isomorphism, and both coordinate
+formulas. The sketch descends a square root of $-c_4c_6$ to $K_{w'}$ to obtain
+split multiplicative reduction. It uses the same uniformization theorem over
+the completion of the quadratic extension and over $K_{w'}$.
+[Tate structure sketch](platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:4111) · [Upstream construction](/home/admin-wsl/Coq/abc/refer/iut/Iut/Cor312/ThetaData/TateFamilyOfTorsion.lean:121)
+
+The uniformization statement takes a complete ultrametric normed field $k$ with
+$12\ne 0$ and $\lVert 2\rVert=1$. A Tate parameter $q$ is a unit of $k$
+with $\lVert q\rVert<1$. For each $q$, the statement asks for an additive
+group isomorphism from $k^\times/q^{\mathbb Z}$, written additively, to the
+point group of the Tate curve $E_q$. If $u\in k^\times$ lies outside
+$q^{\mathbb Z}$, the coordinates of the image of $[u]$ must equal $X_q(u)$
+and $Y_q(u)$. Both coordinate functions take the value zero at the point at infinity.
+[Open uniformization statement](../../../Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.lean:19)
+
+### 简体中文
+
+Prove2Me 在固定 Mathlib 版本
+`0df444a360eaa60ab8c11dca51a86af692955474` 的私有环境中验收了两份归约。
+两份验证的终态均为 `SKETCH_ACCEPTED`。平台记录的定理依赖链依次为
+`EllipticCurveData.prime_dvd_ramificationIdx`、
+`nonempty_tateStructure_of_torsion` 和 `exists_tateUniformization`。
+最后一个定理在发布与分解回执中记为 `Open`。
+
+分歧整除归约取给定模 $\ell$ 表示的核的固定域 $K$。证明将全部几何
+$\ell$-挠点下降到 $K$，并证明给定乘法约化处 $w$ 上方的 $w'$ 位于
+一个选定的模域处上方。在 $w'$ 取得 Tate 结构后，证明在局部乘法商群中
+取得根类，再由相对赋值得到 $\ell\mid e(w'/w)$。这里 $e(w'/w)$ 是分歧指数，
+$q_w$ 是 $w$ 处给定的 Tate 参数。归约保留 $\ell\nmid\operatorname{ord}_w(q_w)$
+以及 $w$ 的剩余特征不同于 $2$ 和 $\ell$ 的条件。
+
+Tate 结构归约给定 Weierstrass 椭圆曲线 $E/F$、选定的代数闭包 $\overline F$ 和
+中间数域 $K$。模域 $\mathbb Q(j(E))$ 的每个选定处 $v$ 的剩余特征
+不同于 $2$，且 $E$ 在 $F$ 中位于各 $v$ 上方的每一处均有乘法约化。
+对奇素数 $\ell$，归约使用满足 $\operatorname{Nat.card}(T_K)\geq\ell^2$
+的加法子群 $T_K\subseteq E(K)[\ell]$。对 $K$ 中位于任一选定 $v$ 上方的有限处
+$w'$，归约给出 $E_{K_{w'}}$ 上的 Tate 结构。该结构包含 Tate 参数、
+Weierstrass 变量变换、商群同构和两条坐标公式。证明将 $-c_4c_6$ 的一个
+平方根下降到 $K_{w'}$，得到分裂乘法约化。证明在二次扩张的完成域与
+$K_{w'}$ 上使用同一个均匀化定理。
+
+一致化陈述给定完备超度量赋范域 $k$，满足 $12\ne 0$ 和 $\lVert 2\rVert=1$。
+Tate 参数 $q$ 是 $k$ 中满足 $\lVert q\rVert<1$ 的可逆元。
+对每个这样的 $q$，陈述要求从改用加法记号的乘法商群
+$k^\times/q^{\mathbb Z}$ 到 Tate 曲线 $E_q$ 的点群的一个加法群同构。
+对每个不属于 $q^{\mathbb Z}$ 的 $u\in k^\times$，其类的像的两条坐标
+分别等于 $X_q(u),Y_q(u)$。两条坐标函数在无穷远点的值均为零。
+
+### 日本語
+
+Prove2Me は Mathlib のリビジョン
+`0df444a360eaa60ab8c11dca51a86af692955474` を固定した非公開環境で、
+二つの帰着を受理した。検証の最終状態はいずれも `SKETCH_ACCEPTED` である。
+記録された定理の依存関係は `EllipticCurveData.prime_dvd_ramificationIdx` から
+`nonempty_tateStructure_of_torsion` へ、さらに `exists_tateUniformization` へと
+続く。最後の定理の状態は公開処理と分解の記録で `Open` である。
+
+分岐指数の整除性への帰着では、与えられた法 $\ell$ 表現の核の固定体 $K$ を取る。
+幾何的な $\ell$-捩れ点をすべて $K$ に降ろす。指定された乗法的還元の素点
+$w$ の上にある $w'$ が、選んだモジュライ体の素点の上にあることを示す。
+$w'$ でのテイト構造から局所乗法商群における根の類を得て、相対付値から
+$\ell\mid e(w'/w)$ を導く。$e(w'/w)$ は分岐指数、$q_w$ は $w$ で与えられた
+テイトパラメータである。$\ell\nmid\operatorname{ord}_w(q_w)$ と、
+$w$ の剰余標数が $2$ と $\ell$ のいずれとも異なるという条件を保つ。
+
+テイト構造への帰着では、ワイエルシュトラス楕円曲線 $E/F$、選んだ代数閉包 $\overline F$、
+中間数体 $K$ を取る。モジュライ体 $\mathbb Q(j(E))$ の指定された各素点
+$v$ の剰余標数は $2$ と異なる。各 $v$ の上にある $F$ のすべての素点で
+$E$ は乗法的還元を持つ。奇素数 $\ell$ に対して、$\operatorname{Nat.card}(T_K)\geq\ell^2$
+を満たす加法部分群 $T_K\subseteq E(K)[\ell]$ を用いる。
+指定された $v$ の上にある $K$ の各有限素点 $w'$ について、
+$E_{K_{w'}}$ 上のテイト構造を得る。この構造はテイトパラメータ、
+ワイエルシュトラス変数変換、商群の同型、および二つの座標公式を含む。
+証明では $-c_4c_6$ の平方根を $K_{w'}$ に降ろし、分裂乗法的還元を得る。
+二次拡大の完備化と $K_{w'}$ の両方で同じ一意化定理を用いる。
+
+一意化の命題では、$12\ne 0$ と $\lVert 2\rVert=1$ を満たす完備超距離
+ノルム体 $k$ を取る。テイトパラメータ $q$ は $\lVert q\rVert<1$ を満たす
+$k$ の可逆元である。各 $q$ に対して、加法記法で表した
+乗法商群 $k^\times/q^{\mathbb Z}$ からテイト曲線 $E_q$ の点群への加法群同型を
+求める。$q^{\mathbb Z}$ に属さない各 $u\in k^\times$ について、その類の像の
+二つの座標はそれぞれ $X_q(u),Y_q(u)$ に等しい。座標関数はともに無限遠点で零を取る。
+
+### Platform and MCP-CI receipts
+
+| Theorem | Private theorem ID | Terminal verification | Theorem dependency | Local check |
+| --- | --- | --- | --- | --- |
+| `EllipticCurveData.prime_dvd_ramificationIdx` | `695ba887-813b-4044-ab37-33e9d776f8e9` | [bc58c148-3dac-4911-abae-94ffc28859e5](platform-sl2/AbcAdaptation.Reference.Iut.EllipticCurveData.prime_dvd_ramificationIdx-verify-result.json) | `nonempty_tateStructure_of_torsion` | [ci-025577-6dea798d](receipts/round-ci-025577-6dea798d-result.json) |
+| `nonempty_tateStructure_of_torsion` | `9c4a74f6-1b13-43f2-8e44-3887b5abc445` | [e1a46253-fc83-4751-a40d-e0357cb93425](platform-sl2/AbcAdaptation.Reference.Iut.nonempty_tateStructure_of_torsion-verify-result.json) | `exists_tateUniformization` | [ci-025662-2f6c72c4](receipts/round-ci-025662-2f6c72c4-result.json) |
+| `exists_tateUniformization` | `6ee6a3cd-649a-4604-a2d8-1400087da2d8` | [Published, Open](platform-sl2/AbcAdaptation.Reference.Iut.exists_tateUniformization-receipt.json) | | [ci-025597-0e1ef2ac](receipts/round-ci-025597-0e1ef2ac-result.json) |
+
+Both sketch checks use their declared theorem imports. The uniformization
+leaf check confirms the statement and emits its `sorry` placeholder.
+The platform results establish conditional reductions. [Receipt inventory](platform-sl2/receipt-inventory.md) · [Existing formal readbacks and source references](readbacks/sl2-ramification/source-and-reuse.md)
+
+## The exact Tate proof and the platform timeout
+
+The merged Tate proof uses the original point equation, addition law, and surjectivity on the same curve. MCP-CI job `ci-025778-2fa3d1c8` checked the exact upload. Job `ci-025793-5f0d3ef1` verified that its type is definitionally equal to the published statement and reported only `propext`, `Classical.choice`, and `Quot.sound`. The project gates cover the corresponding production declarations in `ReviewSL2ImageFromSource.lean`. The exact upload review uses the platform’s imports because the project imports already declare the upstream Tate names. The platform submission reached its 300-second timeout. The point equation, addition, and surjectivity are the source boundaries for smaller submissions. [Proof and receipts](platform-sl2/tate-uniformization.md) · [Trilingual readback](readbacks/tate-uniformization-trilingual.md)
+
+## Canonical Corollary 2.2 with the concrete tempered theory
+
+The high-height estimate takes the Legendre curve provider and the Corollary 3.12 comparison for every member of the same `IsSourceP7Variant` family. Its proof uses the concrete tempered P7 witness, the proved cyclic and prime bounds, and the Northcott theorem. The result supplies the high-height composition used for Statement II. The review imports Checks, ImportAudit, Act1Scene1, and AxiomAudit and reports only `propext`, `Classical.choice`, and `Quot.sound`. [Lean statement](../../../Solutions/Source_TripodCanonicalCorollary22FromGenuineTempered.lean#L17) · [Trilingual readback](readbacks/tripod-canonical-corollary22-from-genuine-tempered-trilingual.md) · [Project review](ReviewCanonicalCorollary22FromGenuineTempered.lean)
+
+Times are in seconds. Memory is peak physical process-tree RSS in GiB. PSS is unavailable.
+
+| MCP-CI job | Source SHA-256 prefix | Exit | Wall | CPU total (user + system) | Peak RSS GiB |
+| --- | --- | ---: | ---: | ---: | ---: |
+| [`ci-025801-c318513b`](receipts/round-ci-025801-c318513b-result.json) | `d3ef9a12b4e2` | 0 | 159.32 | 157.78 (6.71 + 151.07) | 7.95 |
+| [`ci-025811-355a85ae`](receipts/round-ci-025811-355a85ae-result.json) | `d3ef9a12b4e2` | 0 | 270.67 | 267.85 (7.85 + 260.00) | 7.96 |
+| [`ci-025827-e8428346`](receipts/round-ci-025827-e8428346-result.json) | `0a744d261e66` | 0 | 248.11 | 245.83 (7.71 + 238.12) | 8.40 |

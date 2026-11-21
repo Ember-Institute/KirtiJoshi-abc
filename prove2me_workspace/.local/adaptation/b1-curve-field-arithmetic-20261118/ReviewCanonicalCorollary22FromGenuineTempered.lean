@@ -1,0 +1,8 @@
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+import Solutions.Source_TripodCanonicalCorollary22FromGenuineTempered
+
+#check AbcAdaptation.Tripod.canonicalCorollary22HighHeightEstimate_of_canLift27_genuineTempered
+#print axioms AbcAdaptation.Tripod.canonicalCorollary22HighHeightEstimate_of_canLift27_genuineTempered

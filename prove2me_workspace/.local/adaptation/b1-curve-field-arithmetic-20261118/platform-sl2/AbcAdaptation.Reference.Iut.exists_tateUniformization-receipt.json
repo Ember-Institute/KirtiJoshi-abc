@@ -1,0 +1,46 @@
+{
+  "job": {
+    "id": "03514736-eaf0-414a-b358-480bfed0d6a2",
+    "kind": "problem",
+    "theorem_name": "AbcAdaptation.Reference.Iut.exists_tateUniformization",
+    "theorem_title": "Tate uniformization with its two coordinate formulas",
+    "formal_statement": "/-- The quotient uniformization of a Tate curve has the Tate series as its coordinates. -/\ntheorem AbcAdaptation.Reference.Iut.exists_tateUniformization\n    {k : Type*} [NormedField k] [CompleteSpace k] [IsUltrametricDist k]\n    (t : TateParameter k) (h12 : (12 : k) ≠ 0) (h2 : ‖(2 : k)‖ = 1) :\n    ∃ iso : Additive (kˣ ⧸ Subgroup.zpowers t.q) ≃+ t.tateCurve.toAffine.Point,\n      (∀ u : kˣ, (∀ n : ℤ, (t.q : k) ^ n * (u : k) ≠ 1) →\n        (match iso (Additive.ofMul (QuotientGroup.mk u)) with\n          | .zero => 0\n          | .some x _ _ => x) = t.X u) ∧\n      (∀ u : kˣ, (∀ n : ℤ, (t.q : k) ^ n * (u : k) ≠ 1) →\n        (match iso (Additive.ofMul (QuotientGroup.mk u)) with\n          | .zero => 0\n          | .some _ y _ => y) = t.Y u) := by\n  sorry",
+    "natural_language_statement": "**English**\n\nLet $k$ be a complete ultrametric normed field with $12\\ne 0$ in $k$ and $\\lVert 2\\rVert=1$. Let $t$ be a Tate parameter over $k$, with $q=t.q\\in k^\\times$ and $\\lVert q\\rVert<1$. Write $E_t$ for its Tate curve.\n\nThere is a group isomorphism $k^\\times/q^{\\mathbb Z}\\cong E_t(k)$, with the quotient written additively. For every $u\\in k^\\times$ satisfying $q^n u\\ne 1$ for all integers $n$, the coordinates of the image of $[u]$ agree with the two Tate series $X_t(u)$ and $Y_t(u)$. The coordinate functions in the formal statement take the value zero at the identity point.\n\n**简体中文**\n\n设 $k$ 为完备超度量赋范域，满足 $k$ 中 $12\\ne 0$ 和 $\\lVert 2\\rVert=1$。设 $t$ 为 $k$ 上的泰特参数，其中 $q=t.q\\in k^\\times$ 且 $\\lVert q\\rVert<1$。记其泰特曲线为 $E_t$。\n\n存在群同构 $k^\\times/q^{\\mathbb Z}\\cong E_t(k)$，其中商群采用加法记号。对每个满足 $q^n u\\ne 1$ 对所有整数 $n$ 成立的 $u\\in k^\\times$，类 $[u]$ 的像的两个坐标分别等于泰特级数 $X_t(u)$ 和 $Y_t(u)$。形式陈述中的坐标函数在单位点取值为零。\n\n**日本語**\n\n$k$ を完備超距離ノルム体とし、$k$ で $12\\ne 0$ および $\\lVert 2\\rVert=1$ が成り立つとする。$t$ を $k$ 上のテイトパラメータとし、$q=t.q\\in k^\\times$ は $\\lVert q\\rVert<1$ を満たす。対応するテイト曲線を $E_t$ とおく。\n\n商群を加法表記で表すと、群同型 $k^\\times/q^{\\mathbb Z}\\cong E_t(k)$ が存在する。すべての整数 $n$ について $q^n u\\ne 1$ を満たす任意の $u\\in k^\\times$ に対し、類 $[u]$ の像の座標はテイト級数 $X_t(u)$ および $Y_t(u)$ に一致する。形式的な命題の座標関数は単位元で零を取る。",
+    "definitions": "/-\nCopyright (c) 2026 The tate-curves-theta contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The tate-curves-theta contributors\n\nOriginal repository https://github.com/lana-agents/tate-curves-theta\nOriginal revision ca6c2279d3cea0690cdb01328e727118d5485d68\nOriginal paths TateCurvesTheta/TateCurve/TateUniformization.lean,\nTateCurvesTheta/TateCurve/PointMap.lean and TateCurvesTheta/TateCurve/GroupLaw.lean\n-/\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateStructure\n\nset_option autoImplicit false\n\nopen AbcAdaptation.Reference.TateCurvesTheta WeierstrassCurve\nopen scoped Classical",
+    "source": "Tate uniformization by the analytic point map. The upstream construction uses the point map at https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/TateCurve/PointMap.lean#L103, its affine coordinates at https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/TateCurve/PointMap.lean#L123, its group law at https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/TateCurve/GroupLaw.lean#L242, and the quotient isomorphism at https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/TateCurve/TateUniformization.lean#L105.",
+    "tags": [
+      "abc-conjecture",
+      "arithmetic-geometry",
+      "elliptic-curves"
+    ],
+    "visibility": "private",
+    "status": "PUBLISHED",
+    "error_message": "",
+    "theorem_id": "6ee6a3cd-649a-4604-a2d8-1400087da2d8",
+    "created_at": "2026-11-20T09:52:02.602194+00:00",
+    "updated_at": "2026-11-20T09:52:11.900624+00:00"
+  },
+  "article": {
+    "theorem_id": "6ee6a3cd-649a-4604-a2d8-1400087da2d8",
+    "theorem_name": "AbcAdaptation.Reference.Iut.exists_tateUniformization",
+    "theorem_title": "Tate uniformization with its two coordinate formulas",
+    "status": "Open",
+    "formal_statement": "/-- The quotient uniformization of a Tate curve has the Tate series as its coordinates. -/\ntheorem AbcAdaptation.Reference.Iut.exists_tateUniformization\n    {k : Type*} [NormedField k] [CompleteSpace k] [IsUltrametricDist k]\n    (t : TateParameter k) (h12 : (12 : k) ≠ 0) (h2 : ‖(2 : k)‖ = 1) :\n    ∃ iso : Additive (kˣ ⧸ Subgroup.zpowers t.q) ≃+ t.tateCurve.toAffine.Point,\n      (∀ u : kˣ, (∀ n : ℤ, (t.q : k) ^ n * (u : k) ≠ 1) →\n        (match iso (Additive.ofMul (QuotientGroup.mk u)) with\n          | .zero => 0\n          | .some x _ _ => x) = t.X u) ∧\n      (∀ u : kˣ, (∀ n : ℤ, (t.q : k) ^ n * (u : k) ≠ 1) →\n        (match iso (Additive.ofMul (QuotientGroup.mk u)) with\n          | .zero => 0\n          | .some _ y _ => y) = t.Y u) := by\n  sorry",
+    "natural_language_statement": "**English**\n\nLet $k$ be a complete ultrametric normed field with $12\\ne 0$ in $k$ and $\\lVert 2\\rVert=1$. Let $t$ be a Tate parameter over $k$, with $q=t.q\\in k^\\times$ and $\\lVert q\\rVert<1$. Write $E_t$ for its Tate curve.\n\nThere is a group isomorphism $k^\\times/q^{\\mathbb Z}\\cong E_t(k)$, with the quotient written additively. For every $u\\in k^\\times$ satisfying $q^n u\\ne 1$ for all integers $n$, the coordinates of the image of $[u]$ agree with the two Tate series $X_t(u)$ and $Y_t(u)$. The coordinate functions in the formal statement take the value zero at the identity point.\n\n**简体中文**\n\n设 $k$ 为完备超度量赋范域，满足 $k$ 中 $12\\ne 0$ 和 $\\lVert 2\\rVert=1$。设 $t$ 为 $k$ 上的泰特参数，其中 $q=t.q\\in k^\\times$ 且 $\\lVert q\\rVert<1$。记其泰特曲线为 $E_t$。\n\n存在群同构 $k^\\times/q^{\\mathbb Z}\\cong E_t(k)$，其中商群采用加法记号。对每个满足 $q^n u\\ne 1$ 对所有整数 $n$ 成立的 $u\\in k^\\times$，类 $[u]$ 的像的两个坐标分别等于泰特级数 $X_t(u)$ 和 $Y_t(u)$。形式陈述中的坐标函数在单位点取值为零。\n\n**日本語**\n\n$k$ を完備超距離ノルム体とし、$k$ で $12\\ne 0$ および $\\lVert 2\\rVert=1$ が成り立つとする。$t$ を $k$ 上のテイトパラメータとし、$q=t.q\\in k^\\times$ は $\\lVert q\\rVert<1$ を満たす。対応するテイト曲線を $E_t$ とおく。\n\n商群を加法表記で表すと、群同型 $k^\\times/q^{\\mathbb Z}\\cong E_t(k)$ が存在する。すべての整数 $n$ について $q^n u\\ne 1$ を満たす任意の $u\\in k^\\times$ に対し、類 $[u]$ の像の座標はテイト級数 $X_t(u)$ および $Y_t(u)$ に一致する。形式的な命題の座標関数は単位元で零を取る。",
+    "created_at": "2026-11-20T09:52:11.328208+00:00",
+    "vote_count": 0,
+    "tags": [
+      "abc-conjecture",
+      "arithmetic-geometry",
+      "elliptic-curves"
+    ],
+    "preamble": "/-\nCopyright (c) 2026 The tate-curves-theta contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The tate-curves-theta contributors\n\nOriginal repository https://github.com/lana-agents/tate-curves-theta\nOriginal revision ca6c2279d3cea0690cdb01328e727118d5485d68\nOriginal paths TateCurvesTheta/TateCurve/TateUniformization.lean,\nTateCurvesTheta/TateCurve/PointMap.lean and TateCurvesTheta/TateCurve/GroupLaw.lean\n-/\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateStructure\n\nset_option autoImplicit false\n\nopen AbcAdaptation.Reference.TateCurvesTheta WeierstrassCurve\nopen scoped Classical",
+    "source": "Tate uniformization by the analytic point map. The upstream construction uses the point map at https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/TateCurve/PointMap.lean#L103, its affine coordinates at https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/TateCurve/PointMap.lean#L123, its group law at https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/TateCurve/GroupLaw.lean#L242, and the quotient isomorphism at https://github.com/lana-agents/tate-curves-theta/blob/ca6c2279d3cea0690cdb01328e727118d5485d68/TateCurvesTheta/TateCurve/TateUniformization.lean#L105.",
+    "deprecated_at": null,
+    "deprecated_by": null,
+    "visibility": "private",
+    "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "audits": [],
+    "readback": null
+  }
+}

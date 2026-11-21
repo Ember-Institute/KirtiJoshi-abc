@@ -1,0 +1,78 @@
+diff --git a/Pi1/Orbicurve/ValuationInertia.lean b/Pi1/Orbicurve/ValuationInertia.lean
+index 0ec7ebb..d2f800c 100644
+--- a/Pi1/Orbicurve/ValuationInertia.lean
++++ b/Pi1/Orbicurve/ValuationInertia.lean
+@@ -380,7 +380,7 @@ theorem exists_isInertialOn_restrictNormal_eq [IsGalois (K₀ k t) Ω] (ht : Tra
+       by rw [fixSub_bot]; trivial⟩
+     rw [hr]
+     exact (mem_inertia_centerIdeal_iff hW M x).mp hx.1 (ringMap t hNM b)
+-  let f : H →* H' := (r.restrict H).codRestrict H' fun x => hmap x.1 x.2
++  let f : H →* H' := (r.domRestrict H).codRestrict H' fun x => hmap x.1 x.2
+   have hf : Function.Surjective f := by
+     apply MonoidHom.surjective_of_card_ker_le_div
+     rw [hcard, Nat.mul_div_cancel_left _ Nat.card_pos]
+diff --git a/TemperedFundamentalGroups/Models/Projective.lean b/TemperedFundamentalGroups/Models/Projective.lean
+index 0f8582d..44b9a67 100644
+--- a/TemperedFundamentalGroups/Models/Projective.lean
++++ b/TemperedFundamentalGroups/Models/Projective.lean
+@@ -72,7 +72,7 @@ instance (m : ℕ) : IsProper (projSpace.toSpec R m) := by
+     inferInstance
+   have : IsProper (Spec.map (CommRingCat.ofHom
+       (algebraMap R (MvPolynomial.homogeneousSubmodule (Fin (m + 1)) R 0)))) :=
+-    MorphismProperty.of_isIso @IsProper _
++    inferInstance
+   exact MorphismProperty.comp_mem @IsProper _ _ ‹_› ‹_›
+
+ /-! ### `ℙ⁰_R = Spec R` -/
+diff --git a/TemperedFundamentalGroups/Models/Specialization.lean b/TemperedFundamentalGroups/Models/Specialization.lean
+index 00f4b73..838e3a2 100644
+--- a/TemperedFundamentalGroups/Models/Specialization.lean
++++ b/TemperedFundamentalGroups/Models/Specialization.lean
+@@ -150,7 +150,7 @@ lemma valToVal_closedPoint :
+ variable {X : Scheme.{u}} (f : X ⟶ Spec (CommRingCat.of O))
+
+ /-- The valuative square attached to an `Ω`-point `x` of `X` over `Spec K → Spec O`. -/
+-noncomputable def spSquare (x : Spec (CommRingCat.of Ω) ⟶ X)
++noncomputable abbrev spSquare (x : Spec (CommRingCat.of Ω) ⟶ X)
+     (hx : x ≫ f = Spec.map (CommRingCat.ofHom (valToField O))) : ValuativeCommSq f where
+   R := V
+   K := Ω
+@@ -192,7 +192,12 @@ lemma spLift_unique [UniversallyClosed f] [IsSeparated f] (x : Spec (CommRingCat
+ lemma spLift_closedPoint_mem [UniversallyClosed f] (x : Spec (CommRingCat.of Ω) ⟶ X)
+     (hx : x ≫ f = Spec.map (CommRingCat.ofHom (valToField O))) :
+     (spLift (hV := hV) x hx).l (closedPoint V) ∈ specialFibre f := by
+-  rw [mem_specialFibre, ← Scheme.Hom.comp_apply, spLift_fac_right]
++  let lift : Spec (CommRingCat.of V) ⟶ X := (spLift (hV := hV) x hx).l
++  have fac : lift ≫ f = Spec.map (CommRingCat.ofHom (valToVal O V hV)) :=
++    spLift_fac_right (hV := hV) x hx
++  rw [mem_specialFibre]
++  change (lift ≫ f) (closedPoint V) = closedPoint O
++  rw [fac]
+   exact valToVal_closedPoint O V hV
+
+ end Specialization
+diff --git a/TemperedFundamentalGroups/Tempered/Category.lean b/TemperedFundamentalGroups/Tempered/Category.lean
+index 19b1a2d..43ea5d0 100644
+--- a/TemperedFundamentalGroups/Tempered/Category.lean
++++ b/TemperedFundamentalGroups/Tempered/Category.lean
+@@ -87,8 +87,9 @@ def ρs (Lv : Level O R A) : Lv.L.H →* (Lv.Z ≃ₜ Lv.Z) where
+     rfl
+   map_mul' g h := by
+     ext x
+-    simp only [coe_specialFibreHomeomorph, map_mul, Homeomorph.mul_apply]
+-    rw [Aut.Aut_mul_def, Iso.trans_hom, Scheme.Hom.comp_apply]
++    change (Lv.ρ (g * h)).hom x.1 = (Lv.ρ g).hom ((Lv.ρ h).hom x.1)
++    rw [map_mul, Aut.Aut_mul_def]
++    exact Scheme.Hom.comp_apply _ _ _
+
+ lemma ρs_apply (Lv : Level O R A) (g : Lv.L.H) (x : Lv.Z) :
+     ((Lv.ρs g x : Lv.Z) : Lv.c.scheme) = (Lv.ρ g).hom (x : Lv.c.scheme) :=
+@@ -273,7 +274,7 @@ lemma preMap_smul {X Y : TempObj O R A} (m : X ⟶ Y) (g : X.Lv.L.H0) (q : PreFi
+       preMap V hV m q := by
+   apply Subtype.ext
+   simp only [preMap, smul_val]
+-  rw [FiniteLevel.fibreAct_comp, m.h_act]
++  rw [FiniteLevel.fibreAct_comp, m.h_act] <;> rfl
+
+ /-- The map of fibres induced by a morphism. -/
+ def fibreMap {X Y : TempObj O R A} (m : X ⟶ Y) : Fibre Ω V hV X → Fibre Ω V hV Y :=

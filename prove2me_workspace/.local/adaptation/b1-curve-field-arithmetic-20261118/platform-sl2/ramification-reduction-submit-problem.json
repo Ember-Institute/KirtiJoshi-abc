@@ -1,0 +1,19 @@
+{
+  "env": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "private": true,
+  "problems": [
+    {
+      "theorem_name": "AbcAdaptation.Reference.Iut.nonempty_tateStructure_of_torsion",
+      "theorem_title": "Tate structure at a bad place from full odd-prime torsion",
+      "preamble": "/-\nCopyright (c) 2026 The iut contributors. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: The iut contributors\n\nOriginal repository https://github.com/lana-agents/iut\nOriginal revision 07cb1da58f6d428a670dbb5dd6093d428bcbcdd8\nOriginal path Iut/Cor312/ThetaData/TateFamilyOfTorsion.lean (tateStructureOfTorsion)\n-/\nimport Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateFamily\n\nset_option autoImplicit false\n\nopen AbcAdaptation.Reference.Iut NumberField WeierstrassCurve\nopen scoped Classical Valued\n\nuniverse u",
+      "formal_statement": "/-- Full odd-prime torsion over an intermediate field gives a Tate structure at a bad place. -/\ntheorem AbcAdaptation.Reference.Iut.nonempty_tateStructure_of_torsion\n    {F : Type u} [Field F] [NumberField F] (E : WeierstrassCurve F) [E.IsElliptic]\n    {Fbar : Type u} [Field Fbar] [Algebra F Fbar] [IsAlgClosure F Fbar]\n    (K : IntermediateField F Fbar) [NumberField ↥K]\n    {VBad : Set (FinitePlace ↥(fieldOfModuli F E))}\n    (hVBad : ∀ v ∈ VBad, residueChar v ≠ 2)\n    (hmult : ∀ v ∈ VBad, ∀ v₀ : FinitePlace F, FinitePlace.LiesOver v₀ v →\n      HasMultiplicativeReductionAt E v₀)\n    {ℓ : ℕ} (hℓ : ℓ.Prime) (hodd : ℓ ≠ 2)\n    (TK : AddSubgroup (curveK E K).toAffine.Point)\n    (hTK : TK ≤ AddSubgroup.torsionBy (curveK E K).toAffine.Point ℓ)\n    (hcard : ℓ * ℓ ≤ Nat.card ↥TK)\n    {w : FinitePlace ↥K} (hw : IsBadPlace E K VBad w) :\n    Nonempty (TateStructure (curveKw E K w)) := by\n  sorry",
+      "natural_language_statement": "**English**\n\nLet $E$ be an elliptic curve over a number field $F$. Let $K$ be an intermediate number field in a chosen algebraic closure of $F$. Let $\\ell$ be an odd prime.\n\nChoose a set of finite places of the field of moduli of $E$. Each chosen place has residue characteristic different from two. Assume that $E$ has multiplicative reduction at every place of $F$ above one of the chosen places. Assume that $E(K)$ has a subgroup of at least $\\ell^2$ points killed by $\\ell$.\n\nAt every place $w$ of $K$ above a chosen place, the curve $E$ over $K_w$ admits a Tate structure. This structure includes a change of variables to a Tate curve. Its point isomorphism\n$$\n K_w^\\times/q^{\\mathbb Z}\\;\\simeq\\;E(K_w)\n$$\nhas the prescribed Tate coordinate formulas.\n\n**简体中文**\n\n设 $E$ 为数域 $F$ 上的椭圆曲线，$K$ 为选定的 $F$ 的代数闭包中的中间数域，$\\ell$ 为奇素数。\n\n选取 $E$ 的模域中一组剩余特征不同于二的有限处。假定 $F$ 中位于这些处上方的每个处都是 $E$ 的乘法约化处，并且 $E(K)$ 有一个含至少 $\\ell^2$ 个点的子群，其中每个点都被 $\\ell$ 杀死。\n\n对 $K$ 中位于某个所选处上方的每个处 $w$，$E$ 在 $K_w$ 上存在泰特结构。该结构包含到泰特曲线的变量替换，其点群同构\n$$\n K_w^\\times/q^{\\mathbb Z}\\;\\simeq\\;E(K_w)\n$$\n满足指定的泰特坐标公式。\n\n**日本語**\n\n数体 $F$ 上の楕円曲線を $E$ とする。$K$ は選んだ $F$ の代数閉包の中間数体とし、$\\ell$ は奇素数とする。\n\n$E$ のモジュライ体の有限素点のうち、剰余標数が二と異なる素点の集合を取る。選んだ素点の上にある $F$ のどの素点でも $E$ は乗法的還元を持つとする。さらに、$E(K)$ は $\\ell$ 倍が零となる少なくとも $\\ell^2$ 個の点からなる部分群を含むとする。\n\n選んだ素点の上にある $K$ の各素点 $w$ について、$K_w$ 上の $E$ はテイト構造を持つ。この構造はテイト曲線への変数変換を含む。点群の同型\n$$\n K_w^\\times/q^{\\mathbb Z}\\;\\simeq\\;E(K_w)\n$$\nは所定のテイト座標公式を満たす。",
+      "source": "Shinichi Mochizuki, Inter-universal Teichmüller Theory I, Definition 3.1(f). The local construction cited in Arithmetic Elliptic Curves in General Position, Lemma 3.1(iii). The Lean statement records the existence of the structure constructed by tateStructureOfTorsion. https://github.com/lana-agents/iut/blob/07cb1da58f6d428a670dbb5dd6093d428bcbcdd8/Iut/Cor312/ThetaData/TateFamilyOfTorsion.lean#L121",
+      "tags": [
+        "abc-conjecture",
+        "arithmetic-teichmuller-spaces",
+        "arithmetic-geometry"
+      ]
+    }
+  ]
+}

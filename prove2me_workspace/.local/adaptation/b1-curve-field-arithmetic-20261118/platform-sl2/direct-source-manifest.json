@@ -1,0 +1,513 @@
+{
+  "leanToolchain": "leanprover/lean4:v4.33.1",
+  "mathlibRevision": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "tateRevision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+  "target": "AbcAdaptation.Reference.Iut.exists_tateUniformization",
+  "targetId": "6ee6a3cd-649a-4604-a2d8-1400087da2d8",
+  "targetSha256": "54a8517d7f7921567deff9cfe8b3f3529c1438e21a6b4fbd300f944cb0c6d4cc",
+  "solution": "Sol_exists_tateUniformization.lean",
+  "solutionSha256": "b6afc2428a4695fbe2a6a238d879d481d63cbbf72ef69014e6aca6cacb01efc5",
+  "bytes": 853982,
+  "lines": 17400,
+  "imports": [
+    "Definitions.Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateStructure",
+    "Definitions.Def_AbcAdaptation_Reference_TateCurvesTheta_TateCurve_Discriminant",
+    "Mathlib.Algebra.BigOperators.Intervals",
+    "Mathlib.Algebra.BigOperators.NatAntidiagonal",
+    "Mathlib.Algebra.BigOperators.Ring.Finset",
+    "Mathlib.Algebra.Group.Equiv.TypeTags",
+    "Mathlib.Algebra.Polynomial.Eval.Coeff",
+    "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Basic",
+    "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point",
+    "Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass",
+    "Mathlib.Analysis.Normed.Field.Basic",
+    "Mathlib.Analysis.Normed.Field.Lemmas",
+    "Mathlib.Analysis.Normed.Field.Ultra",
+    "Mathlib.Analysis.Normed.Group.InfiniteSum",
+    "Mathlib.Analysis.Normed.Group.Tannery",
+    "Mathlib.Analysis.Normed.Group.Ultra",
+    "Mathlib.Analysis.Normed.Module.Basic",
+    "Mathlib.Analysis.Normed.Ring.InfiniteSum",
+    "Mathlib.Analysis.Normed.Ring.Ultra",
+    "Mathlib.Analysis.Normed.Unbundled.SpectralNorm",
+    "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+    "Mathlib.Analysis.SpecialFunctions.Log.Summable",
+    "Mathlib.Analysis.SpecialFunctions.Pow.NNReal",
+    "Mathlib.Analysis.SpecificLimits.Basic",
+    "Mathlib.Analysis.SpecificLimits.Normed",
+    "Mathlib.Data.Nat.Choose.Basic",
+    "Mathlib.Data.ZMod.Basic",
+    "Mathlib.FieldTheory.KummerPolynomial",
+    "Mathlib.GroupTheory.QuotientGroup.Basic",
+    "Mathlib.GroupTheory.QuotientGroup.Defs",
+    "Mathlib.LinearAlgebra.FiniteDimensional.Basic",
+    "Mathlib.NumberTheory.Divisors",
+    "Mathlib.NumberTheory.TsumDivisorsAntidiagonal",
+    "Mathlib.Order.Filter.AtTopBot.Ring",
+    "Mathlib.RingTheory.AdjoinRoot",
+    "Mathlib.Tactic.FieldSimp",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.LinearCombination",
+    "Mathlib.Tactic.Ring",
+    "Mathlib.Topology.Algebra.InfiniteSum.NatInt",
+    "Mathlib.Topology.Algebra.InfiniteSum.Nonarchimedean",
+    "Mathlib.Topology.Algebra.InfiniteSum.Ring"
+  ],
+  "nativeComparisonReceipt": "ci-025491-39c02226",
+  "sourceGraphJob": "ci-012771-ee109b3e",
+  "sourceGraphSha256": "861ad257b5657ac581fcaf138890383fd53caba157ff99fa07a903c0ab03f6ed",
+  "sourceModules": {
+    "TateCurvesTheta.QParameter.Basic": {
+      "sha256": "5bfb31d316cb847372945449cc291a5643c85a2c7dcf47411480b9395886070d",
+      "imports": [
+        "Mathlib.Analysis.Normed.Field.Basic",
+        "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+        "Mathlib.Analysis.SpecificLimits.Normed"
+      ]
+    },
+    "TateCurvesTheta.QParameter.BaseChange": {
+      "sha256": "f6cb5643c467c79a74d39d3b05fbd8b012f7954267f87585336deca38ad08dca",
+      "imports": [
+        "Mathlib.Analysis.Normed.Module.Basic",
+        "TateCurvesTheta.QParameter.Basic"
+      ]
+    },
+    "TateCurvesTheta.Analysis.MaxTerm": {
+      "sha256": "570e1eb8c7c173c33a826f91a4b0fef757680105048358952da33a6adbeeac91",
+      "imports": [
+        "Mathlib.Analysis.Normed.Group.InfiniteSum",
+        "Mathlib.Analysis.Normed.Field.Basic"
+      ]
+    },
+    "TateCurvesTheta.Analysis.UltrametricSum": {
+      "sha256": "badf1289e007c79ec21e014cddddc5b27e888e0b2f105847fed4a28d429c4642",
+      "imports": [
+        "Mathlib.Analysis.Normed.Group.Ultra",
+        "Mathlib.Analysis.Normed.Group.InfiniteSum"
+      ]
+    },
+    "TateCurvesTheta.Analysis.Strassmann": {
+      "sha256": "6a7c7d7451ec3c52337dff2d5913dc300f5bbb514556a6b8653f2d297208dd73",
+      "imports": [
+        "Mathlib.Analysis.Normed.Group.Ultra",
+        "Mathlib.Analysis.Normed.Field.Lemmas",
+        "Mathlib.Topology.Algebra.InfiniteSum.Nonarchimedean",
+        "Mathlib.Topology.Algebra.InfiniteSum.Ring",
+        "TateCurvesTheta.Analysis.MaxTerm",
+        "TateCurvesTheta.Analysis.UltrametricSum"
+      ]
+    },
+    "TateCurvesTheta.Analysis.StrassmannSphere": {
+      "sha256": "1691c899e0ef25257082c301d2c42e06c9c34e8ac06d44055e430c502a75a0cd",
+      "imports": [
+        "Mathlib.Analysis.Normed.Group.Ultra",
+        "Mathlib.Analysis.Normed.Field.Lemmas",
+        "Mathlib.Topology.Algebra.InfiniteSum.Nonarchimedean",
+        "Mathlib.Topology.Algebra.InfiniteSum.Ring",
+        "TateCurvesTheta.Analysis.MaxTerm",
+        "TateCurvesTheta.Analysis.UltrametricSum",
+        "TateCurvesTheta.Analysis.Strassmann"
+      ]
+    },
+    "TateCurvesTheta.Arithmetic.DivisorConvolution": {
+      "sha256": "4520bd73162d0f9bd30422186dd3bcf7d85790e2ddc94497357dda86e2c7b4ce",
+      "imports": [
+        "Mathlib.Algebra.BigOperators.Intervals",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.NumberTheory.Divisors",
+        "Mathlib.Tactic.LinearCombination",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Ring"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.Weierstrass": {
+      "sha256": "dd4afe6a7bc566caf181abad3563141c5375c02ea3ccff4333e91e7329c54d61",
+      "imports": [
+        "Mathlib.AlgebraicGeometry.EllipticCurve.Weierstrass",
+        "Mathlib.Analysis.Normed.Group.Ultra",
+        "Mathlib.Analysis.Normed.Ring.Ultra",
+        "Mathlib.Analysis.Normed.Group.InfiniteSum",
+        "Mathlib.Analysis.SpecificLimits.Basic",
+        "TateCurvesTheta.QParameter.Basic"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.Parametrization": {
+      "sha256": "5ba278487e5eafcfbbe8de943edd8c0e3e788065422a3af7e9770cdd71094fd1",
+      "imports": [
+        "Mathlib.Analysis.Normed.Group.Ultra",
+        "Mathlib.Topology.Algebra.InfiniteSum.Nonarchimedean",
+        "Mathlib.Analysis.SpecialFunctions.Pow.NNReal",
+        "Mathlib.Order.Filter.AtTopBot.Ring",
+        "TateCurvesTheta.TateCurve.Weierstrass"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.CoordinateExpansion": {
+      "sha256": "ea6812887b969b79af91bbbe87cfa604b80ab834a6c3552bf4d25135d5322e5b",
+      "imports": [
+        "Mathlib.Analysis.SpecificLimits.Normed",
+        "TateCurvesTheta.TateCurve.Parametrization"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.CoordinateAnnulusLaurent": {
+      "sha256": "fe786be31fcb6650ebb84725b850f969713dadb0099c288aef93278b34f46351",
+      "imports": [
+        "Mathlib.Analysis.Normed.Ring.InfiniteSum",
+        "Mathlib.Topology.Algebra.InfiniteSum.NatInt",
+        "TateCurvesTheta.TateCurve.CoordinateExpansion"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.CoordinateAnnulusLaurentY": {
+      "sha256": "53c49dcc143f66c3968244edaf583836d3b7928e3d799478ccbca8bc00dd2c12",
+      "imports": [
+        "Mathlib.Analysis.Normed.Ring.InfiniteSum",
+        "Mathlib.Topology.Algebra.InfiniteSum.NatInt",
+        "TateCurvesTheta.TateCurve.CoordinateExpansion"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.WeierstrassIdentity": {
+      "sha256": "7c82af39a21168be9df9cb33014a1265647ea504c207b434c7e601b87ba95d84",
+      "imports": [
+        "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Basic",
+        "TateCurvesTheta.TateCurve.Parametrization"
+      ]
+    },
+    "TateCurvesTheta.Theta.Basic": {
+      "sha256": "1c12ea0f3e5156cfb2972464da1f40583857d2f0be40ea1557ba54e2532bb669",
+      "imports": [
+        "Mathlib.Analysis.Normed.Group.Ultra",
+        "Mathlib.Topology.Algebra.InfiniteSum.Nonarchimedean",
+        "Mathlib.Analysis.SpecialFunctions.Pow.NNReal",
+        "Mathlib.Order.Filter.AtTopBot.Ring",
+        "TateCurvesTheta.QParameter.Basic"
+      ]
+    },
+    "TateCurvesTheta.Theta.Periodicity": {
+      "sha256": "2d2951d73e1bdfcfbe2e67ef4d4a926fb066583497f1d3a66a31bfe24da8d699",
+      "imports": [
+        "Mathlib.Topology.Algebra.InfiniteSum.Ring",
+        "TateCurvesTheta.Theta.Basic"
+      ]
+    },
+    "TateCurvesTheta.Theta.Product": {
+      "sha256": "085d89ff57b1d4c00a5f5257d8ea1e2711a824253133b5aa73ebffa6f53c4e3e",
+      "imports": [
+        "Mathlib.Analysis.SpecialFunctions.Log.Summable",
+        "Mathlib.Analysis.SpecificLimits.Basic",
+        "Mathlib.Topology.Algebra.InfiniteSum.NatInt",
+        "TateCurvesTheta.Theta.Periodicity"
+      ]
+    },
+    "TateCurvesTheta.Theta.FactorSeries": {
+      "sha256": "2f35fd4442abdc8ced184f45dec54f7c7f6472357568a067f9cbc877cc0489ca",
+      "imports": [
+        "Mathlib.Analysis.Normed.Ring.Ultra",
+        "Mathlib.Analysis.SpecificLimits.Normed",
+        "TateCurvesTheta.Theta.Product"
+      ]
+    },
+    "TateCurvesTheta.Theta.Uniqueness": {
+      "sha256": "07c23ecd48c7a0c60a891fea66a8eb55ba7ae334e7dd022852cf49904ba83bd2",
+      "imports": [
+        "Mathlib.Topology.Algebra.InfiniteSum.Ring",
+        "TateCurvesTheta.Theta.Product"
+      ]
+    },
+    "TateCurvesTheta.Theta.Divisor": {
+      "sha256": "b69a7647b9b4c2951c9d3621687d2531f0e5a9c8cb59ba076826400a08f01d8a",
+      "imports": [
+        "Mathlib.Analysis.SpecialFunctions.Log.Summable",
+        "Mathlib.Topology.Algebra.InfiniteSum.NatInt",
+        "TateCurvesTheta.Theta.Product"
+      ]
+    },
+    "TateCurvesTheta.Theta.ThetaProdLaurent": {
+      "sha256": "1b5bc0852d3eedef99454c6202ea4f483f72cd6cfc2bc83b7442145a7b1a0681",
+      "imports": [
+        "TateCurvesTheta.Theta.Uniqueness",
+        "TateCurvesTheta.Theta.Divisor"
+      ]
+    },
+    "TateCurvesTheta.Theta.ThetaProdGlobalLaurent": {
+      "sha256": "a389143fc24c25d6007cdda4d9e739fa7fed07aa8d2aec98de1deb7cece1987c",
+      "imports": [
+        "Mathlib.Topology.Algebra.InfiniteSum.Nonarchimedean",
+        "TateCurvesTheta.Theta.FactorSeries",
+        "TateCurvesTheta.Theta.ThetaProdLaurent"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.DefectAnnulusLaurent": {
+      "sha256": "f05669a584dbd1021b828bbb0d5c499ec54c28021153be8cccddacff32894890",
+      "imports": [
+        "TateCurvesTheta.TateCurve.CoordinateAnnulusLaurent",
+        "TateCurvesTheta.TateCurve.CoordinateAnnulusLaurentY",
+        "TateCurvesTheta.TateCurve.WeierstrassIdentity",
+        "TateCurvesTheta.Theta.ThetaProdGlobalLaurent"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.EisensteinKernels": {
+      "sha256": "b7735321e26637596df20414db45fc3eb31772da05ba092b845045a02d1ba0a8",
+      "imports": [
+        "Mathlib.Tactic.FieldSimp",
+        "Mathlib.Tactic.Ring"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.DefectVanishing": {
+      "sha256": "e2e8e6bb191ccba47af6e1a3595082b4c3de17f68fbba5ccee7d8d3424a811f0",
+      "imports": [
+        "TateCurvesTheta.TateCurve.EisensteinKernels",
+        "TateCurvesTheta.TateCurve.WeierstrassIdentity",
+        "TateCurvesTheta.Theta.ThetaProdGlobalLaurent",
+        "TateCurvesTheta.Theta.Uniqueness"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.EisensteinSeries": {
+      "sha256": "55e3289b6c1f6c1c2902bbc5dc4ed2e6382eecc4d23ff6149fb5bf4ca166988f",
+      "imports": [
+        "Mathlib.Analysis.Normed.Ring.InfiniteSum",
+        "Mathlib.Analysis.SpecificLimits.Normed",
+        "Mathlib.NumberTheory.TsumDivisorsAntidiagonal",
+        "Mathlib.Topology.Algebra.InfiniteSum.NatInt",
+        "TateCurvesTheta.TateCurve.EisensteinKernels",
+        "TateCurvesTheta.TateCurve.Weierstrass"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.TatePointMem": {
+      "sha256": "72512f6665c846dacf42548d44de2ba3ed5ab36ba877fc6ab478e257afdcb620",
+      "imports": [
+        "TateCurvesTheta.TateCurve.WeierstrassIdentity",
+        "TateCurvesTheta.Theta.Uniqueness"
+      ]
+    },
+    "TateCurvesTheta.Theta.LaurentSphere": {
+      "sha256": "5dddfac80b496fc6ba30a70cef0e09809398b587a4395cf2555051b298a47dc9",
+      "imports": [
+        "Mathlib.Analysis.Normed.Group.Ultra",
+        "TateCurvesTheta.Theta.Uniqueness"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.TatePointOnCurve": {
+      "sha256": "538d203ebc87b95548eee52ea79916bb0eeb3176fe16786470bd2fd41821c944",
+      "imports": [
+        "TateCurvesTheta.Analysis.StrassmannSphere",
+        "TateCurvesTheta.Arithmetic.DivisorConvolution",
+        "TateCurvesTheta.TateCurve.DefectAnnulusLaurent",
+        "TateCurvesTheta.TateCurve.DefectVanishing",
+        "TateCurvesTheta.TateCurve.EisensteinSeries",
+        "TateCurvesTheta.TateCurve.TatePointMem",
+        "TateCurvesTheta.Theta.LaurentSphere"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.DefectCoeffBaseChange": {
+      "sha256": "20bd45dd87ab0bcbb6d8445a39e52509ab2f102c1e1f33681cee5b95a8517717",
+      "imports": [
+        "Mathlib.Analysis.Normed.Unbundled.SpectralNorm",
+        "Mathlib.FieldTheory.KummerPolynomial",
+        "Mathlib.RingTheory.AdjoinRoot",
+        "TateCurvesTheta.QParameter.BaseChange",
+        "TateCurvesTheta.TateCurve.TatePointOnCurve"
+      ]
+    },
+    "TateCurvesTheta.Theta.LaurentSphereReduce": {
+      "sha256": "b747e7abb674330d4533371111c9bfb552ef1016ae036369ed53b5699d42ded2",
+      "imports": [
+        "Mathlib.Analysis.Normed.Field.Lemmas",
+        "TateCurvesTheta.Theta.LaurentSphere"
+      ]
+    },
+    "TateCurvesTheta.Theta.LaurentUnitSphere": {
+      "sha256": "a5ca09745ac27cbee6928d4c89b1a5d1176152977c851fc2a93f465a48e04a83",
+      "imports": [
+        "TateCurvesTheta.Analysis.StrassmannSphere",
+        "TateCurvesTheta.Theta.LaurentSphereReduce",
+        "TateCurvesTheta.Theta.LaurentSphere"
+      ]
+    },
+    "TateCurvesTheta.Theta.Normalization": {
+      "sha256": "1c254bc6aa797287b1efddd9eb2e5ffab8e67f28006020bcafdf93116856c677",
+      "imports": [
+        "TateCurvesTheta.Theta.ThetaProdGlobalLaurent",
+        "TateCurvesTheta.Theta.LaurentUnitSphere"
+      ]
+    },
+    "TateCurvesTheta.Theta.QBinomial": {
+      "sha256": "1a1acaa5c66b3b7f5239bb4f4745fd6c874cc44b3758359123eaf628c35f24cd",
+      "imports": [
+        "Mathlib.Algebra.Polynomial.Eval.Coeff",
+        "Mathlib.Algebra.BigOperators.NatAntidiagonal",
+        "Mathlib.Data.Nat.Choose.Basic",
+        "Mathlib.Tactic.LinearCombination"
+      ]
+    },
+    "TateCurvesTheta.Theta.Durfee": {
+      "sha256": "b22178dccb9cdd3ea8a317465ff5e80dc3df40c2bb738d5b830e54ec6d710ed0",
+      "imports": [
+        "Mathlib.Analysis.Normed.Group.Tannery",
+        "TateCurvesTheta.Theta.Normalization",
+        "TateCurvesTheta.Theta.QBinomial",
+        "TateCurvesTheta.Theta.Divisor"
+      ]
+    },
+    "TateCurvesTheta.Theta.PuncturedProduct": {
+      "sha256": "ba10c9a4419bbbb7cb6b435c0b7ebfaac4040ac4b21e3fe9a7aec99eb3f61aa5",
+      "imports": [
+        "Mathlib.Analysis.Normed.Group.Ultra",
+        "Mathlib.Analysis.Normed.Ring.InfiniteSum",
+        "Mathlib.Analysis.SpecificLimits.Normed",
+        "Mathlib.Topology.Algebra.InfiniteSum.NatInt",
+        "TateCurvesTheta.TateCurve.Parametrization",
+        "TateCurvesTheta.Theta.Durfee",
+        "TateCurvesTheta.Theta.ThetaProdGlobalLaurent"
+      ]
+    },
+    "TateCurvesTheta.Theta.WeightSpace": {
+      "sha256": "a91ffc5fc6e4801eb685416341722234207a2731029192488bb3906eeb23fbf3",
+      "imports": [
+        "Mathlib.LinearAlgebra.FiniteDimensional.Basic",
+        "TateCurvesTheta.Theta.Durfee",
+        "TateCurvesTheta.Theta.LaurentUnitSphere",
+        "TateCurvesTheta.Theta.Periodicity",
+        "TateCurvesTheta.Theta.ThetaProdGlobalLaurent"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.AbelStep": {
+      "sha256": "2d7685251e8f8edbd9f982c259302a9a0062962a56aa79ca868b5524b3be6e01",
+      "imports": [
+        "TateCurvesTheta.TateCurve.DefectCoeffBaseChange",
+        "TateCurvesTheta.Theta.PuncturedProduct",
+        "TateCurvesTheta.Theta.WeightSpace"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.CoordinateInversion": {
+      "sha256": "baf7e48c3c82a5986033592d028da61867fbdc412fb20ea06eb21b40c7eaa16a",
+      "imports": [
+        "TateCurvesTheta.TateCurve.EisensteinKernels",
+        "TateCurvesTheta.TateCurve.Parametrization"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.A6Series": {
+      "sha256": "a1287f60a3d78d0d830542ca022a68d46c1e3d625a6d4230db5528dda7fbeff2",
+      "imports": [
+        "Mathlib.Analysis.Normed.Group.Ultra",
+        "Mathlib.Analysis.Normed.Field.Ultra",
+        "Mathlib.Analysis.SpecificLimits.Normed",
+        "Mathlib.Data.ZMod.Basic",
+        "Mathlib.Topology.Algebra.InfiniteSum.Ring",
+        "TateCurvesTheta.TateCurve.Weierstrass"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.Discriminant": {
+      "sha256": "27b248dfb7d2cb99e5fec34c9a2d194c7a082d98082e4aa31f44b1188216cb25",
+      "imports": [
+        "Mathlib.Analysis.Normed.Group.Ultra",
+        "Mathlib.Analysis.Normed.Field.Ultra",
+        "Mathlib.Analysis.SpecificLimits.Normed",
+        "TateCurvesTheta.TateCurve.A6Series"
+      ]
+    },
+    "TateCurvesTheta.AnalyticQuotient": {
+      "sha256": "0ad5914f2175b1ad53701c3d44a55167588c1f17c71c49ecc4bb29463efe1836",
+      "imports": [
+        "Mathlib"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.Quotient": {
+      "sha256": "5a143e7078acb21b78317d3e47e37a37169e2be4b09d37eaea7cfe80085e5290",
+      "imports": [
+        "TateCurvesTheta.AnalyticQuotient",
+        "TateCurvesTheta.QParameter.Basic"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.PointMap": {
+      "sha256": "a3fa4b9add429cc5f1f200b25d306fee7a6e896e3702aa26707595f095459267",
+      "imports": [
+        "Mathlib.AlgebraicGeometry.EllipticCurve.Affine.Point",
+        "TateCurvesTheta.TateCurve.Discriminant",
+        "TateCurvesTheta.TateCurve.WeierstrassIdentity",
+        "TateCurvesTheta.TateCurve.Quotient"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.AdditionLaw": {
+      "sha256": "cabb41a4cea457f42c6ffb040dad218b7440b05f6c4bdedea12b58a3d270b3a4",
+      "imports": [
+        "TateCurvesTheta.TateCurve.CoordinateInversion",
+        "TateCurvesTheta.TateCurve.PointMap",
+        "TateCurvesTheta.TateCurve.TatePointOnCurve"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.IntegralModel": {
+      "sha256": "cedabfea40ea66198dfcc98a3200d4a0da662bd14d42baf80871488ac4b7a084",
+      "imports": [
+        "TateCurvesTheta.TateCurve.A6Series",
+        "TateCurvesTheta.TateCurve.Discriminant"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.LargePointParametrization": {
+      "sha256": "9329bfada38d1fbc67693462881ec2877c7d3d94e5d66d2958ba4ce10f7cc16c",
+      "imports": [
+        "TateCurvesTheta.TateCurve.CoordinateInversion",
+        "TateCurvesTheta.TateCurve.IntegralModel",
+        "TateCurvesTheta.TateCurve.TatePointOnCurve"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.GroupLaw": {
+      "sha256": "6b8d3d21efa12f683cef4f1b83a38b9d433a44614088feab4c862dd897d73ac4",
+      "imports": [
+        "TateCurvesTheta.TateCurve.AbelStep",
+        "TateCurvesTheta.TateCurve.AdditionLaw",
+        "TateCurvesTheta.TateCurve.LargePointParametrization"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.SphereBounds": {
+      "sha256": "31bfafff2ec6194a4d0d141d764438366ac9decbe6bb86a372e9ed85918a1bcd",
+      "imports": [
+        "TateCurvesTheta.TateCurve.Discriminant",
+        "TateCurvesTheta.TateCurve.Parametrization"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.SurjectivityAnnulus": {
+      "sha256": "095fd6e835a803c8fa9c46e51787c9d58b50c6b9c6eaafa50a2862605c58de49",
+      "imports": [
+        "TateCurvesTheta.TateCurve.GroupLaw",
+        "TateCurvesTheta.TateCurve.SphereBounds"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.SurjectivitySphere": {
+      "sha256": "52fc69888b4249095b8158e399afdf2a618e10e27c27fa3b4be2ea183354e65a",
+      "imports": [
+        "TateCurvesTheta.TateCurve.GroupLaw",
+        "TateCurvesTheta.TateCurve.SphereBounds"
+      ]
+    },
+    "TateCurvesTheta.TateCurve.TateUniformization": {
+      "sha256": "53372c6a3b68884cd412bc834d292bb815b2b7d6f89e598250cd59fa6e4c53d5",
+      "imports": [
+        "TateCurvesTheta.TateCurve.SurjectivityAnnulus",
+        "TateCurvesTheta.TateCurve.SurjectivitySphere"
+      ]
+    }
+  },
+  "bridgeSources": {
+    "Source_ReferenceIutVariableChangePoint": "625511ee3d75d85b4388e06301df94307a6217e3f82d0a1494d11db065da7738",
+    "Source_ReferenceIutTateUniformization": "f7a0e0d621468f5f2078dbba6b323ac8b67eadbc25302f17e5158a63362c108b",
+    "Source_ReferenceIutTatePointEquation": "27da95b3872ff399877bb9fe354650dcd91bc4882890fc9fb490e920e091df2d",
+    "Source_ReferenceIutTateUniformizationLaws": "c624a9399408592bedf7ab59299f61c8176a93d7ebc0430bf2b83e1fb3d43292"
+  },
+  "mergeNormalization": {
+    "triggeringJobId": "ci-025764-36bd174a",
+    "originalSolutionSha256": "ecf9e569b36e49b4b176c7e61da95d71aa3bef0635c07b3eb32182606535755a",
+    "retainedModule": "TateCurvesTheta.TateCurve.Weierstrass",
+    "removedModule": "TateCurvesTheta.Theta.FactorSeries",
+    "removedLinesInclusive": [
+      78,
+      98
+    ],
+    "sharedDeclarations": [
+      "TateCurvesTheta.TateParameter.norm_one_sub_qpow",
+      "TateCurvesTheta.TateParameter.one_sub_qpow_ne_zero"
+    ]
+  },
+  "heartbeatOptions": [
+    "set_option maxHeartbeats 1000000 in",
+    "set_option maxHeartbeats 1600000 in"
+  ]
+}

@@ -1,0 +1,375 @@
+{
+  "job_id": "ci-025687-2154adba",
+  "attempt_id": "attempt-8b4080cfdb10",
+  "status": "succeeded",
+  "submitted_at": 1795168561.1286645,
+  "started_at": 1795223783.7035146,
+  "finished_at": 1795223844.3836308,
+  "queue_time_seconds": 55222.5748500824,
+  "compile_time_seconds": 60.680116176605225,
+  "progress": {},
+  "resources": {
+    "memory_decision": {
+      "worker_pressure": "normal",
+      "host_pressure": "normal",
+      "total_worker_bytes": 14054277120
+    },
+    "cpu_time_seconds": 50.81,
+    "peak_rss_bytes": 8240476160,
+    "peak_pss_bytes": null,
+    "cpu_user_seconds": 9.6,
+    "cpu_system_seconds": 41.21,
+    "wall_time_seconds": 59.63842449999993,
+    "allocated_cpu_count": 4,
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "affinity_applied": true,
+    "affinity_error": null
+  },
+  "deduplicated": false,
+  "request": {
+    "agent_id": "/root",
+    "environment": {
+      "LEAN_PATH": "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean:/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean:/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree/.lake/build/lib/lean",
+      "PATH": "/root/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/root/.nvm/versions/node/v22.23.2/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/root/.codex-key3/tmp/arg0-linux/codex-arg09EKFI6:/root/.cabal/bin:/root/.ghcup/bin:/root/.nvm/versions/node/v22.23.2/bin:/root/.opam/Coq900/bin:/root/.elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+    },
+    "exclusive": true,
+    "expected_duration": 120,
+    "expected_memory": 9663676416,
+    "idempotency_key": "p2m-iut-handoff-01a1f575-genuine-etale-comparison-artifact-e87fb11afecb29be1c",
+    "language": "lean",
+    "parameters": {
+      "args": [
+        "Solutions/Source_ReferenceIutGenuineEtaleComparison.lean",
+        "-o",
+        ".lake/build/lib/lean/Solutions/Source_ReferenceIutGenuineEtaleComparison.olean"
+      ]
+    },
+    "priority": 0,
+    "profile": "default",
+    "project_id": "ArithmeticTeichmullerSpaces",
+    "scheduler_timeout_seconds": 360,
+    "session_id": "01a1f575-a867-75d1-9ba5-04ce946763c8",
+    "snapshot_manifest": {
+      "configuration_hashes": {
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+      },
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "external_dependencies": [
+        {
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474",
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a"
+        },
+        {
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0",
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68"
+        },
+        {
+          "build_job": "ci-025634-2505f374",
+          "path": "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree"
+        }
+      ],
+      "head": "5ff88aae1695a547317558439249cec1ed91ccb3",
+      "input_hashes": {
+        ".lake/build/lib/lean/Solutions/Source_ReferenceIutGenuinePi1.olean": "f60e639b9f917a9f31a8fdd2d94ab4cd9cde8727efb66d3a1c4b37e90e6b9e00",
+        "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree/.lake/build/lib/lean/Pi1/Orbifold/Comparison.olean": "fbfce3e431509d304a569d442306cc06df9515b6d775d8d6039f5671b69a6d35",
+        "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree/.lake/build/lib/lean/TemperedFundamentalGroups/Setup/Orbifold.olean": "8547bc0991133e4deb3f01ab1e9d12b491f59fa613ec42d6176709411190ed9e",
+        "Solutions/Source_ReferenceIutGenuineEtaleComparison.lean": "e87fb11afecb29be1c39494321ca8a0b701e2eb7e3c819acdc2ed9aa7febd378",
+        "Solutions/Source_ReferenceIutGenuinePi1.lean": "4072cd0067f9427e67e516950563968d3461d7634c15695cb4a881bdc41869af"
+      },
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "modified_files": [
+        "docs/Scene1进度总览5.md",
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Solutions/Source_ReferenceIutGenuinePi1.lean"
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+        "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree/.lake/build/lib/lean"
+      ],
+      "resource_estimate_basis": "ci-025674-5463de89 passed at 100.86 s and 7.66 GiB RSS.",
+      "source_sha256": "e87fb11afecb29be1c39494321ca8a0b701e2eb7e3c819acdc2ed9aa7febd378",
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_PlaceUnder.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutGenuineEtaleComparison.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_nonempty_tateStructure_of_torsion.lean"
+      ],
+      "worktree_id": "/home/admin-wsl/Coq/abc"
+    },
+    "target": "file",
+    "task_type": "leaf",
+    "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "workspace_mode": "exclusive_worktree",
+    "workspace_source": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "worktree_manifest": {
+      "configuration_hashes": {
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+      },
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "external_dependencies": [
+        {
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474",
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a"
+        },
+        {
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0",
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68"
+        },
+        {
+          "build_job": "ci-025634-2505f374",
+          "path": "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree"
+        }
+      ],
+      "head": "5ff88aae1695a547317558439249cec1ed91ccb3",
+      "input_hashes": {
+        ".lake/build/lib/lean/Solutions/Source_ReferenceIutGenuinePi1.olean": "f60e639b9f917a9f31a8fdd2d94ab4cd9cde8727efb66d3a1c4b37e90e6b9e00",
+        "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree/.lake/build/lib/lean/Pi1/Orbifold/Comparison.olean": "fbfce3e431509d304a569d442306cc06df9515b6d775d8d6039f5671b69a6d35",
+        "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree/.lake/build/lib/lean/TemperedFundamentalGroups/Setup/Orbifold.olean": "8547bc0991133e4deb3f01ab1e9d12b491f59fa613ec42d6176709411190ed9e",
+        "Solutions/Source_ReferenceIutGenuineEtaleComparison.lean": "e87fb11afecb29be1c39494321ca8a0b701e2eb7e3c819acdc2ed9aa7febd378",
+        "Solutions/Source_ReferenceIutGenuinePi1.lean": "4072cd0067f9427e67e516950563968d3461d7634c15695cb4a881bdc41869af"
+      },
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "modified_files": [
+        "docs/Scene1进度总览5.md",
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Solutions/Source_ReferenceIutGenuinePi1.lean"
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+        "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree/.lake/build/lib/lean"
+      ],
+      "resource_estimate_basis": "ci-025674-5463de89 passed at 100.86 s and 7.66 GiB RSS.",
+      "source_sha256": "e87fb11afecb29be1c39494321ca8a0b701e2eb7e3c819acdc2ed9aa7febd378",
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_PlaceUnder.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutGenuineEtaleComparison.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_nonempty_tateStructure_of_torsion.lean"
+      ],
+      "worktree_id": "/home/admin-wsl/Coq/abc"
+    }
+  },
+  "result": {
+    "exit_code": 0,
+    "stdout": "Solutions/Source_ReferenceIutGenuineEtaleComparison.lean:110:34: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead\nSolutions/Source_ReferenceIutGenuineEtaleComparison.lean:112:63: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead\n",
+    "stderr": "",
+    "diagnostics": [
+      {
+        "path": "Solutions/Source_ReferenceIutGenuineEtaleComparison.lean",
+        "line": 110,
+        "column": 34,
+        "severity": "warning",
+        "message": "`Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead"
+      },
+      {
+        "path": "Solutions/Source_ReferenceIutGenuineEtaleComparison.lean",
+        "line": 112,
+        "column": 63,
+        "severity": "warning",
+        "message": "`Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead"
+      }
+    ],
+    "actual_arguments": [
+      "lean",
+      "Solutions/Source_ReferenceIutGenuineEtaleComparison.lean",
+      "-o",
+      ".lake/build/lib/lean/Solutions/Source_ReferenceIutGenuineEtaleComparison.olean"
+    ],
+    "snapshot": {
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "fingerprint": null,
+      "manifest": {
+        "configuration_hashes": {
+          "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+          "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+          "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+        },
+        "dependency_lock": "lake-manifest.json",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "external_dependencies": [
+          {
+            "head": "0df444a360eaa60ab8c11dca51a86af692955474",
+            "path": "/home/admin-wsl/Coq/mathlib4-0df444a"
+          },
+          {
+            "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0",
+            "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+            "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68"
+          },
+          {
+            "build_job": "ci-025634-2505f374",
+            "path": "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree"
+          }
+        ],
+        "head": "5ff88aae1695a547317558439249cec1ed91ccb3",
+        "input_hashes": {
+          ".lake/build/lib/lean/Solutions/Source_ReferenceIutGenuinePi1.olean": "f60e639b9f917a9f31a8fdd2d94ab4cd9cde8727efb66d3a1c4b37e90e6b9e00",
+          "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree/.lake/build/lib/lean/Pi1/Orbifold/Comparison.olean": "fbfce3e431509d304a569d442306cc06df9515b6d775d8d6039f5671b69a6d35",
+          "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree/.lake/build/lib/lean/TemperedFundamentalGroups/Setup/Orbifold.olean": "8547bc0991133e4deb3f01ab1e9d12b491f59fa613ec42d6176709411190ed9e",
+          "Solutions/Source_ReferenceIutGenuineEtaleComparison.lean": "e87fb11afecb29be1c39494321ca8a0b701e2eb7e3c819acdc2ed9aa7febd378",
+          "Solutions/Source_ReferenceIutGenuinePi1.lean": "4072cd0067f9427e67e516950563968d3461d7634c15695cb4a881bdc41869af"
+        },
+        "local_configuration": [
+          "lean-toolchain",
+          "lakefile.lean",
+          "lake-manifest.json"
+        ],
+        "modified_files": [
+          "docs/Scene1进度总览5.md",
+          "docs/对Joshi'sFAQ的独立形式化审查.md",
+          "docs/开发计划.V1Act1log1.md",
+          "docs/开发计划.V1Act1log2.md",
+          "docs/开发计划.V1Act1log3.md",
+          "docs/开发计划.V1Act1log4.md",
+          "docs/开发计划.V1Act1log5.md",
+          "prove2me_workspace/Solutions/Source_ReferenceIutGenuinePi1.lean"
+        ],
+        "required_artifacts": [
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+          "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+          "/tmp/abc-connector-review-tempered-build.ZaKbPdoQ/worktree/.lake/build/lib/lean"
+        ],
+        "resource_estimate_basis": "ci-025674-5463de89 passed at 100.86 s and 7.66 GiB RSS.",
+        "source_sha256": "e87fb11afecb29be1c39494321ca8a0b701e2eb7e3c819acdc2ed9aa7febd378",
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "untracked_files": [
+          "docs/Email.txt",
+          "docs/Mochizuki审计.md",
+          "docs/Scene1进度总览3.md",
+          "docs/olds/Scene1进度总览1.md",
+          "docs/olds/具有明确参考来源指示的证明义务.old.md",
+          "docs/olds/开发计划.V1Act1log1.md",
+          "docs/olds/开发计划.V1Act1log2.md",
+          "docs/olds/开发计划.V1Act1log3.md",
+          "docs/olds/开发计划.V1Act1log4.md",
+          "docs/olds/开发计划.V1Act1log5.md",
+          "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_PlaceUnder.lean",
+          "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.lean",
+          "prove2me_workspace/Solutions/Source_ReferenceIutGenuineEtaleComparison.lean",
+          "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.lean",
+          "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_nonempty_tateStructure_of_torsion.lean"
+        ],
+        "worktree_id": "/home/admin-wsl/Coq/abc"
+      }
+    },
+    "compiler": {
+      "name": "lean",
+      "version": null
+    },
+    "resources": {
+      "memory_decision": {
+        "worker_pressure": "normal",
+        "host_pressure": "normal",
+        "total_worker_bytes": 14054277120
+      },
+      "cpu_time_seconds": 50.81,
+      "peak_rss_bytes": 8240476160,
+      "peak_pss_bytes": null,
+      "cpu_user_seconds": 9.6,
+      "cpu_system_seconds": 41.21,
+      "wall_time_seconds": 59.63842449999993,
+      "allocated_cpu_count": 4,
+      "cpu_affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "affinity_applied": true,
+      "affinity_error": null
+    },
+    "artifacts": [
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-025687-2154adba/stdout.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-025687-2154adba/stderr.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-025687-2154adba/result.json"
+    ]
+  }
+}

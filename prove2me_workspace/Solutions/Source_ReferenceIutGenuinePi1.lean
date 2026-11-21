@@ -102,6 +102,11 @@ private def orbicurvePi1 {k : Type u} [Field k] : OrbicurvePi1 k :=
 def genuinePi1 {k : Type u} [Field k] (X : Orbicurve k) : ProfiniteGrp.{u} :=
   (orbicurvePi1 (k := k)).group X
 
+/-- In characteristic zero the specified group is the profinite inertia quotient. -/
+theorem genuinePi1_eq_profiniteInertiaQuotient {k : Type u} [Field k] [CharZero k]
+    (X : Orbicurve k) : genuinePi1 X = profiniteInertiaQuotient X := by
+  simp only [genuinePi1, orbicurvePi1, dif_pos (inferInstance : CharZero k)]
+
 /-- The homomorphism of the specified fundamental groups induced by a model cover. -/
 def genuinePi1Cover {k : Type u} [Field k] {X Y : Orbicurve k} (c : Orbicurve.Cover X Y) :
     genuinePi1 X →* genuinePi1 Y :=

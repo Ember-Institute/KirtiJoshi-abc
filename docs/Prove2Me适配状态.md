@@ -45,13 +45,9 @@
 ## 3. 不属于以上两类来源的证明义务
 
 
-### 局部分歧整除的私有平台证明
+### 带指定坐标的 Tate 一致化私有平台证明
 
-`EllipticCurveData.prime_dvd_ramificationIdx` 仍需在私有平台重放。给定原表示的核固定域以及覆盖指定坏处的完成域，须在同一个域上由全体有理挠点取得判别式平方根，输送 Tate 均匀化并推出分歧指数整除。依赖打包须保留点方程、加法、满射及平方根下降的实际证明。 [本地完整证明](../prove2me_workspace/Solutions/Source_SL2ImageLocalTate.lean#L81)
-
-### 具体缓和基本群理论
-
-仍需把固定 Pi1 库的 étale 纤维函子自同构群与当前模型上的闭惯性商群比较，再用规范缓和基本群的连续比较供应 `TemperedPi1Theory`。须保留参考实现的特征零归一化轨形表示和正特征分支。固定版本下的依赖预构建在 `Models.Specialization` 与 `Orbicurve.ValuationInertia` 报出版本兼容错误。 [上游构造](../refer/iut/Iut/Anabelian/Tempered.lean#L134)
+私有节点 `exists_tateUniformization` 仍为 `Open`。目标在完备超度量赋范域上保留指定 Tate 参数曲线、单位群到曲线点的加法同构、满射和标准两条坐标公式。完整稿已通过 Lean 4.33.1 类型与公理审查，平台验证在 300 秒时超时。须按同一参数与曲线的点方程、加法律及满射分包，并在原定理上重放组合证明。 [本地完整构造](../prove2me_workspace/Solutions/Source_ReferenceIutTateUniformizationLaws.lean#L35) · [平台归约](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#the-private-sl₂-ramification-and-tate-structure-reductions)
 
 ### 尚未对应到现成来源陈述的具体几何义务
 

@@ -1,0 +1,169 @@
+{
+  "target": "AbcAdaptation.Reference.Iut.exists_tateUniformization",
+  "targetId": "6ee6a3cd-649a-4604-a2d8-1400087da2d8",
+  "targetSourceSha256": "54a8517d7f7921567deff9cfe8b3f3529c1438e21a6b4fbd300f944cb0c6d4cc",
+  "solutionSha256": "b6afc2428a4695fbe2a6a238d879d481d63cbbf72ef69014e6aca6cacb01efc5",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "mathlibRevision": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "tateRevision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+  "jobs": [
+    {
+      "jobId": "ci-025764-36bd174a",
+      "receipt": "/tmp/abc-iut-handoff-01a1f575/ci-025764-36bd174a.result.json",
+      "receiptSha256": "9b762032b9ac07ef4cc3037015841ca0235ad9f536e77982d2bf0bd83a9fee82",
+      "status": "failed",
+      "exitCode": 1,
+      "taskType": "leaf",
+      "actualArguments": [
+        "lean",
+        ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sol_exists_tateUniformization.lean"
+      ],
+      "sourceSha256": "ecf9e569b36e49b4b176c7e61da95d71aa3bef0635c07b3eb32182606535755a",
+      "expectedDurationSeconds": 60,
+      "expectedMemoryBytes": 17179869184,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspaceMode": "exclusive_worktree",
+      "snapshotId": null,
+      "resources": {
+        "source": "MCP-CI receipt ci-025764-36bd174a.result.resources",
+        "degraded": null,
+        "wallSeconds": 116.20072409999966,
+        "cpuTotalSeconds": 297.86,
+        "cpuUserSeconds": 268.35,
+        "cpuSystemSeconds": 29.51,
+        "peakRssBytes": 5127794688,
+        "peakPssBytes": null
+      },
+      "warningCount": 20,
+      "errors": [
+        {
+          "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sol_exists_tateUniformization.lean",
+          "line": 4014,
+          "column": 6,
+          "severity": "error",
+          "message": "`TateCurvesTheta.TateParameter.norm_one_sub_qpow` has already been declared"
+        },
+        {
+          "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sol_exists_tateUniformization.lean",
+          "line": 4026,
+          "column": 6,
+          "severity": "error",
+          "message": "`TateCurvesTheta.TateParameter.one_sub_qpow_ne_zero` has already been declared"
+        }
+      ],
+      "errorCount": 2
+    },
+    {
+      "jobId": "ci-025778-2fa3d1c8",
+      "receipt": "/tmp/abc-iut-handoff-01a1f575/ci-025778-2fa3d1c8.result.json",
+      "receiptSha256": "8170fe6c5b23b35dbb6b5cc41394861235335bc749efa69015cd0f386456f15c",
+      "status": "succeeded",
+      "exitCode": 0,
+      "taskType": "leaf",
+      "actualArguments": [
+        "lean",
+        ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sol_exists_tateUniformization.lean"
+      ],
+      "sourceSha256": "b6afc2428a4695fbe2a6a238d879d481d63cbbf72ef69014e6aca6cacb01efc5",
+      "expectedDurationSeconds": 140,
+      "expectedMemoryBytes": 6442450944,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspaceMode": "exclusive_worktree",
+      "snapshotId": null,
+      "resources": {
+        "source": "MCP-CI receipt ci-025778-2fa3d1c8.result.resources",
+        "degraded": null,
+        "wallSeconds": 114.15927820000024,
+        "cpuTotalSeconds": 287.74,
+        "cpuUserSeconds": 258.95,
+        "cpuSystemSeconds": 28.79,
+        "peakRssBytes": 5141299200,
+        "peakPssBytes": null
+      },
+      "warningCount": 20,
+      "errors": [],
+      "errorCount": 0
+    },
+    {
+      "jobId": "ci-025788-0a7b38fc",
+      "receipt": "/tmp/abc-iut-handoff-01a1f575/ci-025788-0a7b38fc.result.json",
+      "receiptSha256": "150382413110a9c4b825975607e144a7ed86dc695d44f44b4e0263bfbf322a70",
+      "status": "failed",
+      "exitCode": 1,
+      "taskType": "review",
+      "actualArguments": [
+        "lean",
+        ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Review_exists_tateUniformization.lean"
+      ],
+      "sourceSha256": "12d23e247afeba823cef45ec9dee8916a5be4e166d2da6261be25c2f7c5cc27d",
+      "expectedDurationSeconds": 155,
+      "expectedMemoryBytes": 10737418240,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspaceMode": "exclusive_worktree",
+      "snapshotId": null,
+      "resources": {
+        "source": "MCP-CI receipt ci-025788-0a7b38fc.result.resources",
+        "degraded": null,
+        "wallSeconds": 68.68063489999986,
+        "cpuTotalSeconds": 70.07,
+        "cpuUserSeconds": 8.89,
+        "cpuSystemSeconds": 61.18,
+        "peakRssBytes": 8724406272,
+        "peakPssBytes": null
+      },
+      "warningCount": 0,
+      "errors": [
+        {
+          "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Review_exists_tateUniformization.lean",
+          "line": 105,
+          "column": 10,
+          "severity": "error",
+          "message": "`TateCurvesTheta.TateParameter` has already been declared"
+        },
+        {
+          "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Review_exists_tateUniformization.lean",
+          "line": 117,
+          "column": 6,
+          "severity": "error",
+          "message": "`TateCurvesTheta.TateParameter.norm_q_pos` has already been declared"
+        }
+      ],
+      "errorCount": 101
+    },
+    {
+      "jobId": "ci-025793-5f0d3ef1",
+      "receipt": "/tmp/abc-iut-handoff-01a1f575/ci-025793-5f0d3ef1.result.json",
+      "receiptSha256": "02f086eedf84f3f88a4fd6582b5266b0e78ee7c378835fe8a24f426fc05a994b",
+      "status": "succeeded",
+      "exitCode": 0,
+      "taskType": "review",
+      "actualArguments": [
+        "lean",
+        ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Review_exists_tateUniformization.lean"
+      ],
+      "sourceSha256": "b2cf54af4255a8fee8cfc08432b4c1709511e3a94b821f40e300801dc6c6e242",
+      "expectedDurationSeconds": 145,
+      "expectedMemoryBytes": 6442450944,
+      "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+      "workspaceMode": "exclusive_worktree",
+      "snapshotId": null,
+      "resources": {
+        "source": "MCP-CI receipt ci-025793-5f0d3ef1.result.resources",
+        "degraded": null,
+        "wallSeconds": 132.97512159999997,
+        "cpuTotalSeconds": 321.11,
+        "cpuUserSeconds": 278.29,
+        "cpuSystemSeconds": 42.82,
+        "peakRssBytes": 5125402624,
+        "peakPssBytes": null
+      },
+      "warningCount": 20,
+      "errors": [],
+      "errorCount": 0
+    }
+  ],
+  "typeComparison": "Meta.isDefEq on the elaborated solution and the published theorem",
+  "axiomOutput": "'solution' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "platformSubmissionId": "36d0d5f5-2df9-417c-9420-6ff6248deba1",
+  "platformResultPath": "/tmp/abc-iut-handoff-01a1f575/sl2-private-receipts/AbcAdaptation.Reference.Iut.exists_tateUniformization-full-verify-result.json"
+}

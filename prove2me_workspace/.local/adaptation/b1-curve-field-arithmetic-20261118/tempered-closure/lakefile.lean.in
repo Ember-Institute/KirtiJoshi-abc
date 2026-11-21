@@ -1,0 +1,40 @@
+import Lake
+
+open Lake DSL
+
+package tempered_dependencies where
+  fixedToolchain := true
+  enableArtifactCache := false
+
+require prebuilt_mathlib from "prebuilt-mathlib"
+
+def geometricOptions : Array LeanOption := #[
+  ⟨`pp.unicode.fun, true⟩,
+  ⟨`relaxedAutoImplicit, false⟩,
+  ⟨`weak.linter.mathlibStandardSet, true⟩,
+  ⟨`maxSynthPendingDepth, .ofNat 3⟩,
+]
+
+lean_lib Pi1 where
+  globs := #[`Pi1.+]
+  leanOptions := #[
+    ⟨`pp.unicode.fun, true⟩,
+    ⟨`autoImplicit, false⟩,
+    ⟨`linter.style.longLine, true⟩,
+    ⟨`linter.unusedTactic, false⟩,
+    ⟨`linter.unreachableTactic, false⟩,
+    ⟨`backward.isDefEq.respectTransparency, false⟩,
+    ⟨`maxSynthPendingDepth, .ofNat 3⟩,
+    ⟨`backward.defeqAttrib.useBackward, true⟩,
+  ]
+
+lean_lib EllipticCurves where
+  globs := #[`EllipticCurves.+]
+  leanOptions := geometricOptions
+
+lean_lib TemperedFundamentalGroups where
+  globs := #[`TemperedFundamentalGroups.+]
+  leanOptions := geometricOptions
+
+@[default_target]
+lean_lib TemperedSourceClosure

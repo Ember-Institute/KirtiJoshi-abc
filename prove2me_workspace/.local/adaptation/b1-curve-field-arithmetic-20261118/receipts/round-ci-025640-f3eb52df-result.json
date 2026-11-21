@@ -1,0 +1,842 @@
+{
+  "job_id": "ci-025640-f3eb52df",
+  "attempt_id": "attempt-7f866aa717e1",
+  "status": "failed",
+  "submitted_at": 1795167750.266841,
+  "started_at": 1795167750.2814262,
+  "finished_at": 1795167837.7884696,
+  "queue_time_seconds": 0.014585256576538086,
+  "compile_time_seconds": 87.50704336166382,
+  "progress": {},
+  "resources": {
+    "memory_decision": {
+      "worker_pressure": "normal",
+      "host_pressure": "normal",
+      "total_worker_bytes": 15657750528
+    },
+    "cpu_time_seconds": 115.11,
+    "peak_rss_bytes": 4678844416,
+    "peak_pss_bytes": null,
+    "cpu_user_seconds": 55.96,
+    "cpu_system_seconds": 59.15,
+    "wall_time_seconds": 87.11112790000334,
+    "allocated_cpu_count": 4,
+    "cpu_affinity": [
+      20,
+      21,
+      22,
+      23
+    ],
+    "affinity_applied": true,
+    "affinity_error": null
+  },
+  "deduplicated": false,
+  "request": {
+    "language": "lean",
+    "project_id": "ArithmeticTeichmullerSpaces",
+    "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "target": "file",
+    "exclusive": true,
+    "task_type": "leaf",
+    "parameters": {
+      "source": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean"
+    },
+    "environment": {
+      "LEAN_PATH": "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean:/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+      "PATH": "/root/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/root/.nvm/versions/node/v22.23.2/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/root/.codex-key3/tmp/arg0-linux/codex-arg09EKFI6:/root/.cabal/bin:/root/.ghcup/bin:/root/.nvm/versions/node/v22.23.2/bin:/root/.opam/Coq900/bin:/root/.elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+    },
+    "expected_duration": 100,
+    "expected_memory": 6442450944,
+    "session_id": "01a1f575-a867-75d1-9ba5-04ce946763c8",
+    "agent_id": "/root",
+    "worktree_manifest": {
+      "worktree_id": "/home/admin-wsl/Coq/abc",
+      "head": "5ff88aae1695a547317558439249cec1ed91ccb3",
+      "modified_files": [
+        "docs/Scene1进度总览5.md",
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Solutions/Source_ReferenceIutGenuinePi1.lean"
+      ],
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_PlaceUnder.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_nonempty_tateStructure_of_torsion.lean"
+      ],
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+      },
+      "external_dependencies": [
+        {
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+        }
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+      ],
+      "input_hashes": {
+        ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean": "4fbd129ee31f4506c927d32542c0f5bc4ad2f619d9a0a18905406adcad03fe8e",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply.olean": "3d4544d953a0c9f7d846c78ae11bd838b407653f17178aee0d9f6ad39b115a43",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply.lean": "605249602e57033e8a3a9e47e294c0f225fc147932720b831edb12654f5e72fe",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateFamily.olean": "aa41c9c961c1b15081b8ccaa36af4bbe71c408949920794c216eaea3f3d6f645",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateFamily.lean": "7a89b737af9759856eac31dfede79ed8f6e39a3adc5136e4b0af75fa11026ad4",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Tripod_PlaceUnder.olean": "bca6e3d2144ee7adc03174375893f07cb4cc21146d47c33b812f469ab717a831",
+        "Definitions/Def_AbcAdaptation_Tripod_PlaceUnder.lean": "90d04c12d8adb7a5fccdc0205d5133fa3003845477cb174fe7660d84153abfd7",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.olean": "2c6bb3a41db2fe9a98214a317b38bdb0538dfc3ea5bceb5dc268ec615797f54f",
+        "Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.lean": "bccac2d20b3ad271b58e377855063e826c6a647f9f46b258a845502923269a54",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Algebra/Module/Torsion/Basic.olean": "c0dc9b2134f03a32fa5280fdee8ca1614b3fc931babcb51ac48350b2bb201241",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/Basic.olean": "94d0a8e9801819c94edf8be57937fb39a2d47eabe2098c69d14a8d847253860e",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/SpecificDegree.olean": "fb3c4b5d6261eda587032de964d2782d86fe40571d02969b3cad170b7ca4f5c7",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/AlgebraicGeometry/EllipticCurve/Affine/Point.olean": "692ed8ed13e8058dc27853f229d478ea55f906af911378663920944d55e37ed6",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/AlgebraicGeometry/EllipticCurve/NormalForms.olean": "2ab6c0b340583919ba78906ca23cfaa299666074a4b5c9b4318388789a942d89",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/AlgebraicGeometry/EllipticCurve/VariableChange.olean": "a127b8d5a770eca1cf95c62333f2418d0f05cd46b221ba5d2e60410c5cd6df35",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/Normed/Field/Basic.olean": "6085ca800f522fcf3833f68bbc75874004bee9612f3807f0a413f9f78f4e7716",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/Normed/Field/Lemmas.olean": "4645c7ce6dd384de5e36184c00a5c3c5d18f60b4f88e511fdbc126df3ee0ddb8",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/Normed/Group/Continuity.olean": "dd91041f6a2ea160e1920b1a69777f137b772596951a9f6c4f69f32c0ee07878",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/Normed/Group/Ultra.olean": "870b3dc20250c3d46dfaf496d13711176b16170fd0933b157886593f29cd2ed3",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/Normed/Module/Basic.olean": "ce73ba550b93b303fd9db74daaf6281f7d4a4ee4d1f2ddb0a007217d10435256",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Pow/NNReal.olean": "ab49b92f2138f9aacc47d325d332154d6a89dd489996c2ca1532d9b379cc8ed2",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/SpecificLimits/Basic.olean": "a3c3bf680c6c0ccee739f2c9e63c929f8be8d0b23c395e4d0ae40fa370727989",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Data/ZMod/Basic.olean": "08fcfca016098813513f9728b64fa56c05747b1fd4721309a1e654345c8c7a9d",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/FieldTheory/IntermediateField/Adjoin/Basic.olean": "81e38019e46592fc9a99d7c312b78780a18c0b6f5dfa768d39e186c6e69a9443",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/FieldTheory/IsAlgClosed/Basic.olean": "62e148b44c90ced5771c2f2a2179a0d55e04a7fa7ce29189bee6378fd53bde4b",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/GroupTheory/Index.olean": "dee3a248391a6b5751517e430655537aad907d63c459db55ce61a6953fd9367d",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/GroupTheory/QuotientGroup/Basic.olean": "cfe8fe98d68cb5a613489a6925a9f107549fe540217309b261d2b056f1d7dd95",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/NumberTheory/RamificationInertia/Basic.olean": "a88d1801186743ac0224d50c64cfd1a69bcae933d416d7d63de12d029fc6593f",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/NumberTheory/RamificationInertia/Valuation.olean": "91bcdd1a156309f0f9e8ce2dd7577116dc1d07b9aa6138f10e02bc6aa133982a",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Order/Filter/AtTopBot/Ring.olean": "06678ec490128b6cdf22f706ae20839e6b850a4a45ec359c2aff52225e01d17a",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/RingTheory/Ideal/GoingUp.olean": "9634d5cfaa890f2869c5427d0432c2db5fe6281ffc3f3ed59d75f6dff0f60141",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/RingTheory/Ideal/Norm/AbsNorm.olean": "7ae54bda6e66904b6a330e8ffef65cbb4a02aea1e8eab6d837030837d56eb3d5",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/RingTheory/RamificationInertia/Inertia.olean": "727721cfb8b68f78ddec09aa56234e1cd0118f33270d7fbb2b109df523e209f4",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/RingTheory/RootsOfUnity/Basic.olean": "29d2e745b0c854eeb3376f576f7b0cf0f9a0d4735f048e518bfd69d584eaf123",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/FieldSimp.olean": "70c6925cd9edb780a85b5bf695d5ecc45eb1bb650c57e2729c8dbfd8b8c902d4",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/Linarith.olean": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/LinearCombination.olean": "1d86ffa954ebec9523134d235223fb004c4b7a220ee1f13aac76bedbe986f74f",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/NormNum.olean": "f6be00ff19229f44a6a58dff006a3896f6da3dee197d730fb566889c0c532843",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/Push.olean": "9a6a932a6a51b00f866e1894c7532a04bbf846bc517eb70771a5093f092b4a00",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/Ring.olean": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Topology/Algebra/InfiniteSum/Nonarchimedean.olean": "7d92cbfb7a02fb3381d3e8ad6deba2f242ac4f3ae0bac4850c8e4a0d6e610276",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Topology/MetricSpace/Ultra/Basic.olean": "38e8e96acbe4a9954edc3a1c9bf6c28a09db2aa071cf992ffc823e237f9951ef",
+        ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.olean": "1b30c188f52e1a37acfd3036c1101c4b49ec33a33b5dd16114c7d0a5994b632e",
+        "Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.lean": "54a8517d7f7921567deff9cfe8b3f3529c1438e21a6b4fbd300f944cb0c6d4cc"
+      },
+      "source_sha256": "4fbd129ee31f4506c927d32542c0f5bc4ad2f619d9a0a18905406adcad03fe8e",
+      "resource_estimate_basis": "ci-025630-7087e27a reached two coordinate projection mismatches at 85.81 s and 4.34 GiB; split on the actual point constructor."
+    },
+    "idempotency_key": "p2m-iut-handoff-01a1f575-sl2-tate-structure-parent-projections-4fbd129ee31f4506c9",
+    "scheduler_timeout_seconds": 300,
+    "priority": 0,
+    "profile": "default",
+    "workspace_source": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "workspace_mode": "exclusive_worktree",
+    "snapshot_manifest": {
+      "worktree_id": "/home/admin-wsl/Coq/abc",
+      "head": "5ff88aae1695a547317558439249cec1ed91ccb3",
+      "modified_files": [
+        "docs/Scene1进度总览5.md",
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Solutions/Source_ReferenceIutGenuinePi1.lean"
+      ],
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_PlaceUnder.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_nonempty_tateStructure_of_torsion.lean"
+      ],
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+      },
+      "external_dependencies": [
+        {
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+        }
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+      ],
+      "input_hashes": {
+        ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean": "4fbd129ee31f4506c927d32542c0f5bc4ad2f619d9a0a18905406adcad03fe8e",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply.olean": "3d4544d953a0c9f7d846c78ae11bd838b407653f17178aee0d9f6ad39b115a43",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply.lean": "605249602e57033e8a3a9e47e294c0f225fc147932720b831edb12654f5e72fe",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateFamily.olean": "aa41c9c961c1b15081b8ccaa36af4bbe71c408949920794c216eaea3f3d6f645",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateFamily.lean": "7a89b737af9759856eac31dfede79ed8f6e39a3adc5136e4b0af75fa11026ad4",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Tripod_PlaceUnder.olean": "bca6e3d2144ee7adc03174375893f07cb4cc21146d47c33b812f469ab717a831",
+        "Definitions/Def_AbcAdaptation_Tripod_PlaceUnder.lean": "90d04c12d8adb7a5fccdc0205d5133fa3003845477cb174fe7660d84153abfd7",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.olean": "2c6bb3a41db2fe9a98214a317b38bdb0538dfc3ea5bceb5dc268ec615797f54f",
+        "Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.lean": "bccac2d20b3ad271b58e377855063e826c6a647f9f46b258a845502923269a54",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Algebra/Module/Torsion/Basic.olean": "c0dc9b2134f03a32fa5280fdee8ca1614b3fc931babcb51ac48350b2bb201241",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/Basic.olean": "94d0a8e9801819c94edf8be57937fb39a2d47eabe2098c69d14a8d847253860e",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/SpecificDegree.olean": "fb3c4b5d6261eda587032de964d2782d86fe40571d02969b3cad170b7ca4f5c7",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/AlgebraicGeometry/EllipticCurve/Affine/Point.olean": "692ed8ed13e8058dc27853f229d478ea55f906af911378663920944d55e37ed6",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/AlgebraicGeometry/EllipticCurve/NormalForms.olean": "2ab6c0b340583919ba78906ca23cfaa299666074a4b5c9b4318388789a942d89",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/AlgebraicGeometry/EllipticCurve/VariableChange.olean": "a127b8d5a770eca1cf95c62333f2418d0f05cd46b221ba5d2e60410c5cd6df35",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/Normed/Field/Basic.olean": "6085ca800f522fcf3833f68bbc75874004bee9612f3807f0a413f9f78f4e7716",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/Normed/Field/Lemmas.olean": "4645c7ce6dd384de5e36184c00a5c3c5d18f60b4f88e511fdbc126df3ee0ddb8",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/Normed/Group/Continuity.olean": "dd91041f6a2ea160e1920b1a69777f137b772596951a9f6c4f69f32c0ee07878",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/Normed/Group/Ultra.olean": "870b3dc20250c3d46dfaf496d13711176b16170fd0933b157886593f29cd2ed3",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/Normed/Module/Basic.olean": "ce73ba550b93b303fd9db74daaf6281f7d4a4ee4d1f2ddb0a007217d10435256",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Pow/NNReal.olean": "ab49b92f2138f9aacc47d325d332154d6a89dd489996c2ca1532d9b379cc8ed2",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/SpecificLimits/Basic.olean": "a3c3bf680c6c0ccee739f2c9e63c929f8be8d0b23c395e4d0ae40fa370727989",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Data/ZMod/Basic.olean": "08fcfca016098813513f9728b64fa56c05747b1fd4721309a1e654345c8c7a9d",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/FieldTheory/IntermediateField/Adjoin/Basic.olean": "81e38019e46592fc9a99d7c312b78780a18c0b6f5dfa768d39e186c6e69a9443",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/FieldTheory/IsAlgClosed/Basic.olean": "62e148b44c90ced5771c2f2a2179a0d55e04a7fa7ce29189bee6378fd53bde4b",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/GroupTheory/Index.olean": "dee3a248391a6b5751517e430655537aad907d63c459db55ce61a6953fd9367d",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/GroupTheory/QuotientGroup/Basic.olean": "cfe8fe98d68cb5a613489a6925a9f107549fe540217309b261d2b056f1d7dd95",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/NumberTheory/RamificationInertia/Basic.olean": "a88d1801186743ac0224d50c64cfd1a69bcae933d416d7d63de12d029fc6593f",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/NumberTheory/RamificationInertia/Valuation.olean": "91bcdd1a156309f0f9e8ce2dd7577116dc1d07b9aa6138f10e02bc6aa133982a",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Order/Filter/AtTopBot/Ring.olean": "06678ec490128b6cdf22f706ae20839e6b850a4a45ec359c2aff52225e01d17a",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/RingTheory/Ideal/GoingUp.olean": "9634d5cfaa890f2869c5427d0432c2db5fe6281ffc3f3ed59d75f6dff0f60141",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/RingTheory/Ideal/Norm/AbsNorm.olean": "7ae54bda6e66904b6a330e8ffef65cbb4a02aea1e8eab6d837030837d56eb3d5",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/RingTheory/RamificationInertia/Inertia.olean": "727721cfb8b68f78ddec09aa56234e1cd0118f33270d7fbb2b109df523e209f4",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/RingTheory/RootsOfUnity/Basic.olean": "29d2e745b0c854eeb3376f576f7b0cf0f9a0d4735f048e518bfd69d584eaf123",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/FieldSimp.olean": "70c6925cd9edb780a85b5bf695d5ecc45eb1bb650c57e2729c8dbfd8b8c902d4",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/Linarith.olean": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/LinearCombination.olean": "1d86ffa954ebec9523134d235223fb004c4b7a220ee1f13aac76bedbe986f74f",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/NormNum.olean": "f6be00ff19229f44a6a58dff006a3896f6da3dee197d730fb566889c0c532843",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/Push.olean": "9a6a932a6a51b00f866e1894c7532a04bbf846bc517eb70771a5093f092b4a00",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/Ring.olean": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Topology/Algebra/InfiniteSum/Nonarchimedean.olean": "7d92cbfb7a02fb3381d3e8ad6deba2f242ac4f3ae0bac4850c8e4a0d6e610276",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Topology/MetricSpace/Ultra/Basic.olean": "38e8e96acbe4a9954edc3a1c9bf6c28a09db2aa071cf992ffc823e237f9951ef",
+        ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.olean": "1b30c188f52e1a37acfd3036c1101c4b49ec33a33b5dd16114c7d0a5994b632e",
+        "Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.lean": "54a8517d7f7921567deff9cfe8b3f3529c1438e21a6b4fbd300f944cb0c6d4cc"
+      },
+      "source_sha256": "4fbd129ee31f4506c927d32542c0f5bc4ad2f619d9a0a18905406adcad03fe8e",
+      "resource_estimate_basis": "ci-025630-7087e27a reached two coordinate projection mismatches at 85.81 s and 4.34 GiB; split on the actual point constructor."
+    }
+  },
+  "result": {
+    "exit_code": 1,
+    "stdout": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1:0: warning: Use RingTheory.RamificationInertia.Basic\n'Mathlib.NumberTheory.RamificationInertia.Basic' has been deprecated: please replace this import by\n\nimport Mathlib.LinearAlgebra.Dimension.DivisionRing\nimport Mathlib.NumberTheory.RamificationInertia.Inertia\nimport Mathlib.NumberTheory.RamificationInertia.Ramification\nimport Mathlib.RingTheory.Ideal.Norm.AbsNorm\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:60:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:62:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:63:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:74:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:81:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:88:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:123:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:840:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.curveKw_variableChange`:\n  [NumberField F]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NumberField F] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:875:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1189:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1192:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1193:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1251:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1252:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1457:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1781:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1782:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1784:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1786:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1787:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1812:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1813:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1814:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1817:15: warning: `Ideal.sum_ramification_inertia` has been deprecated: Use results of RingTheory.RamificationInertia.Basic\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1880:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1881:8: error(lean.synthInstanceFailed): failed to synthesize instance of type class\n  DecidableEq k\n\nHint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1970:13: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:1972:13: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:2013:13: warning: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:2317:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.map_curveLoc_localAut`:\n  [NumberField F]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NumberField F] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:2335:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.toLoc_zero`:\n  [NumberField k]\n  [NumberField F]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NumberField k] [NumberField F] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:2338:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.toLoc_nsmul`:\n  [NumberField k]\n  [NumberField F]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NumberField k] [NumberField F] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:2342:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.toLoc_injective`:\n  [NumberField k]\n  [NumberField F]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NumberField k] [NumberField F] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:2434:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.ofUnit_eq_iff`:\n  [CompleteSpace k]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CompleteSpace k] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:2445:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.ofUnit_surjective`:\n  [CompleteSpace k]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CompleteSpace k] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:2450:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.q_zpow_injective`:\n  [CompleteSpace k]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CompleteSpace k] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:2466:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.nsmul_ofUnit`:\n  [CompleteSpace k]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CompleteSpace k] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:2543:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.graphLine_le_torsion`:\n  [NeZero ℓ]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero ℓ] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:2547:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.ofUnit_rootsOfUnity_surjective`:\n  [NeZero ℓ]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero ℓ] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:2560:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.resid_ker`:\n  [NeZero ℓ]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero ℓ] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:2786:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:3084:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.notMem_of_notMem`:\n  [CompleteSpace k]\n  [CompleteSpace k']\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CompleteSpace k] [CompleteSpace k'] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:3386:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.j_congr`:\n  [Valued k (WithZero (Multiplicative ℤ))]\n  [Valued.v.RankOne]\n  [CompleteSpace k]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Valued k (WithZero (Multiplicative ℤ))] [Valued.v.RankOne] [CompleteSpace k] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:3395:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.notMem_zpowers_iff`:\n  [CompleteSpace k]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CompleteSpace k] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:3433:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:3434:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:3629:4: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:3728:4: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:3753:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:3815:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:3816:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:3904:4: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:3943:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:3944:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean:3945:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n",
+    "stderr": "",
+    "diagnostics": [
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1,
+        "column": 0,
+        "severity": "warning",
+        "message": "Use RingTheory.RamificationInertia.Basic"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 60,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 62,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 63,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 74,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 81,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 88,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 123,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 840,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.curveKw_variableChange`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 875,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1189,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1192,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1193,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1251,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1252,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1457,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1781,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1782,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1784,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1786,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1787,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1812,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1813,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1814,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1817,
+        "column": 15,
+        "severity": "warning",
+        "message": "`Ideal.sum_ramification_inertia` has been deprecated: Use results of RingTheory.RamificationInertia.Basic"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1880,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1970,
+        "column": 13,
+        "severity": "warning",
+        "message": "`Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 1972,
+        "column": 13,
+        "severity": "warning",
+        "message": "`Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 2013,
+        "column": 13,
+        "severity": "warning",
+        "message": "`Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 2317,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.map_curveLoc_localAut`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 2335,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.toLoc_zero`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 2338,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.toLoc_nsmul`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 2342,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.toLoc_injective`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 2434,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.ofUnit_eq_iff`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 2445,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.ofUnit_surjective`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 2450,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.q_zpow_injective`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 2466,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.nsmul_ofUnit`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 2543,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.graphLine_le_torsion`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 2547,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.ofUnit_rootsOfUnity_surjective`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 2560,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.resid_ker`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 2786,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 3084,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.notMem_of_notMem`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 3386,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.j_congr`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 3395,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.notMem_zpowers_iff`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 3433,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 3434,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 3629,
+        "column": 4,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 3728,
+        "column": 4,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 3753,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 3815,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 3816,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 3904,
+        "column": 4,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 3943,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 3944,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+        "line": 3945,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      }
+    ],
+    "actual_arguments": [
+      "lean",
+      ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean"
+    ],
+    "snapshot": {
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "fingerprint": null,
+      "manifest": {
+        "worktree_id": "/home/admin-wsl/Coq/abc",
+        "head": "5ff88aae1695a547317558439249cec1ed91ccb3",
+        "modified_files": [
+          "docs/Scene1进度总览5.md",
+          "docs/对Joshi'sFAQ的独立形式化审查.md",
+          "docs/开发计划.V1Act1log1.md",
+          "docs/开发计划.V1Act1log2.md",
+          "docs/开发计划.V1Act1log3.md",
+          "docs/开发计划.V1Act1log4.md",
+          "docs/开发计划.V1Act1log5.md",
+          "prove2me_workspace/Solutions/Source_ReferenceIutGenuinePi1.lean"
+        ],
+        "untracked_files": [
+          "docs/Email.txt",
+          "docs/Mochizuki审计.md",
+          "docs/Scene1进度总览3.md",
+          "docs/olds/Scene1进度总览1.md",
+          "docs/olds/具有明确参考来源指示的证明义务.old.md",
+          "docs/olds/开发计划.V1Act1log1.md",
+          "docs/olds/开发计划.V1Act1log2.md",
+          "docs/olds/开发计划.V1Act1log3.md",
+          "docs/olds/开发计划.V1Act1log4.md",
+          "docs/olds/开发计划.V1Act1log5.md",
+          "prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean",
+          "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_PlaceUnder.lean",
+          "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.lean",
+          "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.lean",
+          "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_nonempty_tateStructure_of_torsion.lean"
+        ],
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock": "lake-manifest.json",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "local_configuration": [
+          "lean-toolchain",
+          "lakefile.lean",
+          "lake-manifest.json"
+        ],
+        "configuration_hashes": {
+          "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+          "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+          "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+        },
+        "external_dependencies": [
+          {
+            "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+            "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+            "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+            "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+          }
+        ],
+        "required_artifacts": [
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+          "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+        ],
+        "input_hashes": {
+          ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/Sketch_nonempty_tateStructure_of_torsion.lean": "4fbd129ee31f4506c927d32542c0f5bc4ad2f619d9a0a18905406adcad03fe8e",
+          ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply.olean": "3d4544d953a0c9f7d846c78ae11bd838b407653f17178aee0d9f6ad39b115a43",
+          "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply.lean": "605249602e57033e8a3a9e47e294c0f225fc147932720b831edb12654f5e72fe",
+          ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateFamily.olean": "aa41c9c961c1b15081b8ccaa36af4bbe71c408949920794c216eaea3f3d6f645",
+          "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateFamily.lean": "7a89b737af9759856eac31dfede79ed8f6e39a3adc5136e4b0af75fa11026ad4",
+          ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Tripod_PlaceUnder.olean": "bca6e3d2144ee7adc03174375893f07cb4cc21146d47c33b812f469ab717a831",
+          "Definitions/Def_AbcAdaptation_Tripod_PlaceUnder.lean": "90d04c12d8adb7a5fccdc0205d5133fa3003845477cb174fe7660d84153abfd7",
+          ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.olean": "2c6bb3a41db2fe9a98214a317b38bdb0538dfc3ea5bceb5dc268ec615797f54f",
+          "Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.lean": "bccac2d20b3ad271b58e377855063e826c6a647f9f46b258a845502923269a54",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Algebra/Module/Torsion/Basic.olean": "c0dc9b2134f03a32fa5280fdee8ca1614b3fc931babcb51ac48350b2bb201241",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Algebra/Order/GroupWithZero/Basic.olean": "94d0a8e9801819c94edf8be57937fb39a2d47eabe2098c69d14a8d847253860e",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/SpecificDegree.olean": "fb3c4b5d6261eda587032de964d2782d86fe40571d02969b3cad170b7ca4f5c7",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/AlgebraicGeometry/EllipticCurve/Affine/Point.olean": "692ed8ed13e8058dc27853f229d478ea55f906af911378663920944d55e37ed6",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/AlgebraicGeometry/EllipticCurve/NormalForms.olean": "2ab6c0b340583919ba78906ca23cfaa299666074a4b5c9b4318388789a942d89",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/AlgebraicGeometry/EllipticCurve/VariableChange.olean": "a127b8d5a770eca1cf95c62333f2418d0f05cd46b221ba5d2e60410c5cd6df35",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/Normed/Field/Basic.olean": "6085ca800f522fcf3833f68bbc75874004bee9612f3807f0a413f9f78f4e7716",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/Normed/Field/Lemmas.olean": "4645c7ce6dd384de5e36184c00a5c3c5d18f60b4f88e511fdbc126df3ee0ddb8",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/Normed/Group/Continuity.olean": "dd91041f6a2ea160e1920b1a69777f137b772596951a9f6c4f69f32c0ee07878",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/Normed/Group/Ultra.olean": "870b3dc20250c3d46dfaf496d13711176b16170fd0933b157886593f29cd2ed3",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/Normed/Module/Basic.olean": "ce73ba550b93b303fd9db74daaf6281f7d4a4ee4d1f2ddb0a007217d10435256",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/SpecialFunctions/Pow/NNReal.olean": "ab49b92f2138f9aacc47d325d332154d6a89dd489996c2ca1532d9b379cc8ed2",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Analysis/SpecificLimits/Basic.olean": "a3c3bf680c6c0ccee739f2c9e63c929f8be8d0b23c395e4d0ae40fa370727989",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Data/ZMod/Basic.olean": "08fcfca016098813513f9728b64fa56c05747b1fd4721309a1e654345c8c7a9d",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/FieldTheory/IntermediateField/Adjoin/Basic.olean": "81e38019e46592fc9a99d7c312b78780a18c0b6f5dfa768d39e186c6e69a9443",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/FieldTheory/IsAlgClosed/Basic.olean": "62e148b44c90ced5771c2f2a2179a0d55e04a7fa7ce29189bee6378fd53bde4b",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/GroupTheory/Index.olean": "dee3a248391a6b5751517e430655537aad907d63c459db55ce61a6953fd9367d",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/GroupTheory/QuotientGroup/Basic.olean": "cfe8fe98d68cb5a613489a6925a9f107549fe540217309b261d2b056f1d7dd95",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/NumberTheory/RamificationInertia/Basic.olean": "a88d1801186743ac0224d50c64cfd1a69bcae933d416d7d63de12d029fc6593f",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/NumberTheory/RamificationInertia/Valuation.olean": "91bcdd1a156309f0f9e8ce2dd7577116dc1d07b9aa6138f10e02bc6aa133982a",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Order/Filter/AtTopBot/Ring.olean": "06678ec490128b6cdf22f706ae20839e6b850a4a45ec359c2aff52225e01d17a",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/RingTheory/Ideal/GoingUp.olean": "9634d5cfaa890f2869c5427d0432c2db5fe6281ffc3f3ed59d75f6dff0f60141",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/RingTheory/Ideal/Norm/AbsNorm.olean": "7ae54bda6e66904b6a330e8ffef65cbb4a02aea1e8eab6d837030837d56eb3d5",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/RingTheory/RamificationInertia/Inertia.olean": "727721cfb8b68f78ddec09aa56234e1cd0118f33270d7fbb2b109df523e209f4",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/RingTheory/RootsOfUnity/Basic.olean": "29d2e745b0c854eeb3376f576f7b0cf0f9a0d4735f048e518bfd69d584eaf123",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/FieldSimp.olean": "70c6925cd9edb780a85b5bf695d5ecc45eb1bb650c57e2729c8dbfd8b8c902d4",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/Linarith.olean": "f87d414cd6ee07958edb9eb1ccb405173ee00e2df9dbbbffdb526a485c92d322",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/LinearCombination.olean": "1d86ffa954ebec9523134d235223fb004c4b7a220ee1f13aac76bedbe986f74f",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/NormNum.olean": "f6be00ff19229f44a6a58dff006a3896f6da3dee197d730fb566889c0c532843",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/Push.olean": "9a6a932a6a51b00f866e1894c7532a04bbf846bc517eb70771a5093f092b4a00",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/Ring.olean": "0d6d9cfc5fb5f47b125e7a85bb0126257337c279edd7a735f4c5aaf810e38061",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Topology/Algebra/InfiniteSum/Nonarchimedean.olean": "7d92cbfb7a02fb3381d3e8ad6deba2f242ac4f3ae0bac4850c8e4a0d6e610276",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Topology/MetricSpace/Ultra/Basic.olean": "38e8e96acbe4a9954edc3a1c9bf6c28a09db2aa071cf992ffc823e237f9951ef",
+          ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.olean": "1b30c188f52e1a37acfd3036c1101c4b49ec33a33b5dd16114c7d0a5994b632e",
+          "Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.lean": "54a8517d7f7921567deff9cfe8b3f3529c1438e21a6b4fbd300f944cb0c6d4cc"
+        },
+        "source_sha256": "4fbd129ee31f4506c927d32542c0f5bc4ad2f619d9a0a18905406adcad03fe8e",
+        "resource_estimate_basis": "ci-025630-7087e27a reached two coordinate projection mismatches at 85.81 s and 4.34 GiB; split on the actual point constructor."
+      }
+    },
+    "compiler": {
+      "name": "lean",
+      "version": null
+    },
+    "resources": {
+      "memory_decision": {
+        "worker_pressure": "normal",
+        "host_pressure": "normal",
+        "total_worker_bytes": 15657750528
+      },
+      "cpu_time_seconds": 115.11,
+      "peak_rss_bytes": 4678844416,
+      "peak_pss_bytes": null,
+      "cpu_user_seconds": 55.96,
+      "cpu_system_seconds": 59.15,
+      "wall_time_seconds": 87.11112790000334,
+      "allocated_cpu_count": 4,
+      "cpu_affinity": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "affinity_applied": true,
+      "affinity_error": null
+    },
+    "artifacts": [
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-025640-f3eb52df/stdout.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-025640-f3eb52df/stderr.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-025640-f3eb52df/result.json"
+    ]
+  }
+}

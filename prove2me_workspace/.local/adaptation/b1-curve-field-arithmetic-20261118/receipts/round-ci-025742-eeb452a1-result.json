@@ -1,0 +1,553 @@
+{
+  "job_id": "ci-025742-eeb452a1",
+  "attempt_id": "attempt-f192e7cbb056",
+  "status": "failed",
+  "submitted_at": 1795224951.8654585,
+  "started_at": 1795224951.8760636,
+  "finished_at": 1795225065.9431345,
+  "queue_time_seconds": 0.010605096817016602,
+  "compile_time_seconds": 114.06707096099854,
+  "progress": {},
+  "resources": {
+    "memory_decision": {
+      "worker_pressure": "normal",
+      "host_pressure": "normal",
+      "total_worker_bytes": 27281747968
+    },
+    "cpu_time_seconds": 119.03,
+    "peak_rss_bytes": 8853819392,
+    "peak_pss_bytes": null,
+    "cpu_user_seconds": 16.6,
+    "cpu_system_seconds": 102.43,
+    "wall_time_seconds": 114.02459509999971,
+    "allocated_cpu_count": 4,
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "affinity_applied": true,
+    "affinity_error": null
+  },
+  "deduplicated": false,
+  "request": {
+    "language": "lean",
+    "project_id": "ArithmeticTeichmullerSpaces",
+    "workspace": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "target": "file",
+    "exclusive": true,
+    "task_type": "review",
+    "parameters": {
+      "source": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean"
+    },
+    "environment": {
+      "LEAN_PATH": "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean:/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean:/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean:/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+      "PATH": "/root/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/root/.nvm/versions/node/v22.23.2/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path:/root/.codex-key3/tmp/arg0-linux/codex-arg09EKFI6:/root/.cabal/bin:/root/.ghcup/bin:/root/.nvm/versions/node/v22.23.2/bin:/root/.opam/Coq900/bin:/root/.elan/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+    },
+    "expected_duration": 60,
+    "expected_memory": 17179869184,
+    "session_id": "01a1f575-a867-75d1-9ba5-04ce946763c8",
+    "agent_id": "/root",
+    "worktree_manifest": {
+      "worktree_id": "/home/admin-wsl/Coq/abc",
+      "head": "5ff88aae1695a547317558439249cec1ed91ccb3",
+      "modified_files": [
+        "docs/Scene1进度总览5.md",
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Solutions/Source_ReferenceIutGenuinePi1.lean"
+      ],
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_PlaceUnder.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutGenuineEtaleComparison.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutGenuineTempered.lean",
+        "prove2me_workspace/Solutions/Source_TripodP7FromGenuineTempered.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_nonempty_tateStructure_of_torsion.lean"
+      ],
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+      },
+      "external_dependencies": [
+        {
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+        }
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+      ],
+      "input_hashes": {
+        ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean": "e4df11d98452db72e161359ff5ddea0f8df612ca53bd4316b57ef9bd46b3216f",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean/ArithmeticTeichmullerSpaces/Prologue/Audit/Checks.olean": "e082463fc1e46d4f7cdcad769e357aed0ae761d1e68107dcf94eec93d67b030a",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean/ArithmeticTeichmullerSpaces/Prologue/Audit/ImportAudit.olean": "e93743c7b81c105df86f8c66d4072e72f09cd74a471c726231fb36d640e55e6f",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean/ArithmeticTeichmullerSpaces/Act1Scene1.olean": "e1f20d7c1073ff0feb0587e60ed30a7c42965369a6c4e4a8352614872cfd523e",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean/ArithmeticTeichmullerSpaces/Prologue/Audit/AxiomAudit.olean": "ee9304f9de9a1bf3c66bef00df4028e3191817a63fcd5587c1c8bb586db33ab1",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/SetTheory/Cardinal/Finite.olean": "79f8d15e78aa39bcdf081ea82aa8985313d7045419aaa9272a4b67c8bdc8dfe9",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField.olean": "d7a85c274461697edcd6fdcb326a08c5952b6313ea3e0d6fe1d747847bc49e16",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField.lean": "c7dc2c8bbaf5092604bbdf0284af992762a3cfb7eb803d360152254e109ca254",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Algebra/Module/Torsion/Basic.olean": "c0dc9b2134f03a32fa5280fdee8ca1614b3fc931babcb51ac48350b2bb201241",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Data/ZMod/Basic.olean": "08fcfca016098813513f9728b64fa56c05747b1fd4721309a1e654345c8c7a9d",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/GroupTheory/Index.olean": "dee3a248391a6b5751517e430655537aad907d63c459db55ce61a6953fd9367d",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/RingTheory/RootsOfUnity/Basic.olean": "29d2e745b0c854eeb3376f576f7b0cf0f9a0d4735f048e518bfd69d584eaf123",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateStructure.olean": "08fe06ba40ca8a37851e8e2dbbf62988ff7abfecc418143be44e4ef677558a4a",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateStructure.lean": "8a7ac02c6ec56e17ca79fcfd3cd14ab9c6a8a601de9e6dec6d4505bb916a81f3",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateFamily.olean": "aa41c9c961c1b15081b8ccaa36af4bbe71c408949920794c216eaea3f3d6f645",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateFamily.lean": "7a89b737af9759856eac31dfede79ed8f6e39a3adc5136e4b0af75fa11026ad4",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/LinearCombination.olean": "1d86ffa954ebec9523134d235223fb004c4b7a220ee1f13aac76bedbe986f74f",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TripodalInvariants.olean": "c9a15b7daf8b0dc4ea82bd9a517f553fa30adec1d87a953ee429c9cde7b0451b",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TripodalInvariants.lean": "6257db39b2706460ac8ea99e3bdbeaaaec8d4c5626af6954ed6bf7b0925a85a3",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply.olean": "3d4544d953a0c9f7d846c78ae11bd838b407653f17178aee0d9f6ad39b115a43",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply.lean": "605249602e57033e8a3a9e47e294c0f225fc147932720b831edb12654f5e72fe",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.olean": "2c6bb3a41db2fe9a98214a317b38bdb0538dfc3ea5bceb5dc268ec615797f54f",
+        "Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.lean": "bccac2d20b3ad271b58e377855063e826c6a647f9f46b258a845502923269a54",
+        ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Reference_Iut_nonempty_tateStructure_of_torsion.olean": "5ee6955573846060a958cdad457c6c959cf1604530014a06c367dca0746a2b17",
+        "Theorems/Thm_AbcAdaptation_Reference_Iut_nonempty_tateStructure_of_torsion.lean": "646d7f6d195c2d609961f6308ab88be637709c8a4008b3b47d64a255996e3583"
+      },
+      "source_sha256": "e4df11d98452db72e161359ff5ddea0f8df612ca53bd4316b57ef9bd46b3216f",
+      "resource_estimate_basis": "First project and proof dependency review for this exact sketch"
+    },
+    "idempotency_key": "p2m-iut-handoff-01a1f575-sl2-tate-ramification-sketch-review-e4df11d98452db72e1",
+    "scheduler_timeout_seconds": 660,
+    "priority": 0,
+    "profile": "default",
+    "workspace_source": "/home/admin-wsl/Coq/abc/prove2me_workspace",
+    "workspace_mode": "exclusive_worktree",
+    "snapshot_manifest": {
+      "worktree_id": "/home/admin-wsl/Coq/abc",
+      "head": "5ff88aae1695a547317558439249cec1ed91ccb3",
+      "modified_files": [
+        "docs/Scene1进度总览5.md",
+        "docs/对Joshi'sFAQ的独立形式化审查.md",
+        "docs/开发计划.V1Act1log1.md",
+        "docs/开发计划.V1Act1log2.md",
+        "docs/开发计划.V1Act1log3.md",
+        "docs/开发计划.V1Act1log4.md",
+        "docs/开发计划.V1Act1log5.md",
+        "prove2me_workspace/Solutions/Source_ReferenceIutGenuinePi1.lean"
+      ],
+      "untracked_files": [
+        "docs/Email.txt",
+        "docs/Mochizuki审计.md",
+        "docs/Scene1进度总览3.md",
+        "docs/olds/Scene1进度总览1.md",
+        "docs/olds/具有明确参考来源指示的证明义务.old.md",
+        "docs/olds/开发计划.V1Act1log1.md",
+        "docs/olds/开发计划.V1Act1log2.md",
+        "docs/olds/开发计划.V1Act1log3.md",
+        "docs/olds/开发计划.V1Act1log4.md",
+        "docs/olds/开发计划.V1Act1log5.md",
+        "prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_PlaceUnder.lean",
+        "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutGenuineEtaleComparison.lean",
+        "prove2me_workspace/Solutions/Source_ReferenceIutGenuineTempered.lean",
+        "prove2me_workspace/Solutions/Source_TripodP7FromGenuineTempered.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.lean",
+        "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_nonempty_tateStructure_of_torsion.lean"
+      ],
+      "toolchain": "leanprover/lean4:v4.33.1",
+      "dependency_lock": "lake-manifest.json",
+      "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+      "local_configuration": [
+        "lean-toolchain",
+        "lakefile.lean",
+        "lake-manifest.json"
+      ],
+      "configuration_hashes": {
+        "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+        "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+      },
+      "external_dependencies": [
+        {
+          "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+          "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+          "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+          "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+        }
+      ],
+      "required_artifacts": [
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+        "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+      ],
+      "input_hashes": {
+        ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean": "e4df11d98452db72e161359ff5ddea0f8df612ca53bd4316b57ef9bd46b3216f",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean/ArithmeticTeichmullerSpaces/Prologue/Audit/Checks.olean": "e082463fc1e46d4f7cdcad769e357aed0ae761d1e68107dcf94eec93d67b030a",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean/ArithmeticTeichmullerSpaces/Prologue/Audit/ImportAudit.olean": "e93743c7b81c105df86f8c66d4072e72f09cd74a471c726231fb36d640e55e6f",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean/ArithmeticTeichmullerSpaces/Act1Scene1.olean": "e1f20d7c1073ff0feb0587e60ed30a7c42965369a6c4e4a8352614872cfd523e",
+        "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean/ArithmeticTeichmullerSpaces/Prologue/Audit/AxiomAudit.olean": "ee9304f9de9a1bf3c66bef00df4028e3191817a63fcd5587c1c8bb586db33ab1",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/SetTheory/Cardinal/Finite.olean": "79f8d15e78aa39bcdf081ea82aa8985313d7045419aaa9272a4b67c8bdc8dfe9",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField.olean": "d7a85c274461697edcd6fdcb326a08c5952b6313ea3e0d6fe1d747847bc49e16",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField.lean": "c7dc2c8bbaf5092604bbdf0284af992762a3cfb7eb803d360152254e109ca254",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Algebra/Module/Torsion/Basic.olean": "c0dc9b2134f03a32fa5280fdee8ca1614b3fc931babcb51ac48350b2bb201241",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Data/ZMod/Basic.olean": "08fcfca016098813513f9728b64fa56c05747b1fd4721309a1e654345c8c7a9d",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/GroupTheory/Index.olean": "dee3a248391a6b5751517e430655537aad907d63c459db55ce61a6953fd9367d",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/RingTheory/RootsOfUnity/Basic.olean": "29d2e745b0c854eeb3376f576f7b0cf0f9a0d4735f048e518bfd69d584eaf123",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateStructure.olean": "08fe06ba40ca8a37851e8e2dbbf62988ff7abfecc418143be44e4ef677558a4a",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateStructure.lean": "8a7ac02c6ec56e17ca79fcfd3cd14ab9c6a8a601de9e6dec6d4505bb916a81f3",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateFamily.olean": "aa41c9c961c1b15081b8ccaa36af4bbe71c408949920794c216eaea3f3d6f645",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateFamily.lean": "7a89b737af9759856eac31dfede79ed8f6e39a3adc5136e4b0af75fa11026ad4",
+        "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/LinearCombination.olean": "1d86ffa954ebec9523134d235223fb004c4b7a220ee1f13aac76bedbe986f74f",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TripodalInvariants.olean": "c9a15b7daf8b0dc4ea82bd9a517f553fa30adec1d87a953ee429c9cde7b0451b",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TripodalInvariants.lean": "6257db39b2706460ac8ea99e3bdbeaaaec8d4c5626af6954ed6bf7b0925a85a3",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply.olean": "3d4544d953a0c9f7d846c78ae11bd838b407653f17178aee0d9f6ad39b115a43",
+        "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply.lean": "605249602e57033e8a3a9e47e294c0f225fc147932720b831edb12654f5e72fe",
+        ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.olean": "2c6bb3a41db2fe9a98214a317b38bdb0538dfc3ea5bceb5dc268ec615797f54f",
+        "Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.lean": "bccac2d20b3ad271b58e377855063e826c6a647f9f46b258a845502923269a54",
+        ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Reference_Iut_nonempty_tateStructure_of_torsion.olean": "5ee6955573846060a958cdad457c6c959cf1604530014a06c367dca0746a2b17",
+        "Theorems/Thm_AbcAdaptation_Reference_Iut_nonempty_tateStructure_of_torsion.lean": "646d7f6d195c2d609961f6308ab88be637709c8a4008b3b47d64a255996e3583"
+      },
+      "source_sha256": "e4df11d98452db72e161359ff5ddea0f8df612ca53bd4316b57ef9bd46b3216f",
+      "resource_estimate_basis": "First project and proof dependency review for this exact sketch"
+    }
+  },
+  "result": {
+    "exit_code": 0,
+    "stdout": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:143:22: warning: Ambiguous namespace `TateCurvesTheta`: it is interpreted as `_root_.AbcAdaptation.Reference.TateCurvesTheta` because this `open` occurs inside `namespace AbcAdaptation.Reference.Iut.TateStructure`, while `_root_.TateCurvesTheta` is silently not opened. Specify the namespace unambiguously, e.g. `_root_.AbcAdaptation.Reference.TateCurvesTheta`. The warning can sometimes also be addressed by moving the `open` outside of the surrounding `namespace`.\n\nNote: This linter can be disabled with `set_option linter.ambiguousOpen false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:154:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.ofUnit_eq_iff`:\n  [CompleteSpace k]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CompleteSpace k] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:165:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.ofUnit_surjective`:\n  [CompleteSpace k]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CompleteSpace k] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:170:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.q_zpow_injective`:\n  [CompleteSpace k]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CompleteSpace k] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:186:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.nsmul_ofUnit`:\n  [CompleteSpace k]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CompleteSpace k] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:263:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.graphLine_le_torsion`:\n  [NeZero ℓ]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero ℓ] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:267:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.ofUnit_rootsOfUnity_surjective`:\n  [NeZero ℓ]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero ℓ] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:280:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.resid_ker`:\n  [NeZero ℓ]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero ℓ] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:353:69: warning: Ambiguous namespace `TateCurvesTheta`: it is interpreted as `_root_.AbcAdaptation.Reference.TateCurvesTheta` because this `open` occurs inside `namespace AbcAdaptation.Reference.Iut`, while `_root_.TateCurvesTheta` is silently not opened. Specify the namespace unambiguously, e.g. `_root_.AbcAdaptation.Reference.TateCurvesTheta`. The warning can sometimes also be addressed by moving the `open` outside of the surrounding `namespace`.\n\nNote: This linter can be disabled with `set_option linter.ambiguousOpen false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:427:2: warning: Ambiguous namespace `TateCurvesTheta`: it is interpreted as `_root_.AbcAdaptation.Reference.TateCurvesTheta` because this `open` occurs inside `namespace AbcAdaptation.Reference.Iut`, while `_root_.TateCurvesTheta` is silently not opened. Specify the namespace unambiguously, e.g. `_root_.AbcAdaptation.Reference.TateCurvesTheta`. The warning can sometimes also be addressed by moving the `open` outside of the surrounding `namespace`.\n\nNote: This linter can be disabled with `set_option linter.ambiguousOpen false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:535:4: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:555:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:556:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:620:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:625:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:627:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:631:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:632:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n'solution' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\nThe declared platform child is the only source of sorryAx in the sketch.\n",
+    "stderr": "",
+    "diagnostics": [
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 143,
+        "column": 22,
+        "severity": "warning",
+        "message": "Ambiguous namespace `TateCurvesTheta`: it is interpreted as `_root_.AbcAdaptation.Reference.TateCurvesTheta` because this `open` occurs inside `namespace AbcAdaptation.Reference.Iut.TateStructure`, while `_root_.TateCurvesTheta` is silently not opened. Specify the namespace unambiguously, e.g. `_root_.AbcAdaptation.Reference.TateCurvesTheta`. The warning can sometimes also be addressed by moving the `open` outside of the surrounding `namespace`."
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 154,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.ofUnit_eq_iff`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 165,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.ofUnit_surjective`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 170,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.q_zpow_injective`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 186,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.nsmul_ofUnit`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 263,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.graphLine_le_torsion`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 267,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.ofUnit_rootsOfUnity_surjective`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 280,
+        "column": 0,
+        "severity": "warning",
+        "message": "automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.resid_ker`:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 353,
+        "column": 69,
+        "severity": "warning",
+        "message": "Ambiguous namespace `TateCurvesTheta`: it is interpreted as `_root_.AbcAdaptation.Reference.TateCurvesTheta` because this `open` occurs inside `namespace AbcAdaptation.Reference.Iut`, while `_root_.TateCurvesTheta` is silently not opened. Specify the namespace unambiguously, e.g. `_root_.AbcAdaptation.Reference.TateCurvesTheta`. The warning can sometimes also be addressed by moving the `open` outside of the surrounding `namespace`."
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 427,
+        "column": 2,
+        "severity": "warning",
+        "message": "Ambiguous namespace `TateCurvesTheta`: it is interpreted as `_root_.AbcAdaptation.Reference.TateCurvesTheta` because this `open` occurs inside `namespace AbcAdaptation.Reference.Iut`, while `_root_.TateCurvesTheta` is silently not opened. Specify the namespace unambiguously, e.g. `_root_.AbcAdaptation.Reference.TateCurvesTheta`. The warning can sometimes also be addressed by moving the `open` outside of the surrounding `namespace`."
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 535,
+        "column": 4,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 555,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 556,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 620,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 625,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 627,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 631,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      },
+      {
+        "path": ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+        "line": 632,
+        "column": 2,
+        "severity": "warning",
+        "message": "Try this:"
+      }
+    ],
+    "actual_arguments": [
+      "lean",
+      ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean"
+    ],
+    "snapshot": {
+      "workspace_mode": "exclusive_worktree",
+      "snapshot_id": null,
+      "fingerprint": null,
+      "manifest": {
+        "worktree_id": "/home/admin-wsl/Coq/abc",
+        "head": "5ff88aae1695a547317558439249cec1ed91ccb3",
+        "modified_files": [
+          "docs/Scene1进度总览5.md",
+          "docs/对Joshi'sFAQ的独立形式化审查.md",
+          "docs/开发计划.V1Act1log1.md",
+          "docs/开发计划.V1Act1log2.md",
+          "docs/开发计划.V1Act1log3.md",
+          "docs/开发计划.V1Act1log4.md",
+          "docs/开发计划.V1Act1log5.md",
+          "prove2me_workspace/Solutions/Source_ReferenceIutGenuinePi1.lean"
+        ],
+        "untracked_files": [
+          "docs/Email.txt",
+          "docs/Mochizuki审计.md",
+          "docs/Scene1进度总览3.md",
+          "docs/olds/Scene1进度总览1.md",
+          "docs/olds/具有明确参考来源指示的证明义务.old.md",
+          "docs/olds/开发计划.V1Act1log1.md",
+          "docs/olds/开发计划.V1Act1log2.md",
+          "docs/olds/开发计划.V1Act1log3.md",
+          "docs/olds/开发计划.V1Act1log4.md",
+          "docs/olds/开发计划.V1Act1log5.md",
+          "prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean",
+          "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_PlaceUnder.lean",
+          "prove2me_workspace/Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.lean",
+          "prove2me_workspace/Solutions/Source_ReferenceIutGenuineEtaleComparison.lean",
+          "prove2me_workspace/Solutions/Source_ReferenceIutGenuineTempered.lean",
+          "prove2me_workspace/Solutions/Source_TripodP7FromGenuineTempered.lean",
+          "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_exists_tateUniformization.lean",
+          "prove2me_workspace/Theorems/Thm_AbcAdaptation_Reference_Iut_nonempty_tateStructure_of_torsion.lean"
+        ],
+        "toolchain": "leanprover/lean4:v4.33.1",
+        "dependency_lock": "lake-manifest.json",
+        "dependency_lock_sha256": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb",
+        "local_configuration": [
+          "lean-toolchain",
+          "lakefile.lean",
+          "lake-manifest.json"
+        ],
+        "configuration_hashes": {
+          "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+          "lakefile.lean": "ced0abc6b58f9b73096b16f409ea05eb14178653d19ee2ab9fde7fb4a99ed610",
+          "lake-manifest.json": "269ca8c13c7410f1a28fb07e523585cbb8afd8addaf30e7c2424f190df4f6adb"
+        },
+        "external_dependencies": [
+          {
+            "path": "/home/admin-wsl/Coq/mathlib4-0df444a",
+            "head": "0df444a360eaa60ab8c11dca51a86af692955474"
+          },
+          {
+            "path": "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta",
+            "revision": "ca6c2279d3cea0690cdb01328e727118d5485d68",
+            "patch_sha256": "1aacf6097a90d42683b8b6bf31583462b01ce49f676ee4c0820a851ca6ba7bf0"
+          }
+        ],
+        "required_artifacts": [
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/batteries/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/Qq/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/aesop/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/proofwidgets/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/importGraph/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/packages/plausible/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/prove2me_workspace/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/packages/tate-curves-theta/.lake/build/lib/lean",
+          "/root/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean"
+        ],
+        "input_hashes": {
+          ".local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean": "e4df11d98452db72e161359ff5ddea0f8df612ca53bd4316b57ef9bd46b3216f",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean/ArithmeticTeichmullerSpaces/Prologue/Audit/Checks.olean": "e082463fc1e46d4f7cdcad769e357aed0ae761d1e68107dcf94eec93d67b030a",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean/ArithmeticTeichmullerSpaces/Prologue/Audit/ImportAudit.olean": "e93743c7b81c105df86f8c66d4072e72f09cd74a471c726231fb36d640e55e6f",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean/ArithmeticTeichmullerSpaces/Act1Scene1.olean": "e1f20d7c1073ff0feb0587e60ed30a7c42965369a6c4e4a8352614872cfd523e",
+          "/home/admin-wsl/Coq/abc/ArithmeticTeichmullerSpaces/.lake/build/lib/lean/ArithmeticTeichmullerSpaces/Prologue/Audit/AxiomAudit.olean": "ee9304f9de9a1bf3c66bef00df4028e3191817a63fcd5587c1c8bb586db33ab1",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/SetTheory/Cardinal/Finite.olean": "79f8d15e78aa39bcdf081ea82aa8985313d7045419aaa9272a4b67c8bdc8dfe9",
+          ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField.olean": "d7a85c274461697edcd6fdcb326a08c5952b6313ea3e0d6fe1d747847bc49e16",
+          "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_ModEllRepTorsionField.lean": "c7dc2c8bbaf5092604bbdf0284af992762a3cfb7eb803d360152254e109ca254",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Algebra/Module/Torsion/Basic.olean": "c0dc9b2134f03a32fa5280fdee8ca1614b3fc931babcb51ac48350b2bb201241",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Data/ZMod/Basic.olean": "08fcfca016098813513f9728b64fa56c05747b1fd4721309a1e654345c8c7a9d",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/GroupTheory/Index.olean": "dee3a248391a6b5751517e430655537aad907d63c459db55ce61a6953fd9367d",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/RingTheory/RootsOfUnity/Basic.olean": "29d2e745b0c854eeb3376f576f7b0cf0f9a0d4735f048e518bfd69d584eaf123",
+          ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateStructure.olean": "08fe06ba40ca8a37851e8e2dbbf62988ff7abfecc418143be44e4ef677558a4a",
+          "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateStructure.lean": "8a7ac02c6ec56e17ca79fcfd3cd14ab9c6a8a601de9e6dec6d4505bb916a81f3",
+          ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateFamily.olean": "aa41c9c961c1b15081b8ccaa36af4bbe71c408949920794c216eaea3f3d6f645",
+          "Definitions/Def_AbcAdaptation_Reference_Iut_Cor312_ThetaData_TateFamily.lean": "7a89b737af9759856eac31dfede79ed8f6e39a3adc5136e4b0af75fa11026ad4",
+          "/home/admin-wsl/Coq/mathlib4-0df444a/.lake/build/lib/lean/Mathlib/Tactic/LinearCombination.olean": "1d86ffa954ebec9523134d235223fb004c4b7a220ee1f13aac76bedbe986f74f",
+          ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TripodalInvariants.olean": "c9a15b7daf8b0dc4ea82bd9a517f553fa30adec1d87a953ee429c9cde7b0451b",
+          "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TripodalInvariants.lean": "6257db39b2706460ac8ea99e3bdbeaaaec8d4c5626af6954ed6bf7b0925a85a3",
+          ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply.olean": "3d4544d953a0c9f7d846c78ae11bd838b407653f17178aee0d9f6ad39b115a43",
+          "Definitions/Def_AbcAdaptation_Reference_Iut_Concrete_TateInputsSupply.lean": "605249602e57033e8a3a9e47e294c0f225fc147932720b831edb12654f5e72fe",
+          ".lake/build/lib/lean/Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.olean": "2c6bb3a41db2fe9a98214a317b38bdb0538dfc3ea5bceb5dc268ec615797f54f",
+          "Definitions/Def_AbcAdaptation_Tripod_RelativeValuation.lean": "bccac2d20b3ad271b58e377855063e826c6a647f9f46b258a845502923269a54",
+          ".lake/build/lib/lean/Theorems/Thm_AbcAdaptation_Reference_Iut_nonempty_tateStructure_of_torsion.olean": "5ee6955573846060a958cdad457c6c959cf1604530014a06c367dca0746a2b17",
+          "Theorems/Thm_AbcAdaptation_Reference_Iut_nonempty_tateStructure_of_torsion.lean": "646d7f6d195c2d609961f6308ab88be637709c8a4008b3b47d64a255996e3583"
+        },
+        "source_sha256": "e4df11d98452db72e161359ff5ddea0f8df612ca53bd4316b57ef9bd46b3216f",
+        "resource_estimate_basis": "First project and proof dependency review for this exact sketch"
+      }
+    },
+    "compiler": {
+      "name": "lean",
+      "version": null
+    },
+    "resources": {
+      "memory_decision": {
+        "worker_pressure": "normal",
+        "host_pressure": "normal",
+        "total_worker_bytes": 27281747968
+      },
+      "cpu_time_seconds": 119.03,
+      "peak_rss_bytes": 8853819392,
+      "peak_pss_bytes": null,
+      "cpu_user_seconds": 16.6,
+      "cpu_system_seconds": 102.43,
+      "wall_time_seconds": 114.02459509999971,
+      "allocated_cpu_count": 4,
+      "cpu_affinity": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "affinity_applied": true,
+      "affinity_error": null
+    },
+    "artifacts": [
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-025742-eeb452a1/stdout.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-025742-eeb452a1/stderr.txt",
+      "/home/admin-wsl/codex-miniCI/data/artifacts/ci-025742-eeb452a1/result.json"
+    ],
+    "review": {
+      "language": "lean",
+      "passed": false,
+      "checks": {
+        "no_sorryAx": false,
+        "assumptions_reported": true
+      },
+      "violations": [
+        "sorryAx or sorry was found in compiler output"
+      ],
+      "assumptions": [
+        "'solution' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]"
+      ],
+      "diagnostics": [],
+      "output_excerpt": "/ReviewTateRamificationParent.lean:154:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.ofUnit_eq_iff`:\n  [CompleteSpace k]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CompleteSpace k] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:165:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.ofUnit_surjective`:\n  [CompleteSpace k]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CompleteSpace k] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:170:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.q_zpow_injective`:\n  [CompleteSpace k]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CompleteSpace k] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:186:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.nsmul_ofUnit`:\n  [CompleteSpace k]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [CompleteSpace k] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:263:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.graphLine_le_torsion`:\n  [NeZero ℓ]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero ℓ] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:267:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.ofUnit_rootsOfUnity_surjective`:\n  [NeZero ℓ]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero ℓ] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:280:0: warning: automatically included section variable(s) unused in theorem `AbcAdaptation.Reference.Iut.TateStructure.resid_ker`:\n  [NeZero ℓ]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [NeZero ℓ] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:353:69: warning: Ambiguous namespace `TateCurvesTheta`: it is interpreted as `_root_.AbcAdaptation.Reference.TateCurvesTheta` because this `open` occurs inside `namespace AbcAdaptation.Reference.Iut`, while `_root_.TateCurvesTheta` is silently not opened. Specify the namespace unambiguously, e.g. `_root_.AbcAdaptation.Reference.TateCurvesTheta`. The warning can sometimes also be addressed by moving the `open` outside of the surrounding `namespace`.\n\nNote: This linter can be disabled with `set_option linter.ambiguousOpen false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:427:2: warning: Ambiguous namespace `TateCurvesTheta`: it is interpreted as `_root_.AbcAdaptation.Reference.TateCurvesTheta` because this `open` occurs inside `namespace AbcAdaptation.Reference.Iut`, while `_root_.TateCurvesTheta` is silently not opened. Specify the namespace unambiguously, e.g. `_root_.AbcAdaptation.Reference.TateCurvesTheta`. The warning can sometimes also be addressed by moving the `open` outside of the surrounding `namespace`.\n\nNote: This linter can be disabled with `set_option linter.ambiguousOpen false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:535:4: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:555:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:556:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:620:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:625:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:627:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:631:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n.local/adaptation/b1-curve-field-arithmetic-20261118/platform-sl2/ReviewTateRamificationParent.lean:632:2: warning: Try this: \n  haveI̵\n\nThe goal is a proposition, so `have` is preferred over `haveI`.\nThe difference between `have` and `haveI` is that `haveI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\n'solution' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]\nThe declared platform child is the only source of sorryAx in the sketch.\n"
+    },
+    "error_code": "review_failed",
+    "error_message": "formal verification review failed"
+  }
+}
