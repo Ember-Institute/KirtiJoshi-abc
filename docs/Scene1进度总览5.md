@@ -18,7 +18,7 @@
 | --- | --- |
 | Scene1 整体 | **未完成，G1–G4 关闭 0/4** |
 | 有明确来源指示的父义务 | **15 项均开放**。见[证明义务清单](具有明确参考来源指示的证明义务.md) |
-| iut 参考链适配 | **150/165（90.9%）**。规范 P7 已验收代表处权重、无穷处 θ 包络体积和有限处单分量体积。CanLift 已验收陪集多项式、Lüroth 多项式生成元和已有复一致化的唯一性。 [适配计划 §4.1](开发计划.Prove2Me适配.md#41-参考链审计) |
+| iut 参考链适配 | **155/170（91.2%）**。规范 P7 的具体全局平均及有理 Legendre 族的 q-pilot 已验收。CanLift 已验收一次穿孔复一致化及带条件的不变多项式生成元。 [适配计划 §4.1](开发计划.Prove2Me适配.md#41-参考链审计) |
 | 最新 Scene1 数学单元 | 原二阶点平移仿射图的分式域沿原包含映射的像等于原无符号正规化域。 [分式域像等式](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/InitialThetaInfinityShiftedChartFractionField.lean#L156) |
 | 几何路线的下一处缺口 | 在平移仿射图的同一剩余中心证明逆坐标公式的分母可逆，再用局部整闭性识别原无符号正规化的上层剩余域 |
 | 本地构建环境 | Lean `v4.33.1`，Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`。见[环境锁](../ArithmeticTeichmullerSpaces/migration/environment.lock.json) |
@@ -183,7 +183,7 @@ $$
 
 Corollary 3.12 的字面左端为 $-\lvert\operatorname{logVol}(\Theta_M)\rvert/\ell^*$，右端为 $-\sum_{p,w}\log|q_w^{1/(2\ell)}|_{L'_w}$，求和取非空 $V_p^{\mathrm{oss}}$ 中的 $(p,w)$。当贡献项为收缩根时，字面右端的负对数与 Form 2 体积推导的右端符号相反。符号冲突沿用暂作笔误的记录，冻结目标前仍须对照字面式、前文采用的符号约定和体积推导。换算须在同一处集上落实每项的原始完成域范数、局部与全局次数、分歧与剩余次数、论文权重及 $2\ell$ 次根和 $p^*$ 对数归一化，再核对无穷处项和取绝对值的条件。 [Joshi 两个目标的来源](Prove2Me适配状态.md#2-joshi-论文直接列出而尚未拆分的证明义务) · [目标代码](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/Corollary312.lean) · [G1 的冻结要求](开发计划.V1Act1Scene1.md#g1目标符号和归一化)
 
-用第 1–14 项构造 q 项、`thetaVolume` 和四项来源法律，并从实际测度给出下界，再实例化现有条件消费者。Scene1 的最终验收覆盖完整类型、导入图、公理和来源追踪。接入参考 `c2` 还须证明 `∀ X, P X → Corollary312Variant X`，其中几何接口固定，`ThetaDataExistence`（P7）为全部适用点和素数提供满足同一 `P` 的数据，以及参考链所需的证书、局部估计和各项身份。已验收的参考链在 `c2` 保留了这个全称命题作为输入，规范高度及 P7 的接合仍开放。 [参考变体与 P7 的适配义务](Prove2Me适配状态.md#joshi-的-312-与参考工程变体之间的适配) · [Scene2 参考链](开发计划.Prove2Me适配.md#41-参考链审计)
+用第 1–14 项构造 q 项、`thetaVolume` 和四项来源法律，并从实际测度给出下界，再实例化现有条件消费者。Scene1 的最终验收覆盖完整类型、导入图、公理和来源追踪。参考 `c2` 的比较入口是 `∀ X, P X → Corollary312Variant X`，其 P7 数据供应须覆盖全部适用点和素数，并在同一份数据上提供证书、局部估计及各项身份。现有具体主区域体积在规范 P7 数据族上已有严格反例。仍须从论文的 θ 区域和测度重建与之相容的比较和数据供应。 [参考变体与 P7 的适配义务](Prove2Me适配状态.md#joshi-的-312-与参考工程变体之间的适配) · [Scene2 参考链](开发计划.Prove2Me适配.md#41-参考链审计)
 
 ### 参考 `c2` 装配中仍开放的曲线输入
 
@@ -198,7 +198,8 @@ Corollary 3.12 的字面左端为 $-\lvert\operatorname{logVol}(\Theta_M)\rvert/
 | 🔴 | 在已审计的旧 period 与 transfer 装配中，用实际收缩 q 根的范数直接充作 `thetaBase.norm` 会与所需的非负 `logVolume` 冲突。正长度 ordinary-log 包络的 signed Haar log-volume 也不能直接充作该非负量。 |
 | 🔴 | 在已审计的处集和归一化下，现有 canonical q-log 总和严格小于论文候选代表和。实际扭点来源的分歧质量也排除了该来源上的纤维质量为一。 |
 | 🔴 | 当前收缩 q-root 的有理类不在已归一化主单位类生成的那条 $\mathbb Q_p$ 直线上。这项排除针对已有普通对数路线的特定单生成空间。 |
-| 🔴 | 旧高高度入口的 `h312` 量化任意 `LocalTheory`。给定一组合法局部数据，可固定 q-pilot 与有限处贡献，取无穷处 `indAut` 为 `{id}`，并把对数壳半径缩至 $0<r\le1$。3.12 的右端等于单位半径的右端加 $\log r$，可低于左端。须用来源条件刻画 P7 实际供应的完整数据族，并对该族证明 3.12。 [反例与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#counterexample-to-the-unrestricted-corollary-312-premise) |
+| 🔴 | 旧高高度入口的 `h312` 量化任意 `LocalTheory`。给定一组合法局部数据，可固定 q-pilot 与有限处贡献，取无穷处 `indAut` 为 `{id}`，并把对数壳半径缩至 $0<r\le1$。3.12 的右端等于单位半径的右端加 $\log r$，可低于左端。当前规范 P7 的具体主区域比较见下一行。 [反例与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#counterexample-to-the-unrestricted-corollary-312-premise) |
+| 🔴 | 固定度一有理 Legendre 族供应规范 P7 见证。对 $m\ge6$，$5$ 处贡献使 $\log Q\ge2m\log 5$，而具体主区域的体积比较会推出 $\log Q\le(126/11)\log\pi$。项目和公理审查通过。 [反例、读回与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#counterexample-to-the-concrete-source-p7-volume-comparison) |
 
 负面证据的具体假设和 Lean 入口见 [Scene1 开发计划第 4 节](开发计划.V1Act1Scene1.md#4-负面证据和路线排除)。
 
@@ -333,3 +334,13 @@ CanLift 的陪集多项式、Lüroth 多项式生成元和给定复一致化之�
 下方有限处与相对赋值补出七条源端完整声明。目标内核通过十四条模块声明和有限处关系的跨版本核对。三语读回已归档，私有平台验收仍待取得。 [来源与回执](../prove2me_workspace/.local/adaptation/b1-place-under-relative-valuation-20261119/SOURCE_LEDGER.md#本轮验收)
 
 CanLift U1 的存在性已通过项目与公理审查。格点补集覆盖和边配对供应实际一致化，交换子的迹为 $-2$，第一生成元的迹非零。余下可公度子义务需要有限相对指数与坐标增长估计。适配计划 §4.1 达到 **150/165（90.9%）**。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#existence-of-uniformization-for-a-once-punctured-complex-elliptic-curve)
+
+在同一规范 P7 数据上求得有限处整包及全局平均对数体积，并将具体变体的 3.12 写成等价的 q-pilot 绝对值上界。八项公理审查通过。 [来源与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#finite-theta-hull-packets-and-the-concrete-global-volume)
+
+将有理 Legendre 族的五进极点搬运到实际曲线与 P7 q-pilot，并验证整族落在同一个紧致有界子集。两次联合审查均通过。 [来源与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#the-five-adic-q-pilot-and-a-fixed-compactly-bounded-locus)
+
+有限扩张缩放链的 12 条声明通过跨版本内核审查，三语读回已归档。私有平台验收仍开放。 [来源、回执和三语读回](../prove2me_workspace/.local/adaptation/b1-finite-extension-scaling-20261120/SOURCE_LEDGER.md#本轮验收)
+
+CanLift 的不变多项式生成元已接到第一坐标刚性。可公度子作用的轨道深度位移界及条件增长估计已通过项目与公理审查，仍须证明实际格点覆盖上的双向比较及有限相对指数。 [来源与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#canlift-polynomial-generator-on-a-fixed-uniformization) · [来源与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#canlift-orbit-depth-and-the-conditional-growth-estimate)
+
+在一个固定紧致有界子集上构造度一有理 Legendre 族的规范 P7 反例。给定曲线提供器、核心例外集有限性及远 Abel 存在性，构造源数据使主区域的全局平均体积右端严格小于 q-pilot 左端。三个声明通过项目和公理审查。 适配计划 §4.1 达到 **155/170（91.2%）**。 [反例、读回与审查](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/SOURCE_LEDGER.md#counterexample-to-the-concrete-source-p7-volume-comparison)

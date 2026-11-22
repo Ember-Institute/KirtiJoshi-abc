@@ -286,8 +286,14 @@ def readConstructor (name recordName : Name) (translate : Name → Name) : MetaM
       for input in requiredInputs field do
         unless inputs.contains input do throwError "Field {field} did not use {input}"
       if let some expected := requiredProjectUse field then
-        unless projectUses.contains (translate expected) do
-          throwError "Field {field} did not use {translate expected}"
+        let expected := translate expected
+        let isProjection : Expr → Bool
+          | .proj base index _ =>
+            ((getStructureInfo? env base).bind fun info => info.fieldNames[index]?).any
+              (fun fieldName => base ++ fieldName == expected)
+          | _ => false
+        unless projectUses.contains expected || (value.find? isProjection).isSome do
+          throwError "Field {field} did not use {expected}"
       let type ← mkForallFVars binders fieldType
       let value ← mkLambdaFVars binders value
       requireClosed s!"type of {field}" type
@@ -330,3 +336,8 @@ run_meta do
   logInfo m!"Exported {constructor.assignments.size} reference constructor fields"
 
 #print axioms Iut.Tripod.curveInputs
+#print axioms Iut.ThetaLocalData.logDK_eq_zero
+#print axioms Iut.LocalTheory.packetVol_scaledIntegral
+#print axioms Iut.TowerArithmetic.vol_finite
+#print axioms Iut.TowerArithmetic.vol_infinite
+#print axioms Iut.TowerArithmetic.localEstimate

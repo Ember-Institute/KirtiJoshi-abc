@@ -1,4 +1,5 @@
 import Solutions.Source_ReferenceIutPaperRHSTransport
+import Solutions.Source_ReferenceIutCor312PaperPacketBounds
 import Solutions.Source_TripodP7
 import Solutions.Source_TripodCanonicalCorollary22PrimeBound
 
@@ -10,11 +11,11 @@ universe u v
 
 variable {T : Genl.HeightTheory} {AG : AnabelianGeometry.{u}} {TG : TemperedGeometry AG}
 
-/-- At each admissible point and selected prime, supply the paper right-hand side and its
-local estimate on the concrete P7 data for that point and prime. -/
-def PaperRHSSupplyAtLeast {K : T.CBS} {d : ℕ} (minimum : ℕ)
-    (Paper : Corollary312VariantData.{u, v} AG TG → Prop) (I : Corollary22Inputs T K d) : Prop :=
-  ∀ (x : T.Pt T.tripod) (hx : x ∈ T.cbsSet K ∩ T.ptLE T.tripod d), x ∉ I.excCore →
+/-- Supply the paper right-hand side and its local estimate on the concrete P7
+data at a fixed point for each admissible prime above the given bound. -/
+def PaperRHSSupplyAtPoint {K : T.CBS} {d : ℕ} (minimum : ℕ)
+    (Paper : Corollary312VariantData.{u, v} AG TG → Prop) (I : Corollary22Inputs T K d)
+    (x : T.Pt T.tripod) (hx : x ∈ T.cbsSet K ∩ T.ptLE T.tripod d) : Prop :=
     ∀ ℓ : ℕ, ℓ.Prime → 7 ≤ ℓ →
     (∀ w ∈ (I.localData x hx).bad, ¬ ℓ ∣ (I.localData x hx).hv w) →
     (∀ w ∈ (I.localData x hx).bad, (I.localData x hx).p w = ℓ →
@@ -33,6 +34,28 @@ def PaperRHSSupplyAtLeast {K : T.CBS} {d : ℕ} (minimum : ℕ)
       T.logCond T.tripod x ≤ inv.logFtpd + Real.log (2 * ℓ) →
       ∃ R : RHSData.{u, v} D, Paper (X.withRHSData R) ∧
         Nonempty (inv.withRHSData R).LocalEstimate
+
+/-- Supply the paper data at each admissible point using a common prime bound. -/
+def PaperRHSSupplyAtLeast {K : T.CBS} {d : ℕ} (minimum : ℕ)
+    (Paper : Corollary312VariantData.{u, v} AG TG → Prop) (I : Corollary22Inputs T K d) : Prop :=
+  ∀ (x : T.Pt T.tripod) (hx : x ∈ T.cbsSet K ∩ T.ptLE T.tripod d), x ∉ I.excCore →
+    PaperRHSSupplyAtPoint minimum Paper I x hx
+
+/-- A common upper bound on the pointwise thresholds suffices for the family supply. -/
+theorem PaperRHSSupplyAtLeast.of_pointwise {K : T.CBS} {d : ℕ}
+    {minimum : ℕ} {Paper : Corollary312VariantData.{u, v} AG TG → Prop}
+    {I : Corollary22Inputs T K d}
+    (supply : ∀ (x : T.Pt T.tripod) (hx : x ∈ T.cbsSet K ∩ T.ptLE T.tripod d),
+      x ∉ I.excCore → ∃ pointMinimum : ℕ, pointMinimum ≤ minimum ∧
+        PaperRHSSupplyAtPoint pointMinimum Paper I x hx) :
+    PaperRHSSupplyAtLeast minimum Paper I := by
+  intro x hx hxe
+  obtain ⟨pointMinimum, hBound, hSupply⟩ := supply x hx hxe
+  intro ℓ hℓp hℓ7 hP2 hP3 hP5 hP6 D LT TL QI TA
+  dsimp only
+  intro hPrime hMinimum
+  exact hSupply ℓ hℓp hℓ7 hP2 hP3 hP5 hP6
+    D LT TL QI TA hPrime (hBound.trans hMinimum)
 
 /-- Attach the paper right-hand side to the concrete data at the prime supplied by (P7). -/
 theorem ConcreteThetaDataExistence.toThetaDataExistenceAtLeast_withRHSData
@@ -80,5 +103,28 @@ theorem canonicalCorollary22HighHeightEstimate_of_sourceP7_withPaperRHS
       ConcreteThetaDataExistence.toThetaDataExistenceAtLeast_withRHSData
         (concreteThetaDataExistence_from_source P K d (CF K d) (hcore K d) northcottHyp anab)
         (supply K d)) h312
+
+/-- Use normalized packet bounds on the supplied paper hull in Corollary 2.2. -/
+theorem canonicalCorollary22HighHeightEstimate_of_sourceP7_withPaperPacketBounds
+    (P : CurveProviders) {TK : CompactlyBounded → ℝ}
+    (CF : ∀ K d, CurveFactsProp P K d (TK K))
+    (hcore : ∀ K d, CoreFinitenessHyp P K d AG)
+    (anab : AnabelianExistence AG TG) (cheb : ChebyshevBound) (pnt : PrimeCountingBound)
+    (minimum : CompactlyBounded → ℕ → ℕ)
+    (Paper : CompactlyBounded → ℕ → Corollary312VariantData.{0, 0} AG TG → Prop)
+    (supply : ∀ K d, PaperRHSSupplyAtLeast (minimum K d) (Paper K d)
+      (curveInputs_from_source P K d (CF K d) (hcore K d) northcottHyp
+        (legendreHeight P K) (twoAdicBound P K)).toCorollary22Inputs)
+    (packetBounds : ∀ K d X, Paper K d X → minimum K d ≤ X.ℓ →
+      ∃ capsule : Fin X.lstar ≃ Fin X.rhsData.container.proc.length,
+        ∀ (j : Fin X.lstar) q,
+          (((j.1 : ℝ) + 1) / (X.lstar : ℝ)) ^ 2 * X.signedQLogAt q ≤
+            X.rhsData.vol.packetVol (capsule j) q ((X.rhsData.thetaHull (capsule j)).region q)) :
+    CanonicalCorollary22HighHeightEstimate := by
+  refine canonicalCorollary22HighHeightEstimate_of_sourceP7_withPaperRHS P CF hcore anab cheb pnt
+    minimum Paper supply ?_
+  intro K d X hPaper hMinimum
+  obtain ⟨capsule, hpacket⟩ := packetBounds K d X hPaper hMinimum
+  exact corollary312Variant_of_normalized_packet_bounds X capsule hpacket
 
 end AbcAdaptation.Tripod

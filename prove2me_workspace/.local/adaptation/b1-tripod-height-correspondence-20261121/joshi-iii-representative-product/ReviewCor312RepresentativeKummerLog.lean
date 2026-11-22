@@ -1,0 +1,12 @@
+import Solutions.Source_ReferenceIutCor312RepresentativeKummerLog
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+
+#print axioms AbcAdaptation.Reference.Iut.ThetaLocalData.paperQRootPrincipalUnit
+#print axioms AbcAdaptation.Reference.Iut.ThetaLocalData.paperQRootKummerClass
+#print axioms AbcAdaptation.Reference.Iut.ThetaLocalData.ambientLog_paperQRootKummerClass
+#print axioms AbcAdaptation.Reference.Iut.ThetaLocalData.paperQRootKummerLog
+#print axioms AbcAdaptation.Reference.Iut.ThetaLocalData.paperQRootKummerLog_eq_paperNormalizedQRootLog
+#print axioms AbcAdaptation.Reference.Iut.ThetaLocalData.log_normalized_sectionKummerLogProduct_eq_sum_finite_packetVol

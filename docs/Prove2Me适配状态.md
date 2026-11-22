@@ -65,7 +65,9 @@
 
 `canonicalLinkTarget_selectedPaperAccounting_impossible` 已从次数一桥的 `hEll`、`hLink`、`hDegree` 和 `hq` 推出矛盾。需在论文数据族上重新建立 q 项与体积的换算。现有 `PaperLogWitnessHull` 可消费同一论文拼接的两个局部事实，即 p* 归一化见证属于拼接并集，且每个分量位于对应包的归一化环。最终需把该拼接及其体积装入规范 P7 使用的同一个 `RHSData`。更换区域后须重新证明 `LocalEstimate.thetaPilot_subset`，更换包或测度时还须核对逐包估计的其他字段。 [次数一桥的反证](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaCanonicalTargetPaperSumAudit.lean#L78) · [见证与体积](../ArithmeticTeichmullerSpaces/ArithmeticTeichmullerSpaces/Act1Scene1/IutInitialThetaPaperLogWitnessHull.lean#L125) · [P7 消费者](../prove2me_workspace/Solutions/Source_TripodCanonicalCorollary22.lean#L24)
 
-Joshi III 定理 9.11.1（Form 2）要求奇素数 $\ell\gg0$ 和全局初始 θ 数据。论文适配须提供对每个固定 $K,d$ 统一的充分大下界 $N(K,d)$，或证明原素数窗口中能选到满足全部论文条件的同一个素数。体积比较需在同一实际 P7 数据上建立。固定有理 Legendre 族给出原包络体积严格低于该数据的归一化见证均值，因此这一步需要论文区域及测度的来源构造。将新数据接入参考 `c2` 时，沿用原初始数据、q-pilot 和算术证书，供应新论文来源谓词与新右端的局部估计。仅替换 θ 区域时须证明它包含于原估计的逐包容器。采用新的包或测度时须用对应区域重做逐包体积界与单调性。 [素数下界](../prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/SOURCE_LEDGER.md#joshi-ii-的平方和与-p7-的统一素数下界) · [同一数据的反例](../prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/joshi-ii-square-logs/SOURCE_LEDGER.md) · [右端替换接口](../prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/joshi-ii-square-logs/Source_ReferenceIutPaperRHSTransport.lean)
+Joshi III §4.5 取第 $m=(\ell-1)/2$ 个坐标为标准点，式 (9.9.4)–(9.9.6) 使用下标 $1$。需固定标准点解释，并在同一 P7 代表处识别两个晶体 Frobenius 本征值为 $p$ 的周期。须把同一原根塔的 Frobenius 不变对数商及其 Tate 坐标余边界接到连续等变的有理系数映射，并证明实际 $H^1_e$ 成员资格及 Bloch–Kato 比较。论文要求的值为 $\log(1+p^*r_v)/p^*$，小球校准的普通对数在整 Kummer 类上取该值的 $p^*$ 倍。还须把跨域比较接到同一 P7 代表处的原根塔和原连续余循环，在标准 $\mathbb C_p$ 的晶体周期环中保持类的身份与归一化。
+
+Joshi III 定理 9.11.1（Form 2）的完整来源供应仍需给出每个固定 $K,d$ 的公共素数下界 $N(K,d)$，或证明原窗口选出的同一个素数满足全部来源条件。需将逐点阈值 $N_x$ 控制在公共下界或同一点窗口下界内。对公共处须识别论文与 P7 的代表处、局部比较值、权重和限制后的张量区域。对 P7 独有的处须证明指定模域模型的分裂性或给出直接下界。对论文独有的 $\ell$ 纤维以及无穷处须核对逐包对数体积。仍需在同一 P7 见证上构造论文包络、测度和胶囊双射，证明逐处下界或核对论文全局比较向该平均体积的换算。局部估计须对该右端给出包络包含、逐包体积界与单调性。对 $p\notin\texttt{TL.badChars}$ 的有限处，还缺同一 P7 见证给出的包含式，即显式 Kummer 区域的归一化张量格进入论文的实际 θ 区域。论文包与具体 Kummer 包还须给出同一载体上的识别，使该包含可写成论文整数包进入 θ-pilot；这就是好处逐包比较尚需的几何输入。 论文的张量指标只用每个模域处的代表，而实际 P7 包的指标保留模域处上的全部扭点域处。若有遗漏坐标，补零的论文区域不包含 P7 整数包的全一向量。限制到所选元组时，需证明选外元组的加权对数体积下界，或按完整纤维重组并证明各模域元组上的条件平均达到对应的论文下界。 [素数下界](../prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/SOURCE_LEDGER.md#joshi-ii-的平方和与-p7-的统一素数下界) · [原包络反例](../prove2me_workspace/.local/adaptation/b1-tripod-height-correspondence-20261121/joshi-ii-square-logs/SOURCE_LEDGER.md)
 
 ### 对数体积处权重与局部归一化的来源适配
 
@@ -79,7 +81,7 @@ Joshi III 定理 9.11.1（Form 2）要求奇素数 $\ell\gg0$ 和全局初始 θ
 
 `refer/iut/Iut/Cor312/ThetaData/Basic.lean:96` 保存模域到扭点域的代数结构 `algebraModK`，随后保存 `towerModK` 标量塔字段。实际编译类型表明，后者使用从原数域到扭点域的规范标量作用限制到模域后得到的作用，其类型没有引用所保存的 `algebraModK`；因此不能据该字段宣称已证明所保存的代数结构与规范包含相容。Tate 族采用规范包含所诱导的模域代数结构，而局部数据和赋值截面接收所保存的结构，二者的身份必须另行核对。
 
-`pointThetaData_algebraMap_moduli_torsion` 已证明规范 P7 的模域映射等于规范包含的复合，q-pilot 已用完整模域纤维的局部次数和写出代表处权重。论文适配仍需匹配原数域、模域、扭点域及完成域，核对代表处截面和坏处支持。P7 排除剩余特征 $2,\ell$，Joshi 的奇分裂乘法约化处集仍可能包含 $\ell$ 上方的处。对应须处理这一差异，并核对 Haar 绝对值的剩余次数换算及原文的符号冲突。 [规范 P7 映射](../prove2me_workspace/Solutions/Source_ReferenceIutPointModuliMap.lean#L16) · [代表处权重](../prove2me_workspace/Solutions/Source_ReferenceIutCor312PointRepresentativeWeight.lean#L21) · [原文及公式对照](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/readbacks/p7-cor312-source-comparison.md)
+论文适配仍需匹配原数域、模域、扭点域及完成域，核对公共处的代表处截面和局部度权重。P7 独有的处须处理模域模型的分裂性，论文独有的处须核对 $\ell$ 纤维的体积。仍需核对 Haar 绝对值的剩余次数换算及原文符号。 [原文及公式对照](../prove2me_workspace/.local/adaptation/b1-curve-field-arithmetic-20261118/readbacks/p7-cor312-source-comparison.md)
 
 ### Prologue 与 Scene1 必要依赖闭包的映射
 

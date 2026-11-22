@@ -94,3 +94,50 @@ $$
 | [ci-026641-3d10738a](joshi-iii-representative-product/ci-026641-3d10738a.result.json) | `3d80df25e3ddb8c0` | 1 | 149.73 | 147.66（5.76 + 141.90） | 7.55 | 储存的标量塔使用继承的标量作用，实例与指定模域映射不符 |
 | [ci-026663-f887862b](joshi-iii-representative-product/ci-026663-f887862b.result.json) | `1f95f8142c7bf8a6` | 0 | 195.21 | 193.75（6.07 + 187.68） | 7.67 | 无诊断 |
 | [ci-026672-29e2ba52](joshi-iii-representative-product/ci-026672-29e2ba52.result.json) | `fa80d762ea12d09d` | 0 | 150.95 | 150.25（7.60 + 142.65） | 8.17 | 无诊断，五条声明公理审查通过 |
+
+### 标准 p-adic 复数范数
+
+同一个 Tate 根由有限完成域等距嵌入其代数闭包，再运到标准 $\mathbb C_p$。标准范数的 $[K_{t,s(v)}:\mathbb Q_p]$ 次幂等于原 Haar 范数。次数塔约去 $d_v$，因此上式的标准范数指数为 $(j/m)^2[M_v:\mathbb Q_p]/[M:\mathbb Q]$。换算适用于任意局部理论的代表元乘积，有限处包对数体积恒等式使用具体局部理论，保留模域映射相容性假设。 [Lean 源码](../../../Solutions/Source_ReferenceIutCor312RepresentativePadicProduct.lean) · [独立中、英、日读回](joshi-iii-representative-product/standard-cp-norm-readback.md)
+
+采用 Joshi III §4.5 的第 $m$ 个坐标作为平方指数的基准。式 (9.9.4) 印出的下标为 $1$，在 $0<|r|<1$、$m>1$ 时与该式的 $j=1$ 分支冲突。论文标准点的 $H^1_e$ 类、Bloch–Kato 映射及其有限处和无穷处加权体积仍需核对。 [原文及权重核对](joshi-iii-representative-product/paper-weight-crosscheck.md)
+
+| MCP-CI 回执 | 输入 SHA-256 前缀 | 退出码 | 墙钟秒 | CPU 秒（用户态 + 系统态） | 峰值 RSS GiB | 诊断 |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| [ci-026731-7f47e5ca](joshi-iii-representative-product/ci-026731-7f47e5ca.result.json) | `b06aed934742ca9c1` | 1 | 189.04 | 188.61（45.46 + 143.15） | 8.33 | 范数幂引理在内核用完 heartbeat，后续引用无法解析 |
+| [ci-026751-a2c6295a](joshi-iii-representative-product/ci-026751-a2c6295a.result.json) | `2898e550aa58d54bc` | 0 | 97.39 | 97.57（7.07 + 90.50） | 8.18 | 拆出代数闭包等距性及完成保范数性，默认 heartbeat 通过，无诊断 |
+| [ci-026766-f44b6bd1](joshi-iii-representative-product/ci-026766-f44b6bd1.result.json) | `1f95f8142c7bf8a6` | 0 | 51.82 | 52.10（5.82 + 46.28） | 7.69 | 生成代表元乘积的独立导入产物 |
+| [ci-026771-5c61fe61](joshi-iii-representative-product/ci-026771-5c61fe61.result.json) | `a14b57a41d238538` | 0 | 65.78 | 65.22（5.62 + 59.60） | 7.67 | 生成标准范数换算的首个独立导入产物 |
+
+联合审查实际检查 `ReviewCor312RepresentativePadicProduct.lean`，导入 Checks、ImportAudit、Act1Scene1 和 AxiomAudit。七项显式公理输出仅含 `propext`、`Classical.choice`、`Quot.sound`，`no_sorryAx` 检查通过。各回执均来自独占工作区，快照 ID 为空。内存为调度器的进程树 RSS，PSS 和 degraded 标记未知。 [联合审查源码](joshi-iii-representative-product/ReviewCor312RepresentativePadicProduct.lean)
+
+### 逐处比较值与有限包体积
+
+在同一 P7 选定的有限处 $s(v)$，用实际完成域中的普通对数定义 $L_{s(v)}=log_p(1+p^*r_v)/p^*$。Tate 根非负阶，故范数至多为一。归一化对数范数律给出 $\|L_{s(v)}\|=\|r_v\|$。经同一完成域嵌入并消去正局部次数幂，这一等式也适用于标准 $\mathbb C_p$。显式给定逐处比较值及其与 $L_{s(v)}$ 的等式，即可代入代表元乘积及有限包对数体积公式。实际 $H^1_e$ 成员资格及 Bloch–Kato 比较等式仍须在论文载体上证明。 [Lean 源码](../../../Solutions/Source_ReferenceIutCor312RepresentativeComparisonLog.lean) · [独立中、英、日读回](joshi-iii-representative-product/comparison-log-readback.md) · [类与归一化来源](joshi-iii-representative-product/bloch-kato-comparison.md)
+
+| MCP-CI 回执 | 输入 SHA-256 前缀 | 退出码 | 墙钟秒 | CPU 秒（用户态 + 系统态） | 峰值 RSS GiB | 诊断 |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| [ci-026780-90533cbf](joshi-iii-representative-product/ci-026780-90533cbf.result.json) | `04163edc34105d7f` | 0 | 54.34 | 54.02（4.85 + 49.17） | 7.67 | 复验供比较值使用的公开嵌入及范数律 |
+| [ci-026785-ea2e9895](joshi-iii-representative-product/ci-026785-ea2e9895.result.json) | `f4dd11598a02295e` | 1 | 54.17 | 53.41（4.51 + 48.90） | 8.09 | 局部素数实例重名，有限处嵌入的自然数投影换算失败 |
+| [ci-026792-c4787faa](joshi-iii-representative-product/ci-026792-c4787faa.result.json) | `37ca687d4f557cc1` | 0 | 51.76 | 51.32（4.45 + 46.87） | 8.14 | 区分局部实例，并用嵌入的 `map_natCast` 法则。八项公理审查通过 |
+| [ci-026802-4a1bed20](joshi-iii-representative-product/ci-026802-4a1bed20.result.json) | `f4cce0924792d2b0` | 0 | 62.27 | 61.82（5.31 + 56.51） | 7.66 | 生成独立导入产物 |
+
+联合审查实际检查 `ReviewCor312RepresentativeComparisonLog.lean` 并导入 Checks、ImportAudit、Act1Scene1 和 AxiomAudit。八项输出只有 `propext`、`Classical.choice` 和 `Quot.sound`。各任务使用独占工作区及空快照 ID，PSS 和 degraded 标记未知。
+
+### Form 2 的逐点阈值与固定族下界
+
+Form 2 沿用 Joshi II 的平方和估计。在第 $m$ 个坐标作标准点的解释下，数值估计的统一阈值为 $\ell\ge5$，由参考 `c2` 的 $\ell\ge7$ 满足。Form 2 的完整来源供应仍需齐备。给定每个适用点的论文供应阈值 $N_x$ 及公共界 $N_x\le N(K,d)$，`PaperRHSSupplyAtLeast.of_pointwise` 将同一 P7 实参及 $N_x\le N(K,d)\le X.\ell$ 传给逐点供应。Joshi 与 P7 的支持差异仍须证明逐处对应。 [精确接口](c2-prime-bound/Source_TripodCanonicalCorollary22PaperRHS.lean#L15) · [论文及窗口核对](c2-prime-bound/form2-prime-threshold.md) · [独立中、英、日读回](c2-prime-bound/paper-rhs-pointwise-readback.md)
+
+[ci-026800-0077539e](c2-prime-bound/ci-026800-0077539e.result.json) 独占检查 `ReviewTripodCanonicalCorollary22PaperRHSPointwise.lean`，输入哈希前缀 `af8512b614cb249e`，退出码 0。墙钟 86.02 秒，CPU 85.35 秒（24.17 + 61.18），进程树峰值 RSS 8.22 GiB，PSS 与 degraded 标记未知。审查导入 Checks、ImportAudit、Act1Scene1 和 AxiomAudit。十三项输出只有 Lean 标准公理，第 305 行有既有 `simpa` 提示。
+
+### 同一 P7 代表处的环境 Kummer 类
+
+在实际有限完成域中，主单位 $1+p^*r$ 由同一 Tate 根构造。它经过普通 Kummer 映射给出连续 $H^1(G,mathbb Q_p(1))$ 中的类。环境对数在这类上取 $log_p(1+p^*r)$，除以 $p^*$ 后与逐处归一化值相等。把该值代入标准 $mathbb C_p$ 范数乘积，得到同一有限包对数体积恒等式。论文的 $H^1_e$ 成员资格及真实 Bloch–Kato 比较等式仍开放。 [Lean 源码](../../../Solutions/Source_ReferenceIutCor312RepresentativeKummerLog.lean) · [来源与消费者](joshi-iii-representative-product/kummer-log-sources.md) · [中文](joshi-iii-representative-product/kummer-log-readback/zh-Hans.md) · [English](joshi-iii-representative-product/kummer-log-readback/en.md) · [日本語](joshi-iii-representative-product/kummer-log-readback/ja.md)
+
+| MCP-CI 回执 | 输入 SHA-256 前缀 | 退出码 | 墙钟秒 | CPU 秒（用户态 + 系统态） | 峰值 RSS GiB | 诊断 |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| [ci-026815-82c3bf43](joshi-iii-representative-product/ci-026815-82c3bf43.result.json) | `4c502eece135c0e3` | 1 | 73.08 | 74.14（25.29 + 48.85） | 7.83 | 内核归一化等式在 whnf 用完默认 heartbeat，随后的引用缺失 |
+| [ci-026823-2f0240e3](joshi-iii-representative-product/ci-026823-2f0240e3.result.json) | `da265fc226dc80fb` | 1 | 51.08 | 51.35（6.25 + 45.10） | 7.71 | 展开定义后，重写目标仍含 let |
+| [ci-026824-8f02e03a](joshi-iii-representative-product/ci-026824-8f02e03a.result.json) | `bade4a811ca92185` | 0 | 49.42 | 50.82（8.01 + 42.81） | 7.76 | 先约简 let 再局部重写，默认 heartbeat 通过并生成产物 |
+| [ci-026827-16c29d38](joshi-iii-representative-product/ci-026827-16c29d38.result.json) | `c6a9782340948dd3` | 0 | 52.76 | 51.54（4.28 + 47.26） | 7.88 | 六项公理审查通过，无诊断 |
+
+联合审查导入 Checks、ImportAudit、Act1Scene1 与 AxiomAudit，六项输出仅含 `propext`、`Classical.choice` 和 `Quot.sound`。物理内存取调度器的进程树 RSS，PSS 和 degraded 标记未知。 [审查源码](joshi-iii-representative-product/ReviewCor312RepresentativeKummerLog.lean)

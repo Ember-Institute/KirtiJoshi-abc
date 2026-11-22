@@ -1290,6 +1290,20 @@ With finite relative index and polynomial growth for the commensurator action, t
 
 A commensurator element increases the hyperbolic orbit depth by at most an additive constant. The proof uses the finite index of the intersection with the conjugate group and bounds finitely many orbit representatives. A two-sided comparison between the exponential of orbit depth and the logarithm of the first-coordinate norm then yields the polynomial norm bound after precomposition. The input comparison on the concrete lattice covering remains to be supplied. [Pinned Oka source](https://github.com/lana-agents/oka/blob/75dcdc3faadd10b986afb9283e89902bcdddecd4/Oka/Uniformization/Depth.lean) · [Depth proof](../../../Solutions/Source_ReferenceIutCanLiftOrbitDepth.lean) · [Growth proof](../../../Solutions/Source_ReferenceIutCanLiftCommensuratorGrowth.lean) · [Project and axiom review](receipts/round-ci-023845-9fab27fa-result.json)
 
+The MCP-CI receipts record exclusive worktree checks. The input column gives the source SHA-256 prefix.
+Wall time and CPU time use seconds. Peak RSS is the process-tree peak in GiB.
+PSS and the degraded status are unknown.
+
+| MCP-CI job | Input | Status / exit | Wall | CPU total (user + system) | Peak RSS GiB | Result |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [`ci-023772-b13e7c78`](receipts/round-ci-023772-b13e7c78-result.json) | `8a3dcab3f108` | failed / 1 | 53.88 | 53.08 (2.12 + 50.96) | 3.25 | The quotient `Fintype` argument and triangle bound had incompatible types. |
+| [`ci-023777-fe23697b`](receipts/round-ci-023777-fe23697b-result.json) | `47d434509edd` | failed / 1 | 32.08 | 29.93 (1.81 + 28.12) | 3.17 | The triangle bound used the reverse distance. |
+| [`ci-023781-42675e62`](receipts/round-ci-023781-42675e62-result.json) | `8d814b1470ea` | failed / 1 | 44.75 | 43.93 (2.76 + 41.17) | 3.27 | The final orbit-distance inequality used the wrong addition order. |
+| [`ci-023790-7d6f9dfe`](receipts/round-ci-023790-7d6f9dfe-result.json) | `b904c82882ba` | succeeded / 0 | 34.55 | 33.24 (2.73 + 30.51) | 3.28 | The orbit-depth dependency artifact built after the order correction. |
+| [`ci-023809-0035d764`](receipts/round-ci-023809-0035d764-result.json) | `35e0d7348fb8` | failed / 1 | 44.00 | 42.55 (1.87 + 40.68) | 3.23 | Three growth inequalities used the wrong addition order. |
+| [`ci-023825-8d480eeb`](receipts/round-ci-023825-8d480eeb-result.json) | `6ed20f6e8375` | succeeded / 0 | 36.35 | 34.22 (1.79 + 32.43) | 3.17 | The growth leaf check passed with `add_le_add_left` in all three inequalities. |
+| [`ci-023833-fd866ee6`](receipts/round-ci-023833-fd866ee6-result.json) | `6ed20f6e8375` | succeeded / 0 | 38.08 | 36.33 (2.15 + 34.18) | 3.26 | The growth dependency artifact built. |
+
 ## Counterexample to the concrete source P7 volume comparison
 
 For the fixed degree-one Legendre family, the $5$-fiber gives $\log Q\ge 2m\log 5$. For $\ell\ge7$, the exact global volume formula would require $\log Q\le (126/11)\log\pi$ whenever the concrete comparison holds. These bounds conflict for $m\ge6$. The fixed-locus theorem uses core finiteness and Northcott to select a point of sufficiently large height. Prime selection gives (P2) and (P3), the cyclic estimate rules out (P4)'s forbidden subgroup, and the place above $5$ supplies (P5) for the image criterion (P6). For each supplied curve provider, core finiteness hypothesis, and anabelian existence input, it gives a witness $X$ in `IsSourceP7Variant` with $X.\mathrm{rhsData.rhs}<X.\mathrm{qPilot.lhs}$. An adaptation of the paper comparison must identify its actual theta regions and volume in the same data and establish the required comparison for the full admissible family. [Lean theorem](../../../Solutions/Source_TripodRationalLegendreFiveP7Counterexample.lean#L197) · [Trilingual readback](readbacks/p7-concrete-counterexample-trilingual.md) · [Project and axiom review](receipts/round-ci-023861-cebfd7ab-result.json)

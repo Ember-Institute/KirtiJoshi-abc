@@ -1,0 +1,10 @@
+import Solutions.Source_TripodStableReduction
+import ArithmeticTeichmullerSpaces.Prologue.Audit.Checks
+import ArithmeticTeichmullerSpaces.Prologue.Audit.ImportAudit
+import ArithmeticTeichmullerSpaces.Act1Scene1
+import ArithmeticTeichmullerSpaces.Prologue.Audit.AxiomAudit
+
+#print axioms AbcAdaptation.Tripod.independent_three_torsion_curveOf
+#print axioms AbcAdaptation.Tripod.hasStableReductionAt_legendre
+#print axioms AbcAdaptation.Tripod.stable_reduction_of_residueChar_ne_two
+#print axioms AbcAdaptation.Tripod.stable_reduction_curveOf
