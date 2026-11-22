@@ -222,7 +222,51 @@ Joshi IV 在从体积比较到高度估计时调用 III 的下界。原文推论
 \]
 对有理 Frey 曲线，若所选坏处都在 \(2abc\) 上方，整层理想下降带来的误差至多为 \(\log\rad(abc)+\log 2\)。由于此项在上式中的系数为 \(O(1/\ell)\)，若能为所需三元组统一选取足够大的适用辅助素数，这个误差本身允许指数逼近 \(1\)。决定指数的其余工作仍包括实际几何包络的上下界以及 \(U\) 的算术控制。\par
 
-Lean 社区 2026 年 11 月 21 日公布了对黎曼猜想证明的核验。本地 Riemann 压缩包的主入口还陈述了 Dirichlet \(L\) 函数的广义黎曼猜想。该工程的局部迹与不同理想定理可用于理想下降，显式素数计数可用于控制选择 \(\ell\) 的误差。例如 \(\pi(y)<1.26y/\log y\) 和 \(\pi(2y)-\pi(y)>3y/(5\log y)\)（后者在 \(y\ge41/2\) 时）可独立于零点定理使用。零点定理本身没有给出 ATS 包络中的 Kummer 见证，也没有给出该同一包络的全局体积上界。因而它无法直接补上从有限处下界通往 Szpiro 或 \(abc\) 的比较步骤。\cite{riemblog,riemcode}
+\section{充分利用并扩张Dirichlet GRH的Theta提升技术以进一步挽救ATS}
+
+2026 年 11 月 21 日，Lean 社区博客宣布已核验 Levent Alpöge 的经典黎曼猜想证明。Riemann 工程的 Lean 源码还给出了 Dirichlet \(L\) 函数在临界带内的零点定理，即零点的实部为 \(1/2\)。\cite{riemblog,riemcode}
+
+该工程的迹对偶与不同理想公式可用于附录 A 的理想下降。显式素数计数可用于控制辅助素数 \(\ell\) 的选取误差，这两项应用均可独立于零点定理。这里进一步考察该工程采用的自守 Theta 提升及 Fourier 技术能否用来估计 ATS 的局部体积缺额。要将这一估计用于 Szpiro 或 \(abc\)，仍须在实际包络中实现相应的 Kummer 见证，并在同一包络上建立全局上界。\cite{riemcode,riemtheta}
+
+\subsection{从相邻 Theta 值取得局部见证}
+固定奇坏处 \(p\ne\ell\)。在含有 \(r=q^{1/(2\ell)}\) 和本原 \(\ell\) 次单位根 \(\zeta\) 的同一个局部域 \(E\) 中，按 Joshi II 印出的级数定义
+\[
+ \xi_0=1,\qquad \xi_j=\frac{\theta_M(\zeta)}{\theta_M(r^j\zeta)},\qquad
+ u_j=\xi_j/\xi_{j-1}.
+\]
+由正文的首项计算，\(v(\xi_j)=jv(r)\)，因此 \(v(u_j)=v(r)\)。附录 A 的对数等距性给出 \(\tau_p(u_j)\OO_E=r\OO_E\)。这为一次幂理想提供了来自 Theta 值的生成元。用于 ATS 时，须证明 \(1+p^*u_j\) 的 Kummer 类经 III 允许的汇集进入指定标签。两个 Kummer 类相减对应的是其主单位之商。跨 untilt 作商还需要相容的共同域和标记。\cite{jii,jiii}
+
+\subsection{一个可计算的局部生成例子}
+取 \(p=29,\ell=7,q=29,\pi^{14}=29\)，并取 \(\zeta\in\Q_{29}\) 为本原七次单位根。在 \(E=\Q_{29}(\pi)\) 中令 \(W=\pi\OO_E\)、\(L_0=\pi^4\OO_E\)，对应标签 \(j=2\)。\(W/L_0\) 有三个 \(\mathbb F_{29}\) 方向。十四个根分支 \(\omega\pi\) 的缩放对数模 \(L_0\) 都在线 \(\mathbb F_{29}\pi\) 上，因为 \(\mu_{14}\subset\Q_{29}\)。加入 \(L_0\) 后，生成的格在 \(W\) 中仍有指数 \(29^2\)。
+
+直接展开级数，保留模 \(\pi^4\) 所需的项，得到
+\[
+ \tau_{29}(\pi)\equiv\pi,\qquad
+ \tau_{29}(\xi_2)\equiv(1+\zeta^2)\pi^2,\qquad
+ \tau_{29}(u_2)-\tau_{29}(\pi)\equiv\zeta^2\pi^3.
+\]
+最后一式来自 \(\theta_M(\pi\zeta)/\theta_M(\pi^2\zeta)\equiv\pi+\zeta^2\pi^3\)。缩放对数的高次项模 \(\pi^4\) 消失，且 \(1+\zeta^2\) 是单位。三个指定点连同 \(L_0\) 因而生成整个 \(W\)。应用此等式需要在同一实际标签中实现三个点，并控制其余张量槽。若改取 \(r_t=29^t\pi\)（\(t\ge1\)），则 \(r_t^4\OO_E\subset29r_t\OO_E\)，而 \(r_t\OO_E/29r_t\OO_E\) 有十四个方向。任取三个点也不足以通过同样的生成论证覆盖这族数据。
+
+\subsection{用 Fourier 对偶衡量体积缺额}
+在完整的 \((j,p)\) 张量代数中记维数为 \(d\)，沿用附录 A 的体积归一化。一次幂格 \(W\) 与平方幂格 \(L_0\) 分别满足 \(\nu(W)=-Q_p\)、\(\nu(L_0)=-j^2Q_p\)。若实际局部区域 \(C\) 是包含 \(L_0\) 的可测加法子群，令 \(H=(C\cap W)/L_0\subset W/L_0\)。由有限群对偶，\(H\) 的零化子 \(H^\perp\) 有 \([W:C\cap W]\) 个字符，故
+\[
+ \nu(C)\ge -Q_p-\frac{\log|H^\perp|}{d}.
+\]
+对于一般可测区域，只要占比 \(\rho=\mu(C\cap W)/\mu(W)>0\)，也有 \(\nu(C)\ge -Q_p+d^{-1}\log\rho\)。因此可以按全局归一化汇总各处的缺额。
+
+Riemann 工程的 Heisenberg 平移展开、Weil 表示的 Fourier 公式和迹对偶提供了处理指定局部陪集及其字符的工具。现有 Rallis 公式在给定局部条件后，存在性地选择测试多项式、测度、基本域和常数，计算提升的 Petersson 平方范数。要用于上式，须从 III 实际允许的 Kummer 像构造指定测试数据，并证明其 Fourier 系数控制 \(H^\perp\) 或 \(\rho\)。若用极化得到混合内积，还须在相同归一化下控制两个范数相减后的误差。Dirichlet GRH 的零点位置结论本身没有提供这些比较。\cite{riemtheta}
+
+\subsection{线性权重足以保留首阶系数}
+若只能实现单个 \(\xi_j\)，则 \(\tau_p(\xi_j)\OO_E=r^j\OO_E\)。在单有效槽模型按次数加权得到 \(-jQ_p\)，前提是各坏处都有相应见证。记 \(b_m=(\ell+1)/4\) 为线性平均，\(A_m=\ell(\ell+1)/12\) 为平方平均。若在同一实际全局包络上取得
+\[
+ -b_mQ-\delta\le R\le-A_mQ+U,
+ \qquad
+ \frac{L}{6}\le \frac{4\ell}{(\ell-3)(\ell+1)}(U+\delta),
+ \quad L=2\ell Q,\quad\ell>3,
+\]
+则第二式由第一式消去 \(R\) 得出。相对附录 A 的一次幂方案，系数只增加因子 \((\ell+4)/(\ell+1)\)，仍有 \(4/\ell\) 的首阶项。
+
+{\setlength{\emergencystretch}{2em}在 \(p=337,\ell=7,j=2\) 的指定处元组上，线性格的对数体积为 \(-(6N+30/7)\log337\)，已有逐元组上界为 \(-(12N+5)\log337\)。差额 \((6N+5/7)\log337\) 随 \(N\) 无界。要由这一路线推出 Szpiro 型估计，仍须证明实际包络中见证的覆盖程度，以及对同一包络成立的全局上界或跨处补偿。\par}
 
 \section*{人工智能使用声明与许可}
 Edison Mai 主导研究并任通讯作者。OpenAI ChatGPT（Astra 6.2）协助阅读原文和代码，整理数值反例及修订模型的自然语言推导，并起草、排版和检查本文。这篇文章和自然语言材料采用 \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0} 许可。配套代码采用 \href{https://www.apache.org/licenses/LICENSE-2.0}{Apache License 2.0}。
@@ -406,7 +450,50 @@ For the reference coefficient \(A=A_m=\ell(\ell+1)/12\), put \(L=2\ell Q\). Elim
 \]
 For rational Frey curves with the chosen bad places above \(2abc\), the whole-ideal rounding error is at most \(\log\rad(abc)+\log 2\). Its coefficient in this estimate is \(O(1/\ell)\), so this error allows the exponent to approach \(1\) if sufficiently large admissible auxiliary primes can be chosen uniformly. The lower and upper estimates for the actual hull and the arithmetic bound for \(U\) still determine the attainable exponent.
 
-On 21 November 2026 the Lean community announced its verification of the Riemann Hypothesis proof. The main file of the local Riemann archive also states the generalized Riemann hypothesis for Dirichlet \(L\)-functions. Local trace and different formulas from that project help control ideal descent. Its explicit prime counts help control the choice of \(\ell\). For example, \(\pi(y)<1.26y/\log y\) for \(y>1\), and \(\pi(2y)-\pi(y)>3y/(5\log y)\) for \(y\ge41/2\), are available independently of the zero-location theorems. Those theorems supply neither the Kummer witnesses in the ATS hull nor the global upper bound for that hull. Thus they do not directly complete the comparison required for Szpiro or \(abc\).\cite{riemblog,riemcode}
+\section[Theta Lifts and ATS]{Using and Extending the Theta-Lift Techniques behind Dirichlet GRH to Further Salvage ATS}
+
+On 21 November 2026, the Lean community blog announced that it had verified Levent Alpöge's proof of the classical Riemann hypothesis. The Riemann project's Lean source also gives a theorem for Dirichlet \(L\)-functions stating that their zeros in the critical strip have real part \(1/2\).\cite{riemblog,riemcode}
+
+The project's trace duality and different formulas apply to ideal descent in Appendix A. Its explicit prime counts help control the error in choosing the auxiliary prime \(\ell\). Both applications are independent of the zero-location theorems. Here we examine whether the project's automorphic theta lifts and Fourier techniques can also bound local volume deficits in ATS. Applying such a bound to Szpiro or \(abc\) still requires realizing the Kummer witnesses in the actual hull and establishing a global upper bound on that same hull.\cite{riemcode,riemtheta}
+
+\subsection{Local witnesses from consecutive theta values}
+At an odd bad place \(p\ne\ell\), work in one local field \(E\) containing \(r=q^{1/(2\ell)}\) and a primitive \(\ell\)-th root of unity \(\zeta\). Using the series printed in Joshi II, define
+\[
+ \xi_0=1,\qquad \xi_j=\frac{\theta_M(\zeta)}{\theta_M(r^j\zeta)},\qquad
+ u_j=\xi_j/\xi_{j-1}.
+\]
+The leading-term calculation gives \(v(\xi_j)=jv(r)\) and \(v(u_j)=v(r)\). The logarithm isometry of Appendix A gives \(\tau_p(u_j)\OO_E=r\OO_E\). This supplies a generator from theta values. Applying it to ATS requires the Kummer class of \(1+p^*u_j\) to reach the specified label under the gathering maps allowed in Part III. Subtraction of two Kummer classes corresponds to taking the quotient of their principal units. A quotient across untilts also requires a compatible common field and markings.\cite{jii,jiii}
+
+\subsection{An explicit local generation calculation}
+Take \(p=29,\ell=7,q=29,\pi^{14}=29\), and a primitive seventh root \(\zeta\in\Q_{29}\). In \(E=\Q_{29}(\pi)\), put \(W=\pi\OO_E\) and \(L_0=\pi^4\OO_E\) for label \(j=2\). The quotient \(W/L_0\) has dimension three over \(\mathbb F_{29}\). The rescaled logarithms of all fourteen branches \(\omega\pi\) lie on the line \(\mathbb F_{29}\pi\) modulo \(L_0\), since \(\mu_{14}\subset\Q_{29}\). Together with \(L_0\), they generate a lattice of index \(29^2\) in \(W\).
+
+Expanding the series modulo \(\pi^4\) gives
+\[
+ \tau_{29}(\pi)\equiv\pi,\qquad
+ \tau_{29}(\xi_2)\equiv(1+\zeta^2)\pi^2,\qquad
+ \tau_{29}(u_2)-\tau_{29}(\pi)\equiv\zeta^2\pi^3.
+\]
+The last congruence follows from \(\theta_M(\pi\zeta)/\theta_M(\pi^2\zeta)\equiv\pi+\zeta^2\pi^3\). Higher terms of the rescaled logarithm vanish modulo \(\pi^4\), and \(1+\zeta^2\) is a unit. The three specified points and \(L_0\) therefore generate \(W\). The application requires realizing these points in the same actual label and controlling the other tensor slots. For \(r_t=29^t\pi\) with \(t\ge1\), the inclusion \(r_t^4\OO_E\subset29r_t\OO_E\) leaves fourteen independent directions in \(r_t\OO_E/29r_t\OO_E\). Three points cannot generate that quotient.
+
+\subsection{Measuring the volume deficit by Fourier duality}
+In the full \((j,p)\) tensor algebra, let \(d\) be the dimension and use the volume normalization of Appendix A. The first-power lattice \(W\) and squared-weight lattice \(L_0\) have \(\nu(W)=-Q_p\) and \(\nu(L_0)=-j^2Q_p\). Suppose the actual local region \(C\) is a measurable additive subgroup containing \(L_0\). Set \(H=(C\cap W)/L_0\subset W/L_0\). Finite group duality gives \(|H^\perp|=[W:C\cap W]\), so
+\[
+ \nu(C)\ge -Q_p-\frac{\log|H^\perp|}{d}.
+\]
+For a general measurable region with positive density \(\rho=\mu(C\cap W)/\mu(W)\), one likewise has \(\nu(C)\ge -Q_p+d^{-1}\log\rho\). Either estimate permits summing the actual local losses in the global normalization.
+
+The Riemann project provides Heisenberg translation expansions, the Fourier formula for the Weil representation, and trace duality for working with prescribed local cosets and characters. Under its local hypotheses, the existing Rallis formula selects a test polynomial, measure, fundamental domain, and constant existentially and computes the squared Petersson norm of the lift. To use it here, one needs prescribed test data constructed from the Kummer images allowed by Part III and a theorem relating the Fourier coefficients to \(|H^\perp|\) or \(\rho\). Polarization to extract a mixed inner product would also require controlling the error after subtracting two norms in the same normalization. The zero-location conclusion of Dirichlet GRH supplies no such comparison.\cite{riemtheta}
+
+\subsection{Linear weights preserve the leading coefficient}
+If only \(\xi_j\) can be realized, then \(\tau_p(\xi_j)\OO_E=r^j\OO_E\). Degree weighting in the one-active-slot model gives \(-jQ_p\) when the witnesses exist at each selected bad place. Put \(b_m=(\ell+1)/4\) and \(A_m=\ell(\ell+1)/12\) for the averages of the linear and squared weights. If both bounds hold on the same actual global hull, then for \(L=2\ell Q\) and \(\ell>3\),
+\[
+ -b_mQ-\delta\le R\le-A_mQ+U
+ \quad\Longrightarrow\quad
+ \frac L6\le\frac{4\ell}{(\ell-3)(\ell+1)}(U+\delta).
+\]
+The coefficient increases by a factor of \((\ell+4)/(\ell+1)\) relative to the first-power bound in Appendix A, preserving the leading term \(4/\ell\).
+
+For the specified tuple at \(p=337,\ell=7,j=2\), the linear lattice has log-volume \(-(6N+30/7)\log337\), and the existing tuple-wise upper bound is \(-(12N+5)\log337\). The deficit \((6N+5/7)\log337\) grows without bound. A Szpiro-type estimate by this route still requires control of which witnesses the actual hull contains and a global upper bound for that hull or compensating contributions at other places.
 
 \section*{Use of Artificial Intelligence and License}
 Edison Mai led the research and is the corresponding author. OpenAI ChatGPT (Astra 6.2) assisted with reading the papers and code, developing and organizing the counterexamples and the revised natural-language argument, and drafting, typesetting, and checking the paper. This paper and the natural-language materials are licensed under \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}. The companion code is licensed under the \href{https://www.apache.org/licenses/LICENSE-2.0}{Apache License 2.0}.
@@ -442,6 +529,11 @@ Edison Mai led the research and is the corresponding author. OpenAI ChatGPT (Ast
 \nolinkurl{src/GroundTheory/LocalFields/Different.lean:132}\par
 \nolinkurl{src/Formalism/PeriodIntegrals/OrbitalBoundsConclusion/PrimeCount.lean:7}\par
 \nolinkurl{src/Formalism/PeriodIntegrals/PrimesDyadicRS.lean:5}
+\bibitem{riemtheta} Levent Alpöge. Riemann Lean archive, theta lifting and Fourier analysis. Paths relative to the archive root.\par
+\nolinkurl{src/Development/AbelianVarietyTheory/Proofs/DecoratedLatticeProofs/ThetaFourierSumEqSumHeisenbergTranslates.lean:20}\par
+\nolinkurl{src/Development/AbelianVarietyTheory/Proofs/DecoratedLatticeProofs/WeylElementActsOnSchrodingerByFourier.lean:40}\par
+\nolinkurl{src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/LocalTypeDictionary/BigThetaNormEqRallisInnerProduct.lean:19}\par
+\nolinkurl{src/GroundTheory/LocalFields/LocalFourierTrace.lean:28}
 \end{thebibliography}
 \endgroup
 \end{document}
